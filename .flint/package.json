@@ -1,0 +1,12 @@
+{
+  "author": "",
+  "name": "site",
+  "repository": "https://github.com/site",
+  "description": "site",
+  "version": "1.0.0",
+  "main": "",
+  "scripts": {},
+  "dependencies": {
+    "flintjs": "^1.0.0"
+  }
+}
