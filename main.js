@@ -110,11 +110,69 @@ view Browser {
 }
 
 view Editor {
+  @text = ''
+
+  input = `
+    --SET--
+    view Main {
+      |
+    }
+    --WRITE--
+    view Main {
+      |1strong|2
+    }
+    --SET--
+    view Main {
+      <strong>|</strong>
+    }
+    --WRITE--
+    view Main {
+      <strong>|1This is Flint. Flint is a new way to make apps.|2</strong>
+    }
+    --SET--
+    view Main {
+      <strong>This is Flint. Flint is a new way to make apps.</strong>
+      |
+    }
+  `
+  steps = input.split(/--([A-Z]+)--/)
+
+  write = text => new Promise((res, rej) => {
+    begin = text.indexOf('|1')
+    end = text.indexOf('|2')
+    initial = text.replace(/\|1(.*)\|2/g, '|')
+    @text = initial
+
+    setTimeout(() => {
+      res()
+    }, 1000)
+  })
+
+  present = i => {
+    step = steps[i]
+
+    if (typeof step == 'undefined') return
+    console.log('step', step)
+
+    Promise
+      .delay(100)
+      .then(() => {
+        if (step == 'SET') {
+          @text = step
+          present(i+1)
+        }
+        if (step == 'WRITE') {
+          @text =  write(step).then(() => {
+            present(i+1)
+          })
+        }
+      })
+  }
+
+  present(0)
+
   <line>
-    view Main
-  </line>
-  <line>
-    // some code
+    {@text}
   </line>
 
   $ = {
