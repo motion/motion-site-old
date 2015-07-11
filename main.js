@@ -1,17 +1,24 @@
 height = window.innerHeight - 160
 primary = '#BF0C40'
+secondary = '#8B1624'
 
 view Main {
-  <header>
-    <img src="logowhite.png" />
-  </header>
+  <Head />
   <Intro />
+  <Signup />
 
   $ = {
-    background: primary
+    background: secondary,
+    color: '#E4CBC6',
+    fontSize: 30
   }
+}
 
-  $header = {
+view Head {
+  <img src="logowhite.png" />
+
+  $ = {
+    background: primary,
     height: window.innerHeight - 300,
     maxHeight: 400,
     minHeight: 300
@@ -71,6 +78,12 @@ view Intro {
     fontSize: 20,
     margin: [-10,0]
   }
+}
+
+view Signup {
+  <form>
+    <input />
+  </form>
 }
 
 
