@@ -32,31 +32,29 @@ view Head {
 }
 
 view Intro {
-  <intro>
-    <line>Flint is your frontend destination</line>
-    <line>It's an amazingly view simple syntax...</line>
-    <img class="right" src="1.png" />
-    <line class="small">It runs on React, but avoids all the complexity</line>
-    <line>It integrates styles with your view for you</line>
-    <line>&amp; handles all build and configuration</line>
-    <img class="right" src="2.png" />
-    <line class="small">(that means you just focus on creativity)</line>
-    <line>It updates immediately with every keystroke</line>
-    <line>Even keeping your app state, perfectly</line>
-    <line>Did we mention powerful error messages?</line>
-    <img class="right" src="3.png" />
-    <line class="small">Static type check helps out with that</line>
-    <line>It comes with powerful tools</line>
-    <line>A state inspector</line>
-    <line>And rewindable timeline with actions</line>
-    <line>Did we mention it's faster than React?</line>
-    <img class="right" src="4.png" />
-    <line>That's because we run at compile-time</line>
-    <line>It's the best frontend experience</line>
-    <line>Letting you make better sites, much faster</line>
-    <line>With really nice code</line>
-    <line>What's that worth to you?</line>
-  </intro>
+  <line>Flint is your frontend destination</line>
+  <line>It's an amazingly view simple syntax...</line>
+  <img class="right" src="1.png" />
+  <line class="small">It runs on React, but avoids all the complexity</line>
+  <line>It integrates styles with your view for you</line>
+  <line>&amp; handles all build and configuration</line>
+  <img class="right" src="2.png" />
+  <line class="small">(that means you just focus on creativity)</line>
+  <line>It updates immediately with every keystroke</line>
+  <line>Even keeping your app state, perfectly</line>
+  <line>Did we mention powerful error messages?</line>
+  <img class="right" src="3.png" />
+  <line class="small">Static type check helps out with that</line>
+  <line>It comes with powerful tools</line>
+  <line>A state inspector</line>
+  <line>And rewindable timeline with actions</line>
+  <line>Did we mention it's faster than React?</line>
+  <img class="right" src="4.png" />
+  <line>That's because we run at compile-time</line>
+  <line>It's the best frontend experience</line>
+  <line>Letting you make better sites, much faster</line>
+  <line>With really nice code</line>
+  <line>What's that worth to you?</line>
 
   $ = {
     background: `linear-gradient(${primary}, #8B1624)`,
@@ -86,6 +84,9 @@ view Signup {
   </form>
 }
 
+
+
+// old version with split screen editor thing
 
 view Interactive {
   <Header />
