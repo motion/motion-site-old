@@ -1,33 +1,169 @@
 height = window.innerHeight - 160
-primary = '#BF0C40'
-secondary = '#8B1624'
+primary = '#970C0A'
+secondary = '#FB7124'
+
+view Link {
+  <link-a yield />
+
+  $ = {
+    display: 'inline'
+  }
+
+  $a = {
+    color: primary,
+    display: 'inline',
+    textDecoration: 'underline'
+  }
+}
+
+url = 'https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0'
+urlDemo = url + '&start=132'
 
 view Main {
+  @url = url
+
   <Head />
-  <Intro />
+  <iframe src={@url} frameborder="0" allowfullscreen></iframe>
+  <p test={true}>
+    <Link onClick={() => @url = urlDemo}>Skip to 2:12</Link> to see the live demonstration.
+  </p>
   <Signup />
 
   $ = {
-    background: secondary,
-    color: '#E4CBC6',
-    fontSize: 30
+    background: 'white',
+    color: '#7E6F6D',
+    fontSize: 18,
+    lineHeight: '28px',
+    textAlign: 'center'
+  }
+
+  $p = {
+    fontSize: 12
+  }
+
+  $iframe = {
+    border: 'none',
+    margin: 'auto',
+    width: 672,
+    height: 450
   }
 }
 
 view Head {
-  <img src="logowhite.png" />
+  <img src="logo.png" />
+  <p>
+    Improving the way you make apps
+  </p>
 
   $ = {
-    background: primary,
-    height: window.innerHeight - 300,
-    maxHeight: 400,
-    minHeight: 300
+    position: 'relative',
+    flexFlow: 'column'
+  }
+
+  $p = {
+    margin: [40, 'auto'],
+    fontSize: 22
   }
 
   $img = {
-    height: 60,
+    height: 66,
+    margin: [40, 'auto', 0],
+  }
+}
+
+view Signup {
+  <p>
+    This is an early preview of Flint.
+  </p>
+  <p>
+    We're working on tooling that makes you 5x more effective.
+  </p>
+  <p>
+    In the next week we'll invite a group of artists &amp; developers
+    to work with directly, turning Flint into something truly special.
+  </p>
+  <p>
+    We're calling it the Flint 50.
+  </p>
+  <h3>Become a Flint 50 member</h3>
+  <form action="//flintlang.us11.list-manage.com/subscribe/post?u=d6ee317984756a7f0f5e9378b&amp;id=dcc2cefed5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+      <div class="mc-field-group">
+        <label for="mce-NAME">Name </label>
+        <input type="text" value="" name="NAME" class="" id="mce-NAME" />
+      </div>
+      <div class="mc-field-group">
+        <label for="mce-EMAIL">Email / Twitter</label>
+        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" />
+      </div>
+      <div class="mc-field-group">
+        <label for="mce-ABOUT">
+          Tell us about yourself &amp; how you'd use Flint
+        </label>
+        <textarea value="" name="ABOUT" class="" id="mce-ABOUT"></textarea>
+      </div>
+      <hide id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+      </hide>
+      <hide style="position: absolute; left: -5000px;">
+        <input type="text" name="b_d6ee317984756a7f0f5e9378b_dcc2cefed5" tabindex="-1" value="" />
+      </hide>
+      <center class="clear">
+        <submit-input
+          class="button"
+          type="submit"
+          value="Apply"
+          name="subscribe" id="mc-embedded-subscribe" />
+      </center>
+    </div>
+  </form>
+
+  $ = {
+    position: 'relative',
+    zIndex: 100,
+    width: 500,
+    margin: 'auto'
+  }
+
+  $hide = {
+    display: 'none'
+  }
+
+  $h3 = {
+    fontSize: 18,
+    color: '#444'
+  }
+
+  $form = {
     margin: 'auto',
-    padding: [0, 20, 0, 0]
+    padding: 20,
+    borderTop: '1px solid #ccc',
+    textAlign: 'left',
+    fontSize: 16
+  }
+
+  input = {
+    width: '100%',
+    marginBottom: 20
+  }
+
+  $input = input
+
+  $textarea = [input, {
+    border: '1px solid #ccc',
+    height: 150
+  }]
+
+  $label = {
+    margin: [10, 0]
+  }
+
+  $submit = {
+    border: '1px solid #ccc',
+    color: '#333',
+    background: '#fff',
+    padding: 10
   }
 }
 
@@ -76,12 +212,6 @@ view Intro {
     fontSize: 20,
     margin: [-10,0]
   }
-}
-
-view Signup {
-  <form>
-    <input />
-  </form>
 }
 
 
