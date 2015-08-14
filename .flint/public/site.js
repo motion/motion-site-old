@@ -5,48 +5,230 @@ function flintRun_site(node, opts) {
     /* @flow */                                                                                                                                                                                    var _stores = {}; var _view = { set: (function(){}) }; 'use strict';
 
 var height = _view.height = window.innerHeight - 160;
-var primary = _view.primary = '#BF0C40';
-var secondary = _view.secondary = '#8B1624';
+var primary = _view.primary = '#970C0A';
+var secondary = _view.secondary = '#FB7124';
 
-                      Flint.defineView('Main', '429205505', function _flintDefineView() {
+                      Flint.defineView('Link', '1491524884', function _flintDefineView() {
   var _view = this;var _vars = Flint.values[_view.entityId];var inView = true;
   ; /* BEGIN RENDER */_view._render = function () {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return Flint.createElement("Flint.LinkWrapper", _view, {view: "Link"}, Flint.createElement("a", _view, {yield: true})
+
+    );
+  };
+  _view.styleFunctions['style'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || { display: 'inline' };
+  };
+
+  _view.styleFunctions['stylea'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || {
+      display: 'inline',
+      color: primary,
+      textDecoration: 'underline',
+      cursor: 'pointer'
+    };
+  };return _view;
+});
+
+var url = _view.url = 'https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0';
+var urlDemo = _view.urlDemo = url + '&start=133&autoplay=1';
+
+                      Flint.defineView('Main', '1193200546', function _flintDefineView() {
+  var _view = this;var _vars = Flint.values[_view.entityId];var inView = true;
+  _view.set('url', _vars.url = url); /* BEGIN RENDER */_view._render = function () {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
     return Flint.createElement("Flint.MainWrapper", _view, {view: "Main"}, Flint.createElement("Head", _view, null), 
-  Flint.createElement("Intro", _view, null), 
+  Flint.createElement("iframe", _view, {src: _vars.url, frameborder: "0", allowfullscreen: true}), 
+  Flint.createElement("desc", _view, null, 
+    Flint.createElement("Link", _view, {onClick: function () {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+          return _view.set('url', _vars.url = urlDemo);
+        }}, 
+      "Start from 2:13"
+    ), " to see the live demonstration."
+  ), 
   Flint.createElement("Signup", _view, null)
 
     );
   };
   _view.styleFunctions['style'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
     return false || {
-      background: secondary,
-      color: '#E4CBC6',
-      fontSize: 30
+      background: 'white',
+      color: '#7E6F6D',
+      fontSize: 18,
+      lineHeight: '28px',
+      textAlign: 'center'
+    };
+  };
+
+  _view.styleFunctions['styledesc'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || {
+      display: 'block',
+      fontSize: 12,
+      padding: [10, 0, 40]
+    };
+  };
+
+  _view.styleFunctions['styleiframe'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || {
+      border: 'none',
+      margin: 'auto',
+      width: 672,
+      height: 450
     };
   };return _view;
 });
 
-                      Flint.defineView('Head', '1118244474', function _flintDefineView() {
+                      Flint.defineView('Head', '-726994261', function _flintDefineView() {
   var _view = this;var _vars = Flint.values[_view.entityId];var inView = true;
   ; /* BEGIN RENDER */_view._render = function () {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
-    return Flint.createElement("Flint.HeadWrapper", _view, {view: "Head"}, Flint.createElement("img", _view, {src: "logowhite.png"})
+    return Flint.createElement("Flint.HeadWrapper", _view, {view: "Head"}, Flint.createElement("img", _view, {src: "logo.png"}), 
+  Flint.createElement("p", _view, null, 
+    "Improving the way you make apps"
+  )
 
     );
   };
   _view.styleFunctions['style'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
     return false || {
-      background: primary,
-      height: window.innerHeight - 300,
-      maxHeight: 400,
-      minHeight: 300
+      position: 'relative',
+      flexFlow: 'column'
+    };
+  };
+
+  _view.styleFunctions['stylep'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || {
+      margin: [40, 'auto'],
+      fontSize: 22
     };
   };
 
   _view.styleFunctions['styleimg'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
     return false || {
-      height: 60,
+      height: 66,
+      margin: [40, 'auto', 0] };
+  };return _view;
+});
+
+                        Flint.defineView('Signup', '-1419057446', function _flintDefineView() {
+  var _view = this;var _vars = Flint.values[_view.entityId];var inView = true;
+  ; /* BEGIN RENDER */_view._render = function () {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return Flint.createElement("Flint.SignupWrapper", _view, {view: "Signup"}, Flint.createElement("desc", _view, null, 
+    Flint.createElement("wrap", _view, null, 
+      Flint.createElement("p", _view, null, 
+        "This is an early preview of Flint."
+      ), 
+      Flint.createElement("p", _view, null, 
+        "We're working on tooling that makes you 5x more effective."
+      ), 
+      Flint.createElement("p", _view, null, 
+        "In the next week we'll invite a group of artists & developers" + ' ' +
+        "to work with directly, turning Flint into something truly special."
+      ), 
+      Flint.createElement("p", _view, null, 
+        "We're calling it the Flint 50."
+      )
+    )
+  ), 
+  Flint.createElement("h3", _view, null, "Sign up for Flint 50"), 
+  Flint.createElement("form", _view, {action: "//flintlang.us11.list-manage.com/subscribe/post?u=d6ee317984756a7f0f5e9378b&id=dcc2cefed5", method: "post", id: "mc-embedded-subscribe-form", name: "mc-embedded-subscribe-form", className: "validate", target: "_blank", novalidate: true}, 
+    Flint.createElement("div", _view, {id: "mc_embed_signup_scroll"}, 
+      Flint.createElement("div", _view, {className: "mc-field-group"}, 
+        Flint.createElement("input", _view, {type: "text", placeholder: "Name", value: "", name: "NAME", className: "", id: "mce-NAME"})
+      ), 
+      Flint.createElement("div", _view, {className: "mc-field-group"}, 
+        Flint.createElement("input", _view, {type: "email", placeholder: "Contact (email or handle)", value: "", name: "EMAIL", className: "required email", id: "mce-EMAIL"})
+      ), 
+      Flint.createElement("div", _view, {className: "mc-field-group"}, 
+        Flint.createElement("label", _view, {for: "mce-ABOUT"}, 
+          "Tell us about yourself / how you'd use Flint"
+        ), 
+        Flint.createElement("textarea", _view, {value: "", name: "ABOUT", className: "", id: "mce-ABOUT"})
+      ), 
+      Flint.createElement("hide", _view, {id: "mce-responses", className: "clear"}, 
+        Flint.createElement("div", _view, {className: "response", id: "mce-error-response", style: "display:none"}), 
+        Flint.createElement("div", _view, {className: "response", id: "mce-success-response", style: "display:none"})
+      ), 
+      Flint.createElement("hide", _view, {style: "position: absolute; left: -5000px;"}, 
+        Flint.createElement("input", _view, {type: "text", name: "b_d6ee317984756a7f0f5e9378b_dcc2cefed5", tabindex: "-1", value: ""})
+      ), 
+      Flint.createElement("center", _view, {className: "clear"}, 
+        Flint.createElement("submit-input", _view, {className: "button", type: "submit", value: "Apply", name: "subscribe", id: "mc-embedded-subscribe"})
+      )
+    )
+  )
+
+    );
+  };
+  _view.styleFunctions['style'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || {
+      position: 'relative',
+      zIndex: 100,
+      padding: [0, 0, 100] };
+  };
+
+  _view.styleFunctions['stylewrap'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || {
       margin: 'auto',
-      padding: [0, 20, 0, 0]
+      width: 500
+    };
+  };
+
+  _view.styleFunctions['stylehide'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || {
+      display: 'none'
+    };
+  };
+
+  _view.styleFunctions['styledesc'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || {
+      background: '#f2f2f2',
+      color: '#333',
+      margin: [0, 0, 20],
+      padding: [20, 0]
+    };
+  };
+
+  _view.styleFunctions['styleh3'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || {
+      fontSize: 18,
+      color: '#444'
+    };
+  };
+
+  _view.styleFunctions['styleform'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || {
+      margin: 'auto',
+      textAlign: 'left',
+      fontSize: 16
+    };
+  };
+
+  var input = _view.input = {
+    width: '100%',
+    minWidth: 400,
+    marginBottom: 20 };
+
+  _view.styleFunctions['styleinput'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || input;
+  };
+
+  _view.styleFunctions['styletextarea'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || [input, {
+      border: '1px solid #ccc',
+      height: 150
+    }];
+  };
+
+  _view.styleFunctions['stylelabel'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || {
+      margin: [10, 0]
+    };
+  };
+
+  _view.styleFunctions['stylesubmit'] = function (_index) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
+    return false || {
+      border: '1px solid #ccc',
+      color: '#333',
+      background: '#fff',
+      padding: 10
     };
   };return _view;
 });
@@ -105,16 +287,6 @@ var secondary = _view.secondary = '#8B1624';
       fontSize: 20,
       margin: [-10, 0]
     };
-  };return _view;
-});
-
-                        Flint.defineView('Signup', '1814909917', function _flintDefineView() {
-  var _view = this;var _vars = Flint.values[_view.entityId];var inView = true;
-  ; /* BEGIN RENDER */_view._render = function () {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
-    return Flint.createElement("Flint.SignupWrapper", _view, {view: "Signup"}, Flint.createElement("form", _view, null, 
-    Flint.createElement("input", _view, null)
-  )
-    );
   };return _view;
 });
 
@@ -269,11 +441,11 @@ var secondary = _view.secondary = '#8B1624';
   };return _view;
 });
 
-                        Flint.defineView('Editor', '639166781', function _flintDefineView() {
+                        Flint.defineView('Editor', '-54540179', function _flintDefineView() {
   var _view = this;var _vars = Flint.values[_view.entityId];var inView = true;
   _view.set('text', _vars.text = '');
 
-  var input = _view.input = '\n    -=1SET-=1\n    declare var Main: any; Flint.defineView("Main", "429205505", (function _flintDefineView() { const _view = this; var _vars = Flint.values[_view.entityId]; var inView = true;\n      |\n    }\n    -=1WRITE-=1\n    declare var Main: any; Flint.defineView("Main", "429205505", (function _flintDefineView() { const _view = this; var _vars = Flint.values[_view.entityId]; var inView = true;\n      |1strong|2\n    }\n    -=1SET-=1\n    declare var Main: any; Flint.defineView("Main", "429205505", (function _flintDefineView() { const _view = this; var _vars = Flint.values[_view.entityId]; var inView = true;\n;/* BEGIN RENDER */ _view._render = function() { return <Flint.Wrapper  view=""><strong >|</strong>\n    }\n    -=1WRITE-=1\n    declare var Main: any; Flint.defineView("Main", "429205505", (function _flintDefineView() { const _view = this; var _vars = Flint.values[_view.entityId]; var inView = true;\n      <strong >|1This is Flint. Flint is a new way to make apps.|2</strong>\n    }\n    -=1SET-=1\n    declare var Main: any; Flint.defineView("Main", "429205505", (function _flintDefineView() { const _view = this; var _vars = Flint.values[_view.entityId]; var inView = true;\n      <strong >This is Flint. Flint is a new way to make apps.</strong>\n      |\n    }\n</Flint.Wrapper> }\n  ';
+  var input = _view.input = '\n    -=1SET-=1\n    declare var Main: any; Flint.defineView("Main", "1193200546", (function _flintDefineView() { const _view = this; var _vars = Flint.values[_view.entityId]; var inView = true;\n      |\n    }\n    -=1WRITE-=1\n    declare var Main: any; Flint.defineView("Main", "1193200546", (function _flintDefineView() { const _view = this; var _vars = Flint.values[_view.entityId]; var inView = true;\n      |1strong|2\n    }\n    -=1SET-=1\n    declare var Main: any; Flint.defineView("Main", "1193200546", (function _flintDefineView() { const _view = this; var _vars = Flint.values[_view.entityId]; var inView = true;\n;/* BEGIN RENDER */ _view._render = function() { return <Flint.Wrapper  view=""><strong >|</strong>\n    }\n    -=1WRITE-=1\n    declare var Main: any; Flint.defineView("Main", "1193200546", (function _flintDefineView() { const _view = this; var _vars = Flint.values[_view.entityId]; var inView = true;\n      <strong >|1This is Flint. Flint is a new way to make apps.|2</strong>\n    }\n    -=1SET-=1\n    declare var Main: any; Flint.defineView("Main", "1193200546", (function _flintDefineView() { const _view = this; var _vars = Flint.values[_view.entityId]; var inView = true;\n      <strong >This is Flint. Flint is a new way to make apps.</strong>\n      |\n    }\n</Flint.Wrapper> }\n  ';
   var steps = _view.steps = input.split(/-=1([A-Z]+)-=1/);
 
   var write = _view.write = function (text) {  var _vars = (typeof _vars != 'undefined') ? _vars : (inView ? Flint.values[_view.entityId] : {}); 
