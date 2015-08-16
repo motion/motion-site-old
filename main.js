@@ -7,14 +7,70 @@ view Main {
   <Header />
   <Introduction />
   <Video />
+  <Brief />
+  <Intro />
   <Code gist="natew/ec3c1243f8e6559d6bb7" />
   <Signup />
 
   $ = {
     color: '#7E6F6D',
-    fontSize: 18,
+    fontSize: 14,
     lineHeight: '26px',
     padding: [50, 0, 0]
+  }
+}
+
+view Intro {
+  text = [
+    `Flint is rethinking development from the start.`,
+    `No more boilerplate code, complex build sytems or awkward mess of libraries.`,
+    `Instant updates between editor and browser as you type with a novel, efficient compiler.`,
+    `Built on React and ES6 (fully compatable with React components & npm). Even automatically installs your npm package when you import.`,
+    `Handles stores, styles, isomorphic rendering, efficient immutable data behind the scenes, all under a powerful CLI.`,
+    `70% less code when writing views, be more creative and faster than ever.`,
+    `One command to deploy your app to a static CDN. Open source. Community powered.`
+  ]
+
+  <left>
+    <p repeat={text} class={{ em: _index === 0 }}>
+      <num if={_index > 0}>{_index}</num> {_}
+    </p>
+  </left>
+
+  $ = {
+    padding: [50, 20]
+  }
+
+  $left = {
+    width: '60%',
+    margin: 'auto'
+  }
+
+  $p = {
+    margin: [0, 0, 15],
+    lineHeight: '1.3rem',
+    flexFlow: 'row',
+    display: 'flex'
+  }
+
+  $num = {
+    fontSize: 20,
+    border: '1px solid #ddd',
+    color: '#555',
+    fontWeight: 300,
+    borderRadius: 100,
+    minWidth: 45,
+    minHeight: 45,
+    maxHeight: 45,
+    maxWidth: 45,
+    margin: [0, 15, 0, -60],
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexFlow: 'row'
+  }
+
+  $.em = {
+    fontSize: 16
   }
 }
 
@@ -110,6 +166,11 @@ view Video {
     Start from 2:13 to see the live demonstration.
   </desc>
 
+  $ = {
+    margin: 'auto',
+    textAlign: 'center'
+  }
+
   $video = {
     border: 'none',
     width: small ? '100%' : 672,
@@ -130,20 +191,6 @@ view Introduction {
     Flint is a new system designed
     to build modern view-based apps
   </h2>
-  <sections>
-    <Icon src="computer1.svg">
-      CLI
-    </Icon>
-    <Icon src="web2.svg">
-      Compiler
-    </Icon>
-    <Icon src="internet84.svg">
-      Browser
-    </Icon>
-    <Icon src="browser105.svg">
-      Editor
-    </Icon>
-  </sections>
 
   $ = {
     padding: [20, 20]
@@ -160,8 +207,29 @@ view Introduction {
   $h3 = [title, {
     fontSize: 20
   }]
+}
 
-  $sections = {
+view Brief {
+  <icons>
+    <Icon src="computer1.svg">
+      CLI
+    </Icon>
+    <Icon src="web2.svg">
+      Compiler
+    </Icon>
+    <Icon src="internet84.svg">
+      Browser
+    </Icon>
+    <Icon src="browser105.svg">
+      Editor
+    </Icon>
+  </icons>
+
+  $ = {
+    textAlign: 'center'
+  }
+
+  $icons = {
     flexFlow: 'row',
     margin: 'auto',
     width: '80%',
