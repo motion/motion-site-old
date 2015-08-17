@@ -5,8 +5,13 @@ small = window.innerWidth < 672
 
 view Main {
   <Header />
-  <Introduction />
-  <Video />
+
+  <block>
+    <Introduction />
+    <Video if={false} />
+    <Video2 />
+  </block>
+
   <Brief />
   <Intro />
   <Code gist="natew/ec3c1243f8e6559d6bb7" />
@@ -16,7 +21,13 @@ view Main {
     color: '#7E6F6D',
     fontSize: 14,
     lineHeight: '26px',
-    padding: [50, 0, 0]
+    padding: [46, 0, 0]
+  }
+
+  $block = {
+    background: '#f9f9f9',
+    borderBottom: '1px solid #ddd',
+    margin: [0, 0, 40]
   }
 }
 
@@ -94,9 +105,9 @@ view Header {
       {_}
     </a>
   </links>
-  <links class="secondary">
-    <a>Twitter</a>
-    <a>Github</a>
+  <links>
+    <a class="secondary">Twitter</a>
+    <a class="secondary">Github</a>
   </links>
 
   $ = {
@@ -108,7 +119,7 @@ view Header {
     alignItems: 'center',
     justifyContent: 'space-between',
     borderBottom: '1px solid #ddd',
-    padding: 10,
+    padding: [8, 10],
     fontSize: 14,
   }
 
@@ -136,19 +147,59 @@ view Header {
   }
 
   $.secondary = {
-    fontWeight: 'normal'
+    padding: [2, 10],
+    fontWeight: 300,
+    color: '#999'
   }
 
   $a = {
     margin: [0, 2],
-    padding: [1, 16],
-    borderRadius: 3,
-    color: '#777'
+    padding: [2, 15],
+    borderRadius: 4,
+    color: '#888',
+    fontWeight: 400
   }
 
   $.active = {
-    background: 'rgb(83, 103, 210)',
-    color: '#fff'
+    background: 'rgb(73, 113, 200)',
+    color: '#fff',
+    fontWeight: 700
+  }
+}
+
+view Video2 {
+  <video>
+    <source
+      src="https://s3-us-west-1.amazonaws.com/flint123/flintdemo.mp4"
+      type="video/mp4" />
+  </video>
+
+  $ = {
+    textAlign: 'center',
+    height: 430,
+    padding: [10, 20, 0],
+    margin: [0, 'auto'],
+    overflow: 'hidden'
+  }
+
+  $video = {
+    border: 'none',
+    width: small ? '100%' : 672,
+    height: small ? '100%' : 450,
+    maxHeight: 420,
+    maxWidth: 672,
+    margin: 'auto',
+    boxShadow: '0 0 20px rgba(0,0,0,0.2)'
+  }
+
+  $title = {
+    fontFamily: ''
+  }
+
+  $desc = {
+    display: 'block',
+    fontSize: 12,
+    padding: [10, 0, 40]
   }
 }
 
@@ -188,25 +239,41 @@ view Video {
 
 view Introduction {
   <h2>
-    Flint is a new system designed
-    to build modern view-based apps
+    A whole new way to build web apps
   </h2>
+  <desc>
+    With a fast custom compiler that makes writing views a breeze,
+    and integration from CLI to editor to browser, Flint is a new
+    way to make apps.
+  </desc>
 
   $ = {
-    padding: [20, 20]
+    padding: [20, 20],
+    maxWidth: '80%',
+    margin: 'auto'
   }
 
   title = {
-    fontWeight: 300,
-    fontSize: 28,
+    fontWeight: 500,
+    letterSpacing: -1,
+    fontSize: 34,
+    margin: [10, 0],
+    color: 'rgb(255, 0, 0)',
     lineHeight: '1.4em',
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: 'Montserrat, Myriad, Helvetica, Arial'
   }
 
   $h2 = [title]
   $h3 = [title, {
     fontSize: 20
   }]
+
+  $desc = {
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: 300
+  }
 }
 
 view Brief {

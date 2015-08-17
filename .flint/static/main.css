@@ -466,3 +466,40 @@ td,
 th {
   padding: 0;
 }
+
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/monsterrat/montserrat-regular-webfont.woff2') format('woff2'),
+       url('/fonts/monsterrat/montserrat-regular-webfont.woff') format('woff'),
+       url('/fonts/monsterrat/montserrat-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/monsterrat/montserrat-regular-bold.woff2') format('woff2'),
+       url('/fonts/monsterrat/montserrat-regular-bold.woff') format('woff'),
+       url('/fonts/monsterrat/montserrat-regular-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/monsterrat/montserrat-semibold-webfont.woff2') format('woff2'),
+       url('/fonts/monsterrat/montserrat-semibold-webfont.woff') format('woff'),
+       url('/fonts/monsterrat/montserrat-semibold-webfont.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/monsterrat/montserrat-light-webfont.woff2') format('woff2'),
+       url('/fonts/monsterrat/montserrat-light-webfont.woff') format('woff'),
+       url('/fonts/monsterrat/montserrat-light-webfont.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
