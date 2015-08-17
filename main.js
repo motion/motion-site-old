@@ -249,7 +249,7 @@ view Video {
 
 view Introduction {
   <h2>
-    A whole new way to build websites
+    A better way to build sites and apps
   </h2>
   <desc>
     A new syntax and compiler to write views with ease,
