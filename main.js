@@ -168,6 +168,17 @@ view Header {
 }
 
 view Video2 {
+  setVideoSize = width => {
+    @videoWidth = Math.max(width, 740)
+    @videoHeight = width / 1.4
+  }
+
+  setVideoSize()
+  shadowSize = 30
+
+  window.addEventListener('resize',
+    () => setVideoSize(window.innerWidth - 20))
+
   <video>
     <source
       src="https://s3-us-west-1.amazonaws.com/flint123/flintdemo.mp4"
@@ -176,30 +187,24 @@ view Video2 {
 
   $ = {
     textAlign: 'center',
-    height: 430,
-    padding: [10, 20, 0],
-    margin: [0, 'auto'],
+    height: @videoHeight - shadowSize,
+    padding: [shadowSize, 20, 0],
+    margin: [-20, 'auto', 0],
     overflow: 'hidden'
   }
 
   $video = {
     border: 'none',
-    width: small ? '100%' : 672,
-    height: small ? '100%' : 450,
-    maxHeight: 420,
-    maxWidth: 672,
+    width: small ? '100%' : @videoHeight,
+    height: small ? '100%' : @videoWidth,
+    maxHeight: @videoHeight,
+    maxWidth: @videoWidth,
     margin: 'auto',
-    boxShadow: '0 0 20px rgba(0,0,0,0.2)'
+    boxShadow: `0 0 ${shadowSize}px rgba(0,0,0,0.2)`
   }
 
   $title = {
     fontFamily: ''
-  }
-
-  $desc = {
-    display: 'block',
-    fontSize: 12,
-    padding: [10, 0, 40]
   }
 }
 
@@ -272,7 +277,9 @@ view Introduction {
   $desc = {
     textAlign: 'center',
     fontSize: 16,
-    fontWeight: 300
+    fontWeight: 300,
+    width: '80%',
+    margin: 'auto'
   }
 }
 
