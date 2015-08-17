@@ -245,39 +245,45 @@ view Video {
 
 view Introduction {
   <h2>
-    A whole new way to build web apps
+    A whole new way to build websites
   </h2>
   <desc>
-    With a fast custom compiler that makes writing views a breeze,
-    and integration from CLI to editor to browser, Flint is a new
-    way to make apps.
+    A new syntax and compiler to write views with ease,
+    with integration from CLI to editor to browser to
+    make development more effective.
   </desc>
 
   $ = {
-    padding: [20, 20],
-    maxWidth: '80%',
+    padding: [30, 20],
     margin: 'auto'
   }
 
   title = {
     fontWeight: 500,
     letterSpacing: -1,
-    fontSize: 34,
+    fontSize: 28,
+    minWidth: 600,
     margin: [10, 0],
-    color: 'rgb(255, 0, 0)',
     lineHeight: '1.4em',
     textAlign: 'center',
     fontFamily: 'Montserrat, Myriad, Helvetica, Arial'
   }
 
-  $h2 = [title]
+  $h2 = [title, {
+    color: 'rgb(218, 3, 3)',
+    margin: 0
+  }]
+
   $h3 = [title, {
-    fontSize: 20
+    color: 'rgb(124, 124, 124)',
+    fontSize: 18
   }]
 
   $desc = {
     textAlign: 'center',
     fontSize: 16,
+    lineHeight: '1.45rem',
+    padding: [10, 0, 0],
     fontWeight: 300,
     width: '80%',
     margin: 'auto'
