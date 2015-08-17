@@ -21,7 +21,7 @@ view Main {
     color: '#7E6F6D',
     fontSize: 14,
     lineHeight: '26px',
-    padding: [46, 0, 0]
+    padding: [44, 0, 0]
   }
 
   $block = {
@@ -94,21 +94,23 @@ view Header {
 
   @active = 0
 
-  <brand>
-    <logo-img src="logo.png" />
-    <tag>Beta</tag>
-  </brand>
-  <links>
-    <a
-      repeat={sections}
-      class={{ active: _index === @active }}>
-      {_}
-    </a>
-  </links>
-  <links>
-    <a class="secondary">Twitter</a>
-    <a class="secondary">Github</a>
-  </links>
+  <Contain>
+    <brand>
+      <logo-img src="logo.png" />
+      <tag>Beta</tag>
+    </brand>
+    <links>
+      <a
+        repeat={sections}
+        class={{ active: _index === @active }}>
+        {_}
+      </a>
+    </links>
+    <links>
+      <a class="secondary">Twitter</a>
+      <a class="secondary">Github</a>
+    </links>
+  </Contain>
 
   $ = {
     position: 'fixed',
@@ -119,7 +121,7 @@ view Header {
     alignItems: 'center',
     justifyContent: 'space-between',
     borderBottom: '1px solid #ddd',
-    padding: [8, 10],
+    padding: [7, 25],
     fontSize: 14,
   }
 
@@ -180,11 +182,13 @@ view Video2 {
   window.addEventListener('resize',
     () => setVideoSize(window.innerWidth - 70))
 
-  <video>
-    <source
-      src="https://s3-us-west-1.amazonaws.com/flint123/flintdemo.mp4"
-      type="video/mp4" />
-  </video>
+  <Contain>
+    <video>
+      <source
+        src="https://s3-us-west-1.amazonaws.com/flint123/flintdemo.mp4"
+        type="video/mp4" />
+    </video>
+  </Contain>
 
   $ = {
     textAlign: 'center',
@@ -450,5 +454,20 @@ view Signup {
     color: '#333',
     background: '#fff',
     padding: 10
+  }
+}
+
+view Contain {
+  <contain yield />
+
+  $ = {
+    maxWidth: 900,
+    width: '100%',
+    margin: 'auto',
+    flexFlow: 'inherit',
+    alignItems: 'inherit',
+    justifyContent: 'inherit',
+    flexGrow: 0,
+    flexShrink: 0
   }
 }
