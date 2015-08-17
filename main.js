@@ -169,15 +169,16 @@ view Header {
 
 view Video2 {
   setVideoSize = width => {
-    @videoWidth = Math.max(width, 740)
-    @videoHeight = width / 1.4
+    w = width || Math.max(width || 0, 740)
+    @videoWidth = w
+    @videoHeight = w / 1.6
   }
 
   setVideoSize()
   shadowSize = 30
 
   window.addEventListener('resize',
-    () => setVideoSize(window.innerWidth - 20))
+    () => setVideoSize(window.innerWidth - 70))
 
   <video>
     <source
@@ -187,7 +188,7 @@ view Video2 {
 
   $ = {
     textAlign: 'center',
-    height: @videoHeight - shadowSize,
+    height: @videoHeight + shadowSize,
     padding: [shadowSize, 20, 0],
     margin: [-20, 'auto', 0],
     overflow: 'hidden'
@@ -195,8 +196,8 @@ view Video2 {
 
   $video = {
     border: 'none',
-    width: small ? '100%' : @videoHeight,
-    height: small ? '100%' : @videoWidth,
+    width: small ? '100%' : @videoWidth,
+    height: small ? '100%' : @videoHeight,
     maxHeight: @videoHeight,
     maxWidth: @videoWidth,
     margin: 'auto',
