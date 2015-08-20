@@ -6,7 +6,7 @@ small = window.innerWidth < 672
 view Main {
   <Logo />
   <Introduction />
-  <Video2 />
+  <Demo />
   <About />
   <Signup />
 
@@ -14,6 +14,83 @@ view Main {
     color: '#7E6F6D',
     fontSize: 14,
     lineHeight: '26px'
+  }
+}
+
+demoBorder = 2
+
+view Demo {
+  <browser>
+    <Toolbar />
+  </browser>
+  <editor>
+    <Toolbar />
+  </editor>
+
+  $ = {
+    flexFlow: 'row'
+  }
+
+  both = {
+    border: '1px solid #eee',
+    width: '50%',
+    height: 200,
+    margin: 0,
+    borderTopRightRadius: demoBorder,
+    borderTopLeftRadius: demoBorder,
+  }
+
+  $browser = [both, {
+    marginRight: 0,
+    borderRight: 'none',
+  }],
+
+  $editor = [both, {
+    marginLeft: 0,
+  }]
+}
+
+view Toolbar {
+  <toolbar>
+    <icon class="close" />
+    <icon class="max" />
+    <icon class="open" />
+  </toolbar>
+
+  f = '#fefefe'
+  to = '#fff'
+
+  $ = {
+    background: `linear-gradient(${f}, ${to})`,
+    borderTop: '1px solid #fff',
+    borderBottom: '1px solid #f5f5f5',
+    height: 12,
+    padding: [0, 2],
+    borderTopRightRadius: demoBorder,
+    borderTopLeftRadius: demoBorder,
+    margin: 0,
+    flexFlow: 'row',
+    alignItems: 'flex-start',
+  }
+
+  $icon = {
+    width: 8,
+    height: 8,
+    transform: {
+      scale: 0.8
+    },
+    background: '#EB5B54',
+    borderRadius: 10,
+    margin: ['auto', 1],
+    opacity: 0.2
+  }
+
+  $.max = {
+    background: '#F7C033'
+  }
+
+  $.open = {
+    background: '#69CB43'
   }
 }
 
@@ -27,7 +104,7 @@ view Section {
 }
 
 view Logo {
-  <img src="logo.png" />
+  <img src="flint.svg" />
   <tag if={false}>Beta</tag>
 
   $ = {
@@ -38,7 +115,7 @@ view Logo {
 
   $img = {
     height: 50,
-    margin: [40, 10, 0, 0],
+    margin: [40, 0, 0, 0],
   }
 
   $tag = {
@@ -52,8 +129,10 @@ view Logo {
 
 view About {
   text = [
-    `Built on top of React and ES6`,
-    `Compatable with npm and all React components`,
+    `Built on React and compotabile with components`,
+    `Modern ES6 JavaScript with view macros`,
+    `Works with npm, with npm install when you import`,
+    `Optimized at compiler level for insane speed`,
     `One command to build and deploy your app`,
     `Open source. Community powered`,
   ]
@@ -76,7 +155,8 @@ view About {
     margin: [0, 0, 15],
     lineHeight: '1.5rem',
     flexFlow: 'row',
-    display: 'flex'
+    display: 'flex',
+    listStyle: 'square outside none'
   }
 }
 
@@ -217,43 +297,43 @@ view Video {
 }
 
 view Introduction {
-  <h2>Radically Improved Development</h2>
-  <desc>Flint makes writing web apps dramatically simpler.</desc>
+  <h2>Radically improved development</h2>
+  <desc>Flint makes writing web apps simpler and faster.</desc>
 
 
   $ = {
-    padding: [30, 20],
+    padding: [25, 20, 40],
     margin: 'auto'
   }
 
   title = {
     // fontFamily: 'Montserrat, Myriad, Helvetica, Arial',
     // letterSpacing: -1,
-    fontWeight: 300,
-    fontSize: 26,
     minWidth: 600,
-    margin: [10, 0],
+    margin: [5, 0],
     lineHeight: '1.4em',
     textAlign: 'center'
   }
 
   $h2 = [title, {
-    color: 'rgb(218, 3, 3)',
-    margin: 0
+    color: '#444',
+    fontSize: 24,
+    fontWeight: 300,
   }]
 
   $h3 = [title, {
     color: 'rgb(124, 124, 124)',
-    fontSize: 18
+    fontSize: 20
   }]
 
   $desc = {
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 20,
     lineHeight: '1.6rem',
-    padding: [10, 0, 0],
+    padding: [5, 0, 0],
     fontWeight: 300,
     width: '80%',
+    color: '#777',
     margin: 'auto'
   }
 }
