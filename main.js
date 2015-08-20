@@ -8,7 +8,15 @@ view Main {
   <Introduction />
   <Demo />
   <About />
-  <Signup />
+
+  <p></p>
+  <Contain>
+    <DemoVideo />
+  </Contain>
+
+  <Contain>
+    <Signup />
+  </Contain>
 
   $ = {
     color: '#7E6F6D',
@@ -25,6 +33,7 @@ view Demo {
   </browser>
   <editor>
     <Toolbar />
+    <Video name="d1.mov" />
   </editor>
 
   $ = {
@@ -32,6 +41,7 @@ view Demo {
   }
 
   both = {
+    flexFlow: 'column',
     border: '1px solid #eee',
     width: '50%',
     height: 200,
@@ -52,9 +62,9 @@ view Demo {
 
 view Toolbar {
   <toolbar>
-    <icon class="close" />
-    <icon class="max" />
-    <icon class="open" />
+    <ctrl class="close" />
+    <ctrl class="max" />
+    <ctrl class="open" />
   </toolbar>
 
   f = '#fefefe'
@@ -73,7 +83,7 @@ view Toolbar {
     alignItems: 'flex-start',
   }
 
-  $icon = {
+  $ctrl = {
     width: 8,
     height: 8,
     transform: {
@@ -129,140 +139,54 @@ view Logo {
 
 view About {
   text = [
-    `Built on React and compotabile with components`,
-    `Modern ES6 JavaScript with view macros`,
-    `Works with npm, with npm install when you import`,
-    `Optimized at compiler level for insane speed`,
-    `One command to build and deploy your app`,
-    `Open source. Community powered`,
+    `Works on and with React`,
+    `Automatic npm installs`,
+    `Modern ES6 with extras`,
+    `Instant hot reloading`,
+    `CLI: new, run, build, deploy`,
+    `Fast compiler: build and runtime`,
   ]
 
-  <ul>
-    <li repeat={text}>
+  <list>
+    <item repeat={text}>
       {_}
-    </li>
-  </ul>
+    </item>
+  </list>
 
   $ = {
     padding: [20, 20]
   }
 
-  $ul = {
-    margin: '0'
+  $list = {
+    margin: [0, 10],
+    flexFlow: 'row',
+    flexWrap: 'wrap',
+    textAlign: 'center'
   }
 
-  $li = {
+  $item = {
     margin: [0, 0, 15],
+    padding: [0, 10],
     lineHeight: '1.5rem',
-    flexFlow: 'row',
-    display: 'flex',
-    listStyle: 'square outside none'
-  }
-}
-
-view Header {
-  sections = [
-    'Video',
-    'Get Started',
-    'Learn'
-  ]
-
-  @active = 0
-
-  <Contain>
-    <links>
-      <a
-        repeat={sections}
-        class={{ active: _index === @active }}>
-        {_}
-      </a>
-    </links>
-    <links>
-      <a class="secondary">Twitter</a>
-      <a class="secondary">Github</a>
-    </links>
-  </Contain>
-
-  $ = {
-    position: 'fixed',
-    top: 0, left: 0, right: 0,
-    background: '#fff',
-    zIndex: 100,
-    flexFlow: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderBottom: '1px solid #ddd',
-    padding: [7, 25],
-    fontSize: 14,
-  }
-
-  $links = {
-    flexFlow: 'row',
-    fontWeight: 'bold'
-  }
-
-  $.secondary = {
-    padding: [2, 10],
-    fontWeight: 300,
-    color: '#999'
-  }
-
-  $a = {
-    margin: [0, 2],
-    padding: [2, 15],
-    borderRadius: 4,
-    color: '#888',
-    fontWeight: 400
-  }
-
-  $.active = {
-    background: 'rgb(73, 113, 200)',
-    color: '#fff',
-    fontWeight: 700
-  }
-}
-
-view Video2 {
-  setVideoSize = width => {
-    w = width || Math.max(width || 0, 740)
-    @videoWidth = w
-    @videoHeight = w / 1.6
-  }
-
-  setVideoSize()
-  shadowSize = 10
-
-  window.addEventListener('resize',
-    () => setVideoSize(window.innerWidth - 70))
-
-  <Contain>
-    <video>
-      <source
-        src="https://s3-us-west-1.amazonaws.com/flint123/flintdemo.mp4"
-        type="video/mp4" />
-    </video>
-  </Contain>
-
-  $ = {
-    textAlign: 'center',
-    height: @videoHeight + shadowSize,
-    padding: [shadowSize, 20, 0],
-    margin: [-20, 'auto', 0],
-    overflow: 'hidden'
-  }
-
-  $video = {
-    border: 'none',
-    width: small ? '100%' : @videoWidth,
-    height: small ? '100%' : @videoHeight,
-    maxHeight: @videoHeight,
-    maxWidth: @videoWidth,
-    margin: 'auto',
-    boxShadow: `0 0 ${shadowSize}px rgba(0,0,0,0.2)`
+    width: '50%'
   }
 }
 
 view Video {
+  <video loop autoplay>
+    <source src={^name} type="video/mp4" />
+  </video>
+
+  $ = {
+    border: 'none',
+    width: '100%',
+    height: '100%',
+    maxHeight: 450,
+    maxWidth: 672
+  }
+}
+
+view DemoVideo {
   <video controls>
     <source
       src="https://s3-us-west-1.amazonaws.com/flint123/flintdemo.mp4"
@@ -395,47 +319,34 @@ view Link {
   }
 }
 
-view Wrap {
-  <div yield />
-
-  $ = {
-    maxWidth: 500,
-    margin: 'auto',
-    width: '100%'
-  }
-}
-
 view Signup {
-  <Wrap>
-    <h3>Join the Flint Beta!</h3>
-    <form action="//flintlang.us11.list-manage.com/subscribe/post?u=d6ee317984756a7f0f5e9378b&amp;id=dcc2cefed5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-      <div id="mc_embed_signup_scroll">
-        <div class="mc-field-group">
-          <input type="text" placeholder="Name" name="NAME" class="" id="mce-NAME" />
-        </div>
-        <div class="mc-field-group">
-          <input type="email" placeholder="Contact (email or handle)" name="EMAIL" class="required email" id="mce-EMAIL" />
-        </div>
-        <div if={false} class="mc-field-group">
-          <textarea name="ABOUT" class="" placeholder="What are you most interested in with Flint? Any feedback?" id="mce-ABOUT"></textarea>
-        </div>
-        <hide id="mce-responses" class="clear">
-          <div class="response" id="mce-error-response" style="display:none"></div>
-          <div class="response" id="mce-success-response" style="display:none"></div>
-        </hide>
-        <hide style="position: absolute; left: -5000px;">
-          <input type="text" name="b_d6ee317984756a7f0f5e9378b_dcc2cefed5" tabindex="-1" value="" />
-        </hide>
-        <center class="clear">
-          <submit-input
-            class="button"
-            type="submit"
-            value="Submit"
-            name="subscribe" id="mc-embedded-subscribe" />
-        </center>
+  <form action="//flintlang.us11.list-manage.com/subscribe/post?u=d6ee317984756a7f0f5e9378b&amp;id=dcc2cefed5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+      <div class="mc-field-group">
+        <input type="text" placeholder="Name" name="NAME" class="" id="mce-NAME" />
       </div>
-    </form>
-  </Wrap>
+      <div class="mc-field-group">
+        <input type="email" placeholder="Contact (email or handle)" name="EMAIL" class="required email" id="mce-EMAIL" />
+      </div>
+      <div if={false} class="mc-field-group">
+        <textarea name="ABOUT" class="" placeholder="What are you most interested in with Flint? Any feedback?" id="mce-ABOUT"></textarea>
+      </div>
+      <hide id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+      </hide>
+      <hide style="position: absolute; left: -5000px;">
+        <input type="text" name="b_d6ee317984756a7f0f5e9378b_dcc2cefed5" tabindex="-1" value="" />
+      </hide>
+      <center class="clear">
+        <submit-input
+          class="button"
+          type="submit"
+          value="Submit"
+          name="subscribe" id="mc-embedded-subscribe" />
+      </center>
+    </div>
+  </form>
 
   $ = {
     margin: 'auto',
