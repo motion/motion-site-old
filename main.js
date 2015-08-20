@@ -4,84 +4,79 @@ secondary = '#FB7124'
 small = window.innerWidth < 672
 
 view Main {
-  <Header />
-
-  <block>
-    <Introduction />
-    <Video if={false} />
-    <Video2 />
-  </block>
-
-  <Brief />
-  <Intro />
-  <Code gist="natew/ec3c1243f8e6559d6bb7" />
+  <Logo />
+  <Introduction />
+  <Video2 />
+  <About />
   <Signup />
 
   $ = {
     color: '#7E6F6D',
     fontSize: 14,
-    lineHeight: '26px',
-    padding: [44, 0, 0]
-  }
-
-  $block = {
-    background: '#f9f9f9',
-    borderBottom: '1px solid #ddd',
-    margin: [0, 0, 40]
+    lineHeight: '26px'
   }
 }
 
-view Intro {
-  text = [
-    `Flint is rethinking development from the start.`,
-    `No more boilerplate code, complex build sytems or awkward mess of libraries.`,
-    `Instant updates between editor and browser as you type with a novel, efficient compiler.`,
-    `Built on React and ES6 (fully compatable with React components & npm). Even automatically installs your npm package when you import.`,
-    `Handles stores, styles, isomorphic rendering, efficient immutable data behind the scenes, all under a powerful CLI.`,
-    `70% less code when writing views, be more creative and faster than ever.`,
-    `One command to deploy your app to a static CDN. Open source. Community powered.`
-  ]
-
-  <left>
-    <p repeat={text} class={{ em: _index === 0 }}>
-      <num if={_index > 0}>{_index}</num> {_}
-    </p>
-  </left>
+view Section {
+  <section yield />
 
   $ = {
-    padding: [50, 20]
+    padding: 40,
+    background: '#eee'
+  }
+}
+
+view Logo {
+  <img src="logo.png" />
+  <tag if={false}>Beta</tag>
+
+  $ = {
+    flexFlow: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 
-  $left = {
-    width: '60%',
-    margin: 'auto'
+  $img = {
+    height: 50,
+    margin: [40, 10, 0, 0],
   }
 
-  $p = {
+  $tag = {
+    fontSize: 12,
+    textTransform: 'uppercase',
+    fontWeight: 500,
+    color: '#aaa',
+    margin: [0, 10, 0, 0]
+  }
+}
+
+view About {
+  text = [
+    `Built on top of React and ES6`,
+    `Compatable with npm and all React components`,
+    `One command to build and deploy your app`,
+    `Open source. Community powered`,
+  ]
+
+  <ul>
+    <li repeat={text}>
+      {_}
+    </li>
+  </ul>
+
+  $ = {
+    padding: [20, 20]
+  }
+
+  $ul = {
+    margin: '0'
+  }
+
+  $li = {
     margin: [0, 0, 15],
-    lineHeight: '1.3rem',
+    lineHeight: '1.5rem',
     flexFlow: 'row',
     display: 'flex'
-  }
-
-  $num = {
-    fontSize: 20,
-    border: '1px solid #ddd',
-    color: '#555',
-    fontWeight: 300,
-    borderRadius: 100,
-    minWidth: 45,
-    minHeight: 45,
-    maxHeight: 45,
-    maxWidth: 45,
-    margin: [0, 15, 0, -60],
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexFlow: 'row'
-  }
-
-  $.em = {
-    fontSize: 16
   }
 }
 
@@ -95,10 +90,6 @@ view Header {
   @active = 0
 
   <Contain>
-    <brand>
-      <logo-img src="logo.png" />
-      <tag>Beta</tag>
-    </brand>
     <links>
       <a
         repeat={sections}
@@ -123,24 +114,6 @@ view Header {
     borderBottom: '1px solid #ddd',
     padding: [7, 25],
     fontSize: 14,
-  }
-
-  $brand = {
-    flexFlow: 'row',
-    alignItems: 'center'
-  }
-
-  $logo = {
-    height: 30,
-    margin: [0, 10, 0, 0],
-  }
-
-  $tag = {
-    fontSize: 12,
-    textTransform: 'uppercase',
-    fontWeight: 500,
-    color: '#aaa',
-    margin: [0, 10, 0, 0]
   }
 
   $links = {
@@ -177,7 +150,7 @@ view Video2 {
   }
 
   setVideoSize()
-  shadowSize = 30
+  shadowSize = 10
 
   window.addEventListener('resize',
     () => setVideoSize(window.innerWidth - 70))
@@ -206,10 +179,6 @@ view Video2 {
     maxWidth: @videoWidth,
     margin: 'auto',
     boxShadow: `0 0 ${shadowSize}px rgba(0,0,0,0.2)`
-  }
-
-  $title = {
-    fontFamily: ''
   }
 }
 
@@ -248,14 +217,9 @@ view Video {
 }
 
 view Introduction {
-  <h2>
-    A better way to build sites and apps
-  </h2>
-  <desc>
-    A new syntax and compiler to write views with ease,
-    with integration from CLI to editor to browser to
-    make development more effective.
-  </desc>
+  <h2>Radically Improved Development</h2>
+  <desc>Flint makes writing web apps dramatically simpler.</desc>
+
 
   $ = {
     padding: [30, 20],
@@ -263,14 +227,14 @@ view Introduction {
   }
 
   title = {
-    fontWeight: 500,
-    letterSpacing: -1,
-    fontSize: 28,
+    // fontFamily: 'Montserrat, Myriad, Helvetica, Arial',
+    // letterSpacing: -1,
+    fontWeight: 300,
+    fontSize: 26,
     minWidth: 600,
     margin: [10, 0],
     lineHeight: '1.4em',
-    textAlign: 'center',
-    fontFamily: 'Montserrat, Myriad, Helvetica, Arial'
+    textAlign: 'center'
   }
 
   $h2 = [title, {
@@ -285,8 +249,8 @@ view Introduction {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 16,
-    lineHeight: '1.45rem',
+    fontSize: 18,
+    lineHeight: '1.6rem',
     padding: [10, 0, 0],
     fontWeight: 300,
     width: '80%',
@@ -356,25 +320,14 @@ view Wrap {
 
   $ = {
     maxWidth: 500,
+    margin: 'auto',
     width: '100%'
   }
 }
 
 view Signup {
-  <desc>
-    <Wrap>
-      <p>
-        This is an early preview of Flint.
-      </p>
-      <p>
-        We're rolling out Flint to developers who are interesting in helping
-        make development better.
-      </p>
-    </Wrap>
-  </desc>
-  <h3>Join the Flint Beta!</h3>
-
   <Wrap>
+    <h3>Join the Flint Beta!</h3>
     <form action="//flintlang.us11.list-manage.com/subscribe/post?u=d6ee317984756a7f0f5e9378b&amp;id=dcc2cefed5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <div id="mc_embed_signup_scroll">
         <div class="mc-field-group">
@@ -405,6 +358,7 @@ view Signup {
   </Wrap>
 
   $ = {
+    margin: 'auto',
     position: 'relative',
     zIndex: 100,
     padding: [0, 0, 100],
