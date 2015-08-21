@@ -37,7 +37,6 @@ view Main {
 
   $ = {
     color: '#777',
-    minWidth: 800,
     fontSize: 18,
     fontFamily: 'Georgia',
     lineHeight: '2rem',
@@ -45,11 +44,11 @@ view Main {
 
   $p = {
     textAlign: 'center',
-    margin: [40, 0, 60]
+    margin: [40, 0]
   }
 }
 
-demoBorder = 2
+demoBorder = 5
 
 view Demo {
   <browser>
@@ -61,26 +60,33 @@ view Demo {
   </editor>
 
   $ = {
-    flexFlow: 'row'
+    flexFlow: 'row',
+    margin: 'auto',
+    boxShadow: '0 0 10px rgba(0,0,0,0.05)',
+    borderRadius: demoBorder,
+    width: '80%',
+    maxWidth: 700,
   }
 
   both = {
     flexFlow: 'column',
     border: '1px solid #eee',
     width: '50%',
-    height: 250,
+    height: 220,
     margin: 0,
-    borderTopRightRadius: demoBorder,
-    borderTopLeftRadius: demoBorder,
   }
 
   $browser = [both, {
     marginRight: 0,
     borderRight: 'none',
+    borderTopLeftRadius: demoBorder,
+    borderBottomLeftRadius: demoBorder,
   }],
 
   $editor = [both, {
     marginLeft: 0,
+    borderTopRightRadius: demoBorder,
+    borderBottomRightRadius: demoBorder,
   }]
 }
 
@@ -99,6 +105,7 @@ view Toolbar {
     borderTop: '1px solid #fff',
     borderBottom: '1px solid #f5f5f5',
     height: 12,
+    minHeight: 12,
     padding: [0, 2],
     borderTopRightRadius: demoBorder,
     borderTopLeftRadius: demoBorder,
@@ -232,8 +239,8 @@ view DemoVideo {
 
   $video = {
     border: 'none',
-    width: small ? '100%' : 672,
-    height: small ? '100%' : 450,
+    width: '100%',
+    height: '100%',
     maxHeight: 450,
     maxWidth: 672
   }
@@ -432,6 +439,7 @@ view Contain {
   <contain yield />
 
   $ = {
+    minWidth: 500,
     maxWidth: 800,
     width: '100%',
     margin: 'auto',
