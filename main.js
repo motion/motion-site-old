@@ -23,7 +23,7 @@ view Main {
   <About />
 
   <Contain>
-    <Explanation />
+    <Motto />
   </Contain>
 
   <Contain>
@@ -451,35 +451,27 @@ view Contain {
   }
 }
 
-view Explanation {
+view Motto {
   <p>
     React has proven the idea of using self-contained views
     as a beautiful abstraction for the web.
+    ES6 has improved, yet it is the limiting factor in making
+    developers lives more productive and creative.
   </p>
   <p>
-    Only JavaScript limits us in making this abstraction easy
-    and sensible to use.
-  </p>
-  <p>
-    Assembling a stack with today's best practices takes weeks
-    to learn, days to assemble, and never-ending studying and
-    caretaking.
-  </p>
-  <p>
-    If we're lucky, we have a half decent platform
-    for making our ideas come alive, with high costs.
+    Assembling a stack with today's best-practice takes weeks
+    to learn, days to assemble, and never-ending caretaking.
+    If lucky, we end with a half-decent setup that we must mantain.
   </p>
   <p>
     We are <em>writing to the library </em>
-    rather than having the language understand you.
-  </p>
-  <p>
+    rather than having the language understand how we want to build.
     Flint is a realization of the view abstraction,
     with a philosophy: allow developers to be maximally creative.
   </p>
   <p>
-    With a critical and empathetic eye,
-    we've rethought what we want in a web programming platform:
+    With a critical, empathetic eye,
+    we've rethought what we want in programming:
   </p>
   <ul>
     <li>Light abstractions designed for speed and expressivity</li>
@@ -489,7 +481,9 @@ view Explanation {
   </ul>
 
   $ = {
-    padding: [40, '15%']
+    padding: [40, '15%'],
+    fontSize: 15,
+    lineHeight: '1.8rem'
   }
 
   $p = {
@@ -497,7 +491,7 @@ view Explanation {
   }
 
   $li = {
-    margin: [15, 0, 0]
+    margin: [10, 0, 0]
   }
 }
 
