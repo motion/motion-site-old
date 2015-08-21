@@ -27,10 +27,6 @@ view Main {
   </Contain>
 
   <Contain>
-    <Signup />
-  </Contain>
-
-  <Contain>
     <DemoVideo />
   </Contain>
 
@@ -479,6 +475,10 @@ view Motto {
     <li>Ability to go from idea to live with ease</li>
     <li>Smart tools that enable simple code</li>
   </ul>
+  <p>
+    Watch our 3 minute video where we build an interactive,
+    animated web app from scratch, while teaching you all of Flint:
+  </p>
 
   $ = {
     padding: [40, '15%'],
