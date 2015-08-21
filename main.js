@@ -6,15 +6,21 @@ small = window.innerWidth < 672
 view Main {
   <Logo />
   <Introduction />
-  <Demo />
-  <Demo />
-  <Demo />
-  <About />
 
-  <p></p>
   <Contain>
-    <DemoVideo />
+    <Demo />
+    <p>Write your structure just like HTML</p>
+
+    <Demo />
+    <p>Use variables and constants as you like</p>
+
+    <Demo />
+    <p>Style elements with variables</p>
   </Contain>
+
+  <Install />
+
+  <About />
 
   <Contain>
     <Explanation />
@@ -24,12 +30,22 @@ view Main {
     <Signup />
   </Contain>
 
+  <Contain>
+    <DemoVideo />
+  </Contain>
+
+
   $ = {
     color: '#777',
     minWidth: 800,
     fontSize: 18,
     fontFamily: 'Georgia',
     lineHeight: '2rem',
+  }
+
+  $p = {
+    textAlign: 'center',
+    margin: [40, 0, 60]
   }
 }
 
@@ -132,7 +148,7 @@ view Logo {
   }
 
   $img = {
-    height: 140,
+    height: 141,
     margin: [10, 0, -40, 0],
   }
 
@@ -166,15 +182,18 @@ view About {
   }
 
   $list = {
-    margin: [0, 10],
+    margin: [0, 100],
+    padding: [40, 0],
+    border: '1px solid #ddd',
+    borderRadius: 5,
     flexFlow: 'row',
     flexWrap: 'wrap',
     textAlign: 'center'
   }
 
   $item = {
-    margin: [0, 0, 15],
-    padding: [0, 10],
+    margin: [8, 0],
+    padding: [0],
     lineHeight: '1.5rem',
     width: '50%'
   }
@@ -471,5 +490,22 @@ view Explanation {
 
   $li = {
     margin: [15, 0, 0]
+  }
+}
+
+view Install {
+  <button>
+    npm install -g flint
+  </button>
+
+  $button = {
+    background: 'green',
+    width: 250,
+    padding: [10, 0],
+    margin: 'auto',
+    color: 'white',
+    textAlign: 'center',
+    borderRadius: 10,
+    border: 'none'
   }
 }
