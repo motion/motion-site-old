@@ -122,7 +122,7 @@ view Section {
 }
 
 view Logo {
-  <img src="flint.svg" />
+  <img src="flint2.svg" />
   <tag if={false}>Beta</tag>
 
   $ = {
@@ -132,8 +132,8 @@ view Logo {
   }
 
   $img = {
-    height: 50,
-    margin: [40, 0, 0, 0],
+    height: 140,
+    margin: [10, 0, -40, 0],
   }
 
   $tag = {
