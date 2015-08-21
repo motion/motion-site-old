@@ -7,6 +7,8 @@ view Main {
   <Logo />
   <Introduction />
   <Demo />
+  <Demo />
+  <Demo />
   <About />
 
   <p></p>
@@ -21,7 +23,8 @@ view Main {
   $ = {
     color: '#7E6F6D',
     fontSize: 14,
-    lineHeight: '26px'
+    lineHeight: '26px',
+    minWidth: 800
   }
 }
 
@@ -44,7 +47,7 @@ view Demo {
     flexFlow: 'column',
     border: '1px solid #eee',
     width: '50%',
-    height: 200,
+    height: 250,
     margin: 0,
     borderTopRightRadius: demoBorder,
     borderTopLeftRadius: demoBorder,
@@ -180,9 +183,7 @@ view Video {
   $ = {
     border: 'none',
     width: '100%',
-    height: '100%',
-    maxHeight: 450,
-    maxWidth: 672
+    height: '100%'
   }
 }
 
@@ -257,7 +258,7 @@ view Introduction {
     padding: [5, 0, 0],
     fontWeight: 300,
     width: '80%',
-    color: '#777',
+    color: '#666',
     margin: 'auto'
   }
 }
