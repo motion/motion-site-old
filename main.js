@@ -17,14 +17,19 @@ view Main {
   </Contain>
 
   <Contain>
+    <Explanation />
+  </Contain>
+
+  <Contain>
     <Signup />
   </Contain>
 
   $ = {
-    color: '#7E6F6D',
-    fontSize: 14,
-    lineHeight: '26px',
-    minWidth: 800
+    color: '#777',
+    minWidth: 800,
+    fontSize: 18,
+    fontFamily: 'Georgia',
+    lineHeight: '2rem',
   }
 }
 
@@ -142,12 +147,12 @@ view Logo {
 
 view About {
   text = [
-    `Works on and with React`,
+    `Works on React`,
     `Automatic npm installs`,
-    `Modern ES6 with extras`,
-    `Instant hot reloading`,
-    `CLI: new, run, build, deploy`,
-    `Fast compiler: build and runtime`,
+    `Modern ES6, simplified`,
+    `Instant updates as you type`,
+    `Faster runtime`,
+    `Smart errors and tools`,
   ]
 
   <list>
@@ -228,7 +233,8 @@ view Introduction {
 
   $ = {
     padding: [25, 20, 40],
-    margin: 'auto'
+    margin: 'auto',
+    fontFamily: 'Helvetica Neue, Helvetica, Arail, sans-serif'
   }
 
   title = {
@@ -407,7 +413,7 @@ view Contain {
   <contain yield />
 
   $ = {
-    maxWidth: 900,
+    maxWidth: 800,
     width: '100%',
     margin: 'auto',
     flexFlow: 'inherit',
@@ -415,5 +421,55 @@ view Contain {
     justifyContent: 'inherit',
     flexGrow: 0,
     flexShrink: 0
+  }
+}
+
+view Explanation {
+  <p>
+    React has proven the idea of using self-contained views
+    as a beautiful abstraction for the web.
+  </p>
+  <p>
+    Only JavaScript limits us in making this abstraction easy
+    and sensible to use.
+  </p>
+  <p>
+    Assembling a stack with today's best practices takes weeks
+    to learn, days to assemble, and never-ending studying and
+    caretaking.
+  </p>
+  <p>
+    If we're lucky, we have a half decent platform
+    for making our ideas come alive, with high costs.
+  </p>
+  <p>
+    We are <em>writing to the library </em>
+    rather than having the language understand you.
+  </p>
+  <p>
+    Flint is a realization of the view abstraction,
+    with a philosophy: allow developers to be maximally creative.
+  </p>
+  <p>
+    With a critical and empathetic eye,
+    we've rethought what we want in a web programming platform:
+  </p>
+  <ul>
+    <li>Light abstractions designed for speed and expressivity</li>
+    <li>Immediate, helpful feedback as we create</li>
+    <li>Ability to go from idea to live with ease</li>
+    <li>Smart tools that enable simple code</li>
+  </ul>
+
+  $ = {
+    padding: [40, '15%']
+  }
+
+  $p = {
+    marginBottom: 0
+  }
+
+  $li = {
+    margin: [15, 0, 0]
   }
 }
