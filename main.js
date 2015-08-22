@@ -20,7 +20,9 @@ view Main {
 
   <Install />
 
-  <About />
+  <Contain>
+    <About />
+  </Contain>
 
   <Contain>
     <Motto />
@@ -181,12 +183,15 @@ view About {
   </list>
 
   $ = {
-    padding: [20, 20]
+    padding: [20, 0],
+    fontSize: 16,
+    maxWidth: 700,
+    margin: [30, 'auto', 0]
   }
 
   $list = {
-    margin: [0, 100],
-    padding: [40, 0],
+    margin: [0, '10%'],
+    padding: [40, '5%'],
     border: '1px solid #ddd',
     borderRadius: 5,
     flexFlow: 'row',
@@ -448,30 +453,25 @@ view Contain {
 }
 
 view Motto {
+  <h2>About Flint</h2>
   <p>
-    React has proven the idea of using self-contained views
-    as a beautiful abstraction for the web.
-    ES6 has improved, yet it is the limiting factor in making
-    developers lives more productive and creative.
+    React's self-contained views are a beautiful abstraction
+    for the web. ES6 is great too. But our systems don't work
+    together well today.
+    Assembling a best-practice stack takes months to learn, weeks
+    to assemble, and never-ending caretaking.
   </p>
   <p>
-    Assembling a stack with today's best-practice takes weeks
-    to learn, days to assemble, and never-ending caretaking.
-    If lucky, we end with a half-decent setup that we must mantain.
+    We are <em>writing for our libraries </em>
+    rather than having an intuitive language to build with.
   </p>
   <p>
-    We are <em>writing to the library </em>
-    rather than having the language understand how we want to build.
-    Flint is a realization of the view abstraction,
-    with a philosophy: allow developers to be maximally creative.
-  </p>
-  <p>
-    With a critical, empathetic eye,
-    we've rethought what we want in programming:
+    Flint is a language for this, with amazing tooling.
+    Our philosophy: allow developers to be maximally creative with,
   </p>
   <ul>
     <li>Light abstractions designed for speed and expressivity</li>
-    <li>Immediate, helpful feedback as we create</li>
+    <li>Immediate, helpful feedback throughout</li>
     <li>Ability to go from idea to live with ease</li>
     <li>Smart tools that enable simple code</li>
   </ul>
@@ -492,6 +492,13 @@ view Motto {
 
   $li = {
     margin: [10, 0, 0]
+  }
+
+  $h2 = {
+    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+    textAlign: 'center',
+    fontWeight: 300,
+    fontSize: 24
   }
 }
 
