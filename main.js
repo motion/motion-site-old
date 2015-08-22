@@ -4,6 +4,10 @@ secondary = '#FB7124'
 small = window.innerWidth < 672
 
 view Main {
+  <ribbon>
+    <a href="#">GitHub</a>
+  </ribbon>
+
   <Logo />
   <Introduction />
 
@@ -38,6 +42,33 @@ view Main {
     fontSize: 18,
     fontFamily: 'Georgia',
     lineHeight: '2rem',
+  }
+
+  $span = {
+    position: 'absolute',
+    top: 0,
+    right: 0
+  }
+
+  $ribbon = {
+    backgroundColor: '#888',
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
+    position: 'absolute',
+    right: -60,
+    top: 30,
+    width: 220,
+    transform: `rotate(45deg)`,
+  }
+
+  $a = {
+    color: '#fff',
+    display: 'block',
+    font: '81.25% "Helvetica Neue", Helvetica, Arial, sans-serif',
+    margin: '1px 0',
+    padding: '4px 85px',
+    textAlign: 'center',
+    textDecoration: 'none',
   }
 
   $p = {
@@ -255,7 +286,7 @@ view DemoVideo {
 
 view Introduction {
   <h2>Radically improved development</h2>
-  <desc>Flint makes writing web apps simpler and faster.</desc>
+  <desc>Write web apps simpler, easier and faster.</desc>
 
 
   $ = {
