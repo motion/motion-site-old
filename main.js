@@ -1,17 +1,9 @@
-import keysim from 'keysim'
-
 height = window.innerHeight - 160
 primary = '#970C0A'
 secondary = '#FB7124'
 small = window.innerWidth < 672
 
 view Main {
-  on('mount', () => {
-    keyboard = keysim.Keyboard.US_ENGLISH;
-    keyboard
-      .dispatchEventsForInput('hello!', this.refs.text);
-  })
-
   <ribbon>
     <a href="#">GitHub</a>
   </ribbon>
@@ -62,7 +54,7 @@ view Main {
   }
 
   $ribbon = {
-    backgroundColor: '#aaa',
+    background: '#aaa',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     position: 'absolute',
@@ -186,7 +178,7 @@ view Section {
 }
 
 view Logo {
-  <img src="flint.png" />
+  <img src="flint-small.png" srcset="flint.png 2x" />
   <tag if={false}>Beta</tag>
 
   $ = {
@@ -197,6 +189,7 @@ view Logo {
 
   $img = {
     width: 159,
+    minWidth: 159,
     margin: [10, 0, 0, 0],
   }
 
