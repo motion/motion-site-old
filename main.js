@@ -1,12 +1,24 @@
+import keysim from 'keysim'
+
 height = window.innerHeight - 160
 primary = '#970C0A'
 secondary = '#FB7124'
 small = window.innerWidth < 672
 
 view Main {
+  on('mount', () => {
+    keyboard = keysim.Keyboard.US_ENGLISH;
+    keyboard
+      .dispatchEventsForInput('hello!', this.refs.text);
+  })
+
   <ribbon>
     <a href="#">GitHub</a>
   </ribbon>
+
+  <test>
+    <textarea ref="text" />
+  </test>
 
   <Logo />
   <Introduction />
@@ -36,7 +48,6 @@ view Main {
     <DemoVideo />
   </Contain>
 
-
   $ = {
     color: '#777',
     fontSize: 18,
@@ -51,7 +62,7 @@ view Main {
   }
 
   $ribbon = {
-    backgroundColor: '#888',
+    backgroundColor: '#aaa',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     position: 'absolute',
@@ -64,9 +75,10 @@ view Main {
   $a = {
     color: '#fff',
     display: 'block',
-    font: '81.25% "Helvetica Neue", Helvetica, Arial, sans-serif',
-    margin: '1px 0',
-    padding: '4px 85px',
+    font: '14px "Helvetica Neue", Helvetica, Arial, sans-serif',
+    margin: 0,
+    padding: '3px 0',
+    width: '100%',
     textAlign: 'center',
     textDecoration: 'none',
   }
@@ -174,7 +186,7 @@ view Section {
 }
 
 view Logo {
-  <img src="flint2.svg" />
+  <img src="flint.png" />
   <tag if={false}>Beta</tag>
 
   $ = {
@@ -184,8 +196,8 @@ view Logo {
   }
 
   $img = {
-    height: 141,
-    margin: [10, 0, -40, 0],
+    width: 159,
+    margin: [10, 0, 0, 0],
   }
 
   $tag = {
