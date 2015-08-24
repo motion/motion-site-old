@@ -79,8 +79,6 @@ view Main {
 }
 
 view Header {
-  height = 480
-
   <out>
     <Logo />
     <Introduction />
@@ -92,8 +90,11 @@ view Header {
 
   $ = {
     flexFlow: 'row',
-    width: '100%'
+    width: '100%',
+    margin: [0, 0, 120]
   }
+
+  height = 280
 
   $out = {
     width: '50%',
@@ -115,7 +116,9 @@ view Header {
 
   $iframe = {
     height,
-    border: 'none'
+    border: 'none',
+    padding: 5,
+    overflow: 'hidden'
   }
 }
 
@@ -149,7 +152,7 @@ view Introduction {
   <desc>Write web apps powerfully fast.</desc>
 
   $ = {
-    padding: [25, 20, 40],
+    padding: [25, 20, 0],
     fontFamily: 'Helvetica Neue, Helvetica, Arail, sans-serif',
     textAlign: 'center'
   }
