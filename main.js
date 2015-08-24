@@ -24,11 +24,6 @@ view Main {
 
   <Editor left bg="rgb(194, 194, 194)" />
 
-  <Contain>
-    <Demo />
-    <p>Write your structure just like HTML</p>
-  </Contain>
-
   <Install />
 
   <Contain>
@@ -84,12 +79,12 @@ view Main {
 
   $p = {
     textAlign: 'center',
-    margin: [8, 0]
+    margin: [5, 0]
   }
 
   $section = {
-    margin: [40, 0],
-    padding: [35, 0],
+    margin: [30, 0],
+    padding: [25, 0],
     border: '1px solid #eee',
     borderRight: 'none',
     borderLeft: 'none',
@@ -370,7 +365,7 @@ view About {
     padding: [20, 0],
     fontSize: 16,
     maxWidth: 700,
-    margin: [30, 'auto', 0]
+    margin: [0, 'auto']
   }
 
   $list = {
@@ -647,13 +642,14 @@ view Install {
   </button>
 
   $button = {
-    background: 'green',
-    width: 250,
-    padding: [10, 0],
-    margin: 'auto',
+    background: '#B44944',
+    padding: [20, 0],
+    margin: [10, 0],
+    width: '100%',
     color: 'white',
     textAlign: 'center',
-    borderRadius: 10,
+    fontFamily: 'monospace',
+    fontSize: 24,
     border: 'none'
   }
 }
