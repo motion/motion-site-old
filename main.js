@@ -39,10 +39,18 @@ view Main {
 
   <Example>
     <Row>
-      <Demo2 />
+      <Demo3 />
     </Row>
     <Editor right bg="#fff" src="example3.html" />
   </Example>
+
+  <Contain>
+    <section>
+      <p>
+        Compose views with ease.
+      </p>
+    </section>
+  </Contain>
 
   <Install />
 
@@ -64,7 +72,6 @@ view Main {
     fontFamily: 'Georgia',
     lineHeight: '2rem',
     padding: [30, 0],
-    maxWidth: 1000,
     margin: 'auto'
   }
 
@@ -113,9 +120,11 @@ view Main {
 }
 
 view Example {
-  <example yield />
+  <Contain>
+    <example yield />
+  </Contain>
 
-  $ = {
+  $example = {
     flexFlow: 'row'
   }
 }
@@ -156,17 +165,48 @@ view Demo2 {
   }
 }
 
+view Demo3 {
+  <Row1>
+    <Col>Hello</Col>
+    <Col>Hello</Col>
+    <Col>Hello</Col>
+  </Row1>
+
+  $ = { width: '100%' }
+}
+
+view Row1 {
+  <row1>{^children}</row1>
+
+  $ = {
+    flexFlow: 'row',
+    flexGrow: 1
+  }
+}
+
+view Col {
+  <column>{^children}</column>
+
+  $ = {
+    flexGrow: 1,
+    background: '#eee',
+    margin: 5
+  }
+}
+
 view Header {
   height = 280
 
-  <out>
-    <Logo />
-    <Introduction />
-  </out>
-  <Editor
-    right
-    height={height}
-    src="example.html" />
+  <Contain>
+    <out>
+      <Logo />
+      <Introduction />
+    </out>
+    <Editor
+      right
+      height={height}
+      src="example.html" />
+  </Contain>
 
   $ = {
     flexFlow: 'row',
@@ -312,47 +352,6 @@ view Introduction {
 
 
 demoBorder = 5
-
-view Demo {
-  <browser>
-    <Toolbar />
-    <Video if={false} name="d1.mov" />
-  </browser>
-  <editor>
-    <Toolbar />
-    <Video if={false} name="d1.mov" />
-  </editor>
-
-  $ = {
-    flexFlow: 'row',
-    margin: 'auto',
-    boxShadow: '0 0 10px rgba(0,0,0,0.05)',
-    borderRadius: demoBorder,
-    width: '80%',
-    maxWidth: 700,
-  }
-
-  both = {
-    flexFlow: 'column',
-    border: '1px solid #eee',
-    width: '50%',
-    height: 220,
-    margin: 0,
-  }
-
-  $browser = [both, {
-    marginRight: 0,
-    borderRight: 'none',
-    borderTopLeftRadius: demoBorder,
-    borderBottomLeftRadius: demoBorder,
-  }],
-
-  $editor = [both, {
-    marginLeft: 0,
-    borderTopRightRadius: demoBorder,
-    borderBottomRightRadius: demoBorder,
-  }]
-}
 
 view Toolbar {
   <toolbar>
@@ -641,13 +640,13 @@ view Contain {
 
   $ = {
     minWidth: 500,
-    maxWidth: 800,
+    maxWidth: 1000,
     width: '100%',
     margin: 'auto',
     flexFlow: 'inherit',
     alignItems: 'inherit',
     justifyContent: 'inherit',
-    flexGrow: 0,
+    flexGrow: 1,
     flexShrink: 0
   }
 }
