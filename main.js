@@ -535,34 +535,32 @@ view Contain {
 view Motto {
   <h2>About Flint</h2>
   <p>
-    React's self-contained views are a beautiful abstraction
-    for the web. ES6 is great too. But our systems don't work
-    together well today.
+    React's views are an amazingly simple abstraction,
+    but there's no good way to build with them today.
     Assembling a best-practice stack takes months to learn, weeks
     to assemble, and never-ending caretaking.
   </p>
   <p>
-    We are <em>writing for our libraries </em>
-    rather than having an intuitive language to build with.
+    We are <em>writing around the library </em>
+    rather than having an intuitive language that lets us be
+    productive.
+    Flint solves this with a few macros on top of ES6 that
+    lighten the language, along with some amazing tooling.
   </p>
   <p>
-    Flint is a language for this, with amazing tooling.
-    Our philosophy: allow developers to be maximally creative with,
+    Our philosophy: allow developers to be maximally creative through,
   </p>
   <ul>
-    <li>Light abstractions designed for speed and expressivity</li>
-    <li>Immediate, helpful feedback throughout</li>
-    <li>Ability to go from idea to live with ease</li>
-    <li>Smart tools that enable simple code</li>
+    <li>A cohesive system that works from compiler to browser</li>
+    <li>Light abstractions that enable speed</li>
+    <li>Immediate feedback and helpful errors</li>
+    <li>Ability to go from idea to live without documentation</li>
+    <li>Smart tools that help you understand whats happening</li>
   </ul>
-  <p>
-    Watch our 3 minute video where we build an interactive,
-    animated web app from scratch, while teaching you all of Flint:
-  </p>
 
   $ = {
     padding: [40, '15%'],
-    fontSize: 15,
+    fontSize: 17,
     lineHeight: '1.8rem'
   }
 
