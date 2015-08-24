@@ -13,12 +13,11 @@ view Main {
   <Contain>
     <section>
       <p>
-        Flint simplifies ES6
-        and introduces the view.
+        Flint simplifies ES6 and introduces the <b>view</b>.
       </p>
       <p>
-        It's smart compiler instantly updates the browser
-        as you type.
+        It's compiler updates the browser
+        with each character.
       </p>
     </section>
   </Contain>
@@ -49,7 +48,9 @@ view Main {
     fontSize: 18,
     fontFamily: 'Georgia',
     lineHeight: '2rem',
-    padding: [30, 0]
+    padding: [30, 0],
+    maxWidth: 1000,
+    margin: 'auto'
   }
 
   $span = {
@@ -83,16 +84,16 @@ view Main {
 
   $p = {
     textAlign: 'center',
-    margin: [10, 0]
+    margin: [8, 0]
   }
 
   $section = {
-    margin: [45, 0],
-    padding: [10, 0],
+    margin: [40, 0],
+    padding: [35, 0],
     border: '1px solid #eee',
     borderRight: 'none',
     borderLeft: 'none',
-    fontSize: 16,
+    fontSize: 18,
   }
 }
 
@@ -172,8 +173,42 @@ view Logo {
 }
 
 view Introduction {
+  phrases = ['powerfully fast', 'simpler', 'more creatively']
+  @desc = ''
+
+  delayTime = 5000
+  @phrase = 0
+  @pos = 0
+
+  setTimeout(() => {
+    setInterval(step, 130)
+  }, 1300);
+
+  step = () => {
+    Flint.batch(() => {
+      // if reached end
+      if (@pos === phrases[@phrase].length) {
+        @pos = -1
+        @phrase += 1
+        @delay = delayTime
+      }
+
+      if (@delay > 0) {
+        @delay -= 100
+        return
+      }
+
+      if (@phrase == phrases.length)
+        @phrase = 0
+
+      @pos += 1
+
+      @desc = phrases[@phrase].slice(0, @pos)
+    });
+  }
+
   <h2>Radically improved development</h2>
-  <desc>Write web apps powerfully fast.</desc>
+  <desc>Write web apps {@desc}.</desc>
 
   $ = {
     padding: [25, 20, 0],
@@ -208,7 +243,9 @@ view Introduction {
     fontWeight: 300,
     width: '80%',
     color: '#666',
-    margin: [0, 'auto']
+    margin: [0, 'auto'],
+    display: 'block',
+    height: 10
   }
 }
 

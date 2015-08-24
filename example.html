@@ -40,11 +40,11 @@
 <body>
   <code><pre>
 <span class="o">view</span> Main {
-  <span class="b">@desc</span> = <span class="y">&#39;<span id="change">powerfully fast</span><hr />&#39;</span>
+  <span class="b">@desc</span> = <span class="y">&#39;<span id="change"></span><hr />&#39;</span>
 
   <span class="r">&lt;img src=</span><span class="y">&quot;flint.png&quot;</span><span class="r"> /&gt;</span>
   <span class="r">&lt;h1&gt;</span>Radically improved development<span class="r">&lt;/h1&gt;</span>
-  <span class="r">&lt;h2&gt;</span>Write web apps {<span class="b">@desc</span>}<span class="r">&lt;/h2&gt;</span>
+  <span class="r">&lt;h2&gt;</span>Write web apps {<span class="b">@desc</span>}.<span class="r">&lt;/h2&gt;</span>
 
   <span class="w">$img</span> = { width: <span class="y">159</span> }
 }<pre></code>
@@ -52,19 +52,20 @@
 
   <script>
     var phrases = ['powerfully fast', 'simpler', 'with ease']
-    var activePhrase = 0;
-    var curPos = phrases[activePhrase].length
-    var timeBetweenPhrases = 4000;
+    var phrase = 0;
+    var char = 0
+    var timeBetweenPhrases = 5000;
     var curDelay = 0;
 
-    setInterval(advance, 100)
+    setTimeout(function() {
+      setInterval(advance, 130)
+    }, 1000)
 
     function advance() {
       // if reached end
-      if (curPos === phrases[activePhrase].length) {
-        curPos = -1;
-        activePhrase += 1
-
+      if (char === phrases[phrase].length) {
+        char = -1;
+        phrase += 1;
         curDelay = timeBetweenPhrases;
       }
 
@@ -73,12 +74,12 @@
         return
       }
 
-      if (activePhrase > phrases.length - 1)
-        activePhrase = 0;
+      if (phrase === phrases.length)
+        phrase = 0;
 
-      curPos += 1;
+      char += 1;
 
-      document.getElementById('change').innerHTML = phrases[activePhrase].slice(0, curPos)
+      document.getElementById('change').innerHTML = phrases[phrase].slice(0, char)
     }
   </script>
 </body>

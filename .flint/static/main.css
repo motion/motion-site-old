@@ -30,7 +30,7 @@ a, button, input, textarea {
   align-self: flex-start;
 }
 
-a, span, em {
+a, span, em, b, strong {
   white-space: pre-wrap;
   display: inline;
 }
