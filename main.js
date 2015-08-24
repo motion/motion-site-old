@@ -17,8 +17,8 @@ view Main {
         and introduces the view.
       </p>
       <p>
-        It's smart compiler instantly refreshes your browser
-        as your type.
+        It's smart compiler instantly updates the browser
+        as you type.
       </p>
     </section>
   </Contain>
