@@ -150,7 +150,8 @@ view Introduction {
 
   $ = {
     padding: [25, 20, 40],
-    fontFamily: 'Helvetica Neue, Helvetica, Arail, sans-serif'
+    fontFamily: 'Helvetica Neue, Helvetica, Arail, sans-serif',
+    textAlign: 'center'
   }
 
   title = {
