@@ -79,7 +79,7 @@ view Main {
 }
 
 view Header {
-  height = 520
+  height = 480
 
   <out>
     <Logo />
@@ -87,7 +87,7 @@ view Header {
   </out>
   <in>
     <Toolbar />
-    <iframe src="example.txt"></iframe>
+    <iframe src="example.html"></iframe>
   </in>
 
   $ = {
@@ -106,10 +106,10 @@ view Header {
     flexFlow: 'column',
     height,
     border: '2px solid #ddd',
-    borderRadius: 5,
+    borderRadius: 8,
     margin: 10,
     marginRight: -10,
-    background: '#eee',
+    background: '#1E2B33',
     fontFamily: 'monospace'
   }
 
@@ -146,8 +146,7 @@ view Logo {
 
 view Introduction {
   <h2>Radically improved development</h2>
-  <desc>Write web apps simpler, easier and faster.</desc>
-
+  <desc>Write web apps powerfully fast.</desc>
 
   $ = {
     padding: [25, 20, 40],
