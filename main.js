@@ -11,10 +11,16 @@ view Main {
   <Header />
 
   <Contain>
-    <p>
-      Flint is a lightweight layer that simplifies ES6
-      and introduces the view.
-    </p>
+    <section>
+      <p>
+        Flint is a lightweight layer that simplifies ES6
+        and introduces the view.
+      </p>
+      <p>
+        It's smart compiler instantly refreshes your browser
+        as your type.
+      </p>
+    </section>
   </Contain>
 
   <Editor left bg="rgb(194, 194, 194)" />
@@ -39,7 +45,7 @@ view Main {
   </Contain>
 
   $ = {
-    color: '#777',
+    color: '#333',
     fontSize: 18,
     fontFamily: 'Georgia',
     lineHeight: '2rem',
@@ -76,7 +82,10 @@ view Main {
   }
 
   $p = {
-    textAlign: 'center',
+    textAlign: 'center'
+  }
+
+  $section = {
     margin: [70, 0]
   }
 }

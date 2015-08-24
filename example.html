@@ -54,8 +54,8 @@
     var phrases = ['powerfully fast', 'simpler', 'with ease']
     var activePhrase = 0;
     var curPos = phrases[activePhrase].length
-    var timeBetween = 4000;
-    var curBetween = 0;
+    var timeBetweenPhrases = 4000;
+    var curDelay = 0;
 
     setInterval(advance, 100)
 
@@ -65,11 +65,11 @@
         curPos = -1;
         activePhrase += 1
 
-        curBetween = timeBetween;
+        curDelay = timeBetweenPhrases;
       }
 
-      if (curBetween > 0) {
-        curBetween -= 100
+      if (curDelay > 0) {
+        curDelay -= 100
         return
       }
 
