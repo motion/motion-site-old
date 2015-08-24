@@ -4,16 +4,11 @@ secondary = '#FB7124'
 small = window.innerWidth < 672
 
 view Main {
-  <ribbon>
+  <banner>
     <a href="#">GitHub</a>
-  </ribbon>
+  </banner>
 
-  <test>
-    <textarea ref="text" />
-  </test>
-
-  <Logo />
-  <Introduction />
+  <Header />
 
   <Contain>
     <Demo />
@@ -45,6 +40,7 @@ view Main {
     fontSize: 18,
     fontFamily: 'Georgia',
     lineHeight: '2rem',
+    padding: [30, 0]
   }
 
   $span = {
@@ -53,7 +49,8 @@ view Main {
     right: 0
   }
 
-  $ribbon = {
+  $banner = {
+    display: 'none',
     background: '#aaa',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
@@ -81,15 +78,126 @@ view Main {
   }
 }
 
+view Header {
+  height = 520
+
+  <out>
+    <Logo />
+    <Introduction />
+  </out>
+  <in>
+    <Toolbar />
+    <iframe src="example.txt"></iframe>
+  </in>
+
+  $ = {
+    flexFlow: 'row',
+    width: '100%'
+  }
+
+  $out = {
+    width: '50%',
+    justifyContent: 'center',
+    height,
+  }
+
+  $in = {
+    width: '50%',
+    flexFlow: 'column',
+    height,
+    border: '2px solid #ddd',
+    borderRadius: 5,
+    margin: 10,
+    marginRight: -10,
+    background: '#eee',
+    fontFamily: 'monospace'
+  }
+
+  $iframe = {
+    height,
+    border: 'none'
+  }
+}
+
+view Logo {
+  <img src="flint-small.png" srcset="flint.png 2x" />
+  <tag if={false}>Beta</tag>
+
+  $ = {
+    flexFlow: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+
+  $img = {
+    width: 159,
+    minWidth: 159,
+    margin: [10, 0, 0, 0],
+  }
+
+  $tag = {
+    fontSize: 12,
+    textTransform: 'uppercase',
+    fontWeight: 500,
+    color: '#aaa',
+    margin: [0, 10, 0, 0]
+  }
+}
+
+view Introduction {
+  <h2>Radically improved development</h2>
+  <desc>Write web apps simpler, easier and faster.</desc>
+
+
+  $ = {
+    padding: [25, 20, 40],
+    fontFamily: 'Helvetica Neue, Helvetica, Arail, sans-serif'
+  }
+
+  title = {
+    // fontFamily: 'Montserrat, Myriad, Helvetica, Arial',
+    // letterSpacing: -1,
+    margin: [5, 0],
+    lineHeight: '1.4em',
+    textAlign: 'center'
+  }
+
+  $h2 = [title, {
+    color: '#444',
+    fontSize: 24,
+    fontWeight: 300,
+  }]
+
+  $h3 = [title, {
+    color: 'rgb(124, 124, 124)',
+    fontSize: 20
+  }]
+
+  $desc = {
+    textAlign: 'center',
+    fontSize: 20,
+    lineHeight: '1.6rem',
+    padding: [5, 0, 0],
+    fontWeight: 300,
+    width: '80%',
+    color: '#666',
+    margin: [0, 'auto']
+  }
+}
+
+
+
+
 demoBorder = 5
 
 view Demo {
   <browser>
     <Toolbar />
+    <Video if={false} name="d1.mov" />
   </browser>
   <editor>
     <Toolbar />
-    <Video name="d1.mov" />
+    <Video if={false} name="d1.mov" />
   </editor>
 
   $ = {
@@ -177,30 +285,6 @@ view Section {
   }
 }
 
-view Logo {
-  <img src="flint-small.png" srcset="flint.png 2x" />
-  <tag if={false}>Beta</tag>
-
-  $ = {
-    flexFlow: 'row',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-
-  $img = {
-    width: 159,
-    minWidth: 159,
-    margin: [10, 0, 0, 0],
-  }
-
-  $tag = {
-    fontSize: 12,
-    textTransform: 'uppercase',
-    fontWeight: 500,
-    color: '#aaa',
-    margin: [0, 10, 0, 0]
-  }
-}
 
 view About {
   text = [
@@ -286,49 +370,6 @@ view DemoVideo {
     display: 'block',
     fontSize: 12,
     padding: [10, 0, 40]
-  }
-}
-
-view Introduction {
-  <h2>Radically improved development</h2>
-  <desc>Write web apps simpler, easier and faster.</desc>
-
-
-  $ = {
-    padding: [25, 20, 40],
-    margin: 'auto',
-    fontFamily: 'Helvetica Neue, Helvetica, Arail, sans-serif'
-  }
-
-  title = {
-    // fontFamily: 'Montserrat, Myriad, Helvetica, Arial',
-    // letterSpacing: -1,
-    minWidth: 600,
-    margin: [5, 0],
-    lineHeight: '1.4em',
-    textAlign: 'center'
-  }
-
-  $h2 = [title, {
-    color: '#444',
-    fontSize: 24,
-    fontWeight: 300,
-  }]
-
-  $h3 = [title, {
-    color: 'rgb(124, 124, 124)',
-    fontSize: 20
-  }]
-
-  $desc = {
-    textAlign: 'center',
-    fontSize: 20,
-    lineHeight: '1.6rem',
-    padding: [5, 0, 0],
-    fontWeight: 300,
-    width: '80%',
-    color: '#666',
-    margin: 'auto'
   }
 }
 
