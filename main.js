@@ -13,7 +13,7 @@ view Main {
   <Contain>
     <section>
       <p>
-        Flint is a lightweight layer that simplifies ES6
+        Flint simplifies ES6
         and introduces the view.
       </p>
       <p>
@@ -87,11 +87,12 @@ view Main {
   }
 
   $section = {
-    margin: [50, 0],
+    margin: [45, 0],
+    padding: [10, 0],
     border: '1px solid #eee',
     borderRight: 'none',
     borderLeft: 'none',
-    fontSize: 16
+    fontSize: 16,
   }
 }
 
