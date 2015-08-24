@@ -82,11 +82,16 @@ view Main {
   }
 
   $p = {
-    textAlign: 'center'
+    textAlign: 'center',
+    margin: [10, 0]
   }
 
   $section = {
-    margin: [70, 0]
+    margin: [50, 0],
+    border: '1px solid #eee',
+    borderRight: 'none',
+    borderLeft: 'none',
+    fontSize: 16
   }
 }
 
