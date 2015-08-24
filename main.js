@@ -11,14 +11,17 @@ view Main {
   <Header />
 
   <Contain>
+    <p>
+      Flint is a lightweight layer that simplifies ES6
+      and introduces the view.
+    </p>
+  </Contain>
+
+  <Editor left bg="rgb(194, 194, 194)" />
+
+  <Contain>
     <Demo />
     <p>Write your structure just like HTML</p>
-
-    <Demo />
-    <p>Use variables and constants as you like</p>
-
-    <Demo />
-    <p>Style elements with variables</p>
   </Contain>
 
   <Install />
@@ -74,43 +77,49 @@ view Main {
 
   $p = {
     textAlign: 'center',
-    margin: [40, 0]
+    margin: [70, 0]
   }
 }
 
 view Header {
+  height = 280
+
   <out>
     <Logo />
     <Introduction />
   </out>
-  <in>
-    <Toolbar />
-    <iframe src="example.html"></iframe>
-  </in>
+  <Editor
+    right
+    height={height}
+    src="example.html" />
 
   $ = {
     flexFlow: 'row',
     width: '100%',
-    margin: [0, 0, 120]
+    margin: [0]
   }
-
-  height = 280
 
   $out = {
     width: '50%',
     justifyContent: 'center',
-    height,
+    height
   }
+}
 
-  $in = {
+view Editor {
+  <Toolbar />
+  <iframe src={^src}></iframe>
+
+  $ = {
     width: '50%',
     flexFlow: 'column',
-    height,
+    height: ^height || 300,
     border: '2px solid #ddd',
     borderRadius: 8,
     margin: 10,
-    marginRight: -10,
-    background: '#1E2B33',
+    marginRight: ^right ? -10 : 10,
+    marginLeft: ^left ? -10 : 10,
+    background: ^bg || '#1E2B33',
     fontFamily: 'monospace'
   }
 
@@ -553,9 +562,9 @@ view Motto {
   <ul>
     <li>A cohesive system that works from compiler to browser</li>
     <li>Light abstractions that enable speed</li>
-    <li>Immediate feedback and helpful errors</li>
-    <li>Ability to go from idea to live without documentation</li>
-    <li>Smart tools that help you understand whats happening</li>
+    <li>Immediate feedback, helpful errors</li>
+    <li>No boilerplate, go from idea to live with a CLI</li>
+    <li>Smart tools</li>
   </ul>
 
   $ = {
