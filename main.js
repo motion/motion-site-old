@@ -4,6 +4,7 @@ secondary = '#FB7124'
 small = window.innerWidth < 672
 
 view Main {
+  <Install small />
   <banner>
     <a href="#">GitHub</a>
   </banner>
@@ -11,7 +12,7 @@ view Main {
   <Header />
 
   <Contain>
-    <section>
+    <section class="simple">
       <p>
         Flint simplifies ES6 and introduces the <b>view</b>.
       </p>
@@ -64,18 +65,13 @@ view Main {
     <About />
   </Contain>
 
-  <Contain>
-    <section>
-      <DemoVideo />
-    </section>
-  </Contain>
+  <DemoVideo />
 
   $ = {
     color: '#333',
     fontSize: 18,
     fontFamily: 'Georgia',
     lineHeight: '2rem',
-    padding: [30, 0],
     margin: 'auto'
   }
 
@@ -86,7 +82,6 @@ view Main {
   }
 
   $banner = {
-    display: 'none',
     background: '#aaa',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
@@ -115,11 +110,15 @@ view Main {
 
   $section = {
     margin: [30, 0],
-    padding: [25, 0],
-    border: '1px dotted #eee',
+    padding: [15, 0],
     borderRight: 'none',
     borderLeft: 'none',
     fontSize: 18,
+  }
+
+  $.simple = {
+    border: 'none',
+    padding: [5, 0]
   }
 }
 
@@ -214,8 +213,9 @@ view Header {
 
   $ = {
     flexFlow: 'row',
-    width: '100%',
-    margin: [0]
+    margin: [0],
+    padding: [40, 0, 30],
+    background: "#f3f3f3"
   }
 
   $out = {
@@ -261,8 +261,6 @@ view Logo {
   }
 
   $img = {
-    width: 159,
-    minWidth: 159,
     margin: [10, 0, 0, 0],
   }
 
@@ -463,20 +461,29 @@ view Video {
 }
 
 view DemoVideo {
-  <video controls>
-    <source
-      src="https://s3-us-west-1.amazonaws.com/flint123/flintdemo.mp4"
-      type="video/mp4" />
-    <a
-      href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
-      See on YouTube
-    </a>
-  </video>
-  <desc>
-    Start from 2:13 to see the live demonstration.
-  </desc>
+  <Contain>
+    <center>
+      <video controls>
+        <source
+          src="https://s3-us-west-1.amazonaws.com/flint123/flintdemo.mp4"
+          type="video/mp4" />
+        <a
+          href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
+          See on YouTube
+        </a>
+      </video>
+      <desc>
+        Start from 2:13 to see the live demonstration.
+      </desc>
+    </center>
+  </Contain>
 
   $ = {
+    background: '#f2f2f2',
+    padding: [20, 0]
+  }
+
+  $center = {
     margin: 'auto',
     textAlign: 'center'
   }
@@ -492,7 +499,7 @@ view DemoVideo {
   $desc = {
     display: 'block',
     fontSize: 12,
-    padding: [10, 0, 40]
+    padding: [10, 0]
   }
 }
 
@@ -654,7 +661,6 @@ view Contain {
 }
 
 view About {
-  <h2>About Flint</h2>
   <p>
     React's views are an amazingly simple abstraction,
     but there's no good way to build with them today.
@@ -680,7 +686,7 @@ view About {
   </ul>
 
   $ = {
-    padding: [40, '15%'],
+    padding: [20, 0],
     fontSize: 17,
     lineHeight: '1.8rem'
   }
@@ -702,11 +708,11 @@ view About {
 }
 
 view Install {
-  <button>
+  <p>
     npm install -g flint
-  </button>
+  </p>
 
-  $button = {
+  $p = [{
     background: '#B44944',
     padding: [20, 0],
     margin: [10, 0],
@@ -716,5 +722,11 @@ view Install {
     fontFamily: 'monospace',
     fontSize: 24,
     border: 'none'
-  }
+  }, ^small && {
+    padding: [2, 0, 20],
+    fontSize: 18,
+    color: '#B44944',
+    background: 'none',
+    margin: [0, 0, -60],
+  }]
 }
