@@ -1,0 +1,36 @@
+<html>
+<head>
+  <style>
+    body {
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    code {
+      color: #555;
+      font-size: 18;
+      line-height: 1.6rem;
+    }
+
+    .y { color: rgb(144, 156, 15); }
+    .b { color: rgb(94, 119, 215); }
+    .o { color: rgb(218, 130, 47); }
+    .g { color: rgb(106, 106, 106); }
+    .r { color: rgb(241, 93, 93); }
+  </style>
+</head>
+<body>
+  <code><pre>
+<span class="o">view</span> Counter {
+  <span class="b">@count</span> = <span class="y">0</span>
+
+  <span class="b">increment</span> = () => <span class="b">@count</span>++
+  <span class="b">decrement</span> = () => <span class="b">@count</span>--
+
+  <span class="r">&lt;button onClick={</span><span class="b">increment</span><span class="r">}&gt;</span>Up<span class="r">&lt;/button&gt;</span>
+  <span class="r">&lt;button onClick={</span><span class="b">decrement</span><span class="r">}&gt;</span>Down<span class="r">&lt;/button&gt;</span>
+  <span class="r">&lt;strong&gt;</span>Count is {<span class="b">@count</span>}<span class="r">&lt;/strong&gt;</span>
+}<pre></code>
+</body>
+</html>

@@ -22,7 +22,27 @@ view Main {
     </section>
   </Contain>
 
-  <Editor left bg="rgb(194, 194, 194)" />
+  <Example>
+    <Editor left bg="#fff" src="example2.html" />
+    <Row>
+      <Demo2 />
+    </Row>
+  </Example>
+
+  <Contain>
+    <section>
+      <p>
+        Variables us the at sign, constants don't.
+      </p>
+    </section>
+  </Contain>
+
+  <Example>
+    <Row>
+      <Demo2 />
+    </Row>
+    <Editor right bg="#fff" src="example3.html" />
+  </Example>
 
   <Install />
 
@@ -85,10 +105,54 @@ view Main {
   $section = {
     margin: [30, 0],
     padding: [25, 0],
-    border: '1px solid #eee',
+    border: '1px dotted #eee',
     borderRight: 'none',
     borderLeft: 'none',
     fontSize: 18,
+  }
+}
+
+view Example {
+  <example yield />
+
+  $ = {
+    flexFlow: 'row'
+  }
+}
+
+view Row {
+  <row yield />
+
+  $ = {
+    flexFlow: 'row',
+    padding: 10,
+    width: '50%'
+  }
+}
+
+view Demo2 {
+  @count = 0
+
+  increment = () => @count++
+  decrement = () => @count--
+
+  <center>
+    <button onClick={increment}>Up</button>
+    <button onClick={decrement}>Down</button>
+  </center>
+  <strong>Count is {@count}</strong>
+
+  $ = {
+    margin: 'auto',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    textAlign: 'center'
+  }
+
+  $center = {
+    flexFlow: 'row',
+    margin: 'auto'
   }
 }
 
