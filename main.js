@@ -607,11 +607,11 @@ view Motto {
     Our philosophy: allow developers to be maximally creative through,
   </p>
   <ul>
-    <li>A cohesive system that works from compiler to browser</li>
+    <li>Integrates with CLI, compiler, editor and browser</li>
     <li>Light abstractions that enable speed</li>
-    <li>Immediate feedback, helpful errors</li>
-    <li>No boilerplate, go from idea to live with a CLI</li>
-    <li>Smart tools</li>
+    <li>Immediate feedback and helpful errors</li>
+    <li>Go from idea to launch with ease</li>
+    <li>Smart tooling</li>
   </ul>
 
   $ = {
