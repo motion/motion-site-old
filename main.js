@@ -6,7 +6,7 @@ small = window.innerWidth < 672
 view Main {
   <Install small />
   <banner>
-    <a href="#">GitHub</a>
+    <a href="https://github.com/flint-lang">GitHub</a>
   </banner>
 
   <Header />
@@ -82,12 +82,13 @@ view Main {
   }
 
   $banner = {
+    display: 'none',
     background: '#aaa',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     position: 'absolute',
-    right: -60,
-    top: 30,
+    right: -90,
+    top: 0,
     width: 220,
     transform: `rotate(45deg)`,
   }
@@ -214,7 +215,7 @@ view Header {
   $ = {
     flexFlow: 'row',
     margin: [0],
-    padding: [40, 0, 30],
+    padding: [50, 0, 30],
     background: "#f3f3f3"
   }
 
@@ -239,7 +240,9 @@ view Editor {
     marginRight: ^right ? -10 : 10,
     marginLeft: ^left ? -10 : 10,
     background: ^bg || '#1E2B33',
-    fontFamily: 'monospace'
+    fontFamily: 'monospace',
+    position: 'relative',
+    zIndex: 10
   }
 
   $iframe = {
@@ -274,7 +277,7 @@ view Logo {
 }
 
 view Introduction {
-  phrases = ['powerfully fast', 'simpler', 'more creatively']
+  phrases = ['powerfully fast', 'without boilerplate', 'more creatively']
   @desc = ''
 
   delayTime = 5000
