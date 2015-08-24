@@ -40,7 +40,7 @@
 <body>
   <code><pre>
 <span class="o">view</span> Main {
-  <span class="b">@desc</span> = <span id="change" class="y">&#39;powerfully fast<hr />&#39;</span>
+  <span class="b">@desc</span> = <span class="y">&#39;<span id="change">powerfully fast</span><hr />&#39;</span>
 
   <span class="r">&lt;img src=</span><span class="y">&quot;flint.png&quot;</span><span class="r"> /&gt;</span>
   <span class="r">&lt;h1&gt;</span>Radically improved development<span class="r">&lt;/h1&gt;</span>
@@ -54,6 +54,8 @@
     var phrases = ['powerfully fast', 'simpler', 'with ease']
     var activePhrase = 0;
     var curPos = phrases[activePhrase].length
+    var timeBetween = 4000;
+    var curBetween = 0;
 
     setInterval(advance, 100)
 
@@ -62,6 +64,13 @@
       if (curPos === phrases[activePhrase].length) {
         curPos = -1;
         activePhrase += 1
+
+        curBetween = timeBetween;
+      }
+
+      if (curBetween > 0) {
+        curBetween -= 100
+        return
       }
 
       if (activePhrase > phrases.length - 1)
@@ -69,7 +78,7 @@
 
       curPos += 1;
 
-      document.getElementById('change').innerHTML = "'" + phrases[activePhrase].slice(0, curPos) + '<hr />' + "'"
+      document.getElementById('change').innerHTML = phrases[activePhrase].slice(0, curPos)
     }
   </script>
 </body>
