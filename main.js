@@ -55,15 +55,19 @@ view Main {
   <Install />
 
   <Contain>
+    <section>
+      <FeaturesList />
+    </section>
+  </Contain>
+
+  <Contain pad>
     <About />
   </Contain>
 
   <Contain>
-    <Motto />
-  </Contain>
-
-  <Contain>
-    <DemoVideo />
+    <section>
+      <DemoVideo />
+    </section>
   </Contain>
 
   $ = {
@@ -408,7 +412,7 @@ view Section {
 }
 
 
-view About {
+view FeaturesList {
   text = [
     `Works on React`,
     `Automatic npm installs`,
@@ -425,16 +429,13 @@ view About {
   </list>
 
   $ = {
-    padding: [20, 0],
     fontSize: 16,
-    maxWidth: 700,
     margin: [0, 'auto']
   }
 
   $list = {
     margin: [0, '10%'],
-    padding: [40, '5%'],
-    border: '1px solid #ddd',
+    padding: [0, '5%'],
     borderRadius: 5,
     flexFlow: 'row',
     flexWrap: 'wrap',
@@ -647,11 +648,12 @@ view Contain {
     alignItems: 'inherit',
     justifyContent: 'inherit',
     flexGrow: 1,
-    flexShrink: 0
+    flexShrink: 0,
+    padding: ^pad ? [0, 140] : 0
   }
 }
 
-view Motto {
+view About {
   <h2>About Flint</h2>
   <p>
     React's views are an amazingly simple abstraction,
