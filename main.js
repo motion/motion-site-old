@@ -114,7 +114,7 @@ view Main {
     padding: [15, 0],
     borderRight: 'none',
     borderLeft: 'none',
-    fontSize: 18,
+    fontSize: 20,
   }
 
   $.simple = {
@@ -320,18 +320,13 @@ view Introduction {
 
   $h2 = [title, {
     color: '#444',
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: 300,
-  }]
-
-  $h3 = [title, {
-    color: 'rgb(124, 124, 124)',
-    fontSize: 20
   }]
 
   $desc = {
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 22,
     lineHeight: '1.6rem',
     padding: [5, 0, 0],
     fontWeight: 300,
