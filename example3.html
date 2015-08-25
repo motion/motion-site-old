@@ -22,10 +22,24 @@
 </head>
 <body>
   <code><pre>
-<span class="o">view</span> Main {
-  <span class="r">&lt;button onClick={</span><span class="b">increment</span><span class="r">}&gt;</span>Up<span class="r">&lt;/button&gt;</span>
-  <span class="r">&lt;button onClick={</span><span class="b">decrement</span><span class="r">}&gt;</span>Down<span class="r">&lt;/button&gt;</span>
-  <span class="r">&lt;strong&gt;</span>Count is {<span class="b">@count</span>}<span class="r">&lt;/strong&gt;</span>
+view Venn {
+  <one class="circle" />
+  <two class="circle" />
+
+  $ = { flexFlow: 'row' }
+
+  $.circle = {
+    borderRadius: 100,
+    background: 'rgba(200, 200, 100, 0.5)',
+    width: '50%'
+  }
 }<pre></code>
 </body>
 </html>
+
+
+<!-- <span class="o">view</span> Main {
+  <span class="r">&lt;button onClick={</span><span class="b">increment</span><span class="r">}&gt;</span>Up<span class="r">&lt;/button&gt;</span>
+  <span class="r">&lt;button onClick={</span><span class="b">decrement</span><span class="r">}&gt;</span>Down<span class="r">&lt;/button&gt;</span>
+  <span class="r">&lt;strong&gt;</span>Count is {<span class="b">@count</span>}<span class="r">&lt;/strong&gt;</span>
+} -->

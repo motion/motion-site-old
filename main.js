@@ -52,7 +52,7 @@ view Main {
   <Contain>
     <section>
       <p>
-        Variables us the at sign, constants don't.
+        Use views anywhere with ease...
       </p>
     </section>
   </Contain>
@@ -62,6 +62,21 @@ view Main {
       <Demo3 />
     </Row>
     <Editor right light src="example3.html" />
+  </Example>
+
+  <Contain>
+    <section>
+      <p>
+        Style elements easily
+      </p>
+    </section>
+  </Contain>
+
+  <Example>
+    <Editor left light src="example3.html" />
+    <Row>
+      <Demo4 />
+    </Row>
   </Example>
 
   <Install />
@@ -122,7 +137,7 @@ view Main {
   }
 
   $section = {
-    margin: [30, 0],
+    margin: [20, 0],
     padding: [15, 0],
     borderRight: 'none',
     borderLeft: 'none',
@@ -131,6 +146,27 @@ view Main {
 
   $.simple = {
     border: 'none'
+  }
+}
+
+view Demo4 {
+  <one class="circle" />
+  <two class="circle" />
+
+  $ = {
+    flexFlow: 'row',
+    width: '100%'
+  }
+
+  $.circle = {
+    borderRadius: 100,
+    width: 200, height: 200,
+    margin: 'auto',
+    background: 'rgba(200, 200, 100, 0.5)',
+  }
+
+  $two = {
+    background: 'red'
   }
 }
 
