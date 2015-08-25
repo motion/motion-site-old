@@ -746,9 +746,11 @@ view Install {
   <h2>
     Install
   </h2>
-  <p>
-    npm install -g flint
-  </p>
+  <intructions>
+    <p>npm install -g flint</p>
+    <p class="small">flint new myapp</p>
+    <p class="small">flint</p>
+  </intructions>
 
   $ = {
     borderTop: '1px solid #ddd',
@@ -758,9 +760,12 @@ view Install {
 
   $h2 = h2
 
+  $instructions = {
+    padding: [20, 0],
+  }
+
   $p = [{
     color: '#000',
-    padding: [20, 0],
     margin: [10, 0],
     width: '100%',
     textAlign: 'center',
@@ -773,6 +778,12 @@ view Install {
     background: 'none',
     margin: [0, 0, -60],
   }]
+
+  $.small = {
+    fontSize: 18,
+    color: '#777',
+    margin: 0
+  }
 }
 
 
