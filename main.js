@@ -21,10 +21,6 @@ view Main {
       <p>
         Flint simplifies ES6 and introduces the <b>view</b>.
       </p>
-      <p>
-        It's compiler updates the browser
-        with each character.
-      </p>
     </section>
   </Contain>
 
