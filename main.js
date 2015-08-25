@@ -220,13 +220,15 @@ view Header {
       src="example.html" />
   </Contain>
   <strip />
+  <strip class="red" />
 
   $ = {
     flexFlow: 'row',
-    margin: [0, 0, 10],
-    padding: [50, 0],
+    margin: 0,
+    padding: [50, 0, 60],
     background: "#f3f3f3",
-    position: 'relative'
+    position: 'relative',
+    overflow: 'hidden'
   }
 
   $out = {
@@ -243,15 +245,28 @@ view Header {
   }
 
   $strip = {
-    background: '#f3f3f3',
+    background: '#fff',
     height: 100,
     width: '140%',
     position: 'absolute',
-    bottom: -10,
+    bottom: -90,
     left: -100,
-    zIndex: 0,
+    zIndex: 10,
     transform: {
-      rotate: '-1deg'
+      rotate: '1deg'
+    }
+  }
+
+  $.red = {
+    background: 'rgb(235, 235, 235)',
+    height: 1500,
+    width: '140%',
+    top: -100,
+    right: -1000,
+    zIndex: 0,
+    left: 'auto',
+    transform: {
+      rotate: '-40deg'
     }
   }
 }
