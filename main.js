@@ -269,12 +269,12 @@ view Header {
       src="example.html" />
   </Contain>
   <strip />
-  <strip class="red" />
+  <strip class="alt" />
 
   $ = {
     flexFlow: 'row',
     margin: 0,
-    padding: [50, 0, 60],
+    padding: [55, 0, 65],
     background: "#f3f3f3",
     position: 'relative',
     overflow: 'hidden'
@@ -306,7 +306,7 @@ view Header {
     }
   }
 
-  $.red = {
+  $.alt = {
     background: 'rgb(235, 235, 235)',
     height: 1500,
     width: '140%',
@@ -585,14 +585,17 @@ view DemoVideo {
       </desc>
     </center>
   </Contain>
+  <strip />
 
   $ = {
     background: '#f2f2f2',
+    position: 'relative',
+    zIndex: 0,
   }
 
   $center = {
     margin: 'auto',
-    padding: [20, 180],
+    padding: [60, 180],
     textAlign: 'center',
     alignItems: 'center'
   }
@@ -609,6 +612,18 @@ view DemoVideo {
     display: 'block',
     fontSize: 16,
     padding: [10, 0]
+  }
+
+  $strip = {
+    background: '#fff',
+    height: 100,
+    width: '140%',
+    position: 'absolute',
+    top: -90,
+    left: -100,
+    transform: {
+      rotate: '-1deg'
+    }
   }
 }
 
@@ -764,7 +779,9 @@ view Contain {
     justifyContent: 'inherit',
     flexGrow: 1,
     flexShrink: 0,
-    padding: ^pad ? [0, '10%'] : 0
+    padding: ^pad ? [0, '10%'] : 0,
+    position: 'relative',
+    zIndex: 10
   }
 }
 
