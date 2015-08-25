@@ -189,40 +189,59 @@ view Col {
 }
 
 view Header {
+  @startIntro = false
   height = 280
 
   <Contain>
     <out>
       <Logo />
-      <Introduction />
+      <Introduction start={@startIntro} />
     </out>
     <Editor
       right
       height={height}
+      onLoad={() => @startIntro = true}
       src="example.html" />
   </Contain>
+  <strip />
 
   $ = {
     flexFlow: 'row',
-    margin: [0],
-    padding: [60, 0],
-    background: "#f3f3f3"
+    margin: [0, 0, 10],
+    padding: [50, 0],
+    background: "#f3f3f3",
+    position: 'relative'
   }
 
   $out = {
     width: '50%',
     justifyContent: 'center',
-    height
+    height,
+    position: 'relative',
+    zIndex: 10
   }
 
   $Editor = {
     margin: [0, 0, -100, 0]
   }
+
+  $strip = {
+    background: '#f3f3f3',
+    height: 100,
+    width: '120%',
+    position: 'absolute',
+    bottom: -10,
+    left: -100,
+    zIndex: 0,
+    transform: {
+      rotate: '-1deg'
+    }
+  }
 }
 
 view Editor {
   <Toolbar />
-  <iframe src={^src}></iframe>
+  <iframe src={^src} onLoad={^onLoad}></iframe>
 
   $ = {
     width: '50%',
@@ -267,17 +286,24 @@ view Introduction {
   phrases = ['powerfully fast', 'without boilerplate', 'more creatively']
   @desc = ''
 
-  delayTime = 5000
+  delayTime = 4000
   @phrase = 0
   @pos = 0
 
-  setTimeout(() => {
-    setInterval(step, 130)
-  }, 1300);
+  run = () => {
+    @typer = setInterval(step, 130)
+  }
+
+  on('props', () => {
+    if (^start) setTimeout(run, 1300);
+  })
 
   step = () => {
     Flint.batch(() => {
-      // if reached end
+      if (@phrase == phrases.length)
+        return clearInterval(@typer)
+
+      // if typed to end of word
       if (@pos === phrases[@phrase].length) {
         @pos = -1
         @phrase += 1
@@ -288,9 +314,6 @@ view Introduction {
         @delay -= 100
         return
       }
-
-      if (@phrase == phrases.length)
-        @phrase = 0
 
       @pos += 1
 
@@ -404,6 +427,7 @@ view FeaturesList {
 
   <list>
     <item repeat={text}>
+      <Check2 />
       {_}
     </item>
   </list>
@@ -417,15 +441,21 @@ view FeaturesList {
     padding: [0, '5%'],
     borderRadius: 5,
     flexFlow: 'row',
-    flexWrap: 'wrap',
-    textAlign: 'center'
+    flexWrap: 'wrap'
   }
 
   $item = {
     margin: [8, 0],
     padding: [0],
     lineHeight: '1.5rem',
-    width: '50%'
+    width: '50%',
+    flexFlow: 'row'
+  }
+
+  $Check2 = {
+    width: 20,
+    height: 20,
+    fill: 'green'
   }
 }
 
@@ -718,4 +748,28 @@ view Install {
     background: 'none',
     margin: [0, 0, -60],
   }]
+}
+
+
+view Check {
+  <svg width="510px" height="510px" viewBox="0 0 510 510">
+    <g>
+      <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,382.5L76.5,255l35.7-35.7
+        l91.8,91.8l193.8-193.8l35.7,35.7L204,382.5z"/>
+    </g>
+  </svg>
+}
+
+view Check2 {
+  <svg width="400px" height="400px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;">
+    <g>
+      <path d="M199.996,0C89.713,0,0,89.72,0,200s89.713,200,199.996,200S400,310.28,400,200S310.279,0,199.996,0z M199.996,373.77
+        C104.18,373.77,26.23,295.816,26.23,200c0-95.817,77.949-173.769,173.766-173.769c95.817,0,173.771,77.953,173.771,173.769
+        C373.768,295.816,295.812,373.77,199.996,373.77z"/>
+      <path d="M272.406,134.526L169.275,237.652l-41.689-41.68c-5.123-5.117-13.422-5.12-18.545,0.003
+        c-5.125,5.125-5.125,13.425,0,18.548l50.963,50.955c2.561,2.558,5.916,3.838,9.271,3.838s6.719-1.28,9.279-3.842
+        c0.008-0.011,0.014-0.022,0.027-0.035L290.95,153.071c5.125-5.12,5.125-13.426,0-18.546
+        C285.828,129.402,277.523,129.402,272.406,134.526z"/>
+    </g>
+  </svg>
 }

@@ -56,14 +56,18 @@
     var phrases = ['powerfully fast', 'without boilerplate', 'more creatively']
     var phrase = 0;
     var char = 0
-    var timeBetweenPhrases = 5000;
+    var timeBetweenPhrases = 4000;
     var curDelay = 0;
+    var typer;
 
     setTimeout(function() {
-      setInterval(advance, 130)
+      typer = setInterval(advance, 130)
     }, 1000)
 
     function advance() {
+      if (phrase === phrases.length)
+        return clearInterval(typer)
+
       // if reached end
       if (char === phrases[phrase].length) {
         char = -1;
@@ -75,9 +79,6 @@
         curDelay -= 100
         return
       }
-
-      if (phrase === phrases.length)
-        phrase = 0;
 
       char += 1;
 
