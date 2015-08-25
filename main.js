@@ -23,7 +23,7 @@ view Main {
   </Contain>
 
   <Example>
-    <Editor left bg="#fff" src="example2.html" />
+    <Editor left light src="example2.html" />
     <Row>
       <Demo2 />
     </Row>
@@ -41,7 +41,7 @@ view Main {
     <Row>
       <Demo3 />
     </Row>
-    <Editor right bg="#fff" src="example3.html" />
+    <Editor right light src="example3.html" />
   </Example>
 
   <Install />
@@ -229,12 +229,13 @@ view Editor {
     flexFlow: 'column',
     height: ^height || 300,
     border: '2px solid #ddd',
-    borderRadius: 8,
+    borderWidth: ^light ? 1 : 2,
+    borderRadius: 6,
     boxShadow: '0 0 10px rgba(0,0,0,0.05)',
     margin: 10,
     marginRight: ^right ? -10 : 10,
     marginLeft: ^left ? -10 : 10,
-    background: ^bg || '#1E2B33',
+    background: ^light ? '#fff' : '#1E2B33',
     fontFamily: 'monospace',
     position: 'relative',
     zIndex: 10
@@ -337,7 +338,7 @@ view Introduction {
 
 
 
-demoBorder = 5
+demoBorder = 4
 
 view Toolbar {
   <toolbar>
@@ -346,11 +347,8 @@ view Toolbar {
     <ctrl class="open" />
   </toolbar>
 
-  f = '#fefefe'
-  to = '#fff'
-
   $ = {
-    background: `linear-gradient(${f}, ${to})`,
+    background: '#fefefe',
     borderTop: '1px solid #fff',
     borderBottom: '1px solid #f5f5f5',
     height: 12,
@@ -446,6 +444,10 @@ view Video {
 view DemoVideo {
   <Contain>
     <center>
+      <h2>Learn more</h2>
+      <p>
+        Watch a 5 minute video that explains more behind Flint.
+      </p>
       <video controls>
         <source
           src="https://s3-us-west-1.amazonaws.com/flint123/flintdemo.mp4"
@@ -463,12 +465,13 @@ view DemoVideo {
 
   $ = {
     background: '#f2f2f2',
-    padding: [20, 0]
   }
 
   $center = {
     margin: 'auto',
-    textAlign: 'center'
+    padding: [20, 180],
+    textAlign: 'center',
+    alignItems: 'center'
   }
 
   $video = {
@@ -481,7 +484,7 @@ view DemoVideo {
 
   $desc = {
     display: 'block',
-    fontSize: 12,
+    fontSize: 16,
     padding: [10, 0]
   }
 }
@@ -669,8 +672,7 @@ view About {
   </ul>
 
   $ = {
-    padding: [20, 0],
-    fontSize: 17,
+    padding: [0, 25, 50],
     lineHeight: '1.8rem'
   }
 
@@ -694,6 +696,12 @@ view Install {
   <p>
     npm install -g flint
   </p>
+
+  $ = {
+    borderTop: '1px solid #ddd',
+    padding: [20, 0, 0],
+    margin: [40, 0, 0]
+  }
 
   $p = [{
     color: '#B44944',
