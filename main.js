@@ -4,7 +4,6 @@ secondary = '#FB7124'
 small = window.innerWidth < 672
 
 view Main {
-  <Install small />
   <banner>
     <a href="https://github.com/flint-lang">GitHub</a>
   </banner>
@@ -44,14 +43,6 @@ view Main {
     </Row>
     <Editor right bg="#fff" src="example3.html" />
   </Example>
-
-  <Contain>
-    <section>
-      <p>
-        Compose views with ease.
-      </p>
-    </section>
-  </Contain>
 
   <Install />
 
@@ -214,7 +205,7 @@ view Header {
   $ = {
     flexFlow: 'row',
     margin: [0],
-    padding: [70, 0, 50],
+    padding: [60, 0],
     background: "#f3f3f3"
   }
 
@@ -222,6 +213,10 @@ view Header {
     width: '50%',
     justifyContent: 'center',
     height
+  }
+
+  $Editor = {
+    margin: [0, 0, -100, 0]
   }
 }
 
@@ -235,6 +230,7 @@ view Editor {
     height: ^height || 300,
     border: '2px solid #ddd',
     borderRadius: 8,
+    boxShadow: '0 0 10px rgba(0,0,0,0.05)',
     margin: 10,
     marginRight: ^right ? -10 : 10,
     marginLeft: ^left ? -10 : 10,
@@ -415,7 +411,6 @@ view FeaturesList {
   </list>
 
   $ = {
-    fontSize: 16,
     margin: [0, 'auto']
   }
 
@@ -701,15 +696,13 @@ view Install {
   </p>
 
   $p = [{
-    background: '#B44944',
+    color: '#B44944',
     padding: [20, 0],
     margin: [10, 0],
     width: '100%',
-    color: 'white',
     textAlign: 'center',
     fontFamily: 'monospace',
-    fontSize: 24,
-    border: 'none'
+    fontSize: 24
   }, ^small && {
     padding: [2, 0, 20],
     fontSize: 18,
