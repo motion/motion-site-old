@@ -297,9 +297,7 @@ view Introduction {
     @typer = setInterval(step, 130)
   }
 
-  on('props', () => {
-    if (^start) setTimeout(run, 1300);
-  })
+  setTimeout(run, 1300)
 
   step = () => {
     Flint.batch(() => {
