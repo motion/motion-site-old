@@ -224,7 +224,8 @@ view Header {
     justifyContent: 'center',
     height,
     position: 'relative',
-    zIndex: 10
+    zIndex: 10,
+    margin: [-10, 0, 10]
   }
 
   $Editor = {
@@ -234,7 +235,7 @@ view Header {
   $strip = {
     background: '#f3f3f3',
     height: 100,
-    width: '120%',
+    width: '140%',
     position: 'absolute',
     bottom: -10,
     left: -100,
