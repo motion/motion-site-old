@@ -1,3 +1,9 @@
+import chroma from 'chroma-js'
+
+screen = {
+  small: '@media (max-width: 840px)'
+}
+h2 = { textAlign: 'center' }
 height = window.innerHeight - 160
 primary = '#970C0A'
 secondary = '#FB7124'
@@ -426,8 +432,8 @@ view FeaturesList {
   ]
 
   <list>
-    <item repeat={text}>
-      <Check2 />
+    <item repeat={text} key={_}>
+      <Check2 class="check" />
       {_}
     </item>
   </list>
@@ -436,26 +442,36 @@ view FeaturesList {
     margin: [0, 'auto']
   }
 
+  color = 'rgb(4, 139, 66)'
+
   $list = {
-    margin: [0, '10%'],
+    maxWidth: '80%',
+    margin: [0, 'auto'],
     padding: [0, '5%'],
     borderRadius: 5,
     flexFlow: 'row',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    color: chroma(color).darken(0.2)
   }
 
   $item = {
     margin: [8, 0],
-    padding: [0],
+    padding: [0, 10],
     lineHeight: '1.5rem',
     width: '50%',
-    flexFlow: 'row'
+    flexFlow: 'row',
+
+    [screen.small]: {
+      width: '100%',
+      justifyContent: 'center'
+    }
   }
 
-  $Check2 = {
+  $.check = {
     width: 20,
     height: 20,
-    fill: 'green'
+    fill: color,
+    margin: [1, 10, -3, 0]
   }
 }
 
@@ -660,10 +676,9 @@ view Signup {
 }
 
 view Contain {
-  <contain yield />
+  <contain key={Math.random()} yield />
 
   $ = {
-    minWidth: 500,
     maxWidth: 1000,
     width: '100%',
     margin: 'auto',
@@ -672,38 +687,43 @@ view Contain {
     justifyContent: 'inherit',
     flexGrow: 1,
     flexShrink: 0,
-    padding: ^pad ? [0, 140] : 0
+    padding: ^pad ? [0, '10%'] : 0
   }
 }
 
 view About {
   <p>
-    Views are an amazingly simple abstraction,
-    but there's no good way to build with them today.
+    Views are an amazingly simple abstraction
+    but with no clear or productive way to build with today.
     Assembling a best-practice frontend stack takes months to learn and
     assemble, with never-ending caretaking.
   </p>
   <p>
     We are <em>writing around the library </em>
-    rather than having an intuitive language that lets us be
-    productive.
-    Flint's macros on ES6 lighten the language and give
-    you incredible power and consistency, without having to bootstrap
-    your own complex stack.
+    rather than having an intuitive language that understands
+    how we build.
+    Flint's + ES6 focuses the language on views and simple
+    functions, giving you incredible power and simplicity
+    while avoiding the burden of learning and maintaining a complex stack.
   </p>
   <p>
-    We want to allow developers to be maximally creative with:
+    We want to allow developers to be maximally creative.
+    Let's make developer experience amazing with:
   </p>
   <ul>
     <li>Light abstractions that enable speed</li>
     <li>Immediate feedback and helpful errors</li>
-    <li>Everything you need and nothing more</li>
+    <li>A consistent and powerful environment</li>
     <li>Smart tooling and integration</li>
   </ul>
 
   $ = {
     padding: [0, 25, 50],
-    lineHeight: '1.8rem'
+    lineHeight: '1.8rem',
+
+    [screen.small]: {
+      padding: 0
+    }
   }
 
   $p = {
@@ -723,6 +743,9 @@ view About {
 }
 
 view Install {
+  <h2>
+    Install
+  </h2>
   <p>
     npm install -g flint
   </p>
@@ -733,8 +756,10 @@ view Install {
     margin: [40, 0, 0]
   }
 
+  $h2 = h2
+
   $p = [{
-    color: '#B44944',
+    color: '#000',
     padding: [20, 0],
     margin: [10, 0],
     width: '100%',
@@ -752,24 +777,18 @@ view Install {
 
 
 view Check {
-  <svg width="510px" height="510px" viewBox="0 0 510 510">
+  <check-svg width="510px" height="510px" viewBox="0 0 510 510">
     <g>
-      <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,382.5L76.5,255l35.7-35.7
-        l91.8,91.8l193.8-193.8l35.7,35.7L204,382.5z"/>
+      <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,382.5L76.5,255l35.7-35.7 l91.8,91.8l193.8-193.8l35.7,35.7L204,382.5z"/>
     </g>
-  </svg>
+  </check-svg>
 }
 
 view Check2 {
-  <svg width="400px" height="400px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;">
+  <check2-svg width="400px" height="400px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;">
     <g>
-      <path d="M199.996,0C89.713,0,0,89.72,0,200s89.713,200,199.996,200S400,310.28,400,200S310.279,0,199.996,0z M199.996,373.77
-        C104.18,373.77,26.23,295.816,26.23,200c0-95.817,77.949-173.769,173.766-173.769c95.817,0,173.771,77.953,173.771,173.769
-        C373.768,295.816,295.812,373.77,199.996,373.77z"/>
-      <path d="M272.406,134.526L169.275,237.652l-41.689-41.68c-5.123-5.117-13.422-5.12-18.545,0.003
-        c-5.125,5.125-5.125,13.425,0,18.548l50.963,50.955c2.561,2.558,5.916,3.838,9.271,3.838s6.719-1.28,9.279-3.842
-        c0.008-0.011,0.014-0.022,0.027-0.035L290.95,153.071c5.125-5.12,5.125-13.426,0-18.546
-        C285.828,129.402,277.523,129.402,272.406,134.526z"/>
+      <path d="M199.996,0C89.713,0,0,89.72,0,200s89.713,200,199.996,200S400,310.28,400,200S310.279,0,199.996,0z M199.996,373.77 C104.18,373.77,26.23,295.816,26.23,200c0-95.817,77.949-173.769,173.766-173.769c95.817,0,173.771,77.953,173.771,173.769 C373.768,295.816,295.812,373.77,199.996,373.77z"/>
+      <path d="M272.406,134.526L169.275,237.652l-41.689-41.68c-5.123-5.117-13.422-5.12-18.545,0.003 c-5.125,5.125-5.125,13.425,0,18.548l50.963,50.955c2.561,2.558,5.916,3.838,9.271,3.838s6.719-1.28,9.279-3.842 c0.008-0.011,0.014-0.022,0.027-0.035L290.95,153.071c5.125-5.12,5.125-13.426,0-18.546 C285.828,129.402,277.523,129.402,272.406,134.526z"/>
     </g>
-  </svg>
+  </check2-svg>
 }
