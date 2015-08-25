@@ -1,10 +1,10 @@
 import chroma from 'chroma-js'
 
+
 screen = {
   small: '@media (max-width: 840px)'
 }
 h2 = { textAlign: 'center' }
-height = window.innerHeight - 160
 primary = '#970C0A'
 secondary = '#FB7124'
 small = window.innerWidth < 672
@@ -21,6 +21,11 @@ small = window.innerWidth < 672
 // on('resize', () => {
 //   Window.@dimensions = getDimensions()
 // })
+
+// import { Spring } from 'react-motion'
+// <Spring defaultValue={0} endValue={500}>
+//   {interp => <stripe style={{ left: interp.val }} />}
+// </Spring>
 
 view Main {
   <banner>
@@ -171,7 +176,15 @@ view Demo2 {
 
   $center = {
     flexFlow: 'row',
-    margin: 'auto'
+    margin: [0, 'auto', 10]
+  }
+
+  $button = {
+    margin: 5
+  }
+
+  $strong = {
+    fontSize: 22
   }
 }
 
@@ -297,7 +310,7 @@ view Editor {
   }
 
   $iframe = {
-    height,
+    height: '100%',
     border: 'none',
     padding: 5,
     overflow: 'hidden'
