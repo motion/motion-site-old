@@ -118,8 +118,7 @@ view Main {
   }
 
   $.simple = {
-    border: 'none',
-    padding: [5, 0]
+    border: 'none'
   }
 }
 
@@ -215,7 +214,7 @@ view Header {
   $ = {
     flexFlow: 'row',
     margin: [0],
-    padding: [50, 0, 30],
+    padding: [70, 0, 50],
     background: "#f3f3f3"
   }
 
@@ -255,7 +254,6 @@ view Editor {
 
 view Logo {
   <img src="flint-small.png" srcset="flint.png 2x" />
-  <tag if={false}>Beta</tag>
 
   $ = {
     flexFlow: 'row',
@@ -264,15 +262,7 @@ view Logo {
   }
 
   $img = {
-    margin: [10, 0, 0, 0],
-  }
-
-  $tag = {
-    fontSize: 12,
-    textTransform: 'uppercase',
-    fontWeight: 500,
-    color: '#aaa',
-    margin: [0, 10, 0, 0]
+    margin: [-10, 0, -10]
   }
 }
 
