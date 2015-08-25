@@ -678,27 +678,27 @@ view Contain {
 
 view About {
   <p>
-    React's views are an amazingly simple abstraction,
+    Views are an amazingly simple abstraction,
     but there's no good way to build with them today.
-    Assembling a best-practice stack takes months to learn, weeks
-    to assemble, and never-ending caretaking.
+    Assembling a best-practice frontend stack takes months to learn and
+    assemble, with never-ending caretaking.
   </p>
   <p>
     We are <em>writing around the library </em>
     rather than having an intuitive language that lets us be
     productive.
-    Flint solves this with a few macros on top of ES6 that
-    lighten the language, along with some amazing tooling.
+    Flint's macros on ES6 lighten the language and give
+    you incredible power and consistency, without having to bootstrap
+    your own complex stack.
   </p>
   <p>
-    Our philosophy: allow developers to be maximally creative through,
+    We want to allow developers to be maximally creative with:
   </p>
   <ul>
-    <li>Integrates with CLI, compiler, editor and browser</li>
     <li>Light abstractions that enable speed</li>
     <li>Immediate feedback and helpful errors</li>
-    <li>Go from idea to launch with ease</li>
-    <li>Smart tooling</li>
+    <li>Everything you need and nothing more</li>
+    <li>Smart tooling and integration</li>
   </ul>
 
   $ = {
