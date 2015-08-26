@@ -22,16 +22,19 @@
 </head>
 <body>
   <code><pre>
-view Venn {
-  <one class="circle" />
-  <two class="circle" />
+<span class="o">view</span> Venn {
+  <span class="r">&lt;one class=<span class="y">"circle"</span> /&gt;</span>
+  <span class="r">&lt;two class=<span class="y">"circle"</span> /&gt;</span>
 
-  $ = { flexFlow: 'row' }
+  <span class="w">$</span> = { flexFlow: <span class="y">'row'</span> }
+  <span class="w">$one</span> = { background: <span class="y">'blue'</span> }
+  <span class="w">$two</span> = { background: <span class="y">'red'</span> }
 
-  $.circle = {
-    borderRadius: 100,
-    background: 'rgba(200, 200, 100, 0.5)',
-    width: '50%'
+  <span class="w">$.circle</span> = {
+    borderRadius: <span class="y">100</span>,
+    width: <span class="y">200</span>, height: <span class="y">200</span>,
+    margin: [<span class="y">'auto'</span>, <span class="y">-40</span>],
+    opacity: <span class="y">0.5</span>
   }
 }<pre></code>
 </body>

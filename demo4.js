@@ -4,17 +4,18 @@ view Demo4 {
 
   $ = {
     flexFlow: 'row',
-    width: '100%'
+    margin: 'auto',
+    width: 300
   }
+
+  $one = { background: 'blue' }
+  $two = { background: 'red' }
 
   $.circle = {
     borderRadius: 100,
     width: 200, height: 200,
-    margin: 'auto',
-    background: 'rgba(200, 200, 100, 0.5)',
-  }
-
-  $two = {
-    background: 'red'
+    flexShrink: 0,
+    margin: ['auto', -40],
+    opacity: 0.5
   }
 }

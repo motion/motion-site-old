@@ -24,7 +24,6 @@ view Main {
 
 view Header {
   @startIntro = false
-  height = 280
 
   <Example
     flipVertical
@@ -35,10 +34,8 @@ view Header {
       </div>
     }
     in={
-      <Editor
-        key="2"
-        right
-        height={height}
+      <Editor right key="2"
+        lines={9}
         onLoad={() => @startIntro = true}
         src="/examples/example.html" />
     } />
@@ -48,14 +45,10 @@ view Header {
   $ = {
     flexFlow: 'row',
     margin: 0,
-    padding: [55, 0, 65],
+    padding: [50, 0],
     background: "#f3f3f3",
     position: 'relative',
     overflow: 'hidden'
-  }
-
-  $Editor = {
-    margin: [0, 0, -100, 0]
   }
 
   $strip = {
@@ -95,7 +88,6 @@ view Logo {
   }
 
   $img = {
-    margin: [-10, 0, -10],
     width: 159,
     height: 79
   }
@@ -135,7 +127,7 @@ view Introduction {
   <desc>Write web apps {@desc}.</desc>
 
   $ = {
-    padding: [25, 20, 0],
+    padding: [10, 20],
     fontFamily: 'Helvetica Neue, Helvetica, Arail, sans-serif',
     textAlign: 'center'
   }
@@ -158,7 +150,6 @@ view Introduction {
     lineHeight: '1.6rem',
     padding: [5, 0],
     fontWeight: 300,
-    width: '80%',
     color: '#666',
     margin: [0, 'auto'],
     display: 'block'
@@ -170,16 +161,15 @@ view Examples {
     Flint simplifies ES6 and introduces the <b>view</b>.
   </Interlude>
 
-  <Example
-    flip
-    in={<Editor left light src="/examples/example2.html" />}
+  <Example flip inPage
+    in={<Editor lines={10} left light src="/examples/example2.html" />}
     out={<Demo2 />} />
 
   <Interlude>
     Use views anywhere with ease...
   </Interlude>
 
-  <Example
+  <Example inPage
     in={<Editor right light src="/examples/example3.html" />}
     out={<Demo3 />} />
 
@@ -187,9 +177,8 @@ view Examples {
     Style elements easily
   </Interlude>
 
-  <Example
-    flip
-    in={<Editor left light src="/examples/example3.html" />}
+  <Example inPage flip
+    in={<Editor lines={15} left light src="/examples/example3.html" />}
     out={<Demo4 />} />
 }
 
@@ -246,7 +235,9 @@ view Example {
 
     [screen.small]: {
       width: '100%',
-      order: ^flipVertical ? 1 : 2
+      order: ^flipVertical ? 1 : 2,
+      padding: ^inPage ? '50px 0' : 0,
+      borderBottom: ^inPage ? '1px solid #ddd' : 'none'
     }
   }
 
@@ -254,7 +245,6 @@ view Example {
     order: ^flip ? 1 : 2,
     zIndex: 10,
     margin: [-10, 0, 10],
-    height: ^height || 280,
 
     [screen.small]: {
       width: '90%',
@@ -270,7 +260,7 @@ view Editor {
 
   $ = {
     flexFlow: 'column',
-    height: ^height || '100%',
+    height: ^lines ? (30 * ^lines) : '100%',
     border: '2px solid #ddd',
     borderWidth: ^light ? 1 : 2,
     borderRadius: 6,
@@ -361,7 +351,7 @@ view Features {
     </list>
   </Contain>
 
-  $ = { margin: [0, 'auto'] }
+  $ = { margin: [0, 'auto', 30] }
 
   color = 'rgb(4, 139, 66)'
 
@@ -519,8 +509,8 @@ view Install {
 
   $ = {
     borderTop: '1px solid #ddd',
-    padding: [20, 0, 0],
-    margin: [40, 0, 0]
+    padding: [20, 0],
+    margin: [20, 0]
   }
 
   $h2 = { textAlign: 'center' }
