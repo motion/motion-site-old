@@ -27,8 +27,9 @@ view Header {
   height = 280
 
   <Example
+    flipVertical
     out={
-      <div>
+      <div style={{ minHeight: 200 }}>
         <Logo />
         <Introduction start={@startIntro} />
       </div>
@@ -233,7 +234,11 @@ view Example {
 
   $ = {
     flexFlow: 'row',
-    flexGrow: 1
+    flexGrow: 1,
+
+    [screen.small]: {
+      flexFlow: 'column'
+    }
   }
 
   $.split = {
@@ -246,7 +251,8 @@ view Example {
     order: ^flip ? 2 : 1,
 
     [screen.small]: {
-      width: '100%'
+      width: '100%',
+      order: ^flipVertical ? 1 : 2,
     }
   }
 
@@ -257,7 +263,8 @@ view Example {
     height: ^height || 280,
 
     [screen.small]: {
-      display: 'none'
+      width: '100%',
+      order: ^flipVertical ? 2 : 1
     }
   }
 }
@@ -281,8 +288,9 @@ view Editor {
     position: 'relative',
     zIndex: 10,
 
-    '@media (max-width: 800px)': {
-      display: 'none'
+    [screen.small]: {
+      marginRight: 10,
+      marginLeft: 10,
     }
   }
 
@@ -471,7 +479,7 @@ view Video {
 
   $center = {
     margin: 'auto',
-    padding: [60, 180],
+    padding: [60, 0],
     textAlign: 'center',
     alignItems: 'center'
   }
