@@ -1,6 +1,5 @@
 import chroma from 'chroma-js'
 
-
 screen = {
   small: '@media (max-width: 840px)'
 }
@@ -28,63 +27,38 @@ small = window.innerWidth < 672
 // </Spring>
 
 view Main {
-  <banner>
-    <a href="https://github.com/flint-lang">GitHub</a>
-  </banner>
-
   <Header />
 
-  <Contain>
-    <section class="simple">
-      <p>
-        Flint simplifies ES6 and introduces the <b>view</b>.
-      </p>
-    </section>
-  </Contain>
+  <Interlude>
+    Flint simplifies ES6 and introduces the <b>view</b>.
+  </Interlude>
 
-  <Example>
-    <Editor left light src="example2.html" />
-    <Row>
-      <Demo2 />
-    </Row>
-  </Example>
+  <Example
+    flip
+    in={<Editor left light src="example2.html" />}
+    out={<Demo2 />} />
 
-  <Contain>
-    <section>
-      <p>
-        Use views anywhere with ease...
-      </p>
-    </section>
-  </Contain>
+  <Interlude>
+    Use views anywhere with ease...
+  </Interlude>
 
-  <Example>
-    <Row>
-      <Demo3 />
-    </Row>
-    <Editor right light src="example3.html" />
-  </Example>
+  <Example
+    in={<Editor right light src="example3.html" />}
+    out={<Demo3 />} />
 
-  <Contain>
-    <section>
-      <p>
-        Style elements easily
-      </p>
-    </section>
-  </Contain>
+  <Interlude>
+    Style elements easily
+  </Interlude>
 
-  <Example>
-    <Editor left light src="example3.html" />
-    <Row>
-      <Demo4 />
-    </Row>
-  </Example>
+  <Example
+    flip
+    in={<Editor left light src="example3.html" />}
+    out={<Demo4 />} />
 
   <Install />
 
   <Contain>
-    <section>
-      <FeaturesList />
-    </section>
+    <FeaturesList />
   </Contain>
 
   <Contain pad>
@@ -107,34 +81,16 @@ view Main {
     top: 0,
     right: 0
   }
+}
 
-  $banner = {
-    display: 'none',
-    background: '#aaa',
-    overflow: 'hidden',
-    whiteSpace: 'nowrap',
-    position: 'absolute',
-    right: -90,
-    top: 0,
-    width: 220,
-    transform: `rotate(45deg)`,
-  }
-
-  $a = {
-    color: '#fff',
-    display: 'block',
-    font: '14px "Helvetica Neue", Helvetica, Arial, sans-serif',
-    margin: 0,
-    padding: '3px 0',
-    width: '100%',
-    textAlign: 'center',
-    textDecoration: 'none',
-  }
-
-  $p = {
-    textAlign: 'center',
-    margin: [5, 0]
-  }
+view Interlude {
+  <Contain>
+    <section>
+      <p>
+        {^children}
+      </p>
+    </section>
+  </Contain>
 
   $section = {
     margin: [20, 0],
@@ -147,26 +103,10 @@ view Main {
   $.simple = {
     border: 'none'
   }
-}
 
-view Demo4 {
-  <one class="circle" />
-  <two class="circle" />
-
-  $ = {
-    flexFlow: 'row',
-    width: '100%'
-  }
-
-  $.circle = {
-    borderRadius: 100,
-    width: 200, height: 200,
-    margin: 'auto',
-    background: 'rgba(200, 200, 100, 0.5)',
-  }
-
-  $two = {
-    background: 'red'
+  $p = {
+    textAlign: 'center',
+    margin: [5, 0]
   }
 }
 
@@ -186,13 +126,9 @@ view Example {
   }
 
   $out = {
-    width: '50%',
     justifyContent: 'center',
-    height,
     position: 'relative',
-    zIndex: 10,
-    margin: [-10, 0, 10],
-    order: ^ltr ? 2 : 1,
+    order: ^flip ? 2 : 1,
 
     [screen.small]: {
       width: '100%'
@@ -200,84 +136,14 @@ view Example {
   }
 
   $in = {
-    order: ^ltr ? 1 : 2,
+    order: ^flip ? 1 : 2,
+    zIndex: 10,
+    margin: [-10, 0, 10],
+    height: ^height || 280,
 
     [screen.small]: {
       display: 'none'
     }
-  }
-}
-
-view Row {
-  <row yield />
-
-  $ = {
-    flexFlow: 'row',
-    padding: 10,
-    width: '50%'
-  }
-}
-
-view Demo2 {
-  @count = 0
-
-  increment = () => @count++
-  decrement = () => @count--
-
-  <center>
-    <button onClick={increment}>Up</button>
-    <button onClick={decrement}>Down</button>
-  </center>
-  <strong>Count is {@count}</strong>
-
-  $ = {
-    margin: 'auto',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    textAlign: 'center'
-  }
-
-  $center = {
-    flexFlow: 'row',
-    margin: [0, 'auto', 10]
-  }
-
-  $button = {
-    margin: 5
-  }
-
-  $strong = {
-    fontSize: 22
-  }
-}
-
-view Demo3 {
-  <Row1>
-    <Col>Hello</Col>
-    <Col>Hello</Col>
-    <Col>Hello</Col>
-  </Row1>
-
-  $ = { width: '100%' }
-}
-
-view Row1 {
-  <row1>{^children}</row1>
-
-  $ = {
-    flexFlow: 'row',
-    flexGrow: 1
-  }
-}
-
-view Col {
-  <column>{^children}</column>
-
-  $ = {
-    flexGrow: 1,
-    background: '#eee',
-    margin: 5
   }
 }
 
@@ -286,7 +152,6 @@ view Header {
   height = 280
 
   <Example
-    ltr
     out={
       <div>
         <Logo />
@@ -350,9 +215,8 @@ view Editor {
   <iframe src={^src} onLoad={^onLoad}></iframe>
 
   $ = {
-    width: '50%',
     flexFlow: 'column',
-    height: ^height || 300,
+    height: ^height || '100%',
     border: '2px solid #ddd',
     borderWidth: ^light ? 1 : 2,
     borderRadius: 6,
@@ -466,9 +330,6 @@ view Introduction {
   }
 }
 
-
-
-
 demoBorder = 4
 
 view Toolbar {
@@ -512,16 +373,6 @@ view Toolbar {
     background: '#69CB43'
   }
 }
-
-view Section {
-  <section yield />
-
-  $ = {
-    padding: 40,
-    background: '#eee'
-  }
-}
-
 
 view FeaturesList {
   text = [
@@ -574,18 +425,6 @@ view FeaturesList {
     height: 20,
     fill: color,
     margin: [1, 10, -3, 0]
-  }
-}
-
-view Video {
-  <video loop autoplay>
-    <source src={^name} type="video/mp4" />
-  </video>
-
-  $ = {
-    border: 'none',
-    width: '100%',
-    height: '100%'
   }
 }
 
@@ -649,146 +488,6 @@ view DemoVideo {
     transform: {
       rotate: '-1deg'
     }
-  }
-}
-
-view Brief {
-  <icons>
-    <Icon src="computer1.svg">
-      CLI
-    </Icon>
-    <Icon src="web2.svg">
-      Compiler
-    </Icon>
-    <Icon src="internet84.svg">
-      Browser
-    </Icon>
-    <Icon src="browser105.svg">
-      Editor
-    </Icon>
-  </icons>
-
-  $ = {
-    textAlign: 'center'
-  }
-
-  $icons = {
-    flexFlow: 'row',
-    margin: 'auto',
-    width: '80%',
-    maxWidth: 800,
-    justifyContent: 'space-around'
-  }
-}
-
-view Icon {
-  <img yield />
-
-  $img = {
-    width: 50,
-    height: 50,
-    margin: [0, 'auto', 5]
-  }
-
-  $ = {
-    textAlign: 'center',
-    fontSize: 16
-  }
-}
-
-view Link {
-  <a yield />
-
-  $ = { display: 'inline' }
-
-  $a = {
-    display: 'inline',
-    color: primary,
-    textDecoration: 'underline',
-    cursor: 'pointer'
-  }
-}
-
-view Signup {
-  <form action="//flintlang.us11.list-manage.com/subscribe/post?u=d6ee317984756a7f0f5e9378b&amp;id=dcc2cefed5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll">
-      <div class="mc-field-group">
-        <input type="text" placeholder="Name" name="NAME" class="" id="mce-NAME" />
-      </div>
-      <div class="mc-field-group">
-        <input type="email" placeholder="Contact (email or handle)" name="EMAIL" class="required email" id="mce-EMAIL" />
-      </div>
-      <div if={false} class="mc-field-group">
-        <textarea name="ABOUT" class="" placeholder="What are you most interested in with Flint? Any feedback?" id="mce-ABOUT"></textarea>
-      </div>
-      <hide id="mce-responses" class="clear">
-        <div class="response" id="mce-error-response" style="display:none"></div>
-        <div class="response" id="mce-success-response" style="display:none"></div>
-      </hide>
-      <hide style="position: absolute; left: -5000px;">
-        <input type="text" name="b_d6ee317984756a7f0f5e9378b_dcc2cefed5" tabindex="-1" value="" />
-      </hide>
-      <center class="clear">
-        <submit-input
-          class="button"
-          type="submit"
-          value="Submit"
-          name="subscribe" id="mc-embedded-subscribe" />
-      </center>
-    </div>
-  </form>
-
-  $ = {
-    margin: 'auto',
-    position: 'relative',
-    zIndex: 100,
-    padding: [0, 0, 100],
-  }
-
-  $hide = {
-    display: 'none'
-  }
-
-  $desc = {
-    borderTop: '1px solid #f2f2f2',
-    borderBottom: '1px solid #f2f2f2',
-    color: '#682121',
-    margin: [0, 0, 20],
-    padding: [20, 0]
-  }
-
-  $h3 = {
-    fontSize: 18,
-    color: '#444'
-  }
-
-  $form = {
-    textAlign: 'left',
-    fontSize: 16
-  }
-
-  input = {
-    width: '100%',
-    marginBottom: 20,
-    borderRadius: 5
-  }
-
-  $input = input
-
-  $textarea = [input, {
-    border: '1px solid #ccc',
-    height: 150
-  }]
-
-  $label = {
-    margin: [10, 0]
-  }
-
-  $submit = {
-    border: '1px solid #ccc',
-    color: '#333',
-    background: '#fff',
-    padding: 10
   }
 }
 
