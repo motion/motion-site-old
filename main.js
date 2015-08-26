@@ -172,11 +172,39 @@ view Demo4 {
 
 view Example {
   <Contain>
-    <example yield />
+    <in class="split">{^in}</in>
+    <out class="split">{^out}</out>
   </Contain>
 
-  $example = {
-    flexFlow: 'row'
+  $ = {
+    flexFlow: 'row',
+    flexGrow: 1
+  }
+
+  $.split = {
+    width: '50%'
+  }
+
+  $out = {
+    width: '50%',
+    justifyContent: 'center',
+    height,
+    position: 'relative',
+    zIndex: 10,
+    margin: [-10, 0, 10],
+    order: ^ltr ? 2 : 1,
+
+    [screen.small]: {
+      width: '100%'
+    }
+  }
+
+  $in = {
+    order: ^ltr ? 1 : 2,
+
+    [screen.small]: {
+      display: 'none'
+    }
   }
 }
 
@@ -257,17 +285,23 @@ view Header {
   @startIntro = false
   height = 280
 
-  <Contain>
-    <out>
-      <Logo />
-      <Introduction start={@startIntro} />
-    </out>
-    <Editor
-      right
-      height={height}
-      onLoad={() => @startIntro = true}
-      src="example.html" />
-  </Contain>
+  <Example
+    ltr
+    out={
+      <div>
+        <Logo />
+        <Introduction start={@startIntro} />
+      </div>
+    }
+    in={
+      <Editor
+        key="2"
+        right
+        height={height}
+        onLoad={() => @startIntro = true}
+        src="example.html" />
+    } />
+
   <strip />
   <strip class="alt" />
 
@@ -278,15 +312,6 @@ view Header {
     background: "#f3f3f3",
     position: 'relative',
     overflow: 'hidden'
-  }
-
-  $out = {
-    width: '50%',
-    justifyContent: 'center',
-    height,
-    position: 'relative',
-    zIndex: 10,
-    margin: [-10, 0, 10]
   }
 
   $Editor = {
