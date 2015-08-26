@@ -53,12 +53,6 @@ view Main {
     margin: 'auto',
     overflowX: 'hidden'
   }
-
-  $span = {
-    position: 'absolute',
-    top: 0,
-    right: 0
-  }
 }
 
 view Interlude {
@@ -281,8 +275,6 @@ view Introduction {
   }
 
   title = {
-    // fontFamily: 'Montserrat, Myriad, Helvetica, Arial',
-    // letterSpacing: -1,
     margin: [5, 0],
     lineHeight: '1.4em',
     textAlign: 'center'
