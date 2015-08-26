@@ -3,28 +3,6 @@ import chroma from 'chroma-js'
 screen = {
   small: '@media (max-width: 840px)'
 }
-h2 = { textAlign: 'center' }
-primary = '#970C0A'
-secondary = '#FB7124'
-small = window.innerWidth < 672
-
-// getDimensions = () => ({
-//   width: window.innerWidth,
-//   height: window.innerHeight
-// })
-//
-// store Window {
-//   @dimensions = getDimensions()
-// }
-//
-// on('resize', () => {
-//   Window.@dimensions = getDimensions()
-// })
-
-// import { Spring } from 'react-motion'
-// <Spring defaultValue={0} endValue={500}>
-//   {interp => <stripe style={{ left: interp.val }} />}
-// </Spring>
 
 view Main {
   <Header />
@@ -576,7 +554,9 @@ view Install {
     margin: [40, 0, 0]
   }
 
-  $h2 = h2
+  $h2 = {
+    textAlign: 'center'
+  }
 
   $instructions = {
     padding: [20, 0],
