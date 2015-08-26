@@ -13,7 +13,7 @@ view Main {
 
   <Example
     flip
-    in={<Editor left light src="example2.html" />}
+    in={<Editor left light src="/examples/example2.html" />}
     out={<Demo2 />} />
 
   <Interlude>
@@ -21,7 +21,7 @@ view Main {
   </Interlude>
 
   <Example
-    in={<Editor right light src="example3.html" />}
+    in={<Editor right light src="/examples/example3.html" />}
     out={<Demo3 />} />
 
   <Interlude>
@@ -30,7 +30,7 @@ view Main {
 
   <Example
     flip
-    in={<Editor left light src="example3.html" />}
+    in={<Editor left light src="/examples/example3.html" />}
     out={<Demo4 />} />
 
   <Install />
@@ -129,9 +129,8 @@ view Header {
         right
         height={height}
         onLoad={() => @startIntro = true}
-        src="example.html" />
+        src="/examples/example.html" />
     } />
-
   <strip />
   <strip class="alt" />
 
@@ -208,7 +207,7 @@ view Editor {
 }
 
 view Logo {
-  <img src="flint-small.png" srcset="flint.png 2x" />
+  <img src="/images/flint-small.png" srcset="/images/flint.png 2x" />
 
   $ = {
     flexFlow: 'row',
