@@ -95,7 +95,9 @@ view Logo {
   }
 
   $img = {
-    margin: [-10, 0, -10]
+    margin: [-10, 0, -10],
+    width: 159,
+    height: 79
   }
 }
 
