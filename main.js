@@ -6,33 +6,7 @@ screen = {
 
 view Main {
   <Header />
-
-  <Interlude>
-    Flint simplifies ES6 and introduces the <b>view</b>.
-  </Interlude>
-
-  <Example
-    flip
-    in={<Editor left light src="/examples/example2.html" />}
-    out={<Demo2 />} />
-
-  <Interlude>
-    Use views anywhere with ease...
-  </Interlude>
-
-  <Example
-    in={<Editor right light src="/examples/example3.html" />}
-    out={<Demo3 />} />
-
-  <Interlude>
-    Style elements easily
-  </Interlude>
-
-  <Example
-    flip
-    in={<Editor left light src="/examples/example3.html" />}
-    out={<Demo4 />} />
-
+  <Examples />
   <Install />
   <Features />
   <About />
@@ -45,70 +19,6 @@ view Main {
     lineHeight: '2rem',
     margin: 'auto',
     overflowX: 'hidden'
-  }
-}
-
-view Interlude {
-  <Contain>
-    <section>
-      <p>
-        {^children}
-      </p>
-    </section>
-  </Contain>
-
-  $section = {
-    margin: [20, 0],
-    padding: [15, 0],
-    borderRight: 'none',
-    borderLeft: 'none',
-    fontSize: 20,
-  }
-
-  $.simple = {
-    border: 'none'
-  }
-
-  $p = {
-    textAlign: 'center',
-    margin: [5, 0]
-  }
-}
-
-view Example {
-  <Contain>
-    <in class="split">{^in}</in>
-    <out class="split">{^out}</out>
-  </Contain>
-
-  $ = {
-    flexFlow: 'row',
-    flexGrow: 1
-  }
-
-  $.split = {
-    width: '50%'
-  }
-
-  $out = {
-    justifyContent: 'center',
-    position: 'relative',
-    order: ^flip ? 2 : 1,
-
-    [screen.small]: {
-      width: '100%'
-    }
-  }
-
-  $in = {
-    order: ^flip ? 1 : 2,
-    zIndex: 10,
-    margin: [-10, 0, 10],
-    height: ^height || 280,
-
-    [screen.small]: {
-      display: 'none'
-    }
   }
 }
 
@@ -171,38 +81,6 @@ view Header {
     transform: {
       rotate: '-40deg'
     }
-  }
-}
-
-view Editor {
-  <Toolbar />
-  <iframe src={^src} onLoad={^onLoad}></iframe>
-
-  $ = {
-    flexFlow: 'column',
-    height: ^height || '100%',
-    border: '2px solid #ddd',
-    borderWidth: ^light ? 1 : 2,
-    borderRadius: 6,
-    boxShadow: '0 0 10px rgba(0,0,0,0.05)',
-    margin: 10,
-    marginRight: ^right ? -10 : 10,
-    marginLeft: ^left ? -10 : 10,
-    background: ^light ? '#fff' : '#1E2B33',
-    fontFamily: 'monospace',
-    position: 'relative',
-    zIndex: 10,
-
-    '@media (max-width: 800px)': {
-      display: 'none'
-    }
-  }
-
-  $iframe = {
-    height: '100%',
-    border: 'none',
-    padding: 5,
-    overflow: 'hidden'
   }
 }
 
@@ -292,9 +170,133 @@ view Introduction {
   }
 }
 
-demoBorder = 4
+view Examples {
+  <Interlude>
+    Flint simplifies ES6 and introduces the <b>view</b>.
+  </Interlude>
+
+  <Example
+    flip
+    in={<Editor left light src="/examples/example2.html" />}
+    out={<Demo2 />} />
+
+  <Interlude>
+    Use views anywhere with ease...
+  </Interlude>
+
+  <Example
+    in={<Editor right light src="/examples/example3.html" />}
+    out={<Demo3 />} />
+
+  <Interlude>
+    Style elements easily
+  </Interlude>
+
+  <Example
+    flip
+    in={<Editor left light src="/examples/example3.html" />}
+    out={<Demo4 />} />
+}
+
+view Interlude {
+  <Contain>
+    <section>
+      <p>
+        {^children}
+      </p>
+    </section>
+  </Contain>
+
+  $section = {
+    margin: [20, 0],
+    padding: [15, 0],
+    borderRight: 'none',
+    borderLeft: 'none',
+    fontSize: 20,
+  }
+
+  $.simple = {
+    border: 'none'
+  }
+
+  $p = {
+    textAlign: 'center',
+    margin: [5, 0]
+  }
+}
+
+view Example {
+  <Contain>
+    <in class="split">{^in}</in>
+    <out class="split">{^out}</out>
+  </Contain>
+
+  $ = {
+    flexFlow: 'row',
+    flexGrow: 1
+  }
+
+  $.split = {
+    width: '50%'
+  }
+
+  $out = {
+    justifyContent: 'center',
+    position: 'relative',
+    order: ^flip ? 2 : 1,
+
+    [screen.small]: {
+      width: '100%'
+    }
+  }
+
+  $in = {
+    order: ^flip ? 1 : 2,
+    zIndex: 10,
+    margin: [-10, 0, 10],
+    height: ^height || 280,
+
+    [screen.small]: {
+      display: 'none'
+    }
+  }
+}
+
+view Editor {
+  <Toolbar />
+  <iframe src={^src} onLoad={^onLoad}></iframe>
+
+  $ = {
+    flexFlow: 'column',
+    height: ^height || '100%',
+    border: '2px solid #ddd',
+    borderWidth: ^light ? 1 : 2,
+    borderRadius: 6,
+    boxShadow: '0 0 10px rgba(0,0,0,0.05)',
+    margin: 10,
+    marginRight: ^right ? -10 : 10,
+    marginLeft: ^left ? -10 : 10,
+    background: ^light ? '#fff' : '#1E2B33',
+    fontFamily: 'monospace',
+    position: 'relative',
+    zIndex: 10,
+
+    '@media (max-width: 800px)': {
+      display: 'none'
+    }
+  }
+
+  $iframe = {
+    height: '100%',
+    border: 'none',
+    padding: 5,
+    overflow: 'hidden'
+  }
+}
 
 view Toolbar {
+  demoBorder = 4
+
   <toolbar>
     <ctrl class="close" />
     <ctrl class="max" />
@@ -390,6 +392,54 @@ view Features {
   }
 }
 
+view About {
+  <Contain pad>
+    <p>
+      Views are an amazingly simple abstraction
+      but with no clear or productive way to build with today.
+      Assembling a best-practice frontend stack takes months to learn and
+      assemble, with never-ending caretaking.
+    </p>
+    <p>
+      We are <em>writing around the library </em>
+      rather than having an intuitive language that understands
+      how we build.
+      Flint's + ES6 focuses the language on views and simple
+      functions, giving you incredible power and simplicity
+      while avoiding the burden of learning and maintaining a complex stack.
+    </p>
+    <p>
+      We want to allow developers to be maximally creative.
+      Let's make developer experience amazing with:
+    </p>
+    <ul>
+      <li>Light abstractions that enable speed</li>
+      <li>Immediate feedback and helpful errors</li>
+      <li>A consistent and powerful environment</li>
+      <li>Smart tooling and integration</li>
+    </ul>
+  </Contain>
+
+  $ = {
+    padding: [0, 25, 50],
+    lineHeight: '1.8rem',
+
+    [screen.small]: {
+      padding: 0
+    }
+  }
+
+  $p = { marginBottom: 0 }
+  $li = { margin: [10, 0, 0] }
+
+  $h2 = {
+    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+    textAlign: 'center',
+    fontWeight: 300,
+    fontSize: 24
+  }
+}
+
 view Video {
   <Contain>
     <center>
@@ -453,72 +503,6 @@ view Video {
   }
 }
 
-view Contain {
-  <contain key={Math.random()} yield />
-
-  $ = {
-    maxWidth: 1000,
-    width: '100%',
-    margin: 'auto',
-    flexFlow: 'inherit',
-    alignItems: 'inherit',
-    justifyContent: 'inherit',
-    flexGrow: 1,
-    flexShrink: 0,
-    padding: ^pad ? [0, '10%'] : 0,
-    position: 'relative',
-    zIndex: 10
-  }
-}
-
-view About {
-  <Contain pad>
-    <p>
-      Views are an amazingly simple abstraction
-      but with no clear or productive way to build with today.
-      Assembling a best-practice frontend stack takes months to learn and
-      assemble, with never-ending caretaking.
-    </p>
-    <p>
-      We are <em>writing around the library </em>
-      rather than having an intuitive language that understands
-      how we build.
-      Flint's + ES6 focuses the language on views and simple
-      functions, giving you incredible power and simplicity
-      while avoiding the burden of learning and maintaining a complex stack.
-    </p>
-    <p>
-      We want to allow developers to be maximally creative.
-      Let's make developer experience amazing with:
-    </p>
-    <ul>
-      <li>Light abstractions that enable speed</li>
-      <li>Immediate feedback and helpful errors</li>
-      <li>A consistent and powerful environment</li>
-      <li>Smart tooling and integration</li>
-    </ul>
-  </Contain>
-
-  $ = {
-    padding: [0, 25, 50],
-    lineHeight: '1.8rem',
-
-    [screen.small]: {
-      padding: 0
-    }
-  }
-
-  $p = { marginBottom: 0 }
-  $li = { margin: [10, 0, 0] }
-
-  $h2 = {
-    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-    textAlign: 'center',
-    fontWeight: 300,
-    fontSize: 24
-  }
-}
-
 view Install {
   <h2>
     Install
@@ -567,4 +551,22 @@ view Check {
       <path d="M272.406,134.526L169.275,237.652l-41.689-41.68c-5.123-5.117-13.422-5.12-18.545,0.003 c-5.125,5.125-5.125,13.425,0,18.548l50.963,50.955c2.561,2.558,5.916,3.838,9.271,3.838s6.719-1.28,9.279-3.842 c0.008-0.011,0.014-0.022,0.027-0.035L290.95,153.071c5.125-5.12,5.125-13.426,0-18.546 C285.828,129.402,277.523,129.402,272.406,134.526z"/>
     </g>
   </check-svg>
+}
+
+view Contain {
+  <contain key={Math.random()} yield />
+
+  $ = {
+    maxWidth: 1000,
+    width: '100%',
+    margin: 'auto',
+    flexFlow: 'inherit',
+    alignItems: 'inherit',
+    justifyContent: 'inherit',
+    flexGrow: 1,
+    flexShrink: 0,
+    padding: ^pad ? [0, '10%'] : 0,
+    position: 'relative',
+    zIndex: 10
+  }
 }
