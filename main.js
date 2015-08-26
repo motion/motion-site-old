@@ -29,7 +29,7 @@ view Header {
   <Example
     flipVertical
     out={
-      <div style={{ minHeight: 200 }}>
+      <div>
         <Logo />
         <Introduction start={@startIntro} />
       </div>
@@ -105,38 +105,31 @@ view Introduction {
   phrases = ['powerfully fast', 'without boilerplate', 'more creatively']
   @desc = ''
 
-  delayTime = 4000
-  @phrase = 0
-  @pos = 0
-
-  run = () => {
-    @typer = setInterval(step, 130)
-  }
-
-  setTimeout(run, 1300)
+  betweenPhrase = 4000
+  typeSpeed = 130
+  @phrasePos = 0
+  @charPos = 0
 
   step = () => {
+    if (@phrasePos == phrases.length) return
+
     Flint.batch(() => {
-      if (@phrase == phrases.length)
-        return clearInterval(@typer)
-
       // if typed to end of word
-      if (@pos === phrases[@phrase].length) {
-        @pos = -1
-        @phrase += 1
-        @delay = delayTime
+      if (@charPos === phrases[@phrasePos].length) {
+        @charPos = -1
+        @phrasePos += 1
+        setTimeout(step, betweenPhrase)
       }
-
-      if (@delay > 0) {
-        @delay -= 100
-        return
+      // if typing word
+      else {
+        @charPos += 1
+        @desc = phrases[@phrasePos].slice(0, @charPos)
+        setTimeout(step, typeSpeed)
       }
-
-      @pos += 1
-
-      @desc = phrases[@phrase].slice(0, @pos)
     });
   }
+
+  setTimeout(step, 1350)
 
   <h2>Radically improved development</h2>
   <desc>Write web apps {@desc}.</desc>
@@ -163,13 +156,12 @@ view Introduction {
     textAlign: 'center',
     fontSize: 22,
     lineHeight: '1.6rem',
-    padding: [5, 0, 0],
+    padding: [5, 0],
     fontWeight: 300,
     width: '80%',
     color: '#666',
     margin: [0, 'auto'],
-    display: 'block',
-    height: 10
+    display: 'block'
   }
 }
 
@@ -254,7 +246,7 @@ view Example {
 
     [screen.small]: {
       width: '100%',
-      order: ^flipVertical ? 1 : 2,
+      order: ^flipVertical ? 1 : 2
     }
   }
 
@@ -265,7 +257,8 @@ view Example {
     height: ^height || 280,
 
     [screen.small]: {
-      width: '100%',
+      width: '90%',
+      margin: 'auto',
       order: ^flipVertical ? 2 : 1
     }
   }
@@ -300,7 +293,8 @@ view Editor {
     height: '100%',
     border: 'none',
     padding: 5,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    pointerEvents: 'none'
   }
 }
 

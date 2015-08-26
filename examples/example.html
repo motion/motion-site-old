@@ -9,7 +9,7 @@
 
     code {
       color: #fff;
-      font-size: 18;
+      font-size: 18px;
       line-height: 1.6rem;
     }
 
@@ -37,6 +37,12 @@
         opacity: 1;
       }
     }
+
+    @media (max-width: 360px) {
+      code {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -57,32 +63,26 @@
     var phrase = 0;
     var char = 0
     var timeBetweenPhrases = 4000;
+    var typeSpeed = 130;
     var curDelay = 0;
     var typer;
 
-    setTimeout(function() {
-      typer = setInterval(advance, 130)
-    }, 1000)
+    setTimeout(advance, 1000)
 
     function advance() {
-      if (phrase === phrases.length)
-        return clearInterval(typer)
+      if (phrase === phrases.length) return
 
       // if reached end
       if (char === phrases[phrase].length) {
         char = -1;
         phrase += 1;
-        curDelay = timeBetweenPhrases;
+        setTimeout(advance, timeBetweenPhrases)
       }
-
-      if (curDelay > 0) {
-        curDelay -= 100
-        return
+      else {
+        char += 1;
+        document.getElementById('change').innerHTML = phrases[phrase].slice(0, char)
+        setTimeout(advance, typeSpeed)
       }
-
-      char += 1;
-
-      document.getElementById('change').innerHTML = phrases[phrase].slice(0, char)
     }
   </script>
 </body>
