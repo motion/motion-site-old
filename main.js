@@ -141,7 +141,7 @@ view Introduction {
   $h2 = [title, {
     color: '#444',
     fontSize: 26,
-    fontWeight: 300,
+    fontWeight: 300
   }]
 
   $desc = {
@@ -196,7 +196,7 @@ view Interlude {
     padding: [15, 0],
     borderRight: 'none',
     borderLeft: 'none',
-    fontSize: 20,
+    fontSize: 20
   }
 
   $.simple = {
