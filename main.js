@@ -199,20 +199,16 @@ view Examples {
     out={<Demo2 />} />
 
   <Interlude>
-    Use views anywhere with ease...
-  </Interlude>
-
-  <Example inPage
-    in={<Editor right light src="/examples/example3.html" />}
-    out={<Demo3 />} />
-
-  <Interlude>
-    Style elements easily
+    Style elements using the $ sign
   </Interlude>
 
   <Example inPage flip
     in={<Editor lines={15} left light src="/examples/example3.html" />}
     out={<Demo4 />} />
+
+  <Interlude>
+    One more demo...
+  </Interlude>
 }
 
 view Interlude {
