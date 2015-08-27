@@ -43,7 +43,6 @@ view Header {
     <Contain>
       <Nav />
       <strip />
-      <strip class="alt" />
     </Contain>
   </decor>
 
@@ -74,20 +73,6 @@ view Header {
     zIndex: 10,
     transform: {
       rotate: '1deg'
-    }
-  }
-
-  $.alt = {
-    background: "linear-gradient(-20deg, #fff 50%, #eee)",
-    height: 1000,
-    width: 1000,
-    top: '-10%',
-    right: -550,
-    left: 'auto',
-    marginLeft: '20%',
-    zIndex: 0,
-    transform: {
-      rotate: '-40deg'
     }
   }
 }
