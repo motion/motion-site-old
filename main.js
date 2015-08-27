@@ -1,8 +1,8 @@
 import chroma from 'chroma-js'
 
-screen = {
-  small: '@media (max-width: 840px)'
-}
+sansSerif = 'Helvetica Neue, Helvetica, Arail, sans-serif'
+screen = {}
+screen.small = '@media (max-width: 840px)'
 
 view Main {
   <Header />
@@ -13,7 +13,7 @@ view Main {
   <Video />
 
   $ = {
-    color: '#333',
+    color: '#444',
     fontSize: 18,
     fontFamily: 'Georgia',
     lineHeight: '2rem',
@@ -25,6 +25,7 @@ view Main {
 view Header {
   @startIntro = false
 
+  <Nav />
   <Example
     flipVertical
     out={
@@ -45,8 +46,8 @@ view Header {
   $ = {
     flexFlow: 'row',
     margin: 0,
-    padding: [50, 0],
-    background: "#f3f3f3",
+    padding: [45, 0],
+    background: 'linear-gradient(-30deg, #fefefe, #f3f3f3, #fff)',
     position: 'relative',
     overflow: 'hidden'
   }
@@ -54,26 +55,57 @@ view Header {
   $strip = {
     background: '#fff',
     height: 100,
-    width: '140%',
     position: 'absolute',
     bottom: -90,
     left: -100,
+    right: '30%',
     zIndex: 10,
     transform: {
-      rotate: '1deg'
+      rotate: '2deg'
     }
   }
 
   $.alt = {
-    background: 'rgb(235, 235, 235)',
-    height: 1500,
-    width: '140%',
-    top: -100,
-    right: -1000,
-    zIndex: 0,
+    background: "linear-gradient(-20deg, #fff 50%, #e8e8e8)",
+    height: 1000,
+    width: 1000,
+    top: '-10%',
+    right: -600,
     left: 'auto',
+    marginLeft: '20%',
+    zIndex: 0,
     transform: {
       rotate: '-40deg'
+    },
+
+    [screen.small]: {
+      display: 'none'
+    }
+  }
+}
+
+view Nav {
+  <a href="/docs">Docs</a>
+  <a href="/docs">FAQ</a>
+  <a target="_blank" href="https://twitter.com/flintjs">Twitter</a>
+
+  $ = {
+    position: 'absolute',
+    top: 8,
+    right: 30,
+    flexFlow: 'row',
+    zIndex: 100,
+    fontSize: 12
+  }
+
+  $a = {
+    color: '#666',
+    textDecoration: 'none',
+    fontFamily: sansSerif,
+    padding: [0, 10],
+
+    ':hover': {
+      color: '#444'
     }
   }
 }
@@ -89,7 +121,8 @@ view Logo {
 
   $img = {
     width: 159,
-    height: 79
+    height: 79,
+    margin: [0, 0, 10]
   }
 }
 
@@ -128,7 +161,7 @@ view Introduction {
 
   $ = {
     padding: [10, 20],
-    fontFamily: 'Helvetica Neue, Helvetica, Arail, sans-serif',
+    fontFamily: sansSerif,
     textAlign: 'center'
   }
 
@@ -183,6 +216,9 @@ view Examples {
 }
 
 view Interlude {
+  flip = (one, two) => Math.random() > 0.5 ? one : two
+  rand = () => Math.round(Math.random() * 10) / 10
+
   <Contain>
     <section>
       <p>
@@ -218,6 +254,7 @@ view Example {
   $ = {
     flexFlow: 'row',
     flexGrow: 1,
+    fontFamily: sansSerif,
 
     [screen.small]: {
       flexFlow: 'column'
@@ -260,9 +297,8 @@ view Editor {
 
   $ = {
     flexFlow: 'column',
-    height: ^lines ? (30 * ^lines) : '100%',
-    border: '2px solid #ddd',
-    borderWidth: ^light ? 1 : 2,
+    height: ^lines ? 20 + (28 * ^lines) : '100%',
+    border: '1px solid #ddd',
     borderRadius: 6,
     boxShadow: '0 0 10px rgba(0,0,0,0.05)',
     margin: 10,
