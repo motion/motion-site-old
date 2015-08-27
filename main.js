@@ -207,20 +207,24 @@ view Examples {
   </Interlude>
 
   <Example flip inPage
-    in={<Editor lines={10} left light src="/examples/example2.html" />}
-    out={<Demo2 />} />
+    in={<Editor lines={10} left light src="/examples/exampleCounter.html" />}
+    out={<DemoCounter />} />
 
   <Interlude>
     Style elements using the $ sign
   </Interlude>
 
   <Example inPage
-    in={<Editor lines={15} left light src="/examples/example3.html" />}
-    out={<Demo4 />} />
+    in={<Editor lines={15} left light src="/examples/exampleVenn.html" />}
+    out={<DemoVenn />} />
 
   <Interlude>
     One more demo...
   </Interlude>
+
+  <Example flip inPage
+    in={<Editor lines={15} left light src="/examples/exampleVenn.html" />}
+    out={<DemoCircles />} />
 }
 
 view Interlude {
@@ -603,8 +607,12 @@ view Contain {
     justifyContent: 'inherit',
     flexGrow: 1,
     flexShrink: 0,
-    padding: ^pad ? [0, '10%'] : 0,
+    padding: ^pad ? [0, '20%'] : 0,
     position: 'relative',
-    zIndex: 10
+    zIndex: 10,
+
+    [screen.small]: {
+      padding: 0
+    }
   }
 }

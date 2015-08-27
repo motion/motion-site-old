@@ -1,4 +1,4 @@
-view Demo2 {
+view DemoCounter {
   @count = 0
 
   increment = () => @count++

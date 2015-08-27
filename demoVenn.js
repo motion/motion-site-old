@@ -1,4 +1,4 @@
-view Demo4 {
+view DemoVenn {
   <one class="circle" />
   <two class="circle" />
 
