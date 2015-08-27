@@ -78,16 +78,17 @@ view Header {
 }
 
 view Nav {
-  <a href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
-  <a target="_blank" href="https://twitter.com/flint_js">Twitter</a>
+  // <a if={false} href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
+
+  <a target="_blank" href="https://twitter.com/flint_js">&#64;flint_js</a>
 
   $ = {
     position: 'absolute',
-    top: 8,
-    right: 30,
+    top: 5,
+    right: 0,
     flexFlow: 'row',
     zIndex: 100,
-    fontSize: 12
+    fontSize: 14
   }
 
   $a = {
@@ -491,7 +492,7 @@ view Video {
   <strip />
 
   $ = {
-    background: '#f2f2f2',
+    background: 'linear-gradient(-65deg, #fff, #f2f2f2)',
     position: 'relative',
     zIndex: 0,
   }
