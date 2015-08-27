@@ -25,7 +25,6 @@ view Main {
 view Header {
   @startIntro = false
 
-  <Nav />
   <Example
     flipVertical
     out={
@@ -40,23 +39,36 @@ view Header {
         onLoad={() => @startIntro = true}
         src="/examples/example.html" />
     } />
-  <strip />
-  <strip class="alt" />
+  <decor>
+    <Contain>
+      <Nav />
+      <strip />
+      <strip class="alt" />
+    </Contain>
+  </decor>
 
   $ = {
     flexFlow: 'row',
     margin: 0,
-    padding: [45, 0],
+    padding: [40, 0, 25],
     background: 'linear-gradient(20deg, #fff, #f3f3f3)',
     position: 'relative',
     overflow: 'hidden'
   }
 
+  $decor = {
+    position: 'absolute',
+    zIndex: 0,
+    top: 0,
+    left: 0,
+    right: 0
+  }
+
   $strip = {
-    background: '#fff',
+    background: 'rgba(255,255,255,0.4)',
     height: 100,
     position: 'absolute',
-    bottom: -90,
+    top: -70,
     left: -100,
     right: '-50%',
     zIndex: 10,
@@ -76,10 +88,6 @@ view Header {
     zIndex: 0,
     transform: {
       rotate: '-40deg'
-    },
-
-    [screen.small]: {
-      display: 'none'
     }
   }
 }
