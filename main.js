@@ -93,9 +93,8 @@ view Header {
 }
 
 view Nav {
-  <a href="/docs">Docs</a>
-  <a href="/docs">FAQ</a>
-  <a target="_blank" href="https://twitter.com/flintjs">Twitter</a>
+  <a href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
+  <a target="_blank" href="https://twitter.com/flint_js">Twitter</a>
 
   $ = {
     position: 'absolute',
