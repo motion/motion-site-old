@@ -202,7 +202,7 @@ view Examples {
     Style elements using the $ sign
   </Interlude>
 
-  <Example inPage flip
+  <Example inPage
     in={<Editor lines={15} left light src="/examples/example3.html" />}
     out={<Demo4 />} />
 
