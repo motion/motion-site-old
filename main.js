@@ -29,10 +29,10 @@ view Header {
   <Example
     flipVertical
     out={
-      <div>
+      <head>
         <Logo />
         <Introduction start={@startIntro} />
-      </div>
+      </head>
     }
     in={
       <Editor right key="2"
@@ -47,7 +47,7 @@ view Header {
     flexFlow: 'row',
     margin: 0,
     padding: [45, 0],
-    background: 'linear-gradient(-30deg, #fefefe, #f3f3f3, #fff)',
+    background: 'linear-gradient(20deg, #fff, #f3f3f3)',
     position: 'relative',
     overflow: 'hidden'
   }
@@ -58,19 +58,19 @@ view Header {
     position: 'absolute',
     bottom: -90,
     left: -100,
-    right: '30%',
+    right: '-50%',
     zIndex: 10,
     transform: {
-      rotate: '2deg'
+      rotate: '1deg'
     }
   }
 
   $.alt = {
-    background: "linear-gradient(-20deg, #fff 50%, #e8e8e8)",
+    background: "linear-gradient(-20deg, #fff 50%, #eee)",
     height: 1000,
     width: 1000,
     top: '-10%',
-    right: -600,
+    right: -550,
     left: 'auto',
     marginLeft: '20%',
     zIndex: 0,
@@ -115,6 +115,7 @@ view Logo {
 
   $ = {
     flexFlow: 'row',
+    marginTop: -10,
     alignItems: 'center',
     justifyContent: 'center'
   }
@@ -157,7 +158,7 @@ view Introduction {
   setTimeout(step, 1350)
 
   <h2>Radically improved development</h2>
-  <desc>Write web apps {@desc}.</desc>
+  <desc>Write web apps {@desc}</desc>
 
   $ = {
     padding: [10, 20],
@@ -174,7 +175,11 @@ view Introduction {
   $h2 = [title, {
     color: '#444',
     fontSize: 26,
-    fontWeight: 300
+    fontWeight: 300,
+    // fontSize: 24,
+    // fontWeight: 500,
+    // fontFamily: 'Montserrat',
+    // letterSpacing: -1
   }]
 
   $desc = {
@@ -191,7 +196,7 @@ view Introduction {
 
 view Examples {
   <Interlude>
-    Flint simplifies ES6 and introduces the <b>view</b>.
+    Flint simplifies ES6 and introduces the <em>view</em>
   </Interlude>
 
   <Example flip inPage
