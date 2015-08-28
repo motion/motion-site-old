@@ -39,41 +39,14 @@ view Header {
         onLoad={() => @startIntro = true}
         src="/examples/example.html" />
     } />
-  <decor>
-    <Contain>
-      <Nav />
-      <strip />
-    </Contain>
-  </decor>
 
   $ = {
     flexFlow: 'row',
     margin: 0,
-    padding: [40, 0, 25],
-    background: 'linear-gradient(20deg, #fff, #f3f3f3)',
+    padding: [40, 0, 10],
+    background: 'linear-gradient(#f3f3f3, #fff)',
     position: 'relative',
     overflow: 'hidden'
-  }
-
-  $decor = {
-    position: 'absolute',
-    zIndex: 0,
-    top: 0,
-    left: 0,
-    right: 0
-  }
-
-  $strip = {
-    background: 'rgba(255,255,255,0.4)',
-    height: 100,
-    position: 'absolute',
-    top: -70,
-    left: -100,
-    right: '-50%',
-    zIndex: 10,
-    transform: {
-      rotate: '1deg'
-    }
   }
 }
 
@@ -197,7 +170,7 @@ view Examples {
     out={<DemoCounter />} />
 
   <Interlude>
-    Style elements using the $ sign
+    Views let your style elements using $ variables
   </Interlude>
 
   <Example inPage
@@ -390,7 +363,7 @@ view Features {
   color = 'rgb(4, 139, 66)'
 
   $list = {
-    maxWidth: '80%',
+    maxWidth: 650,
     margin: [0, 'auto'],
     padding: [0, '5%'],
     borderRadius: 5,
@@ -405,6 +378,7 @@ view Features {
     lineHeight: '1.5rem',
     width: '50%',
     flexFlow: 'row',
+    textAlign: 'center',
 
     [screen.small]: {
       width: '100%',
@@ -449,7 +423,7 @@ view About {
   </Contain>
 
   $ = {
-    padding: [0, 25, 50],
+    padding: [0, 20, 50],
     lineHeight: '1.8rem',
 
     [screen.small]: {
@@ -499,7 +473,7 @@ view Video {
 
   $center = {
     margin: 'auto',
-    padding: [60, 0],
+    padding: [50, 0],
     textAlign: 'center',
     alignItems: 'center'
   }
@@ -542,7 +516,6 @@ view Install {
   </intructions>
 
   $ = {
-    borderTop: '1px solid #ddd',
     padding: [20, 0],
     margin: [20, 0]
   }
