@@ -1,3 +1,16 @@
+/*
+
+  How to make the site spectacular
+
+  - Light Forum area with big-area topics to discuss
+    - Also alows users to contribute docs
+  - FAQ
+  - Docs
+
+*/
+
+
+
 import chroma from 'chroma-js'
 
 sansSerif = 'Helvetica Neue, Helvetica, Arail, sans-serif'
@@ -39,14 +52,21 @@ view Header {
         onLoad={() => @startIntro = true}
         src="/examples/example.html" />
     } />
+    <strip />
 
   $ = {
     flexFlow: 'row',
     margin: 0,
-    padding: [40, 0, 10],
-    background: 'linear-gradient(#f3f3f3, #fff)',
+    padding: [40, 0, 0],
     position: 'relative',
     overflow: 'hidden'
+  }
+
+  $strip = {
+    position: [-990, -900, , 0],
+    background: '#eee',
+    transform: { rotate: '.5deg' },
+    height: 1000
   }
 }
 
@@ -94,6 +114,33 @@ view Logo {
 }
 
 view Introduction {
+  <h2>Radically improved development</h2>
+  <Desc />
+
+  $ = {
+    padding: [10, 20],
+    fontFamily: sansSerif,
+    textAlign: 'center'
+  }
+
+  title = {
+    margin: [5, 0],
+    lineHeight: '1.4em',
+    textAlign: 'center'
+  }
+
+  $h2 = [title, {
+    color: '#444',
+    fontSize: 26,
+    fontWeight: 300,
+    // fontSize: 24,
+    // fontWeight: 500,
+    // fontFamily: 'Montserrat',
+    // letterSpacing: -1
+  }]
+}
+
+view Desc {
   phrases = ['powerfully fast', 'without boilerplate', 'more creatively']
   @desc = ''
 
@@ -123,30 +170,7 @@ view Introduction {
 
   setTimeout(step, 1350)
 
-  <h2>Radically improved development</h2>
   <desc>Write web apps {@desc}</desc>
-
-  $ = {
-    padding: [10, 20],
-    fontFamily: sansSerif,
-    textAlign: 'center'
-  }
-
-  title = {
-    margin: [5, 0],
-    lineHeight: '1.4em',
-    textAlign: 'center'
-  }
-
-  $h2 = [title, {
-    color: '#444',
-    fontSize: 26,
-    fontWeight: 300,
-    // fontSize: 24,
-    // fontWeight: 500,
-    // fontFamily: 'Montserrat',
-    // letterSpacing: -1
-  }]
 
   $desc = {
     textAlign: 'center',
@@ -199,11 +223,11 @@ view Interlude {
   </Contain>
 
   $section = {
-    margin: [20, 0],
-    padding: [15, 0],
+    color: '#585858',
+    margin: [35, 0],
     borderRight: 'none',
     borderLeft: 'none',
-    fontSize: 20
+    fontSize: 19
   }
 
   $.simple = {
@@ -252,7 +276,7 @@ view Example {
   $in = {
     order: ^flip ? 1 : 2,
     zIndex: 10,
-    margin: [-10, 0, 10],
+    margin: [-10, 0, 0],
 
     [screen.small]: {
       width: '90%',
@@ -275,7 +299,7 @@ view Editor {
     margin: 10,
     marginRight: ^right ? -10 : 10,
     marginLeft: ^left ? -10 : 10,
-    background: ^light ? '#fff' : '#1E2B33',
+    background: ^light ? '#fff' : '#263640',
     fontFamily: 'monospace',
     position: 'relative',
     zIndex: 10,
@@ -506,30 +530,23 @@ view Video {
 }
 
 view Install {
-  <h2>
-    Install
-  </h2>
   <intructions>
-    <p>npm install -g flint</p>
-    <p class="small">flint new myapp</p>
-    <p class="small">flint</p>
+    <code>npm install -g flint</code>
+    <code class="small">flint new myapp</code>
+    <code class="small">flint</code>
   </intructions>
 
   $ = {
-    padding: [20, 0],
-    margin: [20, 0]
+    margin: [60, 0]
   }
 
-  $h2 = { textAlign: 'center' }
-  $instructions = { padding: [20, 0] }
-
-  $p = [{
+  $code = [{
     color: '#000',
     margin: [10, 0],
     width: '100%',
     textAlign: 'center',
     fontFamily: 'monospace',
-    fontSize: 24
+    fontSize: 28
   }, ^small && {
     padding: [2, 0, 20],
     fontSize: 18,
@@ -558,7 +575,7 @@ view Contain {
   <contain key={Math.random()} yield />
 
   $ = {
-    maxWidth: 1000,
+    maxWidth: 1050,
     width: '100%',
     margin: 'auto',
     flexFlow: 'inherit',
