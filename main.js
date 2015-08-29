@@ -1,16 +1,3 @@
-/*
-
-  How to make the site spectacular
-
-  - Light Forum area with big-area topics to discuss
-    - Also alows users to contribute docs
-  - FAQ
-  - Docs
-
-*/
-
-
-
 import chroma from 'chroma-js'
 
 sansSerif = 'Helvetica Neue, Helvetica, Arail, sans-serif'
@@ -109,7 +96,7 @@ view Logo {
   $img = {
     width: 159,
     height: 79,
-    margin: [0, 0, 10]
+    margin: [0, 'auto', 10]
   }
 }
 

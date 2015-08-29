@@ -6,15 +6,24 @@ body {
   font-size: 14px;
   line-height: 1.4;
   background: #fff;
+
+  -webkit-text-size-adjust: 100%;
 }
 
 body * {
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-flow: column;
   flex-shrink: 1;
   align-items: stretch;
   box-sizing: border-box;
   flex-wrap: wrap;
+
+  -webkit-flex-flow: column;
+  -webkit-flex-shrink: 1;
+  -webkit-align-items: stretch;
+  -webkit-flex-wrap: wrap;
 }
 
 #_flintapp > .main {
@@ -24,6 +33,7 @@ body * {
   left: 0;
   right: 0;
   bottom: 0;
+
   -webkit-overflow-scrolling: touch;
 }
 
@@ -31,7 +41,7 @@ a, button, input, textarea {
   align-self: flex-start;
 }
 
-a, span, em, b, strong {
+a, span, em, b, strong, i {
   white-space: pre-wrap;
   display: inline;
 }
@@ -55,6 +65,8 @@ img {
   height: auto;
   margin: 0 auto;
   max-width: 100%;
+
+  -webkit-flex-shrink: 0;
 }
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -467,41 +479,3 @@ td,
 th {
   padding: 0;
 }
-
-/*
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/monsterrat/montserrat-regular-webfont.woff2') format('woff2'),
-       url('/fonts/monsterrat/montserrat-regular-webfont.woff') format('woff'),
-       url('/fonts/monsterrat/montserrat-regular-webfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/monsterrat/montserrat-regular-bold.woff2') format('woff2'),
-       url('/fonts/monsterrat/montserrat-regular-bold.woff') format('woff'),
-       url('/fonts/monsterrat/montserrat-regular-bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/monsterrat/montserrat-semibold-webfont.woff2') format('woff2'),
-       url('/fonts/monsterrat/montserrat-semibold-webfont.woff') format('woff'),
-       url('/fonts/monsterrat/montserrat-semibold-webfont.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/monsterrat/montserrat-light-webfont.woff2') format('woff2'),
-       url('/fonts/monsterrat/montserrat-light-webfont.woff') format('woff'),
-       url('/fonts/monsterrat/montserrat-light-webfont.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}*/
