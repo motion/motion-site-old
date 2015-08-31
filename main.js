@@ -1,8 +1,8 @@
 import chroma from 'chroma-js'
 
-sansSerif = 'Helvetica Neue, Helvetica, Arail, sans-serif'
+sansSerif = 'Helvetica Neue, Helvetica, Arial, sans-serif'
 screen = {}
-screen.small = '@media (max-width: 840px)'
+screen.small = '@media (max-width: 800px)'
 
 view Main {
   <Header />
@@ -39,7 +39,7 @@ view Header {
         onLoad={() => @startIntro = true}
         src="/examples/example.html" />
     } />
-    <strip />
+  <strip />
 
   $ = {
     flexFlow: 'row',
@@ -101,7 +101,7 @@ view Logo {
 }
 
 view Introduction {
-  <h2>Radically improved development</h2>
+  <h2>Improve development</h2>
   <Desc />
 
   $ = {
@@ -119,11 +119,7 @@ view Introduction {
   $h2 = [title, {
     color: '#444',
     fontSize: 26,
-    fontWeight: 300,
-    // fontSize: 24,
-    // fontWeight: 500,
-    // fontFamily: 'Montserrat',
-    // letterSpacing: -1
+    fontWeight: 300
   }]
 }
 
@@ -173,6 +169,14 @@ view Desc {
 
 view Examples {
   <Interlude>
+    One more demo...
+  </Interlude>
+
+  <Example flip inPage
+    in={<Editor lines={15} left light src="/examples/exampleVenn.html" />}
+    out={<DemoCircles />} />
+
+  <Interlude>
     Flint simplifies ES6 and introduces the <em>view</em>
   </Interlude>
 
@@ -188,13 +192,6 @@ view Examples {
     in={<Editor lines={15} left light src="/examples/exampleVenn.html" />}
     out={<DemoVenn />} />
 
-  <Interlude>
-    One more demo...
-  </Interlude>
-
-  <Example flip inPage
-    in={<Editor lines={15} left light src="/examples/exampleVenn.html" />}
-    out={<DemoCircles />} />
 }
 
 view Interlude {
@@ -287,7 +284,7 @@ view Editor {
     marginRight: ^right ? -10 : 10,
     marginLeft: ^left ? -10 : 10,
     background: ^light ? '#fff' : '#263640',
-    fontFamily: 'monospace',
+    fontFamily: 'Hack, monospace',
     position: 'relative',
     zIndex: 10,
 
@@ -517,11 +514,9 @@ view Video {
 }
 
 view Install {
-  <intructions>
-    <code>npm install -g flint</code>
-    <code class="small">flint new myapp</code>
-    <code class="small">flint</code>
-  </intructions>
+  <code>npm install -g flint</code>
+  <code class="small">flint new myapp</code>
+  <code class="small">flint</code>
 
   $ = {
     margin: [60, 0]
@@ -532,7 +527,7 @@ view Install {
     margin: [10, 0],
     width: '100%',
     textAlign: 'center',
-    fontFamily: 'monospace',
+    fontFamily: 'Hack, monospace',
     fontSize: 28
   }, ^small && {
     padding: [2, 0, 20],
@@ -559,7 +554,7 @@ view Check {
 }
 
 view Contain {
-  <contain key={Math.random()} yield />
+  <contain yield />
 
   $ = {
     maxWidth: 1050,

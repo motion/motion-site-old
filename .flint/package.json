@@ -8,6 +8,7 @@
   "scripts": {},
   "dependencies": {
     "chroma-js": "^1.1.1",
-    "flintjs": "^1.0.0"
+    "flintjs": "^1.0.0",
+    "react-motion": "^0.2.7"
   }
 }
