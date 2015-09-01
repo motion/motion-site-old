@@ -17,10 +17,6 @@ view DemoCircles {
   }
 }
 
-view Circles {
-
-}
-
 view Circle {
   c = () => Math.round(Math.random()*255)
   bg = `rgb(${c()}, ${c()}, ${c()})`
