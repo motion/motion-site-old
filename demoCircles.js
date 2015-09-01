@@ -7,16 +7,11 @@ view DemoCircles {
   left = x => x - this.refs.circles.getDOMNode().getBoundingClientRect().left
   top = y => y - this.refs.circles.getDOMNode().getBoundingClientRect().top
 
-  <circles key="123" ref="circles" onClick={e => addCircle(left(e.clientX), top(e.clientY))}>
-    <Circle repeat={@circles} pos={_} key={`${_[0]}${_[1]}`} />
+  <circles ref="circles" onClick={e => addCircle(left(e.clientX), top(e.clientY))}>
+    <Circle repeat={@circles} pos={_} nokey />
   </circles>
 
-  $circles = {
-    width: 800,
-    height: 800
-  }
-
-  $ = false
+  $circles = { width: 800, height: 800 }
 }
 
 view Circle {
@@ -24,17 +19,17 @@ view Circle {
   background = `rgb(${c()}, ${c()}, ${c()})`
   size = ^size || 20
 
-  circle = size => ({
-    borderRadius: 100,
-    background,
-    position: 'absolute',
-    top: ^pos[1], left: ^pos[0],
-    width: size, height: size,
-    margin: [-size/2, 0, 0, -size/2]
-  })
-
-  <Spring defaultValue={0} endValue={100}>
-    {i => <circle style={circle(i)} />}
+  <Spring defaultValue={{ val: 0 }} endValue={{ val: 100, config: [500,10] }}>
+    {i => (
+      <circle style={{
+        borderRadius: 100,
+        background,
+        position: 'absolute',
+        top: ^pos[1], left: ^pos[0],
+        width: size, height: size,
+        margin: [-size/2, 0, 0, -size/2]
+      }} />
+    )}
   </Spring>
 
   $ = false
