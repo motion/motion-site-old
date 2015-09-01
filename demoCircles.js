@@ -1,7 +1,7 @@
 import { Spring } from 'react-motion'
 
 view DemoCircles {
-  @circles = [[0,0], [100,100]]
+  @circles = [[100,100]]
 
   addCircle = (x,y) => @circles.push([x,y])
   left = x => x - this.refs.circles.getDOMNode().getBoundingClientRect().left
@@ -19,20 +19,20 @@ view DemoCircles {
 
 view Circle {
   c = () => Math.round(Math.random()*255)
-  bg = `rgb(${c()}, ${c()}, ${c()})`
+  background = `rgb(${c()}, ${c()}, ${c()})`
   size = ^size || 20
 
-  circle = () => ({
+  circle = size => ({
     borderRadius: 100,
-    flexShrink: 0,
-    background: bg,
+    background,
     position: 'absolute',
-    left: ^pos[0],
-    top: ^pos[1]
+    top: ^pos[1], left: ^pos[0],
+    width: size, height: size,
+    margin: [-size/2, 0, 0, -size/2]
   })
 
   <Spring defaultValue={0} endValue={100}>
-    {i => <circle style={[circle(), { width: i, height: i }]} />}
+    {i => <circle style={circle(i)} />}
   </Spring>
 
   $ = false
