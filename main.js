@@ -50,9 +50,9 @@ view Header {
   }
 
   $strip = {
-    position: [-990, -900, , 0],
+    position: [-980, -900, , 0],
     background: '#eee',
-    transform: { rotate: '.5deg' },
+    transform: { rotate: '1deg' },
     height: 1000
   }
 }

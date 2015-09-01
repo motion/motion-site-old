@@ -1,19 +1,14 @@
 import { Spring } from 'react-motion'
 
 view DemoCircles {
+  range = i => Array.apply(i,Array(i)).map((_, i) => i)
+
   @num = 0
 
+  <title>Num circles: {@num}</title>
   <input type="range" sync={@num} />
-  <circles repeat={[1,2,3]}>
-    {_}
-  </circles>
-  <circles repeat={100}>
-    hello
-  </circles>
   <circles>
-    <Spring defaultValue={0} endValue={100}>
-      {i => <div style={{margin: i, background: 'red', width: 20, height: 20}} />}
-    </Spring>
+    <Circle repeat={range(@num)} />
   </circles>
 
   $ = {
@@ -25,10 +20,7 @@ view DemoCircles {
 
 view Circle {
   c = () => Math.round(Math.random()*255)
-
-  <circle />
-
-  $ = {
+  circle = () => ({
     borderRadius: 100,
     width: ^size || 200,
     height: ^size || 200,
@@ -37,5 +29,11 @@ view Circle {
     opacity: 0.5,
 
     background: `rgb(${c()}, ${c()}, ${c()})`
-  }
+  })
+
+  <Spring defaultValue={0} endValue={100}>
+    {i => <circle style={[circle(), { marginLeft: i }]} />}
+  </Spring>
+
+  $ = false
 }
