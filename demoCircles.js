@@ -8,24 +8,37 @@ view DemoCircles {
 }
 
 view Circles {
-  range = i => Array.apply(i,Array(+i)).map((_, i) => i)
+  @circles = [[0,0], [100,100]]
 
-  <Circle repeat={range(^num)} />
+  addCircle = (x,y) => @circles = [[x,y]]
+  left = x => x - this.refs.circles.getDOMNode().getBoundingClientRect().left
+  top = y => y - this.refs.circles.getDOMNode().getBoundingClientRect().top
 
-  $ = { flexFlow: 'row' }
+  <circles ref="circles" onClick={e => addCircle(left(e.clientX), top(e.clientY))}>
+    <Circle repeat={@circles} pos={_} />
+  </circles>
+
+  $ = {
+    width: 500,
+    height: 500
+  }
 }
 
 view Circle {
   c = () => Math.round(Math.random()*255)
   bg = `rgb(${c()}, ${c()}, ${c()})`
 
+  console.log(^pos)
+
   circle = () => ({
     borderRadius: 100,
     width: ^size || 20,
     height: ^size || 20,
     flexShrink: 0,
-    margin: ['auto', 0],
-    background: bg
+    background: bg,
+    position: 'absolute',
+    top: ^pos[0],
+    left: ^pos[1]
   })
 
   <Spring defaultValue={0} endValue={5}>
