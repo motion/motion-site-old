@@ -1,13 +1,6 @@
 import { Spring } from 'react-motion'
 
 view DemoCircles {
-  @num = 0
-
-  <input type="range" sync={@num} />
-  <Circles num={@num} />
-}
-
-view Circles {
   @circles = [[0,0], [100,100]]
 
   addCircle = (x,y) => @circles.push([x,y])
@@ -18,10 +11,14 @@ view Circles {
     <Circle repeat={@circles} pos={_} key={`${_[0]}${_[1]}`} />
   </circles>
 
-  $ = {
-    width: 500,
-    height: 500
+  $circles = {
+    width: 800,
+    height: 800
   }
+}
+
+view Circles {
+
 }
 
 view Circle {
