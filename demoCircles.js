@@ -14,12 +14,8 @@ view Circles {
   left = x => x - this.refs.circles.getDOMNode().getBoundingClientRect().left
   top = y => y - this.refs.circles.getDOMNode().getBoundingClientRect().top
 
-  setTimeout(() => {
-    console.log(@circles)
-  }, 200)
-
   <circles ref="circles" onClick={e => addCircle(left(e.clientX), top(e.clientY))}>
-    <Circle repeat={@circles} pos={_} />
+    <Circle repeat={@circles} pos={_} key={`${_[0]}${_[1]}`} />
   </circles>
 
   $ = {
@@ -31,13 +27,10 @@ view Circles {
 view Circle {
   c = () => Math.round(Math.random()*255)
   bg = `rgb(${c()}, ${c()}, ${c()})`
-
-  console.log(^pos)
+  size = ^size || 20
 
   circle = () => ({
     borderRadius: 100,
-    width: ^size || 20,
-    height: ^size || 20,
     flexShrink: 0,
     background: bg,
     position: 'absolute',
@@ -45,8 +38,8 @@ view Circle {
     top: ^pos[1]
   })
 
-  <Spring defaultValue={0} endValue={5}>
-    {i => <circle style={[circle(), { marginLeft: i }]} />}
+  <Spring defaultValue={0} endValue={100}>
+    {i => <circle style={[circle(), { width: i, height: i }]} />}
   </Spring>
 
   $ = false
