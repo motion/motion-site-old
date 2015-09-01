@@ -1,25 +1,18 @@
 import { Spring } from 'react-motion'
 
 view DemoCircles {
-  range = i => Array.apply(i,Array(i)).map((_, i) => i)
+  @num = 0
 
-  @num = 2
+  <input type="range" sync={@num} />
+  <Circles num={@num} />
+}
 
-  <title>Num circles: {@num}</title>
-  <input type="range" onChange={e => @num = e.target.value} />
-  <circles>
-    <Circle repeat={range(@num)} />
-  </circles>
+view Circles {
+  range = i => Array.apply(i,Array(+i)).map((_, i) => i)
 
-  $ = {
-    flexFlow: 'row',
-    margin: 'auto',
-    width: 300
-  }
+  <Circle repeat={range(^num)} />
 
-  $circles = {
-    flexFlow: 'row'
-  }
+  $ = { flexFlow: 'row' }
 }
 
 view Circle {
@@ -32,11 +25,10 @@ view Circle {
     height: ^size || 20,
     flexShrink: 0,
     margin: ['auto', 0],
-    opacity: 0.5,
     background: bg
   })
 
-  <Spring defaultValue={0} endValue={10}>
+  <Spring defaultValue={0} endValue={5}>
     {i => <circle style={[circle(), { marginLeft: i }]} />}
   </Spring>
 
