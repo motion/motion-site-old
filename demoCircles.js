@@ -26,8 +26,8 @@ view Circle {
         background,
         position: 'absolute',
         top: ^pos[1], left: ^pos[0],
-        width: size, height: size,
-        margin: [-size/2, 0, 0, -size/2]
+        width: i.val, height: i.val,
+        margin: [-i.val/2, 0, 0, -i.val/2]
       }} />
     )}
   </Spring>
