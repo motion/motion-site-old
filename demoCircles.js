@@ -7,7 +7,7 @@ view DemoCircles {
   left = x => x - this.refs.circles.getDOMNode().getBoundingClientRect().left
   top = y => y - this.refs.circles.getDOMNode().getBoundingClientRect().top
 
-  <circles ref="circles" onClick={e => addCircle(left(e.clientX), top(e.clientY))}>
+  <circles key="123" ref="circles" onClick={e => addCircle(left(e.clientX), top(e.clientY))}>
     <Circle repeat={@circles} pos={_} key={`${_[0]}${_[1]}`} />
   </circles>
 
@@ -15,6 +15,8 @@ view DemoCircles {
     width: 800,
     height: 800
   }
+
+  $ = false
 }
 
 view Circle {
