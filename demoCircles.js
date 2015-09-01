@@ -10,9 +10,13 @@ view DemoCircles {
 view Circles {
   @circles = [[0,0], [100,100]]
 
-  addCircle = (x,y) => @circles = [[x,y]]
+  addCircle = (x,y) => @circles.push([x,y])
   left = x => x - this.refs.circles.getDOMNode().getBoundingClientRect().left
   top = y => y - this.refs.circles.getDOMNode().getBoundingClientRect().top
+
+  setTimeout(() => {
+    console.log(@circles)
+  }, 200)
 
   <circles ref="circles" onClick={e => addCircle(left(e.clientX), top(e.clientY))}>
     <Circle repeat={@circles} pos={_} />
@@ -37,8 +41,8 @@ view Circle {
     flexShrink: 0,
     background: bg,
     position: 'absolute',
-    top: ^pos[0],
-    left: ^pos[1]
+    left: ^pos[0],
+    top: ^pos[1]
   })
 
   <Spring defaultValue={0} endValue={5}>
