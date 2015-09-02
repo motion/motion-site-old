@@ -7,7 +7,7 @@ view DemoCircles {
   addCircle = e => @coords.push(offset(e))
 
   <circles onClick={addCircle}>
-    <Circle repeat={@coords} left={_x} top={_y} key={_x+_y} />
+    <Circle repeat={@coords} left={_x} top={_y} nokey />
   </circles>
 
   $circles = { height: 400 }
