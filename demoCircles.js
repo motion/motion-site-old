@@ -2,15 +2,15 @@ import { Spring } from 'react-motion'
 import offset from 'mouse-event-offset'
 
 view DemoCircles {
-  @circles = [{ x: 10, y: 10 }]
+  @coordinates = [{ x: 10, y: 10 }]
 
-  addCircle = e => @circles.push(offset(e))
+  addCircle = e => @coordinates.push(offset(e))
 
   <circles onClick={addCircle}>
-    <Circle repeat={@circles} left={_x} top={_y} nokey />
+    <Circle repeat={@coordinates} left={_x} top={_y} nokey />
   </circles>
 
-  $circles = { width: '100%', height: 400 }
+  $circles = { height: 400 }
 }
 
 view Circle {
@@ -28,6 +28,4 @@ view Circle {
   <Spring defaultValue={{ val: 0 }} endValue={{ val: 1, config: [300, 10] }}>
     {i => <circle style={{ ...style, transform: `scale(${i.val})` }} />}
   </Spring>
-
-  $ = false
 }
