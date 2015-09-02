@@ -165,14 +165,6 @@ view Desc {
 
 view Examples {
   <Interlude>
-    One more demo...
-  </Interlude>
-
-  <Example flip inPage
-    in={<Editor lines={15} left light src="/examples/exampleVenn.html" />}
-    out={<DemoCircles />} />
-
-  <Interlude>
     Flint simplifies ES6 and introduces the <em>view</em>
   </Interlude>
 
@@ -188,6 +180,18 @@ view Examples {
     in={<Editor lines={15} left light src="/examples/exampleVenn.html" />}
     out={<DemoVenn />} />
 
+  <Interlude>
+    Click around to create bubbles...
+  </Interlude>
+
+  <Example flip inPage
+    in={
+      <Editor left light
+        lines={15}
+        src="/examples/exampleVenn.html"
+        src2="/examples/exampleVenn.html" />
+    }
+    out={<DemoCircles />} />
 }
 
 view Interlude {
@@ -269,17 +273,17 @@ view Example {
 view Editor {
   <Toolbar />
   <iframe src={^src} onLoad={^onLoad}></iframe>
+  <iframe if={^src2} src={^src2}></iframe>
 
   $ = {
     flexFlow: 'column',
-    height: ^lines ? 20 + (28 * ^lines) : '100%',
+    height: ^lines ? 20 + (27 * ^lines) : '100%',
     border: '1px solid #ddd',
     borderRadius: 6,
     boxShadow: '0 0 10px rgba(0,0,0,0.05)',
     margin: 10,
     marginRight: ^right ? -10 : 10,
     marginLeft: ^left ? -10 : 10,
-    background: ^light ? '#fff' : '#263640',
     fontFamily: 'Hack, monospace',
     position: 'relative',
     zIndex: 10,
@@ -295,7 +299,10 @@ view Editor {
     border: 'none',
     padding: 5,
     overflow: 'hidden',
-    pointerEvents: 'none'
+    pointerEvents: 'none',
+    position: 'absolute',
+    top: 0, left: 0,
+    background: ^light ? '#fff' : '#263640',
   }
 }
 

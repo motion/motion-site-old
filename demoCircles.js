@@ -7,7 +7,7 @@ view DemoCircles {
   addCircle = e => @coords.push(offset(e))
 
   <circles onClick={addCircle}>
-    <Circle repeat={@coords} left={_x} top={_y} nokey />
+    <Circle repeat={@coords} left={_x} top={_y} />
   </circles>
 
   $circles = { height: 400 }
@@ -17,8 +17,7 @@ view Circle {
   c = () => Math.round(Math.random()*255)
   style = {
     background: `rgb(${c()}, ${c()}, ${c()})`,
-    left: ^left,
-    top: ^top,
+    top: ^top, left: ^left,
     width: 40, height: 40,
     marginLeft: -20,
     borderRadius: 100,
