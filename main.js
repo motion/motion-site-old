@@ -75,11 +75,7 @@ view Nav {
     color: '#666',
     textDecoration: 'none',
     fontFamily: sansSerif,
-    padding: [0, 10],
-
-    ':hover': {
-      color: '#444'
-    }
+    padding: [0, 10]
   }
 }
 
@@ -225,7 +221,7 @@ view Interlude {
 }
 
 view Example {
-  <Contain>
+  <Contain key={Math.random()}>
     <in class="split">{^in}</in>
     <out class="split">{^out}</out>
   </Contain>

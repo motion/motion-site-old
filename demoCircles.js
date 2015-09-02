@@ -2,12 +2,12 @@ import { Spring } from 'react-motion'
 import offset from 'mouse-event-offset'
 
 view DemoCircles {
-  @coordinates = [{ x: 10, y: 10 }]
+  @coords = [{ x: 10, y: 10 }]
 
-  addCircle = e => @coordinates.push(offset(e))
+  addCircle = e => @coords.push(offset(e))
 
   <circles onClick={addCircle}>
-    <Circle repeat={@coordinates} left={_x} top={_y} nokey />
+    <Circle repeat={@coords} left={_x} top={_y} key={_x+_y} />
   </circles>
 
   $circles = { height: 400 }
