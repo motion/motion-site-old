@@ -295,14 +295,15 @@ view Editor {
   }
 
   $iframe = {
-    height: '100%',
     border: 'none',
+    height: '100%',
+    width: '100%',
     padding: 5,
     overflow: 'hidden',
     pointerEvents: 'none',
-    position: 'absolute',
-    top: 0, left: 0,
     background: ^light ? '#fff' : '#263640',
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5,
   }
 }
 

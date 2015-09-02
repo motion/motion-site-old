@@ -1,12 +1,12 @@
 view DemoCounter {
   @count = 0
 
-  increment = () => @count++
   decrement = () => @count--
+  increment = () => @count++
 
   <center>
-    <button onClick={increment}>Up</button>
     <button onClick={decrement}>Down</button>
+    <button onClick={increment}>Up</button>
   </center>
   <strong>Count is {@count}</strong>
 
