@@ -1,35 +1,32 @@
 import { Spring } from 'react-motion'
+import offset from 'mouse-event-offset'
 
 view DemoCircles {
-  @circles = [[100,100]]
+  @circles = [{ x: 10, y: 10 }]
 
-  addCircle = (x,y) => @circles.push([x,y])
-  left = x => x - this.refs.circles.getDOMNode().getBoundingClientRect().left
-  top = y => y - this.refs.circles.getDOMNode().getBoundingClientRect().top
+  addCircle = e => @circles.push(offset(e))
 
-  <circles ref="circles" onClick={e => addCircle(left(e.clientX), top(e.clientY))}>
-    <Circle repeat={@circles} pos={_} nokey />
+  <circles onClick={addCircle}>
+    <Circle repeat={@circles} left={_x} top={_y} nokey />
   </circles>
 
-  $circles = { width: 800, height: 800 }
+  $circles = { width: '100%', height: 400 }
 }
 
 view Circle {
   c = () => Math.round(Math.random()*255)
-  background = `rgb(${c()}, ${c()}, ${c()})`
-  size = ^size || 20
+  style = {
+    background: `rgb(${c()}, ${c()}, ${c()})`,
+    left: ^left,
+    top: ^top,
+    width: 40, height: 40,
+    marginLeft: -20,
+    borderRadius: 100,
+    position: 'absolute'
+  }
 
-  <Spring defaultValue={{ val: 0 }} endValue={{ val: 100, config: [500,10] }}>
-    {i => (
-      <circle style={{
-        borderRadius: 100,
-        background,
-        position: 'absolute',
-        top: ^pos[1], left: ^pos[0],
-        width: i.val, height: i.val,
-        margin: [-i.val/2, 0, 0, -i.val/2]
-      }} />
-    )}
+  <Spring defaultValue={{ val: 0 }} endValue={{ val: 1, config: [300, 10] }}>
+    {i => <circle style={{ ...style, transform: `scale(${i.val})` }} />}
   </Spring>
 
   $ = false

@@ -9,6 +9,7 @@
   "dependencies": {
     "chroma-js": "^1.1.1",
     "flintjs": "^1.0.0",
+    "mouse-event-offset": "^2.0.0",
     "react-motion": "^0.2.7"
   }
 }
