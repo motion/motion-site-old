@@ -50,9 +50,9 @@ view Header {
   }
 
   $strip = {
-    position: [-980, -900, , 0],
-    background: '#eee',
-    transform: { rotate: '1deg' },
+    position: [-988, -900, , 0],
+    background: '#f2f2f2',
+    transform: { rotate: '.5deg' },
     height: 1000
   }
 }
@@ -280,7 +280,7 @@ view Editor {
     height: ^lines ? 20 + (27 * ^lines) : '100%',
     border: '1px solid #eee',
     borderRadius: 6,
-    boxShadow: '0 0 10px rgba(0,0,0,0.05)',
+    boxShadow: '0 0 10px rgba(0,0,0,0.025)',
     margin: 10,
     marginRight: ^right ? -10 : 10,
     marginLeft: ^left ? -10 : 10,
@@ -300,10 +300,13 @@ view Editor {
     width: '100%',
     padding: 5,
     overflow: 'hidden',
-    pointerEvents: 'none',
-    background: ^light ? '#fff' : '#263640',
+    background: ^light ? '#fefefe' : '#263640',
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
+
+    [screen.small]: {
+      pointerEvents: 'none'
+    }
   }
 }
 

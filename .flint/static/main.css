@@ -10,6 +10,11 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+::selection {
+  background: #c62b24;
+  color: #fff;
+}
+
 body * {
   display: -ms-flexbox;
   display: -webkit-flex;
