@@ -278,7 +278,7 @@ view Editor {
   $ = {
     flexFlow: 'column',
     height: ^lines ? 20 + (27 * ^lines) : '100%',
-    border: '1px solid #ddd',
+    border: '1px solid #eee',
     borderRadius: 6,
     boxShadow: '0 0 10px rgba(0,0,0,0.05)',
     margin: 10,
