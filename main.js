@@ -173,7 +173,7 @@ view Desc {
 
 view Examples {
   <Interlude>
-    Flint simplifies ES6 and introduces the <em>view</em>
+    Flint simplifies ES6 and introduces the <em>view</em>.
   </Interlude>
 
   <Example flip inPage
@@ -181,7 +181,7 @@ view Examples {
     out={<DemoCounter />} />
 
   <Interlude>
-    Views let your style elements using $ variables
+    Views let your style elements using $ variables.
   </Interlude>
 
   <Example inPage
@@ -189,7 +189,7 @@ view Examples {
     out={<DemoVenn />} />
 
   <Interlude>
-    Click around to create bubbles...
+    Flint is simple, but powerful. It works with npm & React.
   </Interlude>
 
   <Example flip inPage
