@@ -578,7 +578,7 @@ view Video {
   }
 
   $strip = {
-    background: '#fff',
+    background: '#fefefe',
     height: 100,
     width: '140%',
     position: 'absolute',
@@ -605,11 +605,11 @@ view Install {
     fontFamily: font.monoSpace,
     fontSize: 28
   }, ^small && {
-    padding: [2, 0, 20],
+    padding: [2, 0],
     fontSize: 18,
     color: '#B44944',
     background: 'none',
-    margin: [0, 0, -60],
+    margin: [0, 0, -40],
   }]
 
   $.small = {
