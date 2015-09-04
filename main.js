@@ -9,7 +9,7 @@ font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 font.sansSerif = 'Helvetica Neue, Helvetica, Arial, sans-serif'
 
 screen = {}
-screen.small = '@media (max-width: 800px)'
+screen.small = '@media (max-width: 850px)'
 
 view Main {
   <Header />
@@ -177,6 +177,7 @@ view Examples {
   </Interlude>
 
   <Example flip inPage
+    maxWidth={800}
     in={<Editor lines={10} left light src="/examples/exampleCounter.html" />}
     out={<DemoCounter />} />
 
@@ -185,6 +186,7 @@ view Examples {
   </Interlude>
 
   <Example inPage
+    maxWidth={850}
     in={<Editor lines={15} left light src="/examples/exampleVenn.html" />}
     out={<DemoVenn />} />
 
@@ -193,6 +195,7 @@ view Examples {
   </Interlude>
 
   <Example flip inPage
+    maxWidth={950}
     in={
       <Editor left light
         lines={16}
@@ -239,7 +242,7 @@ view Interlude {
 }
 
 view Example {
-  <Contain maxWidth={1000}>
+  <Contain maxWidth={^maxWidth || 1000}>
     <in class="split">{^in}</in>
     <out class="split">{^out}</out>
   </Contain>
@@ -509,11 +512,7 @@ view About {
 
   $ = {
     padding: [0, 20, 50],
-    lineHeight: '1.8rem',
-
-    [screen.small]: {
-      padding: 0
-    }
+    lineHeight: '1.8rem'
   }
 
   $p = { marginBottom: 0 }
