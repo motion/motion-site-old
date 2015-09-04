@@ -188,8 +188,10 @@ view Examples {
     in={
       <Editor left light
         lines={15}
-        src="/examples/exampleVenn.html"
-        src2="/examples/exampleVenn.html" />
+        sources={[
+          { title: 'Circles.js', url: '/examples/exampleVenn.html' },
+          { title: 'Circle.js', url: '/examples/exampleVenn.html' }
+        ]} />
     }
     out={<DemoCircles />} />
 }
@@ -271,9 +273,25 @@ view Example {
 }
 
 view Editor {
-  <Toolbar />
-  <iframe src={^src} onLoad={^onLoad}></iframe>
-  <iframe if={^src2} src={^src2}></iframe>
+  @index = 0
+  @tabs = null
+  @srcs = null
+
+  if (^sources) {
+    @srcs = ^sources.map(s => s.url)
+    @tabs = ^sources.map(s => s.title)
+  }
+
+  getSrc = () => ^src || @srcs[@index]
+
+  <Toolbar
+    tabs={@tabs}
+    activeTab={@index}
+    changeTab={i => @index = i} />
+  <iframe
+    src={getSrc()}
+    onLoad={^onLoad}>
+  </iframe>
 
   $ = {
     flexFlow: 'column',
@@ -313,13 +331,36 @@ view Editor {
 view Toolbar {
   demoBorder = 4
 
-  <toolbar>
+  <bar>
     <ctrl class="close" />
     <ctrl class="max" />
     <ctrl class="open" />
-  </toolbar>
+  </bar>
+  <tabs if={^tabs}>
+    <tab repeat={^tabs} onClick={() => ^changeTab(_index)}>
+      {_}
+    </tab>
+  </tabs>
 
-  $ = {
+  $tabs = {
+    flexFlow: 'row',
+    fontSize: 16
+  }
+
+  border = '1px solid #ddd'
+
+  $tab = [{
+    background: '#fff',
+    borderBottom: border,
+    borderLeft: _index == 0 ? 'none' : border,
+    padding: [2, 10],
+    flexGrow: 1
+  }, _index == ^activeTab && {
+    background: '#fefefe',
+    borderBottom: 'none',
+  }]
+
+  $bar = {
     background: '#fefefe',
     borderTop: '1px solid #fff',
     borderBottom: '1px solid #f5f5f5',
