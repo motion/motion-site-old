@@ -4,6 +4,7 @@ color = {}
 color.red = '#c62b24'
 
 font = {}
+font.serif = 'Georgia, serif'
 font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 font.sansSerif = 'Helvetica Neue, Helvetica, Arial, sans-serif'
 
@@ -21,7 +22,7 @@ view Main {
   $ = {
     color: '#444',
     fontSize: 18,
-    fontFamily: 'Georgia',
+    fontFamily: font.serif,
     lineHeight: '2rem',
     margin: 'auto',
     overflowX: 'hidden'
