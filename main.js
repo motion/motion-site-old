@@ -21,6 +21,7 @@ view Main {
 
   $ = {
     color: '#444',
+    background: '#fefefe',
     fontSize: 18,
     fontFamily: font.serif,
     lineHeight: '2rem',
@@ -194,10 +195,10 @@ view Examples {
   <Example flip inPage
     in={
       <Editor left light
-        lines={15}
+        lines={16}
         sources={[
-          { title: 'Circles.js', url: '/examples/exampleVenn.html' },
-          { title: 'Circle.js', url: '/examples/exampleVenn.html' }
+          { title: 'Circles.js', url: '/examples/exampleCircles.html' },
+          { title: 'Circle.js', url: '/examples/exampleCircle.html' }
         ]} />
     }
     out={<DemoCircles />} />
@@ -238,7 +239,7 @@ view Interlude {
 }
 
 view Example {
-  <Contain key={Math.random()}>
+  <Contain maxWidth={1000}>
     <in class="split">{^in}</in>
     <out class="split">{^out}</out>
   </Contain>
@@ -329,7 +330,7 @@ view Editor {
     width: '100%',
     padding: 5,
     overflow: 'hidden',
-    background: ^light ? '#fefefe' : '#263640',
+    background: ^light ? '#fff' : '#263640',
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
 
@@ -353,34 +354,40 @@ view Toolbar {
     </tab>
   </tabs>
 
+  border = '1px solid #ddd'
+
   $tabs = {
     flexFlow: 'row',
     fontSize: 15,
-    fontFamily: font.sansSerif
+    fontFamily: font.sansSerif,
+    padding: [4, 4, 0, 4],
+    background: '#f9f9f9',
+    borderBottom: border,
   }
-
-  border = '1px solid #ddd'
 
   $tab = [{
     cursor: 'pointer',
     userSelect: 'none',
     color: '#777',
     background: '#f9f9f9',
-    borderBottom: border,
-    borderTop: '1px solid #eee',
-    borderLeft: _index == 0 ? 'none' : border,
-    padding: [2, 10],
+    padding: [0, 8],
+    borderTopLeftRadius: 3,
+    borderTopRightRadius: 3,
     flexGrow: 1
   }, _index == ^activeTab && {
-    background: '#fefefe',
+    background: '#fff',
+    borderTop: border,
     borderLeft: `2px solid ${color.red}`,
+    borderRight: border,
+    marginTop: -1,
+    marginBottom: -1,
     color: '#000',
     fontWeight: 700,
     borderBottom: 'none',
   }]
 
   $bar = {
-    background: '#fefefe',
+    background: '#fff',
     borderTop: '1px solid #fff',
     borderBottom: '1px solid #f5f5f5',
     height: 12,
@@ -625,7 +632,7 @@ view Contain {
   <contain yield />
 
   $ = {
-    maxWidth: 1050,
+    maxWidth: ^maxWidth || 1050,
     width: '100%',
     flexFlow: 'inherit',
     alignItems: 'inherit',

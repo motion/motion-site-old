@@ -2,7 +2,7 @@ import { Spring } from 'react-motion'
 import offset from 'mouse-event-offset'
 
 view DemoCircles {
-  @coords = [{ x: 10, y: 10 }]
+  @coords = [{ x: 200, y: 200 }]
 
   addCircle = e => @coords.push(offset(e))
 
@@ -10,7 +10,7 @@ view DemoCircles {
     <Circle repeat={@coords} left={_x} top={_y} />
   </circles>
 
-  $circles = { height: 400 }
+  $circles = { height: 430 }
 }
 
 view Circle {
@@ -18,8 +18,8 @@ view Circle {
   style = {
     background: `rgb(${c()}, ${c()}, ${c()})`,
     top: ^top, left: ^left,
-    width: 40, height: 40,
-    marginLeft: -20,
+    width: 80, height: 80,
+    margin: [-20, 0, 0, -40],
     borderRadius: 100,
     position: 'absolute'
   }

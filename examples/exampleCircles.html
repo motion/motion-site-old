@@ -1,0 +1,57 @@
+<html>
+<head>
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    code {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.45rem;
+      font-family: Hack, Inconsolata, Source Code Pro, monospace
+    }
+
+    .y { color: rgb(144, 156, 15); }
+    .b { color: rgb(94, 119, 215); }
+    .o { color: rgb(218, 130, 47); }
+    .g { color: rgb(106, 106, 106); }
+    .r { color: rgb(241, 93, 93); }
+    .w { color: #555; }
+
+    /*!
+     *  Hack v2.010 by Chris Simpkins - https://sourcefoundry.org/hack/
+     *  Licenses - Fonts: Modified SIL OFL 1.1 + Bitstream Vera license, CSS: MIT License
+     */
+    /* FONT PATHS
+     * -------------------------- */
+    @font-face {
+      font-family: 'Hack';
+      src: url('/fonts/hack/eot/latin/hack-regular-latin-webfont.eot?v=2.010');
+      src: url('/fonts/hack/eot/latin/hack-regular-latin-webfont.eot?#iefix&v=2.010') format('embedded-opentype'), url('/fonts/hack/woff2/latin/hack-regular-latin-webfont.woff2?v=2.010') format('woff2'), url('/fonts/hack/woff/latin/hack-regular-latin-webfont.woff?v=2.010') format('woff'), url('/fonts/hack/ttf/latin/hack-regular-latin-webfont.ttf?v=2.010') format('truetype'), url('/fonts/hack/svg/latin/hack-regular-latin-webfont.svg?v=2.010#hackregular') format('svg');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+  </style>
+</head>
+<body>
+  <code><pre>
+import <span class="b">offset</span> from <span class="y">'mouse-event-offset'</span>
+
+<span class="o">view</span> Circles {
+  <span class="b">@coords</span> = [{ x: <span class="y">100</span>, y: <span class="y">100</span> }]
+
+  <span class="b">addCircle</span> = e => <span class="b">@coords</span>.push(offset(e))
+
+  <span class="r">&lt;circles onClick={<span class="b">addCircle</span>}&gt;
+    &lt;Circle
+      repeat={<span class="b">@coords</span>}
+      left={<span class="b">_x</span>}
+      top={<span class="b">_y</span>} /&gt;
+  &lt;/circles&gt;</span>
+
+  <span class="w">$circles</span> = { height: <span class="y">400</span> }
+}<pre></code>
+</body>
+</html>
