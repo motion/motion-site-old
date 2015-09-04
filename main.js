@@ -1,7 +1,12 @@
 import chroma from 'chroma-js'
 
-monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
-sansSerif = 'Helvetica Neue, Helvetica, Arial, sans-serif'
+color = {}
+color.red = '#c62b24'
+
+font = {}
+font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
+font.sansSerif = 'Helvetica Neue, Helvetica, Arial, sans-serif'
+
 screen = {}
 screen.small = '@media (max-width: 800px)'
 
@@ -75,7 +80,7 @@ view Nav {
   $a = {
     color: '#666',
     textDecoration: 'none',
-    fontFamily: sansSerif,
+    fontFamily: font.sansSerif,
     padding: [0, 10]
   }
 }
@@ -103,7 +108,7 @@ view Introduction {
 
   $ = {
     padding: [10, 20],
-    fontFamily: sansSerif,
+    fontFamily: font.sansSerif,
     textAlign: 'center'
   }
 
@@ -210,7 +215,7 @@ view Interlude {
   </Contain>
 
   $Contain = {
-    margin: 'auto'
+    margin: [-10, 'auto']
   }
 
   $section = {
@@ -240,7 +245,7 @@ view Example {
   $ = {
     flexFlow: 'row',
     flexGrow: 1,
-    fontFamily: sansSerif,
+    fontFamily: font.sansSerif,
 
     [screen.small]: {
       flexFlow: 'column'
@@ -307,7 +312,7 @@ view Editor {
     margin: 10,
     marginRight: ^right ? -10 : 10,
     marginLeft: ^left ? -10 : 10,
-    fontFamily: monoSpace,
+    fontFamily: font.monoSpace,
     position: 'relative',
     zIndex: 10,
 
@@ -349,7 +354,8 @@ view Toolbar {
 
   $tabs = {
     flexFlow: 'row',
-    fontSize: 16
+    fontSize: 15,
+    fontFamily: font.sansSerif
   }
 
   border = '1px solid #ddd'
@@ -358,13 +364,15 @@ view Toolbar {
     cursor: 'pointer',
     userSelect: 'none',
     color: '#777',
-    background: '#fff',
+    background: '#f9f9f9',
     borderBottom: border,
+    borderTop: '1px solid #eee',
     borderLeft: _index == 0 ? 'none' : border,
     padding: [2, 10],
     flexGrow: 1
   }, _index == ^activeTab && {
     background: '#fefefe',
+    borderLeft: `2px solid ${color.red}`,
     color: '#000',
     fontWeight: 700,
     borderBottom: 'none',
@@ -407,7 +415,7 @@ view Toolbar {
 
 view Features {
   text = [
-    `Works on React`,
+    `Works with React`,
     `Automatic npm installs`,
     `Modern ES6, simplified`,
     `Instant updates as you type`,
@@ -424,12 +432,15 @@ view Features {
     </list>
   </Contain>
 
-  $ = { margin: [0, 'auto'] }
+  $ = {
+    margin: [0, 'auto'],
+    fontSize: 20
+  }
 
   color = 'rgb(4, 139, 66)'
 
   $list = {
-    maxWidth: 650,
+    maxWidth: 750,
     margin: [0, 'auto'],
     padding: [0, '5%'],
     borderRadius: 5,
@@ -439,8 +450,8 @@ view Features {
   }
 
   $item = {
-    margin: [8, 0],
-    padding: [0, 10],
+    margin: [12, 0],
+    padding: [0, 10, 0, 15],
     lineHeight: '1.5rem',
     width: '50%',
     flexFlow: 'row',
@@ -583,7 +594,7 @@ view Install {
     margin: [10, 0],
     width: '100%',
     textAlign: 'center',
-    fontFamily: monoSpace,
+    fontFamily: font.monoSpace,
     fontSize: 28
   }, ^small && {
     padding: [2, 0, 20],
