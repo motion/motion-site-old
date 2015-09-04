@@ -198,7 +198,7 @@ view Examples {
     maxWidth={950}
     in={
       <Editor left light
-        lines={16}
+        lines={17}
         sources={[
           { title: 'Circles.js', url: '/examples/exampleCircles.html' },
           { title: 'Circle.js', url: '/examples/exampleCircle.html' }
@@ -310,7 +310,7 @@ view Editor {
 
   $ = {
     flexFlow: 'column',
-    height: ^lines ? 20 + (27 * ^lines) : '100%',
+    height: ^lines ? 32 + (25 * ^lines) : '100%',
     border: '1px solid #eee',
     borderRadius: 6,
     boxShadow: '0 0 10px rgba(0,0,0,0.025)',
@@ -511,6 +511,7 @@ view About {
   </Contain>
 
   $ = {
+    margin: [-20, 0], //offset for p space
     padding: [0, 20, 50],
     lineHeight: '1.8rem'
   }
