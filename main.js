@@ -1,5 +1,6 @@
 import chroma from 'chroma-js'
 
+monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 sansSerif = 'Helvetica Neue, Helvetica, Arial, sans-serif'
 screen = {}
 screen.small = '@media (max-width: 800px)'
@@ -7,8 +8,8 @@ screen.small = '@media (max-width: 800px)'
 view Main {
   <Header />
   <Examples />
-  <Install />
   <Features />
+  <Install />
   <About />
   <Video />
 
@@ -208,6 +209,10 @@ view Interlude {
     </section>
   </Contain>
 
+  $Contain = {
+    margin: 'auto'
+  }
+
   $section = {
     color: '#585858',
     margin: [35, 0],
@@ -302,7 +307,7 @@ view Editor {
     margin: 10,
     marginRight: ^right ? -10 : 10,
     marginLeft: ^left ? -10 : 10,
-    fontFamily: 'Hack, monospace',
+    fontFamily: monoSpace,
     position: 'relative',
     zIndex: 10,
 
@@ -350,6 +355,9 @@ view Toolbar {
   border = '1px solid #ddd'
 
   $tab = [{
+    cursor: 'pointer',
+    userSelect: 'none',
+    color: '#777',
     background: '#fff',
     borderBottom: border,
     borderLeft: _index == 0 ? 'none' : border,
@@ -357,6 +365,8 @@ view Toolbar {
     flexGrow: 1
   }, _index == ^activeTab && {
     background: '#fefefe',
+    color: '#000',
+    fontWeight: 700,
     borderBottom: 'none',
   }]
 
@@ -414,7 +424,7 @@ view Features {
     </list>
   </Contain>
 
-  $ = { margin: [0, 'auto', 30] }
+  $ = { margin: [0, 'auto'] }
 
   color = 'rgb(4, 139, 66)'
 
@@ -562,20 +572,18 @@ view Video {
 }
 
 view Install {
-  <code>npm install -g flint</code>
-  <code class="small">flint new myapp</code>
-  <code class="small">flint</code>
-
-  $ = {
-    margin: [60, 0]
-  }
+  <Contain>
+    <code>npm install -g flint</code>
+    <code class="small">flint new myapp</code>
+    <code class="small">flint</code>
+  </Contain>
 
   $code = [{
     color: '#000',
     margin: [10, 0],
     width: '100%',
     textAlign: 'center',
-    fontFamily: 'Hack, monospace',
+    fontFamily: monoSpace,
     fontSize: 28
   }, ^small && {
     padding: [2, 0, 20],
@@ -607,12 +615,12 @@ view Contain {
   $ = {
     maxWidth: 1050,
     width: '100%',
-    margin: 'auto',
     flexFlow: 'inherit',
     alignItems: 'inherit',
     justifyContent: 'inherit',
     flexGrow: 1,
     flexShrink: 0,
+    margin: [30, 'auto'],
     padding: ^pad ? [0, '20%'] : 0,
     position: 'relative',
     zIndex: 10,
