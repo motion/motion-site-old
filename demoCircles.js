@@ -19,7 +19,7 @@ view Circle {
     background: `rgb(${c()}, ${c()}, ${c()})`,
     top: ^top, left: ^left,
     width: 80, height: 80,
-    margin: [-20, 0, 0, -40],
+    margin: [0, 0, 0, -40],
     borderRadius: 100,
     position: 'absolute'
   }
