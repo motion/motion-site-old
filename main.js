@@ -16,8 +16,8 @@ view Main {
   <Examples />
   <Features />
   <Install />
-  <About />
   <Video />
+  <About />
 
   $ = {
     color: '#444',
@@ -25,7 +25,6 @@ view Main {
     fontSize: 18,
     fontFamily: font.serif,
     lineHeight: '2rem',
-    margin: 'auto',
     overflowX: 'hidden'
   }
 }
@@ -198,7 +197,7 @@ view Examples {
     maxWidth={950}
     in={
       <Editor left light
-        lines={17}
+        lines={19}
         sources={[
           { title: 'Circles.js', url: '/examples/exampleCircles.html' },
           { title: 'Circle.js', url: '/examples/exampleCircle.html' }
