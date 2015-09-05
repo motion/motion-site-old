@@ -197,7 +197,7 @@ view Examples {
     maxWidth={950}
     in={
       <Editor left light
-        lines={19}
+        lines={20}
         sources={[
           { title: 'Circles.js', url: '/examples/exampleCircles.html' },
           { title: 'Circle.js', url: '/examples/exampleCircle.html' }

@@ -15,7 +15,7 @@
     .y { color: rgb(144, 156, 15); }
     .b { color: rgb(94, 119, 215); }
     .o { color: rgb(218, 130, 47); }
-    .g { color: rgb(106, 106, 106); }
+    .g { color: rgb(150, 150, 150); }
     .r { color: rgb(241, 93, 93); }
     .w { color: #555; }
 
@@ -42,8 +42,9 @@ import { <span class="b">Spring</span> } from <span class="y">'react-motion'</sp
 <span class="o">view</span> Circle {
   <span class="b">c</span> = () => <span class="y">Math</span>.round(<span class="y">Math</span>.random() * <span class="y">255</span>)
   <span class="b">base</span> = {
-    background: <span class="y">`rgb(${c()}, ${c()}, ${c()})`</span>,
-    top: <span class="b">^top</span>, left: <span class="b">^left</span>,
+    background: <span class="y">`rgb(${<span class="b">c()</span>}, ${<span class="b">c()</span>}, ${<span class="b">c()</span>})`</span>,
+    top: <span class="b">^top</span>,
+    left: <span class="b">^left</span>,
     width: <span class="y">40</span>, height: <span class="y">40</span>,
     margin: [<span class="y">-20</span>, <span class="y">0</span>, <span class="y">0</span>, <span class="y">-40</span>],
     borderRadius: <span class="y">100</span>,
