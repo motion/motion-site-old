@@ -34,6 +34,7 @@ view Header {
 
   <Example
     flipVertical
+    maxWidth={800}
     out={
       <head>
         <Logo />
