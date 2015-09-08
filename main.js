@@ -90,7 +90,7 @@ view Nav {
     margin: [10, 'auto', -20],
     flexFlow: 'row',
     zIndex: 100,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 300,
 
     [screen.small]: {
@@ -99,10 +99,10 @@ view Nav {
   }
 
   $a = {
-    color: '#777',
+    color: '#666',
     textDecoration: 'none',
     fontFamily: font.sansSerif,
-    padding: [0, 10]
+    padding: [0, 15]
   }
 }
 
