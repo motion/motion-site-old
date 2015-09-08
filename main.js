@@ -2,6 +2,7 @@ import chroma from 'chroma-js'
 
 color = {}
 color.red = '#c62b24'
+color.bg = '#f9f9f9'
 
 font = {}
 font.serif = 'Georgia, serif'
@@ -21,7 +22,7 @@ view Main {
 
   $ = {
     color: '#444',
-    background: '#fefefe',
+    background: color.bg,
     fontSize: 18,
     fontFamily: font.serif,
     lineHeight: '2rem',
@@ -34,7 +35,7 @@ view Header {
 
   <Example
     flipVertical
-    maxWidth={800}
+    maxWidth={900}
     out={
       <head>
         <Logo />
@@ -47,21 +48,14 @@ view Header {
         onLoad={() => @startIntro = true}
         src="/examples/example.html" />
     } />
-  <strip />
 
   $ = {
     flexFlow: 'row',
-    margin: 0,
-    padding: [40, 0, 0],
+    margin: [0, 0, 10],
+    padding: [30, 0],
     position: 'relative',
-    overflow: 'hidden'
-  }
-
-  $strip = {
-    position: [-988, -900, , 0],
-    background: '#f2f2f2',
-    transform: { rotate: '.5deg' },
-    height: 1000
+    overflow: 'hidden',
+    background: '#fff'
   }
 }
 
@@ -122,7 +116,7 @@ view Introduction {
 
   $h2 = [title, {
     color: '#444',
-    fontSize: 26,
+    fontSize: 28,
     fontWeight: 300
   }]
 }
@@ -220,7 +214,7 @@ view Interlude {
   </Contain>
 
   $Contain = {
-    margin: [-10, 'auto']
+    margin: [0, 'auto']
   }
 
   $section = {
@@ -277,7 +271,7 @@ view Example {
   $in = {
     order: ^flip ? 1 : 2,
     zIndex: 10,
-    margin: [-10, 0, 0],
+    margin: 0,
 
     [screen.small]: {
       width: '90%',
@@ -434,7 +428,7 @@ view Features {
     `Smart errors and tools`,
   ]
 
-  <Contain>
+  <Contain strip>
     <list>
       <item repeat={text} key={_}>
         <Check class="check" />
@@ -528,7 +522,7 @@ view About {
 }
 
 view Video {
-  <Contain>
+  <Contain strip>
     <center>
       <h2>Learn more</h2>
       <p>
@@ -548,17 +542,14 @@ view Video {
       </desc>
     </center>
   </Contain>
-  <strip />
 
   $ = {
-    background: 'linear-gradient(-65deg, #fff, #f2f2f2)',
     position: 'relative',
     zIndex: 0,
   }
 
   $center = {
     margin: 'auto',
-    padding: [50, 0],
     textAlign: 'center',
     alignItems: 'center'
   }
@@ -575,18 +566,6 @@ view Video {
     display: 'block',
     fontSize: 16,
     padding: [10, 0]
-  }
-
-  $strip = {
-    background: '#fefefe',
-    height: 100,
-    width: '140%',
-    position: 'absolute',
-    top: -90,
-    left: -100,
-    transform: {
-      rotate: '-1deg'
-    }
   }
 }
 
@@ -629,9 +608,17 @@ view Check {
 }
 
 view Contain {
-  <contain yield />
+  <contain>
+    {^children}
+    <strip if={^strip} />
+    <strip class="end" if={^strip} />
+  </contain>
+
+  topPad = ^strip ? 60 : 0
+  padding = ^pad ? [topPad, '20%'] : [topPad, 0]
 
   $ = {
+    background: ^strip ? '#fff' : 'transparent',
     maxWidth: ^maxWidth || 1050,
     width: '100%',
     flexFlow: 'inherit',
@@ -639,13 +626,31 @@ view Contain {
     justifyContent: 'inherit',
     flexGrow: 1,
     flexShrink: 0,
-    margin: [30, 'auto'],
-    padding: ^pad ? [0, '20%'] : 0,
+    margin: [^strip ? 30 : 0, 'auto'],
+    padding,
     position: 'relative',
     zIndex: 10,
 
     [screen.small]: {
       padding: 0
     }
+  }
+
+  $strip = {
+    background: color.bg,
+    height: 40,
+    width: '140%',
+    position: 'absolute',
+    top: -20,
+    left: -100,
+    transform: {
+      rotate: '-1deg'
+    }
+  }
+
+  $.end = {
+    top: 'auto',
+    bottom: -20,
+    left: -100,
   }
 }
