@@ -9,8 +9,19 @@ view DemoCircles {
   <circles onClick={addCircle}>
     <Circle repeat={@coords} left={_x} top={_y} />
   </circles>
+  <description>
+    Try clicking around above to add circles
+  </description>
 
-  $circles = { height: 430 }
+  $circles = {
+    height: 430
+  }
+
+  $description = {
+    textAlign: 'center',
+    fontSize: 15,
+    color: '#666'
+  }
 }
 
 view Circle {

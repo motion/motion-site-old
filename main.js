@@ -9,6 +9,15 @@ font.serif = 'Georgia, serif'
 font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 font.sansSerif = 'Helvetica Neue, Helvetica, Arial, sans-serif'
 
+title = {
+  fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+  textAlign: 'center',
+  fontWeight: 300,
+  color: '#000',
+  fontSize: 30,
+  margin: [40, 0, 30]
+}
+
 screen = {}
 screen.small = '@media (max-width: 850px)'
 
@@ -33,9 +42,10 @@ view Main {
 view Header {
   @startIntro = false
 
+  <main>
   <Example
     flipVertical
-    maxWidth={900}
+    maxWidth={800}
     out={
       <head>
         <Logo />
@@ -48,33 +58,48 @@ view Header {
         onLoad={() => @startIntro = true}
         src="/examples/example.html" />
     } />
+  </main>
+  <Interlude pad>
+    Flint integrates editor, compiler & browser to
+    simplify development, with <em>as-you-type</em> instant updates.
+  </Interlude>
 
   $ = {
-    flexFlow: 'row',
     margin: [0, 0, 10],
-    padding: [30, 0],
+    padding: [20, 0],
     position: 'relative',
     overflow: 'hidden',
     background: '#fff'
   }
+
+  $main = {
+    flexFlow: 'row'
+  }
+
+  $Interlude = {
+    margin: [-10, 0]
+  }
 }
 
 view Nav {
-  // <a if={false} href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
-
-  <a target="_blank" href="https://twitter.com/flint_js">&#64;flint_js</a>
+  <a target="_blank" href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
+  <a target="_blank" href="http://github.com/flintjs">Github</a>
+  <a target="_blank" href="https://twitter.com/flint_js">Twitter</a>
 
   $ = {
-    position: 'absolute',
-    top: 5,
-    right: 0,
+    margin: [10, 'auto', -20],
     flexFlow: 'row',
     zIndex: 100,
-    fontSize: 14
+    fontSize: 18,
+    fontWeight: 300,
+
+    [screen.small]: {
+      marginBottom: 0
+    }
   }
 
   $a = {
-    color: '#666',
+    color: '#777',
     textDecoration: 'none',
     fontFamily: font.sansSerif,
     padding: [0, 10]
@@ -88,7 +113,11 @@ view Logo {
     flexFlow: 'row',
     marginTop: -10,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+
+    [screen.small]: {
+      marginTop: 10
+    }
   }
 
   $img = {
@@ -99,26 +128,14 @@ view Logo {
 }
 
 view Introduction {
-  <h2>Improve development</h2>
   <Desc />
+  <Nav />
 
   $ = {
     padding: [10, 20],
     fontFamily: font.sansSerif,
     textAlign: 'center'
   }
-
-  title = {
-    margin: [5, 0],
-    lineHeight: '1.4em',
-    textAlign: 'center'
-  }
-
-  $h2 = [title, {
-    color: '#444',
-    fontSize: 28,
-    fontWeight: 300
-  }]
 }
 
 view Desc {
@@ -151,15 +168,15 @@ view Desc {
 
   setTimeout(step, 1350)
 
-  <desc>Write web apps {@desc}</desc>
+  <desc>Web apps {@desc}</desc>
 
   $desc = {
     textAlign: 'center',
-    fontSize: 22,
+    fontSize: 26,
     lineHeight: '1.6rem',
-    padding: [5, 0],
+    padding: [10, 0],
     fontWeight: 300,
-    color: '#666',
+    color: '#333',
     margin: [0, 'auto'],
     display: 'block'
   }
@@ -167,7 +184,7 @@ view Desc {
 
 view Examples {
   <Interlude>
-    Flint simplifies ES6 and introduces the <em>view</em>.
+    Flint simplifies ES6, introducing the <em>view</em>.
   </Interlude>
 
   <Example flip inPage
@@ -214,7 +231,9 @@ view Interlude {
   </Contain>
 
   $Contain = {
-    margin: [0, 'auto']
+    margin: [0, 'auto'],
+    padding: [0, 15],
+    maxWidth: ^pad ? 600 : 'auto',
   }
 
   $section = {
@@ -222,7 +241,7 @@ view Interlude {
     margin: [35, 0],
     borderRight: 'none',
     borderLeft: 'none',
-    fontSize: 19
+    fontSize: ^fontSize || 19
   }
 
   $.simple = {
@@ -420,19 +439,23 @@ view Toolbar {
 
 view Features {
   text = [
-    `Works with React`,
-    `Automatic npm installs`,
-    `Modern ES6, simplified`,
-    `Instant updates as you type`,
-    `Faster runtime`,
-    `Smart errors and tools`,
+    [`Works with React`, `Import and use any React component`],
+    [`Automatic npm installs`, `Flint installs as you type`],
+    [`Modern ES6, simplified`, `No need for *this* or classes`],
+    [`Instant feedback`, `Editor plugins for Sublime/Atom`],
+    [`Fast builds & runtime`, `Compiler unlocks incredible speed`],
+    [`Smart errors & tools`, `Inline errors and a state inspector`],
   ]
 
   <Contain strip>
     <list>
       <item repeat={text} key={_}>
         <Check class="check" />
-        {_}
+
+        <text>
+          <feature>{_[0]}</feature>
+          <description>{_[1]}</description>
+        </text>
       </item>
     </list>
   </Contain>
@@ -474,10 +497,21 @@ view Features {
     fill: color,
     margin: [1, 10, -3, 0]
   }
+
+  $text = {
+    flexFlow: 'column',
+    textAlign: 'left'
+  }
+
+  $description = {
+    fontSize: 16,
+    color: '#666'
+  }
 }
 
 view About {
   <Contain pad>
+    <h2>About</h2>
     <p>
       Views are an amazingly simple abstraction
       but with no clear or productive way to build with today.
@@ -513,12 +547,7 @@ view About {
   $p = { marginBottom: 0 }
   $li = { margin: [10, 0, 0] }
 
-  $h2 = {
-    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-    textAlign: 'center',
-    fontWeight: 300,
-    fontSize: 24
-  }
+  $h2 = title
 }
 
 view Video {
@@ -567,11 +596,13 @@ view Video {
     fontSize: 16,
     padding: [10, 0]
   }
+
+  $h2 = title
 }
 
 view Install {
   <Contain>
-    <code>npm install -g flint</code>
+    <code><b>npm install -g flint</b></code>
     <code class="small">flint new myapp</code>
     <code class="small">flint</code>
   </Contain>
