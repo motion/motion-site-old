@@ -45,7 +45,10 @@ view Header {
   <main>
   <Example
     flipVertical
-    maxWidth={800}
+    maxWidth={850}
+    inStyle={{
+      maxWidth: 375
+    }}
     out={
       <head>
         <Logo />
@@ -59,10 +62,6 @@ view Header {
         src="/examples/example.html" />
     } />
   </main>
-  <Interlude pad>
-    Flint integrates editor, compiler & browser to
-    simplify development, with <em>as-you-type</em> instant updates.
-  </Interlude>
 
   $ = {
     margin: [0, 0, 10],
@@ -111,7 +110,7 @@ view Logo {
 
   $ = {
     flexFlow: 'row',
-    marginTop: -10,
+    margin: [-10, 0, 2],
     alignItems: 'center',
     justifyContent: 'center',
 
@@ -287,7 +286,7 @@ view Example {
     }
   }
 
-  $in = {
+  $in = [^inStyle, {
     order: ^flip ? 1 : 2,
     zIndex: 10,
     margin: 0,
@@ -297,7 +296,7 @@ view Example {
       margin: 'auto',
       order: ^flipVertical ? 2 : 1
     }
-  }
+  }]
 }
 
 view Editor {
@@ -442,7 +441,7 @@ view Features {
     [`Works with React`, `Import and use any React component`],
     [`Automatic npm installs`, `Flint installs as you type`],
     [`Modern ES6, simplified`, `No need for *this* or classes`],
-    [`Instant feedback`, `Editor plugins for Sublime/Atom`],
+    [`Instant feedback`, `As you type your browser updates`],
     [`Fast builds & runtime`, `Compiler unlocks incredible speed`],
     [`Smart errors & tools`, `Inline errors and a state inspector`],
   ]
