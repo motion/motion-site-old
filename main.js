@@ -305,6 +305,7 @@ view Example {
   $ = {
     flexFlow: 'row',
     flexGrow: 1,
+    WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
     [screen.small]: {
       flexFlow: 'column'
@@ -382,7 +383,7 @@ view Editor {
 
     [screen.small]: {
       marginRight: 10,
-      marginLeft: 10,
+      marginLeft: 0,
     }
   }
 
