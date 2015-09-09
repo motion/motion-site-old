@@ -38,7 +38,7 @@ view Main {
     fontSize: 18,
     fontFamily: font.serif,
     lineHeight: '2rem',
-    overflowX: 'hidden'
+    overflow: 'hidden'
   }
 }
 
@@ -68,18 +68,10 @@ view Header {
 
   $ = {
     margin: [0, 0, 10],
-    padding: [20, 0],
+    padding: [40, 0],
     position: 'relative',
     overflow: 'hidden',
     background: '#fff'
-  }
-
-  $main = {
-    flexFlow: 'row'
-  }
-
-  $Interlude = {
-    margin: [-10, 0]
   }
 }
 
@@ -239,7 +231,7 @@ view Examples {
   </Interlude>
 
   <Example flip inPage
-    maxWidth={950}
+    maxWidth={900}
     in={
       <Editor left light
         lines={20}
@@ -294,9 +286,13 @@ view Interlude {
   $strip = {
     borderBottom: '1px dotted #ccc',
     width: '80%',
-    maxWidth: 900,
+    maxWidth: 950,
     margin: [-57, 'auto', 57],
-    zIndex: 0
+    zIndex: 0,
+
+    [screen.small]: {
+      display: 'none'
+    }
   }
 }
 
@@ -327,8 +323,7 @@ view Example {
     [screen.small]: {
       width: '100%',
       order: ^flipVertical ? 1 : 2,
-      padding: ^inPage ? '50px 0' : 0,
-      borderBottom: ^inPage ? '1px solid #ddd' : 'none'
+      padding: ^inPage ? '50px 0' : 0
     }
   }
 
@@ -361,14 +356,15 @@ view Editor {
     tabs={@tabs}
     activeTab={@index}
     changeTab={i => @index = i} />
-  <iframe
-    src={getSrc()}
-    onLoad={() => {
-      // debugger
-      if (^onLoad)
-        ^onLoad()
-    }}>
-  </iframe>
+  <container>
+    <iframe
+      src={getSrc()}
+      onLoad={() => {
+        if (^onLoad)
+          ^onLoad()
+      }}>
+    </iframe>
+  </container>
 
   $ = {
     flexFlow: 'column',
@@ -382,11 +378,19 @@ view Editor {
     fontFamily: font.monoSpace,
     position: 'relative',
     zIndex: 10,
+    width: '100%',
 
     [screen.small]: {
       marginRight: 10,
       marginLeft: 10,
     }
+  }
+
+  $container = {
+    background: '#fff',
+    overflowY: 'hidden',
+    overflowX: 'scroll',
+    height: '100%'
   }
 
   $iframe = {
@@ -420,6 +424,10 @@ view Toolbar {
   </tabs>
 
   border = '1px solid #ddd'
+
+  $ = {
+    flexFlow: 'column'
+  }
 
   $tabs = {
     flexFlow: 'row',
@@ -535,8 +543,7 @@ view Features {
     textAlign: 'center',
 
     [screen.small]: {
-      width: '100%',
-      justifyContent: 'center'
+      width: '100%'
     }
   }
 
@@ -714,11 +721,7 @@ view Contain {
     margin: [^strip ? 30 : 0, 'auto'],
     padding,
     position: 'relative',
-    zIndex: 10,
-
-    [screen.small]: {
-      padding: 0
-    }
+    zIndex: 10
   }
 
   $strip = {
@@ -728,6 +731,7 @@ view Contain {
     position: 'absolute',
     top: -20,
     left: -100,
+    zIndex: 0,
     transform: {
       rotate: '-1deg'
     }

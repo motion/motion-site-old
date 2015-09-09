@@ -1,12 +1,37 @@
 import { Spring } from 'react-motion'
 import offset from 'mouse-event-offset'
+import docOffset from 'document-offset'
 
 view DemoCircles {
-  @coords = [{ x: 200, y: 200 }]
+  @coords = []
+  @hasScrolledTo = false
+
+  this.componentDidMount = () => {
+    targetY = docOffset(document.querySelector('circles')).top - 300
+
+    @timeout = null
+    on(window, 'scroll', () => {
+      // debugger
+      if (@timeout || @hasScrolledTo) return
+      @timeout = setTimeout(() => {
+        clearTimeout(@timeout)
+        @timeout = null
+
+        if (window.scrollY >= targetY) {
+          @hasScrolledTo = true
+          @coords.push({ x: 200, y: 200 })
+        }
+
+      }, 100)
+    })
+  }
 
   addCircle = e => @coords.push(offset(e))
 
-  <circles onClick={addCircle}>
+  <circles id="circles" onClick={e => {
+    console.log(offset(e))
+    addCircle(e)
+  }}>
     <Circle repeat={@coords} left={_x} top={_y} />
   </circles>
   <description>
@@ -14,7 +39,8 @@ view DemoCircles {
   </description>
 
   $circles = {
-    height: 430
+    height: 430,
+    cursor: 'pointer'
   }
 
   $description = {

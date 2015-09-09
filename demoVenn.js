@@ -5,7 +5,7 @@ view DemoVenn {
   $ = {
     flexFlow: 'row',
     margin: 'auto',
-    width: 300
+    width: 240
   }
 
   $one = { background: 'blue' }
@@ -13,7 +13,8 @@ view DemoVenn {
 
   $.circle = {
     borderRadius: 100,
-    width: 200, height: 200,
+    width: 200,
+    height: 200,
     flexShrink: 0,
     margin: ['auto', -40],
     opacity: 0.5
