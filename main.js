@@ -23,6 +23,7 @@ screen.small = '@media (max-width: 850px)'
 
 view Main {
   <Header />
+  <What />
   <Examples />
   <Features />
   <Install />
@@ -80,6 +81,26 @@ view Header {
   }
 }
 
+view What {
+  <Contain>
+    <p>
+      Flint makes building web apps insanely
+      productive.
+
+      It's React, with a beautiful syntax.
+      It updates your browser as you type, instantly.
+    </p>
+  </Contain>
+
+  $p = {
+    fontSize: 26,
+    lineHeight: '3rem',
+    textAlign: 'center',
+    padding: [0, '10%'],
+    margin: [30, 0, 5]
+  }
+}
+
 view Nav {
   <a target="_blank" href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
   <a target="_blank" href="http://github.com/flintjs">Github</a>
@@ -101,7 +122,11 @@ view Nav {
     color: '#666',
     textDecoration: 'none',
     fontFamily: font.sansSerif,
-    padding: [0, 15]
+    padding: [0, 15],
+
+    ':hover': {
+      color: color.red
+    }
   }
 }
 
@@ -127,7 +152,7 @@ view Logo {
 }
 
 view Introduction {
-  <Desc />
+  <Desc start={^start} />
   <Nav />
 
   $ = {
@@ -138,6 +163,8 @@ view Introduction {
 }
 
 view Desc {
+  @started = ^start
+
   phrases = ['powerfully fast', 'without boilerplate', 'more creatively']
   @desc = ''
 
@@ -165,9 +192,14 @@ view Desc {
     });
   }
 
-  setTimeout(step, 1350)
+  // beforeRender = () => {
+    // if (!@started && ^start) {
+      setTimeout(step, 1350)
+      // @started = true
+    // }
+  // }
 
-  <desc>Web apps {@desc}</desc>
+  <desc>Web apps, {@desc}</desc>
 
   $desc = {
     textAlign: 'center',
@@ -183,7 +215,7 @@ view Desc {
 
 view Examples {
   <Interlude>
-    Flint simplifies ES6, introducing the <em>view</em>.
+    Flint simplifies ES6, introducing the <em>view</em>
   </Interlude>
 
   <Example flip inPage
@@ -192,7 +224,7 @@ view Examples {
     out={<DemoCounter />} />
 
   <Interlude>
-    Views let your style elements using $ variables.
+    Views let your style elements using $ variables
   </Interlude>
 
   <Example inPage
@@ -201,7 +233,7 @@ view Examples {
     out={<DemoVenn />} />
 
   <Interlude>
-    Flint is simple, but powerful. It works with npm & React.
+    Flint is simple, but powerful. It works with npm & React
   </Interlude>
 
   <Example flip inPage
@@ -228,6 +260,7 @@ view Interlude {
       </p>
     </section>
   </Contain>
+  <strip />
 
   $Contain = {
     margin: [0, 'auto'],
@@ -249,7 +282,19 @@ view Interlude {
 
   $p = {
     textAlign: 'center',
-    margin: [5, 0]
+    margin: [5, 'auto'],
+    padding: [0, 25],
+    background: color.bg,
+    position: 'relative',
+    zIndex: 10
+  }
+
+  $strip = {
+    borderBottom: '1px dotted #ccc',
+    width: '80%',
+    maxWidth: 900,
+    margin: [-57, 'auto', 57],
+    zIndex: 0
   }
 }
 
@@ -317,7 +362,11 @@ view Editor {
     changeTab={i => @index = i} />
   <iframe
     src={getSrc()}
-    onLoad={^onLoad}>
+    onLoad={() => {
+      // debugger
+      if (^onLoad)
+        ^onLoad()
+    }}>
   </iframe>
 
   $ = {
@@ -438,10 +487,10 @@ view Toolbar {
 
 view Features {
   text = [
-    [`Works with React`, `Import and use any React component`],
+    [`Works with React`, `Use any React component`],
     [`Automatic npm installs`, `Flint installs as you type`],
     [`Modern ES6, simplified`, `No need for *this* or classes`],
-    [`Instant feedback`, `As you type your browser updates`],
+    [`Instant feedback`, `Browser hot updates as you type`],
     [`Fast builds & runtime`, `Compiler unlocks incredible speed`],
     [`Smart errors & tools`, `Inline errors and a state inspector`],
   ]
@@ -499,10 +548,12 @@ view Features {
 
   $text = {
     flexFlow: 'column',
-    textAlign: 'left'
+    textAlign: 'left',
+    margin: [0, 0, 5]
   }
 
   $description = {
+    margin: [5, 0, 0],
     fontSize: 16,
     color: '#666'
   }
@@ -606,6 +657,8 @@ view Install {
     <code class="small">flint</code>
   </Contain>
 
+  $h2 = title
+
   $code = [{
     color: '#000',
     margin: [10, 0],
@@ -622,9 +675,9 @@ view Install {
   }]
 
   $.small = {
-    fontSize: 18,
+    fontSize: 20,
     color: '#777',
-    margin: 0
+    margin: [4, 0]
   }
 }
 
@@ -645,7 +698,7 @@ view Contain {
   </contain>
 
   topPad = ^strip ? 60 : 0
-  padding = ^pad ? [topPad, '20%'] : [topPad, 0]
+  padding = ^pad ? [topPad, '10%'] : [topPad, 0]
 
   $ = {
     background: ^strip ? '#fff' : 'transparent',
