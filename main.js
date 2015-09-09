@@ -208,7 +208,7 @@ view Desc {
     lineHeight: '1.6rem',
     padding: [10, 0],
     fontWeight: 300,
-    color: '#333',
+    color: '#555',
     margin: [0, 'auto'],
     display: 'block'
   }
@@ -604,7 +604,6 @@ view About {
 view Video {
   <Contain strip>
     <center>
-      <h2>Learn more</h2>
       <p>
         Watch a 5 minute video that explains more behind Flint.
       </p>
