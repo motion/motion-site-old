@@ -68,7 +68,7 @@ view Header {
 
   $ = {
     margin: [0, 0, 10],
-    padding: [40, 0],
+    padding: [35, 0],
     position: 'relative',
     overflow: 'hidden',
     background: '#fff'
@@ -78,10 +78,9 @@ view Header {
 view What {
   <Contain>
     <p>
-      Flint makes building modern web apps easy.
-
-      It's a simple way to build with React
-      that updates your browser instantly as you code.
+      Flint is a simple stack for React.
+      It gives you everything you need to move fast
+      & instantly updates to your browser as you code.
     </p>
   </Contain>
 
@@ -114,8 +113,9 @@ view Nav {
     margin: [10, 'auto', -20],
     flexFlow: 'row',
     zIndex: 100,
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 300,
+    textTransform: 'uppercase',
 
     [screen.small]: {
       marginBottom: 0
@@ -126,7 +126,7 @@ view Nav {
     color: '#666',
     textDecoration: 'none',
     fontFamily: font.sansSerif,
-    padding: [0, 15],
+    padding: [0, 20],
 
     ':hover': {
       color: color.red
@@ -135,7 +135,7 @@ view Nav {
 }
 
 view Logo {
-  <img src="/images/flint-small.png" srcset="/images/flint.png 2x" />
+  <img src="/images/flint.png" />
 
   $ = {
     flexFlow: 'row',
@@ -149,8 +149,8 @@ view Logo {
   }
 
   $img = {
-    width: 159,
-    height: 79,
+    width: Math.round(318 * .75),
+    height: Math.round(158 * .75),
     margin: [0, 'auto', 10]
   }
 }
@@ -169,7 +169,7 @@ view Introduction {
 view Desc {
   @started = ^start
 
-  phrases = ['powerfully fast', 'without boilerplate', 'more creatively']
+  phrases = ['faster', 'creatively', 'with ease']
   @desc = ''
 
   betweenPhrase = 4000
@@ -274,7 +274,7 @@ view Interlude {
 
   $section = {
     color: '#585858',
-    margin: [35, 0],
+    margin: [30, 0],
     borderRight: 'none',
     borderLeft: 'none',
     fontSize: ^fontSize || 19
@@ -635,7 +635,7 @@ view Video {
         </a>
       </video>
     </section>
-    <section>
+    <section if={false}>
       <p>Watch a 2 minute demo that explains more behind Flint.</p>
       <video controls>
         <source
