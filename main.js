@@ -99,7 +99,7 @@ view What {
     textAlign: 'center',
     padding: [0, '15%'],
     margin: [35, 0, 8],
-    color: color.darkred
+    color: 'rgb(73, 73, 73)'
   }
 }
 
