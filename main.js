@@ -204,7 +204,7 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 26,
+    fontSize: 24,
     lineHeight: '1.6rem',
     padding: [10, 0],
     fontWeight: 300,
