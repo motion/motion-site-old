@@ -6,8 +6,8 @@ color.bg = '#f9f9f9'
 
 font = {}
 font.serif = 'Georgia, serif'
-font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 font.sansSerif = 'Helvetica Neue, Helvetica, Arial, sans-serif'
+font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 
 title = {
   fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
@@ -85,19 +85,19 @@ view Header {
 view What {
   <Contain>
     <p>
-      Flint makes building web apps insanely
-      productive.
+      Flint makes building modern web apps easy.
 
-      It's React, with a beautiful syntax.
-      It updates your browser as you type, instantly.
+      It's a simple view syntax that runs React.
+
+      It updates your browser instantly as you code.
     </p>
   </Contain>
 
   $p = {
-    fontSize: 26,
+    fontSize: 24,
     lineHeight: '3rem',
     textAlign: 'center',
-    padding: [0, '10%'],
+    padding: [0, '15%'],
     margin: [35, 0, 8]
   }
 }
@@ -204,7 +204,7 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 24,
+    fontSize: 26,
     lineHeight: '1.6rem',
     padding: [10, 0],
     fontWeight: 300,
@@ -216,7 +216,7 @@ view Desc {
 
 view Examples {
   <Interlude>
-    Flint simplifies ES6, introducing the <em>view</em>
+    Flint simplifies JavaScript with the <em>view</em>
   </Interlude>
 
   <Example flip inPage
@@ -308,7 +308,6 @@ view Example {
   $ = {
     flexFlow: 'row',
     flexGrow: 1,
-    fontFamily: font.sansSerif,
 
     [screen.small]: {
       flexFlow: 'column'
@@ -702,9 +701,10 @@ view Contain {
   padding = ^pad ? [topPad, '10%'] : [topPad, 0]
 
   $ = {
-    background: ^strip ? '#fff' : 'transparent',
+    background: ^bg || ^strip ? '#fff' : 'transparent',
     maxWidth: ^maxWidth || 1050,
     width: '100%',
+    color: ^color || 'auto',
     flexFlow: 'inherit',
     alignItems: 'inherit',
     justifyContent: 'inherit',
