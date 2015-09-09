@@ -603,23 +603,32 @@ view About {
 
 view Video {
   <Contain strip>
-    <center>
+    <section>
       <p>
-        Watch a 5 minute video that explains more behind Flint.
+        Watch a 3 minute live demo of Flint.
       </p>
       <video controls>
         <source
-          src="https://s3-us-west-1.amazonaws.com/flint123/flintdemo.mp4"
+          src="https://s3-us-west-1.amazonaws.com/flint123/flint2.mp4"
           type="video/mp4" />
         <a
           href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
           See on YouTube
         </a>
       </video>
-      <desc>
-        Start from 2:13 to see the live demonstration.
-      </desc>
-    </center>
+    </section>
+    <section>
+      <p>Watch a 2 minute demo that explains more behind Flint.</p>
+      <video controls>
+        <source
+          src="https://s3-us-west-1.amazonaws.com/flint123/flint1.mp4"
+          type="video/mp4" />
+        <a
+          href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
+          See on YouTube
+        </a>
+      </video>
+    </section>
   </Contain>
 
   $ = {
@@ -627,10 +636,10 @@ view Video {
     zIndex: 0,
   }
 
-  $center = {
-    margin: 'auto',
+  $section = {
     textAlign: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    margin: [10, 'auto']
   }
 
   $video = {
@@ -640,14 +649,6 @@ view Video {
     maxHeight: 450,
     maxWidth: 672
   }
-
-  $desc = {
-    display: 'block',
-    fontSize: 16,
-    padding: [10, 0]
-  }
-
-  $h2 = title
 }
 
 view Install {
