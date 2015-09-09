@@ -2,6 +2,7 @@ import chroma from 'chroma-js'
 
 color = {}
 color.red = '#c62b24'
+color.darkred = chroma(color.red).darken(0.3)
 color.bg = '#f9f9f9'
 
 font = {}
@@ -87,9 +88,8 @@ view What {
     <p>
       Flint makes building modern web apps easy.
 
-      It's a simple view syntax that runs React.
-
-      It updates your browser instantly as you code.
+      It's a simple way to build with React
+      that updates your browser instantly as you code.
     </p>
   </Contain>
 
@@ -98,7 +98,8 @@ view What {
     lineHeight: '3rem',
     textAlign: 'center',
     padding: [0, '15%'],
-    margin: [35, 0, 8]
+    margin: [35, 0, 8],
+    color: color.darkred
   }
 }
 
