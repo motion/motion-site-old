@@ -86,7 +86,7 @@ view What {
   </Contain>
 
   $ = {
-    margin: [20, 0, -10],
+    margin: [20, 'auto', -10],
     position: 'relative',
     zIndex: 10,
     padding: [20, 0]
