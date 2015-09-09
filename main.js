@@ -85,13 +85,23 @@ view What {
     </p>
   </Contain>
 
+  $ = {
+    margin: [20, 0, -10],
+    position: 'relative',
+    zIndex: 10,
+    padding: [20, 0]
+  }
+
   $p = {
     fontSize: 24,
     lineHeight: '3rem',
     textAlign: 'center',
     padding: [0, '15%'],
-    margin: [35, 0, 8],
-    color: 'rgb(73, 73, 73)'
+    margin: 0,
+
+    [screen.small]: {
+      fontSize: 20
+    }
   }
 }
 
@@ -668,20 +678,18 @@ view Install {
 
   $h2 = title
 
-  $code = [{
+  $code = {
     color: '#000',
     margin: [10, 0],
     width: '100%',
     textAlign: 'center',
     fontFamily: font.monoSpace,
-    fontSize: 28
-  }, ^small && {
-    padding: [2, 0],
-    fontSize: 18,
-    color: '#B44944',
-    background: 'none',
-    margin: [0, 0, -40],
-  }]
+    fontSize: 28,
+
+    [screen.small]: {
+      fontSize: 22
+    }
+  }
 
   $.small = {
     fontSize: 20,
