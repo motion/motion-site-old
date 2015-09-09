@@ -29,6 +29,7 @@ view Main {
   <Install />
   <Video />
   <About />
+  <FAQ if={false} />
 
   $ = {
     color: '#444',
@@ -97,7 +98,7 @@ view What {
     lineHeight: '3rem',
     textAlign: 'center',
     padding: [0, '10%'],
-    margin: [30, 0, 5]
+    margin: [35, 0, 8]
   }
 }
 
@@ -735,5 +736,40 @@ view Contain {
     top: 'auto',
     bottom: -20,
     left: -100,
+  }
+}
+
+view FAQ {
+  <Contain pad strip>
+    <h2>FAQ</h2>
+
+    <question>
+      What is this? A view layer? A framework? A language?
+    </question>
+    <answer>
+      It's
+    </answer>
+  </Contain>
+
+  $ = {
+    margin: [-20, 0], //offset for p space
+    padding: [0, 20, 50],
+    lineHeight: '1.8rem'
+  }
+
+  $h2 = title
+
+  $p = {
+    margin: [10, 0]
+  }
+
+  $intro = {
+    fontSize: 16,
+    padding: 20,
+    border: '1px solid #ddd'
+  }
+
+  $question = {
+    fontWeight: 'bold'
   }
 }
