@@ -80,7 +80,7 @@ view What {
     <p>
       Flint is a simple stack for React.
       It gives you everything you need to move fast
-      & instantly updates to your browser as you code.
+      & instantly updates your browser as you code.
     </p>
   </Contain>
 
@@ -591,9 +591,10 @@ view About {
       We are <em>writing around the library </em>
       rather than having an intuitive language that understands
       how we build.
-      Flint's + ES6 focuses the language on views and simple
-      functions, giving you incredible power and simplicity
-      while avoiding the burden of learning and maintaining a complex stack.
+      Flint's ES6 JavaScript parser focuses the language on views and simple
+      functions, giving you incredible power and simplicity.
+      It also lets you avoid the burden of maintaining your own custom
+      set of tools and stack.
     </p>
     <p>
       We want to allow developers to be maximally creative.
