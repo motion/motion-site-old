@@ -149,8 +149,8 @@ view Logo {
   }
 
   $img = {
-    width: Math.round(318 * .75),
-    height: Math.round(158 * .75),
+    width: Math.round(318 * .5),
+    height: Math.round(158 * .5),
     margin: [0, 'auto', 10]
   }
 }
