@@ -68,7 +68,7 @@ view Header {
 
   $ = {
     margin: [0, 0, 10],
-    padding: [35, 0],
+    padding: [26, 0],
     position: 'relative',
     overflow: 'hidden',
     background: '#fff'
@@ -85,7 +85,7 @@ view What {
   </Contain>
 
   $ = {
-    margin: [20, 'auto', -10],
+    margin: [15, 'auto', -15],
     position: 'relative',
     zIndex: 10,
     padding: [20, 0]
@@ -123,7 +123,7 @@ view Nav {
   }
 
   $a = {
-    color: '#666',
+    color: '#777',
     textDecoration: 'none',
     fontFamily: font.sansSerif,
     padding: [0, 20],
@@ -135,11 +135,11 @@ view Nav {
 }
 
 view Logo {
-  <img src="/images/flint.png" />
+  <img src="/images/flintlogo20.png" />
 
   $ = {
     flexFlow: 'row',
-    margin: [-10, 0, 2],
+    margin: [-10, 0, -5],
     alignItems: 'center',
     justifyContent: 'center',
 
@@ -149,9 +149,9 @@ view Logo {
   }
 
   $img = {
-    width: Math.round(318 * .5),
-    height: Math.round(158 * .5),
-    margin: [0, 'auto', 10]
+    width: Math.round(520 * .5),
+    height: Math.round(140 * .5),
+    margin: [0, 'auto', 20]
   }
 }
 
@@ -198,7 +198,7 @@ view Desc {
 
   // beforeRender = () => {
     // if (!@started && ^start) {
-      setTimeout(step, 1350)
+      setTimeout(step, 1380)
       // @started = true
     // }
   // }
@@ -223,7 +223,7 @@ view Examples {
   </Interlude>
 
   <Example flip inPage
-    maxWidth={800}
+    maxWidth={760}
     in={<Editor lines={10} left light src="/examples/exampleCounter.html" />}
     out={<DemoCounter />} />
 
@@ -232,7 +232,7 @@ view Examples {
   </Interlude>
 
   <Example inPage
-    maxWidth={850}
+    maxWidth={900}
     in={<Editor lines={15} left light src="/examples/exampleVenn.html" />}
     out={<DemoVenn />} />
 
@@ -286,7 +286,7 @@ view Interlude {
 
   $p = {
     textAlign: 'center',
-    margin: [5, 'auto'],
+    margin: [8, 'auto'],
     padding: [0, 25],
     background: color.bg,
     position: 'relative',
@@ -297,7 +297,7 @@ view Interlude {
     borderBottom: '1px dotted #ccc',
     width: '80%',
     maxWidth: 950,
-    margin: [-57, 'auto', 57],
+    margin: [-53, 'auto', 53],
     zIndex: 0,
 
     [screen.small]: {
@@ -580,7 +580,6 @@ view Features {
 
 view About {
   <Contain pad>
-    <h2>About</h2>
     <p>
       Views are an amazingly simple abstraction
       but with no clear or productive way to build with today.
@@ -609,9 +608,15 @@ view About {
   </Contain>
 
   $ = {
-    margin: [-20, 0], //offset for p space
-    padding: [0, 20, 50],
-    lineHeight: '1.8rem'
+    margin: [-20, 'auto'], //offset for p space
+    padding: [0, 60, 50],
+    fontSize: 20,
+    lineHeight: '2rem',
+
+    [screen.small]: {
+      padding: 0,
+      paddingBottom: 50
+    }
   }
 
   $p = { marginBottom: 0 }
@@ -624,7 +629,7 @@ view Video {
   <Contain strip>
     <section>
       <p>
-        Watch a 3 minute live demo of Flint.
+        Watch a 3 minute demo live coding with Flint
       </p>
       <video controls>
         <source
@@ -716,7 +721,7 @@ view Contain {
   </contain>
 
   topPad = ^strip ? 60 : 0
-  padding = ^pad ? [topPad, '10%'] : [topPad, 0]
+  padding = ^pad ? [topPad, '15%'] : [topPad, 0]
 
   $ = {
     background: ^bg || ^strip ? '#fff' : 'transparent',
