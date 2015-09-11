@@ -753,7 +753,15 @@ view Install {
     <code><b>npm install -g flint</b></code>
     <code class="small">flint new myapp</code>
     <code class="small">flint</code>
+
+    <desc>
+      <a href="">Docs</a>
+    </desc>
   </Contain>
+
+  $ = {
+    textAlign: 'center'
+  }
 
   $h2 = title
 
@@ -761,7 +769,6 @@ view Install {
     color: '#000',
     margin: [10, 0],
     width: '100%',
-    textAlign: 'center',
     fontFamily: font.monoSpace,
     fontSize: 28,
 
@@ -774,6 +781,12 @@ view Install {
     fontSize: 20,
     color: '#777',
     margin: [4, 0]
+  }
+
+  $desc = {
+    marginTop: 40,
+    fontSize: 15,
+    opacity: 0.8
   }
 }
 
