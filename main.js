@@ -870,11 +870,11 @@ view Title {
 
   $h2 = {
     fontSize: 22,
-    fontWeight: 'normal',
-    background: 'rgba(0,0,0,0.5)',
     margin: [10, 'auto', 20],
     padding: 10,
-    color: '#fff',
+    color: '#000',
+    fontStyle: 'italic',
+    background: 'rgba(0,0,0,0.1)',
     textAlign: 'center'
   }
 }

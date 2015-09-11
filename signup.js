@@ -24,6 +24,13 @@ view Signup {
             class="button"
             type="submit"
             value="Submit"
+            style={{
+              border: 'none',
+              color: '#fff',
+              fontWeight: 'bold',
+              background: `linear-gradient(#E86C3D, #DC405B)`,
+              padding: 10
+            }}
             name="subscribe" id="mc-embedded-subscribe" />
         </center>
       </div>
@@ -55,7 +62,11 @@ view Signup {
   input = {
     width: '100%',
     marginTop: 20,
-    borderRadius: 5
+    borderRadius: 5,
+    background: '#fff',
+    padding: 10,
+    color: '#666',
+    border: 'none'
   }
 
   $input = input
@@ -67,12 +78,5 @@ view Signup {
 
   $label = {
     margin: [10, 0]
-  }
-
-  $submit = {
-    border: '1px solid #ccc',
-    color: '#333',
-    background: '#fff',
-    padding: 10
   }
 }
