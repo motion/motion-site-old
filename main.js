@@ -9,6 +9,8 @@ if (typeof window != 'undefined') {
 
 color = {}
 color.brand = '#fa3732'
+color.brand1 = '#E86C3D'
+color.brand2 = '#DB415E'
 color.darkred = chroma(color.brand).darken(0.3)
 color.bg = '#f2f2f2'
 color.text = '#444'
@@ -102,7 +104,15 @@ view What {
     lineHeight: '2.5rem',
     padding: [0, '15%'],
     margin: [-5, 0],
-    opacity: 0.95,
+
+    background:
+      `-webkit-linear-gradient(
+        left,
+        ${chroma(color.brand1).darken(0.6)},
+        ${chroma(color.brand2).darken(0.6)}
+      )`,
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
 
     [screen.small]: {
       fontSize: 20
