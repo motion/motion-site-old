@@ -4,6 +4,8 @@ color = {}
 color.brand = '#fa3732'
 color.darkred = chroma(color.brand).darken(0.3)
 color.bg = '#f2f2f2'
+color.text = '#444'
+color.strip = '#fff'
 
 font = {}
 font.serif = 'Georgia, serif'
@@ -14,7 +16,7 @@ title = {
   fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
   textAlign: 'center',
   fontWeight: 300,
-  color: '#000',
+  color: color.text,
   fontSize: 30,
   margin: [40, 0, 30]
 }
@@ -33,7 +35,7 @@ view Main {
   <FAQ if={false} />
 
   $ = {
-    color: '#444',
+    color: color.text,
     background: color.bg,
     fontSize: 18,
     fontFamily: font.serif,
@@ -85,7 +87,7 @@ view What {
   </Contain>
 
   $ = {
-    margin: [-65, 'auto', -55],
+    margin: [-70, 'auto', -55],
     position: 'relative',
     zIndex: 0,
     padding: [20, 0]
@@ -93,11 +95,11 @@ view What {
 
   $p = {
     fontSize: 24,
-    color: '#555',
     lineHeight: '3rem',
     textAlign: 'center',
     padding: [0, '15%'],
     margin: [-10, 0],
+    opacity: 0.95,
 
     [screen.small]: {
       fontSize: 20
@@ -111,10 +113,10 @@ view Nav {
   <a target="_blank" href="https://twitter.com/flint_js">Twitter</a>
 
   $ = {
-    margin: [10, 'auto', -20],
+    margin: [15, 'auto', -20],
     flexFlow: 'row',
     zIndex: 100,
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: 300,
     textTransform: 'uppercase',
 
@@ -208,11 +210,12 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 26,
+    fontSize: 28,
     lineHeight: '1.6rem',
     padding: [10, 0],
     fontWeight: 300,
-    color: '#555',
+    color: color.text,
+    opacity: 0.9,
     margin: [0, 'auto'],
     display: 'block'
   }
@@ -229,7 +232,7 @@ view Examples {
     out={<DemoCounter />} />
 
   <Interlude>
-    Views let your style elements using $ variables
+    Style elements using $ variables
   </Interlude>
 
   <Example inPage
@@ -274,7 +277,6 @@ view Interlude {
   }
 
   $section = {
-    color: '#585858',
     margin: [30, 0],
     borderRight: 'none',
     borderLeft: 'none',
@@ -290,12 +292,13 @@ view Interlude {
     margin: [8, 'auto'],
     padding: [0, 25],
     background: color.bg,
+    color: chroma(color.text).rgba(0.2),
     position: 'relative',
     zIndex: 10
   }
 
   $strip = {
-    borderBottom: '1px dotted #ccc',
+    borderBottom: '1px dotted rgba(0,0,0,0.2)',
     width: '80%',
     maxWidth: 950,
     margin: [-53, 'auto', 53],
@@ -627,32 +630,33 @@ view About {
 }
 
 view Video {
+  @started = false
+  id = 'video-' + Math.random()
+
+  start = () => {
+    @started = true
+    document.getElementById(id).play()
+  }
+
   <Contain strip>
     <section>
-      <p>
-        Watch a 3 minute demo live coding with Flint
-      </p>
-      <video controls>
-        <source
-          src="https://s3-us-west-1.amazonaws.com/flint123/flint2.mp4"
-          type="video/mp4" />
-        <a
-          href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
-          See on YouTube
-        </a>
-      </video>
-    </section>
-    <section if={false}>
-      <p>Watch a 2 minute demo that explains more behind Flint.</p>
-      <video controls>
-        <source
-          src="https://s3-us-west-1.amazonaws.com/flint123/flint1.mp4"
-          type="video/mp4" />
-        <a
-          href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
-          See on YouTube
-        </a>
-      </video>
+      <videocontain>
+        <video id={id} controls={@started} poster="/images/video-poster.jpg">
+          <source
+            src="https://s3-us-west-1.amazonaws.com/flint123/flint2.mp4"
+            type="video/mp4" />
+          <a
+            href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
+            See on YouTube
+          </a>
+        </video>
+
+        <overlay if={!@started} onClick={start}>
+          <play>
+            Watch 3 minute live demo
+          </play>
+        </overlay>
+      </videocontain>
     </section>
   </Contain>
 
@@ -664,17 +668,85 @@ view Video {
   $section = {
     textAlign: 'center',
     alignItems: 'center',
-    margin: [10, 'auto']
+    margin: [40, 'auto']
+  }
+
+  originalHeight = 877
+  originalWidth = 1440
+  scale = 0.5
+  height = Math.round(originalHeight * scale)
+  width = Math.round(originalWidth * scale)
+
+  $videocontain = {
+    width,
+    height,
+    maxHeight: '100%',
+    maxWidth: '100%',
+    position: 'relative',
+
+    [screen.small]: {
+      width: '100%',
+      height: 'auto'
+    }
   }
 
   $video = {
     border: 'none',
     width: '100%',
-    height: '100%',
-    maxHeight: 450,
-    maxWidth: 672
+    height: '100%'
+  }
+
+  $overlay = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 100,
+    background: 'rgba(0,0,0,0.3)',
+    cursor: 'pointer',
+
+    ':hover': {
+      background: 'rgba(0,0,0,0.1)'
+    }
+  }
+
+  $play = {
+    position: 'absolute',
+    height: 50,
+    marginTop: -25,
+    width: 350,
+    marginLeft: -175,
+    padding: 10,
+    color: '#fff',
+    fontFamily: font.sansSerif,
+    fontWeight: 700,
+    background: color.brand,
+    borderRadius: 10,
+    top: '50%',
+    left: '50%',
+
+    ':hover': {
+      background: chroma(color.brand).darken(0.5)
+    }
   }
 }
+
+// <section if={false}>
+//   <p>Watch a 2 minute demo that explains more behind Flint.</p>
+//
+//   <videocontain>
+//     <video controls>
+//       <source
+//         src="https://s3-us-west-1.amazonaws.com/flint123/flint1.mp4"
+//         type="video/mp4" />
+//       <a
+//         href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
+//         See on YouTube
+//       </a>
+//     </video>
+//   </videocontain>
+// </section>
 
 view Install {
   <Contain>
@@ -725,7 +797,7 @@ view Contain {
   padding = ^pad ? [topPad, '15%'] : [topPad, 0]
 
   $ = {
-    background: ^bg || ^strip ? '#fff' : 'transparent',
+    background: ^bg || ^strip ? color.strip : 'transparent',
     maxWidth: ^maxWidth || 1050,
     width: '100%',
     color: ^color || 'auto',
