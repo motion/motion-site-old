@@ -1,6 +1,6 @@
 view Signup {
   <Contain pad>
-    <Title>Want to work with us on Flint? Stay up to date:</Title>
+    <Title>Work with us on Flint & stay up to date</Title>
     <form action="//flintlang.us11.list-manage.com/subscribe/post?u=d6ee317984756a7f0f5e9378b&amp;id=dcc2cefed5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <div id="mc_embed_signup_scroll">
         <div class="mc-field-group">
@@ -37,6 +37,10 @@ view Signup {
     </form>
   </Contain>
 
+  $ = {
+    margin: [40, 'auto', 50]
+  }
+
   $hide = {
     display: 'none'
   }
@@ -56,7 +60,9 @@ view Signup {
 
   $form = {
     textAlign: 'left',
-    fontSize: 16
+    fontSize: 16,
+    minWidth: 300,
+    margin: 'auto'
   }
 
   input = {

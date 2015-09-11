@@ -1,15 +1,12 @@
 import { Spring } from 'react-motion'
 import offset from 'mouse-event-offset'
 
-if (typeof window != 'undefined')
-  window.docOffset = require('document-offset')
-
 view DemoCircles {
   @coords = []
   @hasScrolledTo = false
 
   this.componentDidMount = () => {
-    targetY = window.docOffset(document.querySelector('circles')).top - 300
+    targetY = util.docOffset(document.querySelector('circles')).top - 300
 
     @timeout = null
     on(window, 'scroll', () => {
