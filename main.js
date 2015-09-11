@@ -83,7 +83,7 @@ view What {
   </Contain>
 
   $ = {
-    margin: [-85, 'auto', -60],
+    margin: [-85, 'auto', -62],
     position: 'relative',
     zIndex: 0,
     padding: [20, 0],
@@ -912,7 +912,7 @@ view Icons {
   </Sub>
 
   $a = {
-    margin: [0, 25]
+    margin: [0, 20]
   }
 }
 
@@ -931,13 +931,15 @@ view Sub {
 }
 
 icon = {
-  width: 48,
-  height: 48,
+  width: 32,
+  height: 32,
   transition: 'all ease-in 200ms',
   opacity: 0.5,
+  filter: 'grayscale(1)',
 
   ':hover': {
-    opacity: 1
+    opacity: 1,
+    filter: 'none'
   }
 }
 
