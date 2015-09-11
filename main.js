@@ -98,7 +98,7 @@ view What {
     lineHeight: '3rem',
     textAlign: 'center',
     padding: [0, '15%'],
-    margin: [-10, 0],
+    margin: [-5, 0],
     opacity: 0.95,
 
     [screen.small]: {
@@ -753,10 +753,6 @@ view Install {
     <code><b>npm install -g flint</b></code>
     <code class="small">flint new myapp</code>
     <code class="small">flint</code>
-
-    <desc>
-      <a href="">Docs</a>
-    </desc>
   </Contain>
 
   $ = {
@@ -781,12 +777,6 @@ view Install {
     fontSize: 20,
     color: '#777',
     margin: [4, 0]
-  }
-
-  $desc = {
-    marginTop: 40,
-    fontSize: 15,
-    opacity: 0.8
   }
 }
 
@@ -834,7 +824,7 @@ view Contain {
     left: -100,
     zIndex: 0,
     transform: {
-      rotate: '-1deg'
+      rotate: '-1.2deg'
     }
   }
 
