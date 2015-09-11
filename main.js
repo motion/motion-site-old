@@ -1,9 +1,9 @@
 import chroma from 'chroma-js'
 
 color = {}
-color.red = '#c62b24'
-color.darkred = chroma(color.red).darken(0.3)
-color.bg = '#f9f9f9'
+color.brand = '#fa3732'
+color.darkred = chroma(color.brand).darken(0.3)
+color.bg = '#f2f2f2'
 
 font = {}
 font.serif = 'Georgia, serif'
@@ -46,37 +46,37 @@ view Header {
   @startIntro = false
 
   <main>
-  <Example
-    flipVertical
-    maxWidth={850}
-    inStyle={{
-      maxWidth: 375
-    }}
-    out={
-      <head>
-        <Logo />
-        <Introduction start={@startIntro} />
-      </head>
-    }
-    in={
-      <Editor right key="2"
-        lines={9}
-        onLoad={() => @startIntro = true}
-        src="/examples/example.html" />
-    } />
+    <Example
+      flipVertical
+      maxWidth={860}
+      inStyle={{
+        maxWidth: 375
+      }}
+      out={
+        <head>
+          <Logo />
+          <Introduction start={@startIntro} />
+        </head>
+      }
+      in={
+        <Editor right key="2"
+          lines={9}
+          onLoad={() => @startIntro = true}
+          src="/examples/example.html" />
+      }
+    />
   </main>
 
   $ = {
-    margin: [0, 0, 10],
+    margin: [0, 0, -10],
     padding: [26, 0],
     position: 'relative',
-    overflow: 'hidden',
-    background: '#fff'
+    overflow: 'hidden'
   }
 }
 
 view What {
-  <Contain>
+  <Contain strip>
     <p>
       Flint is a simple stack for React.
       It gives you everything you need to move fast
@@ -85,18 +85,19 @@ view What {
   </Contain>
 
   $ = {
-    margin: [15, 'auto', -15],
+    margin: [-65, 'auto', -55],
     position: 'relative',
-    zIndex: 10,
+    zIndex: 0,
     padding: [20, 0]
   }
 
   $p = {
     fontSize: 24,
+    color: '#555',
     lineHeight: '3rem',
     textAlign: 'center',
     padding: [0, '15%'],
-    margin: 0,
+    margin: [-10, 0],
 
     [screen.small]: {
       fontSize: 20
@@ -123,13 +124,13 @@ view Nav {
   }
 
   $a = {
-    color: '#777',
+    color: '#888',
     textDecoration: 'none',
     fontFamily: font.sansSerif,
-    padding: [0, 20],
+    padding: [0, 15],
 
     ':hover': {
-      color: color.red
+      color: color.brand
     }
   }
 }
@@ -139,12 +140,12 @@ view Logo {
 
   $ = {
     flexFlow: 'row',
-    margin: [-10, 0, -5],
+    margin: [-10, 0, -10],
     alignItems: 'center',
     justifyContent: 'center',
 
     [screen.small]: {
-      marginTop: 10
+      marginTop: 30
     }
   }
 
@@ -461,7 +462,7 @@ view Toolbar {
   }, _index == ^activeTab && {
     background: '#fff',
     borderTop: border,
-    borderLeft: `2px solid ${color.red}`,
+    borderLeft: `2px solid ${color.brand}`,
     borderRight: border,
     marginTop: -1,
     marginBottom: -1,
