@@ -33,6 +33,8 @@ view Main {
   <Video />
   <About />
   <FAQ if={false} />
+  <Signup />
+  <Footer />
 
   $ = {
     color: color.text,
@@ -585,10 +587,10 @@ view Features {
 view About {
   <Contain pad>
     <p>
-      Views are an amazingly simple abstraction
-      but with no clear or productive way to build with today.
-      Assembling a best-practice frontend stack takes months to learn and
-      assemble, with never-ending caretaking.
+      Views are a great abstraction
+      with no clear or effective way to use today.
+      Assembling a best-practice frontend stack takes years of experience,
+      months to assemble, and never-ending care.
     </p>
     <p>
       We are <em>writing around the library </em>
@@ -599,14 +601,15 @@ view About {
       It also lets you avoid the burden of maintaining your own custom
       set of tools and stack.
     </p>
+    <br />
     <p>
       We want to allow developers to be maximally creative.
       Let's make developer experience amazing with:
     </p>
     <ul>
       <li>Light abstractions that enable speed</li>
-      <li>Immediate feedback and helpful errors</li>
-      <li>A consistent and powerful environment</li>
+      <li>Immediate feedback & helpful errors</li>
+      <li>A consistent, powerful environment</li>
       <li>Smart tooling and integration</li>
     </ul>
   </Contain>
@@ -623,7 +626,10 @@ view About {
     }
   }
 
-  $p = { marginBottom: 0 }
+  $p = {
+    margin: [10, 0]
+  }
+
   $li = { margin: [10, 0, 0] }
 
   $h2 = title
@@ -800,7 +806,7 @@ view Contain {
   padding = ^pad ? [topPad, '15%'] : [topPad, 0]
 
   $ = {
-    background: ^bg || ^strip ? color.strip : 'transparent',
+    background: ^bg || (^strip ? color.strip : 'transparent'),
     maxWidth: ^maxWidth || 1050,
     width: '100%',
     color: ^color || 'auto',
@@ -867,5 +873,46 @@ view FAQ {
 
   $question = {
     fontWeight: 'bold'
+  }
+}
+
+view Title {
+  <h2 yield />
+  $ = false
+
+  $h2 = {
+    fontSize: 22,
+    fontWeight: 'normal',
+    background: 'rgba(0,0,0,0.5)',
+    margin: [10, 'auto', 20],
+    padding: 10,
+    color: '#fff',
+    textAlign: 'center'
+  }
+}
+
+view Footer {
+  <Contain pad strip>
+    <content>
+      <Nav />
+
+      <br />
+
+      <p>
+        Flint is just getting started,
+        we'd love your feedback!
+      </p>
+
+    </content>
+  </Contain>
+
+  $ = {
+    margin: [0, 0, -100],
+    textAlign: 'center',
+    fontSize: 16
+  }
+
+  $content = {
+    margin: [20, 0, 80]
   }
 }
