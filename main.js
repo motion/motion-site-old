@@ -8,18 +8,9 @@ color.text = '#444'
 color.strip = '#fff'
 
 font = {}
-font.serif = 'Georgia, serif'
-font.sansSerif = 'Helvetica Neue, Helvetica, Arial, sans-serif'
+font.serif = 'Lato, Georgia, serif'
+font.sansSerif = 'Helvetica Neue, Helvetica, Lato, Arial, sans-serif'
 font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
-
-title = {
-  fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-  textAlign: 'center',
-  fontWeight: 300,
-  color: color.text,
-  fontSize: 30,
-  margin: [40, 0, 30]
-}
 
 screen = {}
 screen.small = '@media (max-width: 850px)'
@@ -631,8 +622,6 @@ view About {
   }
 
   $li = { margin: [10, 0, 0] }
-
-  $h2 = title
 }
 
 view Video {
@@ -765,8 +754,6 @@ view Install {
     textAlign: 'center'
   }
 
-  $h2 = title
-
   $code = {
     color: '#000',
     margin: [10, 0],
@@ -843,7 +830,7 @@ view Contain {
 
 view FAQ {
   <Contain pad strip>
-    <h2>FAQ</h2>
+    <Title>FAQ</Title>
 
     <question>
       What is this? A view layer? A framework? A language?
@@ -858,8 +845,6 @@ view FAQ {
     padding: [0, 20, 50],
     lineHeight: '1.8rem'
   }
-
-  $h2 = title
 
   $p = {
     margin: [10, 0]
