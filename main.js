@@ -92,7 +92,7 @@ view What {
 
   $p = {
     fontSize: 24,
-    lineHeight: '3rem',
+    lineHeight: '2.5rem',
     padding: [0, '15%'],
     margin: [-5, 0],
     opacity: 0.95,
