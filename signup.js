@@ -72,7 +72,7 @@ view Signup {
     background: '#fff',
     padding: 10,
     color: '#666',
-    border: 'none'
+    border: '1px solid #ccc'
   }
 
   $input = input

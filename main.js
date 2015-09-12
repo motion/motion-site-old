@@ -26,12 +26,9 @@ screen.small = '@media (max-width: 850px)'
 
 style = {}
 style.textGradient = {
-  background:
-    `-webkit-linear-gradient(
-      left,
-      ${chroma(color.brand1).darken(0.6)},
-      ${chroma(color.brand2).darken(0.6)}
-    )`,
+  background: `-webkit-linear-gradient(left,
+    ${chroma(color.brand1).darken(0.6)},
+    ${chroma(color.brand2).darken(0.6)})`,
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
 }
@@ -39,7 +36,6 @@ style.textGradient = {
 view Main {
   <Header />
   <What />
-  <Social />
   <Examples />
   <Features />
   <Install />
@@ -83,8 +79,7 @@ view Header {
   </main>
 
   $ = {
-    margin: [0, 0, -10],
-    padding: [26, 0],
+    padding: [30, 0],
     position: 'relative',
     overflow: 'hidden'
   }
@@ -100,18 +95,19 @@ view What {
   </Contain>
 
   $ = {
-    margin: [-85, 'auto', -62],
+    margin: [-70, 'auto', -62],
     position: 'relative',
     zIndex: 0,
     padding: [20, 0],
     textAlign: 'center',
   }
 
-  $p = [style.textGradient, {
+  $p = [{
     fontSize: 24,
     lineHeight: '2.5rem',
     padding: [0, '15%'],
     margin: [-5, 0],
+    opacity: 0.9,
 
     [screen.small]: {
       fontSize: 20
@@ -134,7 +130,7 @@ view Nav {
     margin: [15, 'auto', -20],
     flexFlow: 'row',
     zIndex: 100,
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 300,
 
     [screen.small]: {
@@ -225,7 +221,7 @@ view Desc {
 
   <desc>Web apps, {@desc}</desc>
 
-  $desc = {
+  $desc = [style.textGradient, {
     textAlign: 'center',
     fontSize: 26,
     lineHeight: '1.6rem',
@@ -235,7 +231,7 @@ view Desc {
     opacity: 0.9,
     margin: [0, 'auto'],
     display: 'block'
-  }
+  }]
 }
 
 view Examples {
@@ -249,7 +245,7 @@ view Examples {
     out={<DemoCounter />} />
 
   <Interlude>
-    Styles attach with $ variables
+    Style views with $ variables
   </Interlude>
 
   <Example inPage
@@ -258,7 +254,7 @@ view Examples {
     out={<DemoVenn />} />
 
   <Interlude>
-    Views let you express things clearly & quickly
+    Flint's simple view system works with ES6, npm & React
   </Interlude>
 
   <Example flip inPage
@@ -676,7 +672,8 @@ view Video {
   $video = {
     border: 'none',
     width: '100%',
-    height: '100%'
+    height: '100%',
+    borderRadius: 6
   }
 
   $overlay = {
@@ -688,6 +685,7 @@ view Video {
     zIndex: 100,
     background: 'rgba(0,0,0,0.3)',
     cursor: 'pointer',
+    borderRadius: 6,
 
     ':hover': {
       background: 'rgba(0,0,0,0.1)'
