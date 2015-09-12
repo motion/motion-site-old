@@ -47,7 +47,6 @@ view Main {
   <About />
   <FAQ if={false} />
   <Signup />
-  <Social />
   <Footer />
 
   $ = {
@@ -531,7 +530,7 @@ view Toolbar {
 }
 
 view Features {
-  text = [
+  features = [
     [`Works with React`, `Use any React component`],
     [`Automatic npm installs`, `Flint installs as you type`],
     [`Modern ES6, simplified`, `No need for *this* or classes`],
@@ -540,14 +539,33 @@ view Features {
     [`Smart errors & tools`, `Inline errors and a state inspector`],
   ]
 
+  <List items={features} />
+  $ = false
+}
+
+view MoreFeatures {
+  features = [
+    [`CSS in JavaScript`],
+    [`Unimorphic/Isoversal`],
+    [`Easy Data with Stores`],
+    [`One command publish to CDN`],
+    [`Fast builds & runtime`],
+    [`Smart errors & tools`],
+  ]
+
+  <List items={features} />
+  $ = false
+}
+
+view List {
   <Contain strip>
     <list>
-      <item repeat={text} key={_}>
+      <item repeat={^items} key={_}>
         <Check class="check" />
 
         <text>
           <feature>{_[0]}</feature>
-          <description>{_[1]}</description>
+          <description if={_[1]}>{_[1]}</description>
         </text>
       </item>
     </list>
@@ -919,6 +937,8 @@ view Footer {
         Flint is just getting started,
         we'd love your feedback!
       </p>
+
+      <Social />
 
     </content>
   </Contain>
