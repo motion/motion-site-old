@@ -29,7 +29,10 @@ view Signup {
               color: '#fff',
               fontWeight: 'bold',
               background: `linear-gradient(#E86C3D, #DC405B)`,
-              padding: 10
+              padding: 10,
+              fontSize: 22,
+              width: '50%',
+              marginTop: 20
             }}
             name="subscribe" id="mc-embedded-subscribe" />
         </center>

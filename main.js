@@ -820,15 +820,13 @@ view Title {
   <h2 yield />
   $ = false
 
-  $h2 = {
+  $h2 = [style.textGradient, {
     fontSize: 22,
     margin: [10, 'auto', 20],
     padding: 10,
-    color: '#fff',
-    background: '#111',
     fontStyle: 'italic',
     textAlign: 'center'
-  }
+  }]
 }
 
 view Footer {
