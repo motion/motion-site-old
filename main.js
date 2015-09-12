@@ -44,8 +44,6 @@ view Main {
   <Features />
   <Install />
   <Video />
-  <About />
-  <FAQ if={false} />
   <Signup />
   <Footer />
 
@@ -114,7 +112,6 @@ view What {
     lineHeight: '2.5rem',
     padding: [0, '15%'],
     margin: [-5, 0],
-    fontWeight: 'bold',
 
     [screen.small]: {
       fontSize: 20
@@ -230,7 +227,7 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 28,
+    fontSize: 26,
     lineHeight: '1.6rem',
     padding: [10, 0],
     fontWeight: 300,
@@ -252,7 +249,7 @@ view Examples {
     out={<DemoCounter />} />
 
   <Interlude>
-    Style elements using $ variables
+    Styles attach with $ variables
   </Interlude>
 
   <Example inPage
@@ -261,7 +258,7 @@ view Examples {
     out={<DemoVenn />} />
 
   <Interlude>
-    Flint is simple, but powerful. It works with npm & React
+    Views let you express things clearly & quickly
   </Interlude>
 
   <Example flip inPage
@@ -589,8 +586,8 @@ view List {
   }
 
   $item = {
-    margin: [12, 0],
-    padding: [0, 10, 0, 15],
+    margin: [12, 0, 8],
+    padding: [0, 10],
     lineHeight: '1.5rem',
     width: '50%',
     flexFlow: 'row',
@@ -621,55 +618,6 @@ view List {
   }
 }
 
-view About {
-  <Contain pad>
-    <p>
-      Views are a great abstraction
-      with no clear or effective way to use today.
-      Assembling a best-practice frontend stack takes years of experience,
-      months to assemble, and never-ending care.
-    </p>
-    <p>
-      We are <em>writing around the library </em>
-      rather than having an intuitive language that understands
-      how we build.
-      Flint's ES6 JavaScript parser focuses the language on views and simple
-      functions, giving you incredible power and simplicity.
-      It also lets you avoid the burden of maintaining your own custom
-      set of tools and stack.
-    </p>
-    <br />
-    <p>
-      We want to allow developers to be maximally creative.
-      Let's make developer experience amazing with:
-    </p>
-    <ul>
-      <li>Light abstractions that enable speed</li>
-      <li>Immediate feedback & helpful errors</li>
-      <li>A consistent, powerful environment</li>
-      <li>Smart tooling and integration</li>
-    </ul>
-  </Contain>
-
-  $ = {
-    margin: [0, 'auto'], //offset for p space
-    padding: [0, 60, 50],
-    fontSize: 20,
-    lineHeight: '2rem',
-
-    [screen.small]: {
-      padding: 0,
-      paddingBottom: 50
-    }
-  }
-
-  $p = {
-    margin: [10, 0]
-  }
-
-  $li = { margin: [10, 0, 0] }
-}
-
 view Video {
   @started = false
   id = 'video-' + Math.random()
@@ -679,39 +627,31 @@ view Video {
     document.getElementById(id).play()
   }
 
-  <Contain strip id="video">
-    <section>
-      <videocontain>
-        <video id={id} controls={@started} poster="/images/video-poster.jpg">
-          <source
-            src="https://s3-us-west-1.amazonaws.com/flint123/flint2.mp4"
-            type="video/mp4" />
-          <a
-            href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
-            See on YouTube
-          </a>
-        </video>
+  <Contain strip id="video" padTop>
+    <videocontain>
+      <video id={id} controls={@started} poster="/images/video-poster.jpg">
+        <source
+          src="https://s3-us-west-1.amazonaws.com/flint123/flint2.mp4"
+          type="video/mp4" />
+        <a
+          href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
+          See on YouTube
+        </a>
+      </video>
 
-        <overlay if={!@started} onClick={start}>
-          <play>
-            Watch the 3 minute live demo
-          </play>
-        </overlay>
-      </videocontain>
-    </section>
-
-    <Social />
+      <overlay if={!@started} onClick={start}>
+        <play>
+          Watch the 3 minute live demo
+        </play>
+      </overlay>
+    </videocontain>
   </Contain>
 
   $ = {
     position: 'relative',
     zIndex: 0,
-  }
-
-  $section = {
     textAlign: 'center',
     alignItems: 'center',
-    margin: [40, 'auto', 0]
   }
 
   originalHeight = 877
@@ -839,7 +779,7 @@ view Contain {
     <strip class="end" if={^strip} />
   </contain>
 
-  topPad = ^strip ? 60 : 0
+  topPad = ^padTop && 80 || (^strip ? 60 : 0)
   padding = ^pad ? [topPad, '15%'] : [topPad, 0]
 
   $ = {
@@ -875,39 +815,6 @@ view Contain {
     top: 'auto',
     bottom: -20,
     left: -100,
-  }
-}
-
-view FAQ {
-  <Contain pad strip>
-    <Title>FAQ</Title>
-
-    <question>
-      What is this? A view layer? A framework? A language?
-    </question>
-    <answer>
-      It's
-    </answer>
-  </Contain>
-
-  $ = {
-    margin: [-20, 0], //offset for p space
-    padding: [0, 20, 50],
-    lineHeight: '1.8rem'
-  }
-
-  $p = {
-    margin: [10, 0]
-  }
-
-  $intro = {
-    fontSize: 16,
-    padding: 20,
-    border: '1px solid #ddd'
-  }
-
-  $question = {
-    fontWeight: 'bold'
   }
 }
 

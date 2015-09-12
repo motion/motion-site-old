@@ -23,7 +23,7 @@ view Signup {
           <submit-input
             class="button"
             type="submit"
-            value="Submit"
+            value="Sign up!"
             style={{
               border: 'none',
               color: '#fff',
