@@ -24,19 +24,30 @@ font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 screen = {}
 screen.small = '@media (max-width: 850px)'
 
+style = {}
+style.textGradient = {
+  background:
+    `-webkit-linear-gradient(
+      left,
+      ${chroma(color.brand1).darken(0.6)},
+      ${chroma(color.brand2).darken(0.6)}
+    )`,
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+}
+
 view Main {
   <Header />
   <What />
-  <Icons />
+  <Social />
   <Examples />
-  <Icons />
   <Features />
   <Install />
   <Video />
   <About />
   <FAQ if={false} />
   <Signup />
-  <Icons />
+  <Social />
   <Footer />
 
   $ = {
@@ -99,34 +110,28 @@ view What {
     textAlign: 'center',
   }
 
-  $p = {
+  $p = [style.textGradient, {
     fontSize: 24,
     lineHeight: '2.5rem',
     padding: [0, '15%'],
     margin: [-5, 0],
-
-    background:
-      `-webkit-linear-gradient(
-        left,
-        ${chroma(color.brand1).darken(0.6)},
-        ${chroma(color.brand2).darken(0.6)}
-      )`,
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
+    fontWeight: 'bold',
 
     [screen.small]: {
       fontSize: 20
     }
-  }
+  }]
 }
 
 view Nav {
+  scroll = e => {
+    util.scrollToElement(e.target.getAttribute('href'))
+    e.preventDefault()
+  }
+
   <a target="_blank" href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
-  <a href="#install" onClick={() => {
-    util.scrollToElement('#install')
-    return false
-  }}>Install</a>
-  <a target="_blank" href="https://twitter.com/flint_js">Twitter</a>
+  <a href="#install" onClick={scroll}>Install</a>
+  <a href="#install" onClick={scroll}>Demo</a>
   <a if={false} target="_blank" href="http://github.com/flintjs"><IconSlack /></a>
 
   $ = {
@@ -629,7 +634,7 @@ view About {
   </Contain>
 
   $ = {
-    margin: [-20, 'auto'], //offset for p space
+    margin: [0, 'auto'], //offset for p space
     padding: [0, 60, 50],
     fontSize: 20,
     lineHeight: '2rem',
@@ -656,7 +661,7 @@ view Video {
     document.getElementById(id).play()
   }
 
-  <Contain strip>
+  <Contain strip id="video">
     <section>
       <videocontain>
         <video id={id} controls={@started} poster="/images/video-poster.jpg">
@@ -671,11 +676,13 @@ view Video {
 
         <overlay if={!@started} onClick={start}>
           <play>
-            Watch 3 minute live demo
+            Watch the 3 minute live demo
           </play>
         </overlay>
       </videocontain>
     </section>
+
+    <Social />
   </Contain>
 
   $ = {
@@ -686,7 +693,7 @@ view Video {
   $section = {
     textAlign: 'center',
     alignItems: 'center',
-    margin: [40, 'auto']
+    margin: [40, 'auto', 0]
   }
 
   originalHeight = 877
@@ -794,6 +801,8 @@ view Install {
     color: '#777',
     margin: [4, 0]
   }
+
+  $b = style.textGradient
 }
 
 view Check {
@@ -900,7 +909,7 @@ view Title {
 }
 
 view Footer {
-  <Contain pad strip maxWidth="auto">
+  <Contain pad strip maxWidth="auto" id="footer">
     <content>
       <Nav />
 
@@ -923,9 +932,13 @@ view Footer {
   $content = {
     margin: [20, 0, 80]
   }
+
+  $p = {
+    fontWeight: 'bold'
+  }
 }
 
-view Icons {
+view Social {
   <Sub>
     <a target="_blank" href="http://github.com/flintjs"><IconGithub /></a>
     <a target="_blank" href="https://twitter.com/flint_js"><IconTwitter /></a>

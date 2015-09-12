@@ -45,7 +45,8 @@ view DemoCircles {
   $description = {
     textAlign: 'center',
     fontSize: 15,
-    color: '#666'
+    opacity: 0.8,
+    fontWeight: 'bold'
   }
 }
 

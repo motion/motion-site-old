@@ -38,7 +38,7 @@ view Signup {
   </Contain>
 
   $ = {
-    margin: [40, 'auto', 50]
+    margin: [0, 'auto', 30]
   }
 
   $hide = {
