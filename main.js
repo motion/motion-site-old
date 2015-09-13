@@ -825,8 +825,6 @@ view Title {
     fontSize: 22,
     margin: [10, 'auto', 20],
     padding: 10,
-    color: '#fff',
-    background: '#111',
     fontStyle: 'italic',
     textAlign: 'center'
   }]
