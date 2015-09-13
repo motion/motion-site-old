@@ -4,7 +4,7 @@ util = {}
 // to keep isomorphism (for now, should be handled by flint in future)
 if (typeof window != 'undefined') {
   util.docOffset = require('document-offset')
-  util.scrollToElement = require('scroll-to-element')
+  util.scroll = require('scroll')
 }
 
 color = {}
@@ -37,9 +37,9 @@ view Main {
   <Header />
   <What />
   <Examples />
-  <Features />
-  <Install />
   <Video />
+  <Install />
+  <Features />
   <Signup />
   <Footer />
 
@@ -117,13 +117,14 @@ view What {
 
 view Nav {
   scroll = e => {
-    util.scrollToElement(e.target.getAttribute('href'))
+    el = document.querySelector(e.target.getAttribute('href'))
+    util.scroll.top(document.body, el.getBoundingClientRect().top - 50)
     e.preventDefault()
   }
 
   <a target="_blank" href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
   <a href="#install" onClick={scroll}>Install</a>
-  <a href="#install" onClick={scroll}>Demo</a>
+  <a href="#video" onClick={scroll}>Demo</a>
   <a if={false} target="_blank" href="http://github.com/flintjs"><IconSlack /></a>
 
   $ = {
@@ -623,7 +624,7 @@ view Video {
     document.getElementById(id).play()
   }
 
-  <Contain strip id="video" padTop>
+  <Contain id="video" padTop>
     <videocontain>
       <video id={id} controls={@started} poster="/images/video-poster.jpg">
         <source
@@ -777,7 +778,7 @@ view Contain {
     <strip class="end" if={^strip} />
   </contain>
 
-  topPad = ^padTop && 80 || (^strip ? 60 : 0)
+  topPad = ^padTop ? 80 : (^strip ? 60 : 0)
   padding = ^pad ? [topPad, '15%'] : [topPad, 0]
 
   $ = {
@@ -824,6 +825,8 @@ view Title {
     fontSize: 22,
     margin: [10, 'auto', 20],
     padding: 10,
+    color: '#fff',
+    background: '#111',
     fontStyle: 'italic',
     textAlign: 'center'
   }]

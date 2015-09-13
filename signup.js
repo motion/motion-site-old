@@ -1,6 +1,6 @@
 view Signup {
   <Contain pad>
-    <Title>Work with us on Flint & stay up to date</Title>
+    <Title>Stay up to date on Flint development</Title>
     <form action="//flintlang.us11.list-manage.com/subscribe/post?u=d6ee317984756a7f0f5e9378b&amp;id=dcc2cefed5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <div id="mc_embed_signup_scroll">
         <div class="mc-field-group">
