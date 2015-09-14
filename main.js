@@ -37,8 +37,8 @@ view Main {
   <Header />
   <What />
   <Examples />
-  <Video />
   <Install />
+  <Video />
   <Features />
   <Signup />
   <Footer />
@@ -87,32 +87,29 @@ view Header {
 
 view What {
   <Contain strip>
-    <p>
-      Flint is a simple stack for React.
-      It gives you everything you need to move fast
-      & instantly updates your browser as you code.
-    </p>
+    <text>
+      Flint is a new approach to visual development.
+      <break>
+        It's JavaScript with views, no config & instant feedback.
+      </break>
+    </text>
   </Contain>
 
   $ = {
-    margin: [-70, 'auto', -62],
-    position: 'relative',
-    zIndex: 0,
-    padding: [20, 0],
-    textAlign: 'center',
+    margin: [-50, 'auto', -42],
+    textAlign: 'center'
   }
 
-  $p = [{
+  $text = {
     fontSize: 24,
     lineHeight: '2.5rem',
-    padding: [0, '15%'],
-    margin: [-5, 0],
+    margin: [0],
     opacity: 0.9,
 
     [screen.small]: {
       fontSize: 20
     }
-  }]
+  }
 }
 
 view Nav {
@@ -246,7 +243,7 @@ view Examples {
     out={<DemoCounter />} />
 
   <Interlude>
-    Style views with $ variables
+    Powerful styles with $ variables
   </Interlude>
 
   <Example inPage
@@ -255,7 +252,7 @@ view Examples {
     out={<DemoVenn />} />
 
   <Interlude>
-    Flint's simple view system works with ES6, npm & React
+    Flint runs on ES6, npm & React
   </Interlude>
 
   <Example flip inPage
@@ -624,7 +621,7 @@ view Video {
     document.getElementById(id).play()
   }
 
-  <Contain id="video" padTop>
+  <Contain id="video">
     <videocontain>
       <video id={id} controls={@started} poster="/images/video-poster.jpg">
         <source
@@ -731,7 +728,7 @@ view Video {
 // </section>
 
 view Install {
-  <Contain id="install">
+  <Contain strip id="install">
     <code><b>npm install -g flint</b></code>
     <code class="small">flint new myapp</code>
     <code class="small">flint</code>
