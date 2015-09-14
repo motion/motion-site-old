@@ -135,7 +135,7 @@ view Nav {
   <a if={false} target="_blank" href="http://github.com/flintjs"><IconSlack /></a>
 
   $ = {
-    margin: [15, 'auto', -20],
+    margin: [10, 'auto', -20],
     flexFlow: 'row',
     zIndex: 100,
     fontSize: 18,
