@@ -88,10 +88,12 @@ view Header {
 view What {
   <Contain strip>
     <text>
-      Flint is a new approach to visual development.
-      <break>
-        It's JavaScript & React simplified, with instant updates as you type.
-      </break>
+      <primary>
+        Flint makes development faster and easier.
+      </primary>
+      <secondary>
+        It's JavaScript & React, simplified, with amazing speed.
+      </secondary>
     </text>
   </Contain>
 
@@ -103,14 +105,20 @@ view What {
   }
 
   $text = {
-    fontSize: 24,
+    fontSize: 28,
     lineHeight: '2.5rem',
-    margin: [-4, 0],
+    margin: [-8, 0],
     opacity: 0.9,
 
     [screen.small]: {
       fontSize: 20
     }
+  }
+
+  $secondary = {
+    fontSize: 22,
+    opacity: 0.9,
+    marginTop: 6
   }
 }
 
@@ -155,7 +163,7 @@ view Logo {
 
   $ = {
     flexFlow: 'row',
-    margin: [-10, 0, -10],
+    margin: [0, 0, -15],
     alignItems: 'center',
     justifyContent: 'center',
 
@@ -223,7 +231,7 @@ view Desc {
 
   $desc = [style.textGradient, {
     textAlign: 'center',
-    fontSize: 26,
+    fontSize: 28,
     lineHeight: '1.6rem',
     padding: [10, 0],
     fontWeight: 300,
@@ -236,7 +244,7 @@ view Desc {
 
 view Examples {
   <Interlude>
-    Flint simplifies JavaScript with the <em>view</em>
+    Flint introduces the <em>view</em>
   </Interlude>
 
   <Example flip inPage
@@ -254,7 +262,7 @@ view Examples {
     out={<DemoVenn />} />
 
   <Interlude>
-    Flint runs on ES6, npm & React, unlocking amazing power
+    Flint works with ES6, npm & React
   </Interlude>
 
   <Example flip inPage
@@ -300,27 +308,16 @@ view Interlude {
     border: 'none'
   }
 
-  $p = {
+  $p = [style.textGradient, {
     textAlign: 'center',
     margin: [8, 'auto'],
     padding: [0, 25],
-    background: color.bg,
+    backgroundColor: color.bg,
     color: chroma(color.text).rgba(0.2),
     position: 'relative',
-    zIndex: 10
-  }
-
-  $strip = {
-    borderBottom: '1px dotted rgba(0,0,0,0.2)',
-    width: '80%',
-    maxWidth: 950,
-    margin: [-53, 'auto', 53],
-    zIndex: 0,
-
-    [screen.small]: {
-      display: 'none'
-    }
-  }
+    zIndex: 10,
+    fontSize: 20
+  }]
 }
 
 view Example {
@@ -396,7 +393,7 @@ view Editor {
 
   $ = {
     flexFlow: 'column',
-    height: ^lines ? 32 + (25 * ^lines) : '100%',
+    height: ^lines ? 29 + (25 * ^lines) : '100%',
     border: '1px solid #eee',
     borderRadius: 6,
     boxShadow: '0 0 10px rgba(0,0,0,0.025)',
@@ -425,7 +422,7 @@ view Editor {
     border: 'none',
     height: '100%',
     width: '100%',
-    padding: 5,
+    padding: 3,
     overflow: 'hidden',
     background: ^light ? '#fff' : '#263640',
     borderBottomLeftRadius: 5,
@@ -731,13 +728,19 @@ view Video {
 
 view Install {
   <Contain strip id="install">
-    <code><b>npm install -g flint</b></code>
-    <code class="small">flint new myapp</code>
-    <code class="small">flint</code>
+    <inner>
+      <code><b>npm install -g flint</b></code>
+      <code class="small">flint new myapp</code>
+      <code class="small">flint</code>
+    </inner>
   </Contain>
 
   $ = {
     textAlign: 'center'
+  }
+
+  $inner = {
+    margin: [-6, 0]
   }
 
   $code = {
