@@ -89,10 +89,10 @@ view What {
   <Contain strip>
     <text>
       <primary>
-        Flint makes development faster and easier.
+        Flint makes visual development amazing.
       </primary>
       <secondary>
-        It's JavaScript & React, simplified, with amazing speed.
+        It's an amazing React stack with <em>instant</em> live reloads.
       </secondary>
     </text>
   </Contain>
@@ -118,7 +118,8 @@ view What {
   $secondary = {
     fontSize: 22,
     opacity: 0.9,
-    marginTop: 6
+    margin: [6, 'auto', 0],
+    flexFlow: 'row',
   }
 }
 
