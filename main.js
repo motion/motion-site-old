@@ -79,7 +79,7 @@ view Header {
   </main>
 
   $ = {
-    padding: [30, 0],
+    padding: [10, 0],
     position: 'relative',
     overflow: 'hidden'
   }
@@ -90,20 +90,22 @@ view What {
     <text>
       Flint is a new approach to visual development.
       <break>
-        It's JavaScript with views, no config & instant feedback.
+        It's JavaScript & React simplified, with instant updates as you type.
       </break>
     </text>
   </Contain>
 
   $ = {
-    margin: [-50, 'auto', -42],
+    margin: [-40, 'auto'],
+    position: 'relative',
+    zIndex: 0,
     textAlign: 'center'
   }
 
   $text = {
     fontSize: 24,
     lineHeight: '2.5rem',
-    margin: [0],
+    margin: [-4, 0],
     opacity: 0.9,
 
     [screen.small]: {
@@ -243,7 +245,7 @@ view Examples {
     out={<DemoCounter />} />
 
   <Interlude>
-    Powerful styles with $ variables
+    Style views easily with $ variables
   </Interlude>
 
   <Example inPage
@@ -252,7 +254,7 @@ view Examples {
     out={<DemoVenn />} />
 
   <Interlude>
-    Flint runs on ES6, npm & React
+    Flint runs on ES6, npm & React, unlocking amazing power
   </Interlude>
 
   <Example flip inPage
@@ -288,7 +290,7 @@ view Interlude {
   }
 
   $section = {
-    margin: [30, 0],
+    margin: [25, 0],
     borderRight: 'none',
     borderLeft: 'none',
     fontSize: ^fontSize || 19
