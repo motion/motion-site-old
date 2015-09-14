@@ -37,8 +37,8 @@ view Main {
   <Header />
   <What />
   <Examples />
-  <Install />
   <Video />
+  <Install />
   <Features />
   <Signup />
   <Footer />
@@ -89,10 +89,10 @@ view What {
   <Contain strip>
     <text>
       <primary>
-        Flint makes visual development amazing.
+        Frontend development, maximally creative
       </primary>
       <secondary>
-        It's an amazing React stack with <em>instant</em> live reloads.
+        A simple syntax for React with <em>instant</em> live reloads.
       </secondary>
     </text>
   </Contain>
@@ -105,10 +105,9 @@ view What {
   }
 
   $text = {
-    fontSize: 28,
+    fontSize: 30,
     lineHeight: '2.5rem',
     margin: [-8, 0],
-    opacity: 0.9,
 
     [screen.small]: {
       fontSize: 20
@@ -117,8 +116,8 @@ view What {
 
   $secondary = {
     fontSize: 22,
-    opacity: 0.9,
-    margin: [6, 'auto', 0],
+    opacity: 0.75,
+    margin: [8, 'auto', 0],
     flexFlow: 'row',
   }
 }
@@ -148,7 +147,7 @@ view Nav {
   }
 
   $a = {
-    color: '#888',
+    color: '#777',
     textDecoration: 'none',
     fontFamily: font.sansSerif,
     padding: [0, 15],
@@ -245,7 +244,7 @@ view Desc {
 
 view Examples {
   <Interlude>
-    Flint introduces the <em>view</em>
+    Flint introduces the view to ES6
   </Interlude>
 
   <Example flip inPage
@@ -299,7 +298,7 @@ view Interlude {
   }
 
   $section = {
-    margin: [25, 0],
+    margin: [20, 0],
     borderRight: 'none',
     borderLeft: 'none',
     fontSize: ^fontSize || 19
@@ -394,7 +393,7 @@ view Editor {
 
   $ = {
     flexFlow: 'column',
-    height: ^lines ? 29 + (25 * ^lines) : '100%',
+    height: ^lines ? 29 + (24 * ^lines) : '100%',
     border: '1px solid #eee',
     borderRadius: 6,
     boxShadow: '0 0 10px rgba(0,0,0,0.025)',
@@ -621,7 +620,7 @@ view Video {
     document.getElementById(id).play()
   }
 
-  <Contain id="video">
+  <Contain id="video" padTop>
     <videocontain>
       <video id={id} controls={@started} poster="/images/video-poster.jpg">
         <source
@@ -728,11 +727,12 @@ view Video {
 // </section>
 
 view Install {
-  <Contain strip id="install">
+  <Contain id="install">
     <inner>
       <code><b>npm install -g flint</b></code>
       <code class="small">flint new myapp</code>
       <code class="small">flint</code>
+      <p><a href="">Follow the docs</a></p>
     </inner>
   </Contain>
 
@@ -776,6 +776,7 @@ view Check {
 
 view Contain {
   <contain id={^id}>
+    <Title if={^title}>{^title}</Title>
     {^children}
     <strip if={^strip} />
     <strip class="end" if={^strip} />
