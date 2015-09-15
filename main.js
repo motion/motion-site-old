@@ -732,7 +732,11 @@ view Install {
       <code><b>npm install -g flint</b></code>
       <code class="small">flint new myapp</code>
       <code class="small">flint</code>
-      <p><a href="">Follow the docs</a></p>
+      <p>
+        <a target="_blank" href="https://flintdev.gitbooks.io/flint/content/startmd.html">
+          Documentation
+        </a>
+      </p>
     </inner>
   </Contain>
 
@@ -763,6 +767,10 @@ view Install {
   }
 
   $b = style.textGradient
+
+  $a = {
+    textDecoration: 'none'
+  }
 }
 
 view Check {

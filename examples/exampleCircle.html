@@ -54,8 +54,8 @@ import { <span class="b">Spring</span> } from <span class="y">'react-motion'</sp
   <span class="b">style</span> = <span class="b">scale</span> =>
     ({ ...<span class="b">base</span>, transform: { <span class="b">scale</span> } })
 
-  <span class="r">&lt;Spring defaultValue=<span class="w">{<span class="y">0</span>}</span> endValue=<span class="w">{<span class="y">1</span>}</span>&gt;<span class="w">
-    {<span class="b">x</span> =&gt; <span class="r">&lt;circle style=<span class="w">{<span class="b">style(x)</span>}</span> /&gt;</span>}
+  <span class="r">&lt;Spring endValue={<span class="w">{val:<span class="y">1</span>}</span>}&gt;<span class="w">
+    {<span class="b">i</span> =&gt; <span class="r">&lt;circle style=<span class="w">{<span class="b">style(i.val)</span>}</span> /&gt;</span>}
   </span>&lt;/Spring&gt;</span>
 }<pre></code>
 </body>
