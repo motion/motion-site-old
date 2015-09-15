@@ -40,6 +40,7 @@ view Main {
   <Video />
   <Install />
   <Features />
+  <Slack />
   <Signup />
   <Footer />
 
@@ -92,7 +93,7 @@ view What {
         Frontend development, maximally creative
       </primary>
       <secondary>
-        Make apps with React with instant hot updates and no boilerplate.
+        React apps with instant hot updates and no boilerplate.
       </secondary>
     </text>
   </Contain>
@@ -119,6 +120,10 @@ view What {
     opacity: 0.75,
     margin: [4, 'auto', 0],
     flexFlow: 'row',
+
+    [screen.small]: {
+      fontSize: 18
+    }
   }
 }
 
@@ -130,8 +135,8 @@ view Nav {
   }
 
   <a target="_blank" href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
+  <Social tiny />
   <a href="#install" onClick={scroll}>Install</a>
-  <a href="#video" onClick={scroll}>Demo</a>
   <a if={false} target="_blank" href="http://github.com/flintjs"><IconSlack /></a>
 
   $ = {
@@ -237,7 +242,7 @@ view Desc {
     fontWeight: 300,
     color: color.text,
     opacity: 0.9,
-    margin: [0, 'auto'],
+    margin: [0, 'auto', 5],
     display: 'block'
   }]
 }
@@ -298,7 +303,7 @@ view Interlude {
   }
 
   $section = {
-    margin: [20, 0],
+    margin: [30, 0],
     borderRight: 'none',
     borderLeft: 'none',
     fontSize: ^fontSize || 19
@@ -621,6 +626,7 @@ view Video {
   }
 
   <Contain id="video" padTop>
+    <Social />
     <videocontain>
       <video id={id} controls={@started} poster="/images/video-poster.jpg">
         <source
@@ -645,6 +651,10 @@ view Video {
     zIndex: 0,
     textAlign: 'center',
     alignItems: 'center',
+  }
+
+  $Social = {
+    margin: [-50, 0, 50]
   }
 
   originalHeight = 877
@@ -741,7 +751,8 @@ view Install {
   </Contain>
 
   $ = {
-    textAlign: 'center'
+    textAlign: 'center',
+    marginTop: -30
   }
 
   $inner = {
@@ -853,9 +864,6 @@ view Footer {
         Flint is just getting started,
         we'd love your feedback!
       </p>
-
-      <Social />
-
     </content>
   </Contain>
 
@@ -876,11 +884,20 @@ view Footer {
 
 view Social {
   <Sub>
-    <a target="_blank" href="http://github.com/flintjs"><IconGithub /></a>
-    <a target="_blank" href="https://twitter.com/flint_js"><IconTwitter /></a>
+    <a target="_blank" href="http://github.com/flintjs">
+      <IconGithub />
+    </a>
+    <a target="_blank" href="https://twitter.com/flint_js">
+      <IconTwitter />
+    </a>
   </Sub>
 
-  $a = {
+  $a = ^tiny ?  {
+    margin: [0, 5, -20],
+    transform: {
+      scale: 0.75
+    }
+  } : {
     margin: [0, 20]
   }
 }
@@ -892,7 +909,7 @@ view Sub {
     flexFlow: 'row',
     textAlign: 'center',
     fontSize: 16,
-    margin: [25, 'auto', 0],
+    margin: [-5, 'auto'],
     alignItems: 'center',
     justifyContent: 'center',
     flexGrow: 1,
@@ -944,4 +961,33 @@ view IconSlack {
   </svg>
 
   $ = icon
+}
+
+
+view Slack {
+  <Contain>
+    <iframe seamless="seamless" src="http://flint-slack.herokuapp.com/"></iframe>
+  </Contain>
+
+  $ = {
+    padding: [10, 0, 0]
+  }
+
+  $iframe = {
+    border: 'none',
+    width: '100%',
+    height: 350,
+    overflow: 'hidden'
+  }
+}
+
+view Signup {
+  <Contain pad>
+    <Title>Insider Mailing List</Title>
+    <SignupForm />
+  </Contain>
+
+  $ = {
+    margin: [-40, 0, 0]
+  }
 }
