@@ -37,17 +37,11 @@ view SignupForm {
     </div>
   </form>
 
-  $ = {
-    margin: [0, 'auto', 30]
-  }
-
   $hide = {
     display: 'none'
   }
 
   $form = {
-    textAlign: 'left',
-    fontSize: 16,
     minWidth: 300,
     margin: 'auto'
   }

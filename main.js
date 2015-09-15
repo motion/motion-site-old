@@ -25,6 +25,12 @@ screen = {}
 screen.small = '@media (max-width: 850px)'
 
 style = {}
+style.link = {
+  color: '#666',
+  textDecoration: 'none',
+  borderBottom: '1px solid #ddd',
+  ':hover': { color: color.brand }
+}
 style.textGradient = {
   background: `-webkit-linear-gradient(left,
     ${chroma(color.brand1).darken(0.6)},
@@ -151,16 +157,11 @@ view Nav {
     }
   }
 
-  $a = {
-    color: '#777',
-    textDecoration: 'none',
+  $a = [style.link, {
+    border: 'none',
     fontFamily: font.sansSerif,
-    padding: [0, 15],
-
-    ':hover': {
-      color: color.brand
-    }
-  }
+    padding: [0, 15]
+  }]
 }
 
 view Logo {
@@ -654,7 +655,7 @@ view Video {
   }
 
   $Social = {
-    margin: [-50, 0, 50]
+    margin: [-40, 0, 60]
   }
 
   originalHeight = 877
@@ -744,7 +745,7 @@ view Install {
       <code class="small">flint</code>
       <p>
         <a target="_blank" href="https://flintdev.gitbooks.io/flint/content/startmd.html">
-          Documentation
+          Follow the docs
         </a>
       </p>
     </inner>
@@ -779,9 +780,7 @@ view Install {
 
   $b = style.textGradient
 
-  $a = {
-    textDecoration: 'none'
-  }
+  $a = style.link
 }
 
 view Check {
@@ -919,7 +918,7 @@ view Sub {
 icon = {
   width: 32,
   height: 32,
-  transition: 'all ease-in 200ms',
+  transition: 'all ease-in 100ms',
   opacity: 0.5,
   filter: 'grayscale(1)',
 
@@ -988,6 +987,6 @@ view Signup {
   </Contain>
 
   $ = {
-    margin: [-40, 0, 0]
+    margin: [-50, 0, 0]
   }
 }
