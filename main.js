@@ -79,7 +79,7 @@ view Header {
   </main>
 
   $ = {
-    padding: [10, 0],
+    padding: [25, 0],
     position: 'relative',
     overflow: 'hidden'
   }
@@ -92,7 +92,7 @@ view What {
         Frontend development, maximally creative
       </primary>
       <secondary>
-        A simple syntax for React with <em>instant</em> live reloads.
+        Make apps with React with instant hot updates and no boilerplate.
       </secondary>
     </text>
   </Contain>
@@ -105,7 +105,7 @@ view What {
   }
 
   $text = {
-    fontSize: 30,
+    fontSize: 28,
     lineHeight: '2.5rem',
     margin: [-8, 0],
 
@@ -117,7 +117,7 @@ view What {
   $secondary = {
     fontSize: 22,
     opacity: 0.75,
-    margin: [8, 'auto', 0],
+    margin: [4, 'auto', 0],
     flexFlow: 'row',
   }
 }
@@ -231,7 +231,7 @@ view Desc {
 
   $desc = [style.textGradient, {
     textAlign: 'center',
-    fontSize: 28,
+    fontSize: 30,
     lineHeight: '1.6rem',
     padding: [10, 0],
     fontWeight: 300,
@@ -393,7 +393,7 @@ view Editor {
 
   $ = {
     flexFlow: 'column',
-    height: ^lines ? 29 + (24 * ^lines) : '100%',
+    height: ^lines ? 26 + (24 * ^lines) : '100%',
     border: '1px solid #eee',
     borderRadius: 6,
     boxShadow: '0 0 10px rgba(0,0,0,0.025)',
