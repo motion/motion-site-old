@@ -26,11 +26,10 @@ view SignupForm {
             border: 'none',
             color: '#fff',
             fontWeight: 'bold',
-            background: `linear-gradient(#E86C3D, #DC405B)`,
+            background: `linear-gradient(left, #E86C3D, #DC405B)`,
             padding: 10,
             fontSize: 22,
-            width: '50%',
-            marginTop: 20
+            width: '50%'
           }}
           name="subscribe" id="mc-embedded-subscribe" />
       </center>
@@ -48,7 +47,7 @@ view SignupForm {
 
   input = {
     width: '100%',
-    marginTop: 20,
+    marginBottom: 10,
     borderRadius: 5,
     background: '#fff',
     padding: 10,

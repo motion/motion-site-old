@@ -12,7 +12,7 @@ color.brand = '#eb522d'
 color.brand1 = '#E86C3D'
 color.brand2 = '#DB415E'
 color.darkred = chroma(color.brand).darken(0.3)
-color.bg = '#eee'
+color.bg = '#f2f2f2'
 color.text = '#444'
 color.strip = '#fff'
 
@@ -52,18 +52,19 @@ view Main {
 
   $ = {
     color: color.text,
-    background: color.bg,
     fontSize: 18,
     fontFamily: font.serif,
     lineHeight: '2rem',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    background: color.bg,
+    position: 'relative',
   }
 }
 
 view Header {
   @startIntro = false
 
-  <Contain strip bg="#fff" maxWidth="90%">
+  <Contain strip bg="#fff" maxWidth>
     <Example
       flipVertical
       maxWidth={900}
@@ -78,7 +79,7 @@ view Header {
       }
       in={
         <Editor right key="2"
-          lines={9}
+          lines={7}
           onLoad={() => @startIntro = true}
           src="/examples/example.html" />
       }
@@ -86,15 +87,13 @@ view Header {
   </Contain>
 
   $ = {
-    padding: [40, 0],
+    padding: [40, 0, 50],
     position: 'relative',
-    overflow: 'hidden',
-    background: color.bg
+    overflow: 'hidden'
   }
 
   $Contain = {
-    margin: [-40, 'auto', -5],
-    minWidth: 1150,
+    margin: [-35, 'auto', -5],
 
     [screen.small]: {
       minWidth: 'auto',
@@ -116,7 +115,7 @@ view What {
   </Contain>
 
   $ = {
-    margin: [-80, 'auto', -25],
+    margin: [-95, 'auto', -25],
     position: 'relative',
     zIndex: 10,
     textAlign: 'center'
@@ -320,7 +319,7 @@ view Interlude {
   }
 
   $section = {
-    margin: [40, 0],
+    margin: [50, 0],
     borderRight: 'none',
     borderLeft: 'none',
     fontSize: ^fontSize || 19
@@ -656,7 +655,7 @@ view DemoVideo {
 
       <overlay if={!@started} onClick={start}>
         <play>
-          Watch the 3 minute live demo
+          <PlayIcon color="#fff" />
         </play>
       </overlay>
     </inner>
@@ -665,7 +664,7 @@ view DemoVideo {
   $ = {
     textAlign: 'center',
     alignItems: 'center',
-    margin: [30, 0, 0]
+    margin: [45, 0, 0]
   }
 
   originalHeight = 877
@@ -704,6 +703,7 @@ view DemoVideo {
     background: 'rgba(0,0,0,0.3)',
     cursor: 'pointer',
     borderRadius: 6,
+    alignItems: 'center',
 
     ':hover': {
       background: 'rgba(0,0,0,0.1)'
@@ -711,17 +711,13 @@ view DemoVideo {
   }
 
   $play = {
-    position: 'absolute',
-    height: 50,
-    marginTop: -25,
-    width: 350,
-    marginLeft: -175,
+    margin: 'auto',
     padding: 10,
     color: '#fff',
     fontFamily: font.sansSerif,
     fontWeight: 700,
     background: color.brand,
-    borderRadius: 10,
+    borderRadius: 100,
     top: '50%',
     left: '50%',
 
@@ -766,7 +762,7 @@ view Install {
   }
 
   $inner = {
-    margin: [-6, 0]
+    margin: [-6, 0, -40]
   }
 
   $code = {
@@ -877,13 +873,13 @@ view Footer {
   </Contain>
 
   $ = {
-    margin: [0, 0, -100],
+    margin: [0, 0, -40],
     textAlign: 'center',
     fontSize: 16
   }
 
   $content = {
-    margin: [20, 0, 80]
+    margin: [80, 0]
   }
 
   $p = {
@@ -1003,6 +999,14 @@ view Signup {
 
 view PlayIcon {
   <svg viewBox="0 0 16 16">
-	  <path style="fill:#030104;" d="M8,0C3.582,0,0,3.582,0,8s3.582,8,8,8s8-3.582,8-8S12.418,0,8,0z M5,12V4l7,4L5,12z"/>
+    <path style="fill:#030104;" d="M8,0C3.582,0,0,3.582,0,8s3.582,8,8,8s8-3.582,8-8S12.418,0,8,0z M5,12V4l7,4L5,12z"/>
   </svg>
+
+  $ = false
+  $svg = {
+    width: ^size || 50,
+    height: ^size || 50,
+    fill: ^color,
+    margin: 'auto'
+  }
 }
