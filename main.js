@@ -87,7 +87,7 @@ view Header {
   </Contain>
 
   $ = {
-    padding: [40, 0, 50],
+    padding: [40, 0, 60],
     position: 'relative',
     overflow: 'hidden'
   }
@@ -109,7 +109,8 @@ view What {
         Bring your save-to-refresh time down to <em>instant</em>
       </primary>
       <secondary>
-        Flint enables 2x faster frontend development
+        Flint is a ground-up rethink of building with views,
+        designed for speed
       </secondary>
     </text>
   </Contain>
@@ -634,24 +635,13 @@ view List {
 
 view DemoVideo {
   @started = false
-  id = 'video-' + Math.random()
 
-  start = () => {
-    @started = true
-    document.getElementById(id).play()
-  }
+  start = () => @started = true
 
   <Contain id="video">
     <inner>
-      <video id={id} controls={@started} poster="/images/video-poster.jpg">
-        <source
-          src="https://s3-us-west-1.amazonaws.com/flint123/flint2.mp4"
-          type="video/mp4" />
-        <a
-          href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
-          See on YouTube
-        </a>
-      </video>
+      <poster if={!@started} />
+      <YouTube start={@started} />
 
       <overlay if={!@started} onClick={start}>
         <play>
@@ -667,7 +657,7 @@ view DemoVideo {
     margin: [45, 0, 0]
   }
 
-  originalHeight = 877
+  originalHeight = 900
   originalWidth = 1440
   scale = 0.5
   height = Math.round(originalHeight * scale)
@@ -686,11 +676,10 @@ view DemoVideo {
     }
   }
 
-  $video = {
-    border: 'none',
-    width: '100%',
-    height: '100%',
-    borderRadius: 6
+  $poster = {
+    background: 'url(/images/video-poster.jpg) no-repeat top left',
+    backgroundSize: 'cover',
+    position: [0,0,0,0]
   }
 
   $overlay = {
@@ -724,6 +713,55 @@ view DemoVideo {
     ':hover': {
       background: chroma(color.brand).darken(0.5)
     }
+  }
+}
+
+view HTML5Video {
+  @started = ^start
+  id = 'video-' + Math.random()
+
+  on('change', () => {
+    if (!@started && ^start)
+      document.getElementById(id).play()
+  })
+
+  <video id={^id} controls={^start}>
+    <source
+      src="https://s3-us-west-1.amazonaws.com/flint123/flint2.mp4"
+      type="video/mp4" />
+    <a
+      href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
+      See on YouTube
+    </a>
+  </video>
+
+  $ = false
+  $video = {
+    border: 'none',
+    width: '100%',
+    height: '100%',
+    borderRadius: 6
+  }
+}
+
+view YouTube {
+  base = 'https://www.youtube.com/embed/VNfkk6lH0gg'
+  params = '?rel=0&showinfo=0&start=133'
+
+  getUrl = () => base + params + (^start ? '&autoplay=1' : '')
+
+  <iframe
+    src={getUrl()}
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+
+  $ = false
+  $iframe = {
+    width: '100%',
+    height: '100%',
+    border: 'none',
+    visibility: ^start ? 'visible' : 'hidden'
   }
 }
 
