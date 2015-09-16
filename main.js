@@ -8,11 +8,11 @@ if (typeof window != 'undefined') {
 }
 
 color = {}
-color.brand = '#fa3732'
+color.brand = '#eb522d'
 color.brand1 = '#E86C3D'
 color.brand2 = '#DB415E'
 color.darkred = chroma(color.brand).darken(0.3)
-color.bg = '#f2f2f2'
+color.bg = '#ddd'
 color.text = '#444'
 color.strip = '#fff'
 
@@ -23,10 +23,11 @@ font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 
 screen = {}
 screen.small = '@media (max-width: 850px)'
+screen.medium = '@media (max-width: 1050px)'
 
 style = {}
 style.link = {
-  color: '#666',
+  color: '#888',
   textDecoration: 'none',
   borderBottom: '1px solid #ddd',
   ':hover': { color: color.brand }
@@ -63,10 +64,10 @@ view Main {
 view Header {
   @startIntro = false
 
-  <main>
+  <Contain strip bg="#fff" maxWidth="90%">
     <Example
       flipVertical
-      maxWidth={860}
+      maxWidth={900}
       inStyle={{
         maxWidth: 375
       }}
@@ -83,42 +84,64 @@ view Header {
           src="/examples/example.html" />
       }
     />
-  </main>
+  </Contain>
 
   $ = {
-    padding: [25, 0],
+    padding: [40, 0],
     position: 'relative',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    background: color.bg
+  }
+
+  $Contain = {
+    margin: [-40, 'auto', -20],
+    minWidth: 1150,
+
+    [screen.medium]: {
+      minWidth: 'auto',
+      marginLeft: -100,
+      marginRight: -100
+    },
+
+    [screen.small]: {
+      minWidth: 'auto',
+      background: 'none'
+    }
   }
 }
 
 view What {
-  <Contain strip>
+  <Contain strip bg={color.brand} color="#fff">
     <text>
       <primary>
-        Frontend development, maximally creative
+        Bring your save-to-refresh time down to <em>instant</em>
       </primary>
       <secondary>
-        React apps with instant hot updates and no boilerplate.
+        Flint enables 2x faster frontend development
       </secondary>
     </text>
   </Contain>
 
   $ = {
-    margin: [-40, 'auto'],
+    margin: [-45, 'auto', -25],
     position: 'relative',
     zIndex: 0,
     textAlign: 'center'
   }
 
   $text = {
-    fontSize: 28,
+    fontSize: 30,
     lineHeight: '2.5rem',
     margin: [-8, 0],
 
     [screen.small]: {
       fontSize: 20
     }
+  }
+
+  $primary = {
+    flexFlow: 'row',
+    margin: [0, 'auto']
   }
 
   $secondary = {
@@ -233,11 +256,11 @@ view Desc {
     // }
   // }
 
-  <desc>Web apps, {@desc}</desc>
+  <desc>Web development, {@desc}</desc>
 
   $desc = [style.textGradient, {
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 24,
     lineHeight: '1.6rem',
     padding: [10, 0],
     fontWeight: 300,
@@ -304,7 +327,7 @@ view Interlude {
   }
 
   $section = {
-    margin: [30, 0],
+    margin: [40, 0],
     borderRight: 'none',
     borderLeft: 'none',
     fontSize: ^fontSize || 19
@@ -314,7 +337,7 @@ view Interlude {
     border: 'none'
   }
 
-  $p = [style.textGradient, {
+  $p = [{
     textAlign: 'center',
     margin: [8, 'auto'],
     padding: [0, 25],
@@ -322,7 +345,7 @@ view Interlude {
     color: chroma(color.text).rgba(0.2),
     position: 'relative',
     zIndex: 10,
-    fontSize: 20
+    fontSize: 24
   }]
 }
 
@@ -794,13 +817,13 @@ view Check {
 
 view Contain {
   <contain id={^id}>
-    <Title if={^title}>{^title}</Title>
-    {^children}
-    <strip if={^strip} />
-    <strip class="end" if={^strip} />
+    <content>
+      <Title if={^title}>{^title}</Title>
+      {^children}
+    </content>
   </contain>
 
-  topPad = ^padTop ? 80 : (^strip ? 60 : 0)
+  topPad = ^padTop ? 80 : (^strip ? (^pad || 40) : 0)
   padding = ^pad ? [topPad, '15%'] : [topPad, 0]
 
   $ = {
@@ -816,20 +839,21 @@ view Contain {
     margin: [^strip ? 30 : 0, 'auto'],
     padding,
     position: 'relative',
-    zIndex: 10
+    zIndex: 10,
+    transform: {
+      rotate: ^strip ? '-1.2deg' : 0
+    }
   }
 
-  $strip = {
-    background: color.bg,
-    height: 40,
-    width: '140%',
-    position: 'absolute',
-    top: -20,
-    left: -100,
-    zIndex: 0,
+  $content = {
     transform: {
-      rotate: '-1.2deg'
-    }
+      rotate: ^strip ? '1.2deg' : 0
+    },
+    flexFlow: 'inherit',
+    alignItems: 'inherit',
+    justifyContent: 'inherit',
+    flexGrow: 1,
+    flexShrink: 0,
   }
 
   $.end = {
