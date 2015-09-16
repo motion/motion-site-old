@@ -23,7 +23,7 @@ font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 
 screen = {}
 screen.small = '@media (max-width: 850px)'
-screen.medium = '@media (max-width: 1050px)'
+screen.medium = '@media (max-width: 1150px)'
 
 style = {}
 style.link = {
@@ -87,20 +87,18 @@ view Header {
   </Contain>
 
   $ = {
-    padding: [40, 0],
+    padding: [40, 0, 30],
     position: 'relative',
     overflow: 'hidden',
     background: color.bg
   }
 
   $Contain = {
-    margin: [-40, 'auto', -20],
+    margin: [-40, 'auto', -5],
     minWidth: 1150,
 
     [screen.medium]: {
       minWidth: 'auto',
-      marginLeft: -100,
-      marginRight: -100
     },
 
     [screen.small]: {
