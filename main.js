@@ -12,7 +12,7 @@ color.brand = '#eb522d'
 color.brand1 = '#E86C3D'
 color.brand2 = '#DB415E'
 color.darkred = chroma(color.brand).darken(0.3)
-color.bg = '#ddd'
+color.bg = '#eee'
 color.text = '#444'
 color.strip = '#fff'
 
@@ -23,7 +23,6 @@ font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 
 screen = {}
 screen.small = '@media (max-width: 850px)'
-screen.medium = '@media (max-width: 1150px)'
 
 style = {}
 style.link = {
@@ -43,8 +42,8 @@ style.textGradient = {
 view Main {
   <Header />
   <What />
+  <DemoVideo />
   <Examples />
-  <Video />
   <Install />
   <Features />
   <Slack />
@@ -87,7 +86,7 @@ view Header {
   </Contain>
 
   $ = {
-    padding: [40, 0, 30],
+    padding: [40, 0],
     position: 'relative',
     overflow: 'hidden',
     background: color.bg
@@ -96,10 +95,6 @@ view Header {
   $Contain = {
     margin: [-40, 'auto', -5],
     minWidth: 1150,
-
-    [screen.medium]: {
-      minWidth: 'auto',
-    },
 
     [screen.small]: {
       minWidth: 'auto',
@@ -121,9 +116,9 @@ view What {
   </Contain>
 
   $ = {
-    margin: [-45, 'auto', -25],
+    margin: [-80, 'auto', -25],
     position: 'relative',
-    zIndex: 0,
+    zIndex: 10,
     textAlign: 'center'
   }
 
@@ -335,7 +330,7 @@ view Interlude {
     border: 'none'
   }
 
-  $p = [{
+  $p = [style.textGradient, {
     textAlign: 'center',
     margin: [8, 'auto'],
     padding: [0, 25],
@@ -420,7 +415,7 @@ view Editor {
 
   $ = {
     flexFlow: 'column',
-    height: ^lines ? 26 + (24 * ^lines) : '100%',
+    height: ^lines ? 28 + (24 * ^lines) : '100%',
     border: '1px solid #eee',
     borderRadius: 6,
     boxShadow: '0 0 10px rgba(0,0,0,0.025)',
@@ -638,7 +633,7 @@ view List {
   }
 }
 
-view Video {
+view DemoVideo {
   @started = false
   id = 'video-' + Math.random()
 
@@ -647,9 +642,8 @@ view Video {
     document.getElementById(id).play()
   }
 
-  <Contain id="video" padTop>
-    <Social />
-    <videocontain>
+  <Contain id="video">
+    <inner>
       <video id={id} controls={@started} poster="/images/video-poster.jpg">
         <source
           src="https://s3-us-west-1.amazonaws.com/flint123/flint2.mp4"
@@ -665,18 +659,13 @@ view Video {
           Watch the 3 minute live demo
         </play>
       </overlay>
-    </videocontain>
+    </inner>
   </Contain>
 
   $ = {
-    position: 'relative',
-    zIndex: 0,
     textAlign: 'center',
     alignItems: 'center',
-  }
-
-  $Social = {
-    margin: [-40, 0, 60]
+    margin: [30, 0, 0]
   }
 
   originalHeight = 877
@@ -685,7 +674,7 @@ view Video {
   height = Math.round(originalHeight * scale)
   width = Math.round(originalWidth * scale)
 
-  $videocontain = {
+  $inner = {
     width,
     height,
     maxHeight: '100%',
@@ -759,7 +748,7 @@ view Video {
 // </section>
 
 view Install {
-  <Contain id="install">
+  <Contain id="install" padTop>
     <inner>
       <code><b>npm install -g flint</b></code>
       <code class="small">flint new myapp</code>
@@ -773,8 +762,7 @@ view Install {
   </Contain>
 
   $ = {
-    textAlign: 'center',
-    marginTop: -30
+    textAlign: 'center'
   }
 
   $inner = {
@@ -821,7 +809,7 @@ view Contain {
     </content>
   </contain>
 
-  topPad = ^padTop ? 80 : (^strip ? (^pad || 40) : 0)
+  topPad = ^padTop ? 60 : (^strip ? (^pad || 40) : 0)
   padding = ^pad ? [topPad, '15%'] : [topPad, 0]
 
   $ = {
@@ -991,7 +979,7 @@ view Slack {
   </Contain>
 
   $ = {
-    padding: [10, 0, 0]
+    margin: [20, 0, 0]
   }
 
   $iframe = {
@@ -1003,12 +991,18 @@ view Slack {
 }
 
 view Signup {
-  <Contain pad>
-    <Title>Insider Mailing List</Title>
+  <Contain>
+    <Title>Interested? Stay up to date:</Title>
     <SignupForm />
   </Contain>
 
   $ = {
-    margin: [-50, 0, 0]
+    margin: [-50, 0, 40]
   }
+}
+
+view PlayIcon {
+  <svg viewBox="0 0 16 16">
+	  <path style="fill:#030104;" d="M8,0C3.582,0,0,3.582,0,8s3.582,8,8,8s8-3.582,8-8S12.418,0,8,0z M5,12V4l7,4L5,12z"/>
+  </svg>
 }
