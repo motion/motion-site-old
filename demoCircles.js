@@ -6,7 +6,8 @@ view DemoCircles {
   @hasScrolledTo = false
 
   this.componentDidMount = () => {
-    targetY = util.docOffset(document.querySelector('circles')).top - 300
+    circles = document.querySelector('circles')
+    targetY = util.docOffset(circles).top + 400
 
     @timeout = null
     on(window, 'scroll', () => {
@@ -16,7 +17,7 @@ view DemoCircles {
         clearTimeout(@timeout)
         @timeout = null
 
-        if (window.scrollY >= targetY) {
+        if (window.scrollY + window.innerHeight >= targetY) {
           @hasScrolledTo = true
           @coords.push({ x: 200, y: 200 })
         }

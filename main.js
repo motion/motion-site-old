@@ -65,29 +65,31 @@ view Header {
   @startIntro = false
 
   <Contain strip bg="#fff" maxWidth>
-    <Example
-      flipVertical
-      maxWidth={900}
-      inStyle={{
-        maxWidth: 375
-      }}
-      out={
-        <head>
-          <Logo />
-          <Introduction start={@startIntro} />
-        </head>
-      }
-      in={
-        <Editor right key="2"
-          lines={7}
-          onLoad={() => @startIntro = true}
-          src="/examples/example.html" />
-      }
-    />
+    <main>
+      <Example
+        flipVertical
+        maxWidth={900}
+        inStyle={{
+          maxWidth: 300
+        }}
+        out={
+          <head>
+            <Logo />
+            <Introduction start={@startIntro} />
+          </head>
+        }
+        in={
+          <Editor right key="2"
+            lines={7}
+            onLoad={() => @startIntro = true}
+            src="/examples/example.html" />
+        }
+      />
+    </main>
   </Contain>
 
   $ = {
-    padding: [40, 0, 60],
+    padding: [40, 0, 30],
     position: 'relative',
     overflow: 'hidden'
   }
@@ -100,6 +102,10 @@ view Header {
       background: 'none'
     }
   }
+
+  $main = {
+    padding: [10, 0, 40]
+  }
 }
 
 view What {
@@ -109,8 +115,7 @@ view What {
         Bring your save-to-refresh time down to <em>instant</em>
       </primary>
       <secondary>
-        Flint is a ground-up rethink of building with views,
-        designed for speed
+        & complete your web app with drastically less complexity
       </secondary>
     </text>
   </Contain>
@@ -351,6 +356,7 @@ view Example {
   $ = {
     flexFlow: 'row',
     flexGrow: 1,
+    justifyContent: 'center',
     WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
     [screen.small]: {
@@ -570,7 +576,7 @@ view MoreFeatures {
 }
 
 view List {
-  <Contain strip>
+  <Contain strip noTwist>
     <list>
       <item repeat={^items} key={_}>
         <Check class="check" />
@@ -691,7 +697,6 @@ view DemoVideo {
     zIndex: 100,
     background: 'rgba(0,0,0,0.3)',
     cursor: 'pointer',
-    borderRadius: 6,
     alignItems: 'center',
 
     ':hover': {
@@ -860,15 +865,11 @@ view Contain {
     padding,
     position: 'relative',
     zIndex: 10,
-    transform: {
-      rotate: ^strip ? '-1.2deg' : 0
-    }
+    transform: { rotate: (^strip && !^noTwist) ? '-1.2deg' : 0 }
   }
 
   $content = {
-    transform: {
-      rotate: ^strip ? '1.2deg' : 0
-    },
+    transform: { rotate: (^strip && !^noTwist) ? '1.2deg' : 0 },
     flexFlow: 'inherit',
     alignItems: 'inherit',
     justifyContent: 'inherit',
@@ -1011,10 +1012,6 @@ view Slack {
   <Contain>
     <iframe seamless="seamless" src="http://flint-slack.herokuapp.com/"></iframe>
   </Contain>
-
-  $ = {
-    margin: [20, 0, 0]
-  }
 
   $iframe = {
     border: 'none',
