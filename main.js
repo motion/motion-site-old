@@ -254,7 +254,7 @@ view Desc {
     // }
   // }
 
-  <desc>Web development, {@desc}</desc>
+  <desc>Web apps, {@desc}</desc>
 
   $desc = [style.textGradient, {
     textAlign: 'center',
