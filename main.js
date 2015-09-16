@@ -39,6 +39,14 @@ style.textGradient = {
   WebkitTextFillColor: 'transparent',
 }
 
+triggerEvent = (id, name)  => {
+  event = document.createEvent('CustomEvent')
+  event.initCustomEvent(name, true, true, null)
+  frame = document.getElementById(id);
+  frameWin = (frame.contentDocument || frame.contentWindow.document)
+  frameWin.body.dispatchEvent(event)
+}
+
 view Main {
   <Header />
   <What />
@@ -79,9 +87,13 @@ view Header {
           </head>
         }
         in={
-          <Editor right key="2"
+          <Editor right
             lines={7}
-            onLoad={() => @startIntro = true}
+            id="headeriframe"
+            onLoad={() => {
+              @startIntro = true
+              triggerEvent('headeriframe', 'start')
+            }}
             src="/examples/example.html" />
         }
       />
@@ -105,52 +117,6 @@ view Header {
 
   $main = {
     padding: [10, 0, 40]
-  }
-}
-
-view What {
-  <Contain strip bg={color.brand} color="#fff">
-    <text>
-      <primary>
-        Bring your save-to-refresh time down to <em>instant</em>
-      </primary>
-      <secondary>
-        & complete your web app with drastically less complexity
-      </secondary>
-    </text>
-  </Contain>
-
-  $ = {
-    margin: [-95, 'auto', -25],
-    position: 'relative',
-    zIndex: 10,
-    textAlign: 'center'
-  }
-
-  $text = {
-    fontSize: 30,
-    lineHeight: '2.5rem',
-    margin: [-8, 0],
-
-    [screen.small]: {
-      fontSize: 20
-    }
-  }
-
-  $primary = {
-    flexFlow: 'row',
-    margin: [0, 'auto']
-  }
-
-  $secondary = {
-    fontSize: 22,
-    opacity: 0.75,
-    margin: [4, 'auto', 0],
-    flexFlow: 'row',
-
-    [screen.small]: {
-      fontSize: 18
-    }
   }
 }
 
@@ -220,6 +186,18 @@ view Introduction {
 view Desc {
   @started = ^start
 
+  run = () => {
+    if (@started)
+      setTimeout(step, 1000)
+  }
+
+  this.componentDidUpdate = () => {
+    if (^start && !@started) {
+      @started = true
+      run()
+    }
+  }
+
   phrases = ['faster', 'creatively', 'with ease']
   @desc = ''
 
@@ -247,12 +225,7 @@ view Desc {
     });
   }
 
-  // beforeRender = () => {
-    // if (!@started && ^start) {
-      setTimeout(step, 1380)
-      // @started = true
-    // }
-  // }
+  run()
 
   <desc>Web apps, {@desc}</desc>
 
@@ -267,6 +240,52 @@ view Desc {
     margin: [0, 'auto', 5],
     display: 'block'
   }]
+}
+
+view What {
+  <Contain strip bg={color.brand} color="#fff">
+    <text>
+      <primary>
+        Bring your save-to-refresh time down to <em>instant</em>
+      </primary>
+      <secondary>
+        & complete your site with drastically less complexity
+      </secondary>
+    </text>
+  </Contain>
+
+  $ = {
+    margin: [-95, 'auto', -25],
+    position: 'relative',
+    zIndex: 10,
+    textAlign: 'center'
+  }
+
+  $text = {
+    fontSize: 30,
+    lineHeight: '2.5rem',
+    margin: [-8, 0],
+
+    [screen.small]: {
+      fontSize: 20
+    }
+  }
+
+  $primary = {
+    flexFlow: 'row',
+    margin: [0, 'auto']
+  }
+
+  $secondary = {
+    fontSize: 22,
+    opacity: 0.85,
+    margin: [4, 'auto', 0],
+    flexFlow: 'row',
+
+    [screen.small]: {
+      fontSize: 18
+    }
+  }
 }
 
 view Examples {
@@ -411,10 +430,11 @@ view Editor {
     changeTab={i => @index = i} />
   <container>
     <iframe
+      id={^id}
       src={getSrc()}
       onLoad={() => {
-        if (^onLoad)
-          ^onLoad()
+        console.log('loaded')
+        ^onLoad && ^onLoad()
       }}>
     </iframe>
   </container>
@@ -735,7 +755,7 @@ view HTML5Video {
       src="https://s3-us-west-1.amazonaws.com/flint123/flint2.mp4"
       type="video/mp4" />
     <a
-      href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
+      href="https://www.youtube.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
       See on YouTube
     </a>
   </video>
@@ -751,7 +771,7 @@ view HTML5Video {
 
 view YouTube {
   base = 'https://www.youtube.com/embed/VNfkk6lH0gg'
-  params = '?rel=0&showinfo=0&start=133'
+  params = '?rel=0&showinfo=0'
 
   getUrl = () => base + params + (^start ? '&autoplay=1' : '')
 
@@ -848,7 +868,7 @@ view Contain {
     </content>
   </contain>
 
-  topPad = ^padTop ? 60 : (^strip ? (^pad || 40) : 0)
+  topPad = ^padTop ? 60 : (^strip ? 40 : 0)
   padding = ^pad ? [topPad, '15%'] : [topPad, 0]
 
   $ = {
@@ -1034,7 +1054,7 @@ view Signup {
 
 view PlayIcon {
   <svg viewBox="0 0 16 16">
-    <path style="fill:#030104;" d="M8,0C3.582,0,0,3.582,0,8s3.582,8,8,8s8-3.582,8-8S12.418,0,8,0z M5,12V4l7,4L5,12z"/>
+    <path d="M8,0C3.582,0,0,3.582,0,8s3.582,8,8,8s8-3.582,8-8S12.418,0,8,0z M5,12V4l7,4L5,12z"/>
   </svg>
 
   $ = false

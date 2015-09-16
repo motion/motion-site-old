@@ -73,7 +73,11 @@
     var curDelay = 0;
     var typer;
 
-    setTimeout(advance, 1000)
+    function run() {
+      setTimeout(advance, 1000)
+    }
+
+    document.body.addEventListener('start', run)
 
     function advance() {
       if (phrase === phrases.length) return
