@@ -246,10 +246,10 @@ view What {
   <Contain strip bg={color.brand} color="#fff">
     <text>
       <primary>
-        Bring your save-to-refresh time down to <em>instant</em>
+        Bring your feedback loop down to <em>instant</em>
       </primary>
       <secondary>
-        & complete your site with drastically less complexity
+        An ES6 view system that's faster and easier
       </secondary>
     </text>
   </Contain>
@@ -272,8 +272,7 @@ view What {
   }
 
   $primary = {
-    flexFlow: 'row',
-    margin: [0, 'auto']
+    display: 'block'
   }
 
   $secondary = {
