@@ -12,7 +12,7 @@ color.brand = '#eb522d'
 color.brand1 = '#E86C3D'
 color.brand2 = '#DB415E'
 color.darkred = chroma(color.brand).darken(0.3)
-color.bg = '#f2f2f2'
+color.bg = '#eee'
 color.text = '#444'
 color.strip = '#fff'
 
@@ -72,7 +72,7 @@ view Main {
 view Header {
   @startIntro = false
 
-  <Contain strip bg="#fff" maxWidth>
+  <Contain strip bg="#fff" maxWidth="98%">
     <main>
       <Example
         flipVertical
@@ -229,11 +229,11 @@ view Desc {
 
   <desc>Web apps, {@desc}</desc>
 
-  $desc = [style.textGradient, {
+  $desc = [{
     textAlign: 'center',
-    fontSize: 24,
+    fontSize: 28,
     lineHeight: '1.6rem',
-    padding: [10, 0],
+    padding: [12, 0],
     fontWeight: 300,
     color: color.text,
     opacity: 0.9,
@@ -255,7 +255,7 @@ view What {
   </Contain>
 
   $ = {
-    margin: [-95, 'auto', -25],
+    margin: [-105, 'auto', -25],
     position: 'relative',
     zIndex: 10,
     textAlign: 'center'
@@ -288,14 +288,16 @@ view What {
 }
 
 view Examples {
-  <Interlude>
-    Flint introduces the view to ES6
-  </Interlude>
+  <section>
+    <Interlude>
+      Flint introduces the view to ES6
+    </Interlude>
 
-  <Example flip inPage
-    maxWidth={760}
-    in={<Editor lines={10} left light src="/examples/exampleCounter.html" />}
-    out={<DemoCounter />} />
+    <Example flip inPage
+      maxWidth={760}
+      in={<Editor lines={10} left light src="/examples/exampleCounter.html" />}
+      out={<DemoCounter />} />
+  </section>
 
   <Interlude>
     Style views easily with $ variables
@@ -306,21 +308,32 @@ view Examples {
     in={<Editor lines={15} left light src="/examples/exampleVenn.html" />}
     out={<DemoVenn />} />
 
-  <Interlude>
-    Flint works with ES6, npm & React
-  </Interlude>
+  <section>
+    <Interlude>
+      Flint works with ES6, npm & React
+    </Interlude>
 
-  <Example flip inPage
-    maxWidth={900}
-    in={
-      <Editor left light
-        lines={20}
-        sources={[
-          { title: 'Circles.js', url: '/examples/exampleCircles.html' },
-          { title: 'Circle.js', url: '/examples/exampleCircle.html' }
-        ]} />
-    }
-    out={<DemoCircles />} />
+    <Example flip inPage
+      maxWidth={900}
+      in={
+        <Editor left light
+          lines={20}
+          sources={[
+            { title: 'Circles.js', url: '/examples/exampleCircles.html' },
+            { title: 'Circle.js', url: '/examples/exampleCircle.html' }
+          ]} />
+      }
+      out={<DemoCircles />} />
+  </section>
+
+  $section = {
+    background: 'rgba(255,255,255,0.5)',
+    padding: [0, 0, 40],
+    margin: [40, 0, 0],
+    border: '1px solid rgba(0,0,0,0.1)',
+    borderLeft: 'none',
+    borderRight: 'none'
+  }
 }
 
 view Interlude {
@@ -343,9 +356,7 @@ view Interlude {
   }
 
   $section = {
-    margin: [50, 0],
-    borderRight: 'none',
-    borderLeft: 'none',
+    margin: [30, 0, 20],
     fontSize: ^fontSize || 19
   }
 
@@ -580,20 +591,6 @@ view Features {
   $ = false
 }
 
-view MoreFeatures {
-  features = [
-    [`CSS in JavaScript`],
-    [`Unimorphic/Isoversal`],
-    [`Easy Data with Stores`],
-    [`One command publish to CDN`],
-    [`Fast builds & runtime`],
-    [`Smart errors & tools`],
-  ]
-
-  <List items={features} />
-  $ = false
-}
-
 view List {
   <Contain strip noTwist>
     <list>
@@ -740,34 +737,6 @@ view DemoVideo {
   }
 }
 
-view HTML5Video {
-  @started = ^start
-  id = 'video-' + Math.random()
-
-  on('change', () => {
-    if (!@started && ^start)
-      document.getElementById(id).play()
-  })
-
-  <video id={^id} controls={^start}>
-    <source
-      src="https://s3-us-west-1.amazonaws.com/flint123/flint2.mp4"
-      type="video/mp4" />
-    <a
-      href="https://www.youtube.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
-      See on YouTube
-    </a>
-  </video>
-
-  $ = false
-  $video = {
-    border: 'none',
-    width: '100%',
-    height: '100%',
-    borderRadius: 6
-  }
-}
-
 view YouTube {
   base = 'https://www.youtube.com/embed/VNfkk6lH0gg'
   params = '?rel=0&showinfo=0'
@@ -788,22 +757,6 @@ view YouTube {
     visibility: ^start ? 'visible' : 'hidden'
   }
 }
-
-// <section if={false}>
-//   <p>Watch a 2 minute demo that explains more behind Flint.</p>
-//
-//   <videocontain>
-//     <video controls>
-//       <source
-//         src="https://s3-us-west-1.amazonaws.com/flint123/flint1.mp4"
-//         type="video/mp4" />
-//       <a
-//         href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
-//         See on YouTube
-//       </a>
-//     </video>
-//   </videocontain>
-// </section>
 
 view Install {
   <Contain id="install" padTop>
@@ -848,15 +801,6 @@ view Install {
   $b = style.textGradient
 
   $a = style.link
-}
-
-view Check {
-  <check-svg width="400px" height="400px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;">
-    <g>
-      <path d="M199.996,0C89.713,0,0,89.72,0,200s89.713,200,199.996,200S400,310.28,400,200S310.279,0,199.996,0z M199.996,373.77 C104.18,373.77,26.23,295.816,26.23,200c0-95.817,77.949-173.769,173.766-173.769c95.817,0,173.771,77.953,173.771,173.769 C373.768,295.816,295.812,373.77,199.996,373.77z"/>
-      <path d="M272.406,134.526L169.275,237.652l-41.689-41.68c-5.123-5.117-13.422-5.12-18.545,0.003 c-5.125,5.125-5.125,13.425,0,18.548l50.963,50.955c2.561,2.558,5.916,3.838,9.271,3.838s6.719-1.28,9.279-3.842 c0.008-0.011,0.014-0.022,0.027-0.035L290.95,153.071c5.125-5.12,5.125-13.426,0-18.546 C285.828,129.402,277.523,129.402,272.406,134.526z"/>
-    </g>
-  </check-svg>
 }
 
 view Contain {
@@ -946,14 +890,14 @@ view Footer {
 }
 
 view Social {
-  <Sub>
+  <sub>
     <a target="_blank" href="http://github.com/flintjs">
       <IconGithub />
     </a>
     <a target="_blank" href="https://twitter.com/flint_js">
       <IconTwitter />
     </a>
-  </Sub>
+  </sub>
 
   $a = ^tiny ?  {
     margin: [0, 5, -20],
@@ -963,10 +907,6 @@ view Social {
   } : {
     margin: [0, 20]
   }
-}
-
-view Sub {
-  <sub yield />
 
   $sub = {
     flexFlow: 'row',
@@ -992,40 +932,6 @@ icon = {
   }
 }
 
-view IconGithub {
-  <svg viewBox="0 0 1024 1024">
-    <path fill="#555" d="M512 0C229.252 0 0 229.25199999999995 0 512c0 226.251 146.688 418.126 350.155 485.813 25.593 4.686 34.937-11.125 34.937-24.626 0-12.188-0.469-52.562-0.718-95.314-128.708 23.46-161.707-31.541-172.469-60.373-5.525-14.809-30.407-60.249-52.398-72.263-17.988-9.828-43.26-33.237-0.917-33.735 40.434-0.476 69.348 37.308 78.471 52.75 45.938 77.749 119.876 55.627 148.999 42.5 4.654-32.999 17.902-55.627 32.501-68.373-113.657-12.939-233.22-56.875-233.22-253.063 0-55.94 19.968-101.561 52.658-137.404-5.22-12.999-22.844-65.095 5.063-135.563 0 0 42.937-13.749 140.811 52.501 40.811-11.406 84.594-17.031 128.124-17.22 43.499 0.188 87.314 5.874 128.188 17.28 97.689-66.311 140.686-52.501 140.686-52.501 28 70.532 10.375 122.564 5.124 135.499 32.811 35.844 52.626 81.468 52.626 137.404 0 196.686-119.751 240-233.813 252.686 18.439 15.876 34.748 47.001 34.748 94.748 0 68.437-0.686 123.627-0.686 140.501 0 13.625 9.312 29.561 35.25 24.562C877.436 929.998 1024 738.126 1024 512 1024 229.25199999999995 794.748 0 512 0z" />
-  </svg>
-
-  $ = false
-  $svg = icon
-}
-
-view IconTwitter {
-  <svg viewBox="0 0 155 158">
-    <g transform="translate(-290,-381)">
-      <path
-         fill="#2aa9e0"
-         d="m 453.82593,412.80619 c -6.3097,2.79897 -13.09189,4.68982 -20.20852,5.54049 7.26413,-4.35454 12.84406,-11.24992 15.47067,-19.46675 -6.79934,4.03295 -14.3293,6.96055 -22.34461,8.53841 -6.41775,-6.83879 -15.56243,-11.111 -25.68298,-11.111 -19.43159,0 -35.18696,15.75365 -35.18696,35.18525 0,2.75781 0.31128,5.44359 0.91155,8.01875 -29.24344,-1.46723 -55.16995,-15.47582 -72.52461,-36.76396 -3.02879,5.19662 -4.76443,11.24048 -4.76443,17.6891 0,12.20777 6.21194,22.97747 15.65332,29.28716 -5.76773,-0.18265 -11.19331,-1.76565 -15.93716,-4.40083 -0.004,0.14663 -0.004,0.29412 -0.004,0.44248 0,17.04767 12.12889,31.26806 28.22555,34.50266 -2.95247,0.80436 -6.06101,1.23398 -9.26989,1.23398 -2.2673,0 -4.47114,-0.22124 -6.62011,-0.63114 4.47801,13.97857 17.47214,24.15143 32.86992,24.43441 -12.04227,9.43796 -27.21366,15.06335 -43.69965,15.06335 -2.84014,0 -5.64082,-0.16722 -8.39349,-0.49223 15.57186,9.98421 34.06703,15.8094 53.93768,15.8094 64.72024,0 100.11301,-53.61524 100.11301,-100.11387 0,-1.52554 -0.0343,-3.04251 -0.10204,-4.55261 6.87394,-4.95995 12.83891,-11.15646 17.55618,-18.21305 z" />
-    </g>
-  </svg>
-
-  $ = false
-  $svg = [icon, {
-    opacity: 0.6
-  }]
-}
-
-view IconSlack {
-  <svg viewBox="0 0 90 90">
-    <g transform="translate(-19, -19)">
-      <path d="M59.1,104.3c-3.2,0-5.7-1.8-6.8-4.8c-0.8-2.3-1.6-4.6-2.3-6.9c-0.2-0.7-0.5-0.9-1.3-0.6c-2.1,0.8-4.3,1.5-6.5,2.2 c-3,0.9-5.8,0.6-7.9-1.8c-3.3-3.6-1.7-9.5,2.9-11.2c2.3-0.9,4.6-1.6,7-2.3c0.7-0.2,0.9-0.5,0.7-1.3c-1.5-4.4-3-8.8-4.5-13.3 c-0.3-0.8-0.6-0.9-1.4-0.7c-2.2,0.8-4.4,1.6-6.6,2.3c-2.5,0.8-4.9,0.6-7-1.3c-3.9-3.5-2.6-9.8,2.3-11.6c2.3-0.8,4.6-1.6,6.9-2.3 c0.8-0.3,1-0.6,0.7-1.4c-0.8-2.1-1.5-4.3-2.2-6.5c-1.6-4.9,1.4-9.3,6.5-9.6c2.9-0.2,5.8,1.8,6.9,4.6c0.8,2.3,1.6,4.7,2.4,7 c0.2,0.8,0.6,0.9,1.3,0.7c4.4-1.5,8.8-3,13.3-4.4c0.8-0.2,0.9-0.5,0.7-1.3c-0.8-2.2-1.5-4.4-2.2-6.5c-1.3-4,0.5-8,4.4-9.3 c3.9-1.3,7.8,0.7,9.2,4.8c0.7,2.2,1.5,4.4,2.2,6.5c0.2,0.8,0.6,0.9,1.3,0.7c2.6-0.9,5.1-1.9,7.8-2.5c4.3-0.9,8.3,2.5,8.2,6.7 c-0.1,2.7-2.1,5.2-5.1,6.2c-2.2,0.8-4.4,1.5-6.6,2.2c-0.8,0.2-0.9,0.6-0.6,1.3c1.6,4.5,3.1,8.9,4.6,13.4c0.2,0.7,0.5,0.9,1.2,0.6 c2.4-0.8,4.8-1.7,7.2-2.4c4.1-1.3,8.3,1,9.1,5c0.8,3.9-0.7,6.6-4.7,8.1c-2.4,0.9-4.8,1.7-7.3,2.5c-0.7,0.2-0.8,0.5-0.5,1.1 c0.8,2.3,1.6,4.6,2.3,6.9c1.6,4.6-1.1,8.9-5.9,9.6c-3.2,0.4-6.4-1.6-7.5-4.8c-0.8-2.3-1.6-4.7-2.4-7c-0.2-0.7-0.5-0.9-1.2-0.6 c-4.5,1.6-9,3.1-13.5,4.6c-0.6,0.2-0.7,0.5-0.5,1.1c0.8,2.4,1.7,4.8,2.4,7.2C67.3,99.8,64,104.3,59.1,104.3z M68.3,53.8 c-0.2,0.1-0.4,0.1-0.6,0.2c-4.5,1.5-8.9,3-13.4,4.5c-0.6,0.2-0.8,0.5-0.6,1.1c1.6,4.5,3.1,9.1,4.6,13.7c0.2,0.6,0.4,0.7,1,0.5 c4.5-1.5,9.1-3.1,13.7-4.6c0.7-0.2,0.8-0.5,0.5-1.1c-0.5-1.5-1-3-1.5-4.5c-1-3-2.1-6.1-3.1-9.1C68.9,54.2,68.9,53.7,68.3,53.8z" />
-    </g>
-  </svg>
-
-  $ = icon
-}
-
 
 view Slack {
   <Contain>
@@ -1048,19 +954,5 @@ view Signup {
 
   $ = {
     margin: [-50, 0, 40]
-  }
-}
-
-view PlayIcon {
-  <svg viewBox="0 0 16 16">
-    <path d="M8,0C3.582,0,0,3.582,0,8s3.582,8,8,8s8-3.582,8-8S12.418,0,8,0z M5,12V4l7,4L5,12z"/>
-  </svg>
-
-  $ = false
-  $svg = {
-    width: ^size || 50,
-    height: ^size || 50,
-    fill: ^color,
-    margin: 'auto'
   }
 }

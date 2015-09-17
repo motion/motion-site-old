@@ -1,0 +1,61 @@
+
+view HTML5Video {
+  @started = ^start
+  id = 'video-' + Math.random()
+
+  on('change', () => {
+    if (!@started && ^start)
+      document.getElementById(id).play()
+  })
+
+  <video id={^id} controls={^start}>
+    <source
+      src="https://s3-us-west-1.amazonaws.com/flint123/flint2.mp4"
+      type="video/mp4" />
+    <a
+      href="https://www.youtube.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
+      See on YouTube
+    </a>
+  </video>
+
+  $ = false
+  $video = {
+    border: 'none',
+    width: '100%',
+    height: '100%',
+    borderRadius: 6
+  }
+}
+
+
+
+// <section if={false}>
+//   <p>Watch a 2 minute demo that explains more behind Flint.</p>
+//
+//   <videocontain>
+//     <video controls>
+//       <source
+//         src="https://s3-us-west-1.amazonaws.com/flint123/flint1.mp4"
+//         type="video/mp4" />
+//       <a
+//         href="https://www.youtube-nocookie.com/embed/VNfkk6lH0gg?rel=0&amp;showinfo=0">
+//         See on YouTube
+//       </a>
+//     </video>
+//   </videocontain>
+// </section>
+
+
+view MoreFeatures {
+  features = [
+    [`CSS in JavaScript`],
+    [`Unimorphic/Isoversal`],
+    [`Easy Data with Stores`],
+    [`One command publish to CDN`],
+    [`Fast builds & runtime`],
+    [`Smart errors & tools`],
+  ]
+
+  <List items={features} />
+  $ = false
+}
