@@ -8,6 +8,10 @@ view Home {
   <Slack />
   <Signup />
   <Footer />
+
+  $ = {
+    width: '100%'
+  }
 }
 
 view Header {
@@ -196,7 +200,7 @@ view What {
   </Contain>
 
   $ = {
-    margin: [-105, 'auto', -25],
+    margin: [-105, 0, -25],
     position: 'relative',
     zIndex: 10,
     textAlign: 'center'
@@ -291,7 +295,6 @@ view Interlude {
   <strip />
 
   $Contain = {
-    margin: [0, 'auto'],
     padding: [0, 15],
     maxWidth: ^pad ? 600 : 'auto',
   }
@@ -547,7 +550,6 @@ view List {
   </Contain>
 
   $ = {
-    margin: [0, 'auto'],
     fontSize: 20
   }
 
