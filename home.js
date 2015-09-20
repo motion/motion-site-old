@@ -143,10 +143,10 @@ view Desc {
     }
   }
 
-  phrases = ['faster', 'creatively', 'with ease']
+  phrases = ['faster', 'simpler', 'creatively']
   @desc = ''
 
-  betweenPhrase = 4000
+  betweenPhrase = 3000
   typeSpeed = 130
   @phrasePos = 0
   @charPos = 0
