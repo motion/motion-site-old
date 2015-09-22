@@ -54,7 +54,7 @@ view Header {
   $Contain = {
     margin: [-35, 'auto', -5],
 
-    [screen.small]: {
+    [device.small]: {
       minWidth: 'auto',
       background: 'none'
     }
@@ -84,7 +84,7 @@ view Nav {
     fontSize: 18,
     fontWeight: 300,
 
-    [screen.small]: {
+    [device.small]: {
       marginBottom: 0
     }
   }
@@ -105,7 +105,7 @@ view Logo {
     alignItems: 'center',
     justifyContent: 'center',
 
-    [screen.small]: {
+    [device.small]: {
       marginTop: 30
     }
   }
@@ -211,7 +211,7 @@ view What {
     lineHeight: '2.5rem',
     margin: [-8, 0],
 
-    [screen.small]: {
+    [device.small]: {
       fontSize: 20
     }
   }
@@ -226,7 +226,7 @@ view What {
     margin: [4, 'auto', 0],
     flexFlow: 'row',
 
-    [screen.small]: {
+    [device.small]: {
       fontSize: 18
     }
   }
@@ -313,7 +313,7 @@ view Interlude {
     margin: [8, 'auto'],
     padding: [0, 25],
     backgroundColor: color.bg,
-    color: chroma(color.text).rgba(0.2),
+    color: color(color.text).rgba(0.2),
     position: 'relative',
     zIndex: 10,
     fontSize: 24
@@ -332,7 +332,7 @@ view Example {
     justifyContent: 'center',
     WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
-    [screen.small]: {
+    [device.small]: {
       flexFlow: 'column'
     }
   }
@@ -346,7 +346,7 @@ view Example {
     position: 'relative',
     order: ^flip ? 2 : 1,
 
-    [screen.small]: {
+    [device.small]: {
       width: '100%',
       order: ^flipVertical ? 1 : 2,
       padding: ^inPage ? '50px 0' : 0
@@ -358,7 +358,7 @@ view Example {
     zIndex: 10,
     margin: 0,
 
-    [screen.small]: {
+    [device.small]: {
       width: '90%',
       margin: 'auto',
       order: ^flipVertical ? 2 : 1
@@ -407,7 +407,7 @@ view Editor {
     zIndex: 10,
     width: '100%',
 
-    [screen.small]: {
+    [device.small]: {
       marginRight: 10,
       marginLeft: 0,
     }
@@ -430,7 +430,7 @@ view Editor {
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
 
-    [screen.small]: {
+    [device.small]: {
       pointerEvents: 'none'
     }
   }
@@ -553,7 +553,7 @@ view List {
     fontSize: 20
   }
 
-  color = 'rgb(4, 139, 66)'
+  listColor = 'rgb(4, 139, 66)'
 
   $list = {
     maxWidth: 750,
@@ -562,7 +562,7 @@ view List {
     borderRadius: 5,
     flexFlow: 'row',
     flexWrap: 'wrap',
-    color: chroma(color).darken(0.2)
+    color: color(listColor).darken(0.2)
   }
 
   $item = {
@@ -573,7 +573,7 @@ view List {
     flexFlow: 'row',
     textAlign: 'center',
 
-    [screen.small]: {
+    [device.small]: {
       width: '100%'
     }
   }
@@ -635,7 +635,7 @@ view DemoVideo {
     maxWidth: '100%',
     position: 'relative',
 
-    [screen.small]: {
+    [device.small]: {
       width: '100%',
       height: 'auto'
     }
@@ -691,7 +691,7 @@ view YouTube {
   <iframe
     src={getUrl()}
     frameborder="0"
-    allowfullscreen>
+    device>
   </iframe>
 
   $ = {
@@ -751,7 +751,7 @@ view Install {
     fontFamily: font.monoSpace,
     fontSize: 28,
 
-    [screen.small]: {
+    [device.small]: {
       fontSize: 22
     }
   }

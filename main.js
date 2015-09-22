@@ -3,14 +3,14 @@ import chroma from 'chroma-js'
 export isBrowser = typeof window != 'undefined'
 export style = {}
 export font = {}
-export route = {}
-export screen = {}
-export color = {}
+export routes = {}
+export device = {}
+export color = chroma
 export util = {}
 
 view Main {
-  <Home route={route.home} />
-  <FAQ route={route.faq} />
+  <Home route={routes.home} />
+  <FAQ route={routes.faq} />
 
   $ = {
     color: color.text,
@@ -23,8 +23,10 @@ view Main {
   }
 }
 
-route.home = '/'
-route.faq = '/faq'
+routes.home = '/'
+routes.faq = '/faq'
+
+Address.routes(routes)
 
 // Router.add(route)
 // Router.go()
@@ -40,7 +42,7 @@ route.faq = '/faq'
 color.brand = '#eb522d'
 color.brand1 = '#E86C3D'
 color.brand2 = '#DB415E'
-color.darkred = chroma(color.brand).darken(0.3)
+color.darkred = color(color.brand).darken(0.3)
 color.bg = '#eee'
 color.text = '#444'
 color.strip = '#fff'
@@ -49,7 +51,7 @@ font.serif = 'Lato, Georgia, serif'
 font.sansSerif = 'Helvetica Neue, Helvetica, Lato, Arial, sans-serif'
 font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 
-screen.small = '@media (max-width: 850px)'
+device.small = '@media (max-width: 850px)'
 
 style.link = {
   color: '#888',
@@ -59,8 +61,8 @@ style.link = {
 }
 style.textGradient = {
   background: `-webkit-linear-gradient(left,
-    ${chroma(color.brand1).darken(0.6)},
-    ${chroma(color.brand2).darken(0.6)})`,
+    ${color(color.brand1).darken(0.6)},
+    ${color(color.brand2).darken(0.6)})`,
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
 }
