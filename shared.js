@@ -7,8 +7,8 @@ view Contain {
     </content>
   </contain>
 
-  topPad = ^padTop ? 60 : (^strip ? 40 : 0)
-  padding = ^pad ? [topPad, '15%'] : [topPad, 0]
+  const topPad = ^padTop ? 60 : (^strip ? 40 : 0)
+  const padding = ^pad ? [topPad, '15%'] : [topPad, 0]
 
   $ = {
     background: ^bg || (^strip ? color.strip : 'transparent'),
@@ -111,18 +111,5 @@ view Social {
     alignItems: 'center',
     justifyContent: 'center',
     flexGrow: 1,
-  }
-}
-
-icon = {
-  width: 32,
-  height: 32,
-  transition: 'all ease-in 100ms',
-  opacity: 0.5,
-  filter: 'grayscale(1)',
-
-  ':hover': {
-    opacity: 1,
-    filter: 'none'
   }
 }

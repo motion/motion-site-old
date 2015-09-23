@@ -16,7 +16,7 @@ view Home {
 }
 
 view Header {
-  @startIntro = false
+  let startIntro = false
 
   <Contain strip bg="#fff" maxWidth="98%">
     <main>
@@ -29,7 +29,7 @@ view Header {
         out={
           <head>
             <Logo />
-            <Introduction start={@startIntro} />
+            <Introduction start={startIntro} />
           </head>
         }
         in={
@@ -37,7 +37,7 @@ view Header {
             lines={7}
             id="headeriframe"
             onLoad={() => {
-              @startIntro = true
+              startIntro = true
               triggerEvent('headeriframe', 'start')
             }}
             src="/assets/examples/example.html" />
@@ -67,8 +67,8 @@ view Header {
 }
 
 view Nav {
-  scroll = e => {
-    el = document.querySelector(e.target.getAttribute('href'))
+  const scroll = e => {
+    const el = document.querySelector(e.target.getAttribute('href'))
     util.scroll.top(document.body, el.getBoundingClientRect().top - 50)
     e.preventDefault()
   }
@@ -130,42 +130,42 @@ view Introduction {
 }
 
 view Desc {
-  @started = ^start
+  let started = ^start
 
-  run = () => {
-    if (@started)
+  const run = () => {
+    if (started)
       setTimeout(step, 1000)
   }
 
-  this.componentDidUpdate = () => {
-    if (^start && !@started) {
-      @started = true
+  // this.componentDidUpdate = () => {
+    if (^start && !started) {
+      started = true
       run()
     }
-  }
+  // }
 
-  phrases = ['faster', 'simpler', 'creatively']
-  @desc = ''
+  const phrases = ['faster', 'simpler', 'creatively']
+  let desc = ''
 
-  betweenPhrase = 3000
-  typeSpeed = 130
-  @phrasePos = 0
-  @charPos = 0
+  const betweenPhrase = 3000
+  const typeSpeed = 130
+  let phrasePos = 0
+  let charPos = 0
 
-  step = () => {
-    if (@phrasePos == phrases.length) return
+  const step = () => {
+    if (phrasePos == phrases.length) return
 
     Flint.batch(() => {
       // if typed to end of word
-      if (@charPos === phrases[@phrasePos].length) {
-        @charPos = -1
-        @phrasePos += 1
+      if (charPos === phrases[phrasePos].length) {
+        charPos = -1
+        phrasePos += 1
         setTimeout(step, betweenPhrase)
       }
       // if typing word
       else {
-        @charPos += 1
-        @desc = phrases[@phrasePos].slice(0, @charPos)
+        charPos += 1
+        desc = phrases[phrasePos].slice(0, charPos)
         setTimeout(step, typeSpeed)
       }
     });
@@ -173,7 +173,7 @@ view Desc {
 
   run()
 
-  <desc>Web apps, {@desc}</desc>
+  <desc>Web apps, {desc}</desc>
 
   $desc = [{
     textAlign: 'center',
@@ -283,8 +283,8 @@ view Examples {
 }
 
 view Interlude {
-  flip = (one, two) => Math.random() > 0.5 ? one : two
-  rand = () => Math.round(Math.random() * 10) / 10
+  const flip = (one, two) => Math.random() > 0.5 ? one : two
+  const rand = () => Math.round(Math.random() * 10) / 10
 
   <Contain>
     <section>
@@ -368,27 +368,25 @@ view Example {
 }
 
 view Editor {
-  @index = 0
-  @tabs = null
-  @srcs = null
+  let index = 0
+  let tabs, srcs;
 
   if (^sources) {
-    @srcs = ^sources.map(s => s.url)
-    @tabs = ^sources.map(s => s.title)
+    srcs = ^sources.map(s => s.url)
+    tabs = ^sources.map(s => s.title)
   }
 
-  getSrc = () => ^src || @srcs[@index]
+  const getSrc = () => ^src || srcs[index]
 
   <Toolbar
-    tabs={@tabs}
-    activeTab={@index}
-    changeTab={i => @index = i} />
+    tabs={tabs}
+    activeTab={index}
+    changeTab={i => index = i} />
   <container>
     <iframe
       id={^id}
       src={getSrc()}
       onLoad={() => {
-        console.log('loaded')
         ^onLoad && ^onLoad()
       }}>
     </iframe>
@@ -438,7 +436,7 @@ view Editor {
 }
 
 view Toolbar {
-  demoBorder = 4
+  const demoBorder = 4
 
   <bar>
     <ctrl class="close" />
@@ -451,7 +449,7 @@ view Toolbar {
     </tab>
   </tabs>
 
-  border = '1px solid #ddd'
+  const border = '1px solid #ddd'
 
   $ = {
     flexFlow: 'column'
@@ -523,7 +521,7 @@ view Toolbar {
 }
 
 view Features {
-  features = [
+  const features = [
     [`Works with React`, `Use any React component`],
     [`Automatic npm installs`, `Flint installs as you type`],
     [`Modern ES6, simplified`, `No need for *this* or classes`],
@@ -554,7 +552,7 @@ view List {
     fontSize: 20
   }
 
-  listColor = 'rgb(4, 139, 66)'
+  const listColor = 'rgb(4, 139, 66)'
 
   $list = {
     maxWidth: 750,
@@ -600,9 +598,9 @@ view List {
 }
 
 view DemoVideo {
-  @started = false
+  let started = false
 
-  start = () => @started = true
+  const start = () => started = true
 
   <Contain id="video">
     <inner>
@@ -623,11 +621,11 @@ view DemoVideo {
     margin: [45, 0, 0]
   }
 
-  originalHeight = 900
-  originalWidth = 1440
-  scale = 0.5
-  height = Math.round(originalHeight * scale)
-  width = Math.round(originalWidth * scale)
+  const originalHeight = 900
+  const originalWidth = 1440
+  const scale = 0.5
+  const height = Math.round(originalHeight * scale)
+  const width = Math.round(originalWidth * scale)
 
   $inner = {
     width,
@@ -682,10 +680,10 @@ view DemoVideo {
 }
 
 view YouTube {
-  base = 'https://www.youtube.com/embed/VNfkk6lH0gg'
-  params = '?rel=0&showinfo=0&VQ=HD720'
+  const base = 'https://www.youtube.com/embed/VNfkk6lH0gg'
+  const params = '?rel=0&showinfo=0&VQ=HD720'
 
-  getUrl = () => base + params + (^start ? '&autoplay=1' : '')
+  const getUrl = () => base + params + (^start ? '&autoplay=1' : '')
 
   <cover />
   <cover class="bot" />

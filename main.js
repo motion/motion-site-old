@@ -1,12 +1,12 @@
 import chroma from 'chroma-js'
 
-export isBrowser = typeof window != 'undefined'
-export style = {}
-export font = {}
-export routes = {}
-export device = {}
-export color = chroma
-export util = {}
+export const isBrowser = typeof window != 'undefined'
+export const style = {}
+export const font = {}
+export const routes = {}
+export const device = {}
+export const color = chroma
+export const util = {}
 
 view Main {
   <Home route={routes.home} />
@@ -26,7 +26,7 @@ view Main {
 routes.home = '/'
 routes.faq = '/faq'
 
-Address.routes(routes)
+// Address.routes(routes)
 
 // Router.add(route)
 // Router.go()
@@ -67,7 +67,7 @@ style.textGradient = {
   WebkitTextFillColor: 'transparent',
 }
 
-export triggerEvent = (id, name)  => {
+export const triggerEvent = (id, name)  => {
   event = document.createEvent('CustomEvent')
   event.initCustomEvent(name, true, true, null)
   frame = document.getElementById(id);

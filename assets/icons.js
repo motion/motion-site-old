@@ -1,3 +1,16 @@
+const icon = {
+  width: 32,
+  height: 32,
+  transition: 'all ease-in 100ms',
+  opacity: 0.5,
+  filter: 'grayscale(1)',
+
+  ':hover': {
+    opacity: 1,
+    filter: 'none'
+  }
+}
+
 view PlayIcon {
   <svg viewBox="0 0 16 16">
     <path d="M8,0C3.582,0,0,3.582,0,8s3.582,8,8,8s8-3.582,8-8S12.418,0,8,0z M5,12V4l7,4L5,12z"/>

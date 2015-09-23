@@ -2,37 +2,38 @@ import { Spring } from 'react-motion'
 import offset from 'mouse-event-offset'
 
 view DemoCircles {
-  @coords = []
-  @hasScrolledTo = false
+  let coords = []
+  let hasScrolledTo = false
 
   this.componentDidMount = () => {
-    circles = document.querySelector('circles')
-    targetY = util.docOffset(circles).top + 400
+    const circles = document.querySelector('circles')
+    const targetY = util.docOffset(circles).top + 400
 
-    @timeout = null
+    let timeout = null
+
     on(window, 'scroll', () => {
       // debugger
-      if (@timeout || @hasScrolledTo) return
-      @timeout = setTimeout(() => {
-        clearTimeout(@timeout)
-        @timeout = null
+      if (timeout || hasScrolledTo) return
+      timeout = setTimeout(() => {
+        clearTimeout(timeout)
+        timeout = null
 
         if (window.scrollY + window.innerHeight >= targetY) {
-          @hasScrolledTo = true
-          @coords.push({ x: 200, y: 200 })
+          hasScrolledTo = true
+          coords.push({ x: 200, y: 200 })
         }
 
       }, 100)
     })
   }
 
-  addCircle = e => @coords.push(offset(e))
+  addCircle = e => coords.push(offset(e))
 
   <circles id="circles" onClick={e => {
     console.log(offset(e))
     addCircle(e)
   }}>
-    <Circle repeat={@coords} left={_x} top={_y} />
+    <Circle repeat={coords} left={_x} top={_y} />
   </circles>
   <description>
     Try clicking around above to add circles

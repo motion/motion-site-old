@@ -1,14 +1,14 @@
 view DemoCounter {
-  @count = 0
+  let count = 0
 
-  down = () => @count--
-  up = () => @count++
+  const down = () => count -= 1
+  const up = () => count += 1
 
   <center>
     <button onClick={down}>↓</button>
     <button onClick={up}>↑</button>
   </center>
-  <strong>Count is {@count}</strong>
+  <strong>Count is {count}</strong>
 
   $ = {
     margin: 'auto',
