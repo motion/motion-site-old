@@ -40,8 +40,8 @@
 import { <span class="b">Spring</span> } from <span class="y">'react-motion'</span>
 
 <span class="o">view</span> Circle {
-  <span class="b">c</span> = () => <span class="y">Math</span>.round(<span class="y">Math</span>.random() * <span class="y">255</span>)
-  <span class="b">base</span> = {
+  const <span class="b">c</span> = () => <span class="y">Math</span>.round(<span class="y">Math</span>.random() * <span class="y">255</span>)
+  const <span class="b">base</span> = {
     background: <span class="y">`rgb(${<span class="b">c()</span>}, ${<span class="b">c()</span>}, ${<span class="b">c()</span>})`</span>,
     top: <span class="b">^top</span>,
     left: <span class="b">^left</span>,
@@ -51,7 +51,7 @@ import { <span class="b">Spring</span> } from <span class="y">'react-motion'</sp
     position: <span class="y">'absolute'</span>
   }
 
-  <span class="b">style</span> = <span class="b">scale</span> =>
+  const <span class="b">style</span> = <span class="b">scale</span> =>
     ({ ...<span class="b">base</span>, transform: { <span class="b">scale</span> } })
 
   <span class="r">&lt;Spring endValue={<span class="w">{val:<span class="y">1</span>}</span>}&gt;<span class="w">

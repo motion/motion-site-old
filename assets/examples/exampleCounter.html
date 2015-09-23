@@ -37,14 +37,14 @@
 <body>
   <code><pre>
 <span class="o">view</span> Counter {
-  <span class="b">@count</span> = <span class="y">0</span>
+  let <span class="b">count</span> = <span class="y">0</span>
 
-  <span class="b">down</span> = () => <span class="b">@count</span>--
-  <span class="b">up</span> = () => <span class="b">@count</span>++
+  const <span class="b">down</span> = () => <span class="b">@count</span> += <span class="y">1</span>
+  const <span class="b">up</span> = () => <span class="b">@count</span> -= <span class="y">1</span>
 
   <span class="r">&lt;button onClick={</span><span class="b">down</span><span class="r">}&gt;</span>↓<span class="r">&lt;/button&gt;</span>
   <span class="r">&lt;button onClick={</span><span class="b">up</span><span class="r">}&gt;</span>↑<span class="r">&lt;/button&gt;</span>
-  <span class="r">&lt;strong&gt;</span>Count is {<span class="b">@count</span>}<span class="r">&lt;/strong&gt;</span>
+  <span class="r">&lt;strong&gt;</span>Count is {<span class="b">count</span>}<span class="r">&lt;/strong&gt;</span>
 }<pre></code>
 </body>
 </html>
