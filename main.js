@@ -70,8 +70,8 @@ style.textGradient = {
 export const triggerEvent = (id, name)  => {
   event = document.createEvent('CustomEvent')
   event.initCustomEvent(name, true, true, null)
-  frame = document.getElementById(id);
-  frameWin = (frame.contentDocument || frame.contentWindow.document)
+  const frame = document.getElementById(id);
+  const frameWin = (frame.contentDocument || frame.contentWindow.document)
   frameWin.body.dispatchEvent(event)
 }
 

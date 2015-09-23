@@ -45,7 +45,7 @@ view SignupForm {
     margin: 'auto'
   }
 
-  input = {
+  const input = {
     width: '100%',
     marginBottom: 10,
     borderRadius: 5,

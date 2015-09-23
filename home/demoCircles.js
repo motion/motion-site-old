@@ -5,7 +5,7 @@ view DemoCircles {
   let coords = []
   let hasScrolledTo = false
 
-  this.componentDidMount = () => {
+  on('mount', () => {
     const circles = document.querySelector('circles')
     const targetY = util.docOffset(circles).top + 400
 
@@ -25,9 +25,9 @@ view DemoCircles {
 
       }, 100)
     })
-  }
+  })
 
-  addCircle = e => coords.push(offset(e))
+  const addCircle = e => coords.push(offset(e))
 
   <circles id="circles" onClick={e => {
     console.log(offset(e))
