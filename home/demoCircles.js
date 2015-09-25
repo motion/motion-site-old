@@ -35,16 +35,16 @@ view DemoCircles {
   <circles ref="circles" onClick={addCircle}>
     <Circle repeat={coords} left={_.x} top={_.y} />
   </circles>
-  <description>
+  <desc>
     Try clicking around above to add circles
-  </description>
+  </desc>
 
   $circles = {
     height: 430,
     cursor: 'pointer'
   }
 
-  $description = {
+  $desc = {
     textAlign: 'center',
     fontSize: 15,
     opacity: 0.8,
