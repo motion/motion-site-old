@@ -138,7 +138,7 @@ view Desc {
   let phrasePos = 0
   let charPos = 0
 
-  on(view, 'props', () => {
+  on('props').then(() => {
     if (^start && !started) {
       started = true
       run()
@@ -898,4 +898,12 @@ view Speed {
       <p></p>
     </section>
   </Contain>
+}
+
+const triggerEvent = (id, name)  => {
+  event = document.createEvent('CustomEvent')
+  event.initCustomEvent(name, true, true, null)
+  const frame = document.getElementById(id);
+  const frameWin = (frame.contentDocument || frame.contentWindow.document)
+  frameWin.body.dispatchEvent(event)
 }

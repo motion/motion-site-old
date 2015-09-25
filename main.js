@@ -1,5 +1,3 @@
-import chroma from 'chroma-js'
-
 view Main {
   <Home route={routes.home} />
   <FAQ if={false} route={routes.faq} />
@@ -15,23 +13,11 @@ view Main {
   }
 }
 
-const isBrowser = typeof window != 'undefined'
-
 const routes = {}
 routes.home = '/'
 routes.faq = '/faq'
 
-// Address.routes(routes)
-// Router.add(route)
-// Router.go()
-// Address.add(route)
-// Address.current()
-// Address.get('user')
-// Route.set()
-// Route.now()
-// Route.parse()
-
-const color = chroma;
+import color from 'chroma-js'
 color.brand = '#eb522d'
 color.brand1 = '#E86C3D'
 color.brand2 = '#DB415E'
@@ -63,21 +49,11 @@ style.textGradient = {
   WebkitTextFillColor: 'transparent',
 }
 
-export const triggerEvent = (id, name)  => {
-  event = document.createEvent('CustomEvent')
-  event.initCustomEvent(name, true, true, null)
-  const frame = document.getElementById(id);
-  const frameWin = (frame.contentDocument || frame.contentWindow.document)
-  frameWin.body.dispatchEvent(event)
-}
-
+// to keep isomorphism for now, should be handled by flint
 const util = {}
-if (isBrowser) {
-  // to keep isomorphism (for now, should be handled by flint in future)
+if (typeof window != 'undefined') {
   util.docOffset = require('document-offset')
   util.scroll = require('scroll')
 }
 
-export default {
-  isBrowser, style, font, routes, device, color, util
-}
+export default { style, font, routes, device, color, util }
