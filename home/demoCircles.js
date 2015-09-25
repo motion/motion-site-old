@@ -20,14 +20,16 @@ view DemoCircles {
 
         if (window.scrollY + window.innerHeight >= targetY) {
           hasScrolledTo = true
-          coords.push({ x: 200, y: 200 })
+          coords = coords.concat({ x: 200, y: 200 })
         }
 
       }, 100)
     })
   })
 
-  const addCircle = e => coords.push(offset(e))
+  window.abc = view
+
+  const addCircle = e => coords = coords.concat(offset(e))
 
   <circles id="circles" onClick={e => {
     console.log(offset(e))
