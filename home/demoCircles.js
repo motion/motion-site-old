@@ -12,34 +12,26 @@ view DemoCircles {
     let timeout = null
 
     on(window, 'scroll', () => {
-      // debugger
       if (timeout || hasScrolledTo) return
       timeout = setTimeout(() => {
         clearTimeout(timeout)
         timeout = null
 
+        console.log(window.scrollY, window.innerHeight, targetY)
+
         if (window.scrollY + window.innerHeight >= targetY) {
           hasScrolledTo = true
           coords = coords.concat({ x: 200, y: 200 })
         }
-
       }, 100)
     })
   })
 
-  window.abc = view
-
   const addCircle = e => coords = coords.concat(offset(e))
 
-  <circles id="circles" onClick={e => {
-    console.log(offset(e))
-    addCircle(e)
-  }}>
+  <circles id="circles" onClick={addCircle}>
     <Circle repeat={coords} left={_.x} top={_.y} />
   </circles>
-  <test>
-    {console.log('should render')}
-  </test>
   <description>
     Try clicking around above to add circles
   </description>
