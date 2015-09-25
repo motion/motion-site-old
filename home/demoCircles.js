@@ -23,8 +23,7 @@ view DemoCircles {
   let coords = []
 
   on(view, 'mount', () => {
-    const circles = document.querySelector('circles')
-    const targetY = util.docOffset(circles).top + 400
+    const targetY = util.docOffset(view.refs.circles).top + 400
 
     onScrollTo(targetY, () => {
       coords = coords.concat({ x: 200, y: 200 })
@@ -33,7 +32,7 @@ view DemoCircles {
 
   const addCircle = e => coords = coords.concat(offset(e))
 
-  <circles id="circles" onClick={addCircle}>
+  <circles ref="circles" onClick={addCircle}>
     <Circle repeat={coords} left={_.x} top={_.y} />
   </circles>
   <description>

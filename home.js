@@ -90,7 +90,7 @@ view Nav {
   }
 
   $a = [style.link, {
-    border: 'none',
+    borderBottom: 'none',
     fontFamily: font.sansSerif,
     padding: [0, 15]
   }]
@@ -312,7 +312,6 @@ view Interlude {
     textAlign: 'center',
     margin: [8, 'auto'],
     padding: [0, 25],
-    backgroundColor: color.bg,
     color: color(color.text).rgba(0.2),
     position: 'relative',
     zIndex: 10,
@@ -560,7 +559,7 @@ view List {
     borderRadius: 5,
     flexFlow: 'row',
     flexWrap: 'wrap',
-    color: color(listColor).darken(0.2)
+    color: listColor
   }
 
   $item = {
@@ -579,7 +578,7 @@ view List {
   $.check = {
     width: 20,
     height: 20,
-    fill: color,
+    fill: color(listColor).darken(0.2),
     margin: [1, 10, -3, 0]
   }
 
