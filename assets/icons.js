@@ -31,6 +31,7 @@ view IconGithub {
   </svg>
 
   $ = false
+  $svg = icon
 }
 
 view IconTwitter {
@@ -43,9 +44,7 @@ view IconTwitter {
   </svg>
 
   $ = false
-  $svg = [{
-    opacity: 0.6
-  }]
+  $svg = [icon, { opacity: 0.6 }]
 }
 
 view IconSlack {

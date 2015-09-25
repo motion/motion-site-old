@@ -173,12 +173,12 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 28,
+    fontSize: 26,
     lineHeight: '1.6rem',
     padding: [12, 0],
     fontWeight: 300,
     color: color.text,
-    opacity: 0.9,
+    opacity: 0.8,
     margin: [0, 'auto', 5],
     display: 'block'
   }
@@ -188,10 +188,10 @@ view What {
   <Contain strip bg={color.brand} color="#fff">
     <text>
       <primary>
-        Bring your feedback loop down to <em>instant</em>
+        A more effective way to build apps with React
       </primary>
       <secondary>
-        An ES6 view system that's faster and easier
+        Ultra-fast hot updates and a simple ES6 view system
       </secondary>
     </text>
   </Contain>
