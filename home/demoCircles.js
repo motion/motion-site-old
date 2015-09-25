@@ -1,29 +1,33 @@
 import { Spring } from 'react-motion'
 import offset from 'mouse-event-offset'
 
+const onScrollTo = (targetY, cb) => {
+  let timeout = null
+  let hasScrolledTo = false
+
+  on(window, 'scroll', () => {
+    if (timeout || hasScrolledTo) return
+    timeout = setTimeout(() => {
+      clearTimeout(timeout)
+      timeout = null
+
+      if (window.scrollY + window.innerHeight >= targetY) {
+        hasScrolledTo = true
+        cb();
+      }
+    }, 100)
+  })
+}
+
 view DemoCircles {
   let coords = []
-  let hasScrolledTo = false
 
   on(view, 'mount', () => {
     const circles = document.querySelector('circles')
     const targetY = util.docOffset(circles).top + 400
 
-    let timeout = null
-
-    on(window, 'scroll', () => {
-      if (timeout || hasScrolledTo) return
-      timeout = setTimeout(() => {
-        clearTimeout(timeout)
-        timeout = null
-
-        console.log(window.scrollY, window.innerHeight, targetY)
-
-        if (window.scrollY + window.innerHeight >= targetY) {
-          hasScrolledTo = true
-          coords = coords.concat({ x: 200, y: 200 })
-        }
-      }, 100)
+    onScrollTo(targetY, () => {
+      coords = coords.concat({ x: 200, y: 200 })
     })
   })
 
