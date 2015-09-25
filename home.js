@@ -131,10 +131,12 @@ view Introduction {
 view Desc {
   let started = ^start
 
-  const run = () => {
-    if (started)
-      setTimeout(step, 1000)
-  }
+  let how = ''
+  const phrases = ['faster', 'simpler', 'creatively']
+  const betweenPhrase = 3000
+  const typeSpeed = 130
+  let phrasePos = 0
+  let charPos = 0
 
   on(view, 'props', () => {
     if (^start && !started) {
@@ -143,13 +145,10 @@ view Desc {
     }
   })
 
-  const phrases = ['faster', 'simpler', 'creatively']
-  let desc = ''
-
-  const betweenPhrase = 3000
-  const typeSpeed = 130
-  let phrasePos = 0
-  let charPos = 0
+  const run = () => {
+    if (started)
+      setTimeout(step, 1000)
+  }
 
   const step = () => {
     if (phrasePos == phrases.length) return
@@ -163,16 +162,16 @@ view Desc {
     // if typing word
     else {
       charPos += 1
-      desc = phrases[phrasePos].slice(0, charPos)
+      how = phrases[phrasePos].slice(0, charPos)
       setTimeout(step, typeSpeed)
     }
   }
 
   run()
 
-  <desc>Web apps, {desc}</desc>
+  <desc>Web apps, {how}</desc>
 
-  $desc = [{
+  $desc = {
     textAlign: 'center',
     fontSize: 28,
     lineHeight: '1.6rem',
@@ -182,7 +181,7 @@ view Desc {
     opacity: 0.9,
     margin: [0, 'auto', 5],
     display: 'block'
-  }]
+  }
 }
 
 view What {
