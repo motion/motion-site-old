@@ -37,7 +37,7 @@ view Header {
             id="headeriframe"
             onLoad={() => {
               startIntro = true
-              // triggerEvent('headeriframe', 'start')
+              triggerEvent('headeriframe', 'start')
             }}
             src="/assets/examples/example.html" />
         }
@@ -136,12 +136,12 @@ view Desc {
       setTimeout(step, 1000)
   }
 
-  // this.componentDidUpdate = () => {
+  on(view, 'props', () => {
     if (^start && !started) {
       started = true
       run()
     }
-  // }
+  })
 
   const phrases = ['faster', 'simpler', 'creatively']
   let desc = ''
@@ -154,20 +154,18 @@ view Desc {
   const step = () => {
     if (phrasePos == phrases.length) return
 
-    Flint.batch(() => {
-      // if typed to end of word
-      if (charPos === phrases[phrasePos].length) {
-        charPos = -1
-        phrasePos += 1
-        setTimeout(step, betweenPhrase)
-      }
-      // if typing word
-      else {
-        charPos += 1
-        desc = phrases[phrasePos].slice(0, charPos)
-        setTimeout(step, typeSpeed)
-      }
-    });
+    // if typed to end of word
+    if (charPos === phrases[phrasePos].length) {
+      charPos = -1
+      phrasePos += 1
+      setTimeout(step, betweenPhrase)
+    }
+    // if typing word
+    else {
+      charPos += 1
+      desc = phrases[phrasePos].slice(0, charPos)
+      setTimeout(step, typeSpeed)
+    }
   }
 
   run()
