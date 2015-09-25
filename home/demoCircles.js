@@ -5,7 +5,7 @@ view DemoCircles {
   let coords = []
   let hasScrolledTo = false
 
-  on('mount', () => {
+  on(view, 'mount', () => {
     const circles = document.querySelector('circles')
     const targetY = util.docOffset(circles).top + 400
 
@@ -33,8 +33,11 @@ view DemoCircles {
     console.log(offset(e))
     addCircle(e)
   }}>
-    <Circle repeat={coords} left={_x} top={_y} />
+    <Circle repeat={coords} left={_.x} top={_.y} />
   </circles>
+  <test>
+    {console.log('should render')}
+  </test>
   <description>
     Try clicking around above to add circles
   </description>
@@ -53,8 +56,8 @@ view DemoCircles {
 }
 
 view Circle {
-  c = () => Math.round(Math.random()*255)
-  baseStyle = {
+  const c = () => Math.round(Math.random()*255)
+  const baseStyle = {
     background: `rgb(${c()}, ${c()}, ${c()})`,
     top: ^top, left: ^left,
     width: 80, height: 80,
@@ -63,7 +66,7 @@ view Circle {
     position: 'absolute'
   }
 
-  style = scale => ({ ...baseStyle, transform: { scale } })
+  const style = scale => ({ ...baseStyle, transform: { scale } })
 
   <Spring defaultValue={{ val: 0 }} endValue={{ val: 1, config: [300, 10] }}>
     {i => <circle style={style(i.val)} />}

@@ -10,7 +10,7 @@ export const util = {}
 
 view Main {
   <Home route={routes.home} />
-  <FAQ route={routes.faq} />
+  <FAQ if={false} route={routes.faq} />
 
   $ = {
     color: color.text,

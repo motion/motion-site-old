@@ -1,10 +1,9 @@
 view Home {
-  <Header />
-  <What />
-  <DemoVideo />
+  // <Header />
+  // <What />
+  // <DemoVideo />
   <Examples />
   <Install />
-  <Speed />
   <Features />
   <Slack />
   <Signup />
@@ -38,7 +37,7 @@ view Header {
             id="headeriframe"
             onLoad={() => {
               startIntro = true
-              triggerEvent('headeriframe', 'start')
+              // triggerEvent('headeriframe', 'start')
             }}
             src="/assets/examples/example.html" />
         }
@@ -234,43 +233,43 @@ view What {
 }
 
 view Examples {
-  <section>
-    <Interlude>
-      Flint introduces the view to ES6
-    </Interlude>
+  // <section>
+  //   <Interlude>
+  //     Flint introduces the view to ES6
+  //   </Interlude>
+  //
+  //   <Example flip inPage
+  //     maxWidth={760}
+  //     in={<Editor lines={10} left light src="/assets/examples/exampleCounter.html" />}
+  //     out={<DemoCounter />} />
+  // </section>
+  //
+  // <Interlude>
+  //   Style views easily with $ variables
+  // </Interlude>
+  //
+  // <Example inPage
+  //   maxWidth={900}
+  //   in={<Editor lines={15} left light src="/assets/examples/exampleVenn.html" />}
+  //   out={<DemoVenn />} />
+  //
+  // <section>
+  //   <Interlude>
+  //     Flint works with ES6, npm & React
+  //   </Interlude>
 
-    <Example flip inPage
-      maxWidth={760}
-      in={<Editor lines={10} left light src="/assets/examples/exampleCounter.html" />}
-      out={<DemoCounter />} />
-  </section>
-
-  <Interlude>
-    Style views easily with $ variables
-  </Interlude>
-
-  <Example inPage
+  <Example flip inPage
     maxWidth={900}
-    in={<Editor lines={15} left light src="/assets/examples/exampleVenn.html" />}
-    out={<DemoVenn />} />
-
-  <section>
-    <Interlude>
-      Flint works with ES6, npm & React
-    </Interlude>
-
-    <Example flip inPage
-      maxWidth={900}
-      in={
-        <Editor left light
-          lines={20}
-          sources={[
-            { title: 'Circles.js', url: '/assets/examples/exampleCircles.html' },
-            { title: 'Circle.js', url: '/assets/examples/exampleCircle.html' }
-          ]} />
-      }
-      out={<DemoCircles />} />
-  </section>
+    in={
+      <Editor left light
+        lines={20}
+        sources={[
+          { title: 'Circles.js', url: '/assets/examples/exampleCircles.html' },
+          { title: 'Circle.js', url: '/assets/examples/exampleCircle.html' }
+        ]} />
+    }
+    out={<DemoCircles />} />
+  // </section>
 
   $section = {
     background: 'rgba(255,255,255,0.5)',
