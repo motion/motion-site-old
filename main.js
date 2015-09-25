@@ -1,13 +1,5 @@
 import chroma from 'chroma-js'
 
-export const isBrowser = typeof window != 'undefined'
-export const style = {}
-export const font = {}
-export const routes = {}
-export const device = {}
-export const color = chroma
-export const util = {}
-
 view Main {
   <Home route={routes.home} />
   <FAQ if={false} route={routes.faq} />
@@ -23,22 +15,23 @@ view Main {
   }
 }
 
+const isBrowser = typeof window != 'undefined'
+
+const routes = {}
 routes.home = '/'
 routes.faq = '/faq'
 
 // Address.routes(routes)
-
 // Router.add(route)
 // Router.go()
-
 // Address.add(route)
 // Address.current()
 // Address.get('user')
-
 // Route.set()
 // Route.now()
 // Route.parse()
 
+const color = chroma;
 color.brand = '#eb522d'
 color.brand1 = '#E86C3D'
 color.brand2 = '#DB415E'
@@ -47,12 +40,15 @@ color.bg = '#eee'
 color.text = '#444'
 color.strip = '#fff'
 
+const font = {}
 font.serif = 'Lato, Georgia, serif'
 font.sansSerif = 'Helvetica Neue, Helvetica, Lato, Arial, sans-serif'
 font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 
+const device = {}
 device.small = '@media (max-width: 850px)'
 
+const style = {}
 style.link = {
   color: '#888',
   textDecoration: 'none',
@@ -75,8 +71,13 @@ export const triggerEvent = (id, name)  => {
   frameWin.body.dispatchEvent(event)
 }
 
+const util = {}
 if (isBrowser) {
   // to keep isomorphism (for now, should be handled by flint in future)
   util.docOffset = require('document-offset')
   util.scroll = require('scroll')
+}
+
+export default {
+  isBrowser, style, font, routes, device, color, util
 }

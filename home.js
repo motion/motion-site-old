@@ -312,7 +312,7 @@ view Interlude {
     color: color(color.text).rgba(0.2),
     position: 'relative',
     zIndex: 10,
-    fontSize: 24
+    fontSize: 22
   }]
 }
 
