@@ -132,7 +132,7 @@ view Desc {
   let started = ^start
 
   let how = ''
-  const phrases = ['faster', 'simpler', 'creatively']
+  let phrases = ['faster', 'creatively', 'with ease']
   const betweenPhrase = 3000
   const typeSpeed = 130
   let phrasePos = 0
@@ -776,7 +776,7 @@ view Slack {
 
 view Signup {
   <Contain>
-    <Title>Interested? Stay up to date:</Title>
+    <Title>Sign up to keep up with releases:</Title>
     <SignupForm />
   </Contain>
 

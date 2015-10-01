@@ -8,7 +8,7 @@
     code {
       color: #555;
       font-size: 15px;
-      line-height: 1.35rem;
+      line-height: 1.34rem;
       font-family: Hack, Meslo LG S DZ, Meslo, Inconsolata, Source Code Pro, monospace;
     }
 
@@ -40,23 +40,23 @@
 import { <span class="b">Spring</span> } from <span class="y">'react-motion'</span>
 
 <span class="o">view</span> Circle {
-  const <span class="b">c</span> = () => <span class="y">Math</span>.round(<span class="y">Math</span>.random() * <span class="y">255</span>)
+  const <span class="b">c</span> = () => <span class="y">Math</span>.round(<span class="y">Math</span>.random()*<span class="y">255</span>)
   const <span class="b">base</span> = {
-    background: <span class="y">`rgb(${<span class="b">c()</span>}, ${<span class="b">c()</span>}, ${<span class="b">c()</span>})`</span>,
+    background: { r: <span class="b">c()</span>, g: <span class="b">c()</span>, b: <span class="b">c()</span> },
+    position: <span class="y">'absolute'</span>,
     top: <span class="b">^top</span>,
     left: <span class="b">^left</span>,
-    width: <span class="y">80</span>, height: <span class="y">80</span>,
-    marginLeft: <span class="y">-40</span>,
-    borderRadius: <span class="y">100</span>,
-    position: <span class="y">'absolute'</span>
+    width: <span class="y">80</span>,
+    height: <span class="y">80</span>,
+    borderRadius: <span class="y">100</span>
   }
 
   const <span class="b">style</span> = <span class="b">scale</span> =>
     ({ ...<span class="b">base</span>, transform: { <span class="b">scale</span> } })
 
-  <span class="r">&lt;Spring endValue={<span class="w">{val:<span class="y">1</span>}</span>}&gt;<span class="w">
-    {<span class="b">i</span> =&gt; <span class="r">&lt;circle style=<span class="w">{<span class="b">style(i.val)</span>}</span> /&gt;</span>}
-  </span>&lt;/Spring&gt;</span>
+  <span class="r">&lt;Spring endValue={<span class="w">{ val: <span class="y">1</span> }</span>}&gt;<span class="w">{<span class="b">i</span> =&gt;
+    <span class="r">&lt;circle style=<span class="w">{<span class="b">style(i.val)</span>}</span> /&gt;</span>
+  }</span>&lt;/Spring&gt;</span>
 }<pre></code>
 </body>
 </html>

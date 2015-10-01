@@ -5,7 +5,7 @@ view SignupForm {
         <input type="text" placeholder="Name" name="NAME" class="" id="mce-NAME" />
       </div>
       <div class="mc-field-group">
-        <input type="email" placeholder="Contact (email or handle)" name="EMAIL" class="required email" id="mce-EMAIL" />
+        <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" />
       </div>
       <div if={false} class="mc-field-group">
         <textarea name="ABOUT" class="" placeholder="What are you most interested in with Flint? Any feedback?" id="mce-ABOUT"></textarea>

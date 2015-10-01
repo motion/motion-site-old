@@ -53,7 +53,7 @@ view DemoCircles {
 view Circle {
   const c = () => Math.round(Math.random()*255)
   const baseStyle = {
-    background: `rgb(${c()}, ${c()}, ${c()})`,
+    background: { r: c(), g: c(), b: c() },
     top: ^top, left: ^left,
     width: 80, height: 80,
     margin: [0, 0, 0, -40],
@@ -63,7 +63,7 @@ view Circle {
 
   const style = scale => ({ ...baseStyle, transform: { scale } })
 
-  <Spring defaultValue={{ val: 0 }} endValue={{ val: 1, config: [300, 10] }}>
+  <Spring defaultValue={{ val: 0 }} endValue={{ val: 1, config: [300, 8] }}>
     {i => <circle style={style(i.val)} />}
   </Spring>
 }
