@@ -269,10 +269,9 @@ view Examples {
   </section>
 
   $section = {
-    background: 'rgba(255,255,255,0.5)',
+    background: 'rgba(255,255,255,0.3)',
     padding: [0, 0, 40],
     margin: [40, 0, 0],
-    border: '1px solid rgba(0,0,0,0.1)',
     borderLeft: 'none',
     borderRight: 'none'
   }
