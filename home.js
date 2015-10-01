@@ -138,7 +138,7 @@ view Desc {
   let phrasePos = 0
   let charPos = 0
 
-  on('props').then(() => {
+  on('props', () => {
     if (^start && !started) {
       started = true
       run()
@@ -516,16 +516,15 @@ view Toolbar {
 }
 
 view Features {
-  const features = [
+  <List items={[
     [`Works with React`, `Use any React component`],
     [`Automatic npm installs`, `Flint installs as you type`],
     [`Modern ES6, simplified`, `No need for *this* or classes`],
     [`Instant feedback`, `Browser hot updates as you type`],
     [`Fast builds & runtime`, `Compiler unlocks incredible speed`],
     [`Smart errors & tools`, `Inline errors and a state inspector`],
-  ]
+  ]} />
 
-  <List items={features} />
   $ = false
 }
 
