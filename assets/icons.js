@@ -1,8 +1,8 @@
 const icon = {
-  width: 32,
-  height: 32,
+  width: 36,
+  height: 36,
   transition: 'all ease-in 100ms',
-  opacity: 0.5,
+  opacity: 0.4,
   filter: 'grayscale(1)',
 
   ':hover': {

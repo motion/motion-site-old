@@ -95,7 +95,7 @@ view Social {
   </sub>
 
   $a = ^tiny ?  {
-    margin: [0, 5, -20],
+    margin: [-2, 5, -20],
     transform: {
       scale: 0.75
     }

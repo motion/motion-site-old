@@ -46,13 +46,13 @@ view Header {
   </Contain>
 
   $ = {
-    padding: [55, 0, 50],
+    padding: [30, 0, 50],
     position: 'relative',
     overflow: 'hidden'
   }
 
   $Contain = {
-    margin: [-50, 'auto', -5],
+    margin: [-20, 'auto', -5],
 
     [device.small]: {
       minWidth: 'auto',
@@ -61,7 +61,7 @@ view Header {
   }
 
   $main = {
-    padding: [10, 0, 40]
+    padding: [20, 0, 40]
   }
 }
 
