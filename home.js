@@ -189,7 +189,7 @@ view What {
   <Contain strip bg={color.brand} color="#fff">
     <text>
       <primary>
-        A more effective way to build apps with React
+        A most effective way to build apps with React
       </primary>
       <secondary>
         Ultra-fast hot updates and a simple ES6 view system
@@ -602,7 +602,7 @@ view DemoVideo {
     width: '100%',
     textAlign: 'center',
     alignItems: 'center',
-    margin: [45, 'auto', 0]
+    margin: [-20, 'auto', 0]
   }
 }
 
@@ -622,7 +622,7 @@ view YouTube {
 
   const originalHeight = 900
   const originalWidth = 1440
-  const scale = 0.5
+  const scale = 0.66
   const height = Math.round(originalHeight * scale)
   const width = Math.round(originalWidth * scale)
 
@@ -652,7 +652,7 @@ view YouTube {
     top: 0,
     left: 0,
     right: 0,
-    height: 10,
+    height: 6,
     background: color.bg
   }
 
@@ -665,19 +665,31 @@ view YouTube {
 
 view Install {
   <Contain id="install">
-    <Title>{^title || "Install in seconds!" }</Title>
-    <inner>
-      <code><b>curl https://flintjs.com/install.sh | sh</b></code>
-      have permissions to install globally? just run:
-      <code><b>npm install -g flint</b></code>
-    </inner>
+    <modal>
+      <Title big>{^title || "Install in seconds!" }</Title>
+      <inner>
+        <code><b>curl https://flintjs.com/install.sh | sh</b></code>
+
+        <afterward>
+          can you npm install -g without sudo?
+          <code class="small"><b>npm install -g flint</b></code>
+        </afterward>
+      </inner>
+    </modal>
   </Contain>
 
   $ = {
     textAlign: 'center',
-    margin: [10, 0],
+    margin: [30, 0, 0],
     fontSize: 15,
     color: '#777'
+  }
+
+  $modal = {
+    border: '1px solid #ccc',
+    margin: [0, 'auto'],
+    padding: [0, 20, 20],
+    borderRadius: 4
   }
 
   $inner = {
@@ -687,20 +699,22 @@ view Install {
   $code = {
     color: '#222',
     margin: [10, 'auto'],
-    padding: [0, 10],
+    padding: [3, 10],
     fontFamily: font.monoSpace,
     fontSize: 18,
-    background: '#fff',
+    background: '#ddd'
+  }
 
-    [device.small]: {
-      fontSize: 22
-    }
+  $afterward = {
+    marginTop: 10
   }
 
   $.small = {
-    fontSize: 20,
+    fontSize: 14,
+    padding: [0, 10],
+    margin: [-4, 'auto'],
     color: '#777',
-    margin: [4, 0]
+    background: 'none'
   }
 
   $a = style.link

@@ -48,7 +48,7 @@ view Title {
   $ = false
 
   $h2 = [style.textGradient, {
-    fontSize: 22,
+    fontSize: ^big ? 26 : 22,
     margin: [10, 'auto', 20],
     padding: 10,
     fontStyle: 'italic',
