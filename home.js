@@ -2,6 +2,7 @@ view Home {
   <Header />
   <What />
   <DemoVideo />
+  <Install title="Install while you watch!" />
   <Examples />
   <Install />
   <Features />
@@ -61,7 +62,7 @@ view Header {
   }
 
   $main = {
-    padding: [20, 0, 40]
+    padding: [10, 0, 30]
   }
 }
 
@@ -81,7 +82,6 @@ view Nav {
     margin: [10, 'auto', -20],
     flexFlow: 'row',
     zIndex: 100,
-    fontSize: 18,
     fontWeight: 300,
 
     [device.small]: {
@@ -91,8 +91,9 @@ view Nav {
 
   $a = [style.link, {
     borderBottom: 'none',
+    fontSize: 20,
     fontFamily: font.sansSerif,
-    padding: [0, 15]
+    padding: [0, 15],
   }]
 }
 
@@ -206,7 +207,7 @@ view What {
   $text = {
     fontSize: 30,
     lineHeight: '2.5rem',
-    margin: [-8, 0],
+    margin: [-12, 0],
 
     [device.small]: {
       fontSize: 20
@@ -595,80 +596,13 @@ view DemoVideo {
 
   const start = () => started = true
 
-  <Contain id="video">
-    <inner>
-      <poster if={false} />
-      <YouTube />
-
-      <overlay if={false} onClick={start}>
-        <play>
-          <PlayIcon color="#fff" />
-        </play>
-      </overlay>
-    </inner>
-  </Contain>
+  <YouTube />
 
   $ = {
+    width: '100%',
     textAlign: 'center',
     alignItems: 'center',
-    margin: [45, 0, 0]
-  }
-
-  const originalHeight = 900
-  const originalWidth = 1440
-  const scale = 0.5
-  const height = Math.round(originalHeight * scale)
-  const width = Math.round(originalWidth * scale)
-
-  $inner = {
-    width,
-    height,
-    maxHeight: '100%',
-    maxWidth: '100%',
-    position: 'relative',
-
-    [device.small]: {
-      width: '100%',
-      height: 'auto'
-    }
-  }
-
-  $poster = {
-    background: 'url(/assets/images/video-poster.jpg) no-repeat top left',
-    backgroundSize: 'cover',
-    position: [0,0,0,0]
-  }
-
-  $overlay = {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    zIndex: 100,
-    background: 'rgba(0,0,0,0.3)',
-    cursor: 'pointer',
-    alignItems: 'center',
-
-    ':hover': {
-      background: 'rgba(0,0,0,0.1)'
-    }
-  }
-
-  $play = {
-    margin: 'auto',
-    padding: 10,
-    color: '#fff',
-    fontFamily: font.sansSerif,
-    fontWeight: 700,
-    background: color.brand,
-    borderRadius: 100,
-    top: '50%',
-    left: '50%',
-
-    ':hover': {
-      background: chroma(color.brand).darken(0.5)
-    }
+    margin: [45, 'auto', 0]
   }
 }
 
@@ -686,15 +620,30 @@ view YouTube {
     device>
   </iframe>
 
+  const originalHeight = 900
+  const originalWidth = 1440
+  const scale = 0.5
+  const height = Math.round(originalHeight * scale)
+  const width = Math.round(originalWidth * scale)
+
   $ = {
-    width: '100%',
-    height: '100%',
-    position: 'relative'
+    width,
+    height,
+    maxHeight: '100%',
+    maxWidth: '100%',
+    minHeight: 350,
+    position: 'relative',
+
+    [device.small]: {
+      width: '100%',
+      height: 'auto'
+    }
   }
 
   $iframe = {
     width: '100%',
     height: '100%',
+    minHeight: 350,
     border: 'none'
   }
 
@@ -715,33 +664,33 @@ view YouTube {
 }
 
 view Install {
-  <Contain id="install" padTop>
+  <Contain id="install">
+    <Title>{^title || "Install in seconds!" }</Title>
     <inner>
+      <code><b>curl https://flintjs.com/install.sh | sh</b></code>
+      have permissions to install globally? just run:
       <code><b>npm install -g flint</b></code>
-      <code class="small">flint new myapp</code>
-      <code class="small">flint</code>
-      <p>
-        <a target="_blank" href="https://flintdev.gitbooks.io/flint/content/startmd.html">
-          Follow the docs
-        </a>
-      </p>
     </inner>
   </Contain>
 
   $ = {
-    textAlign: 'center'
+    textAlign: 'center',
+    margin: [10, 0],
+    fontSize: 15,
+    color: '#777'
   }
 
   $inner = {
-    margin: [-6, 0, -40]
+    margin: [-25, 0, 0]
   }
 
   $code = {
-    color: '#000',
-    margin: [10, 0],
-    width: '100%',
+    color: '#222',
+    margin: [10, 'auto'],
+    padding: [0, 10],
     fontFamily: font.monoSpace,
-    fontSize: 28,
+    fontSize: 18,
+    background: '#fff',
 
     [device.small]: {
       fontSize: 22
@@ -753,8 +702,6 @@ view Install {
     color: '#777',
     margin: [4, 0]
   }
-
-  $b = style.textGradient
 
   $a = style.link
 }
