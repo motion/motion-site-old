@@ -21,6 +21,7 @@ import color from 'chroma-js'
 color.brand = '#eb522d'
 color.brand1 = '#E86C3D'
 color.brand2 = '#DB415E'
+color.green = '#259630'
 color.darkred = color(color.brand).darken(0.3)
 color.bg = '#eee'
 color.text = '#444'

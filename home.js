@@ -2,7 +2,7 @@ view Home {
   <Header />
   <What />
   <DemoVideo />
-  <Install title="Install while you watch!" />
+  <Install title="Install while watching!" />
   <Examples />
   <Install />
   <Features />
@@ -192,7 +192,7 @@ view What {
         A most effective way to build apps with React
       </primary>
       <secondary>
-        Ultra-fast hot updates and a simple ES6 view system
+        Fastest hot reload with a novel view system
       </secondary>
     </text>
   </Contain>
@@ -233,7 +233,7 @@ view What {
 view Examples {
   <section>
     <Interlude>
-      Flint introduces the view to ES6
+      Flint introduces the view to ES2015
     </Interlude>
 
     <Example flip inPage
@@ -622,7 +622,7 @@ view YouTube {
 
   const originalHeight = 900
   const originalWidth = 1440
-  const scale = 0.66
+  const scale = 0.5
   const height = Math.round(originalHeight * scale)
   const width = Math.round(originalWidth * scale)
 
@@ -680,13 +680,14 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [30, 0, 0],
+    margin: [20, 0, 0],
     fontSize: 15,
     color: '#777'
   }
 
   $modal = {
     border: '1px solid #ccc',
+    boxShadow: '0 0 10px rgba(0,0,0,0.1)',
     margin: [0, 'auto'],
     padding: [0, 20, 20],
     borderRadius: 4
@@ -697,16 +698,16 @@ view Install {
   }
 
   $code = {
-    color: '#222',
-    margin: [10, 'auto'],
-    padding: [3, 10],
+    color: color.green,
+    margin: [10, -20],
+    padding: [10, 20],
     fontFamily: font.monoSpace,
     fontSize: 18,
-    background: '#ddd'
+    background: '#fff'
   }
 
   $afterward = {
-    marginTop: 10
+    marginTop: 0
   }
 
   $.small = {
@@ -791,7 +792,7 @@ view Speed {
       <SubTitle>Errors from every level</SubTitle>
       <p>
         Try and render a view that doesn't exist? We tell you inline,
-        with a helpful error. Make a syntax error with ES6? That also
+        with a helpful error. Make a syntax error with ES2015? That also
         notifies you, and it doesn't lose your place.
       </p>
       <p>

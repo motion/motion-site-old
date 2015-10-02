@@ -51,7 +51,6 @@ view Title {
     fontSize: ^big ? 26 : 22,
     margin: [10, 'auto', 20],
     padding: 10,
-    fontStyle: 'italic',
     textAlign: 'center'
   }]
 }
