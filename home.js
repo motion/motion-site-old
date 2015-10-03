@@ -18,7 +18,7 @@ view Home {
 view Header {
   let startIntro = false
 
-  <Contain strip bg="#fff" maxWidth="98%">
+  <Contain strip bg="#fff" maxWidth="1200px">
     <main>
       <Example
         flipVertical
@@ -90,9 +90,9 @@ view Nav {
   }
 
   $a = [style.link, {
+    color: '#666',
     borderBottom: 'none',
     fontSize: 20,
-    fontFamily: font.sansSerif,
     padding: [0, 15],
   }]
 }
