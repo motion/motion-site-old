@@ -189,10 +189,10 @@ view What {
   <Contain strip bg={color.brand} color="#fff">
     <text>
       <primary>
-        A most effective way to build apps with React
+        A more effective way to build apps with React
       </primary>
       <secondary>
-        Fastest hot reload with a novel view system
+        Ultra hot reloads & an simple view system
       </secondary>
     </text>
   </Contain>
