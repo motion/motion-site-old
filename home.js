@@ -192,7 +192,7 @@ view What {
         A more effective way to build apps with React
       </primary>
       <secondary>
-        Ultra hot reloads & an simple view system
+        Ultra hot reloads & a simple view system
       </secondary>
     </text>
   </Contain>
