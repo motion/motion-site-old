@@ -2,7 +2,7 @@ view Home {
   <Header />
   <What />
   <DemoVideo />
-  <Install title="Install while watching!" />
+  <Install title="Install in a minute!" />
   <Examples />
   <Install />
   <Features />
@@ -90,9 +90,9 @@ view Nav {
   }
 
   $a = [style.link, {
-    color: '#666',
+    color: '#888',
     borderBottom: 'none',
-    fontSize: 20,
+    fontSize: 18,
     padding: [0, 15],
   }]
 }
@@ -664,15 +664,20 @@ view YouTube {
 }
 
 view Install {
+  const install = 'curl https://flintjs.com/install.sh | sh'
+  const select = () => view.refs.code.select()
+
   <Contain id="install">
     <modal>
-      <Title big>{^title || "Install in seconds!" }</Title>
+      <Title big>{^title || "Install" }</Title>
       <inner>
-        <code><b>curl https://flintjs.com/install.sh | sh</b></code>
+        <code onMouseUp={select} class="install">
+         <input ref="code" value={install} size={install.length} />
+        </code>
 
         <afterward>
-          can you npm install -g without sudo?
-          <code class="small"><b>npm install -g flint</b></code>
+          or just <code class="small"><b>npm install -g flint</b></code>
+          <a target="_blank" href="http://stackoverflow.com/questions/16151018/npm-throws-error-without-sudo">with sudo</a>
         </afterward>
       </inner>
     </modal>
@@ -680,15 +685,13 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [20, 0, 0],
+    margin: [10, 0, 0],
     fontSize: 15,
     color: '#777'
   }
 
   $modal = {
-    border: '1px solid #ccc',
-    boxShadow: '0 0 10px rgba(0,0,0,0.1)',
-    margin: [0, 'auto'],
+    margin: [0],
     padding: [0, 20, 20],
     borderRadius: 4
   }
@@ -697,23 +700,41 @@ view Install {
     margin: [-25, 0, 0]
   }
 
-  $code = {
-    color: color.green,
-    margin: [10, -20],
-    padding: [10, 20],
-    fontFamily: font.monoSpace,
+  $prompt = {
+    content: '$',
+    marginRight: 10,
+    opacity: 0.5
+  }
+
+  $.install = {
+    flexFlow: 'row',
+    color: '#555',
+    margin: [10, 'auto'],
+  }
+
+  $input = {
+    background: '#fff',
+    borderRadius: 5,
+    border: '1px solid #ddd',
+    padding: [8, 10],
+    paddingLeft: 25,
     fontSize: 18,
-    background: '#fff'
+    margin: 0,
+    fontFamily: font.monoSpace,
+    width: '100%'
   }
 
   $afterward = {
-    marginTop: 0
+    display: 'block',
+    margin: [5, 'auto'],
+    flexFlow: 'row',
+    lineHeight: '1.2rem',
   }
 
   $.small = {
+    display: 'inline',
     fontSize: 14,
-    padding: [0, 10],
-    margin: [-4, 'auto'],
+    padding: [0, 8],
     color: '#777',
     background: 'none'
   }

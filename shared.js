@@ -83,6 +83,7 @@ view Footer {
     fontWeight: 'bold'
   }
 }
+
 view Social {
   <sub>
     <a target="_blank" href="http://github.com/flintjs">

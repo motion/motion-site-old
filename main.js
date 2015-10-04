@@ -22,6 +22,7 @@ color.brand = '#eb522d'
 color.brand1 = '#E86C3D'
 color.brand2 = '#DB415E'
 color.green = '#259630'
+color.blue = 'rgb(48, 111, 207)'
 color.darkred = color(color.brand).darken(0.3)
 color.bg = '#eee'
 color.text = '#444'
@@ -37,9 +38,11 @@ device.small = '@media (max-width: 850px)'
 
 const style = {}
 style.link = {
-  color: '#888',
+  color: color.blue,
   textDecoration: 'none',
-  borderBottom: '1px solid #ddd',
+  borderBottom: '1px dotted #ddd',
+  padding: 0,
+
   ':hover': { color: color.brand }
 }
 style.textGradient = {
