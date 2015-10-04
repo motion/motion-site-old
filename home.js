@@ -23,9 +23,8 @@ view Header {
       <Example
         flipVertical
         maxWidth={900}
-        inStyle={{
-          maxWidth: 300
-        }}
+        outStyle={{ width: '45%' }}
+        inStyle={{ maxWidth: 300 }}
         out={
           <head>
             <Logo />
@@ -53,7 +52,7 @@ view Header {
   }
 
   $Contain = {
-    margin: [-20, 'auto', -5],
+    margin: [-15, 'auto', -5],
 
     [device.small]: {
       minWidth: 'auto',
@@ -62,7 +61,12 @@ view Header {
   }
 
   $main = {
-    padding: [10, 0, 30]
+    padding: [0, 0, 30],
+    marginLeft: -60,
+
+    [device.small]: {
+      marginLeft: 0
+    }
   }
 }
 
@@ -79,7 +83,7 @@ view Nav {
   <a if={false} target="_blank" href="http://github.com/flintjs"><IconSlack /></a>
 
   $ = {
-    margin: [10, 'auto', -20],
+    margin: [0, 'auto', -20],
     flexFlow: 'row',
     zIndex: 100,
     fontWeight: 300,
@@ -198,7 +202,7 @@ view What {
   </Contain>
 
   $ = {
-    margin: [-105, 0, -25],
+    margin: [-110, 0, 0],
     position: 'relative',
     zIndex: 10,
     textAlign: 'center'
@@ -318,8 +322,8 @@ view Interlude {
 
 view Example {
   <Contain maxWidth={^maxWidth || 1000}>
-    <in class="split">{^in}</in>
-    <out class="split">{^out}</out>
+    <in>{^in}</in>
+    <out>{^out}</out>
   </Contain>
 
   $ = {
@@ -333,11 +337,8 @@ view Example {
     }
   }
 
-  $.split = {
-    width: '50%'
-  }
-
-  $out = {
+  $out = [{
+    width: '50%',
     justifyContent: 'center',
     position: 'relative',
     order: ^flip ? 2 : 1,
@@ -347,9 +348,10 @@ view Example {
       order: ^flipVertical ? 1 : 2,
       padding: ^inPage ? '50px 0' : 0
     }
-  }
+  }, ^outStyle]
 
-  $in = [^inStyle, {
+  $in = [{
+    width: '50%',
     order: ^flip ? 1 : 2,
     zIndex: 10,
     margin: 0,
@@ -359,7 +361,7 @@ view Example {
       margin: 'auto',
       order: ^flipVertical ? 2 : 1
     }
-  }]
+  }, ^inStyle]
 }
 
 view Editor {
@@ -652,7 +654,7 @@ view YouTube {
     top: 0,
     left: 0,
     right: 0,
-    height: 6,
+    height: 7,
     background: color.bg
   }
 
