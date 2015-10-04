@@ -677,7 +677,7 @@ view Install {
 
         <afterward>
           or just <code class="small"><b>npm install -g flint</b></code>
-          <a target="_blank" href="http://stackoverflow.com/questions/16151018/npm-throws-error-without-sudo">with sudo</a>
+          <a target="_blank" href="http://stackoverflow.com/questions/16151018/npm-throws-error-without-sudo">without sudo</a>
         </afterward>
       </inner>
     </modal>
