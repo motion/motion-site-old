@@ -24,7 +24,7 @@ color.brand2 = '#DB415E'
 color.green = '#259630'
 color.blue = 'rgb(48, 111, 207)'
 color.darkred = color(color.brand).darken(0.3)
-color.bg = '#eee'
+color.bg = '#f2f2f2'
 color.text = '#444'
 color.strip = '#fff'
 

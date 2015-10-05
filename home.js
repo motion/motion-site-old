@@ -52,7 +52,7 @@ view Header {
   }
 
   $Contain = {
-    margin: [-15, 'auto', -5],
+    margin: [-25, 'auto', -5],
 
     [device.small]: {
       minWidth: 'auto',
@@ -180,10 +180,10 @@ view Desc {
     textAlign: 'center',
     fontSize: 26,
     lineHeight: '1.6rem',
-    padding: [12, 0],
+    padding: [8, 0, 15],
     fontWeight: 300,
     color: color.text,
-    opacity: 0.8,
+    opacity: 0.75,
     margin: [0, 'auto', 5],
     display: 'block'
   }
@@ -196,13 +196,13 @@ view What {
         A more effective way to build apps with React
       </primary>
       <secondary>
-        Ultra hot reloads & a simple view system
+        Ultra-fast hot reloads & a simpler view system
       </secondary>
     </text>
   </Contain>
 
   $ = {
-    margin: [-110, 0, 0],
+    margin: [-130, 0, 0],
     position: 'relative',
     zIndex: 10,
     textAlign: 'center'
@@ -225,7 +225,7 @@ view What {
   $secondary = {
     fontSize: 22,
     opacity: 0.85,
-    margin: [4, 'auto', 0],
+    margin: [0, 'auto', 0],
     flexFlow: 'row',
 
     [device.small]: {
@@ -594,29 +594,37 @@ view List {
 }
 
 view DemoVideo {
-  let started = false
-
-  const start = () => started = true
-
   <YouTube />
 
   $ = {
     width: '100%',
     textAlign: 'center',
     alignItems: 'center',
-    margin: [-20, 'auto', 0]
+    margin: [10, 'auto', 10]
   }
 }
 
 view YouTube {
+  let started = false
+
   const base = 'https://www.youtube.com/embed/VNfkk6lH0gg'
   const params = '?rel=0&showinfo=0&VQ=HD720'
 
-  const getUrl = () => base + params + (^start ? '&autoplay=1' : '')
+  const getUrl = () => base + params +
+    (started ? '&autoplay=1' : '')
 
-  <cover />
-  <cover class="bot" />
+  const clicked = () => {
+    started = true
+  }
+
+  // on(window, 'focus', () => {
+  //   if (!started) started = true
+  // })
+
+  <cover if={started} />
+  <cover if={started} class="bot" />
   <iframe
+    onClick={clicked}
     src={getUrl()}
     frameborder="0"
     device>
@@ -624,7 +632,7 @@ view YouTube {
 
   const originalHeight = 900
   const originalWidth = 1440
-  const scale = 0.5
+  const scale = 0.7
   const height = Math.round(originalHeight * scale)
   const width = Math.round(originalWidth * scale)
 
@@ -646,7 +654,8 @@ view YouTube {
     width: '100%',
     height: '100%',
     minHeight: 350,
-    border: 'none'
+    border: 'none',
+    boxShadow: '0 0 20px rgba(0,0,0,0.25)'
   }
 
   $cover = {
@@ -655,7 +664,7 @@ view YouTube {
     left: 0,
     right: 0,
     height: 7,
-    background: color.bg
+    background: '#000'
   }
 
   $.bot = {
@@ -666,8 +675,8 @@ view YouTube {
 }
 
 view Install {
-  const install = 'curl https://flint.love/sh | sh'
-  const select = () => view.refs.code.select()
+  const install = 'curl -L https://flint.love/sh | sh'
+  const select = () => {} //view.refs.code.select()
 
   <Contain id="install">
     <modal>
@@ -720,10 +729,11 @@ view Install {
     border: '1px solid #ddd',
     padding: [8, 10],
     paddingLeft: 25,
-    fontSize: 18,
+    fontSize: 22,
     margin: 0,
     fontFamily: font.monoSpace,
-    width: '100%'
+    width: '100%',
+    color: '#777'
   }
 
   $afterward = {
