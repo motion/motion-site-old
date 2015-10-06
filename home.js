@@ -53,7 +53,7 @@ view Header {
   }
 
   $Contain = {
-    margin: [-25, 'auto', -5],
+    margin: [-55, 'auto', -5],
 
     [device.small]: {
       minWidth: 'auto',
@@ -595,7 +595,7 @@ view DemoVideo {
     width: '100%',
     textAlign: 'center',
     alignItems: 'center',
-    margin: [10, 'auto', 10]
+    margin: [-20, 'auto', 10]
   }
 }
 
@@ -682,8 +682,7 @@ view Install {
         </code>
 
         <afterward>
-          or just <code class="small"><b>npm install -g flint</b></code>
-          <a target="_blank" href="http://stackoverflow.com/questions/16151018/npm-throws-error-without-sudo">without sudo</a>
+          or just{'  '}<code class="small">npm install -g flint</code>
         </afterward>
       </inner>
     </modal>
@@ -691,7 +690,7 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [10, 0, 0],
+    margin: [10, 0, -10],
     fontSize: 15,
     color: '#777'
   }
@@ -740,9 +739,9 @@ view Install {
   $.small = {
     display: 'inline',
     fontSize: 14,
-    padding: [0, 8],
     color: '#777',
-    background: 'none'
+    background: 'none',
+    fontWeight: 200
   }
 
   $a = style.link
