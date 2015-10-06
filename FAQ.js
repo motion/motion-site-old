@@ -30,7 +30,7 @@ view FAQ {
       <p>
         Yep! We work with just about any React component, because
         Flint runs on React. For now we are using React 0.14, so you
-        may need compatability with that.
+        may need compatibility with that.
       </p>
     </answer>
 
@@ -61,11 +61,11 @@ view FAQ {
     <answer>
       <p>
         The real answer to this is that Flint *is* React, with a
-        super smart system built around it that brings us as developers
-        closer to just "writing what we think".
-        You may be scared of some of the changes, but we encourage
-        you to try it. It's still in beta, but the difference is one
-        that is best felt.
+        smart system built around it that brings us as developers
+        closer to just "writing what we think". It catches your errors
+        and puts them all in one place & it installs npm packages for you.
+        It's still in beta, but the difference is one that is best felt.
+        It's fast!
       </p>
     </answer>
 
@@ -87,7 +87,7 @@ view FAQ {
       <p>
         Not at the moment. A big part of Flint's upside is it's speed,
         which comes from it's combination of a variety of design
-        desicions baked into the build system.
+        decision baked into the build system.
       </p>
     </answer>
 
@@ -102,7 +102,7 @@ view FAQ {
         that all support Flint.
       </p>
       <p>
-         And in use by some impressive companies!
+         And it's in use by some impressive companies!
       </p>
     </answer>
   </Contain>

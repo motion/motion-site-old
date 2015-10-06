@@ -671,7 +671,7 @@ view YouTube {
 
 view Install {
   const install = 'curl -sL https://flint.love/sh | sh'
-  const select = () => {} //view.refs.code.select()
+  const select = () => view.refs.code.select()
 
   <Contain id="install">
     <modal>
@@ -723,7 +723,6 @@ view Install {
     borderRadius: 5,
     border: '1px solid #ddd',
     padding: [8, 10],
-    paddingLeft: 25,
     fontSize: 22,
     margin: 0,
     fontFamily: font.monoSpace,
