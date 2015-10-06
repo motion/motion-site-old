@@ -89,6 +89,9 @@ view Social {
     <a target="_blank" href="http://github.com/flintjs">
       <IconGithub />
     </a>
+    <a href="#slack" onClick={util.linkScroll}>
+      <IconSlack />
+    </a>
     <a target="_blank" href="https://twitter.com/flint_js">
       <IconTwitter />
     </a>

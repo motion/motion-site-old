@@ -1,85 +1,114 @@
 view FAQ {
-  <Contain pad strip>
+  <Contain pad strip noTwist>
     <Title>FAQ</Title>
 
     <question>
-      Beyond saving me some keystrokes, why views?
+      What have you built with it?
     </question>
     <answer>
       <p>
-        The view syntax is more than just a macro. Without heavy
-        architecting, views in React today are broken for two reasons.
-      </p>
-      <p>
-        First, state is barely handled. Local state and global
-        state must be linked together using two dramatically different interfaces (whether Flux, Cursors, or just objects).
-        With Flint, you can have a view or a store, but, either way,
-        your state gets backed into a global, immutable store behind the scenes.
-        What does that mean?
-        Faster performance, consistent syntax (it's all just variables!),
-        and huge free upsides like global state serialization,
-        timeline rewinding, and advanced tools for viewing state anywhere.
-      </p>
-      <p>
-        The second place Flint improves on views is by handling styles.
-        Beyond the ease of syntax, there is one huge upside in having a
-        consistent view style: sharing.
-      </p>
-      <p>
-        Second, styles aren't handled at all. Which means you have no way
-        to share components easily. Flint handles styling with Radium behind
-        the scenes. This means
+        So far we're worked with Zappos and Quixey building large apps
+        with Flint that are not open source. We've also built this site,
+        and our demo apps.
       </p>
     </answer>
 
     <question>
-      What is this? A view layer? A framework? A language?
+      Where is example code?
+    </question>
+    <answer>
+      <ul>
+        <li>A <a href="https://github.com/flintjs/demos">demos repo</a> with example apps</li>
+        <li>View <a href="https://github.com/flintjs/site">the source for this page</a></li>
+      </ul>
+    </answer>
+
+    <question>
+      Does it work with React?
     </question>
     <answer>
       <p>
-        It's a ground up rethinking of development today, starting
-        from the view. Call it a platform, environment, system, stack.
-        The name isn't important, the net result is: incredibly fast,
-        config-free, frustration-free develpoment.
-      </p>
-      <p>
-        No individual piece is critical to Flint, merely the guiding
-        principle and execution. In the future, we'd love the community
-        to build out swappable pieces (don't like the syntax? fine!).
-        But the important part is that Flint integrates into everything
-        you do, enabling an easy, consistent, fun environment.
+        Yep! We work with just about any React component, because
+        Flint runs on React. For now we are using React 0.14, so you
+        may need compatability with that.
       </p>
     </answer>
 
     <question>
-      Can I use it in my existing stack? Or with my build tool?
+      What are "Ultra-fast hot reloads"? Are they faster than ___?
+    </question>
+    <answer>
+      <p>
+        In general, you should see much faster reloads than just about
+        any other system, including the new React hot loaders.
+        One of the main reasons is becuase Flint has made a small but
+        important change. Views are automatically available to any file.
+        Because of this, you avoid a huge amount of import/export work
+        by the compiler.
+      </p>
+      <p>
+        In real terms, we compared an app built with other hot loaders
+        (Webpack+RHL) and found with over 10 views build times
+        slowed from about half a second to almost 2-4s.
+        With Flint, the time is static to your current file,
+        and almost never will go above 50ms for typical files.
+      </p>
+    </answer>
+
+    <question>
+      Why should I use this instead of React?
+    </question>
+    <answer>
+      <p>
+        The real answer to this is that Flint *is* React, with a
+        super smart system built around it that brings us as developers
+        closer to just "writing what we think".
+        You may be scared of some of the changes, but we encourage
+        you to try it. It's still in beta, but the difference is one
+        that is best felt.
+      </p>
+    </answer>
+
+    <question>
+      Can I use it in my existing stack?
+    </question>
+    <answer>
+      <p>
+        You also can embed your Flint
+        app into any page, so you could easily plug it into an existing
+        web app today.
+      </p>
+    </answer>
+
+    <question>
+      Can I use it with my build tool?
     </question>
     <answer>
       <p>
         Not at the moment. A big part of Flint's upside is it's speed,
-        which comes from it's combination of the language design and
-
+        which comes from it's combination of a variety of design
+        desicions baked into the build system.
       </p>
     </answer>
 
     <question>
-      Why no import/export? Aren't globals dangerous?
+      Flint seems risky
     </question>
     <answer>
       <p>
-        Global *mutable* state is absolutely dangerous. Views are
-        not mutable.
+        Flint is very simple. It compiles down to very clean code that
+        you could write without using our syntax! Further, it is entirely
+        open source. We want to build out an amazing community of developers
+        that all support Flint.
       </p>
       <p>
-        Further, frontend development is drastically improved with
-        as little friction as possible. Without having to import/export
-        all over the place increases your speed drastically.
+         And in use by some impressive companies!
       </p>
     </answer>
   </Contain>
 
   $ = {
-    margin: [-20, 0], //offset for p space
+    margin: [-80, 0, 0], //offset for p space
     padding: [0, 20, 50],
     lineHeight: '1.8rem'
   }
@@ -95,11 +124,12 @@ view FAQ {
   }
 
   $question = {
-    fontWeight: 'bold',
+    fontSize: 20,
     display: 'block'
   }
 
   $answer = {
-    margin: [0, 0, 30]
+    margin: [0, 0, 30],
+    color: '#666',
   }
 }

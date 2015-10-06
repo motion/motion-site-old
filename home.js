@@ -7,6 +7,7 @@ view Home {
   <Install />
   <Features />
   <Slack />
+  <FAQ />
   <Signup />
   <Footer />
 
@@ -61,7 +62,7 @@ view Header {
   }
 
   $main = {
-    padding: [0, 0, 30],
+    padding: [10, 0, 40],
     marginLeft: -60,
 
     [device.small]: {
@@ -71,15 +72,9 @@ view Header {
 }
 
 view Nav {
-  const scroll = e => {
-    const el = document.querySelector(e.target.getAttribute('href'))
-    util.scroll.top(document.body, el.getBoundingClientRect().top - 50)
-    e.preventDefault()
-  }
-
   <a target="_blank" href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
   <Social tiny />
-  <a href="#install" onClick={scroll}>Install</a>
+  <a href="#install" onClick={util.linkScroll}>Install</a>
   <a if={false} target="_blank" href="http://github.com/flintjs"><IconSlack /></a>
 
   $ = {
@@ -106,7 +101,7 @@ view Logo {
 
   $ = {
     flexFlow: 'row',
-    margin: [0, 0, -15],
+    margin: [0, 0, -25],
     alignItems: 'center',
     justifyContent: 'center',
 
@@ -116,8 +111,8 @@ view Logo {
   }
 
   $img = {
-    width: Math.round(520 * .5),
-    height: Math.round(140 * .5),
+    width: Math.round(600 * .5),
+    height: Math.round(168 * .5),
     margin: [0, 'auto', 20]
   }
 }
@@ -632,7 +627,7 @@ view YouTube {
 
   const originalHeight = 900
   const originalWidth = 1440
-  const scale = 0.7
+  const scale = 0.5
   const height = Math.round(originalHeight * scale)
   const width = Math.round(originalWidth * scale)
 
@@ -675,7 +670,7 @@ view YouTube {
 }
 
 view Install {
-  const install = 'curl -L https://flint.love/sh | sh'
+  const install = 'curl -sL https://flint.love/sh | sh'
   const select = () => {} //view.refs.code.select()
 
   <Contain id="install">
@@ -755,7 +750,8 @@ view Install {
 }
 
 view Slack {
-  <Contain>
+  <Contain id="slack">
+    <Title>Join us on Slack!</Title>
     <iframe seamless="seamless" src="http://flint-slack.herokuapp.com/"></iframe>
   </Contain>
 

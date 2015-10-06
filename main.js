@@ -53,11 +53,21 @@ style.textGradient = {
   WebkitTextFillColor: 'transparent',
 }
 
-// to keep isomorphism for now, should be handled by flint
 const util = {}
+
+// to keep isomorphism for now, should be handled by flint
 if (typeof window != 'undefined') {
   util.docOffset = require('document-offset')
   util.scroll = require('scroll')
+}
+
+util.linkScroll = e => {
+  const el = document.querySelector(
+    e.currentTarget.getAttribute('href')
+  )
+  debugger
+  util.scroll.top(document.body, el.getBoundingClientRect().top - 50)
+  e.preventDefault()
 }
 
 export default { style, font, routes, device, color, util }
