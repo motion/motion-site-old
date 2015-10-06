@@ -4,9 +4,9 @@ view Home {
   <DemoVideo />
   <Install title="Install in a minute!" />
   <Examples />
-  <Install />
-  <Features />
   <Slack />
+  <Features />
+  <Install pad />
   <FAQ />
   <Signup />
   <Footer />
@@ -540,7 +540,7 @@ view List {
   </Contain>
 
   $ = {
-    fontSize: 20
+    fontSize: 20,
   }
 
   const listColor = 'rgb(4, 139, 66)'
@@ -595,7 +595,7 @@ view DemoVideo {
     width: '100%',
     textAlign: 'center',
     alignItems: 'center',
-    margin: [-20, 'auto', 10]
+    margin: [-50, 'auto', 10]
   }
 }
 
@@ -617,7 +617,7 @@ view YouTube {
   // })
 
   <cover if={started} />
-  <cover if={started} class="bot" />
+  <cover if={false} class="bot" />
   <iframe
     onClick={clicked}
     src={getUrl()}
@@ -659,13 +659,13 @@ view YouTube {
     left: 0,
     right: 0,
     height: 7,
-    background: '#000'
+    background: color.bg
   }
 
   $.bot = {
     top: 'auto',
     bottom: 0,
-    height: 5
+    height: 8
   }
 }
 
@@ -690,7 +690,7 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [10, 0, -10],
+    margin: [10, 0, ^pad ? 100 : -10],
     fontSize: 15,
     color: '#777'
   }
@@ -753,10 +753,14 @@ view Slack {
     <iframe seamless="seamless" src="http://flint-slack.herokuapp.com/"></iframe>
   </Contain>
 
+  $ = {
+    margin: [30, 0]
+  }
+
   $iframe = {
     border: 'none',
     width: '100%',
-    height: 350,
+    height: 240,
     overflow: 'hidden'
   }
 }
