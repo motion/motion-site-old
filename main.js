@@ -8,7 +8,8 @@ view Main {
     fontFamily: font.serif,
     lineHeight: '2rem',
     overflow: 'hidden',
-    background: color.bg,
+    backgroundColor: color.bg,
+    background: 'url(/assets/images/pattern.jpg) repeat-y center',
     position: 'relative',
   }
 }

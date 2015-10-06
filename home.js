@@ -53,7 +53,7 @@ view Header {
   }
 
   $Contain = {
-    margin: [-55, 'auto', -5],
+    margin: [-55, 'auto', 0],
 
     [device.small]: {
       minWidth: 'auto',
@@ -269,11 +269,11 @@ view Examples {
   </section>
 
   $section = {
-    background: 'rgba(255,255,255,0.3)',
+    background: 'rgba(255,255,255,0.4)',
     padding: [0, 0, 40],
-    margin: [40, 0, 0],
-    borderLeft: 'none',
-    borderRight: 'none'
+    margin: [40, 'auto', 0],
+    width: '100%',
+    maxWidth: 980
   }
 }
 
@@ -304,11 +304,11 @@ view Interlude {
     border: 'none'
   }
 
-  $p = [style.textGradient, {
+  $p = [{
     textAlign: 'center',
     margin: [8, 'auto'],
     padding: [0, 25],
-    color: color(color.text).rgba(0.2),
+    color: '#666',
     position: 'relative',
     zIndex: 10,
     fontSize: 22
