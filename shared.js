@@ -25,7 +25,7 @@ view Contain {
     padding,
     position: 'relative',
     zIndex: 10,
-    transform: { rotate: (^strip && !^noTwist) ? '-1.2deg' : 0 },
+    transform: { rotate: ^strip ? '-1.2deg' : 0 },
 
     [device.small]: {
       minWidth: 0
@@ -33,7 +33,7 @@ view Contain {
   }
 
   $content = {
-    transform: { rotate: (^strip && !^noTwist) ? '1.2deg' : 0 },
+    transform: { rotate: ^straight ? '1.2deg' : 0 },
     flexFlow: 'inherit',
     alignItems: 'inherit',
     justifyContent: 'inherit',
@@ -64,9 +64,8 @@ view Footer {
   <Contain pad strip maxWidth="auto" id="footer">
     <content>
       <Nav />
-
       <br />
-
+      <Social />
       <p>
         Flint is just getting started,
         we'd love your feedback!
@@ -90,34 +89,33 @@ view Footer {
 }
 
 view Social {
-  <sub>
-    <a target="_blank" href="http://github.com/flintjs">
-      <IconGithub />
-    </a>
-    <a href="#slack" onClick={util.linkScroll}>
-      <IconSlack />
-    </a>
-    <a target="_blank" href="https://twitter.com/flint_js">
-      <IconTwitter />
-    </a>
-  </sub>
+  <a target="_blank" href="http://github.com/flintjs">
+    <IconGithub />
+  </a>
+  <a href="#slack" onClick={util.linkScroll}>
+    <IconSlack />
+  </a>
+  <a target="_blank" href="https://twitter.com/flint_js">
+    <IconTwitter />
+  </a>
+
+  $ = {
+    height: 40,
+    flexFlow: 'row',
+    textAlign: 'center',
+    fontSize: 16,
+    margin: [5, 'auto', 0],
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexGrow: 1,
+  }
 
   $a = ^tiny ?  {
-    margin: [-2, 10, -20],
+    margin: [0, 10],
     transform: {
       scale: 0.8
     }
   } : {
     margin: [0, 20, -10]
-  }
-
-  $sub = {
-    flexFlow: 'row',
-    textAlign: 'center',
-    fontSize: 16,
-    margin: [-5, 'auto'],
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexGrow: 1,
   }
 }

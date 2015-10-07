@@ -1,19 +1,16 @@
 view Home {
   <Header />
   <DemoVideo />
-  <Install title="Install in a minute!" />
-  <What
-    title="A more effective way to build with React"
-    sub="Learn all of flint in just a few steps:"
-  />
+  <Install title="Install while you watch..." />
+  <What title="Start building with React in minutes!" />
   <Examples />
   <Slack />
   <What title="Features" />
   <Features />
   <Install pad />
-  <Signup />
-  <What title="Learn more about Flint" />
+  <What title="FAQ" />
   <FAQ />
+  <Signup />
   <Footer />
 
   $ = {
@@ -24,7 +21,7 @@ view Home {
 view Header {
   let startIntro = false
 
-  <Contain strip bg="#fff" maxWidth="96%" minWidth="1050px">
+  <Contain strip straight maxWidth="96%" minWidth="1050px">
     <main>
       <Example
         flipVertical
@@ -33,7 +30,7 @@ view Header {
         out={
           <head>
             <Logo />
-            <Introduction start={startIntro} />
+            <Desc start={startIntro} />
             <Social />
           </head>
         }
@@ -82,7 +79,7 @@ view Header {
   }
 
   $main = {
-    padding: [30, 0, 60],
+    padding: [30, 0],
     marginLeft: -90,
 
     [device.small]: {
@@ -98,7 +95,7 @@ view Nav {
   <a if={false} target="_blank" href="http://github.com/flintjs"><IconSlack /></a>
 
   $ = {
-    margin: [0, 'auto', -20],
+    margin: [0, 'auto'],
     flexFlow: 'row',
     zIndex: 100,
     fontWeight: 300,
@@ -112,7 +109,7 @@ view Nav {
     color: '#888',
     borderBottom: 'none',
     fontSize: 18,
-    padding: [0, 10],
+    padding: [0, 15],
   }]
 }
 
@@ -121,7 +118,7 @@ view Logo {
 
   $ = {
     flexFlow: 'row',
-    margin: [0, 'auto', -10],
+    margin: [0, 'auto', -15],
     alignItems: 'center',
     justifyContent: 'center',
 
@@ -134,16 +131,6 @@ view Logo {
     width: Math.round(1019 * .33),
     height: Math.round(282 * .33),
     margin: [0, 'auto', 20]
-  }
-}
-
-view Introduction {
-  <Desc start={^start} />
-
-  $ = {
-    padding: [10, 20],
-    fontFamily: font.sansSerif,
-    textAlign: 'center'
   }
 }
 
@@ -194,11 +181,11 @@ view Desc {
     textAlign: 'center',
     fontSize: 28,
     lineHeight: '1.6rem',
-    padding: [8, 0, 15],
+    padding: [18, 0],
     fontWeight: 300,
     color: color.text,
     opacity: 0.8,
-    margin: [0, 'auto', 5],
+    margin: [0, 'auto'],
     display: 'block'
   }
 }
@@ -249,27 +236,25 @@ view What {
 }
 
 view Examples {
-  <section>
+  <Contain>
     <Interlude>
-      Flint introduces the view to ES2015
+      Flint introduces the view
     </Interlude>
 
     <Example flip inPage
       maxWidth={760}
       in={<Editor lines={10} left light src="/assets/examples/exampleCounter.html" />}
       out={<DemoCounter />} />
-  </section>
 
-  <Interlude>
-    Style views easily with $ variables
-  </Interlude>
+    <Interlude>
+      Style views with ease...
+    </Interlude>
 
-  <Example inPage
-    maxWidth={900}
-    in={<Editor lines={15} left light src="/assets/examples/exampleVenn.html" />}
-    out={<DemoVenn />} />
+    <Example inPage
+      maxWidth={900}
+      in={<Editor lines={15} left light src="/assets/examples/exampleVenn.html" />}
+      out={<DemoVenn />} />
 
-  <section>
     <Interlude>
       Flint works with ES6, npm & React
     </Interlude>
@@ -285,12 +270,12 @@ view Examples {
           ]} />
       }
       out={<DemoCircles />} />
-  </section>
+  </Contain>
 
-  $section = {
-    background: 'rgba(255,255,255,0.4)',
-    padding: [0, 0, 40],
-    margin: [40, 'auto', 0],
+  $ = {
+    // background: 'rgba(255,255,255,0.4)',
+    // padding: [0, 0, 40],
+    margin: [40, 'auto'],
     width: '100%',
     maxWidth: 980
   }
@@ -545,7 +530,7 @@ view Features {
 }
 
 view List {
-  <Contain strip noTwist>
+  <Contain>
     <list>
       <item repeat={^items} key={_}>
         <Check class="check" />
@@ -559,6 +544,7 @@ view List {
   </Contain>
 
   $ = {
+    margin: [50, 'auto', 20],
     fontSize: 20,
   }
 
@@ -614,7 +600,7 @@ view DemoVideo {
     width: '100%',
     textAlign: 'center',
     alignItems: 'center',
-    margin: [-90, 'auto', 10],
+    margin: [-80, 'auto', 0],
     position: 'relative',
     zIndex: 100
   }
@@ -648,7 +634,7 @@ view YouTube {
 
   const originalHeight = 900
   const originalWidth = 1440
-  const scale = 0.75
+  const scale = 0.66
   const height = Math.round(originalHeight * scale)
   const width = Math.round(originalWidth * scale)
 
@@ -671,7 +657,8 @@ view YouTube {
     height: '100%',
     minHeight: 350,
     border: 'none',
-    boxShadow: '0 0 20px rgba(0,0,0,0.25)'
+    boxShadow: '0 0 20px rgba(0,0,0,0.25)',
+    background: color.bg
   }
 
   $cover = {
@@ -703,7 +690,7 @@ view Install {
         </code>
 
         <afterward>
-          or just{'  '}<code class="small">npm install -g flint</code>
+          or just npm install -g flint
         </afterward>
       </inner>
     </modal>
@@ -723,7 +710,7 @@ view Install {
   }
 
   $inner = {
-    margin: [-25, 0, 0]
+    margin: [-20, 0, 0]
   }
 
   $prompt = {
@@ -741,9 +728,9 @@ view Install {
   $input = {
     background: '#fff',
     borderRadius: 5,
-    border: '1px solid #ddd',
+    border: '2px solid #999',
     padding: [8, 10],
-    fontSize: 22,
+    fontSize: 20,
     margin: 0,
     fontFamily: font.monoSpace,
     width: '100%',
@@ -755,6 +742,7 @@ view Install {
     margin: [5, 'auto'],
     flexFlow: 'row',
     lineHeight: '1.2rem',
+    opacity: 0.9
   }
 
   $.small = {
@@ -773,10 +761,6 @@ view Slack {
     <Title>Join us on Slack!</Title>
     <iframe seamless="seamless" src="http://flint-slack.herokuapp.com/"></iframe>
   </Contain>
-
-  $ = {
-    margin: [30, 0]
-  }
 
   $iframe = {
     border: 'none',
