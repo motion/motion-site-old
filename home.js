@@ -1,14 +1,19 @@
 view Home {
   <Header />
-  <What />
   <DemoVideo />
   <Install title="Install in a minute!" />
+  <What
+    title="A more effective way to build with React"
+    sub="Learn all of flint in just a few steps:"
+  />
   <Examples />
   <Slack />
+  <What title="Features" />
   <Features />
   <Install pad />
-  <FAQ />
   <Signup />
+  <What title="Learn more about Flint" />
+  <FAQ />
   <Footer />
 
   $ = {
@@ -29,6 +34,7 @@ view Header {
           <head>
             <Logo />
             <Introduction start={startIntro} />
+            <Social />
           </head>
         }
         in={
@@ -43,7 +49,7 @@ view Header {
         }
       />
     </main>
-    <Social tiny />
+    <Nav />
   </Contain>
 
   $ = {
@@ -69,14 +75,14 @@ view Header {
     }
   }
 
-  $Social = {
+  $Nav = {
     position: 'absolute',
     top: -20,
     right: 20
   }
 
   $main = {
-    padding: [10, 0, 50],
+    padding: [30, 0, 60],
     marginLeft: -90,
 
     [device.small]: {
@@ -125,15 +131,14 @@ view Logo {
   }
 
   $img = {
-    width: Math.round(1019 * .28),
-    height: Math.round(282 * .28),
+    width: Math.round(1019 * .33),
+    height: Math.round(282 * .33),
     margin: [0, 'auto', 20]
   }
 }
 
 view Introduction {
   <Desc start={^start} />
-  <Nav />
 
   $ = {
     padding: [10, 20],
@@ -202,18 +207,18 @@ view What {
   <Contain strip bg={color.brand} color="#fff">
     <text>
       <primary>
-        A more effective way to build apps with React
+        {^title}
       </primary>
-      <secondary>
-        Ultra-fast hot reloads & a simpler view system
+      <secondary if={^sub}>
+        {^sub}
       </secondary>
     </text>
   </Contain>
 
   $ = {
-    margin: [-130, 0, 0],
+    margin: [10, 0, -70],
     position: 'relative',
-    zIndex: 10,
+    zIndex: 100,
     textAlign: 'center'
   }
 
@@ -609,7 +614,9 @@ view DemoVideo {
     width: '100%',
     textAlign: 'center',
     alignItems: 'center',
-    margin: [-50, 'auto', 10]
+    margin: [-90, 'auto', 10],
+    position: 'relative',
+    zIndex: 100
   }
 }
 
@@ -641,7 +648,7 @@ view YouTube {
 
   const originalHeight = 900
   const originalWidth = 1440
-  const scale = 0.5
+  const scale = 0.75
   const height = Math.round(originalHeight * scale)
   const width = Math.round(originalWidth * scale)
 
@@ -704,7 +711,7 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [10, 0, ^pad ? 100 : -10],
+    margin: [20, 0, ^pad ? 100 : -10],
     fontSize: 15,
     color: '#777'
   }

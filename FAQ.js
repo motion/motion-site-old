@@ -1,7 +1,5 @@
 view FAQ {
-  <Contain pad strip noTwist>
-    <Title>FAQ</Title>
-
+  <Contain pad>
     <question>
       What have you built with it?
     </question>
@@ -108,8 +106,8 @@ view FAQ {
   </Contain>
 
   $ = {
-    margin: [-80, 0, 0], //offset for p space
-    padding: [0, 20, 50],
+    margin: [50, 0], //offset for p space
+    padding: [50, 20],
     lineHeight: '1.8rem'
   }
 

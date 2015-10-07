@@ -108,7 +108,7 @@ view Social {
       scale: 0.8
     }
   } : {
-    margin: [0, 20]
+    margin: [0, 20, -10]
   }
 
   $sub = {

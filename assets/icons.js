@@ -1,6 +1,6 @@
 const icon = {
-  width: 36,
-  height: 36,
+  width: 34,
+  height: 34,
   transition: 'all ease-in 100ms',
   opacity: 0.4,
   margin: [0, -5],
