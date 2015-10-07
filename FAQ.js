@@ -33,7 +33,7 @@ view FAQ {
     </answer>
 
     <question>
-      What are "Ultra-fast hot reloads"? Are they faster than ___?
+      What are "Ultra-fast hot reloads"?
     </question>
     <answer>
       <p>
@@ -86,21 +86,6 @@ view FAQ {
         Not at the moment. A big part of Flint's upside is it's speed,
         which comes from it's combination of a variety of design
         decision baked into the build system.
-      </p>
-    </answer>
-
-    <question>
-      Flint seems risky
-    </question>
-    <answer>
-      <p>
-        Flint is very simple. It compiles down to very clean code that
-        you could write without using our syntax! Further, it is entirely
-        open source. We want to build out an amazing community of developers
-        that all support Flint.
-      </p>
-      <p>
-         And it's in use by some impressive companies!
       </p>
     </answer>
   </Contain>
