@@ -79,7 +79,7 @@ view Header {
   }
 
   $main = {
-    padding: [30, 0],
+    padding: [30, 0, 40],
     marginLeft: -90,
 
     [device.small]: {
@@ -118,7 +118,7 @@ view Logo {
 
   $ = {
     flexFlow: 'row',
-    margin: [0, 'auto', -15],
+    margin: [0, 'auto', -10],
     alignItems: 'center',
     justifyContent: 'center',
 
@@ -184,7 +184,7 @@ view Desc {
     padding: [18, 0],
     fontWeight: 300,
     color: color.text,
-    opacity: 0.8,
+    opacity: 0.6,
     margin: [0, 'auto'],
     display: 'block'
   }
@@ -600,7 +600,7 @@ view DemoVideo {
     width: '100%',
     textAlign: 'center',
     alignItems: 'center',
-    margin: [-80, 'auto', 0],
+    margin: [-90, 'auto', 0],
     position: 'relative',
     zIndex: 100
   }
