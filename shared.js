@@ -13,6 +13,7 @@ view Contain {
   $ = {
     background: ^bg || (^strip ? color.strip : 'transparent'),
     maxWidth: ^maxWidth || 1050,
+    minWidth: ^minWidth || 0,
     width: '100%',
     color: ^color || 'auto',
     flexFlow: 'inherit',
@@ -24,7 +25,11 @@ view Contain {
     padding,
     position: 'relative',
     zIndex: 10,
-    transform: { rotate: (^strip && !^noTwist) ? '-1.2deg' : 0 }
+    transform: { rotate: (^strip && !^noTwist) ? '-1.2deg' : 0 },
+
+    [device.small]: {
+      minWidth: 0
+    }
   }
 
   $content = {
@@ -98,9 +103,9 @@ view Social {
   </sub>
 
   $a = ^tiny ?  {
-    margin: [-2, 5, -20],
+    margin: [-2, 10, -20],
     transform: {
-      scale: 0.75
+      scale: 0.8
     }
   } : {
     margin: [0, 20]

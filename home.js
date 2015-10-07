@@ -19,11 +19,10 @@ view Home {
 view Header {
   let startIntro = false
 
-  <Contain strip bg="#fff" maxWidth="1200px">
+  <Contain strip bg="#fff" maxWidth="96%" minWidth="1050px">
     <main>
       <Example
         flipVertical
-        maxWidth={900}
         outStyle={{ width: '45%' }}
         inStyle={{ maxWidth: 300 }}
         out={
@@ -44,6 +43,7 @@ view Header {
         }
       />
     </main>
+    <Social tiny />
   </Contain>
 
   $ = {
@@ -53,7 +53,7 @@ view Header {
   }
 
   $Contain = {
-    margin: [-55, 'auto', 0],
+    margin: [0, 'auto'],
 
     [device.small]: {
       minWidth: 'auto',
@@ -61,9 +61,23 @@ view Header {
     }
   }
 
+  $Editor = {
+    marginLeft: 30,
+
+    [device.small]: {
+      marginLeft: 0
+    }
+  }
+
+  $Social = {
+    position: 'absolute',
+    top: -20,
+    right: 20
+  }
+
   $main = {
-    padding: [10, 0, 40],
-    marginLeft: -60,
+    padding: [10, 0, 50],
+    marginLeft: -90,
 
     [device.small]: {
       marginLeft: 0
@@ -73,8 +87,8 @@ view Header {
 
 view Nav {
   <a target="_blank" href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
-  <Social tiny />
   <a href="#install" onClick={util.linkScroll}>Install</a>
+  <a href="">Examples</a>
   <a if={false} target="_blank" href="http://github.com/flintjs"><IconSlack /></a>
 
   $ = {
@@ -92,7 +106,7 @@ view Nav {
     color: '#888',
     borderBottom: 'none',
     fontSize: 18,
-    padding: [0, 15],
+    padding: [0, 10],
   }]
 }
 
@@ -101,7 +115,7 @@ view Logo {
 
   $ = {
     flexFlow: 'row',
-    margin: [0, 0, -25],
+    margin: [0, 'auto', -10],
     alignItems: 'center',
     justifyContent: 'center',
 
@@ -111,8 +125,8 @@ view Logo {
   }
 
   $img = {
-    width: Math.round(600 * .5),
-    height: Math.round(168 * .5),
+    width: Math.round(1019 * .28),
+    height: Math.round(282 * .28),
     margin: [0, 'auto', 20]
   }
 }
@@ -173,12 +187,12 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 26,
+    fontSize: 28,
     lineHeight: '1.6rem',
     padding: [8, 0, 15],
     fontWeight: 300,
     color: color.text,
-    opacity: 0.75,
+    opacity: 0.8,
     margin: [0, 'auto', 5],
     display: 'block'
   }
