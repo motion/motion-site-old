@@ -2,7 +2,7 @@ view Home {
   <Header />
   <DemoVideo />
   <Install title="Install while you watch..." />
-  <What title="Start building with React in minutes!" />
+  <What title="Learn Flint in 3 steps..." />
   <Examples />
   <Slack />
   <What title="Features" />
@@ -118,7 +118,7 @@ view Logo {
 
   $ = {
     flexFlow: 'row',
-    margin: [0, 'auto', -10],
+    margin: [0, 'auto', -15],
     alignItems: 'center',
     justifyContent: 'center',
 
@@ -179,9 +179,9 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 28,
+    fontSize: 32,
     lineHeight: '1.6rem',
-    padding: [18, 0],
+    padding: [22, 0],
     fontWeight: 300,
     color: color.text,
     opacity: 0.6,
