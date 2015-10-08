@@ -56,7 +56,7 @@ view Header {
   </Contain>
 
   $ = {
-    padding: [30, 0, 50],
+    padding: [15, 0, 50],
     position: 'relative',
     overflow: 'hidden'
   }
@@ -85,7 +85,7 @@ view Header {
   }
 
   $main = {
-    padding: [30, 0, 40],
+    padding: [30, 0],
     marginLeft: -90,
 
     [device.small]: {
@@ -134,8 +134,8 @@ view Logo {
   }
 
   $img = {
-    width: Math.round(1019 * .33),
-    height: Math.round(282 * .33),
+    width: Math.round(1019 * .28),
+    height: Math.round(282 * .28),
     margin: [0, 'auto', 20]
   }
 }
