@@ -1,6 +1,7 @@
+import chroma from 'chroma-js'
+
 view Main {
-  <Home route={routes.home} />
-  <FAQ if={false} route={routes.faq} />
+  <Home />
 
   $ = {
     color: color.text,
@@ -8,8 +9,7 @@ view Main {
     fontFamily: font.serif,
     lineHeight: '2rem',
     overflow: 'hidden',
-    backgroundColor: color.bg,
-    background: 'url(/assets/images/pattern.jpg) repeat-y center',
+    background: color.bg,
     position: 'relative',
   }
 }
@@ -18,13 +18,13 @@ const routes = {}
 routes.home = '/'
 routes.faq = '/faq'
 
-import color from 'chroma-js'
+const color = chroma || function(){}
 color.brand = '#eb522d'
 color.brand1 = '#E86C3D'
 color.brand2 = '#DB415E'
 color.green = '#259630'
 color.blue = 'rgb(48, 111, 207)'
-color.darkred = color(color.brand).darken(0.3)
+color.darkred = color(color.brand)//.darken(0.3)
 color.bg = '#f2f2f2'
 color.text = '#444'
 color.strip = '#fff'
@@ -46,13 +46,13 @@ style.link = {
 
   ':hover': { color: color.brand }
 }
-style.textGradient = {
-  background: `-webkit-linear-gradient(left,
-    ${color(color.brand1).darken(0.6)},
-    ${color(color.brand2).darken(0.6)})`,
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-}
+// style.textGradient = {
+//   background: `-webkit-linear-gradient(left,
+//     ${color(color.brand1).darken(0.6)},
+//     ${color(color.brand2).darken(0.6)})`,
+//   WebkitBackgroundClip: 'text',
+//   WebkitTextFillColor: 'transparent',
+// }
 
 const util = {}
 
@@ -63,10 +63,7 @@ if (typeof window != 'undefined') {
 }
 
 util.linkScroll = e => {
-  const el = document.querySelector(
-    e.currentTarget.getAttribute('href')
-  )
-  debugger
+  const el = document.querySelector(e.currentTarget.getAttribute('href'))
   util.scroll.top(document.body, el.getBoundingClientRect().top - 50)
   e.preventDefault()
 }

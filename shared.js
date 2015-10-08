@@ -1,7 +1,7 @@
 
 view Contain {
   <contain id={^id}>
-    <content>
+    <content class={{ straight: ^straight }}>
       <Title if={^title}>{^title}</Title>
       {^children}
     </content>
@@ -12,7 +12,7 @@ view Contain {
 
   $ = {
     background: ^bg || (^strip ? color.strip : 'transparent'),
-    maxWidth: ^maxWidth || 1050,
+    maxWidth: ^maxWidth || '85%',
     minWidth: ^minWidth || 0,
     width: '100%',
     color: ^color || 'auto',
@@ -33,7 +33,9 @@ view Contain {
   }
 
   $content = {
-    transform: { rotate: ^straight ? '1.2deg' : 0 },
+    transform: {
+      rotate: ^straight ? '1.2deg' : 0
+    },
     flexFlow: 'inherit',
     alignItems: 'inherit',
     justifyContent: 'inherit',

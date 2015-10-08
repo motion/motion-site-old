@@ -1,8 +1,10 @@
 view Home {
+  <top>
   <Header />
   <DemoVideo />
   <Install title="Install while you watch..." />
-  <What title="Learn Flint in 3 steps..." />
+  </top>
+
   <Examples />
   <Slack />
   <What title="Features" />
@@ -16,12 +18,16 @@ view Home {
   $ = {
     width: '100%'
   }
+
+  $top = {
+    background: `linear-gradient(20deg, ${color.brand1}, ${color.brand2})`
+  }
 }
 
 view Header {
   let startIntro = false
 
-  <Contain strip straight maxWidth="96%" minWidth="1050px">
+  <Contain strip straight minWidth="1050px" bg="#fff">
     <main>
       <Example
         flipVertical
@@ -45,8 +51,8 @@ view Header {
             src="/assets/examples/example.html" />
         }
       />
+      <Nav />
     </main>
-    <Nav />
   </Contain>
 
   $ = {
@@ -180,9 +186,9 @@ view Desc {
   $desc = {
     textAlign: 'center',
     fontSize: 32,
+    fontWeight: 300,
     lineHeight: '1.6rem',
     padding: [22, 0],
-    fontWeight: 300,
     color: color.text,
     opacity: 0.6,
     margin: [0, 'auto'],
@@ -686,7 +692,7 @@ view Install {
       <Title big>{^title || "Install" }</Title>
       <inner>
         <code onMouseUp={select} class="install">
-         <input ref="code" value={install} size={install.length} />
+         <input ref="code" value={install} readOnly size={install.length} />
         </code>
 
         <afterward>
@@ -698,15 +704,17 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [20, 0, ^pad ? 100 : -10],
+    margin: [0, 0, ^pad ? 100 : 0],
     fontSize: 15,
-    color: '#777'
+    color: '#fff'
   }
 
   $modal = {
-    margin: [0],
+    margin: [10, 'auto'],
     padding: [0, 20, 20],
-    borderRadius: 4
+    // background: '#fff',
+    // borderRadius: 4,
+    // boxShadow: '0 0 20px rgba(0,0,0,0.1)'
   }
 
   $inner = {
