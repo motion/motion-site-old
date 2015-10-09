@@ -72,7 +72,7 @@ view Header {
         flipVertical
         inStyle={{
           maxWidth: 300,
-          marginRight: 70,
+          marginRight: 90,
 
           [device.small]: {
             marginRight: 0
@@ -133,7 +133,9 @@ view Header {
 
   $main = {
     padding: [30, 0],
-    margin: [0, 'auto']
+    minWidth: 800,
+    margin: [0, 'auto'],
+    [device.small]: { minWidth: 'auto' }
   }
 
   $head = {
