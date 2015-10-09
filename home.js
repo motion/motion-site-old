@@ -1,9 +1,7 @@
 view Home {
   <Password />
-  <top>
-    <Header />
-    <DemoVideo />
-  </top>
+  <Header />
+  <DemoVideo />
   <Install title="Install while you watch..." />
   <Examples />
   <Slack />
@@ -20,13 +18,6 @@ view Home {
   const c1 = '#aaa'
   const c2 = '#f9f9f9'
   const c3 = '#fff'
-
-  $top = {
-    // background: '#999',
-    // background: 'url(/assets/images/video-poster.jpg)'
-    background: `linear-gradient(#eee, #fff 50%)`,
-    // borderBottom: '1px solid #ddd'
-  }
 }
 
 view Password {
@@ -69,6 +60,7 @@ view Header {
 
   <Contain strip straight bg="none" maxWidth="1050px">
     <main>
+      <Blur left="45%" top={-200} />
       <Example
         flipVertical
         inStyle={{
@@ -133,6 +125,7 @@ view Header {
   }
 
   $main = {
+    position: 'relative',
     padding: [30, 0],
     minWidth: 800,
     margin: [0, 'auto'],
@@ -295,6 +288,7 @@ view What {
 view Examples {
   <Contain>
     <section>
+      <Blur top="0" left="0" />
       <Interlude left num="1">
         Flint introduces the view to ES6
       </Interlude>
@@ -305,16 +299,20 @@ view Examples {
         out={<DemoCounter />} />
     </section>
 
-    <Interlude right num="2">
-      Style views with ease...
-    </Interlude>
+    <section>
+      <Blur top="0" left="100%" />
+      <Interlude right num="2">
+        Style views with ease...
+      </Interlude>
 
-    <Example inPage
-      maxWidth={900}
-      in={<Editor lines={15} left light src="/assets/examples/exampleVenn.html" />}
-      out={<DemoVenn />} />
+      <Example inPage
+        maxWidth={900}
+        in={<Editor lines={15} left light src="/assets/examples/exampleVenn.html" />}
+        out={<DemoVenn />} />
+    </section>
 
     <section>
+      <Blur top="0" left="0" />
       <Interlude left num="3">
         Flint works with ES6, npm & React
       </Interlude>
@@ -342,6 +340,7 @@ view Examples {
   }
 
   $section = {
+    position: 'relative'
   }
 }
 

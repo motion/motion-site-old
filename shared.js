@@ -1,3 +1,19 @@
+view Blur {
+  const size = ^size || 500
+
+  <blur />
+
+  $ = {
+    width: size,
+    height: size,
+    background: ^bg || '#eee',
+    filter: `blur(${^blur || (size / 5)}px)`,
+    position: 'absolute',
+    zIndex: 0,
+    top: ^top || 0,
+    left: ^left || 0
+  }
+}
 
 view Contain {
   <contain id={^id}>
