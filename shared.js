@@ -11,7 +11,8 @@ view Blur {
     position: 'absolute',
     zIndex: 0,
     top: ^top || 0,
-    left: ^left || 0
+    left: ^left || 0,
+    transform: `translate3d(0, 0, 0)`
   }
 }
 
