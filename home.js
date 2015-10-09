@@ -18,12 +18,14 @@ view Home {
     width: '100%'
   }
 
-  const c1 = '#ddd'
-  const c2 = '#fff'
+  const c1 = '#aaa'
+  const c2 = '#f9f9f9'
+  const c3 = '#fff'
 
   $top = {
-    // background: '#eee',
-    background: `linear-gradient(20deg, #333, ${c1} 90%, ${c2})`
+    // background: '#999',
+    // background: 'url(/assets/images/video-poster.jpg)'
+    background: `linear-gradient(20deg, ${c1}, ${c2} 90%, ${c3})`
   }
 }
 
@@ -165,6 +167,8 @@ view Desc {
       setTimeout(step, 1000)
   }
 
+  run()
+
   const step = () => {
     if (phrasePos == phrases.length) return
 
@@ -182,17 +186,14 @@ view Desc {
     }
   }
 
-  run()
-
   <desc>Web apps, {how}</desc>
 
   $desc = {
     textAlign: 'center',
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: 300,
     lineHeight: '1.6rem',
     padding: [22, 0],
-    color: '#fff',
     margin: [0, 'auto'],
     display: 'block'
   }
@@ -383,6 +384,7 @@ view Editor {
   const getSrc = () => ^src || srcs[index]
 
   <Toolbar
+    light={^light}
     tabs={tabs}
     activeTab={index}
     changeTab={i => index = i} />
@@ -399,9 +401,8 @@ view Editor {
   $ = {
     flexFlow: 'column',
     height: ^lines ? 28 + (24 * ^lines) : '100%',
-    border: '1px solid #eee',
     borderRadius: 6,
-    boxShadow: '0 0 10px rgba(0,0,0,0.025)',
+    boxShadow: '0 0 25px rgba(0,0,0,0.1)',
     margin: 10,
     marginRight: ^right ? -10 : 10,
     marginLeft: ^left ? -10 : 10,
@@ -417,7 +418,6 @@ view Editor {
   }
 
   $container = {
-    background: '#fff',
     overflowY: 'hidden',
     overflowX: 'scroll',
     height: '100%'
@@ -453,7 +453,8 @@ view Toolbar {
     </tab>
   </tabs>
 
-  const border = '1px solid #ddd'
+  const borderColor = ^light ? '#ddd' : '#222'
+  const border = '1px solid ' + borderColor
 
   $ = {
     flexFlow: 'column'
@@ -464,14 +465,14 @@ view Toolbar {
     fontSize: 15,
     fontFamily: font.sansSerif,
     padding: [4, 4, 0, 4],
-    background: '#f9f9f9',
+    background: '#eee',
     borderBottom: border,
   }
 
   $tab = [{
     cursor: 'pointer',
     userSelect: 'none',
-    color: '#777',
+    color: '#333',
     background: '#f9f9f9',
     padding: [0, 8],
     borderTopLeftRadius: 3,
@@ -490,9 +491,8 @@ view Toolbar {
   }]
 
   $bar = {
-    background: '#fff',
-    borderTop: '1px solid #fff',
-    borderBottom: '1px solid #f5f5f5',
+    background: ^light ? '#fff' : 'rgb(29, 38, 45)',
+    borderBottom: '1px solid ' + borderColor,
     height: 12,
     minHeight: 12,
     padding: [0, 2],

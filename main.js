@@ -25,7 +25,7 @@ color.brand2 = '#DB415E'
 color.green = '#259630'
 color.blue = 'rgb(48, 111, 207)'
 color.darkred = color(color.brand)//.darken(0.3)
-color.bg = '#f2f2f2'
+color.bg = '#fff'
 color.text = '#444'
 color.strip = '#fff'
 
@@ -46,13 +46,13 @@ style.link = {
 
   ':hover': { color: color.brand }
 }
-// style.textGradient = {
-//   background: `-webkit-linear-gradient(left,
-//     ${color(color.brand1).darken(0.6)},
-//     ${color(color.brand2).darken(0.6)})`,
-//   WebkitBackgroundClip: 'text',
-//   WebkitTextFillColor: 'transparent',
-// }
+style.textGradient = {
+  background: `-webkit-linear-gradient(left,
+    ${color(color.brand1).darken(0.6)},
+    ${color(color.brand2).darken(0.6)})`,
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+}
 
 const util = {}
 
