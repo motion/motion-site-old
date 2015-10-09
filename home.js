@@ -1,10 +1,9 @@
 view Home {
   <top>
-  <Header />
-  <DemoVideo />
-  <Install title="Install while you watch..." />
+    <Header />
+    <DemoVideo />
   </top>
-
+  <Install title="Install while you watch..." />
   <Examples />
   <Slack />
   <What title="Features" />
@@ -19,15 +18,19 @@ view Home {
     width: '100%'
   }
 
+  const c1 = '#ddd'
+  const c2 = '#fff'
+
   $top = {
-    background: `linear-gradient(20deg, ${color.brand1}, ${color.brand2})`
+    // background: '#eee',
+    background: `linear-gradient(20deg, #333, ${c1} 90%, ${c2})`
   }
 }
 
 view Header {
   let startIntro = false
 
-  <Contain strip straight minWidth="1050px" bg="#fff">
+  <Contain strip straight bg="none">
     <main>
       <Example
         flipVertical
@@ -56,7 +59,7 @@ view Header {
   </Contain>
 
   $ = {
-    padding: [15, 0, 50],
+    padding: [0, 0, 50],
     position: 'relative',
     overflow: 'hidden'
   }
@@ -85,7 +88,7 @@ view Header {
   }
 
   $main = {
-    padding: [30, 0],
+    padding: [20, 0],
     marginLeft: -90,
 
     [device.small]: {
@@ -112,9 +115,9 @@ view Nav {
   }
 
   $a = [style.link, {
-    color: '#888',
+    color: '#222',
     borderBottom: 'none',
-    fontSize: 18,
+    fontSize: 16,
     padding: [0, 15],
   }]
 }
@@ -134,8 +137,8 @@ view Logo {
   }
 
   $img = {
-    width: Math.round(1019 * .28),
-    height: Math.round(282 * .28),
+    width: Math.round(1019 * .25),
+    height: Math.round(282 * .25),
     margin: [0, 'auto', 20]
   }
 }
@@ -189,8 +192,7 @@ view Desc {
     fontWeight: 300,
     lineHeight: '1.6rem',
     padding: [22, 0],
-    color: color.text,
-    opacity: 0.6,
+    color: '#fff',
     margin: [0, 'auto'],
     display: 'block'
   }
@@ -199,7 +201,7 @@ view Desc {
 view What {
   <Contain strip bg={color.brand} color="#fff">
     <text>
-      <primary>
+      <primary if={^title}>
         {^title}
       </primary>
       <secondary if={^sub}>
@@ -281,7 +283,7 @@ view Examples {
   $ = {
     // background: 'rgba(255,255,255,0.4)',
     // padding: [0, 0, 40],
-    margin: [40, 'auto'],
+    margin: [0, 'auto', 40],
     width: '100%',
     maxWidth: 980
   }
@@ -606,7 +608,7 @@ view DemoVideo {
     width: '100%',
     textAlign: 'center',
     alignItems: 'center',
-    margin: [-90, 'auto', 0],
+    margin: [-90, 'auto', -20],
     position: 'relative',
     zIndex: 100
   }
@@ -638,9 +640,9 @@ view YouTube {
     device>
   </iframe>
 
-  const originalHeight = 900
-  const originalWidth = 1440
-  const scale = 0.66
+  const originalHeight = 800
+  const originalWidth = 1840
+  const scale = 0.5
   const height = Math.round(originalHeight * scale)
   const width = Math.round(originalWidth * scale)
 
@@ -704,9 +706,8 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [0, 0, ^pad ? 100 : 0],
-    fontSize: 15,
-    color: '#fff'
+    margin: [20, 0, ^pad ? 100 : 0],
+    fontSize: 15
   }
 
   $modal = {
