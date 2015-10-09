@@ -63,7 +63,7 @@ view Title {
 }
 
 view Footer {
-  <Contain pad strip maxWidth="auto" id="footer">
+  <Contain>
     <content>
       <Nav />
       <br />

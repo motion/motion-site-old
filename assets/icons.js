@@ -2,7 +2,7 @@ const icon = {
   width: 33,
   height: 33,
   transition: 'all ease-in 100ms',
-  opacity: 0.5,
+  opacity: 0.7,
   margin: [0, -5],
   filter: 'grayscale(1)',
 

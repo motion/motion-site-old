@@ -6,10 +6,8 @@ view Home {
   <Install title="Install while you watch..." />
   <Examples />
   <Slack />
-  <What title="Features" />
   <Features />
-  <Install pad />
-  <What title="FAQ" />
+  <Install />
   <FAQ />
   <Signup />
   <Footer />
@@ -246,14 +244,16 @@ view What {
 
 view Examples {
   <Contain>
-    <Interlude>
-      Flint introduces the view
-    </Interlude>
+    <section>
+      <Interlude>
+        Flint introduces the view
+      </Interlude>
 
-    <Example flip inPage
-      maxWidth={760}
-      in={<Editor lines={10} left light src="/assets/examples/exampleCounter.html" />}
-      out={<DemoCounter />} />
+      <Example flip inPage
+        maxWidth={760}
+        in={<Editor lines={10} left light src="/assets/examples/exampleCounter.html" />}
+        out={<DemoCounter />} />
+    </section>
 
     <Interlude>
       Style views with ease...
@@ -264,29 +264,34 @@ view Examples {
       in={<Editor lines={15} left light src="/assets/examples/exampleVenn.html" />}
       out={<DemoVenn />} />
 
-    <Interlude>
-      Flint works with ES6, npm & React
-    </Interlude>
+    <section>
+      <Interlude>
+        Flint works with ES6, npm & React
+      </Interlude>
 
-    <Example flip inPage
-      maxWidth={900}
-      in={
-        <Editor left light
-          lines={20}
-          sources={[
-            { title: 'Circles.js', url: '/assets/examples/exampleCircles.html' },
-            { title: 'Circle.js', url: '/assets/examples/exampleCircle.html' }
-          ]} />
-      }
-      out={<DemoCircles />} />
+      <Example flip inPage
+        maxWidth={900}
+        in={
+          <Editor left light
+            lines={20}
+            sources={[
+              { title: 'Circles.js', url: '/assets/examples/exampleCircles.html' },
+              { title: 'Circle.js', url: '/assets/examples/exampleCircle.html' }
+            ]} />
+        }
+        out={<DemoCircles />} />
+    </section>
   </Contain>
 
   $ = {
-    // background: 'rgba(255,255,255,0.4)',
+    borderTop: '1px solid #ccc',
     // padding: [0, 0, 40],
     margin: [0, 'auto', 40],
     width: '100%',
     maxWidth: 980
+  }
+
+  $section = {
   }
 }
 
@@ -735,15 +740,16 @@ view Install {
   }
 
   $input = {
-    background: '#fff',
-    borderRadius: 5,
-    border: '2px solid #999',
+    background: color.brand1,
+    borderRadius: 0,
+    border: 'none',
+    boxShadow: '0 0 20px rgba(0,0,0,0.2)',
     padding: [8, 10],
     fontSize: 20,
     margin: 0,
     fontFamily: font.monoSpace,
     width: '100%',
-    color: '#777'
+    color: '#fff'
   }
 
   $afterward = {
@@ -751,7 +757,7 @@ view Install {
     margin: [5, 'auto'],
     flexFlow: 'row',
     lineHeight: '1.2rem',
-    opacity: 0.9
+    opacity: 0.7
   }
 
   $.small = {
