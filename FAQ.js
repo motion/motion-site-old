@@ -59,9 +59,14 @@ view FAQ {
   </Contain>
 
   $ = {
-    margin: [50, 0], //offset for p space
-    padding: [50, 20],
-    lineHeight: '1.8rem'
+    margin: [50, 'auto'], //offset for p space
+    padding: [50, 40],
+    maxWidth: 1000,
+    lineHeight: '1.8rem',
+
+    [device.small]: {
+      padding: 0
+    }
   }
 
   $a = style.link
