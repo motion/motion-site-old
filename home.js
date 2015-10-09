@@ -66,12 +66,18 @@ view Password {
 view Header {
   let startIntro = false
 
-  <Contain strip straight bg="none">
+  <Contain strip straight bg="none" maxWidth="1050px">
     <main>
       <Example
         flipVertical
-        outStyle={{ width: '45%' }}
-        inStyle={{ maxWidth: 300 }}
+        inStyle={{
+          maxWidth: 300,
+          marginRight: 70,
+
+          [device.small]: {
+            marginRight: 0
+          }
+        }}
         out={
           <head>
             <Logo />
@@ -113,7 +119,9 @@ view Header {
     marginLeft: 30,
 
     [device.small]: {
-      marginLeft: 0
+      marginTop: 20,
+      marginLeft: 'auto',
+      marginRight: 'auto'
     }
   }
 
@@ -125,11 +133,12 @@ view Header {
 
   $main = {
     padding: [30, 0],
-    marginLeft: -90,
+    margin: [0, 'auto']
+  }
 
-    [device.small]: {
-      marginLeft: 0
-    }
+  $head = {
+    marginRight: -30,
+    [device.small]: { margin: 0 }
   }
 }
 
@@ -282,7 +291,7 @@ view Examples {
   <Contain>
     <section>
       <Interlude>
-        Flint introduces the view
+        Flint introduces the view to ES6...
       </Interlude>
 
       <Example flip inPage
@@ -320,7 +329,7 @@ view Examples {
   </Contain>
 
   $ = {
-    borderTop: '1px solid #ccc',
+    borderTop: '1px dotted #ddd',
     // padding: [0, 0, 40],
     margin: [0, 'auto', 40],
     width: '100%',
@@ -358,7 +367,7 @@ view Interlude {
     border: 'none'
   }
 
-  $p = [{
+  $p = [style.textGradient, {
     textAlign: 'center',
     margin: [8, 'auto'],
     padding: [0, 25],
@@ -378,6 +387,7 @@ view Example {
   $ = {
     flexFlow: 'row',
     flexGrow: 1,
+    alignItems: 'space-between',
     justifyContent: 'center',
     WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
@@ -387,7 +397,7 @@ view Example {
   }
 
   $out = [{
-    width: '50%',
+    flexGrow: 2,
     justifyContent: 'center',
     position: 'relative',
     order: ^flip ? 2 : 1,
@@ -400,7 +410,7 @@ view Example {
   }, ^outStyle]
 
   $in = [{
-    width: '50%',
+    flexGrow: 1,
     order: ^flip ? 1 : 2,
     zIndex: 10,
     margin: 0,
@@ -443,7 +453,7 @@ view Editor {
     flexFlow: 'column',
     height: ^lines ? 28 + (24 * ^lines) : '100%',
     borderRadius: 6,
-    boxShadow: '0 0 25px rgba(0,0,0,0.1)',
+    boxShadow: `${^right ? 2 : -2}px 0 15px rgba(0,0,0,${^light ? 0.12 : 0.25})`,
     margin: 10,
     marginRight: ^right ? -10 : 10,
     marginLeft: ^left ? -10 : 10,
@@ -494,7 +504,7 @@ view Toolbar {
     </tab>
   </tabs>
 
-  const borderColor = ^light ? '#ddd' : '#222'
+  const borderColor = ^light ? '#fff' : '#222'
   const border = '1px solid ' + borderColor
 
   $ = {
@@ -533,7 +543,6 @@ view Toolbar {
 
   $bar = {
     background: ^light ? '#fff' : 'rgb(29, 38, 45)',
-    borderBottom: '1px solid ' + borderColor,
     height: 12,
     minHeight: 12,
     padding: [0, 2],
@@ -706,7 +715,7 @@ view YouTube {
     height: '100%',
     minHeight: 350,
     border: 'none',
-    boxShadow: '0 0 20px rgba(0,0,0,0.25)',
+    boxShadow: '0 0 16px rgba(0,0,0,0.25)',
     background: color.bg
   }
 
@@ -739,7 +748,7 @@ view Install {
         </code>
 
         <afterward>
-          or just npm install -g flint
+          or: npm install -g flint
         </afterward>
       </inner>
     </modal>
@@ -777,12 +786,11 @@ view Install {
 
   $input = {
     background: color.brand1,
-    borderRadius: 0,
-    border: 'none',
-    boxShadow: '0 0 20px rgba(0,0,0,0.2)',
-    padding: [8, 10],
+    borderRadius: 5,
+    border: '2px solid #eee',
+    padding: [8, 10, 8, 16],
     fontSize: 20,
-    margin: 0,
+    margin: [-8, 0, -5],
     fontFamily: font.monoSpace,
     width: '100%',
     color: '#fff'
@@ -793,7 +801,8 @@ view Install {
     margin: [5, 'auto'],
     flexFlow: 'row',
     lineHeight: '1.2rem',
-    opacity: 0.7
+    opacity: 0.7,
+    fontFamily: font.monoSpace
   }
 
   $.small = {

@@ -39,6 +39,7 @@ view DemoCircles {
 
   $circles = {
     height: 430,
+    padding: [0, 40],
     cursor: 'pointer'
   }
 

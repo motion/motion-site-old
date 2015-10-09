@@ -8,7 +8,7 @@ view DemoCounter {
     <button onClick={down}>↓</button>
     <button onClick={up}>↑</button>
   </center>
-  <strong>Count is {count}</strong>
+  <count>Count is{' '}{count}</count>
 
   $ = {
     margin: 'auto',
@@ -24,10 +24,21 @@ view DemoCounter {
   }
 
   $button = {
-    margin: 5
+    margin: 5,
+    border: '1px solid #ddd',
+    background: '#fff',
+    borderRadius: 100,
+    width: 50,
+    outline: 'none',
+
+    ':active': {
+      background: color.brand1,
+      color: '#fff'
+    }
   }
 
-  $strong = {
-    fontSize: 22
+  $count = {
+    fontSize: 22,
+    flexFlow: 'row'
   }
 }
