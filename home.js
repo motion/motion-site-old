@@ -295,8 +295,8 @@ view What {
 view Examples {
   <Contain>
     <section>
-      <Interlude>
-        Flint introduces the view to ES6...
+      <Interlude left num="1">
+        Flint introduces the view to ES6
       </Interlude>
 
       <Example flip inPage
@@ -305,7 +305,7 @@ view Examples {
         out={<DemoCounter />} />
     </section>
 
-    <Interlude>
+    <Interlude right num="2">
       Style views with ease...
     </Interlude>
 
@@ -315,7 +315,7 @@ view Examples {
       out={<DemoVenn />} />
 
     <section>
-      <Interlude>
+      <Interlude left num="3">
         Flint works with ES6, npm & React
       </Interlude>
 
@@ -346,40 +346,41 @@ view Examples {
 }
 
 view Interlude {
-  const flip = (one, two) => Math.random() > 0.5 ? one : two
-  const rand = () => Math.round(Math.random() * 10) / 10
-
   <Contain>
-    <section>
-      <p>
-        {^children}
-      </p>
-    </section>
+    <num if={^num}>{^num}</num>
+    <title>{^children}</title>
   </Contain>
-  <strip />
 
   $Contain = {
-    padding: [0, 15],
     maxWidth: ^pad ? 600 : 'auto',
-  }
-
-  $section = {
-    margin: [30, 0, 20],
-    fontSize: ^fontSize || 19
-  }
-
-  $.simple = {
-    border: 'none'
-  }
-
-  $p = [style.textGradient, {
-    textAlign: 'center',
-    margin: [8, 'auto'],
+    textAlign: ^right ? 'right': 'left',
+    flexDirection: ^right ? 'row-reverse' : 'row',
+    margin: [40, 'auto', 20],
     padding: [0, 25],
-    color: '#666',
-    position: 'relative',
-    zIndex: 10,
-    fontSize: 22
+  }
+
+  const shared = {
+    height: 70,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+
+  $title = [shared, {
+    margin: [0, 30],
+    fontWeight: 700,
+    fontSize: 26,
+    borderRadius: 100,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }]
+
+  $num = [shared, {
+    fontWeight: 300,
+    background: '#ccc',
+    color: '#fff',
+    width: 70,
+    fontSize: 32,
+    borderRadius: 100,
   }]
 }
 
@@ -748,7 +749,7 @@ view Install {
 
   <Contain id="install">
     <modal>
-      <Title big>{^title || "Install" }</Title>
+      <Title>{^title || "Install" }</Title>
       <inner>
         <code onMouseUp={select} class="install">
          <input ref="code" value={install} readOnly size={install.length} />
@@ -763,8 +764,7 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [20, 0, ^pad ? 100 : 0],
-    fontSize: 15
+    margin: [20, 0, ^pad ? 100 : 0]
   }
 
   $modal = {
