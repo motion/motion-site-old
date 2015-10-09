@@ -24,7 +24,8 @@ view Home {
   $top = {
     // background: '#999',
     // background: 'url(/assets/images/video-poster.jpg)'
-    background: `linear-gradient(20deg, ${c1}, ${c2} 90%, ${c3})`
+    background: `linear-gradient(#eee, #fff 50%)`,
+    // borderBottom: '1px solid #ddd'
   }
 }
 
@@ -162,10 +163,11 @@ view Nav {
   }
 
   $a = [style.link, {
-    color: '#222',
+    color: '#888',
     borderBottom: 'none',
     fontSize: 16,
-    padding: [0, 15],
+    fontWeight: 500,
+    padding: [0, 12],
   }]
 }
 
@@ -235,12 +237,13 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 28,
+    fontSize: 32,
     fontWeight: 300,
     lineHeight: '1.6rem',
     padding: [22, 0],
     margin: [0, 'auto'],
-    display: 'block'
+    display: 'block',
+    color: '#777'
   }
 }
 
@@ -425,6 +428,8 @@ view Example {
   }, ^inStyle]
 }
 
+const light = '#fefefe'
+
 view Editor {
   let index = 0
   let tabs, srcs;
@@ -455,7 +460,7 @@ view Editor {
     flexFlow: 'column',
     height: ^lines ? 28 + (24 * ^lines) : '100%',
     borderRadius: 6,
-    boxShadow: `${^right ? 2 : -2}px 0 15px rgba(0,0,0,${^light ? 0.12 : 0.25})`,
+    boxShadow: `0 0 10px rgba(0,0,0,${^light ? 0.12 : 0.25})`,
     margin: 10,
     marginRight: ^right ? -10 : 10,
     marginLeft: ^left ? -10 : 10,
@@ -482,7 +487,7 @@ view Editor {
     width: '100%',
     padding: 3,
     overflow: 'hidden',
-    background: ^light ? '#fff' : '#263640',
+    background: ^light ? light : '#263640',
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
 
@@ -544,7 +549,7 @@ view Toolbar {
   }]
 
   $bar = {
-    background: ^light ? '#fff' : 'rgb(29, 38, 45)',
+    background: ^light ? light : 'rgb(29, 38, 45)',
     height: 12,
     minHeight: 12,
     padding: [0, 2],

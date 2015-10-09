@@ -1,9 +1,9 @@
 const icon = {
-  width: 33,
-  height: 33,
+  width: 32,
+  height: 32,
   transition: 'all ease-in 100ms',
   opacity: 0.7,
-  margin: [0, -5],
+  margin: [0, -10],
   filter: 'grayscale(1)',
 
   ':hover': {
