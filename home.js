@@ -727,7 +727,7 @@ view YouTube {
 }
 
 view Install {
-  const install = 'curl -sL https://flint.love/sh | sh'
+  const install = 'sh <(curl -sL https://flint.love)'
   const select = () => view.refs.code.select()
 
   <Contain id="install">
