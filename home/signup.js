@@ -1,3 +1,14 @@
+view Signup {
+  <Contain>
+    <Title>Sign up to keep up with releases:</Title>
+    <SignupForm />
+  </Contain>
+
+  $ = {
+    margin: [-50, 0, 40]
+  }
+}
+
 view SignupForm {
   <form action="//flintlang.us11.list-manage.com/subscribe/post?u=d6ee317984756a7f0f5e9378b&amp;id=dcc2cefed5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">

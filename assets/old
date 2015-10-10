@@ -59,3 +59,50 @@ view MoreFeatures {
   <List items={features} />
   $ = false
 }
+
+
+
+view What {
+  <Contain strip bg={color.brand} color="#fff">
+    <text>
+      <primary if={^title}>
+        {^title}
+      </primary>
+      <secondary if={^sub}>
+        {^sub}
+      </secondary>
+    </text>
+  </Contain>
+
+  $ = {
+    margin: [10, 0, -70],
+    position: 'relative',
+    zIndex: 100,
+    textAlign: 'center'
+  }
+
+  $text = {
+    fontSize: 30,
+    lineHeight: '2.5rem',
+    margin: [-12, 0],
+
+    [device.small]: {
+      fontSize: 20
+    }
+  }
+
+  $primary = {
+    display: 'block'
+  }
+
+  $secondary = {
+    fontSize: 22,
+    opacity: 0.85,
+    margin: [0, 'auto', 0],
+    flexFlow: 'row',
+
+    [device.small]: {
+      fontSize: 18
+    }
+  }
+}

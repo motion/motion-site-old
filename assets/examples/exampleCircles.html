@@ -40,7 +40,7 @@
 import <span class="b">offset</span> from <span class="y">'mouse-event-offset'</span>
 
 <span class="o">view</span> Circles {
-  let <span class="b">coords</span> = [{ x: <span class="y">100</span>, y: <span class="y">100</span> }]
+  let <span class="b">coords</span> = [[<span class="y">200</span>, <span class="y">200</span>]]
 
   const <span class="b">addCircle</span> = click =>
     <span class="b">coords</span>.push(offset(click))
@@ -48,8 +48,9 @@ import <span class="b">offset</span> from <span class="y">'mouse-event-offset'</
   <span class="r">&lt;circles onClick={<span class="b">addCircle</span>}&gt;
     &lt;Circle
       repeat={<span class="b">coords</span>}
-      left={<span class="b">_.x</span>}
-      top={<span class="b">_.y</span>} /&gt;
+      left={<span class="b">_[0]</span>}
+      top={<span class="b">_[1]</span>}
+    /&gt;
   &lt;/circles&gt;</span>
 
   <span class="w">$circles</span> = { height: <span class="y">400</span> }

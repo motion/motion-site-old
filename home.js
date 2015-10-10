@@ -1,27 +1,17 @@
 view Home {
   <Blur left="45%" top={-200} />
-  <Password />
-  <YouTube2 if={false} />
+  <Password if={false} />
   <Header />
   <Install />
   <Examples />
   <Features />
   <Slack />
-  <Contain>
-    <Interlude num="6" center>Install Flint</Interlude>
-    <Install />
-  </Contain>
+  <SubFeatures />
   <FAQ />
   <Signup />
   <Footer />
 
-  $ = {
-    width: '100%'
-  }
-
-  const c1 = '#aaa'
-  const c2 = '#f9f9f9'
-  const c3 = '#fff'
+  $ = { width: '100%' }
 }
 
 view Password {
@@ -61,6 +51,14 @@ view Password {
 
 view Header {
   let startIntro = false
+
+  const triggerEvent = (id, name)  => {
+    event = document.createEvent('CustomEvent')
+    event.initCustomEvent(name, true, true, null)
+    const frame = document.getElementById(id);
+    const frameWin = (frame.contentDocument || frame.contentWindow.document)
+    frameWin.body.dispatchEvent(event)
+  }
 
   <Example
     flipVertical
@@ -231,51 +229,6 @@ view Desc {
     margin: [0, 'auto'],
     display: 'block',
     color: '#777'
-  }
-}
-
-view What {
-  <Contain strip bg={color.brand} color="#fff">
-    <text>
-      <primary if={^title}>
-        {^title}
-      </primary>
-      <secondary if={^sub}>
-        {^sub}
-      </secondary>
-    </text>
-  </Contain>
-
-  $ = {
-    margin: [10, 0, -70],
-    position: 'relative',
-    zIndex: 100,
-    textAlign: 'center'
-  }
-
-  $text = {
-    fontSize: 30,
-    lineHeight: '2.5rem',
-    margin: [-12, 0],
-
-    [device.small]: {
-      fontSize: 20
-    }
-  }
-
-  $primary = {
-    display: 'block'
-  }
-
-  $secondary = {
-    fontSize: 22,
-    opacity: 0.85,
-    margin: [0, 'auto', 0],
-    flexFlow: 'row',
-
-    [device.small]: {
-      fontSize: 18
-    }
   }
 }
 
@@ -588,202 +541,6 @@ view Toolbar {
   }
 }
 
-view Features {
-  <Contain>
-    <Interlude center num="4">
-      Flint makes development fun
-    </Interlude>
-
-    <List items={[
-      [`Automatic npm installs`, `Flint installs as you type`],
-      [`Works with React`, `Use any React component`],
-      [`Modern ES6, simplified`, `No need for *this* or classes`],
-      [`Instant feedback`, `Fastest hot updates of any system`],
-      [`Fast builds & runtime`, `Compiler unlocks incredible speed`],
-      [`Smart errors & tools`, `Inline errors and a state inspector`],
-    ]} />
-  </Contain>
-
-  $ = {
-    position: 'relative'
-  }
-}
-
-view List {
-  <Contain>
-    <list>
-      <item repeat={^items} key={_}>
-        <Check class="check" />
-
-        <text>
-          <feature>{_[0]}</feature>
-          <description if={_[1]}>{_[1]}</description>
-        </text>
-      </item>
-    </list>
-  </Contain>
-
-  $ = {
-    margin: [20, 'auto'],
-    fontSize: 20,
-  }
-
-  const listColor = 'rgb(4, 139, 66)'
-
-  $list = {
-    maxWidth: 750,
-    margin: [0, 'auto'],
-    padding: [0, '5%'],
-    borderRadius: 5,
-    flexFlow: 'row',
-    flexWrap: 'wrap',
-    color: listColor
-  }
-
-  $item = {
-    margin: [12, 0, 8],
-    padding: [0, 10],
-    lineHeight: '1.5rem',
-    width: '50%',
-    flexFlow: 'row',
-    textAlign: 'center',
-
-    [device.small]: {
-      width: '100%'
-    }
-  }
-
-  $.check = {
-    width: 20,
-    height: 20,
-    fill: color(listColor).darken(0.2),
-    margin: [1, 10, -3, 0]
-  }
-
-  $text = {
-    flexFlow: 'column',
-    textAlign: 'left',
-    margin: [0, 0, 5]
-  }
-
-  $description = {
-    margin: [5, 0, 0],
-    fontSize: 16,
-    color: '#666'
-  }
-}
-
-view DemoVideo {
-  <YouTube />
-
-  $ = {
-    width: '100%',
-    textAlign: 'center',
-    alignItems: 'center',
-    margin: [-90, 'auto', -20],
-    position: 'relative',
-    zIndex: 100
-  }
-}
-
-view YouTube2 {
-  const base = 'https://www.youtube.com/embed/VNfkk6lH0gg'
-  const params = '?rel=0&showinfo=0&VQ=HD720&autoplay=1'
-  const getUrl = () => base + params
-
-  <iframe src={getUrl()} frameborder="0" device></iframe>
-
-  $ = {
-    width: '100%',
-    minHeight: 350,
-    position: 'absolute',
-    top: -80,
-    left: 0,
-    right: 0,
-    height: 900,
-    opacity: 0.2,
-    pointerEvents: 'none'
-  }
-
-  $iframe = {
-    width: '100%',
-    height: '100%',
-    minHeight: 900,
-    border: 'none'
-  }
-}
-
-view YouTube {
-  let started = false
-
-  const base = 'https://www.youtube.com/embed/VNfkk6lH0gg'
-  const params = '?rel=0&showinfo=0&VQ=HD720'
-
-  const getUrl = () => base + params +
-    (started ? '&autoplay=1' : '')
-
-  const clicked = () => {
-    started = true
-  }
-
-  // on(window, 'focus', () => {
-  //   if (!started) started = true
-  // })
-
-  <cover if={started} />
-  <cover if={false} class="bot" />
-  <iframe
-    onClick={clicked}
-    src={getUrl()}
-    frameborder="0"
-    device>
-  </iframe>
-
-  const originalHeight = 800
-  const originalWidth = 1840
-  const scale = 0.5
-  const height = Math.round(originalHeight * scale)
-  const width = Math.round(originalWidth * scale)
-
-  $ = {
-    width,
-    height,
-    maxHeight: '100%',
-    maxWidth: '100%',
-    minHeight: 350,
-    position: 'relative',
-
-    [device.small]: {
-      width: '100%',
-      height: 'auto'
-    }
-  }
-
-  $iframe = {
-    width: '100%',
-    height: '100%',
-    minHeight: 350,
-    border: 'none',
-    boxShadow: '0 0 16px rgba(0,0,0,0.25)',
-    background: color.bg
-  }
-
-  $cover = {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: 7,
-    background: color.bg
-  }
-
-  $.bot = {
-    top: 'auto',
-    bottom: 0,
-    height: 8
-  }
-}
-
 view Install {
   const install = 'sh <(curl -sL https://flint.love)'
   const select = () => view.refs.code.select()
@@ -876,138 +633,4 @@ view Slack {
   $ = {
     marginBottom: 50
   }
-}
-
-view Signup {
-  <Contain>
-    <Title>Sign up to keep up with releases:</Title>
-    <SignupForm />
-  </Contain>
-
-  $ = {
-    margin: [-50, 0, 40]
-  }
-}
-
-view Speed {
-  <Contain>
-    <Title>The 10 ways Flint makes you faster</Title>
-
-    <section>
-      <SubTitle>Shorter syntax</SubTitle>
-      <p></p>
-    </section>
-
-    <section>
-      <SubTitle>Global views and constants</SubTitle>
-      <p>
-        Views and constants don't change. Once defined, they
-        stay the same for their life. Because of this, allowing
-        them to be global has huge upside. This isn't just a small win,
-        it's fundamentally speeding your entire stack up.
-      </p>
-      <p>
-        First, you get huge speed increases at the compiler level.
-        An average React app has a masssive dependecy tree that gets
-        bigger as you build. This means every time you save, that tree
-        has to be tracked and compiled.
-      </p>
-      <p>
-        Second, you write way less code. Imports and exports are nice,
-        but when you're using views across hundreds of files, and you
-        don't have an IDE automating anything, you're adding huge amounts
-        of inflexibility.
-      </p>
-
-      <Before points={[
-        'Manually import/export every view',
-        'Manually import/export CONSTANTS',
-        'Much slower hot reloads'
-      ]} />
-
-      <After points={[
-        'Create and remove views with ease',
-        'Share global style variables, fonts, and more',
-        'Much faster feedback loops'
-      ]} />
-    </section>
-
-    <section>
-      <SubTitle>Errors from every level</SubTitle>
-      <p>
-        Try and render a view that doesn't exist? We tell you inline,
-        with a helpful error. Make a syntax error with ES2015? That also
-        notifies you, and it doesn't lose your place.
-      </p>
-      <p>
-        Use a duplicate key for a style? Not only do we tell you, but
-        we don't crash your entire app.
-      </p>
-      <p>
-        Use a variable that hasn't been defined? We've integrated
-        Flow, so you even get type checking and undefined variable
-        checks for free. This is big!
-      </p>
-
-      <Before points={[
-        'Errors in CLI, Browser Console, browser',
-        'Tons of sharp edges to get cut on'
-      ]} />
-
-      <After points={[
-        'Every error, inline, instantly',
-        'Never lose your app state',
-        'Catches every possible mistake for you'
-      ]} />
-    </section>
-
-    <section>
-      <SubTitle>Views + Styles, inline and handled</SubTitle>
-      <p>
-        Like Radium? Good, but you'd have to integrate it, and write
-        your styles in React using a verbose syntax that is different
-        depending on if you include it inline, in your render function,
-        or in your file.
-      </p>
-      <p>
-        Also, because React doesn't handle styles, the ecosystem is a mess.
-        Import a component and you may get a huge dependency on Radium.
-        Or you have to manually import some CSS files. Now your syntax is
-        totally different!
-      </p>
-    </section>
-
-    <section>
-      <SubTitle>Amazing build system</SubTitle>
-      <p></p>
-    </section>
-
-    <section>
-      <SubTitle>Share with a single command</SubTitle>
-      <p></p>
-    </section>
-
-    <section>
-      <SubTitle>Shorter syntax</SubTitle>
-      <p></p>
-    </section>
-
-    <section>
-      <SubTitle>Shorter syntax</SubTitle>
-      <p></p>
-    </section>
-
-    <section>
-      <SubTitle>Shorter syntax</SubTitle>
-      <p></p>
-    </section>
-  </Contain>
-}
-
-const triggerEvent = (id, name)  => {
-  event = document.createEvent('CustomEvent')
-  event.initCustomEvent(name, true, true, null)
-  const frame = document.getElementById(id);
-  const frameWin = (frame.contentDocument || frame.contentWindow.document)
-  frameWin.body.dispatchEvent(event)
 }

@@ -12,6 +12,7 @@
     "flint-js": "^1.0.0",
     "mouse-event-offset": "^2.0.0",
     "react-motion": "^0.2.7",
-    "scroll": "0.0.3"
+    "scroll": "0.0.3",
+    "vivus": "^0.2.3"
   }
 }
