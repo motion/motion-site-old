@@ -4,6 +4,7 @@ view Home {
   <Header />
   <Install />
   <Examples />
+  <Install />
   <Features />
   <Slack />
   <SubFeatures />
@@ -326,7 +327,9 @@ view Interlude {
     justifyContent: 'center',
 
     [device.small]: {
-      fontSize: 22
+      fontSize: 20,
+      marginLeft: 10,
+      marginRight: 10
     }
   }]
 
@@ -562,7 +565,11 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [40, 0, ^pad ? 100 : 0]
+    margin: [40, 0, ^pad ? 100 : 0],
+
+    [device.small]: {
+      display: 'none'
+    }
   }
 
   $modal = {
@@ -632,6 +639,6 @@ view Slack {
   }
 
   $ = {
-    marginBottom: 50
+    marginBottom: 20
   }
 }

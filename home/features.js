@@ -1,17 +1,17 @@
 view Features {
   <Contain>
     <Interlude center num="4">
-      Flint makes development fun
+      Flint is real development, faster
     </Interlude>
 
     <section>
       <text>
-        <img src={`/assets/images/design.svg`} />
+        <img src={`/assets/images/flowers.svg`} />
         <col>
           <title>Automatic NPM Installs</title>
           <description>
-            As you type, Flint checks your imports and installs
-            them.As you type, so.
+            As you type Flint installs npm packages instantly
+            without having to refresh.
           </description>
         </col>
       </text>
@@ -20,33 +20,33 @@ view Features {
         <col>
           <title>Instant Hot Updates</title>
           <description>
-            As you type, Flint checks your imports and installs
-            them.As you type, so you.
+            Flint's compiler stays fast even with hundreds
+            or thousands of views.
           </description>
         </col>
-        <img src={`/assets/images/artist.svg`} />
+        <img src={`/assets/images/transport.svg`} />
       </text>
 
       <text>
-        <img src={`/assets/images/artist.svg`} />
+        <img src={`/assets/images/river.svg`} />
         <col>
-          <title>No build systems</title>
+          <title>No boilerplate</title>
           <description>
-            As you type, Flint checks your imports and installs
-            them.As you type, so you.
+            Forget configs, gulp systems, and huge amounts
+            of time keeping your stack modern.
           </description>
         </col>
       </text>
 
       <text>
         <col>
-          <title>No build systems</title>
+          <title>Powered by React</title>
           <description>
-            As you type, Flint checks your imports and installs
-            them.As you type, so you.
+            Use any React component, enhanced
+            with a beautiful syntax.
           </description>
         </col>
-        <img src={`/assets/images/artist.svg`} />
+        <img src={`/assets/images/type.svg`} />
       </text>
     </section>
   </Contain>
@@ -55,20 +55,31 @@ view Features {
     margin: [10, 'auto'],
     flexFlow: 'row',
     flexWrap: 'wrap',
-    maxWidth: '90%'
+    maxWidth: '90%',
   }
 
   $text = {
     flexFlow: 'row',
     textAlign: 'left',
     margin: [5, 0],
-    width: '50%'
+    width: '50%',
+    alignItems: 'center',
+
+    [device.small]: {
+      width: '100%'
+    }
   }
 
   $img = {
-    width: 120,
+    width: 80,
     height: 120,
-    margin: [15],
+    margin: 10,
+
+    [device.small]: {
+      width: '12%',
+      marginLeft: 0,
+      marginRight: 0
+    }
   }
 
   $.right = {
@@ -87,7 +98,7 @@ view Features {
 
   $description = {
     fontSize: 20,
-    color: '#555',
+    color: '#777',
     lineHeight: 1.5,
     fontWeight: 300
   }
@@ -179,8 +190,8 @@ view List {
   }
 
   $.check = {
-    width: 20,
-    height: 20,
+    width: 30,
+    height: 30,
     fill: color(listColor).darken(0.2),
     margin: [1, 10, -3, 0]
   }
