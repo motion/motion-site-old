@@ -318,7 +318,7 @@ view Examples {
       </Interlude>
 
       <Example flip inPage
-        maxWidth={900}
+        inStyle={{ flexGrow: 2 }}
         in={
           <Editor left light
             lines={20}

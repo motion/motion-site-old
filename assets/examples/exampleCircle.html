@@ -37,26 +37,26 @@
 </head>
 <body>
   <code><pre>
-import { <span class="b">Spring</span> } from <span class="y">'react-motion'</span>
+import { <span class="b">Motion</span>, <span class="b">spring</span> } from <span class="y">'react-motion'</span>
 
 <span class="o">view</span> Circle {
   const <span class="b">c</span> = () => <span class="y">Math</span>.round(<span class="y">Math</span>.random()*<span class="y">255</span>)
   const <span class="b">base</span> = {
     background: { r: <span class="b">c()</span>, g: <span class="b">c()</span>, b: <span class="b">c()</span> },
     position: <span class="y">'absolute'</span>,
-    top: <span class="b">^top</span>,
-    left: <span class="b">^left</span>,
-    width: <span class="y">80</span>,
-    height: <span class="y">80</span>,
+    top: <span class="b">^top</span>, left: <span class="b">^left</span>,
+    width: <span class="y">80</span>, height: <span class="y">80</span>,
     borderRadius: <span class="y">100</span>
   }
 
   const <span class="b">style</span> = <span class="b">scale</span> =>
     ({ ...<span class="b">base</span>, transform: { <span class="b">scale</span> } })
 
-  <span class="r">&lt;Spring endValue={<span class="w">{ val: <span class="y">1</span> }</span>}&gt;<span class="w">{<span class="b">i</span> =&gt;
-    <span class="r">&lt;circle style=<span class="w">{<span class="b">style(i.val)</span>}</span> /&gt;</span>
-  }</span>&lt;/Spring&gt;</span>
+  <span class="r">&lt;Motion
+    defaultValue={<span class="w">{val: <span class="y">0</span>}</span>}&gt;
+    endValue={<span class="w">{val: <span class="b">spring(<span class="y">1</span>, <span class="w">[<span class="y">300</span>, <span class="y">10</span>]</span>)</span>}</span>}&gt;<span class="w">
+      {<span class="b">i</span> =&gt; <span class="r">&lt;c style=<span class="w">{<span class="b">style(i<span class="w">.</span>val)</span>}</span> /&gt;</span> }
+  </span>&lt;/Motion&gt;</span>
 }<pre></code>
 </body>
 </html>
