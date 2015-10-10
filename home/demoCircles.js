@@ -62,7 +62,7 @@ view Circle {
     position: 'absolute'
   }
 
-  const style = scale => ({ ...baseStyle, transform: { scale } })
+  const style = scale => ({ ...baseStyle, transform: { scale, translate3d: '0,0,0' } })
 
   <Spring defaultValue={{ val: 0 }} endValue={{ val: 1, config: [300, 8] }}>
     {i => <circle style={style(i.val)} />}

@@ -288,7 +288,7 @@ view What {
 view Examples {
   <Contain>
     <section>
-      <Blur top="0" left="0" />
+      <Blur />
       <Interlude left num="1">
         Flint introduces the view to ES6
       </Interlude>
@@ -300,7 +300,7 @@ view Examples {
     </section>
 
     <section>
-      <Blur top="0" left="100%" />
+      <Blur left="100%" />
       <Interlude right num="2">
         Style views with ease...
       </Interlude>
@@ -312,7 +312,7 @@ view Examples {
     </section>
 
     <section>
-      <Blur top="0" left="0" />
+      <Blur />
       <Interlude left num="3">
         Flint works with ES6, npm & React
       </Interlude>
@@ -356,6 +356,10 @@ view Interlude {
     flexDirection: ^right ? 'row-reverse' : 'row',
     margin: [40, 'auto', 20],
     padding: [0, 25],
+
+    [device.small]: {
+      flexDirection: 'center'
+    }
   }
 
   const shared = {
@@ -370,7 +374,11 @@ view Interlude {
     fontSize: 26,
     borderRadius: 100,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+
+    [device.small]: {
+      fontSize: 22
+    }
   }]
 
   $num = [shared, {
@@ -380,6 +388,10 @@ view Interlude {
     width: 70,
     fontSize: 32,
     borderRadius: 100,
+
+    [device.small]: {
+      display: 'none'
+    }
   }]
 }
 
