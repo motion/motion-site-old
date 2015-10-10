@@ -1,12 +1,16 @@
 view Home {
+  <Blur left="45%" top={-200} />
   <Password />
+  <YouTube2 if={false} />
   <Header />
-  <DemoVideo />
-  <Install title="Install while you watch..." />
-  <Examples />
-  <Slack />
-  <Features />
   <Install />
+  <Examples />
+  <Features />
+  <Slack />
+  <Contain>
+    <Interlude num="6" right>Install Flint to feel the difference</Interlude>
+    <Install />
+  </Contain>
   <FAQ />
   <Signup />
   <Footer />
@@ -58,45 +62,43 @@ view Password {
 view Header {
   let startIntro = false
 
-  <Contain strip straight bg="none" maxWidth="1050px">
-    <main>
-      <Blur left="45%" top={-200} />
-      <Example
-        flipVertical
-        inStyle={{
-          maxWidth: 300,
-          marginRight: 90,
+  <Example
+    flipVertical
+    inStyle={{
+      maxWidth: 300,
+      marginRight: 90,
 
-          [device.small]: {
-            marginRight: 0
-          }
+      [device.small]: {
+        marginRight: 0
+      }
+    }}
+    out={
+      <head>
+        <Logo />
+        <Desc start={startIntro} />
+        <Social />
+      </head>
+    }
+    in={
+      <Editor right
+        lines={7}
+        id="headeriframe"
+        onLoad={() => {
+          startIntro = true
+          triggerEvent('headeriframe', 'start')
         }}
-        out={
-          <head>
-            <Logo />
-            <Desc start={startIntro} />
-            <Social />
-          </head>
-        }
-        in={
-          <Editor right
-            lines={7}
-            id="headeriframe"
-            onLoad={() => {
-              startIntro = true
-              triggerEvent('headeriframe', 'start')
-            }}
-            src="/assets/examples/example.html" />
-        }
-      />
-      <Nav />
-    </main>
-  </Contain>
+        src="/assets/examples/example.html" />
+    }
+  />
+  <Nav />
 
   $ = {
-    padding: [0, 0, 60],
     position: 'relative',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    padding: [75, 0, 5],
+    minWidth: 800,
+    margin: [0, 'auto'],
+    [device.small]: { minWidth: 'auto' }
   }
 
   $Contain = {
@@ -120,20 +122,12 @@ view Header {
 
   $Nav = {
     position: 'absolute',
-    top: -20,
+    top: 20,
     right: 20
   }
 
-  $main = {
-    position: 'relative',
-    padding: [30, 0],
-    minWidth: 800,
-    margin: [0, 'auto'],
-    [device.small]: { minWidth: 'auto' }
-  }
-
   $head = {
-    marginRight: -30,
+    marginRight: -20,
     [device.small]: { margin: 0 }
   }
 }
@@ -594,16 +588,24 @@ view Toolbar {
 }
 
 view Features {
-  <List items={[
-    [`Works with React`, `Use any React component`],
-    [`Automatic npm installs`, `Flint installs as you type`],
-    [`Modern ES6, simplified`, `No need for *this* or classes`],
-    [`Instant feedback`, `Browser hot updates as you type`],
-    [`Fast builds & runtime`, `Compiler unlocks incredible speed`],
-    [`Smart errors & tools`, `Inline errors and a state inspector`],
-  ]} />
+  <Contain>
+    <Interlude right num="4">
+      Flint focuses on making development fun
+    </Interlude>
 
-  $ = false
+    <List items={[
+      [`Automatic npm installs`, `Flint installs as you type`],
+      [`Works with React`, `Use any React component`],
+      [`Modern ES6, simplified`, `No need for *this* or classes`],
+      [`Instant feedback`, `Fastest hot updates of any system`],
+      [`Fast builds & runtime`, `Compiler unlocks incredible speed`],
+      [`Smart errors & tools`, `Inline errors and a state inspector`],
+    ]} />
+  </Contain>
+
+  $ = {
+    position: 'relative'
+  }
 }
 
 view List {
@@ -621,7 +623,7 @@ view List {
   </Contain>
 
   $ = {
-    margin: [50, 'auto', 20],
+    margin: [0, 'auto', 20],
     fontSize: 20,
   }
 
@@ -680,6 +682,33 @@ view DemoVideo {
     margin: [-90, 'auto', -20],
     position: 'relative',
     zIndex: 100
+  }
+}
+
+view YouTube2 {
+  const base = 'https://www.youtube.com/embed/VNfkk6lH0gg'
+  const params = '?rel=0&showinfo=0&VQ=HD720&autoplay=1'
+  const getUrl = () => base + params
+
+  <iframe src={getUrl()} frameborder="0" device></iframe>
+
+  $ = {
+    width: '100%',
+    minHeight: 350,
+    position: 'absolute',
+    top: -80,
+    left: 0,
+    right: 0,
+    height: 900,
+    opacity: 0.2,
+    pointerEvents: 'none'
+  }
+
+  $iframe = {
+    width: '100%',
+    height: '100%',
+    minHeight: 900,
+    border: 'none'
   }
 }
 
@@ -760,7 +789,6 @@ view Install {
 
   <Contain id="install">
     <modal>
-      <Title>{^title || "Install" }</Title>
       <inner>
         <code onMouseUp={select} class="install">
          <input ref="code" value={install} readOnly size={install.length} />
@@ -775,7 +803,7 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [20, 0, ^pad ? 100 : 0]
+    margin: [40, 0, ^pad ? 100 : 0]
   }
 
   $modal = {
@@ -833,7 +861,7 @@ view Install {
 
 view Slack {
   <Contain id="slack">
-    <Title>Join us on Slack!</Title>
+    <Interlude num="5">Join us on Slack!</Interlude>
     <iframe seamless="seamless" src="http://flint-slack.herokuapp.com/"></iframe>
   </Contain>
 
@@ -842,6 +870,10 @@ view Slack {
     width: '100%',
     height: 240,
     overflow: 'hidden'
+  }
+
+  $ = {
+    marginBottom: 50
   }
 }
 

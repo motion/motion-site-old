@@ -29,7 +29,7 @@ view Contain {
 
   $ = {
     background: ^bg || (^strip ? color.strip : 'transparent'),
-    maxWidth: ^maxWidth || '100%',
+    maxWidth: ^maxWidth || 950,
     minWidth: ^minWidth || 0,
     width: '100%',
     color: ^color || 'auto',
