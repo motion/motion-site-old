@@ -7,6 +7,7 @@ view Home {
   <Features />
   <Slack />
   <SubFeatures />
+  <DemoVideo />
   <FAQ />
   <Signup />
   <Footer />

@@ -6,7 +6,7 @@ view DemoVideo {
     width: '100%',
     textAlign: 'center',
     alignItems: 'center',
-    margin: [-90, 'auto', -20],
+    margin: [20, 'auto'],
     position: 'relative',
     zIndex: 100
   }
@@ -66,7 +66,7 @@ view YouTube {
   </iframe>
 
   const originalHeight = 800
-  const originalWidth = 1840
+  const originalWidth = 1440
   const scale = 0.5
   const height = Math.round(originalHeight * scale)
   const width = Math.round(originalWidth * scale)

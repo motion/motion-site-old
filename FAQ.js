@@ -59,7 +59,7 @@ view FAQ {
   </Contain>
 
   $ = {
-    margin: [50, 'auto'], //offset for p space
+    margin: [20, 'auto'], //offset for p space
     padding: [50, 40],
     maxWidth: 1000,
     lineHeight: '1.8rem',
