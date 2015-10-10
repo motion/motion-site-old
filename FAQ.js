@@ -8,8 +8,6 @@ view FAQ {
         Flint has all the power of React, so just about anything!
         We're focusing on making the developer experience as good as possible,
         opening up the community to build and release cool stuff for it.
-      </p>
-      <p>
         Flint is already in use at Zappos, Quixey and a variety of companies
         powering apps, internal tools, and websites.
       </p>
@@ -26,23 +24,15 @@ view FAQ {
     </answer>
 
     <question>
-      Does it work with React?
-    </question>
-    <answer>
-      <p>
-        Yes! Flint runs on React.
-      </p>
-    </answer>
-
-    <question>
-      What are "fast" hot reloads?
+      What are "ultra-fast" hot reloads?
     </question>
     <answer>
       <p>
         In general, you should see faster reloads than other systems.
         Flint has done some optimization to make this possible.
         Due to view macros and other optimizations we avoid a lot of
-        work during compilation.
+        work during compilation. The result? No matter how large your app,
+        save-to-refresh times are near instant.
       </p>
     </answer>
 
@@ -53,7 +43,9 @@ view FAQ {
       <p>
         You also can embed your Flint
         app into any page, so you could easily plug it into an existing
-        web app today.
+        web app today. We're working on plugins, but we strong suggest
+        trying out the CLI. Part of our speed difference is in the design
+        of the build system.
       </p>
     </answer>
   </Contain>

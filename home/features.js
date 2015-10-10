@@ -1,7 +1,7 @@
 view Features {
   <Contain>
     <Interlude center num="4">
-      Flint is real development, faster
+      Flint is development, faster
     </Interlude>
 
     <section>
@@ -40,10 +40,10 @@ view Features {
 
       <text>
         <col>
-          <title>Powered by React</title>
+          <title>Smart Errors</title>
           <description>
-            Use any React component, enhanced
-            with a beautiful syntax.
+            No disruptions. Runtime and compile
+            errors are shown inline and handled smartly.
           </description>
         </col>
         <img src={`/assets/images/type.svg`} />
