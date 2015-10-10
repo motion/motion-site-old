@@ -1,6 +1,6 @@
 view Home {
   <Blur left="45%" top={-200} />
-  <Password if={false} />
+  <Password />
   <Header />
   <Install />
   <Examples />
@@ -21,12 +21,15 @@ view Password {
   let disable = false
 
   const checkPass = () => {
-    if (password == 'love')
+    if (password == 'love' || password == 'Love')
       disable = true
   }
 
+  on('mount', () => view.refs.input.focus())
+
   <password if={!disable}>
     <input
+      ref="input"
       onEnter={checkPass}
       sync={password} />
   </password>
