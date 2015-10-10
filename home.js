@@ -780,10 +780,7 @@ view Install {
 
   $modal = {
     margin: [10, 'auto'],
-    padding: [0, 20, 20],
-    // background: '#fff',
-    // borderRadius: 4,
-    // boxShadow: '0 0 20px rgba(0,0,0,0.1)'
+    padding: [0, 20, 20]
   }
 
   $inner = {
@@ -803,7 +800,7 @@ view Install {
   }
 
   $input = {
-    background: color.brand1,
+    background: `linear-gradient(90deg, ${color.brand1}, ${color.brand2})`,
     borderRadius: 5,
     border: '2px solid #eee',
     padding: [8, 10, 8, 16],
