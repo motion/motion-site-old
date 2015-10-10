@@ -8,7 +8,7 @@ view Home {
   <Features />
   <Slack />
   <Contain>
-    <Interlude num="6" right>Install Flint to feel the difference</Interlude>
+    <Interlude num="6" center>Install Flint</Interlude>
     <Install />
   </Contain>
   <FAQ />
@@ -348,6 +348,7 @@ view Interlude {
     maxWidth: ^pad ? 600 : 'auto',
     textAlign: ^right ? 'right': 'left',
     flexDirection: ^right ? 'row-reverse' : 'row',
+    justifyContent: ^center ? 'center' : 'auto',
     margin: [40, 'auto', 20],
     padding: [0, 25],
 
@@ -589,8 +590,8 @@ view Toolbar {
 
 view Features {
   <Contain>
-    <Interlude right num="4">
-      Flint focuses on making development fun
+    <Interlude center num="4">
+      Flint makes development fun
     </Interlude>
 
     <List items={[
@@ -623,7 +624,7 @@ view List {
   </Contain>
 
   $ = {
-    margin: [0, 'auto', 20],
+    margin: [20, 'auto'],
     fontSize: 20,
   }
 
@@ -861,7 +862,7 @@ view Install {
 
 view Slack {
   <Contain id="slack">
-    <Interlude num="5">Join us on Slack!</Interlude>
+    <Interlude num="5" center>Join us on Slack!</Interlude>
     <iframe seamless="seamless" src="http://flint-slack.herokuapp.com/"></iframe>
   </Contain>
 
