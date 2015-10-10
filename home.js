@@ -383,7 +383,7 @@ view Interlude {
 
   $num = [shared, {
     fontWeight: 300,
-    background: '#ccc',
+    background: `linear-gradient(${Math.floor(Math.random() * 180)}deg, ${color.brand1}, ${color.brand2})`,
     color: '#fff',
     width: 70,
     fontSize: 32,
