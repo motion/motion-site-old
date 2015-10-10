@@ -25,7 +25,14 @@
       background: #fff;
       display: inline-block;
       margin: -2px -2px -4px;
+      opacity: 1;
       animation: 1.2s blink step-end infinite;
+      transition: all ease-in 1s;
+    }
+
+    hr.hide {
+      animation: none;
+      opacity: 0;
     }
 
     @keyframes blink {
@@ -80,7 +87,11 @@
     document.body.addEventListener('start', run)
 
     function advance() {
-      if (phrase === phrases.length) return
+      if (phrase === phrases.length) {
+        // done
+        document.querySelector('hr').className = 'hide'
+        return
+      }
 
       // if reached end
       if (char === phrases[phrase].length) {
