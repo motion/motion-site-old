@@ -30,7 +30,7 @@ color.text = '#444'
 color.strip = '#fff'
 
 const font = {}
-font.serif = 'Lato, Georgia, serif'
+font.serif = '-apple-system, Lato, Georgia, serif'
 font.sansSerif = 'Helvetica Neue, Helvetica, Lato, Arial, sans-serif'
 font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 
