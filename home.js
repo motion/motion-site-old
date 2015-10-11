@@ -16,44 +16,6 @@ view Home {
   $ = { width: '100%' }
 }
 
-view Password {
-  let password = ''
-  let disable = false
-
-  const checkPass = () => {
-    if (password == 'love' || password == 'Love')
-      disable = true
-  }
-
-  on('mount', () => view.refs.input.focus())
-
-  <password if={!disable}>
-    <input
-      ref="input"
-      onEnter={checkPass}
-      sync={password} />
-  </password>
-
-  $password = {
-    position: 'fixed',
-    top: 0, right: 0,
-    left: 0, bottom: 0,
-    background: '#eee',
-    zIndex: 1000,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-
-  $input = {
-    padding: 20,
-    background: '#fff',
-    border: '1px solid #ddd',
-    fontSize: 22,
-    margin: [0, 'auto'],
-    textAlign: 'center'
-  }
-}
-
 view Header {
   let startIntro = false
 
@@ -65,6 +27,7 @@ view Header {
     frameWin.body.dispatchEvent(event)
   }
 
+  <Nav />
   <Example
     flipVertical
     inStyle={{
@@ -93,7 +56,6 @@ view Header {
         src="/assets/examples/example.html" />
     }
   />
-  <Nav />
 
   $ = {
     position: 'relative',
@@ -126,7 +88,14 @@ view Header {
   $Nav = {
     position: 'absolute',
     top: 20,
-    right: 20
+    right: 20,
+
+    [device.small] : {
+      position: 'relative',
+      top: 0,
+      right: 0,
+      margin: [-50, 'auto', 0]
+    }
   }
 
   $head = {
@@ -288,7 +257,9 @@ view Examples {
     // padding: [0, 0, 40],
     margin: [0, 'auto', 40],
     width: '100%',
-    maxWidth: 980
+    maxWidth: 980,
+    position: 'relative',
+    zIndex: 0
   }
 
   $section = {
@@ -643,5 +614,44 @@ view Slack {
 
   $ = {
     marginBottom: 20
+  }
+}
+view Password {
+  let password = ''
+  let disable = false
+
+  const checkPass = () => {
+    if (password == 'love' || password == 'Love')
+      disable = true
+  }
+
+  on('mount', () => {
+    view.refs.input.focus()
+  })
+
+  <password if={!disable}>
+    <input
+      ref="input"
+      onEnter={checkPass}
+      sync={password} />
+  </password>
+
+  $password = {
+    position: 'fixed',
+    top: 0, right: 0,
+    left: 0, bottom: 0,
+    background: '#eee',
+    zIndex: 1000,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+
+  $input = {
+    padding: 20,
+    background: '#fff',
+    border: '1px solid #ddd',
+    fontSize: 22,
+    margin: [0, 'auto'],
+    textAlign: 'center'
   }
 }

@@ -5,7 +5,7 @@ view Signup {
   </Contain>
 
   $ = {
-    margin: [-50, 20, 40]
+    margin: 20
   }
 }
 
