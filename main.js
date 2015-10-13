@@ -6,7 +6,7 @@ view Main {
   $ = {
     color: color.text,
     fontSize: 18,
-    fontFamily: font.serif,
+    fontFamily: font.sansSerif,
     lineHeight: '2rem',
     overflow: 'hidden',
     background: color.bg,
@@ -30,8 +30,7 @@ color.text = '#444'
 color.strip = '#fff'
 
 const font = {}
-font.serif = '-apple-system, Lato, Georgia, serif'
-font.sansSerif = 'Helvetica Neue, Helvetica, Lato, Arial, sans-serif'
+font.sansSerif = 'Lato, Helvetica, sans-serif'
 font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
 
 const device = {}

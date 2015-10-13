@@ -48,6 +48,19 @@ view FAQ {
         of the build system.
       </p>
     </answer>
+
+    <question>
+      What about Flux, GraphQL, or data management in general?
+    </question>
+    <answer>
+      <p>
+        You can build Flux into Flint using npm, and we are exploring
+        ways to make GraphQL a first class citizen (and a lot easier
+        to use). At the moment, we'd recommend building without Flux,
+        and crossing that bridge when the time comes. We will be talking
+        more about good ways to handle data soon.
+      </p>
+    </answer>
   </Contain>
 
   $ = {
