@@ -56,7 +56,7 @@ view SignupForm {
     margin: 'auto'
   }
 
-  const input = {
+  $input = {
     width: '100%',
     marginBottom: 10,
     borderRadius: 5,
@@ -65,13 +65,6 @@ view SignupForm {
     color: '#666',
     border: '1px solid #ccc'
   }
-
-  $input = input
-
-  $textarea = [input, {
-    border: '1px solid #ccc',
-    height: 150
-  }]
 
   $label = {
     margin: [10, 0]
