@@ -263,9 +263,9 @@ view Editor {
   if (^sources) {
     srcs = ^sources.map(s => s.url)
     tabs = ^sources.map(s => s.title)
+  } else {
+    srcs = [^src]
   }
-
-  const getSrc = () => ^src || srcs[index]
 
   <Toolbar
     light={^light}
@@ -273,13 +273,7 @@ view Editor {
     activeTab={index}
     changeTab={i => index = i} />
   <container>
-    <iframe
-      id={^id}
-      src={getSrc()}
-      onLoad={() => {
-        ^onLoad && ^onLoad()
-      }}>
-    </iframe>
+    <iframe style={{display: index==_index?'flex':'none'}} repeat={srcs} src={_}></iframe>
   </container>
 
   $ = {
