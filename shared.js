@@ -6,8 +6,9 @@ view Blur {
   $ = {
     width: size,
     height: size,
-    background: ^bg || '#eee',
-    filter: `blur(${^blur || (size / 5)}px)`,
+    background: ^bg || '#f9f9f9',
+    filter: `blur(${^blur || (size / 15)}px)`,
+    borderRadius: size,
     position: 'absolute',
     zIndex: 0,
     top: ^top || 0,

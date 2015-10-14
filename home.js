@@ -109,7 +109,7 @@ view Home.Examples {
     </section>
 
     <section>
-      <Blur left="100%" />
+      <Blur left="60%" />
       <Interlude right num="2">
         Style views with ease...
       </Interlude>
