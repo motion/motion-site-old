@@ -1,5 +1,37 @@
+view HeaderAlt {
+  <wrap>
+    <Logo small />
+    <Nav />
+    <Social tiny />
+  </wrap>
+
+  $ = {
+    borderBottom: '1px solid #ddd',
+    padding: [5, 0]
+  }
+
+  $wrap = {
+    flexFlow: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '80%',
+    margin: [0, 'auto'],
+  }
+
+  $Nav = {
+    flexGrow: 1,
+    justifyContent: 'center'
+  }
+}
+
+view Head {
+  <Logo />
+  <Desc start={^start} if={^desc} />
+  <Social />
+}
+
 view Header {
-  let startIntro = false
+  let start = false
 
   const triggerEvent = (id, name)  => {
     event = document.createEvent('CustomEvent')
@@ -20,19 +52,13 @@ view Header {
         marginRight: 0
       }
     }}
-    out={
-      <head>
-        <Logo />
-        <Desc start={startIntro} />
-        <Social />
-      </head>
-    }
+    out={<Head start={^start} desc={true} />}
     in={
       <Editor right
         lines={7}
         id="headeriframe"
         onLoad={() => {
-          startIntro = true
+          start = true
           triggerEvent('headeriframe', 'start')
         }}
         src="/assets/examples/example.html" />
@@ -60,16 +86,6 @@ view Header {
     }
   }
 
-  $Editor = {
-    marginLeft: 30,
-
-    [device.small]: {
-      marginTop: 20,
-      marginLeft: 'auto',
-      marginRight: 'auto'
-    }
-  }
-
   $Nav = {
     position: 'absolute',
     top: 20,
@@ -83,17 +99,25 @@ view Header {
     }
   }
 
-  $head = {
-    marginRight: -20,
-    [device.small]: { margin: 0 }
+  $Editor = {
+    marginLeft: 30,
+
+    [device.small]: {
+      marginTop: 20,
+      marginLeft: 'auto',
+      marginRight: 'auto'
+    }
   }
 }
 
 view Nav {
+  const go = url =>
+    () => hist.pushState({}, url)
+
+  <a if={window.location.pathname != '/'} onClick={go('/')}>Home</a>
   <a target="_blank" href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
   <a href="#install" onClick={util.linkScroll}>Install</a>
-  <a href="">Examples</a>
-  <a if={false} target="_blank" href="http://github.com/flintjs"><IconSlack /></a>
+  <a onClick={go('/examples')}>Examples</a>
 
   $ = {
     margin: [0, 'auto'],
@@ -112,6 +136,7 @@ view Nav {
     fontSize: 16,
     fontWeight: 500,
     padding: [0, 12],
+    cursor: 'pointer'
   }]
 }
 
@@ -129,9 +154,13 @@ view Logo {
     }
   }
 
+  const width = 1019
+  const height = 282
+  const multiplier = ^small ? .15 : .25
+
   $img = {
-    width: Math.round(1019 * .25),
-    height: Math.round(282 * .25),
+    width: Math.round(width * multiplier),
+    height: Math.round(height * multiplier),
     margin: [0, 'auto', 20]
   }
 }
@@ -177,7 +206,7 @@ view Desc {
     }
   }
 
-  <desc>Web apps, {how}</desc>
+  <desc>Web apps, {^withExample ? how : 'creatively'}</desc>
 
   $desc = {
     textAlign: 'center',

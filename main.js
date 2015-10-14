@@ -1,11 +1,18 @@
+import { createHistory } from 'history'
 import chroma from 'chroma-js'
+
+const hist = createHistory()
 
 if (window.location.search == '?demo')
   window.location = 'https://www.youtube.com/watch?t=1&v=VNfkk6lH0gg'
 
 view Main {
-  <Home if={window.location.pathname == '/'} />
-  <Examples if={window.location.pathname == '/examples'} />
+  let location = window.location
+
+  hist.listen(l => location = l)
+
+  <Home if={location.pathname == '/'} />
+  <Examples if={location.pathname == '/examples'} />
 
   $ = {
     color: color.text,
@@ -71,4 +78,4 @@ util.linkScroll = e => {
   e.preventDefault()
 }
 
-export default { style, font, routes, device, color, util }
+export default { style, font, routes, device, color, util, hist }

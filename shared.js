@@ -131,7 +131,7 @@ view Social {
   }
 
   $a = ^tiny ?  {
-    margin: [0, 10],
+    margin: [0, 20],
     transform: {
       scale: 0.8
     }

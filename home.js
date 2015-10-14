@@ -505,9 +505,10 @@ view Slack {
   }
 }
 
+let disable = window.location.search == '?yc'
+
 view Password {
   let password = ''
-  let disable = window.location.search == '?yc'
 
   const checkPass = () => {
     if (password == 'love' || password == 'Love')
