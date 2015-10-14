@@ -2,7 +2,7 @@ view Home {
   <Blur left="45%" top={-200} />
   <Password />
   <Header />
-  <Intro if={false} />
+  <Test if={false} />
   <Install />
   <Examples />
   <Install />
@@ -15,6 +15,56 @@ view Home {
   <Footer />
 
   $ = { width: '100%' }
+}
+
+view Test {
+  <title>
+    <cat class="active">Simple</cat> +
+    <cat>Fast</cat> +
+    <cat>Helpful</cat> =
+    <cat>Creative</cat>
+  </title>
+  <row class="main">
+    <split />
+    <split />
+  </row>
+
+  $ = {
+    position: 'relative',
+    zIndex: 1000
+  }
+
+  $row = {
+    width: '80%',
+    margin: [0, 'auto', 40],
+    flexFlow: 'row',
+  }
+
+  $title = {
+    flexFlow: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: 26
+  }
+
+  $cat = {
+    padding: [10, 20]
+  }
+
+  $.active = {
+    fontWeight: 'bold',
+    color: color.brand1
+  }
+
+  $.main = {
+    height: 340,
+  }
+
+  $split = {
+    background: '#eee',
+    borderRight: '1px solid #ddd',
+    width: '50%'
+  }
 }
 
 view Intro {
@@ -457,7 +507,7 @@ view Slack {
 
 view Password {
   let password = ''
-  let disable = false
+  let disable = window.location.search == '?yc'
 
   const checkPass = () => {
     if (password == 'love' || password == 'Love')
@@ -465,7 +515,8 @@ view Password {
   }
 
   on('mount', () => {
-    view.refs.input.focus()
+    if (!disable)
+      view.refs.input.focus()
   })
 
   <password if={!disable}>

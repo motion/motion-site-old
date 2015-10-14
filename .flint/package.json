@@ -14,5 +14,12 @@
     "react-motion": "^0.2.7",
     "scroll": "0.0.3",
     "vivus": "^0.2.3"
-  }
+  },
+  "installed": [
+    "react-motion",
+    "mouse-event-offset",
+    "chroma-js",
+    "document-offset",
+    "scroll"
+  ]
 }
