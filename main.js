@@ -1,5 +1,8 @@
 import chroma from 'chroma-js'
 
+if (window.location.search == '?demo')
+  window.location = 'https://www.youtube.com/watch?t=1&v=VNfkk6lH0gg'
+
 view Main {
   <Home />
 
