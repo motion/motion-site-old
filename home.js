@@ -273,7 +273,13 @@ view Editor {
     activeTab={index}
     changeTab={i => index = i} />
   <container>
-    <iframe style={{display: index==_index?'flex':'none'}} repeat={srcs} src={_}></iframe>
+    <iframe
+      style={{display: index==_index ? 'flex' : 'none'}}
+      repeat={srcs}
+      src={_}
+      id={^id}
+      onLoad={() => { ^onLoad && ^onLoad() }}>
+    </iframe>
   </container>
 
   $ = {
