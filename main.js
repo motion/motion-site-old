@@ -4,7 +4,8 @@ if (window.location.search == '?demo')
   window.location = 'https://www.youtube.com/watch?t=1&v=VNfkk6lH0gg'
 
 view Main {
-  <Home />
+  <Home if={window.location.pathname == '/'} />
+  <Examples if={window.location.pathname == '/examples'} />
 
   $ = {
     color: color.text,

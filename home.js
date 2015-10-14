@@ -94,7 +94,7 @@ view Intro {
   }
 }
 
-view Examples {
+view Home.Examples {
   <Contain>
     <section>
       <Blur />
