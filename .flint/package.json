@@ -22,6 +22,7 @@
     "mouse-event-offset",
     "chroma-js",
     "document-offset",
-    "scroll"
+    "scroll",
+    "history"
   ]
 }

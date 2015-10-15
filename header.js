@@ -24,12 +24,6 @@ view HeaderAlt {
   }
 }
 
-view Head {
-  <Logo />
-  <Desc start={^start} if={^desc} />
-  <Social />
-}
-
 view Header {
   let start = false
 
@@ -52,7 +46,13 @@ view Header {
         marginRight: 0
       }
     }}
-    out={<Head start={^start} desc={true} />}
+    out={
+      <head>
+        <Logo />
+        <Desc start={^start} />
+        <Social />
+      </head>
+    }
     in={
       <Editor right
         lines={7}
@@ -75,6 +75,10 @@ view Header {
     [device.small]: {
       minWidth: 'auto'
     }
+  }
+
+  $Logo = {
+    margin: [0, 0, 20]
   }
 
   $Contain = {
@@ -144,10 +148,7 @@ view Logo {
   <img src="/assets/images/flintlogo20.png" />
 
   $ = {
-    flexFlow: 'row',
-    margin: [0, 'auto', -15],
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexShrink: 0,
 
     [device.small]: {
       marginTop: 30
@@ -156,12 +157,12 @@ view Logo {
 
   const width = 1019
   const height = 282
-  const multiplier = ^small ? .15 : .25
+  const multiplier = ^small ? .11 : .25
 
   $img = {
     width: Math.round(width * multiplier),
     height: Math.round(height * multiplier),
-    margin: [0, 'auto', 20]
+    margin: [0, 'auto']
   }
 }
 
@@ -213,7 +214,7 @@ view Desc {
     fontSize: 28,
     fontWeight: 300,
     lineHeight: '1.6rem',
-    padding: [22, 0],
+    padding: [0, 0, 17],
     margin: [0, 'auto'],
     display: 'block',
     color: '#777'
