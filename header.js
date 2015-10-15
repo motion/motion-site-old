@@ -49,7 +49,7 @@ view Header {
     out={
       <head>
         <Logo />
-        <Desc start={^start} />
+        <Desc start={start} />
         <Social />
       </head>
     }
@@ -71,7 +71,7 @@ view Header {
   $ = {
     position: 'relative',
     overflow: 'hidden',
-    padding: [75, 0, 40],
+    padding: [50, 0, 40],
     minWidth: 800,
     margin: [0, 'auto'],
 
@@ -95,7 +95,7 @@ view Header {
 
   $Nav = {
     position: 'absolute',
-    top: 20,
+    top: 10,
     right: 20,
 
     [device.small] : {
@@ -211,7 +211,7 @@ view Desc {
     }
   }
 
-  <desc>Web apps, {^withExample ? how : 'creatively'}</desc>
+  <desc>Web apps, {how}</desc>
 
   $desc = {
     textAlign: 'center',

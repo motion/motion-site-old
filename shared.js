@@ -1,5 +1,5 @@
 view Tag {
-  <tag>
+  <tag if={false}>
     {'<'}{^name}{' />'}
   </tag>
 
