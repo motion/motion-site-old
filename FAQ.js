@@ -1,5 +1,6 @@
 view FAQ {
   <Contain pad>
+    <Tag name="FAQ" right />
     <question>
       What can I build with it?
     </question>

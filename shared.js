@@ -1,3 +1,22 @@
+view Tag {
+  <tag>
+    {'<'}{^name}{' />'}
+  </tag>
+
+  const distance = ^outside ? -30 : 0
+  const side = ^right ? 'right' : 'left'
+
+  $tag = {
+    flexFlow: 'row',
+    fontSize: 12,
+    opacity: 0.11,
+    pointerEvents: 'none',
+    position: 'absolute',
+    top: distance,
+    [side]: distance
+  }
+}
+
 view Blur {
   const size = ^size || 500
 

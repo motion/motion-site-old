@@ -1,14 +1,18 @@
 
 view DemoVideo {
   <YouTube />
+  <Tag name="Video" outside />
 
   $ = {
-    width: '100%',
     textAlign: 'center',
     alignItems: 'center',
     margin: [20, 'auto'],
     position: 'relative',
-    zIndex: 100
+    zIndex: 100,
+
+    [device.small]: {
+      width: '100%',
+    }
   }
 }
 

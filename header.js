@@ -54,14 +54,17 @@ view Header {
       </head>
     }
     in={
-      <Editor right
-        lines={7}
-        id="headeriframe"
-        onLoad={() => {
-          start = true
-          triggerEvent('headeriframe', 'start')
-        }}
-        src="/assets/examples/example.html" />
+      <wrap>
+        <Editor right
+          lines={7}
+          id="headeriframe"
+          onLoad={() => {
+            start = true
+            triggerEvent('headeriframe', 'start')
+          }}
+          src="/assets/examples/example.html" />
+          <Tag name="Demo" right />
+      </wrap>
     }
   />
 
@@ -146,6 +149,7 @@ view Nav {
 
 view Logo {
   <img src="/assets/images/flintlogo20.png" />
+  <Tag name="Logo" />
 
   $ = {
     flexShrink: 0,

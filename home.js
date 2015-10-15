@@ -157,7 +157,10 @@ view Home.Examples {
 
 view Interlude {
   <Contain>
-    <num if={^num}>{^num}</num>
+    <Tag if={^num < 4} name="Num" outside right={^right} />
+    <num if={^num}>
+      {^num}
+    </num>
     <title>{^children}</title>
   </Contain>
 
@@ -202,6 +205,7 @@ view Interlude {
     width: 70,
     fontSize: 32,
     borderRadius: 100,
+    position: 'relative',
 
     [device.small]: {
       display: 'none'
@@ -421,6 +425,7 @@ view Install {
         <afterward>
           or: npm install -g flint
         </afterward>
+        <Tag name="Install" outside right />
       </inner>
     </modal>
   </Contain>
@@ -440,7 +445,8 @@ view Install {
   }
 
   $inner = {
-    margin: [-20, 0, 0]
+    margin: [-20, 0, 0],
+    position: 'relative'
   }
 
   $prompt = {

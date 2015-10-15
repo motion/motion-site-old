@@ -6,6 +6,7 @@ view Features {
 
     <section>
       <text>
+        <Tag name="Features" outside />
         <img src={`/assets/images/flowers.svg`} />
         <col>
           <title>Automatic NPM Installs</title>
@@ -64,6 +65,7 @@ view Features {
     margin: [5, 0],
     width: '50%',
     alignItems: 'center',
+    position: 'relative',
 
     [device.small]: {
       width: '100%'
