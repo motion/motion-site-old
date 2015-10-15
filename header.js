@@ -124,7 +124,7 @@ view Nav {
   <a if={window.location.pathname != '/'} onClick={go('/')}>Home</a>
   <a target="_blank" href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
   <a href="#install" onClick={util.linkScroll}>Install</a>
-  <a onClick={go('/examples')}>Examples</a>
+  <a if={false} onClick={go('/examples')}>Examples</a>
 
   $ = {
     margin: [0, 'auto'],
