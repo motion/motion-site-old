@@ -1,5 +1,5 @@
 view Home {
-  <Blur left="45%" top={-200} />
+  <Blur left="40%" top={-200} />
   <Password />
   <Header />
   <Test if={false} />
@@ -262,7 +262,7 @@ const light = '#fefefe'
 
 view Editor {
   let index = 0
-  let tabs, srcs;
+  let tabs, srcs
 
   if (^sources) {
     srcs = ^sources.map(s => s.url)
@@ -511,10 +511,11 @@ view Slack {
   }
 }
 
-let disable = window.location.search == '?yc'
+let overrideDisable = window.location.search == '?yc'
 
 view Password {
   let password = ''
+  let disable = overrideDisable || false
 
   const checkPass = () => {
     if (password == 'love' || password == 'Love')
