@@ -11,18 +11,19 @@ view Features {
         <col>
           <title>Automatic NPM Installs</title>
           <description>
-            As you type Flint installs npm packages instantly
-            without having to refresh.
+            Flint scans your code as you type & installs npm packages instantly.
+            No need to refresh your browser.
           </description>
         </col>
       </text>
 
-      <text>
+      <text class="right">
         <col>
-          <title>Instant Hot Updates</title>
+          <title>Super Hot Updates</title>
           <description>
-            Flint's compiler stays fast even with hundreds
-            or thousands of views.
+            Retains deep nested state,
+            even when parents change. Stays fast even with thousands
+            of views.
           </description>
         </col>
         <img src={`/assets/images/transport.svg`} />
