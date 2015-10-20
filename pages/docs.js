@@ -3,6 +3,7 @@ const docs = [
   { title: "Install", view: 'Install', slug: 'install' },
   { title: "Views", view: 'Views', slug: 'views' },
   { title: "Styles", view: 'Styles', slug: 'styles' },
+  { title: "Routes", view: 'Routes', slug: 'routes' },  
   { title: "Extras", view: 'Extras', slug: 'extras' }
 ]
 

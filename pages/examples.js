@@ -1,6 +1,4 @@
 const examples = [
-  { title: "Styling", view: 'Example1', slug: 'one' },
-  { title: "Routing", view: 'Example1', slug: 'one' },
   { title: "Are.na API", view: 'Example1', slug: 'one' },
   { title: "Todo MVC", view: 'Example1', slug: 'one' }
 ]
