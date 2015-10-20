@@ -1,67 +1,14 @@
 const examples = [
-  {
-    title: "Are.na API",
-    view: 'Example1',
-    slug: 'one'
-  },
-  {
-    title: "Todo MVC",
-    view: 'Example2'
-  },
-  {
-    title: "Routing",
-    view: 'Example3'
-  },
-  {
-    title: "Styling",
-    view: 'Example3'
-  }
+  { title: "Are.na API", view: 'Example1', slug: 'one' },
+  { title: "Todo MVC", view: 'Example1', slug: 'one' },
+  { title: "Routing", view: 'Example1', slug: 'one' },
+  { title: "Styling", view: 'Example1', slug: 'one' },
 ]
 
 view Examples {
-  <HeaderAlt />
-  <Contain>
-    <Sidebar />
+  <Page list={examples} base="/examples">
     <Example route="/examples/:slug" />
-  </Contain>
-
-  $Contain = {
-    flexFlow: 'row',
-    width: '80%',
-    maxWidth: 1300
-  }
-}
-
-view Examples.Sidebar {
-  <item repeat={examples}>
-    <a key={_index} onClick={router.link('/examples/' + _.slug)}>
-      {_.title}
-    </a>
-  </item>
-
-  $ = {
-    borderRight: '1px solid #ddd',
-    margin: 20,
-    marginLeft: 0
-  }
-
-  $item = {
-    flexFlow: 'row',
-    lineHeight: '1.6rem',
-  }
-
-  $index = {
-    padding: [0, 10, 0, 0],
-    flexFlow: 'row'
-  }
-
-  $a = [style.link, {
-    whiteSpace: 'nowrap',
-    padding: 20,
-    width: '100%',
-    display: 'flex',
-    textAlign: 'right'
-  }]
+  </Page>
 }
 
 view Examples.Example {
