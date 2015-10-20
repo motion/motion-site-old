@@ -73,7 +73,8 @@ view Header {
     margin: [0, 'auto'],
 
     [device.small]: {
-      minWidth: 'auto'
+      minWidth: 'auto',
+      padding: [70, 0, 0],
     }
   }
 
@@ -88,7 +89,7 @@ view Header {
 
     [device.small] : {
       position: 'relative',
-      top: 0,
+      top: -10,
       right: 0,
       margin: [-50, 'auto', 0]
     }
