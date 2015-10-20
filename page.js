@@ -2,13 +2,19 @@ view Page {
   <HeaderAlt />
   <Contain>
     <Sidebar yield />
-    {^children}
+    <inner>
+      {^children}
+    </inner>
   </Contain>
 
   $Contain = {
     flexFlow: 'row',
     width: '80%',
     maxWidth: 1300
+  }
+
+  $inner = {
+    padding: 20
   }
 }
 
@@ -39,6 +45,7 @@ view Page.Sidebar {
     whiteSpace: 'nowrap',
     padding: 20,
     width: '100%',
+    minWidth: 120,
     display: 'flex',
     textAlign: 'right'
   }]

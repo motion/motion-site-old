@@ -113,9 +113,9 @@ view Nav {
   }
 
   <a if={window.location.pathname != '/'} onClick={router.link('/')}>Home</a>
-  <a onClick={router.link(routes.docs)}>Docs</a>
+  <a onClick={router.link(routes.docs)}>Learn</a>
   <a onClick={router.link(routes.examples)}>Examples</a>
-  <a href="#install" onClick={showInstall}>Install</a>
+  <a route={routes.home} href="#install" onClick={showInstall}>Install</a>
 
   $ = {
     margin: [0, 'auto'],

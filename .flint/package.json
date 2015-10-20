@@ -11,8 +11,10 @@
     "document-offset": "^1.0.4",
     "flint-js": "^1.0.0",
     "history": "^1.12.5",
+    "marked": "^0.3.5",
     "mouse-event-offset": "^2.0.0",
     "react": "^0.14.0",
+    "react-markdown": "^1.0.3",
     "react-motion": "^0.2.7",
     "scroll": "0.0.3",
     "vivus": "^0.2.3"

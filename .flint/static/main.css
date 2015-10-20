@@ -72,6 +72,10 @@ li {
   display: list-item;
 }
 
+p {
+  margin-top: 0;
+}
+
 
 /*!
  *  Hack v2.010 by Chris Simpkins - https://sourcefoundry.org/hack/
