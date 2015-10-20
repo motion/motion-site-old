@@ -57,7 +57,6 @@ view Contain {
     alignItems: 'inherit',
     justifyContent: 'inherit',
     flexGrow: 1,
-    flexShrink: 0,
     margin: [^strip ? 30 : 0, 'auto'],
     padding,
     position: 'relative',
@@ -77,7 +76,6 @@ view Contain {
     alignItems: 'inherit',
     justifyContent: 'inherit',
     flexGrow: 1,
-    flexShrink: 0,
   }, ^contentStyle]
 
   $.end = {
@@ -93,9 +91,8 @@ view Title {
 
   $h2 = [style.textGradient, {
     fontSize: ^big ? 28 : 24,
-    margin: [10, 'auto'],
-    padding: [10, 0],
-    textAlign: 'center'
+    margin: [10, 0],
+    padding: [10, 0]
   }]
 }
 

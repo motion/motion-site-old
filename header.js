@@ -138,7 +138,7 @@ view Nav {
 }
 
 view Logo {
-  <img src="/assets/images/flintlogo20.png" />
+  <img onClick={router.link(routes.home)} src="/assets/images/flintlogo20.png" />
   <Tag name="Logo" />
 
   $ = {
