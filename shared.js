@@ -49,7 +49,7 @@ view Contain {
 
   $ = {
     background: ^bg || (^strip ? color.strip : 'transparent'),
-    maxWidth: ^maxWidth || 950,
+    maxWidth: ^maxWidth || 1050,
     minWidth: ^minWidth || 0,
     width: '100%',
     color: ^color || 'auto',
@@ -69,7 +69,7 @@ view Contain {
     }
   }
 
-  $content = {
+  $content = [{
     transform: {
       rotate: ^straight ? '1.2deg' : 0
     },
@@ -78,7 +78,7 @@ view Contain {
     justifyContent: 'inherit',
     flexGrow: 1,
     flexShrink: 0,
-  }
+  }, ^contentStyle]
 
   $.end = {
     top: 'auto',

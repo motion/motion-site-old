@@ -6,8 +6,7 @@ view Features {
 
     <section>
       <text>
-        <Tag name="Features" outside />
-        <img src={`/assets/images/flowers.svg`} />
+        <img src={`/assets/images/line/cloud-download.svg`} />
         <col>
           <title>Automatic NPM Installs</title>
           <description>
@@ -18,51 +17,65 @@ view Features {
       </text>
 
       <text class="right">
+        <img src={`/assets/images/line/rocket.svg`} />
         <col>
           <title>Super Hot Updates</title>
           <description>
             Stays fast even with thousands
-            of views & retains deep nested state when editing parents.
+            of views in large apps.
+            Retains deep nested state when editing parent views,
+            for crazy productivity.
           </description>
         </col>
-        <img src={`/assets/images/transport.svg`} />
       </text>
 
       <text>
-        <img src={`/assets/images/river.svg`} />
+        <img src={`/assets/images/line/cog.svg`} />
         <col>
           <title>No boilerplate</title>
           <description>
-            Forget configs, gulp systems, and huge amounts
-            of time keeping your stack modern.
+            Forget configs, gulp systems, and having to spend weeks
+            researching and assembling a modern modern on React.
           </description>
         </col>
       </text>
 
-      <text>
+      <text class="right">
+        <img src={`/assets/images/line/bulb.svg`} />
         <col>
           <title>Smart Errors</title>
           <description>
             No disruptions. Runtime and compile
             errors are shown inline and handled smartly.
+            Flint even helps with typos and suggests edits.
           </description>
         </col>
-        <img src={`/assets/images/type.svg`} />
+      </text>
+
+      <text>
+        <img src={`/assets/images/line/snowflake.svg`} />
+        <col>
+          <title>Powerful Styles</title>
+          <description>
+            Easy syntax, media queries, interactive styles, multiple styles,
+            array/object shorthands, plus smart compiler static analysis to extract
+            stylesheets for performance.
+          </description>
+        </col>
       </text>
     </section>
   </Contain>
 
   $section = {
-    margin: [10, 'auto'],
-    flexFlow: 'row',
+    margin: [30, 'auto'],
     flexWrap: 'wrap',
-    maxWidth: '90%',
+    maxWidth: '100%',
   }
 
   $text = {
     flexFlow: 'row',
     textAlign: 'left',
-    margin: [5, 0],
+    margin: [-20, 0],
     width: '50%',
     alignItems: 'center',
     position: 'relative',
@@ -73,9 +86,8 @@ view Features {
   }
 
   $img = {
-    width: 80,
-    height: 120,
-    margin: 10,
+    width: 100,
+    margin: 0,
 
     [device.small]: {
       width: '12%',
@@ -85,7 +97,8 @@ view Features {
   }
 
   $.right = {
-    alignSelf: 'flex-end'
+    alignSelf: 'flex-end',
+    flexDirection: 'row-reverse'
   }
 
   $title = {

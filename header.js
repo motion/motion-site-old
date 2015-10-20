@@ -54,24 +54,21 @@ view Header {
       </head>
     }
     in={
-      <wrap>
-        <Editor right
-          lines={7}
-          id="headeriframe"
-          onLoad={() => {
-            start = true
-            triggerEvent('headeriframe', 'start')
-          }}
-          src="/assets/examples/example.html" />
-          <Tag name="Demo" right />
-      </wrap>
+      <Editor right
+        lines={7}
+        id="headeriframe"
+        onLoad={() => {
+          start = true
+          triggerEvent('headeriframe', 'start')
+        }}
+        src="/assets/examples/example.html" />
     }
   />
 
   $ = {
     position: 'relative',
     overflow: 'hidden',
-    padding: [50, 0, 40],
+    padding: [50, 60, 40, 0],
     minWidth: 800,
     margin: [0, 'auto'],
 
@@ -81,16 +78,7 @@ view Header {
   }
 
   $Logo = {
-    margin: [0, 0, 20]
-  }
-
-  $Contain = {
-    margin: [0, 'auto'],
-
-    [device.small]: {
-      minWidth: 'auto',
-      background: 'none'
-    }
+    margin: [10, 0, 20]
   }
 
   $Nav = {
@@ -107,8 +95,6 @@ view Header {
   }
 
   $Editor = {
-    marginLeft: 30,
-
     [device.small]: {
       marginTop: 20,
       marginLeft: 'auto',
@@ -118,13 +104,10 @@ view Header {
 }
 
 view Nav {
-  const go = url =>
-    () => hist.pushState({}, url)
-
-  <a if={window.location.pathname != '/'} onClick={go('/')}>Home</a>
+  <a if={window.location.pathname != '/'} onClick={router.link('/')}>Home</a>
   <a target="_blank" href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
   <a href="#install" onClick={util.linkScroll}>Install</a>
-  <a if={false} onClick={go('/examples')}>Examples</a>
+  <a onClick={() => router.link('/examples')}>Examples</a>
 
   $ = {
     margin: [0, 'auto'],
@@ -221,6 +204,6 @@ view Desc {
     padding: [0, 0, 17],
     margin: [0, 'auto'],
     display: 'block',
-    color: '#777'
+    color: '#888'
   }
 }
