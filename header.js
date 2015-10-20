@@ -104,10 +104,17 @@ view Header {
 }
 
 view Nav {
+  function showInstall(e) {
+    if (router.isActive(routes.home))
+      util.linkScroll(e)
+    else
+      router.go(routes.home)
+  }
+
   <a if={window.location.pathname != '/'} onClick={router.link('/')}>Home</a>
-  <a target="_blank" href="http://flintdev.gitbooks.io/flint/content/">Docs</a>
-  <a href="#install" onClick={util.linkScroll}>Install</a>
-  <a onClick={() => router.link('/examples')}>Examples</a>
+  <a onClick={router.link(routes.docs)}>Docs</a>
+  <a onClick={router.link(routes.examples)}>Examples</a>
+  <a href="#install" onClick={showInstall}>Install</a>
 
   $ = {
     margin: [0, 'auto'],

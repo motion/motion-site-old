@@ -35,7 +35,6 @@ view Examples.Sidebar {
   }
 
   <item repeat={examples}>
-    <index>{_index}.</index>
     <a key={_index} href={show(_index)}>
       {_.title}
     </a>

@@ -4,8 +4,9 @@ if (window.location.search == '?demo')
   window.location = 'https://www.youtube.com/watch?t=1&v=VNfkk6lH0gg'
 
 view Main {
-  <Home route="/" />
-  <Examples route="/examples" />
+  <Home route={routes.home} />
+  <Examples route={routes.examples} />
+  <Docs route={routes.docs} />
 
   $ = {
     color: color.text,
@@ -22,7 +23,8 @@ const router = Flint.router
 
 const routes = {}
 routes.home = '/'
-routes.faq = '/faq'
+routes.examples = '/examples'
+routes.docs = '/docs'
 
 const color = chroma || function(){}
 color.brand = '#eb522d'
