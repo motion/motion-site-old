@@ -25,6 +25,7 @@
     "chroma-js",
     "document-offset",
     "scroll",
-    "history"
+    "history",
+    "marked"
   ]
 }

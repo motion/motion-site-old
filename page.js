@@ -43,7 +43,7 @@ view Page.Sidebar {
 
   $a = [style.link, {
     whiteSpace: 'nowrap',
-    padding: 20,
+    padding: [10, 20],
     width: '100%',
     minWidth: 120,
     display: 'flex',

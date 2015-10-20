@@ -24,12 +24,12 @@ body * {
   flex-shrink: 1;
   align-items: stretch;
   box-sizing: border-box;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 
   -webkit-flex-flow: column;
   -webkit-flex-shrink: 1;
   -webkit-align-items: stretch;
-  -webkit-flex-wrap: nowrap;
+  -webkit-flex-wrap: wrap;
 }
 
 #_flintapp > .main {

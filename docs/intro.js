@@ -1,37 +1,42 @@
 const contents = `
-### Command Line
+Flint is focused on making building modern websites easier, faster, and more fun than ever before.
 
-Install Flint CLI and create a new app.
+Everything we are doing is aimed at improving frontend development. Flint is:
 
-#### Install
+- full-featured CLI
+- build system
+- simple view syntax
+- smart, sophisticated styling
+- ulta hot reloads
+- sane defaults and polyfills
+- smart errors
+- built in tooling
+- and tons of time spent polishing it, so you don't have to
 
-Our install script helps set you up a bit better:
+It's built on React with modern ES6 Javascript. It uses Babel with some custom macros to enable the **view** syntax. It's simple views avoid complex import AST tracking that greatly improves hot reload times.
 
-    sh <(curl -sL https://flint.love)
+Flint's goal is to let you focus on making things creatively.
 
-Or you can just:
+From start to finish you can avoid all sorts of time wasted on non-creative effort. It starts with a simple CLI to generate, run and build your apps. No maintaining a complex build system, and really great live reloads are free.
 
-    # install
-    npm install -g flint
+It installs npm packages for you as you type, shows you nice errors messages, and builds to production. No more scaffolding repos or copying over webpack configs.
 
-#### Running
+Flint is designed from the start to support "realtime editing". When enabled, your app will live-update with each character you type.
 
-Once set up, create your first app:
+## Principles
 
-    # create app
-    flint new appname
+### Simplicity
+Above all else, Flint has rethought vast areas of complexity that are present in today's workflows. Simplicity isn't just automating things, it requires intentional design from the start.
 
-    # start app
-    cd appname
-    flint
+### No configuration
 
-Your app should open automatically in Chrome for you. Open your app to begin editing!
+Avoid all the time you spend hacking on build systems, a variety of view system modules, scaffolding new projects, and generally doing anything besides creative development. We've aimed to remove as much dead time as possible, letting you go from idea to live as quickly as possible.
 
-#### When you're ready to deploy
+### Creativity
 
-    flint build
+Creativity only comes when your tools fade into the background. Painters don't have to reload their canvas after every stroke.  They don't have to design their own custom easel.
 
-You app is now built into \`.flint/build\`. Try uploading it to divshot or surge.sh to see it instantly.
+Throughout the process of building there are countless moments where ease of experimentation unlocks entirely new paths. You stumble on solutions only because you have fast and lightweight tools. Closeness to your canvas brings greater ability to create.
 `
 
 view Docs.Intro {

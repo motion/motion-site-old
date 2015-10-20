@@ -403,6 +403,10 @@ view Install {
     opacity: 0.5
   }
 
+  $code = {
+    background: 'none'
+  }
+
   $.install = {
     flexFlow: 'row',
     color: '#555',
