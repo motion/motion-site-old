@@ -1,8 +1,6 @@
-view Home {  
+view Home {
   <Blur left="45%" top={-200} />
-  <Password />
   <Header />
-  <Test if={false} />
   <Install />
   <Examples />
   <Install />
@@ -15,56 +13,6 @@ view Home {
   <Footer />
 
   $ = { width: '100%' }
-}
-
-view Test {
-  <title>
-    <cat class="active">Simple</cat> +
-    <cat>Fast</cat> +
-    <cat>Helpful</cat> =
-    <cat>Creative</cat>
-  </title>
-  <row class="main">
-    <split />
-    <split />
-  </row>
-
-  $ = {
-    position: 'relative',
-    zIndex: 1000
-  }
-
-  $row = {
-    width: '80%',
-    margin: [0, 'auto', 40],
-    flexFlow: 'row',
-  }
-
-  $title = {
-    flexFlow: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontSize: 26
-  }
-
-  $cat = {
-    padding: [10, 20]
-  }
-
-  $.active = {
-    fontWeight: 'bold',
-    color: color.brand1
-  }
-
-  $.main = {
-    height: 340,
-  }
-
-  $split = {
-    background: '#eee',
-    borderRight: '1px solid #ddd',
-    width: '50%'
-  }
 }
 
 view Intro {
@@ -508,48 +456,5 @@ view Slack {
 
   $ = {
     marginBottom: 20
-  }
-}
-
-const winDisable = window.location.search == '?yc'
-
-view Password {
-  let password = ''
-  let disable = winDisable
-
-  const checkPass = () => {
-    if (password == 'love' || password == 'Love')
-      disable = true
-  }
-
-  on('mount', () => {
-    if (!disable)
-      view.refs.input.focus()
-  })
-
-  <password if={!disable}>
-    <input
-      ref="input"
-      onEnter={checkPass}
-      sync={password} />
-  </password>
-
-  $password = {
-    position: 'fixed',
-    top: 0, right: 0,
-    left: 0, bottom: 0,
-    background: '#eee',
-    zIndex: 1000,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-
-  $input = {
-    padding: 20,
-    background: '#fff',
-    border: '1px solid #ddd',
-    fontSize: 22,
-    margin: [0, 'auto'],
-    textAlign: 'center'
   }
 }

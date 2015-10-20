@@ -4,6 +4,7 @@ if (window.location.search == '?demo')
   window.location = 'https://www.youtube.com/watch?t=1&v=VNfkk6lH0gg'
 
 view Main {
+  <Password />
   <Home route={routes.home} />
   <Examples route={routes.examples} />
   <Docs route={routes.docs} />
@@ -18,6 +19,49 @@ view Main {
     position: 'relative',
   }
 }
+
+let disable = window.location.search == '?yc'
+
+view Password {
+  let password = ''
+
+  const checkPass = () => {
+    if (password == 'love' || password == 'Love')
+      disable = true
+  }
+
+  on('mount', () => {
+    if (!disable)
+      view.refs.input.focus()
+  })
+
+  <password if={!disable}>
+    <input
+      ref="input"
+      onEnter={checkPass}
+      sync={password} />
+  </password>
+
+  $password = {
+    position: 'fixed',
+    top: 0, right: 0,
+    left: 0, bottom: 0,
+    background: '#eee',
+    zIndex: 1000,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+
+  $input = {
+    padding: 20,
+    background: '#fff',
+    border: '1px solid #ddd',
+    fontSize: 22,
+    margin: [0, 'auto'],
+    textAlign: 'center'
+  }
+}
+
 
 const router = Flint.router
 
