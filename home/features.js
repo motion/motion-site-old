@@ -21,9 +21,8 @@ view Features {
         <col>
           <title>Super Hot Updates</title>
           <description>
-            Retains deep nested state,
-            even when parents change. Stays fast even with thousands
-            of views.
+            Stays fast even with thousands
+            of views & retains deep nested state when editing parents.
           </description>
         </col>
         <img src={`/assets/images/transport.svg`} />

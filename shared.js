@@ -128,7 +128,7 @@ view Footer {
 }
 
 view Social {
-  <a target="_blank" href="http://github.com/flintjs">
+  <a target="_blank" href="http://github.com/flintjs/flint">
     <IconGithub />
   </a>
   <a href="#slack" onClick={util.linkScroll}>
