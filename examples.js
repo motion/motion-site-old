@@ -1,25 +1,28 @@
 const examples = [
   {
-    title: "The Case of the Missing Blonde",
-    body: 'Example1'
+    title: "Are.na API",
+    view: 'Example1',
+    slug: 'one'
   },
   {
-    title: "The Bradshaw Killer",
-    body: 'Example2'
+    title: "Todo MVC",
+    view: 'Example2'
   },
   {
-    title: "No Chains, No Gains",
-    body: 'Example3'
+    title: "Routing",
+    view: 'Example3'
+  },
+  {
+    title: "Styling",
+    view: 'Example3'
   }
 ]
 
 view Examples {
-  let active = examples[0]
-
   <HeaderAlt />
   <Contain>
     <Sidebar />
-    <Example {...active} />
+    <Example route="/examples/:slug" />
   </Contain>
 
   $Contain = {
@@ -30,12 +33,8 @@ view Examples {
 }
 
 view Examples.Sidebar {
-  const show = i => {
-    return () => ^show(i)
-  }
-
   <item repeat={examples}>
-    <a key={_index} href={show(_index)}>
+    <a key={_index} onClick={router.link('/examples/' + _.slug)}>
       {_.title}
     </a>
   </item>
@@ -43,15 +42,12 @@ view Examples.Sidebar {
   $ = {
     borderRight: '1px solid #ddd',
     margin: 20,
-    marginLeft: 0,
-    width: '25%',
-    minWidth: 250
+    marginLeft: 0
   }
 
   $item = {
     flexFlow: 'row',
     lineHeight: '1.6rem',
-    margin: 10,
   }
 
   $index = {
@@ -59,12 +55,24 @@ view Examples.Sidebar {
     flexFlow: 'row'
   }
 
-  $a = style.link
+  $a = [style.link, {
+    whiteSpace: 'nowrap',
+    padding: 20,
+    width: '100%',
+    display: 'flex',
+    textAlign: 'right'
+  }]
 }
 
 view Examples.Example {
+  let el
+
+  on('props', () => {
+    el = examples.filter(x => x.slug == ^params.slug)[0]
+  })
+
   <body>
-    {view.el(^body)}
+    {view.el(el.view)}
   </body>
 
   $body = {

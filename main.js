@@ -47,6 +47,7 @@ device.small = '@media (max-width: 850px)'
 const style = {}
 style.link = {
   color: color.blue,
+  cursor: 'pointer',
   textDecoration: 'none',
   borderBottom: '1px dotted #ddd',
   padding: 0,

@@ -142,11 +142,7 @@ view Logo {
   <Tag name="Logo" />
 
   $ = {
-    flexShrink: 0,
-
-    [device.small]: {
-      marginTop: 30
-    }
+    flexShrink: 0
   }
 
   const width = 1019
