@@ -1,6 +1,4 @@
 const contents = `
-# Getting Started
-
 ### Command Line
 
 Install Flint CLI and create a new app.

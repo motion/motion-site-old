@@ -11,9 +11,8 @@ view Main {
 
   $ = {
     color: color.text,
-    fontSize: 18,
+    fontSize: 16,
     fontFamily: font.sansSerif,
-    lineHeight: '2rem',
     overflow: 'hidden',
     background: color.bg,
     position: 'relative',
