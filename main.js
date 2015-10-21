@@ -4,11 +4,18 @@ import chroma from 'chroma-js'
 if (window.location.search == '?demo')
   window.location = 'https://www.youtube.com/watch?t=1&v=VNfkk6lH0gg'
 
+let forceHidePass = window.location.search == '?yc'
+
 view Main {
-  <Password />
-  <Home route={routes.home} />
-  <Examples route={routes.examples} />
-  <Docs route={routes.docs} />
+  let hidePass = forceHidePass
+
+  <Password onShow={() => hidePass = true} />
+
+  <blur>
+    <Home route={routes.home} />
+    <Examples route={routes.examples} />
+    <Docs route={routes.docs} />
+  </blur>
 
   $ = {
     color: color.text,
@@ -16,26 +23,31 @@ view Main {
     fontFamily: font.sansSerif,
     overflow: 'hidden',
     background: color.bg,
-    position: 'relative',
+    position: 'relative'
+  }
+
+  $blur = {
+    filter: !hidePass ? 'blur(14px)' : 'none'
   }
 }
 
-let disable = window.location.search == '?yc'
-
 view Password {
   let password = ''
+  let hidePass = forceHidePass
 
   const checkPass = () => {
-    if (password == 'love' || password == 'Love')
-      disable = true
+    if (password == 'love' || password == 'Love') {
+      ^onShow()
+      hidePass = true
+    }
   }
 
   on('mount', () => {
-    if (!disable)
+    if (!hidePass)
       view.refs.input.focus()
   })
 
-  <password if={!disable}>
+  <password if={!hidePass}>
     <input
       ref="input"
       onEnter={checkPass}
@@ -43,6 +55,7 @@ view Password {
   </password>
 
   $password = {
+    opacity: 0.6,
     position: 'fixed',
     top: 0, right: 0,
     left: 0, bottom: 0,
