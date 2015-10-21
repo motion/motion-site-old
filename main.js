@@ -1,3 +1,4 @@
+import highlight from 'highlight.js'
 import chroma from 'chroma-js'
 
 if (window.location.search == '?demo')
@@ -119,4 +120,4 @@ util.linkScroll = e => {
   e.preventDefault()
 }
 
-export default { style, font, routes, router, device, color, util }
+export default { style, font, routes, router, device, color, util, highlight }

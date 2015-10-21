@@ -154,3 +154,32 @@ view Social {
     margin: [0, 20, -10]
   }
 }
+
+view Body {
+  <body yield />
+}
+
+view Code {
+  function clean(src) {
+    return src.split("\n").map(l => l.slice(6)).filter(l => !!l).join("\n")
+  }
+
+  on('mount', () => {
+    highlight.highlightBlock(view.refs.code)
+  })
+
+  <code ref="code" class="javascript">
+    {clean(^source)}
+  </code>
+
+  $ = {
+    background: '#fff',
+    border: '1px solid #ddd',
+    padding: 10,
+    fontSize: 15,
+    lineHeight: 1.4,
+    whiteSpace: 'pre',
+    borderRadius: 4,
+    background: '#1E2B33'
+  }
+}

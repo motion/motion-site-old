@@ -10,6 +10,7 @@
     "chroma-js": "^1.1.1",
     "document-offset": "^1.0.4",
     "flint-js": "^1.0.0",
+    "highlight.js": "^8.9.1",
     "history": "^1.12.5",
     "marked": "^0.3.5",
     "mouse-event-offset": "^2.0.0",

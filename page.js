@@ -8,9 +8,9 @@ view Page {
   </Contain>
 
   $Contain = {
-    flexFlow: 'row',
     width: '80%',
-    maxWidth: 1300
+    maxWidth: 1300,
+    flexFlow: 'row'
   }
 
   $inner = {
