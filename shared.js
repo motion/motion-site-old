@@ -178,7 +178,7 @@ view Code {
   </code>
 
   $ = {
-    background: '#fff',
+    background: '#1E2B33',
     border: '1px solid #ddd',
     padding: 10,
     fontSize: 15,
