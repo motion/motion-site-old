@@ -1,3 +1,4 @@
+highlight.configure({ useBR: false })
 highlight.registerLanguage('javascript', H_js)
 
 function H_js(hljs) {
@@ -59,7 +60,7 @@ function H_js(hljs) {
           hljs.REGEXP_MODE,
           { // E4X / JSX
             begin: /</,
-            end: /(( />)|(</[a-zA-Z]+)>)/,
+            end: /(( />)|(</[a-zA-Z0-9]+)>)/,
             relevance: 0,
             subLanguage: 'xml'
           }

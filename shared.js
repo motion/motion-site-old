@@ -161,7 +161,12 @@ view Body {
 
 view Code {
   function clean(src) {
-    return src.split("\n").map(l => l.slice(6)).filter(l => !!l).join("\n")
+    let arr = src.split("\n")
+    arr.shift()
+
+    return arr
+      .map(l => l.slice(6))
+      .join("\n")
   }
 
   on('mount', () => {
@@ -179,7 +184,6 @@ view Code {
     fontSize: 15,
     lineHeight: 1.4,
     whiteSpace: 'pre',
-    borderRadius: 4,
-    background: '#1E2B33'
+    borderRadius: 4
   }
 }
