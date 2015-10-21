@@ -60,7 +60,7 @@ function H_js(hljs) {
           hljs.REGEXP_MODE,
           { // E4X / JSX
             begin: /</,
-            end: /(( />)|(</[a-zA-Z0-9]+)>)/,
+            end: /(\s\/>)|(<\/[a-zA-Z0-9]+>)/,
             relevance: 0,
             subLanguage: 'xml'
           }
