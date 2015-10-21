@@ -140,7 +140,6 @@ view Nav {
 
 view Logo {
   <img onClick={router.link(routes.home)} src="/assets/images/flintlogo20.png" />
-  <Tag name="Logo" />
 
   $ = {
     flexShrink: 0
@@ -153,7 +152,8 @@ view Logo {
   $img = {
     width: Math.round(width * multiplier),
     height: Math.round(height * multiplier),
-    margin: [0, 'auto']
+    margin: [0, 'auto'],
+    cursor: 'pointer'
   }
 }
 

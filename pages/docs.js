@@ -10,7 +10,7 @@ const docs = [
 view Docs {
   <Page list={docs} base="/docs">
     <Doc route="/docs/:slug" />
-    <Intro route="/docs" />
+    <Intro route={{ strict: true, path: '/docs' }} />
   </Page>
 }
 
