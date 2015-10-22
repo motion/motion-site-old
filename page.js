@@ -9,7 +9,7 @@ view Page {
 
   $Contain = {
     width: '80%',
-    maxWidth: 1300,
+    maxWidth: 1100,
     flexFlow: 'row'
   }
 

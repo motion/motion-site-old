@@ -90,6 +90,22 @@ p code {
   padding: 0;
 }
 
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
 
 /*!
  *  Hack v2.010 by Chris Simpkins - https://sourcefoundry.org/hack/

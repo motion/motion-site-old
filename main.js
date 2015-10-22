@@ -22,7 +22,8 @@ view Main {
 
   $ = {
     color: color.text,
-    fontSize: 16,
+    fontSize: 18,
+    lineHeight: '2rem',
     fontFamily: font.sansSerif,
     overflow: 'hidden',
     background: color.bg,

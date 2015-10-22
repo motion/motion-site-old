@@ -1,6 +1,6 @@
 view Signup {
   <Contain>
-    <Title>Sign up to keep up with releases:</Title>
+    <Title center>Sign up to keep up with releases:</Title>
     <SignupForm />
   </Contain>
 

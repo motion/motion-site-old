@@ -15,12 +15,17 @@ view HeaderAlt {
     alignItems: 'center',
     justifyContent: 'center',
     width: '80%',
+    maxWidth: 1100,
     margin: [0, 'auto'],
   }
 
   $Nav = {
     flexGrow: 1,
-    justifyContent: 'center'
+    paddingLeft: 25
+  }
+
+  $Social = {
+    justifyContent: 'flex-end'
   }
 }
 
