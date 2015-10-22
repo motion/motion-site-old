@@ -38,7 +38,8 @@ view DemoCounter {
   }
 
   $count = {
-    fontSize: 22,
+    fontSize: 20,
+    fontWeight: 300,
     flexFlow: 'row'
   }
 }

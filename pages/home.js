@@ -124,16 +124,17 @@ view Interlude {
     }
   }
 
+  const circleSize = 60
   const shared = {
-    height: 70,
+    height: circleSize,
     alignItems: 'center',
     justifyContent: 'center'
   }
 
   $title = [shared, {
     margin: [0, 30],
-    fontWeight: 700,
-    fontSize: 26,
+    color: '#444',
+    fontSize: 24,
     borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',
@@ -149,7 +150,7 @@ view Interlude {
     fontWeight: 300,
     background: `linear-gradient(${Math.floor(Math.random() * 180)}deg, ${color.brand1}, ${color.brand2})`,
     color: '#fff',
-    width: 70,
+    width: circleSize,
     fontSize: 32,
     borderRadius: 100,
     position: 'relative',

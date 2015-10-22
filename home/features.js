@@ -57,9 +57,8 @@ view Features {
         <col>
           <title>Powerful Styles</title>
           <description>
-            Easy syntax, media queries, interactive styles, multiple styles,
-            array/object shorthands, plus smart compiler static analysis to extract
-            stylesheets for performance.
+            Inline styles with static extraction to stylesheets.
+            Helpers for interaction, media queries, arrays, objects & more.
           </description>
         </col>
       </text>
