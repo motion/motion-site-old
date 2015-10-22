@@ -27,6 +27,7 @@
     "document-offset",
     "scroll",
     "history",
-    "marked"
+    "marked",
+    "highlight.js"
   ]
 }

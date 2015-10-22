@@ -89,7 +89,6 @@ view Home.Examples {
   </Contain>
 
   $ = {
-    borderTop: '1px dotted #ddd',
     // padding: [0, 0, 40],
     margin: [0, 'auto', 40],
     width: '100%',

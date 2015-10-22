@@ -112,8 +112,7 @@ view Nav {
       router.go(routes.home)
   }
 
-  <a if={window.location.pathname != '/'} onClick={router.link('/')}>Home</a>
-  <a onClick={router.link(routes.docs)}>Learn</a>
+  <a onClick={router.link(routes.docs)}>Docs</a>
   <a onClick={router.link(routes.examples)}>Examples</a>
   <a route={routes.home} href="#install" onClick={showInstall}>Install</a>
 

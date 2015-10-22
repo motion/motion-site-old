@@ -63,6 +63,7 @@ view Docs.Views {
     `} />
     <p>Views must capitalize their first letter, and you can pass props to views just as we have shown here. Any property besides a string must be passed in using <code>{}</code>, as seen here with the size prop.</p>
     <p>"Props" are the attributes you pass down to children views. They are accessed with the <code>view.props.</code> prefix.</p>
+    <h4>Naming tags</h4>
     <p>Some final niceties of Flint. You can name your tags whatever you like:</p>
     <Code source={`
       view Main {
