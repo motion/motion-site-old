@@ -1,6 +1,6 @@
-const contents = ``
-
 view Docs.Routes {
-  <Title>Flint</Title>
-  <Body markdown={contents} />
+  <Title>Routes</Title>
+  <Body>
+    <IntroText>Flint comes with a basic routing system, but lets you plug in any you'd like.</IntroText>
+  </Body>
 }

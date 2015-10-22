@@ -1,38 +1,52 @@
-const contents = `
-Install Flint CLI and create a new app.
-
-#### Install
-
-Our install script helps set you up a bit better:
-
-    sh <(curl -sL https://flint.love)
-
-Or you can just:
-
-    # install
-    npm install -g flint
-
-#### Running
-
-Once set up, create your first app:
-
-    # create app
-    flint new appname
-
-    # start app
-    cd appname
-    flint
-
-Your app should open automatically in Chrome for you. Open your app to begin editing!
-
-#### When you're ready to deploy
-
-    flint build
-
-You app is now built into \`.flint/build\`. Try uploading it to divshot or surge.sh to see it instantly.
-`
-
 view Docs.Install {
-  <Title>Flint</Title>
-  <Body markdown={contents} />
+  <Title>Installing</Title>
+  <Body>
+    <IntroText>Install Flint CLI and create a new app.</IntroText>
+
+    <h4>Install</h4>
+
+    <p>Our install script helps set you up a bit better:</p>
+
+    <Code source={`
+      sh <(curl -sL https://flint.love)
+    `}/>
+
+    <p>
+    Or you can just:
+    </p>
+
+    <Code source={`
+      # install
+      npm install -g flint
+    `}/>
+
+    <h4>Running</h4>
+
+    <p>
+    Once set up, create your first app:
+    </p>
+
+    <Code source={`
+      # create app
+      flint new appname
+
+      # start app
+      cd appname
+      flint
+    `}/>
+
+    <p>
+    Your app should open automatically in Chrome for you. Open your app to begin editing!
+    </p>
+
+    <h4>When you're ready to deploy</h4>
+
+    <Code source={`
+      flint build
+    `}/>
+
+    <p>
+      You app is now built into \`.flint/build\`. Try uploading it to divshot or surge.sh to see it instantly.
+    </p>
+  </Body>
 }

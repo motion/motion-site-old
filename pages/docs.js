@@ -1,5 +1,5 @@
 const docs = [
-  { title: "Intro", view: 'Intro', slug: '' },
+  { title: "Intro", view: 'Intro', slug: 'intro' },
   { title: "Install", view: 'Install', slug: 'install' },
   { title: "Views", view: 'Views', slug: 'views' },
   { title: "Styles", view: 'Styles', slug: 'styles' },
@@ -10,7 +10,6 @@ const docs = [
 view Docs {
   <Page list={docs} base="/docs">
     <Doc route="/docs/:slug" />
-    <Intro route={{ strict: true, path: '/docs' }} />
   </Page>
 }
 
