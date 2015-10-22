@@ -52,7 +52,7 @@ view Home.Examples {
 
       <Example flip inPage
         maxWidth={760}
-        in={<Editor lines={10} left light src="/assets/examples/exampleCounter.html" />}
+        in={<Editor lines={9} left light src="/assets/examples/exampleCounter.html" />}
         out={<DemoCounter />} />
     </section>
 

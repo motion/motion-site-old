@@ -38,9 +38,8 @@
   <code><pre>
 <span class="o">view</span> Counter {
   let <span class="b">count</span> = <span class="y">0</span>
-
-  const <span class="b">up</span> = () => <span class="b">count</span> += <span class="y">1</span>
-  const <span class="b">down</span> = () => <span class="b">count</span> -= <span class="y">1</span>
+  let <span class="b">up</span> = () => <span class="b">count</span>++
+  let <span class="b">down</span> = () => <span class="b">count</span>--
 
   <span class="r">&lt;button onClick={</span><span class="b">down</span><span class="r">}&gt;</span>↓<span class="r">&lt;/button&gt;</span>
   <span class="r">&lt;button onClick={</span><span class="b">up</span><span class="r">}&gt;</span>↑<span class="r">&lt;/button&gt;</span>

@@ -35,7 +35,7 @@ view Features {
           <title>No boilerplate</title>
           <description>
             Forget configs, gulp systems, and having to spend weeks
-            researching and assembling a modern modern on React.
+            researching and assembling a modern stack on React.
           </description>
         </col>
       </text>
