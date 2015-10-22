@@ -30,7 +30,7 @@ view Main {
   }
 
   $blur = {
-    filter: !hidePass ? 'blur(14px)' : 'none'
+    filter: !hidePass ? 'blur(18px)' : 'none'
   }
 }
 
@@ -55,10 +55,12 @@ view Password {
       ref="input"
       onEnter={checkPass}
       sync={password} />
+
+    <p>Curious? <a href="http://flint-slack.herokuapp.com">Say hi in Slack</a></p>
   </password>
 
   $password = {
-    opacity: 0.6,
+    opacity: 0.8,
     position: 'fixed',
     top: 0, right: 0,
     left: 0, bottom: 0,
