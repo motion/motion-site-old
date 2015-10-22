@@ -179,8 +179,8 @@ view Code {
 
   $ = {
     background: '#1E2B33',
-    border: '1px solid #ddd',
     padding: 10,
+    margin: [20, 0],
     fontSize: 15,
     lineHeight: 1.4,
     whiteSpace: 'pre',
