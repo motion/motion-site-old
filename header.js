@@ -118,7 +118,7 @@ view Nav {
   }
 
   <a onClick={router.link(routes.docs + '/intro')}>Docs</a>
-  <a onClick={router.link(routes.examples)}>Examples</a>
+  <a if={false} onClick={router.link(routes.examples)}>Examples</a>
   <a route={routes.home} href="#install" onClick={showInstall}>Install</a>
 
   $ = {

@@ -89,8 +89,12 @@ view Title {
   <h2 yield />
   $ = false
 
+  let size = 24
+  if (^big) size = 28
+  if (^small) size = 22
+
   $h2 = [style.textGradient, {
-    fontSize: ^big ? 28 : 24,
+    fontSize: size,
     padding: [10, 0],
     textAlign: ^center ? 'center' : 'auto'
   }]
@@ -158,33 +162,4 @@ view Social {
 
 view Body {
   <body yield />
-}
-
-view Code {
-  function clean(src) {
-    let arr = src.split("\n")
-    arr.shift()
-
-    return arr
-      .map(l => l.slice(6))
-      .join("\n")
-  }
-
-  on('mount', () => {
-    highlight.highlightBlock(view.refs.code)
-  })
-
-  <code ref="code" class="javascript">
-    {clean(^source)}
-  </code>
-
-  $ = {
-    background: '#1E2B33',
-    padding: 10,
-    margin: [20, 0],
-    fontSize: 15,
-    lineHeight: 1.4,
-    whiteSpace: 'pre',
-    borderRadius: 4
-  }
 }

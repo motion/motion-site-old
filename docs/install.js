@@ -7,7 +7,7 @@ view Docs.Install {
 
     <p>Our install script helps set you up a bit better:</p>
 
-    <Code source={`
+    <Code lang="bash" source={`
       sh <(curl -sL https://flint.love)
     `}/>
 
@@ -15,7 +15,7 @@ view Docs.Install {
     Or you can just:
     </p>
 
-    <Code source={`
+    <Code lang="bash" source={`
       # install
       npm install -g flint
     `}/>
@@ -26,7 +26,7 @@ view Docs.Install {
     Once set up, create your first app:
     </p>
 
-    <Code source={`
+    <Code lang="bash" source={`
       # create app
       flint new appname
 
@@ -41,7 +41,7 @@ view Docs.Install {
 
     <h4>When you're ready to deploy</h4>
 
-    <Code source={`
+    <Code lang="bash" source={`
       flint build
     `}/>
 

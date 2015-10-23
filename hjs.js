@@ -30,6 +30,12 @@ function H_js(hljs) {
           {begin: /^\s*('|")use asm('|")/}
         ]
       },
+        { // E4X / JSX
+          begin: /</,
+          end: /(\s\/>)|(<\/[a-zA-Z0-9]+>)/,
+          relevance: 0,
+          subLanguage: 'xml'
+        },
       hljs.APOS_STRING_MODE,
       hljs.QUOTE_STRING_MODE,
       { // template string
@@ -49,22 +55,6 @@ function H_js(hljs) {
         className: 'number',
         begin: '\\b(0[xXbBoO][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)', // 0x..., 0..., 0b..., 0o..., decimal, float
         relevance: 0
-      },
-
-      {
-        className: 'view',
-        beginKeywords: 'view', end: /\}/, excludeEnd: true,
-        contains: [
-          hljs.C_LINE_COMMENT_MODE,
-          hljs.C_BLOCK_COMMENT_MODE,
-          hljs.REGEXP_MODE,
-          { // E4X / JSX
-            begin: /</,
-            end: /(\s\/>)|(<\/[a-zA-Z0-9]+>)/,
-            relevance: 0,
-            subLanguage: 'xml'
-          }
-        ]
       },
 
       {

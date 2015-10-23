@@ -1,5 +1,5 @@
 view Docs.Intro {
-  <Title>Flint</Title>
+  <Title>What is Flint?</Title>
   <Body>
     <IntroText>Flint is focused on making building modern web applications easier, faster, and more fun than ever before.</IntroText>
 
@@ -13,10 +13,10 @@ view Docs.Intro {
       It is also low risk to use. If you want to stop using it, continue from the clean compiled code in your preferred framework.
       <br />
     </p>
-     
+
     <h4>Live Coding</h4>
     <p>
-       Flint was designed from the start to support Live Coding. 
+       Flint was designed from the start to support Live Coding.
        Painters don't have to refresh their canvases each stroke, and it should be no different in programming.
        <br/>
        With each keystroke, we analyze your change and inject your chance into your running app in less than a single frame. Errors(compile, runtime, and type-check) appear immediately on your canvas, rather than in separate windows due to their origin.<br />Live Coding feels natural, and it is hard to return to the old way of doing things.

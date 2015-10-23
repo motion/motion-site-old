@@ -10,9 +10,9 @@ if (window.location.search == '?slack')
 let forceHidePass = window.location.search == '?yc'
 
 view Main {
-  let hidePass = forceHidePass
+  let hidePass = true
 
-  <Password onShow={() => hidePass = true} />
+  <Password if={false} onShow={() => hidePass = true} />
 
   <blur>
     <Home route={routes.home} />

@@ -1,5 +1,5 @@
 view Docs.Views {
-  <Title>Views</Title>
+  <Title big>Views</Title>
   <Body>
     <IntroText>Flint is based entirely on ES6 JavaScript with slight modifications for simplicity and clarity. By using a custom compiler, we remove the framework layer.</IntroText>
     <p>Here is a view:</p>
@@ -63,7 +63,7 @@ view Docs.Views {
     `} />
     <p>Views must capitalize their first letter, and you can pass props to views just as we have shown here. Any property besides a string must be passed in using <code>{}</code>, as seen here with the size prop.</p>
     <p>"Props" are the attributes you pass down to children views. They are accessed with the <code>view.props.</code> prefix.</p>
-    <h4>Naming tags</h4>
+    <Title three>Naming tags</Title>
     <p>Some final niceties of Flint. You can name your tags whatever you like:</p>
     <Code source={`
       view Main {
@@ -74,7 +74,7 @@ view Docs.Views {
       }
     `} />
     <p>This helps with styling, avoiding using classes when unnecessary, and makes your view structure easier to read. No more hundreds of meaningless divs!</p>
-    <h3 id="view-jsx-extensions">View JSX extensions</h3>
+    <Title two id="view-jsx-extensions">View JSX extensions</Title>
     <p>Flint does provide some helpers that are optional. They are:</p>
     <p><strong>repeat</strong></p>
     <Code source={`
@@ -112,12 +112,12 @@ view Docs.Views {
         <input sync={response} onEnter={submit} />
       }
     `} />
-    <h2 id="using-views">Using Views</h2>
+    <Title id="using-views">Using Views</Title>
     <p>You don't need to import/export views between files!</p>
     <p>In other words: views are global (cue gasps of horror!). Why?? Well, because views are <em>not mutable</em>. And given that it's incredibly important they are easy to create/destroy/change, the upsides are huge.</p>
     <p>import/export is wonderful for keeping your code organized and namespaced. In the context of views though, it is lacking. Oftentimes you import many views into one file. Or you want to test a new view quickly.</p>
     <p>Flint gives you helpful errors when you define a view twice. You can also name views like <code>My.View</code>, with namespaces. All together, you get big upside for all these reasons (a side benefit is the extreme speed gains you gain in compilation!).</p>
-    <h2 id="view-lifecycles">View lifecycles</h2>
+    <Title id="view-lifecycles">View lifecycles</Title>
     <p>In React you have lifecycle methods. Flint has them too:</p>
     <ul>
     <li>mount - called once after mounted in document</li>
@@ -127,7 +127,7 @@ view Docs.Views {
     <li>render - called after every render</li>
     </ul>
     <p>See how to use it here:</p>
-    <h2 id="view-events">View events</h2>
+    <Title id="view-events">View events</Title>
     <p>Flint provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views.</p>
     <Code source={`
       view Main {
@@ -138,7 +138,7 @@ view Docs.Views {
         <span ref="span">Hello world</span>
       }
     `} />
-    <h2 id="accessing-dom-nodes">Accessing DOM nodes</h2>
+    <Title id="accessing-dom-nodes">Accessing DOM nodes</Title>
     <p>Sometimes you need to access nodes in the DOM.</p>
     <Code source={`
       view Main {
@@ -151,9 +151,9 @@ view Docs.Views {
         <span ref="span">I am {wide}</span>
       }
     `} />
-    <h2 id="view-methods">View methods</h2>
+    <Title id="view-methods">View methods</Title>
     <p>When inside a view, you can access <code>view</code> to do a variety of things.</p>
-    <h4 id="-refs-"><code>.refs</code></h4>
+    <Title id="-refs-"><code>.refs</code></Title>
     <Code source={`
       view Button {
         on('mount', () => {
@@ -163,9 +163,9 @@ view Docs.Views {
         <button ref="button">Hello</button>
       }
     `} />
-    <h4 id="-mixin-"><code>.mixin()</code></h4>
+    <Title id="-mixin-"><code>.mixin()</code></Title>
     <p><em>Disabled!</em> We are working towards a nice way of using mixins. Open an issue if you have a proposal!</p>
-    <h4 id="-childcontext-context-object-"><code>.childContext(context : object)</code></h4>
+    <Title id="-childcontext-context-object-"><code>.childContext(context : object)</code></Title>
     <p><em>Alpha</em> This should work, but it's very much for testing at the moment. You can provide context to children like so:</p>
     <Code source={`
       view Main {
@@ -178,17 +178,17 @@ view Docs.Views {
         <Button>Click me</Button>
       }
     `} />
-    <h4 id="-pause-"><code>.pause()</code></h4>
+    <Title id="-pause-"><code>.pause()</code></Title>
     <p>Prevent re-rendering. Useful for optimization and batching visual changes.</p>
-    <h4 id="-resume-"><code>.resume()</code></h4>
+    <Title id="-resume-"><code>.resume()</code></Title>
     <p>Resume from paused re-rendering.</p>
-    <h4 id="-pause-"><code>.update()</code></h4>
+    <Title id="-pause-"><code>.update()</code></Title>
     <p>Forces view to re-render.</p>
-    <h4 id="-props-"><code>.props</code></h4>
+    <Title id="-props-"><code>.props</code></Title>
     <p>Access the entire props object with <code>view.props</code>.</p>
-    <h4 id="-name-"><code>.name</code></h4>
+    <Title id="-name-"><code>.name</code></Title>
     <p>Access the name of the view.</p>
-    <h4 id="-el-name-string-"><code>.el(name : string)</code></h4>
+    <Title id="-el-name-string-"><code>.el(name : string)</code></Title>
     <p>Programatically render a view. Pass in a view name to <code>view.el()</code> and it will render.</p>
     <Next to='/docs/styles'>Styles</Next>
   </Body>
