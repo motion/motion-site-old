@@ -182,6 +182,8 @@ view Docs.Views {
     <p>Prevent re-rendering. Useful for optimization and batching visual changes.</p>
     <h4 id="-resume-"><code>.resume()</code></h4>
     <p>Resume from paused re-rendering.</p>
+    <h4 id="-pause-"><code>.update()</code></h4>
+    <p>Forces view to re-render.</p>
     <h4 id="-props-"><code>.props</code></h4>
     <p>Access the entire props object with <code>view.props</code>.</p>
     <h4 id="-name-"><code>.name</code></h4>
