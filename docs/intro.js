@@ -19,7 +19,7 @@ view Docs.Intro {
        Flint was designed from the start to support Live Coding. 
        Painters don't have to refresh their canvases each stroke, and it should be no different in programming.
        <br/>
-       With each keystroke, we analyze your change and inject your chance into your running app in less than a single frame. Any errors(compile, runtime, and type-check) are shown to you immediately. Live Coding feels natural, and it is hard to return to the old way of doing things.
+       With each keystroke, we analyze your change and inject your chance into your running app in less than a single frame. Errors(compile, runtime, and type-check) appear immediately on your canvas, rather than in separate windows due to their origin.<br />Live Coding feels natural, and it is hard to return to the old way of doing things.
      </p>
 
     <h4>Principles</h4>
