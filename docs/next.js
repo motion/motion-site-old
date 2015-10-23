@@ -1,24 +1,32 @@
 view Next {
   let over = true
-  <next onClick={() => Flint.router.go(^to)}
+  
+  let go = () => {
+    Flint.router.go(^to)
+    setTimeout(() => window.scrollTo(0, 0))
+  }
+  
+  <next onClick={go}
         onMouseEnter={() => over = true}
         onMouseLeave={() => over = false}
         class={{over}}
    >
-    {^children}
+    <span>{^children}</span>
     <arrow>❯</arrow>
   </next>
   
+  let blue = '#2EA1F9'
   $next = {
     fontSize: 20,
     flexFlow: 'row',
-    width: 160,
     padding: 10,
     cursor: 'pointer',
     transition: '300ms all ease-in',
-    border: over ? '1px solid #2EA1F9' : '1px solid white',
-    color: '#2EA1F9',
+    color: blue,
     textAlign:'right', 
+  }
+  $span = {
+    borderBottom: over ? `1px solid ${blue}` : 'none'
   }
   
   $arrow = { 

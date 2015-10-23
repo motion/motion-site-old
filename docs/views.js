@@ -188,5 +188,6 @@ view Docs.Views {
     <p>Access the name of the view.</p>
     <h4 id="-el-name-string-"><code>.el(name : string)</code></h4>
     <p>Programatically render a view. Pass in a view name to <code>view.el()</code> and it will render.</p>
+    <Next to='/docs/styles'>Styles</Next>
   </Body>
 }

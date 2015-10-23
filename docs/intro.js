@@ -37,6 +37,6 @@ view Docs.Intro {
       <li>Smart Errors</li>
       <li>New Runtime Tools</li>
     </ul>
-    <Next to='/docs/views'>Using Views</Next>
+    <Next to='/docs/install'>Install Flint</Next>
   </Body>
 }

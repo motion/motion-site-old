@@ -96,5 +96,6 @@ view Docs.Styles {
         }
       }
     `} />
+    <Next to='/docs/routes'>Routes</Next>
   </Body>
 }
