@@ -96,7 +96,7 @@ view Toolbar {
     fontSize: 15,
     fontFamily: font.sansSerif,
     padding: [2, 4, 0, 4],
-    background: '#ccc',
+    background: '#eee',
     borderBottom: border,
   }
 
@@ -106,7 +106,8 @@ view Toolbar {
     color: '#333',
     padding: [3, 8],
     margin: [3, 4, 0, 0],
-    background: '#eee',
+    background: 'linear-gradient(#f2f2f2, #eee)',
+    boxShadow: '0 0 6px rgba(0,0,0,0.2)',
     borderBottom: 'none',
     borderTopLeftRadius: 3,
     borderTopRightRadius: 3,

@@ -13,15 +13,10 @@ let forceHidePass = (
 )
 
 view Main {
-  let hidePass = forceHidePass
-
-  <Password onShow={() => hidePass = true} />
-
-  <blur>
-    <Home route={routes.home} />
-    <Examples route={routes.examples} />
-    <Docs route={routes.docs} />
-  </blur>
+  <Password />
+  <Home route={routes.home} />
+  <Examples route={routes.examples} />
+  <Docs route={routes.docs} />
 
   $ = {
     color: color.text,
@@ -32,10 +27,6 @@ view Main {
     background: color.bg,
     position: 'relative'
   }
-
-  $blur = {
-    filter: !hidePass ? 'blur(18px)' : 'none'
-  }
 }
 
 view Password {
@@ -43,10 +34,8 @@ view Password {
   let hidePass = forceHidePass
 
   const checkPass = () => {
-    if (password == 'love' || password == 'Love') {
-      ^onShow()
+    if (password == 'love' || password == 'Love')
       hidePass = true
-    }
   }
 
   on('mount', () => {
@@ -64,7 +53,6 @@ view Password {
   </password>
 
   $password = {
-    opacity: 0.8,
     position: 'fixed',
     top: 0, right: 0,
     left: 0, bottom: 0,

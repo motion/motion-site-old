@@ -105,7 +105,7 @@ view Interlude {
     <num if={^num}>
       {^num}
     </num>
-    <Title>{^children}</Title>
+    <Title light>{^children}</Title>
   </Contain>
 
   $Contain = {

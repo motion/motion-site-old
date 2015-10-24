@@ -1,6 +1,5 @@
 view Title {
-  <h2 yield />
-  $ = false
+  <title-h2 yield />
 
   let size = 24
   if (^big) size = 28
@@ -12,5 +11,7 @@ view Title {
     textAlign: ^center ? 'center' : 'auto'
   }, ^small && {
     padding: 0
+  }, ^light && {
+    fontWeight: 300
   }]
 }
