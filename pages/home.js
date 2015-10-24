@@ -113,7 +113,7 @@ view Interlude {
     textAlign: ^right ? 'right': 'left',
     flexDirection: ^right ? 'row-reverse' : 'row',
     justifyContent: ^center ? 'center' : 'auto',
-    margin: [40, 'auto'],
+    margin: [30, 'auto'],
     padding: [0, 25],
 
     [device.small]: {
@@ -193,7 +193,7 @@ view Install {
   const select = () => view.refs.code.select()
 
   <Contain id="install">
-    <Title if={^title}>Install Flint</Title>
+    <Interlude center if={^title}>Install Flint</Interlude>
     <code onMouseUp={select} class="install">
      <input ref="code" value={install} readOnly size={install.length} />
     </code>
@@ -206,7 +206,7 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [40, 0, 60],
+    margin: [0, 0, 60],
 
     [device.small]: {
       display: 'none'
