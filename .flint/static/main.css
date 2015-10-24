@@ -89,6 +89,7 @@ code {
 p code {
   display: inline-block;
   padding: 0;
+  margin: -4px 0;
 }
 
 h2 {

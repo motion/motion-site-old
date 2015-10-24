@@ -177,7 +177,8 @@ view Docs.Views {
     `} />
     <Title id="view-methods">View methods</Title>
     <p>When inside a view, you can access <code>view</code> to do a variety of things.</p>
-    <Title id="-refs-"><code>.refs</code></Title>
+
+    <Title small>.refs</Title>
     <Code source={`
       view Button {
         on('mount', () => {
@@ -187,9 +188,30 @@ view Docs.Views {
         <button ref="button">Hello</button>
       }
     `} />
-    <Title id="-mixin-"><code>.mixin()</code></Title>
+
+    <Title small>.mixin()</Title>
     <p><em>Disabled!</em> We are working towards a nice way of using mixins. Open an issue if you have a proposal!</p>
-    <Title id="-childcontext-context-object-"><code>.childContext(context : object)</code></Title>
+
+
+    <Title small>.pause()</Title>
+    <p>Prevent re-rendering. Useful for optimization and batching visual changes.</p>
+
+    <Title small>.resume()</Title>
+    <p>Resume from paused re-rendering.</p>
+
+    <Title small>.update()</Title>
+    <p>Forces view to re-render.</p>
+
+    <Title small>.props</Title>
+    <p>Access the entire props object with <code>view.props</code>.</p>
+
+    <Title small>.name</Title>
+    <p>Access the name of the view.</p>
+
+    <Title small>.el(name : string)</Title>
+    <p>Programatically render a view. Pass in a view name to <code>view.el()</code> and it will render.</p>
+
+    <Title small>.childContext(context : object)</Title>
     <p><em>Alpha</em> This should work, but it's very much for testing at the moment. You can provide context to children like so:</p>
     <Code source={`
       view Main {
@@ -202,24 +224,6 @@ view Docs.Views {
         <Button>Click me</Button>
       }
     `} />
-
-    <Title id="-pause-"><code>.pause()</code></Title>
-    <p>Prevent re-rendering. Useful for optimization and batching visual changes.</p>
-
-    <Title id="-resume-"><code>.resume()</code></Title>
-    <p>Resume from paused re-rendering.</p>
-
-    <Title id="-pause-"><code>.update()</code></Title>
-    <p>Forces view to re-render.</p>
-
-    <Title id="-props-"><code>.props</code></Title>
-    <p>Access the entire props object with <code>view.props</code>.</p>
-
-    <Title id="-name-"><code>.name</code></Title>
-    <p>Access the name of the view.</p>
-
-    <Title id="-el-name-string-"><code>.el(name : string)</code></Title>
-    <p>Programatically render a view. Pass in a view name to <code>view.el()</code> and it will render.</p>
 
     <Next to='/docs/styles'>Styles</Next>
   </Body>
