@@ -7,7 +7,10 @@ if (window.location.search == '?demo')
 if (window.location.search == '?slack')
   window.location = 'https://flint-slack.herokuapp.com/'
 
-let forceHidePass = window.location.search == '?yc'
+let forceHidePass = (
+  window.location.search == '?yc' ||
+  window.location.hostname == 'localhost'
+)
 
 view Main {
   let hidePass = forceHidePass

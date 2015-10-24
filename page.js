@@ -19,8 +19,13 @@ view Page {
 }
 
 view Page.Sidebar {
+  const url = slug => ^base + '/' + slug
+
   <sidebar>
-    <a repeat={^list} key={_index} onClick={router.link(^base + '/' + _.slug)}>
+    <a
+      repeat={^list}
+      class={{ active: router.isActive(url(_.slug)) }}
+      key={_index} onClick={router.link(url(_.slug))}>
       {_.title}
     </a>
   </sidebar>
@@ -39,6 +44,11 @@ view Page.Sidebar {
   $index = {
     padding: [0, 10, 0, 0],
     flexFlow: 'row'
+  }
+
+  $.active = {
+    color: 'black',
+    fontWeight: 600
   }
 
   $a = [style.link, {
