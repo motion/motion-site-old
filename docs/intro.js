@@ -1,9 +1,9 @@
 view Docs.Intro {
   <Title big>What is Flint?</Title>
   <Body>
-    <IntroText>
+    <Text big>
       Flint is a compiler for JS that gives you a live coding environment, delightful tools, and outputs clean, fast code.
-    </IntroText>
+    </Text>
 
     <p>
       It's a step back to the basics. There's one abstraction: views, they replace HTML, CSS and JavaScript with... just JavaScript.

@@ -1,7 +1,7 @@
 view Docs.Install {
   <Title>Installing</Title>
   <Body>
-    <IntroText>Install Flint CLI and create a new app.</IntroText>
+    <Text big>Install Flint CLI and create a new app.</Text>
 
     <h4>Install</h4>
 

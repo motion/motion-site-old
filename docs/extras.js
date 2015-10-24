@@ -1,7 +1,7 @@
 view Docs.Extras {
   <Title>Extras</Title>
   <Body>
-    <IntroText>Flint's build system is custom and based on Babel with Stage 2 enabled.</IntroText>
+    <Text big>Flint's build system is custom and based on Babel with Stage 2 enabled.</Text>
 
     <p>Beyond the view macro and it's corresponding syntax, it is very much just ES6 JavaScript. We've made some small changes though to optimize for common use cases and have shimmed a few helpful modules.</p>
 

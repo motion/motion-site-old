@@ -83,6 +83,7 @@ li {
 
 code {
   background: #eee;
+  display: inline-block;
 }
 
 p code {

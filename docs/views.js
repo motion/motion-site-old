@@ -1,7 +1,7 @@
 view Docs.Views {
   <Title big>Views</Title>
   <Body>
-    <IntroText>Flint is based entirely on ES6 JavaScript with slight modifications for simplicity and clarity. By using a custom compiler, we remove the framework layer.</IntroText>
+    <Text big>Flint is based entirely on ES6 JavaScript with slight modifications for simplicity and clarity. By using a custom compiler, we remove the framework layer.</Text>
 
     <p>Here is a view:</p>
 
