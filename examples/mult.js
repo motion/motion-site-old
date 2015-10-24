@@ -21,6 +21,7 @@ view Examples.Mult {
   <demo>
     <MultDemo />
   </demo>
+  <Title>Main.js</Title>
   <Code source={`
       let randTo = x => Math.floor(Math.random() * x)
 
