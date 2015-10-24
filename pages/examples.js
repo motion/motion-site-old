@@ -1,6 +1,6 @@
 const examples = [
-  { title: "Multiplication", view: 'Mult', slug: 'mult' },
-  { title: "Fetch", view: 'Arena', slug: 'fetch' },
+  { title: "Multiplication Game", view: 'Mult', slug: 'mult' },
+  { title: "Advanced Fetch", view: 'Arena', slug: 'fetch' },
 ]
 
 view Examples {

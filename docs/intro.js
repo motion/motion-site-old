@@ -6,7 +6,8 @@ view Docs.Intro {
     </Text>
 
     <p>
-      It's a step back to the basics. There's one abstraction: views, they replace HTML, CSS and JavaScript with... just JavaScript.
+      It's a step back to the basics. There's one abstraction: views, they replace HTML, CSS, JavaScript and a big framework
+      with just JavaScript.
     </p>
 
     <p>
