@@ -1,18 +1,33 @@
 view Examples.Arena {
   <Title>Fetch</Title>
+
+  <Text big>
+    Fetching data is a big concern for frontend applications.
+    Here we are showing a pattern using advanced features of
+    JavaScript, including async/await.
+  </Text>
+
+  <Text>
+    In this example, we are combining advanced features in Flint
+    to create an app that fetches data from the Are.na API, and
+    displays it in a simple art site.
+  </Text>
+
   <Title small>main.js</Title>
+
+  <Text>
+    In our main file, we set up some constants for our app to use.
+    <code>const</code> is new in ES6. We <code>export</code> them
+    in our main.js file, which will make them available to other files
+    in our app. Notice we export <code>go</code>, <code>link</code>,
+    <code>api</code>, and <code>route</code>.
+  </Text>
+
   <Code source={`
       export const api = {}
       api.base = 'http://api.are.na/v2'
       api.channels = \`\${api.base}/channels\`
-      api.user = id => \`\${api.base}/users/\${id}\`
       api.channel = id => \`\${api.base}/channels/\${id}\`
-      api.block = id => \`\${api.base}/blocks/\${id}\`
-
-      export const font = {}
-      font.display = '15pt "GT Sectra", serif'
-      font.book = '13pt "GT Sectra Book", serif'
-      font.pressura = '15pt "GT Pressura", sans-serif'
 
       export const go = Flint.router.go
       export const link = Flint.router.link
@@ -20,145 +35,165 @@ view Examples.Arena {
       export const route = {}
       route.home = '/'
       route.project = slug => \`/project/\${slug}\`
+   `} />
 
-      export const projects = [
-      { name: 'BARNRAZER', id: 'barnrazer' },
-      { name: 'Hollywood High Modernism', id: 'hollywood-high-modernism' },
-      { name: 'Monsters', id: 'monsters' },
-      { name: 'marillouigi', id: 'marillouigi' },
-      { name: 'In Situ', id: 'in-situ' },
-      { name: 'Stadium NYC', id: 'stadium-nyc-in-post-summer-2012' },
-      { name: 'Anat Ebgi' },
-      ]
+   <Text>
+    Continuing with our main.js file, we define our entry view
+    named <code>Main</code>. This is always the name of your top
+    level view.
+     We define two views and add the <code>route</code> property to
+     them. Read more on <a href="">routing</a> in our docs.
+   </Text>
 
-      export const projectIds = projects.map(p => p.id)
+   <Text>
+    Finally, we define a Link view. View's typically are wrapped,
+    but in this case we want the view to just return a single element,
+    the <code>a</code> tag. To prevent wrapping, you define your tag
+    to be the same as the view name, but lowercase. We define it as
+     <code>link-a</code> to tell Flint to render it as a link.
+   </Text>
 
-      export const loadProject = async index => {
-      const url = api.channel(projects[index].id)
-      projects[index].data = await fetchJSON(url)
-      return new Promise(res => res())
-      }
-
+   <Code source={`
       view Main {
-      <Head />
-      <Home route={route.home} />
-      <Project route={route.project(':id')} />
-
-      $ = {
-        font: font.book
-      }
-      }
-
-      view Head {
-      <h1><Link to="/" plain>Chris Coy</Link></h1>
-      <recent>
-        recent: <Link to="/projects/anat">Anat Ebgi at NADA New York</Link>
-      </recent>
-      <email>
-        email@seecoy.com
-      </email>
-
-      $ = {
-        font: font.display,
-        color: '#333',
-        flexFlow: 'row',
-        alignItems: 'center',
-        padding: 10,
-        width: '100%',
-        fontWeight: 300,
-
-        h1: {
-          display: 'flex',
-          flexGrow: 1,
-          fontSize: 16,
-          margin: 0
-        },
-
-        recent: {
-          flexFlow: 'row',
-          flexGrow: 1
-        },
-
-        email: {
-          font: font.book,
-          color: '#ccc'
-        }
-      }
+        <Home route={route.home} />
+        <Project route={route.project(':id')} />
       }
 
       view Link {
-      function go() { Flint.router.go(^to) }
+        <link-a onClick={link(^to)} yield />
 
-      <link-a onClick={go} yield />
-
-      $ = {
-        textDecoration: ^plain ? 'none' : 'underline',
-        cursor: 'pointer'
-      }
+        $ = {
+          textDecoration: ^plain ? 'none' : 'underline',
+          cursor: 'pointer'
+        }
       }
   `} />
 
   <Title small>home.js</Title>
+
+  <Text>
+    If you already know <code><a href="">fetch</a></code> you can skip
+    this paragraph. Fetch is coming to browsers, but Flint provides
+    it for you by default. It's a radically improved API for doing AJAX
+    requests, or simply, getting data from anywhere else on the web.
+    Read more on fetch here.
+  </Text>
+
+  <Text>
+    Fetch returns a promise. Promises are also polyfilled by Flint,
+    using the excellent <a href="">Bluebird</a> library. Promises
+    are a nice abstraction that give you more control over asynchronous
+    code.
+  </Text>
+
+  <Text>
+    But, we can do better. <code>async/await</code> are two keywords
+    coming to JavaScript. They make using asynchronous code a pleasure.
+    Because Flint runs on Babel, you can use them today, and save
+    yourself a huge amount of complexity. See how they are used:
+  </Text>
+
   <Code source={`
       view Home {
-        let index, project, cover
+        let index, projects
         let fetched = false
-        let user = {}
 
         load()
 
         async function load() {
-          index = index || 0
-          project = projects[index]
-
-          user = await fetchJSON(api.user('414'))
+          projects = await fetchJSON(api.projects())
           fetched = true
-
-          if (!project.data)
-            await loadProject(index)
-
-          cover = project.data.contents[0].image.large.url
         }
 
-        <home>
-          <background>
-            <img if={cover} src={cover} />
-          </background>
-          <projects>
-            <item repeat={projects}>
-              <h4>
-                <Link to={route.project(_.id)}>
-                  {_.name}
-                </Link>
-              </h4>
-            </item>
-          </projects>
-        </home>
+        <h4 repeat={projects}>
+          <Link to={route.project(_.id)}>
+            {_.name}
+          </Link>
+        </h4>
 
         $ = {
           width: 960,
           margin: [0, 'auto'],
-          padding: 80,
-
-          projects: {
-            position: 'absolute',
-            top: 40,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            padding: 20
-          },
-
-          background: {
-            position: 'fixed',
-            top: 0, left: 0, right: 0, bottom: 0
-          },
-
-          img: {
-            margin: 'auto',
-            opacity: 0.15
-          }
+          padding: 80
         }
+      }
+  `} />
+
+  <Title small>project.js</Title>
+
+  <Text>
+    Viewing a project in our app shows it's images. We need to make
+    one more request to our api to get them. Again, we use an async
+    function.
+  </Text>
+
+  <Text>
+
+  </Text>
+
+  <Code source={`
+      view Project {
+        let id, project, index
+        let fetched = false
+        let contents = []
+
+        on('props', load)
+
+        async function load() {
+          id = ^params.id
+          index = projectIds.indexOf(id)
+          project = projects[index]
+
+          let data = await fetchJSON(api.channel(id))
+          contents = data.contents
+          fetched = true
+        }
+
+        function plink(index) {
+          return link(routes.project(projects[index].id}))
+        }
+
+        <Title left={plink(index-1)} right={plink(index+1)}>
+          {project.name}
+        </Title>
+        <contents if={fetched} repeat={contents}>
+          <img if={_.image} src={_.image.display.url} />
+        </contents>
+
+        $img = { margin: [0, 'auto', 20] }
+      }
+
+      view Project.Title {
+        <main>
+          <Arrow left onClick={^left} />
+          <h1>{^children}</h1>
+          <Arrow right onClick={^right} />
+        </main>
+        <close>
+          <Link to="/" plain>X</Link>
+        </close>
+
+        $ = {
+          padding: [0, '7%'],
+          flexFlow: 'row',
+          alignItems: 'center',
+
+          main: {
+            flexFlow: 'row',
+            flexGrow: 1,
+            justifyContent: 'space-between',
+          },
+
+          h1: { fontSize: 22 },
+          close: { padding: 20 }
+        }
+      }
+
+      view Arrow {
+        <arrow-a if={^right} yield>&gt;</arrow>
+        <arrow-a if={^left} yield>&lt;</arrow>
+
+        $ = { padding: 10 }
       }
   `} />
 }

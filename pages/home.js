@@ -114,11 +114,7 @@ view Interlude {
     flexDirection: ^right ? 'row-reverse' : 'row',
     justifyContent: ^center ? 'center' : 'auto',
     margin: [30, 'auto'],
-    padding: [0, 25],
-
-    [device.small]: {
-      flexDirection: 'center'
-    }
+    padding: [0, 25]
   }
 
   const circleSize = 60
