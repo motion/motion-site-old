@@ -2,13 +2,17 @@ view Docs.Views {
   <Title big>Views</Title>
   <Body>
     <IntroText>Flint is based entirely on ES6 JavaScript with slight modifications for simplicity and clarity. By using a custom compiler, we remove the framework layer.</IntroText>
+
     <p>Here is a view:</p>
+
     <Code source={`
       view Main {
         <h1>Hello world</h1>
       }
     `} />
+
     <p>A view can contain variables and constants:</p>
+
     <Code source={`
       view Main {
         let name = 'Nate'
@@ -16,7 +20,9 @@ view Docs.Views {
         <h1>Hello {name}</h1>
       }
     `} />
+
     <p>When you change a variable, your view will update:</p>
+
     <Code source={`
       view Main {
         let name = 'Nate'
@@ -27,7 +33,9 @@ view Docs.Views {
         </button>
       }
     `} />
+
     <p>Since it's just ES6, we can use a named function and call it.</p>
+
     <Code source={`
       view Main {
         let name = 'Nate'
@@ -39,7 +47,9 @@ view Docs.Views {
         <button onClick={changeName}>Change!</button>
       }
     `} />
+
     <p>We can even use regular javascript functions like Array.push</p>
+
     <Code source={`
       view Main {
         let animals = []
@@ -50,7 +60,9 @@ view Docs.Views {
         <button onClick={() => animals.push("zebra")}>more zebras</button>
       }
     `} />
+
     <p>You'll want to keep your views small and composable. You can use them together like so:</p>
+
     <Code source={`
       view Main {
         <Hello to="World" size={18} />
@@ -61,10 +73,21 @@ view Docs.Views {
         $h1 = { fontSize: ^size }
       }
     `} />
+
     <p>Views must capitalize their first letter, and you can pass props to views just as we have shown here. Any property besides a string must be passed in using <code>{}</code>, as seen here with the size prop.</p>
+
     <p>"Props" are the attributes you pass down to children views. They are accessed with the <code>view.props.</code> prefix.</p>
+
+    <Title three>Lots of Views</Title>
+    <p>
+      When your app is getting bigger, you'll probably want to avoid cluttering up your view names. We are experimenting with a: <code>Parent.SubView</code> syntax, that is enabled at the moment.
+      This will make <code>&gt;SubView /&lt;</code> available to the Parent you named, but only to that parent.
+    </p>
+
     <Title three>Naming tags</Title>
+
     <p>Some final niceties of Flint. You can name your tags whatever you like:</p>
+
     <Code source={`
       view Main {
         <greet>Hello World</greet>
@@ -74,6 +97,7 @@ view Docs.Views {
       }
     `} />
     <p>This helps with styling, avoiding using classes when unnecessary, and makes your view structure easier to read. No more hundreds of meaningless divs!</p>
+
     <Title two id="view-jsx-extensions">View JSX extensions</Title>
     <p>Flint does provide some helpers that are optional. They are:</p>
     <p><strong>repeat</strong></p>
@@ -112,11 +136,10 @@ view Docs.Views {
         <input sync={response} onEnter={submit} />
       }
     `} />
+
     <Title id="using-views">Using Views</Title>
     <p>You don't need to import/export views between files!</p>
-    <p>In other words: views are global (cue gasps of horror!). Why?? Well, because views are <em>not mutable</em>. And given that it's incredibly important they are easy to create/destroy/change, the upsides are huge.</p>
-    <p>import/export is wonderful for keeping your code organized and namespaced. In the context of views though, it is lacking. Oftentimes you import many views into one file. Or you want to test a new view quickly.</p>
-    <p>Flint gives you helpful errors when you define a view twice. You can also name views like <code>My.View</code>, with namespaces. All together, you get big upside for all these reasons (a side benefit is the extreme speed gains you gain in compilation!).</p>
+    <p>Flint gives you helpful errors when you define a view twice. All together, you get big upside for all these reasons.</p>
     <Title id="view-lifecycles">View lifecycles</Title>
     <p>In React you have lifecycle methods. Flint has them too:</p>
     <ul>
@@ -127,6 +150,7 @@ view Docs.Views {
     <li>render - called after every render</li>
     </ul>
     <p>See how to use it here:</p>
+
     <Title id="view-events">View events</Title>
     <p>Flint provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views.</p>
     <Code source={`
@@ -178,18 +202,25 @@ view Docs.Views {
         <Button>Click me</Button>
       }
     `} />
+
     <Title id="-pause-"><code>.pause()</code></Title>
     <p>Prevent re-rendering. Useful for optimization and batching visual changes.</p>
+
     <Title id="-resume-"><code>.resume()</code></Title>
     <p>Resume from paused re-rendering.</p>
+
     <Title id="-pause-"><code>.update()</code></Title>
     <p>Forces view to re-render.</p>
+
     <Title id="-props-"><code>.props</code></Title>
     <p>Access the entire props object with <code>view.props</code>.</p>
+
     <Title id="-name-"><code>.name</code></Title>
     <p>Access the name of the view.</p>
+
     <Title id="-el-name-string-"><code>.el(name : string)</code></Title>
     <p>Programatically render a view. Pass in a view name to <code>view.el()</code> and it will render.</p>
+
     <Next to='/docs/styles'>Styles</Next>
   </Body>
 }
