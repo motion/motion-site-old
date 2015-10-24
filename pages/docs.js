@@ -9,22 +9,9 @@ const docs = [
 
 view Docs {
   <Page list={docs} base="/docs">
-    <Doc route="/docs/:slug" />
+    <RoutedContent
+      parent="Docs"
+      content={docs}
+      route="/docs/:slug" />
   </Page>
-}
-
-view Docs.Doc {
-  let el
-
-  on('props', () => {
-    el = docs.filter(x => x.slug == ^params.slug)[0]
-  })
-
-  <body>
-    {view.el(`Docs.${el.view}`)}
-  </body>
-
-  $body = {
-    width: '100%'
-  }
 }

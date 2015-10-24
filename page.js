@@ -61,3 +61,19 @@ view Page.Sidebar {
     textAlign: 'right'
   }]
 }
+
+view RoutedContent {
+  let el
+
+  on('props', () => {
+    el = ^content.filter(x => x.slug == ^params.slug)[0]
+  })
+
+  <body>
+    {view.el(`${^parent}.${el.view}`)}
+  </body>
+
+  $body = {
+    width: '100%'
+  }
+}
