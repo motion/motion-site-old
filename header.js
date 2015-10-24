@@ -73,7 +73,7 @@ view Header {
   $ = {
     position: 'relative',
     overflow: 'hidden',
-    padding: [50, 60, 40, 0],
+    padding: [50, 60, 0, 0],
     minWidth: 800,
     margin: [0, 'auto'],
 

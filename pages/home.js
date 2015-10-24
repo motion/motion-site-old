@@ -105,7 +105,7 @@ view Interlude {
     <num if={^num}>
       {^num}
     </num>
-    <Title light>{^children}</Title>
+    <Title light big>{^children}</Title>
   </Contain>
 
   $Contain = {
@@ -113,7 +113,7 @@ view Interlude {
     textAlign: ^right ? 'right': 'left',
     flexDirection: ^right ? 'row-reverse' : 'row',
     justifyContent: ^center ? 'center' : 'auto',
-    margin: [40, 'auto', 20],
+    margin: [40, 'auto'],
     padding: [0, 25],
 
     [device.small]: {
@@ -250,7 +250,7 @@ view Install {
 view Slack {
   <Contain id="slack">
     <Interlude center>Join us on Slack!</Interlude>
-    <iframe seamless="seamless" src="http://flint-slack.herokuapp.com/"></iframe>
+    <iframe seamless="seamless" src="https://flint-slack.herokuapp.com/"></iframe>
   </Contain>
 
   $iframe = {
