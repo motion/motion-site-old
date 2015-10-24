@@ -1,6 +1,6 @@
 view Features {
   <Contain>
-    <Interlude center num="4">
+    <Interlude center>
       Flint is development, faster
     </Interlude>
 

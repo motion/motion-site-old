@@ -95,8 +95,8 @@ view Toolbar {
     flexFlow: 'row',
     fontSize: 15,
     fontFamily: font.sansSerif,
-    padding: [4, 4, 0, 4],
-    background: '#eee',
+    padding: [2, 4, 0, 4],
+    background: '#ccc',
     borderBottom: border,
   }
 
@@ -104,8 +104,10 @@ view Toolbar {
     cursor: 'pointer',
     userSelect: 'none',
     color: '#333',
-    background: '#f9f9f9',
     padding: [3, 8],
+    margin: [3, 4, 0, 0],
+    background: '#eee',
+    borderBottom: 'none',
     borderTopLeftRadius: 3,
     borderTopRightRadius: 3,
     flexGrow: 1
@@ -116,7 +118,7 @@ view Toolbar {
     borderTop: border,
     borderLeft: `2px solid ${color.brand}`,
     borderRight: border,
-    marginTop: -1,
+    marginTop: 0,
     marginBottom: -1,
     color: '#000',
     fontWeight: 700,
