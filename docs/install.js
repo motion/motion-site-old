@@ -46,7 +46,7 @@ view Docs.Install {
     `}/>
 
     <p>
-      You app is now built into \`.flint/build\`. Try uploading it to divshot or surge.sh to see it instantly.
+      You app is now built into <code>.flint/build</code>. Try uploading it to divshot or surge.sh to see it instantly.
     </p>
     <Next to='/docs/views'>Using Views</Next>
   </Body>

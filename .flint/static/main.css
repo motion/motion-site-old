@@ -82,14 +82,16 @@ li {
 }
 
 code {
-  background: #eee;
-  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  line-height: 1.8em;
 }
 
 p code {
   display: inline-block;
-  padding: 0;
+  padding: 0 4px;
   margin: -4px 0;
+  color: #666;
 }
 
 h2 {

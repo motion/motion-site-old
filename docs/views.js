@@ -81,7 +81,7 @@ view Docs.Views {
     <Title three>Lots of Views</Title>
     <p>
       When your app is getting bigger, you'll probably want to avoid cluttering up your view names. We are experimenting with a: <code>Parent.SubView</code> syntax, that is enabled at the moment.
-      This will make <code>&gt;SubView /&lt;</code> available to the Parent you named, but only to that parent.
+      This will make <code>&lt;SubView /&gt;</code> available to the Parent you named, but only to that parent.
     </p>
 
     <Title three>Naming tags</Title>
