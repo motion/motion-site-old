@@ -6,6 +6,7 @@ view Page {
       {^children}
     </inner>
   </Contain>
+  <Footer />
 
   $Contain = {
     width: '80%',
