@@ -1,15 +1,15 @@
 view Examples.Arena {
-  <Title>Fetch</Title>
+  <Title>Advanced Fetching</Title>
 
   <Text big>
-    Fetching data is a big concern for frontend applications.
-    Here we are showing a pattern using advanced features of
-    JavaScript, including async/await.
+    Fetching data is a big concern in frontend applications.
+    Here we show advanced features of ESnext including async/await
+    and template literals. We also show routing, repeat, globals and
+    other Flint features.
   </Text>
 
   <Text>
-    In this example, we are combining advanced features in Flint
-    to create an app that fetches data from the Are.na API, and
+    This app fetches data from the Are.na API, and
     displays it in a simple art site.
   </Text>
 
