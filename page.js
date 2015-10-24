@@ -6,6 +6,7 @@ view Page {
       {^children}
     </inner>
   </Contain>
+  <Footer />
 
   $Contain = {
     width: '80%',
@@ -14,13 +15,18 @@ view Page {
   }
 
   $inner = {
-    padding: 20
+    padding: [20, '8%'],
   }
 }
 
 view Page.Sidebar {
+  const url = slug => ^base + '/' + slug
+
   <sidebar>
-    <a repeat={^list} key={_index} onClick={router.link(^base + '/' + _.slug)}>
+    <a
+      repeat={^list}
+      class={{ active: router.isActive(url(_.slug)) }}
+      key={_index} onClick={router.link(url(_.slug))}>
       {_.title}
     </a>
   </sidebar>
@@ -41,6 +47,11 @@ view Page.Sidebar {
     flexFlow: 'row'
   }
 
+  $.active = {
+    color: 'black',
+    fontWeight: 600
+  }
+
   $a = [style.link, {
     whiteSpace: 'nowrap',
     padding: [10, 20],
@@ -49,4 +60,20 @@ view Page.Sidebar {
     display: 'flex',
     textAlign: 'right'
   }]
+}
+
+view RoutedContent {
+  let el
+
+  on('props', () => {
+    el = ^content.filter(x => x.slug == ^params.slug)[0]
+  })
+
+  <body>
+    {view.el(`${^parent}.${el.view}`)}
+  </body>
+
+  $body = {
+    width: '100%'
+  }
 }

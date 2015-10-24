@@ -73,7 +73,7 @@ view Header {
   $ = {
     position: 'relative',
     overflow: 'hidden',
-    padding: [50, 60, 40, 0],
+    padding: [50, 60, 0, 0],
     minWidth: 800,
     margin: [0, 'auto'],
 
@@ -117,9 +117,18 @@ view Nav {
       router.go(routes.home)
   }
 
-  <a onClick={router.link(routes.docs + '/intro')}>Docs</a>
-  <a onClick={router.link(routes.examples)}>Examples</a>
-  <a route={routes.home} href="#install" onClick={showInstall}>Install</a>
+  const routeProps = path => ({
+    onClick: router.link(path),
+    className: { active: router.isActive(path) }
+  })
+
+  const links = [
+    { children: 'Docs', ...routeProps(routes.docs + '/intro')  },
+    { children: 'Examples', ...routeProps(routes.examples + '/mult')  },
+    { children: 'Install', href: '#install', onClick: showInstall  },
+  ]
+
+  <a repeat={links} {..._} />
 
   $ = {
     margin: [0, 'auto'],
@@ -140,6 +149,11 @@ view Nav {
     padding: [0, 12],
     cursor: 'pointer'
   }]
+
+  $.active = {
+    fontWeight: 600,
+    color: '#000'
+  }
 }
 
 view Logo {

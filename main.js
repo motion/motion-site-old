@@ -19,14 +19,11 @@ view Main {
              || localStorage.getItem('authed') === 'true'
              
   if (correct) passCorrect()
-
-  <Password if={!hidePass} onShow={passCorrect} />
-
-  <blur>
-    <Home route={routes.home} />
-    <Examples route={routes.examples} />
-    <Docs route={routes.docs} />
-  </blur>
+  
+  <Password onShow={passCorrect} if={!hidePass} />
+  <Home route={routes.home} />
+  <Examples route={routes.examples} />
+  <Docs route={routes.docs} />
 
   $ = {
     color: color.text,
@@ -36,10 +33,6 @@ view Main {
     overflow: 'hidden',
     background: color.bg,
     position: 'relative'
-  }
-
-  $blur = {
-    filter: !hidePass ? 'blur(18px)' : 'none'
   }
 }
 
@@ -64,7 +57,6 @@ view Password {
   </password>
 
   $password = {
-    opacity: 0.8,
     position: 'fixed',
     top: 0, right: 0,
     left: 0, bottom: 0,

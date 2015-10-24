@@ -1,8 +1,21 @@
 view Docs.Routes {
   <Title>Routes</Title>
   <Body>
-    <IntroText>Flint comes with a basic routing system, but lets you plug in any you'd like.</IntroText>
-    <h2>Here's an example that shows how to use it</h2>
+    <Text big>Flint comes with a basic routing system, but lets you plug in any you'd like.</Text>
+
+    <Text>
+      Routing is done through <code>Flint.router</code>, which has the following functions.
+    </Text>
+
+    <Title small>Setting routes</Title>
+    <Text>
+      You don't need to instantiate routes, you can just use
+      the <code>route</code> property on any JSX element. Flint will then
+      watch your location and automatically determine if it should show
+      or hide the element.
+    </Text>
+
+    <Title>Example</Title>
     <Code source={`
       view Main {
         <h1>Welcome to our store</h1>
@@ -13,7 +26,7 @@ view Docs.Routes {
 
       view Home {
         let toProduct = id => Flint.router.go('/products/' + id)
-        
+
         <h2>Come on by</h2>
         <links>
           <a onClick={() => toProduct(15)}>buy shoes</a>
@@ -31,7 +44,7 @@ view Docs.Routes {
         <a onClick={() => Flint.router.go('/')}>home</a>
       }
     `} />
-      
+
     <Next to='/docs/extras'>Extras</Next>
   </Body>
 }

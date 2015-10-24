@@ -85,45 +85,6 @@ view Contain {
   }
 }
 
-view Title {
-  <h2 yield />
-  $ = false
-
-  $h2 = [style.textGradient, {
-    fontSize: ^big ? 28 : 24,
-    padding: [10, 0],
-    textAlign: ^center ? 'center' : 'auto'
-  }]
-}
-
-view Footer {
-  <Contain>
-    <content>
-      <Nav />
-      <br />
-      <Social />
-      <p>
-        Flint is just getting started,
-        we'd love your feedback!
-      </p>
-    </content>
-  </Contain>
-
-  $ = {
-    margin: [0, 0, -40],
-    textAlign: 'center',
-    fontSize: 16
-  }
-
-  $content = {
-    margin: [80, 0]
-  }
-
-  $p = {
-    fontWeight: 'bold'
-  }
-}
-
 view Social {
   <a target="_blank" href="http://github.com/flintjs/flint">
     <IconGithub />
@@ -158,33 +119,4 @@ view Social {
 
 view Body {
   <body yield />
-}
-
-view Code {
-  function clean(src) {
-    let arr = src.split("\n")
-    arr.shift()
-
-    return arr
-      .map(l => l.slice(6))
-      .join("\n")
-  }
-
-  on('mount', () => {
-    highlight.highlightBlock(view.refs.code)
-  })
-
-  <code ref="code" class="javascript">
-    {clean(^source)}
-  </code>
-
-  $ = {
-    background: '#1E2B33',
-    padding: 10,
-    margin: [20, 0],
-    fontSize: 15,
-    lineHeight: 1.4,
-    whiteSpace: 'pre',
-    borderRadius: 4
-  }
 }

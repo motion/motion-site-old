@@ -1,13 +1,11 @@
 view Home {
   <Blur left="45%" top={-200} />
   <Header />
-  <Install />
   <Examples />
-  <Install />
   <Features />
-  <Slack />
-  <SubFeatures />
+  <Install title />
   <DemoVideo />
+  <Slack />
   <FAQ />
   <Signup />
   <Footer />
@@ -46,7 +44,7 @@ view Home.Examples {
   <Contain>
     <section>
       <Blur />
-      <Interlude left num="1">
+      <Interlude center left>
         Flint introduces the view to ES6
       </Interlude>
 
@@ -58,7 +56,7 @@ view Home.Examples {
 
     <section>
       <Blur left="60%" />
-      <Interlude right num="2">
+      <Interlude center>
         Style views with ease...
       </Interlude>
 
@@ -70,8 +68,8 @@ view Home.Examples {
 
     <section>
       <Blur />
-      <Interlude left num="3">
-        Flint works with ES6, npm & React
+      <Interlude center>
+        Flint runs on ES6, npm & React
       </Interlude>
 
       <Example flip inPage
@@ -104,11 +102,10 @@ view Home.Examples {
 
 view Interlude {
   <Contain>
-    <Tag if={^num < 4} name="Num" outside right={^right} />
     <num if={^num}>
       {^num}
     </num>
-    <title>{^children}</title>
+    <Title light big>{^children}</Title>
   </Contain>
 
   $Contain = {
@@ -116,12 +113,8 @@ view Interlude {
     textAlign: ^right ? 'right': 'left',
     flexDirection: ^right ? 'row-reverse' : 'row',
     justifyContent: ^center ? 'center' : 'auto',
-    margin: [40, 'auto', 20],
-    padding: [0, 25],
-
-    [device.small]: {
-      flexDirection: 'center'
-    }
+    margin: [30, 'auto'],
+    padding: [0, 25]
   }
 
   const circleSize = 60
@@ -130,21 +123,6 @@ view Interlude {
     alignItems: 'center',
     justifyContent: 'center'
   }
-
-  $title = [shared, {
-    margin: [0, 30],
-    color: '#444',
-    fontSize: 24,
-    borderRadius: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-
-    [device.small]: {
-      fontSize: 20,
-      marginLeft: 10,
-      marginRight: 10
-    }
-  }]
 
   $num = [shared, {
     fontWeight: 300,
@@ -211,43 +189,24 @@ view Install {
   const select = () => view.refs.code.select()
 
   <Contain id="install">
-    <modal>
-      <inner>
-        <code onMouseUp={select} class="install">
-         <input ref="code" value={install} readOnly size={install.length} />
-        </code>
+    <Interlude center if={^title}>Install Flint</Interlude>
+    <code onMouseUp={select} class="install">
+     <input ref="code" value={install} readOnly size={install.length} />
+    </code>
 
-        <afterward>
-          or: npm install -g flint
-        </afterward>
-        <Tag name="Install" outside right />
-      </inner>
-    </modal>
+    <afterward>
+      or: npm install -g flint
+    </afterward>
+    <Tag name="Install" outside right />
   </Contain>
 
   $ = {
     textAlign: 'center',
-    margin: [10, 0, ^pad ? 100 : 0],
+    margin: [0, 0, 60],
 
     [device.small]: {
       display: 'none'
     }
-  }
-
-  $modal = {
-    margin: [10, 'auto'],
-    padding: [0, 20, 20]
-  }
-
-  $inner = {
-    margin: [-20, 0, 0],
-    position: 'relative'
-  }
-
-  $prompt = {
-    content: '$',
-    marginRight: 10,
-    opacity: 0.5
   }
 
   $code = {
@@ -281,21 +240,13 @@ view Install {
     fontFamily: font.monoSpace
   }
 
-  $.small = {
-    display: 'inline',
-    fontSize: 14,
-    color: '#777',
-    background: 'none',
-    fontWeight: 200
-  }
-
   $a = style.link
 }
 
 view Slack {
   <Contain id="slack">
-    <Interlude num="5" center>Join us on Slack!</Interlude>
-    <iframe seamless="seamless" src="http://flint-slack.herokuapp.com/"></iframe>
+    <Interlude center>Join us on Slack!</Interlude>
+    <iframe seamless="seamless" src="https://flint-slack.herokuapp.com/"></iframe>
   </Contain>
 
   $iframe = {

@@ -1,7 +1,7 @@
 view Docs.Styles {
   <Title>Styles</Title>
   <Body>
-    <IntroText>The final thing to understand about views are styles. Styles are written in JavaScript, which makes creating dynamic styles easy. We designate a style with $.</IntroText>
+    <Text big>The final thing to understand about views are styles. Styles are written in JavaScript, which makes creating dynamic styles easy. We designate a style with $.</Text>
 
     <Code source={`
       view Main {
