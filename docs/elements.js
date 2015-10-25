@@ -1,7 +1,9 @@
 view Docs.Elements {
   <Title big>Elements</Title>
   <Body>
-    <Text big>Flint uses JSX, with a couple small tweaks.</Text>
+    <Text big>
+      Flint uses JSX, with a couple optional helpers.
+    </Text>
 
     <Title small>repeat</Title>
     <Code source={`
@@ -18,6 +20,12 @@ view Docs.Elements {
         <button onClick={addShow}>add one</button>
       }
     `} />
+
+    <Text>
+      Repeat compiles to a map function behind the scenes.
+      You can also pass in a number to repeat, to do a simple loop.
+    </Text>
+
     <Title small>if</Title>
     <Code source={`
       view Main {
@@ -30,6 +38,10 @@ view Docs.Elements {
       }
     `} />
 
+    <Text>
+      If compiles to an if statement behind the scenes.
+    </Text>
+
     <Title small>sync and onEnter</Title>
     <Code source={`
       view Question {
@@ -40,6 +52,12 @@ view Docs.Elements {
         <input sync={response} onEnter={submit} />
       }
     `} />
+
+    <Text>
+      Sync will update a variable whenever you type a character.
+      OnEnter a simple helper that just calls a function when a user
+      hits the enter key in the input.
+    </Text>
 
     <Title id="accessing-dom-nodes">Accessing DOM nodes</Title>
     <p>Sometimes you need to access nodes in the DOM.</p>
