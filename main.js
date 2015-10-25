@@ -7,13 +7,20 @@ if (window.location.search == '?demo')
 if (window.location.search == '?slack')
   window.location = 'https://flint-slack.herokuapp.com/'
 
-let forceHidePass = (
-  window.location.search == '?yc' ||
-  window.location.hostname == 'localhost'
-)
-
 view Main {
-  <Password />
+  let hidePass = false
+  
+  let passCorrect = () => {
+    hidePass = true
+    localStorage.setItem('authed', true)
+  }
+  
+  let correct = window.location.search == '?yc' 
+             || localStorage.getItem('authed') === 'true'
+             
+  if (correct) passCorrect()
+  
+  <Password onShow={passCorrect} if={!hidePass} />
   <Home route={routes.home} />
   <Examples route={routes.examples} />
   <Docs route={routes.docs} />
@@ -31,19 +38,16 @@ view Main {
 
 view Password {
   let password = ''
-  let hidePass = forceHidePass
 
   const checkPass = () => {
-    if (password == 'love' || password == 'Love')
-      hidePass = true
+    if (password.toLowerCase() == 'love') ^onShow()
   }
 
   on('mount', () => {
-    if (!hidePass)
-      view.refs.input.focus()
+    view.refs.input.focus()
   })
 
-  <password if={!hidePass}>
+  <password>
     <input
       ref="input"
       onEnter={checkPass}
