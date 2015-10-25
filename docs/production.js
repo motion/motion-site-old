@@ -1,4 +1,4 @@
-view Docs.Production {
+view Docs.Building {
   <Title big>Going to Production</Title>
   <Body>
     <Text big>

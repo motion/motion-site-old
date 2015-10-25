@@ -98,45 +98,6 @@ view Docs.Views {
     `} />
     <p>This helps with styling, avoiding using classes when unnecessary, and makes your view structure easier to read. No more hundreds of meaningless divs!</p>
 
-    <Title two id="view-jsx-extensions">View JSX extensions</Title>
-    <p>Flint does provide some helpers that are optional. They are:</p>
-    <p><strong>repeat</strong></p>
-    <Code source={`
-      view Main {
-        let shows = [
-          { name: 'flintstones' },
-          { name: 'jetsons' },
-        ]
-
-        const addShow = () =>
-          shows.push({ name: 'breaking bad' })
-
-        <shows repeat={shows}>{_.name}</shows>
-        <button onClick={addShow}>add one</button>
-      }
-    `} />
-    <p><strong>if</strong></p>
-    <Code source={`
-      view Main {
-        let greenlight = true
-
-        <light>{greenlight ? "green light" : "red light"}</light>
-        <car if={greenlight}>zoom zoom zoom!</car>
-        <car if={!greenlight}>brake!</car>
-        <button onClick={() => greenlight = !greenlight}>toggle</button>
-      }
-    `} />
-    <p><strong>sync</strong> and <strong>onEnter</strong></p>
-    <Code source={`
-      view Question {
-        let response = ''
-
-        const submit = e => post(e.target.value)
-
-        <input sync={response} onEnter={submit} />
-      }
-    `} />
-
     <Title id="using-views">Using Views</Title>
     <p>You don't need to import/export views between files!</p>
     <p>Flint gives you helpful errors when you define a view twice. All together, you get big upside for all these reasons.</p>
@@ -162,19 +123,7 @@ view Docs.Views {
         <span ref="span">Hello world</span>
       }
     `} />
-    <Title id="accessing-dom-nodes">Accessing DOM nodes</Title>
-    <p>Sometimes you need to access nodes in the DOM.</p>
-    <Code source={`
-      view Main {
-        let wide;
 
-        on('mount').then(() => {
-          wide = view.refs.span.innerWidth
-        })
-
-        <span ref="span">I am {wide}</span>
-      }
-    `} />
     <Title id="view-methods">View methods</Title>
     <p>When inside a view, you can access <code>view</code> to do a variety of things.</p>
 
@@ -225,6 +174,6 @@ view Docs.Views {
       }
     `} />
 
-    <Next to='/docs/styles'>Styles</Next>
+    <Next to='/docs/elements'>Elements</Next>
   </Body>
 }
