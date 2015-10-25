@@ -1,5 +1,6 @@
 view Docs.Install {
-  <Title>Installing</Title>
+  <Title big>Installing</Title>
+  
   <Body>
     <Text big>Install Flint CLI and create a new app.</Text>
 

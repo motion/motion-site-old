@@ -1,5 +1,5 @@
 view Docs.Extras {
-  <Title>Extras</Title>
+  <Title big>Extras</Title>
   <Body>
     <Text big>Flint's build system is custom and based on Babel with Stage 2 enabled.</Text>
 

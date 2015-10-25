@@ -1,5 +1,5 @@
 view Docs.Routes {
-  <Title>Routes</Title>
+  <Title big>Routes</Title>
   <Body>
     <Text big>Flint comes with a basic routing system, but lets you plug in any you'd like.</Text>
 
