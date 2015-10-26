@@ -9,7 +9,7 @@ view Code {
   }
 
   on('mount', () => {
-    highlight.highlightBlock(view.refs.code)
+    highlight.highlightBlock(__.refs.code)
   })
 
   <code ref="code" class={^lang || 'javascript'}>

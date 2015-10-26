@@ -1,5 +1,5 @@
 view Docs.Routes {
-  <Title>Routes</Title>
+  <Title big>Routes</Title>
   <Body>
     <Text big>Flint comes with a basic routing system, but lets you plug in any you'd like.</Text>
 
@@ -40,7 +40,7 @@ view Docs.Routes {
       }
 
       view Product {
-        <h2>Product {view.props.params.id}</h2>
+        <h2>Product {this.props.params.id}</h2>
         <a onClick={() => Flint.router.go('/')}>home</a>
       }
     `} />

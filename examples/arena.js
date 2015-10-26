@@ -35,38 +35,39 @@ view Examples.Arena {
       export const route = {}
       route.home = '/'
       route.project = slug => \`/project/\${slug}\`
-   `} />
+   `}
+  />
 
-   <Text>
+  <Text>
     Continuing with our main.js file, we define our entry view
     named <code>Main</code>. This is always the name of your top
     level view.
-     We define two views and add the <code>route</code> property to
-     them. Read more on <a href="">routing</a> in our docs.
-   </Text>
+    We define two views and add the <code>route</code> property to
+    them. Read more on <a href="">routing</a> in our docs.
+  </Text>
 
-   <Text>
+  <Text>
     Finally, we define a Link view. View's typically are wrapped,
     but in this case we want the view to just return a single element,
     the <code>a</code> tag. To prevent wrapping, you define your tag
     to be the same as the view name, but lowercase. We define it as
-     <code>link-a</code> to tell Flint to render it as a link.
-   </Text>
+    <code>link-a</code> to tell Flint to render it as a link.
+  </Text>
 
-   <Code source={`
-      view Main {
-        <Home route={route.home} />
-        <Project route={route.project(':id')} />
+  <Code source={`
+    view Main {
+      <Home route={route.home} />
+      <Project route={route.project(':id')} />
+    }
+
+    view Link {
+      <link-a onClick={link(^to)} yield />
+
+      $ = {
+        textDecoration: ^plain ? 'none' : 'underline',
+        cursor: 'pointer'
       }
-
-      view Link {
-        <link-a onClick={link(^to)} yield />
-
-        $ = {
-          textDecoration: ^plain ? 'none' : 'underline',
-          cursor: 'pointer'
-        }
-      }
+    }
   `} />
 
   <Title small>home.js</Title>

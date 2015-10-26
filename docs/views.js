@@ -76,7 +76,7 @@ view Docs.Views {
 
     <p>Views must capitalize their first letter, and you can pass props to views just as we have shown here. Any property besides a string must be passed in using <code>{}</code>, as seen here with the size prop.</p>
 
-    <p>"Props" are the attributes you pass down to children views. They are accessed with the <code>view.props.</code> prefix.</p>
+    <p>"Props" are the attributes you pass down to children views. They are accessed with the <code>this.props.</code> prefix.</p>
 
     <Title three>Lots of Views</Title>
     <p>
@@ -98,45 +98,6 @@ view Docs.Views {
     `} />
     <p>This helps with styling, avoiding using classes when unnecessary, and makes your view structure easier to read. No more hundreds of meaningless divs!</p>
 
-    <Title two id="view-jsx-extensions">View JSX extensions</Title>
-    <p>Flint does provide some helpers that are optional. They are:</p>
-    <p><strong>repeat</strong></p>
-    <Code source={`
-      view Main {
-        let shows = [
-          { name: 'flintstones' },
-          { name: 'jetsons' },
-        ]
-
-        const addShow = () =>
-          shows.push({ name: 'breaking bad' })
-
-        <shows repeat={shows}>{_.name}</shows>
-        <button onClick={addShow}>add one</button>
-      }
-    `} />
-    <p><strong>if</strong></p>
-    <Code source={`
-      view Main {
-        let greenlight = true
-
-        <light>{greenlight ? "green light" : "red light"}</light>
-        <car if={greenlight}>zoom zoom zoom!</car>
-        <car if={!greenlight}>brake!</car>
-        <button onClick={() => greenlight = !greenlight}>toggle</button>
-      }
-    `} />
-    <p><strong>sync</strong> and <strong>onEnter</strong></p>
-    <Code source={`
-      view Question {
-        let response = ''
-
-        const submit = e => post(e.target.value)
-
-        <input sync={response} onEnter={submit} />
-      }
-    `} />
-
     <Title id="using-views">Using Views</Title>
     <p>You don't need to import/export views between files!</p>
     <p>Flint gives you helpful errors when you define a view twice. All together, you get big upside for all these reasons.</p>
@@ -156,25 +117,13 @@ view Docs.Views {
     <Code source={`
       view Main {
         on('mount', () => {
-          const width = view.refs.span.innerWidth
+          const width = this.refs.span.innerWidth
         })
 
         <span ref="span">Hello world</span>
       }
     `} />
-    <Title id="accessing-dom-nodes">Accessing DOM nodes</Title>
-    <p>Sometimes you need to access nodes in the DOM.</p>
-    <Code source={`
-      view Main {
-        let wide;
 
-        on('mount').then(() => {
-          wide = view.refs.span.innerWidth
-        })
-
-        <span ref="span">I am {wide}</span>
-      }
-    `} />
     <Title id="view-methods">View methods</Title>
     <p>When inside a view, you can access <code>view</code> to do a variety of things.</p>
 
@@ -203,19 +152,19 @@ view Docs.Views {
     <p>Forces view to re-render.</p>
 
     <Title small>.props</Title>
-    <p>Access the entire props object with <code>view.props</code>.</p>
+    <p>Access the entire props object with <code>this.props</code>.</p>
 
     <Title small>.name</Title>
     <p>Access the name of the view.</p>
 
     <Title small>.el(name : string)</Title>
-    <p>Programatically render a view. Pass in a view name to <code>view.el()</code> and it will render.</p>
+    <p>Programatically render a view. Pass in a view name to <code>this.el()</code> and it will render.</p>
 
     <Title small>.childContext(context : object)</Title>
     <p><em>Alpha</em> This should work, but it's very much for testing at the moment. You can provide context to children like so:</p>
     <Code source={`
       view Main {
-        view.childContext({
+        this.childContext({
           componentStyle: {
             primaryColor: '#FFC107'
           }
@@ -225,6 +174,6 @@ view Docs.Views {
       }
     `} />
 
-    <Next to='/docs/styles'>Styles</Next>
+    <Next to='/docs/elements'>Elements</Next>
   </Body>
 }

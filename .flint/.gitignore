@@ -7,3 +7,4 @@ deps
 build
 public
 flint.js
+flint.json

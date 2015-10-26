@@ -186,7 +186,7 @@ view Example {
 
 view Install {
   const install = 'sh <(curl -sL https://flint.love)'
-  const select = () => view.refs.code.select()
+  const select = () => this.refs.code.select()
 
   <Contain id="install">
     <Interlude center if={^title}>Install Flint</Interlude>

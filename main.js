@@ -9,17 +9,17 @@ if (window.location.search == '?slack')
 
 view Main {
   let hidePass = false
-  
+
   let passCorrect = () => {
     hidePass = true
     localStorage.setItem('authed', true)
   }
-  
-  let correct = window.location.search == '?yc' 
+
+  let correct = window.location.search == '?yc'
              || localStorage.getItem('authed') === 'true'
-             
+
   if (correct) passCorrect()
-  
+
   <Password onShow={passCorrect} if={!hidePass} />
   <Home route={routes.home} />
   <Examples route={routes.examples} />
@@ -44,7 +44,7 @@ view Password {
   }
 
   on('mount', () => {
-    view.refs.input.focus()
+    this.refs.input.focus()
   })
 
   <password>

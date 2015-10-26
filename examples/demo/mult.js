@@ -46,8 +46,8 @@ view MultDemo {
   }
   $top = {flexFlow: 'row', margin: 'auto'}
   $h1 = { color: 'white' }
-  
-  $question = { 
+
+  $question = {
     flexFlow: 'row',
     margin: 'auto',
     paddingTop: 30,
