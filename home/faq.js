@@ -41,11 +41,11 @@ view FAQ {
     </question>
     <answer>
       <p>
-        You also can embed your Flint
-        app into any page, so you could easily plug it into an existing
-        web app today. We're working on plugins, but we strong suggest
-        trying out the CLI. Part of our speed difference is in the design
-        of the build system.
+        Flint is a static compiler that compiles to any web framework, meaning it can theoretically be used with any existing stack. Our of the box we compile to React. 
+      </p>
+      <p>
+        However, many parts of Flint (CLI, build system) work best when it's used alone. 
+        We're starting by focusing on this, but will be providing more documentation on using Flint in existing applications soon.
       </p>
     </answer>
 
@@ -54,11 +54,21 @@ view FAQ {
     </question>
     <answer>
       <p>
-        You can build Flux into Flint using npm, and we are exploring
-        ways to make GraphQL a first class citizen (and a lot easier
-        to use). At the moment, we'd recommend building without Flux,
-        and crossing that bridge when the time comes. We will be talking
-        more about good ways to handle data soon.
+        Flint works at a lower level, dealing with variables. You can use any data source,
+        such as an AJAX request or Websocket connection. When you set your variables using the response data, Flint will make sure your views stay up to date.
+      </p>
+      <p>
+        It is possible to write abstractions such as Flux above this, and this is something we'll be working on soon.
+      </p>
+    </answer>
+    
+    <question>What if I decide to stop using Flint</question>
+    <answer>
+      <p>
+        Flint compiles to clean idiomatic code in any framework. Out of the box we compile to React.
+      </p>
+      <p>
+        At any point you can continue developing from the code we output.
       </p>
     </answer>
   </Contain>
