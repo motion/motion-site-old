@@ -23,7 +23,7 @@ view DemoCircles {
   let coords = []
 
   on('mount', () => {
-    const targetY = util.docOffset(this.refs.circles).top + 400
+    const targetY = util.docOffset(__.refs.circles).top + 400
     onScrollTo(targetY, () =>
       coords = coords.concat({ x: 200, y: 200 }))
   })
