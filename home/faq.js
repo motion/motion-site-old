@@ -30,10 +30,9 @@ view FAQ {
     <answer>
       <p>
         In general, you should see faster reloads than other systems.
-        Flint has done some optimization to make this possible.
-        Due to view macros and other optimizations we avoid a lot of
-        work during compilation. The result? No matter how large your app,
-        save-to-refresh times are near instant.
+        Flint's static analyzer is built from the ground up to optimize for live development.
+        By only injecting the code that you changed into your running app, we can
+        provide near-instant save-to-refresh times no matter how large your app grows.
       </p>
     </answer>
 
