@@ -40,11 +40,12 @@ view Password {
   let password = ''
 
   const checkPass = () => {
+    console.log('checkin pass', password)
     if (password.toLowerCase() == 'love') ^onShow()
   }
 
   on('mount', () => {
-    this.refs.input.focus()
+    __.refs.input.focus()
   })
 
   <password>
