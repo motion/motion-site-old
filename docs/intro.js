@@ -26,7 +26,7 @@ view Docs.Intro {
     </p>
 
     <p>
-       With each keystroke, we analyze your change and inject your it to your app.
+       With each keystroke, we analyze your change and inject it into your running app.
     </p>
 
     <p>

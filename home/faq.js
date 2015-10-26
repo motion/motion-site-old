@@ -41,7 +41,7 @@ view FAQ {
     </question>
     <answer>
       <p>
-        Flint is a static compiler that compiles to any web framework, meaning it can theoretically be used with any existing stack. Our of the box we compile to React. 
+        Flint is a static compiler that compiles to any web framework, meaning it can theoretically be used with any existing stack. Out of the box we compile to React. 
       </p>
       <p>
         However, many parts of Flint (CLI, build system) work best when it's used alone. 
@@ -65,10 +65,10 @@ view FAQ {
     <question>What if I decide to stop using Flint</question>
     <answer>
       <p>
-        Flint compiles to clean idiomatic code in any framework. Out of the box we compile to React.
+        Flint static compiler can output clean code in any framework. We're starting with React.
       </p>
       <p>
-        At any point you can continue developing from the code we output.
+        At any point you can continue developing from the code we output if you choose to stop using Flint.
       </p>
     </answer>
   </Contain>
