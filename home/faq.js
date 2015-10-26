@@ -19,7 +19,7 @@ view FAQ {
     </question>
     <answer>
       <ul>
-        <li>The <a href="https://github.com/flintjs/demos">demo repo</a> has example apps</li>
+        <li>The <a href="https://github.com/flintjs/examples">examples repo</a> has example apps</li>
         <li>Check out the Flint <a href="https://github.com/flintjs/site">source for this site</a></li>
       </ul>
     </answer>
