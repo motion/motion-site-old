@@ -31,6 +31,8 @@ view FAQ {
       <p>
         In general, you should see faster reloads than other systems.
         Flint's static analyzer is built from the ground up to optimize for live development.
+      </p>
+      <p>
         By only injecting the code that you changed into your running app, we can
         provide near-instant save-to-refresh times no matter how large your app grows.
       </p>
