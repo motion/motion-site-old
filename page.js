@@ -70,7 +70,7 @@ view RoutedContent {
   })
 
   <body>
-    {view.el(`${^parent}.${el.view}`)}
+    {this.el(`${^parent}.${el.view}`)}
   </body>
 
   $body = {

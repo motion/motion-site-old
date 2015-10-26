@@ -76,7 +76,7 @@ view Docs.Views {
 
     <p>Views must capitalize their first letter, and you can pass props to views just as we have shown here. Any property besides a string must be passed in using <code>{}</code>, as seen here with the size prop.</p>
 
-    <p>"Props" are the attributes you pass down to children views. They are accessed with the <code>view.props.</code> prefix.</p>
+    <p>"Props" are the attributes you pass down to children views. They are accessed with the <code>this.props.</code> prefix.</p>
 
     <Title three>Lots of Views</Title>
     <p>
@@ -117,7 +117,7 @@ view Docs.Views {
     <Code source={`
       view Main {
         on('mount', () => {
-          const width = view.refs.span.innerWidth
+          const width = this.refs.span.innerWidth
         })
 
         <span ref="span">Hello world</span>
@@ -152,19 +152,19 @@ view Docs.Views {
     <p>Forces view to re-render.</p>
 
     <Title small>.props</Title>
-    <p>Access the entire props object with <code>view.props</code>.</p>
+    <p>Access the entire props object with <code>this.props</code>.</p>
 
     <Title small>.name</Title>
     <p>Access the name of the view.</p>
 
     <Title small>.el(name : string)</Title>
-    <p>Programatically render a view. Pass in a view name to <code>view.el()</code> and it will render.</p>
+    <p>Programatically render a view. Pass in a view name to <code>this.el()</code> and it will render.</p>
 
     <Title small>.childContext(context : object)</Title>
     <p><em>Alpha</em> This should work, but it's very much for testing at the moment. You can provide context to children like so:</p>
     <Code source={`
       view Main {
-        view.childContext({
+        this.childContext({
           componentStyle: {
             primaryColor: '#FFC107'
           }

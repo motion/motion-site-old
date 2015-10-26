@@ -40,7 +40,7 @@ view Docs.Routes {
       }
 
       view Product {
-        <h2>Product {view.props.params.id}</h2>
+        <h2>Product {this.props.params.id}</h2>
         <a onClick={() => Flint.router.go('/')}>home</a>
       }
     `} />
