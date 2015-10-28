@@ -1,3 +1,6 @@
+import { Motion, spring } from 'react-motion'
+import offset from 'mouse-event-offset'
+
 view DemoCircles {
   <Example flip inPage
     inStyle={{ flexGrow: 0, width: 400 }}
@@ -34,10 +37,10 @@ view DemoCircles {
       view Circle {
         let c = () => Math.round(Math.random()*255)
         let base = {
-          background: { r: c(), g: c(), b: c() },
+          background: [c(), c(), c()],
           position: 'absolute',
-          top: ^top, left: ^left,
-          width: 80, height: 80,
+          { top, left }: view.props,
+          [ width, height ]: [80, 80]
           borderRadius: 100
         }
 
@@ -45,9 +48,9 @@ view DemoCircles {
           ({ ...base, transform: { scale } })
 
         <Motion
-          defaultValue={{val: 0}}>
-          endValue={{val: spring(1, [300, 10])}}>
-            {i => <c style={style(i.val)} /> }
+          defaultStyle={{x: 0}}
+          style={{x: spring(1, [300, 10])}}>
+            {s => <c style={style(s.x)} /> }
         </Motion>
       }
             `
@@ -58,10 +61,6 @@ view DemoCircles {
       <Circles />
     } />
 }
-
-
-import { Spring } from 'react-motion'
-import offset from 'mouse-event-offset'
 
 const onScrollTo = (targetY, cb) => {
   let timeout = null
@@ -116,9 +115,11 @@ view Circles {
 view Circle {
   const c = () => Math.round(Math.random()*255)
   const baseStyle = {
-    background: { r: c(), g: c(), b: c() },
-    top: ^top, left: ^left,
-    width: 80, height: 80,
+    background: [c(), c(), c()],
+    top: view.props.top,
+    left: view.props.left,
+    width: 80,
+    height: 80,
     margin: [0, 0, 0, -40],
     borderRadius: 100,
     position: 'absolute'
@@ -126,7 +127,9 @@ view Circle {
 
   const style = scale => ({ ...baseStyle, transform: { scale, translate3d: '0,0,0' } })
 
-  <Spring defaultValue={{ val: 0 }} endValue={{ val: 1, config: [300, 8] }}>
-    {i => <circle style={style(i.val)} />}
-  </Spring>
+  <Motion
+    defaultStyle={{x: 0}}
+    style={{x: spring(1, [300, 10])}}>
+      {i => <c style={style(i.x)} /> }
+  </Motion>
 }

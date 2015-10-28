@@ -1,31 +1,10 @@
-view Tag {
-  <tag if={false}>
-    {'<'}{^name}{' />'}
-  </tag>
-
-  const distance = ^outside ? -30 : 0
-  const side = ^right ? 'right' : 'left'
-
-  $tag = {
-    flexFlow: 'row',
-    fontSize: 12,
-    opacity: 0.11,
-    pointerEvents: 'none',
-    position: 'absolute',
-    top: distance,
-    [side]: distance
-  }
-}
-
 view Blur {
   const size = ^size || 500
-
-  <blur />
 
   $ = {
     width: size,
     height: size,
-    background: ^bg || '#f9f9f9',
+    background: ^bg || '#fdfdfd',
     filter: `blur(${^blur || (size / 15)}px)`,
     borderRadius: size,
     position: 'absolute',
