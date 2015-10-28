@@ -1,6 +1,7 @@
 view Home {
   <Blur left="45%" top={-200} />
   <Header />
+  <Install title />
   <Video if={false} />
   <Examples />
   <Features />
@@ -173,7 +174,7 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [0, 0, 60]
+    margin: [20, 0, 0]
   }
 
   $code = {
