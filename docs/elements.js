@@ -5,6 +5,10 @@ view Docs.Elements {
       Flint uses JSX, with a couple optional helpers.
     </Text>
 
+    <Text>
+      You may also name your elements however you'd like. Avoid writing hundreds of meaningless <code>div</code>s and just write what your tag actually represents! Lowercase tags are scoped to the current view, and are unstyled except for browser defaults, while capitalized tags reference other views.
+    </Text>
+
     <Title small>repeat</Title>
     <Code source={`
       view Main {
@@ -59,31 +63,31 @@ view Docs.Elements {
       hits the enter key in the input.
     </Text>
 
-    <Title id="accessing-dom-nodes">Accessing DOM nodes</Title>
+    <Title small>yield</Title>
+
+    <Text>
+      Yield passes all props given to the view through to a tag.
+    </Text>
+
+    <Code source={`
+      view DecoratedButton {
+        <button yield />
+
+        $button = { fontWeight: 600 }
+      }
+    `} />
+
+    <Title id="accessing-dom-nodes">Accessing DOM nodes (refs)</Title>
     <p>Sometimes you need to access nodes in the DOM.</p>
     <Code source={`
       view Main {
-        let wide;
+        let wide
 
-        on('mount').then(() => {
+        on('mount', () => {
           wide = view.refs.span.innerWidth
         })
 
         <span ref="span">I am {wide}</span>
-      }
-    `} />
-
-    <Title id="view-methods">View methods</Title>
-    <p>When inside a view, you can access <code>view</code> to do a variety of things.</p>
-
-    <Title small>.refs</Title>
-    <Code source={`
-      view Button {
-        on('mount', () => {
-          view.refs.button.focus()
-        })
-
-        <button ref="button">Hello</button>
       }
     `} />
 

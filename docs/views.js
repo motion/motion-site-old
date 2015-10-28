@@ -78,10 +78,19 @@ view Docs.Views {
 
     <p>"Props" are the attributes you pass down to children views. They are accessed with the <code>view.props.</code> prefix.</p>
 
-    <Title three>Lots of Views</Title>
+    <Title three>Namespacing</Title>
     <p>
-      When your app is getting bigger, you'll probably want to avoid cluttering up your view names. We are experimenting with a: <code>Parent.SubView</code> syntax, that is enabled at the moment.
-      This will make <code>&lt;SubView /&gt;</code> available to the Parent you named, but only to that parent.
+      When your app is getting bigger, you'll probably want to avoid cluttering up your view names. You can name views with dots to bring more order:
+
+      <Code source={`
+        view Main {
+          <Child.Button />
+        }
+
+        view Child.Button {
+          <button />
+        }
+      `} />
     </p>
 
     <Title three>Naming tags</Title>
@@ -96,11 +105,12 @@ view Docs.Views {
         $greet = { fontWeight: 'bold' }
       }
     `} />
-    <p>This helps with styling, avoiding using classes when unnecessary, and makes your view structure easier to read. No more hundreds of meaningless divs!</p>
+
+    <p>This helps with styling, avoiding using classes when unnecessary, and makes your view structure easier to understand.</p>
 
     <Title id="using-views">Using Views</Title>
-    <p>You don't need to import/export views between files!</p>
-    <p>Flint gives you helpful errors when you define a view twice. All together, you get big upside for all these reasons.</p>
+    <p>You don't need to import/export views between files! Flint prevents naming collisions with helpful warnings. Because your views are small pieces that should be easy to move around, this system avoid a lot of pain day to day, but even more down the road, where it makes moving around views in complex apps dramatically more easy.</p>
+
     <Title id="view-lifecycles">View lifecycles</Title>
     <p>In React you have lifecycle methods. Flint has them too:</p>
     <ul>
@@ -113,14 +123,35 @@ view Docs.Views {
     <p>See how to use it here:</p>
 
     <Title id="view-events">View events</Title>
-    <p>Flint provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views.</p>
+    <p>Flint provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views. It's optional, and lightweight (under 15 lines of code), but it avoid large amounts of hassle.</p>
+
+
     <Code source={`
-      view Main {
+      view Hello {
         on('mount', () => {
           const width = view.refs.span.innerWidth
         })
 
         <span ref="span">Hello world</span>
+      }
+    `} />
+
+    <p><code>on</code> works with views, automatically unbinding it's events when the view un-mounts.</p>
+
+    <Code source={`
+      view Scroller {
+        on('scroll', e => {
+          // view scrolling
+        })
+      }
+    `} />
+
+    <Code source={`
+      view WindowScroller {
+        on(window, 'scroll', e => {
+          // window scrolling
+          // optional first agument for scope
+        })
       }
     `} />
 
