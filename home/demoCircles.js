@@ -6,7 +6,7 @@ view DemoCircles {
     inStyle={{ flexGrow: 0, width: 380 }}
     in={
       <Editor left light
-        lines={21}
+        lines={20}
         sources={[
           {
             title: 'Circles.js',

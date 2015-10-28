@@ -155,7 +155,7 @@ view Nav {
   $a = [style.link, {
     color: '#888',
     borderBottom: 'none',
-    fontSize: 16,
+    fontSize: 15,
     fontWeight: 500,
     padding: [0, 12],
     cursor: 'pointer'
@@ -229,7 +229,7 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 28,
+    fontSize: 26,
     fontWeight: 300,
     lineHeight: '1.6rem',
     padding: [0, 0, 17],

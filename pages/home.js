@@ -1,8 +1,8 @@
 view Home {
   <Blur left="45%" top={-200} />
   <Header />
+  <Video if={false} />
   <Examples />
-  <Install title />
   <Features />
   <DemoVideo />
   <Slack />
@@ -11,6 +11,32 @@ view Home {
   <Footer />
 
   $ = { width: '100%' }
+}
+
+view Video {
+  <browser />
+  <editor />
+
+  $ = {
+    flexFlow: 'row',
+    justifyContent: 'center'
+  }
+
+  const shared = {
+    width: 498,
+    margin: [50, 4, 0],
+    borderRadius: 10,
+    height: 410,
+    boxShadow: '0 0 6px rgba(0,0,0,0.1)'
+  }
+
+  $editor = [shared, {
+
+  }]
+
+  $browser = [shared, {
+
+  }]
 }
 
 view Intro {
@@ -82,31 +108,6 @@ view Home.Examples {
 
   $section = {
     position: 'relative'
-  }
-}
-
-view Interlude {
-  <Contain>
-    <num if={^num}>
-      {^num}
-    </num>
-    <Title light big>{^children}</Title>
-  </Contain>
-
-  $Contain = {
-    maxWidth: ^pad ? 600 : 'auto',
-    textAlign: ^right ? 'right': 'left',
-    flexDirection: ^right ? 'row-reverse' : 'row',
-    justifyContent: ^center ? 'center' : 'auto',
-    margin: [30, 'auto'],
-    padding: [0, 25]
-  }
-
-  const circleSize = 60
-  const shared = {
-    height: circleSize,
-    alignItems: 'center',
-    justifyContent: 'center'
   }
 }
 

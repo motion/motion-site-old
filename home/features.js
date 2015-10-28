@@ -63,6 +63,17 @@ view Features {
     <Next to='/docs/features'>Learn more about these</Next>
   </Contain>
 
+  $ = {
+    padding: [30, 0],
+    margin: [30, 0],
+    borderTop: '1px solid #eee',
+    borderBottom: '1px solid #eee',
+  }
+
+  $Next = {
+    margin: [15, 'auto', 10]
+  }
+
   $section = {
     margin: [30, 'auto'],
     flexWrap: 'wrap',
@@ -114,10 +125,6 @@ view Features {
     color: '#777',
     lineHeight: 1.5,
     fontWeight: 300
-  }
-
-  $Next = {
-    margin: 'auto'
   }
 }
 

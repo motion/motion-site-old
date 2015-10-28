@@ -1,7 +1,7 @@
 view Title {
   <title-h2 yield />
 
-  let size = 24
+  let size = 22
   if (^big) size = 28
   if (^small) size = 22
 

@@ -18,7 +18,8 @@
 .css .hljs-id,
 .css .hljs-class,
 .css .hljs-pseudo {
-  color: #db2828;
+  color: #ef2828;
+  font-weight: 700;
 }
 
 /* Tomorrow Orange */
@@ -35,7 +36,8 @@
 /* Tomorrow Yellow */
 .ruby .hljs-class .hljs-title,
 .css .hljs-rule .hljs-attribute {
-  color: #eab700;
+  color: #eacb1f;
+  font-weight: 700;
 }
 
 /* Tomorrow Green */
@@ -46,7 +48,7 @@
 .hljs-name,
 .ruby .hljs-symbol,
 .xml .hljs-cdata {
-  color: #718c00;
+  color: #88a700;
 }
 
 /* Tomorrow Aqua */
@@ -64,13 +66,14 @@
 .perl .hljs-sub,
 .javascript .hljs-title,
 .coffeescript .hljs-title {
-  color: #4271ae;
+  color: #518edf;
 }
 
 /* Tomorrow Purple */
 .hljs-keyword,
 .javascript .hljs-function {
-  color: #8959a8;
+  color: #9d65c1;
+  font-weight: 700;
 }
 
 .hljs {

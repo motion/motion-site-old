@@ -99,7 +99,7 @@ view Examples.Arena {
         load()
 
         async function load() {
-          projects = await fetchJSON(api.projects())
+          projects = await fetch.json(api.projects())
           fetched = true
         }
 
@@ -125,10 +125,6 @@ view Examples.Arena {
     function.
   </Text>
 
-  <Text>
-
-  </Text>
-
   <Code source={`
       view Project {
         let id, project, index
@@ -142,7 +138,7 @@ view Examples.Arena {
           index = projectIds.indexOf(id)
           project = projects[index]
 
-          let data = await fetchJSON(api.channel(id))
+          let data = await fetch.json(api.channel(id))
           contents = data.contents
           fetched = true
         }
