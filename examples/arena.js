@@ -70,7 +70,7 @@ view Examples.Arena {
   <Title small>home.js</Title>
 
   <Text>
-    If you already know <code><a href="">fetch</a></code> you can skip
+    If you already know <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">fetch</a></code> you can skip
     this paragraph. Fetch is coming to browsers, but Flint provides
     it for you by default. It's a radically improved API for doing AJAX
     requests, or simply, getting data from anywhere else on the web.
@@ -79,7 +79,7 @@ view Examples.Arena {
 
   <Text>
     Fetch returns a promise. Promises are also polyfilled by Flint,
-    using the excellent <a href="">Bluebird</a> library. Promises
+    using the excellent <a href="https://github.com/petkaantonov/bluebird">Bluebird</a> library. Promises
     are a nice abstraction that give you more control over asynchronous
     code.
   </Text>
