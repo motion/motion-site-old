@@ -21,98 +21,64 @@ view Examples.Mult {
   <demo>
     <MultDemo />
   </demo>
-  <Title>Main.js</Title>
   <Code source={`
       let randTo = x => Math.floor(Math.random() * x)
 
       view MultDemo {
+        let first, second, answer
         let streak = 0
         let guess = ''
-        let first, second, answer
 
-        let next = () => {
+        next()
+
+        function next() {
           guess = ''
           first = randTo(15)
           second = randTo(15)
           answer = first * second
         }
 
-        let check = () => {
+        function check() {
           let correct = +guess === answer
-          if (correct) {
-            streak++
-          } else {
-            streak = 0
-          }
-
+          if (correct) streak++
+          else streak = 0
           next()
         }
-        next()
 
-        <bg>
-          <center>
-            <top>
-              Multiply!
-              <streak if={streak > 0}>Streak: {streak}</streak>
-            </top>
-            <question>{first} times {second} is</question>
-            <input
-              id = "guess"
-              placeholder="Enter your answer"
-              sync={guess}
-              onEnter={check}
-            />
-          </center>
-        </bg>
+        <center>
+          Multiply!
+          <streak if={streak > 0}>Streak: {streak}</streak>
+          <question>{first} times {second} is</question>
+          <input
+            placeholder="Enter your answer"
+            sync={guess}
+            onEnter={check}
+          />
+        </center>
 
-        $bg = {
-          background: 'linear-gradient(green, blue)',
-          height: 400,
-        }
-        
-        $top = {flexFlow: 'row', margin: 'auto'}
-        
-        $h1 = { color: 'white' }
-        
-        $question = { 
-          flexFlow: 'row',
-          margin: 'auto',
-          paddingTop: 30,
-        }
-
-        $center = {
-          margin: 'auto',
-          textAlign: 'center',
-          color: '#222',
-          fontSize: 40,
-        }
-
-        $answer = {
-          flexFlow: 'row',
+        $ = {
+          background: 'linear-gradient(orange, red)',
+          color: '#fff',
+          borderRadius: 200,
+          margin: [20, 0],
+          height: 330,
           justifyContent: 'center',
-          fontWeight: 'bold',
-          background: 'rgba(0,0,0,0.2)',
+          fontSize: 34
         }
 
-        $result = {
-          display: 'inline-block',
-          padding: '0 10px'
+        $question = {
+          flexFlow: 'row',
+          paddingTop: 30
         }
-        
-        $streak = {flexFlow: 'row'}
 
-        $right = [$result, { color: 'green' }]
-        $wrong = [$result, { color: 'darkred' }]
-
-        $pane = {
-          background: 'rgba(0,0,0,0.2)',
-          margin: 20,
-          padding: 10,
-          borderRadius: 10,
+        $streak = {
+          flexFlow: 'row',
+          margin: [15, 'auto', -20],
+          fontSize: 24,
+          color: 'yellow'
         }
 
         $input = {
-          alignSelf: 'auto',
           background: 'white',
           color: '#000',
           fontSize: 20,
@@ -120,17 +86,17 @@ view Examples.Mult {
           marginTop: 30,
           borderRadius: 10,
           border: 'none',
-          padding: 10,
+          padding: 10
         }
       }
   `} />
-  
-  $top = { 
+
+  $top = {
     flexFlow: 'row',
     justifyContent: 'space-between',
   }
-  
-  $code = { 
+
+  $code = {
     marginRight: 15,
     marginTop: 10,
     fontSize: 25,
@@ -138,7 +104,7 @@ view Examples.Mult {
     color: '#aaa',
     ':hover': {
       color: '#666'
-  
+
     }
   }
 }
