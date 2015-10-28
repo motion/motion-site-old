@@ -66,7 +66,7 @@ view Docs.Elements {
         let wide;
 
         on('mount').then(() => {
-          wide = this.refs.span.innerWidth
+          wide = view.refs.span.innerWidth
         })
 
         <span ref="span">I am {wide}</span>
@@ -80,7 +80,7 @@ view Docs.Elements {
     <Code source={`
       view Button {
         on('mount', () => {
-          this.refs.button.focus()
+          view.refs.button.focus()
         })
 
         <button ref="button">Hello</button>

@@ -48,10 +48,8 @@ view Home.Examples {
         Flint introduces the view to ES6
       </Interlude>
 
-      <Example flip inPage
-        maxWidth={760}
-        in={<Editor lines={9} left light src="/assets/examples/exampleCounter.html" />}
-        out={<DemoCounter />} />
+      <DemoCounter />
+
     </section>
 
     <section>
@@ -60,10 +58,7 @@ view Home.Examples {
         Style views with ease...
       </Interlude>
 
-      <Example inPage
-        maxWidth={900}
-        in={<Editor lines={15} left light src="/assets/examples/exampleVenn.html" />}
-        out={<DemoVenn />} />
+      <DemoVenn />
     </section>
 
     <section>
@@ -72,17 +67,7 @@ view Home.Examples {
         Flint runs on ES6, npm & React
       </Interlude>
 
-      <Example flip inPage
-        inStyle={{ flexGrow: 2 }}
-        in={
-          <Editor left light
-            lines={20}
-            sources={[
-              { title: 'Circles.js', url: '/assets/examples/exampleCircles.html' },
-              { title: 'Circle.js', url: '/assets/examples/exampleCircle.html' }
-            ]} />
-        }
-        out={<DemoCircles />} />
+      <DemoCircles />
     </section>
   </Contain>
 
@@ -123,20 +108,6 @@ view Interlude {
     alignItems: 'center',
     justifyContent: 'center'
   }
-
-  $num = [shared, {
-    fontWeight: 300,
-    background: `linear-gradient(${Math.floor(Math.random() * 180)}deg, ${color.brand1}, ${color.brand2})`,
-    color: '#fff',
-    width: circleSize,
-    fontSize: 32,
-    borderRadius: 100,
-    position: 'relative',
-
-    [device.small]: {
-      display: 'none'
-    }
-  }]
 }
 
 view Example {
@@ -186,7 +157,7 @@ view Example {
 
 view Install {
   const install = 'sh <(curl -sL https://flint.love)'
-  const select = () => this.refs.code.select()
+  const select = () => view.refs.code.select()
 
   <Contain id="install">
     <Interlude center if={^title}>Install Flint</Interlude>

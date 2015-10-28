@@ -2,13 +2,20 @@ const light = '#fefefe'
 
 view Editor {
   let index = 0
-  let tabs, srcs;
+  let tabs, sources = []
+  let loaded = false
 
   if (^sources) {
-    srcs = ^sources.map(s => s.url)
+    sources = ^sources.map(s => s.source)
     tabs = ^sources.map(s => s.title)
-  } else {
-    srcs = [^src]
+  }
+  else {
+    sources = [^source]
+  }
+
+  function loadFrame() {
+    loaded = true
+    ^onLoad && ^onLoad()
   }
 
   <Toolbar
@@ -16,15 +23,19 @@ view Editor {
     tabs={tabs}
     activeTab={index}
     changeTab={i => index = i} />
-  <container>
-    <iframe
-      style={{display: index==_index ? 'flex' : 'none'}}
-      repeat={srcs}
-      src={_}
-      id={^id}
-      onLoad={() => { ^onLoad && ^onLoad() }}>
-    </iframe>
-  </container>
+  <Code
+    if={!^iframe}
+    repeat={sources}
+    source={_}
+    class={{hidden: _index != index}}
+  />
+  <iframe
+    if={^iframe}
+    src={^iframe}
+    id={^id}
+    onLoad={loadFrame}
+    class={{ loaded }}>
+  </iframe>
 
   $ = {
     flexFlow: 'column',
@@ -38,6 +49,7 @@ view Editor {
     position: 'relative',
     zIndex: 10,
     width: '100%',
+    background: ^light ? light : '#263640',
 
     [device.small]: {
       marginRight: 10,
@@ -45,11 +57,21 @@ view Editor {
     }
   }
 
-  $container = {
-    overflowY: 'hidden',
-    overflowX: 'scroll',
-    height: '100%'
+  $Code = {
+    margin: 0,
+    padding: 15,
+    paddingRight: 0,
+    fontSize: 17,
+    lineHeight: '1.4em',
+    border: 'none',
+    overflow: 'hidden',
+    height: '100%',
+    width: '100%',
+    flexGrow: 1,
+    boxShadow: 'none'
   }
+
+  $hidden = { display: 'none' }
 
   $iframe = {
     border: 'none',
@@ -57,13 +79,18 @@ view Editor {
     width: '100%',
     padding: 3,
     overflow: 'hidden',
-    background: ^light ? light : '#263640',
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
+    transition: 'all ease-in 300ms',
+    opacity: 0,
 
     [device.small]: {
       pointerEvents: 'none'
     }
+  }
+
+  $loaded = {
+    opacity: 1,
   }
 }
 
@@ -114,13 +141,13 @@ view Toolbar {
     flexGrow: 1
   }
 
-  $.active = {
+  $active = {
     background: '#fff',
     borderTop: border,
     borderLeft: `2px solid ${color.brand}`,
     borderRight: border,
-    marginTop: 0,
-    marginBottom: -1,
+    marginTop: 1,
+    marginBottom: -3,
     color: '#000',
     fontWeight: 700,
     borderBottom: 'none',

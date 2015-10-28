@@ -1,5 +1,6 @@
 view Code {
   function clean(src) {
+    if (!src) return
     let arr = src.split("\n")
     arr.shift()
 
@@ -9,7 +10,7 @@ view Code {
   }
 
   on('mount', () => {
-    highlight.highlightBlock(__.refs.code)
+    highlight.highlightBlock(view.refs.code)
   })
 
   <code ref="code" class={^lang || 'javascript'}>
@@ -25,6 +26,7 @@ view Code {
     fontSize: 15,
     lineHeight: 1.4,
     whiteSpace: 'pre',
-    borderRadius: 4
+    borderRadius: 4,
+    display: 'block'
   }
 }

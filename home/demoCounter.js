@@ -1,14 +1,35 @@
 view DemoCounter {
+  <Example flip inPage
+    maxWidth={760}
+    in={
+      <Editor lines={10} left light source={`
+      view Counter {
+        let count = 0
+
+        const up = () => count++
+        const down = () => count--
+
+        <button onClick={up}>↓</button>
+        <button onClick={up}>↑</button>
+        <strong>Count is {count}</strong>
+      }
+      `} />
+    }
+    out={<Counter />}
+  />
+}
+
+view Counter {
   let count = 0
 
-  const down = () => count -= 1
-  const up = () => count += 1
+  const up = () => count++
+  const down = () => count--
 
   <center>
     <button onClick={down}>↓</button>
     <button onClick={up}>↑</button>
   </center>
-  <count>Count is{' '}{count}</count>
+  <count>Count is {count}</count>
 
   $ = {
     margin: 'auto',

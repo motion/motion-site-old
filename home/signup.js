@@ -22,8 +22,8 @@ view SignupForm {
         <textarea name="ABOUT" class="" placeholder="What are you most interested in with Flint? Any feedback?" id="mce-ABOUT"></textarea>
       </div>
       <hide id="mce-responses" class="clear">
-        <div class="response" id="mce-error-response" style="display:none"></div>
-        <div class="response" id="mce-success-response" style="display:none"></div>
+        <div class="response" id="mce-error-response"></div>
+        <div class="response" id="mce-success-response"></div>
       </hide>
       <hide style="position: absolute; left: -5000px;">
         <input type="text" name="b_d6ee317984756a7f0f5e9378b_dcc2cefed5" tabindex="-1" value="" />

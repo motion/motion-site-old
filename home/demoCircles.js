@@ -1,3 +1,65 @@
+view DemoCircles {
+  <Example flip inPage
+    inStyle={{ flexGrow: 0, width: 400 }}
+    in={
+      <Editor left light
+        lines={21}
+        sources={[
+          {
+            title: 'Circles.js',
+            source: `
+      import offset from 'mouse-event-offset'
+
+      view Circles {
+        let coords = [[200, 200]]
+
+        function addCircle(click) {
+          coords.push(offset(click))
+        }
+
+        <circles onClick={addCircle}>
+          <Circle repeat={coords}
+            left={_[0]}
+            top={_[1]}
+          />
+        </circles>
+
+        $circles = { height: 400 }
+      }
+        `
+          },
+          {
+            title: 'Circle.js',
+            source: `
+      view Circle {
+        let c = () => Math.round(Math.random()*255)
+        let base = {
+          background: { r: c(), g: c(), b: c() },
+          position: 'absolute',
+          top: ^top, left: ^left,
+          width: 80, height: 80,
+          borderRadius: 100
+        }
+
+        let style = scale =>
+          ({ ...base, transform: { scale } })
+
+        <Motion
+          defaultValue={{val: 0}}>
+          endValue={{val: spring(1, [300, 10])}}>
+            {i => <c style={style(i.val)} /> }
+        </Motion>
+      }
+            `
+           }
+        ]} />
+    }
+    out={
+      <Circles />
+    } />
+}
+
+
 import { Spring } from 'react-motion'
 import offset from 'mouse-event-offset'
 
@@ -19,11 +81,11 @@ const onScrollTo = (targetY, cb) => {
   })
 }
 
-view DemoCircles {
+view Circles {
   let coords = []
 
   on('mount', () => {
-    const targetY = util.docOffset(__.refs.circles).top + 400
+    const targetY = util.docOffset(view.refs.circles).top + 400
     onScrollTo(targetY, () =>
       coords = coords.concat({ x: 200, y: 200 }))
   })

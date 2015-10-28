@@ -107,7 +107,7 @@ view YouTube {
     background: color.bg
   }
 
-  $.bot = {
+  $bot = {
     top: 'auto',
     bottom: 0,
     height: 8

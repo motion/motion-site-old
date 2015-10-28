@@ -66,7 +66,7 @@ view Header {
           start = true
           triggerEvent('headeriframe', 'start')
         }}
-        src="/assets/examples/example.html" />
+        iframe="/assets/examples/example.html" />
     }
   />
 
@@ -159,9 +159,7 @@ view Nav {
 view Logo {
   <img onClick={router.link(routes.home)} src="/assets/images/flintlogo20.png" />
 
-  $ = {
-    flexShrink: 0
-  }
+  $ = { flexShrink: 0 }
 
   const width = 1019
   const height = 282

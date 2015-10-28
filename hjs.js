@@ -80,15 +80,6 @@ function H_js(hljs) {
       {
         begin: '\\.' + hljs.IDENT_RE, relevance: 0 // hack: prevents detection of keywords after dots
       },
-      // ECMAScript 6 modules import
-      {
-        beginKeywords: 'import', end: '[;$]',
-        keywords: 'import from as',
-        contains: [
-          hljs.APOS_STRING_MODE,
-          hljs.QUOTE_STRING_MODE
-        ]
-      },
       { // ES6 class
         className: 'class',
         beginKeywords: 'class', end: /[{;=]/, excludeEnd: true,

@@ -45,7 +45,7 @@ view Password {
   }
 
   on('mount', () => {
-    __.refs.input.focus()
+    view.refs.input.focus()
   })
 
   <password>
