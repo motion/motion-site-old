@@ -24,25 +24,29 @@ view MultDemo {
   }
   next()
 
-  <bg>
-    <center>
-      <top>
-        Multiply!
-        <streak if={streak > 0}>Streak: {streak}</streak>
-      </top>
-      <question>{first} times {second} is</question>
-      <input
-        id = "guess"
-        placeholder="Enter your answer"
-        sync={guess}
-        onEnter={check}
-      />
-    </center>
-  </bg>
+  <center>
+    <top>
+      Multiply!
+    </top>
+    <streak if={streak > 0}>Streak: {streak}</streak>
+    <question>{first} times {second} is</question>
+    <input
+      id = "guess"
+      placeholder="Enter your answer"
+      sync={guess}
+      onEnter={check}
+    />
+  </center>
 
-  $bg = {
-    background: 'linear-gradient(green, blue)',
-    height: 400,
+  $ = {
+    background: `linear-gradient(${color.brand1}, ${color.brand2})`,
+    color: '#fff',
+    borderRadius: 200,
+    margin: [20, 0],
+    height: 330,
+    justifyContent: 'center',
+    textAlign: 'center',
+    fontSize: 34,
   }
   $top = {flexFlow: 'row', margin: 'auto'}
   $h1 = { color: 'white' }
@@ -51,13 +55,6 @@ view MultDemo {
     flexFlow: 'row',
     margin: 'auto',
     paddingTop: 30,
-  }
-
-  $center = {
-    margin: 'auto',
-    textAlign: 'center',
-    color: '#222',
-    fontSize: 40,
   }
 
   $answer = {
@@ -71,7 +68,13 @@ view MultDemo {
     display: 'inline-block',
     padding: '0 10px'
   }
-  $streak = {flexFlow: 'row'}
+
+  $streak = {
+    flexFlow: 'row',
+    margin: [15, 'auto', -20],
+    fontSize: 24,
+    color: 'yellow'
+  }
 
   $right = [$result, { color: 'green' }]
   $wrong = [$result, { color: 'darkred' }]

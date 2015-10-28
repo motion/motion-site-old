@@ -1,6 +1,7 @@
 view DemoVenn {
   <Example inPage
     maxWidth={900}
+    inStyle={{ width: 300 }}
     in={
       <Editor lines={15} left light source={`
       view Venn {

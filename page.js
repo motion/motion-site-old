@@ -8,10 +8,20 @@ view Page {
   </Contain>
   <Footer />
 
+  $ = {
+    [device.small]: {
+      flexFlow: 'column'
+    }
+  }
+
   $Contain = {
     width: '80%',
     maxWidth: 1100,
-    flexFlow: 'row'
+    flexFlow: 'row',
+
+    [device.small]: {
+      flexFlow: 'column'
+    }
   }
 
   $inner = {
@@ -22,32 +32,28 @@ view Page {
 view Page.Sidebar {
   const url = slug => ^base + '/' + slug
 
-  <sidebar>
-    <a
-      repeat={^list}
-      class={{ active: router.isActive(url(_.slug)) }}
-      key={_index} onClick={router.link(url(_.slug))}>
-      {_.title}
-    </a>
-  </sidebar>
+  <a
+    repeat={^list}
+    class={{ active: router.isActive(url(_.slug)) }}
+    key={_index} onClick={router.link(url(_.slug))}>
+    {_.title}
+  </a>
 
   $ = {
     borderRight: '1px solid #ddd',
     margin: 20,
-    marginLeft: 0
+    marginLeft: 0,
+
+    [device.small]: {
+      borderRight: 'none',
+      flexFlow: 'row',
+      width: '100%',
+      flexWrap: 'wrap',
+      justifyContent: 'center'
+    }
   }
 
-  $item = {
-    flexFlow: 'row',
-    lineHeight: '1.6rem',
-  }
-
-  $index = {
-    padding: [0, 10, 0, 0],
-    flexFlow: 'row'
-  }
-
-  $.active = {
+  $active = {
     color: 'black',
     fontWeight: 600
   }
@@ -55,7 +61,6 @@ view Page.Sidebar {
   $a = [style.link, {
     whiteSpace: 'nowrap',
     padding: [10, 20],
-    width: '100%',
     minWidth: 120,
     display: 'flex',
     textAlign: 'right'

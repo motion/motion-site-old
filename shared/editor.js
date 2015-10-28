@@ -168,9 +168,6 @@ view Toolbar {
   $ctrl = {
     width: 8,
     height: 8,
-    transform: {
-      scale: 0.8
-    },
     background: '#EB5B54',
     borderRadius: 10,
     margin: ['auto', 1],

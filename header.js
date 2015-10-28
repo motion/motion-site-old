@@ -7,7 +7,8 @@ view HeaderAlt {
 
   $ = {
     borderBottom: '1px solid #ddd',
-    padding: [5, 0]
+    padding: [5, 0],
+    width: '100%'
   }
 
   $wrap = {
@@ -17,6 +18,16 @@ view HeaderAlt {
     width: '80%',
     maxWidth: 1100,
     margin: [0, 'auto'],
+
+    [device.small]: {
+      flexFlow: 'column'
+    }
+  }
+
+  $Logo = {
+    [device.small]: {
+      padding: [10, 0]
+    }
   }
 
   $Nav = {

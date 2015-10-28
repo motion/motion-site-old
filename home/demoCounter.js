@@ -1,6 +1,7 @@
 view DemoCounter {
   <Example flip inPage
     maxWidth={760}
+    inStyle={{ width: 280 }}
     in={
       <Editor lines={10} left light source={`
       view Counter {
