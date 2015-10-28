@@ -39,11 +39,8 @@ view Examples.Arena {
   />
 
   <Text>
-    Continuing with our main.js file, we define our entry view
-    named <code>Main</code>. This is always the name of your top
-    level view.
     We define two views and add the <code>route</code> property to
-    them. Read more on <a href="">routing</a> in our docs.
+    them. Read more on <A to="/docs/routes">routing</A> in our docs.
   </Text>
 
   <Text>

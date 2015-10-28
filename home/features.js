@@ -1,9 +1,5 @@
 view Features {
   <Contain>
-    <Interlude center>
-      Flint is development, faster
-    </Interlude>
-
     <section>
       <text>
         <img src={`/assets/images/line/cloud-download.svg`} />

@@ -1,6 +1,5 @@
 view FAQ {
   <Contain pad>
-    <Tag name="FAQ" right />
     <question>
       What can I build with it?
     </question>
@@ -43,10 +42,10 @@ view FAQ {
     </question>
     <answer>
       <p>
-        Flint is a static compiler that compiles to any web framework, meaning it can theoretically be used with any existing stack. Out of the box we compile to React. 
+        Flint is a static compiler that compiles to any web framework, meaning it can theoretically be used with any existing stack. Out of the box we compile to React.
       </p>
       <p>
-        However, many parts of Flint (CLI, build system) work best when it's used alone. 
+        However, many parts of Flint (CLI, build system) work best when it's used alone.
         We're starting by focusing on this, but will be providing more documentation on using Flint in existing applications soon.
       </p>
     </answer>
@@ -63,7 +62,7 @@ view FAQ {
         It is possible to write abstractions such as Flux above this, and this is something we'll be working on soon.
       </p>
     </answer>
-    
+
     <question>What if I decide to stop using Flint</question>
     <answer>
       <p>

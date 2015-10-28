@@ -3,10 +3,6 @@ view Signup {
     <Title center>Sign up to keep up with releases:</Title>
     <SignupForm />
   </Contain>
-
-  $ = {
-    margin: 20
-  }
 }
 
 view SignupForm {

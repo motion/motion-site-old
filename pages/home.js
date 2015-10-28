@@ -2,8 +2,8 @@ view Home {
   <Blur left="45%" top={-200} />
   <Header />
   <Examples />
-  <Features />
   <Install title />
+  <Features />
   <DemoVideo />
   <Slack />
   <FAQ />
@@ -160,7 +160,7 @@ view Install {
   const select = () => view.refs.code.select()
 
   <Contain id="install">
-    <Interlude center if={^title}>Install Flint</Interlude>
+    <Title center if={^title}>Install Flint</Title>
     <code onMouseUp={select} class="install">
      <input ref="code" value={install} readOnly size={install.length} />
     </code>
@@ -168,16 +168,11 @@ view Install {
     <afterward>
       or: npm install -g flint
     </afterward>
-    <Tag name="Install" outside right />
   </Contain>
 
   $ = {
     textAlign: 'center',
-    margin: [0, 0, 60],
-
-    [device.small]: {
-      display: 'none'
-    }
+    margin: [0, 0, 60]
   }
 
   $code = {
