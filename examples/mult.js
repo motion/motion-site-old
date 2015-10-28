@@ -45,16 +45,14 @@ view Examples.Mult {
           next()
         }
 
-        <center>
-          Multiply!
-          <streak if={streak > 0}>Streak: {streak}</streak>
-          <question>{first} times {second} is</question>
-          <input
-            placeholder="Enter your answer"
-            sync={guess}
-            onEnter={check}
-          />
-        </center>
+        <h1>Multiply!</h1>
+        <streak if={streak > 0}>Streak: {streak}</streak>
+        <question>{first} times {second} is</question>
+        <input
+          placeholder="Enter your answer"
+          sync={guess}
+          onEnter={check}
+        />
 
         $ = {
           background: 'linear-gradient(orange, red)',
@@ -63,17 +61,19 @@ view Examples.Mult {
           margin: [20, 0],
           height: 330,
           justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
           fontSize: 34
         }
 
         $question = {
           flexFlow: 'row',
-          paddingTop: 30
+          margin: [15, 0]
         }
 
         $streak = {
           flexFlow: 'row',
-          margin: [15, 'auto', -20],
+          margin: [0, 'auto', -20],
           fontSize: 24,
           color: 'yellow'
         }
@@ -83,7 +83,7 @@ view Examples.Mult {
           color: '#000',
           fontSize: 20,
           fontWeight: 'bold',
-          marginTop: 30,
+          margin: [0, 'auto'],
           borderRadius: 10,
           border: 'none',
           padding: 10
