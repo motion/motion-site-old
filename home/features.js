@@ -63,6 +63,8 @@ view Features {
         </col>
       </text>
     </section>
+
+    <Next to='/docs/features'>Learn more about these</Next>
   </Contain>
 
   $section = {
@@ -96,7 +98,7 @@ view Features {
     }
   }
 
-  $.right = {
+  $right = {
     alignSelf: 'flex-end',
     flexDirection: 'row-reverse'
   }
@@ -116,6 +118,10 @@ view Features {
     color: '#777',
     lineHeight: 1.5,
     fontWeight: 300
+  }
+
+  $Next = {
+    margin: 'auto'
   }
 }
 

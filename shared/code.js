@@ -20,9 +20,9 @@ view Code {
   $ = {
     background: '#fff',
     border: '1px solid #ddd',
-    boxShadow: '0 0 14px rgba(0,0,0,0.05)',
+    boxShadow: '0 0 4px rgba(0,0,0,0.05)',
     padding: 10,
-    margin: [20, 0],
+    margin: [10, 0],
     fontSize: 15,
     lineHeight: 1.4,
     whiteSpace: 'pre',
