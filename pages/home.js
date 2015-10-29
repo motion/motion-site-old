@@ -1,6 +1,11 @@
 view Home {
   <Blur left="45%" top={-200} />
   <Header />
+  <welcome>
+    Welcome to the Flint private beta. We are getting ready for launch
+    and prearing a demo video for this area. For now, you'll have to
+    dive on your own!
+  </welcome>
   <Install title />
   <Video if={false} />
   <Examples />
@@ -12,6 +17,13 @@ view Home {
   <Footer />
 
   $ = { width: '100%' }
+
+  $welcome = {
+    margin: [80, 'auto', 30],
+    textAlign: 'center',
+    maxWidth: 450,
+    zIndex: 100
+  }
 }
 
 view Video {
@@ -155,60 +167,6 @@ view Example {
       order: ^flipVertical ? 2 : 1
     }
   }, ^inStyle]
-}
-
-view Install {
-  const install = 'sh <(curl -sL https://flint.love)'
-  const select = () => view.refs.code.select()
-
-  <Contain id="install">
-    <Title center if={^title}>Install Flint</Title>
-    <code onMouseUp={select} class="install">
-     <input ref="code" value={install} readOnly size={install.length} />
-    </code>
-
-    <afterward>
-      or: npm install -g flint
-    </afterward>
-  </Contain>
-
-  $ = {
-    textAlign: 'center',
-    margin: [20, 0, 0]
-  }
-
-  $code = {
-    background: 'none'
-  }
-
-  $.install = {
-    flexFlow: 'row',
-    color: '#555',
-    margin: [10, 'auto'],
-  }
-
-  $input = {
-    background: `linear-gradient(90deg, ${color.brand1}, ${color.brand2})`,
-    borderRadius: 5,
-    border: '2px solid #eee',
-    padding: [8, 10, 8, 16],
-    fontSize: 20,
-    margin: [-8, 0, -5],
-    fontFamily: font.monoSpace,
-    width: '100%',
-    color: '#fff'
-  }
-
-  $afterward = {
-    display: 'block',
-    margin: [5, 'auto'],
-    flexFlow: 'row',
-    lineHeight: '1.2rem',
-    opacity: 0.7,
-    fontFamily: font.monoSpace
-  }
-
-  $a = style.link
 }
 
 view Slack {

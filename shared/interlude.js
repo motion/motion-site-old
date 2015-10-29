@@ -1,5 +1,5 @@
 view Interlude {
-  <title-h2 yield />
+  <interlude-h2 yield />
 
   $h2 = [style.textGradient, {
     textAlign: ^right ? 'right': 'left',
