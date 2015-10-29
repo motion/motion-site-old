@@ -4,8 +4,8 @@ const docs = [
   { title: "Views", view: 'Views', slug: 'views' },
   { title: "Elements", view: 'Elements', slug: 'elements' },
   { title: "Styles", view: 'Styles', slug: 'styles' },
+  { title: "Events", view: 'Events', slug: 'events' },
   { title: "Routes", view: 'Routes', slug: 'routes' },
-  { title: "Assets", view: 'Assets', slug: 'assets' },
   { title: "Extras", view: 'Extras', slug: 'extras' },
   { title: "Building", view: 'Building', slug: 'building' },
 ]

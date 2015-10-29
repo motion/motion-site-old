@@ -32,11 +32,14 @@ view Docs.Routes {
           <a onClick={() => toProduct(15)}>buy shoes</a>
           <a onClick={() => toProduct(30)}>or cakes</a>
           <a onClick={() => toProduct(12)}>or hammers</a>
+
+          // Flint.router.link returns a function, for use in links
+          <a onClick={Flint.router.link('/products')}>or hammers</a>
         </links>
       }
 
       view About {
-        <h2>Started by Nick and Nate</h2>
+        <h2>About our company</h2>
       }
 
       view Product {

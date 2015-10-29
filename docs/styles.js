@@ -13,17 +13,19 @@ view Docs.Styles {
 
     <p>When your view changes, your styles recalculate as needed. You may be wondering, what if I want to style two of the same tag differently?</p>
 
-    <p>For one, you can style classes:</p>
-
     <Code source={`
       view Main {
         <h1>Hello World</h1>
         <h1 class="ask">How are you?</h1>
 
         $h1 = { color: 'green' }
-        $.ask = { color: 'blue' }
+        $ask = { color: 'blue' }
       }
     `} />
+
+    <p>
+      Notice that Flint's style syntax doesn't distinguish between class and tag. Because you can name your tags as you like, we've kept it simple.
+    </p>
 
     <p>Styles are also dynamic, and can access variables in the view just like you'd expect:</p>
 
@@ -96,6 +98,6 @@ view Docs.Styles {
         }
       }
     `} />
-    <Next to='/docs/routes'>Routes</Next>
+    <Next to='/docs/events'>Events</Next>
   </Body>
 }

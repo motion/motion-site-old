@@ -7,28 +7,12 @@ view Docs.Extras {
     <ul>
       <li>Promise - <a href="https://github.com/petkaantonov/bluebird/blob/master/API.md">Bluebird promises</a> are the default "Promise" implementation.</li>
       <li>fetch - <a href="https://github.com/matthew-andrews/isomorphic-fetch">isomorphic fetch</a> has been provided</li>
-      <li>on - Smart view-friendly event handler, see documentation below.</li>
     </ul>
 
-    <Title small>on</Title>
-
-    <Text><code>on</code> is our small function for smartly binding events. If used inside of a view, it automatically binds/unbinds events on mount/unmount. You can attach it to a scope, by default it attaches to <code>window</code> outside of views, and <code>view</code> inside of views.</Text>
-
-    <Text>Outside of a view you could use it to listen for scrolling:</Text>
-
-    <Code source={`
-      on('scroll', () => console.log('scrolling'))
-    `} />
-
-    <Text>Inside a view you can use it for view events:</Text>
-
-    <Code source={`
-      view Button {
-        on('mount', () => {
-          // do stuff to live mounted DOM nodes
-        })
-      }
-    `} />
+    <Title>Hooking into Flint</Title>
+    <Text>
+      We're working on a full set of hooks for Flint. For now you can set Flint.preloaders to be an array of promises for doing anything asynchronously before your app loads. You can also log out <code>Flint</code> in your console, and <code>_Flint</code>, to see public and private state of whats happening in your app.
+    </Text>
 
     <Title>Constants / globals</Title>
 
@@ -81,5 +65,7 @@ view Docs.Extras {
     <Text>
       Flint won't allow you to have it conflict with any other standard JavaScript globals as well.
     </Text>
+
+    <Next to='/docs/building'>Building</Next>
   </Body>
 }

@@ -26,7 +26,9 @@ view Docs.Elements {
         const addShow = () =>
           shows.push({ name: 'breaking bad' })
 
-        <shows repeat={shows}>{_.name}</shows>
+        <shows repeat={shows}>
+          {_.name}
+        </shows>
         <button onClick={addShow}>add one</button>
       }
     `} />
@@ -34,6 +36,8 @@ view Docs.Elements {
     <Text>
       Repeat compiles to a map function behind the scenes.
       You can also pass in a number to repeat, to do a simple loop.
+      Repeats also instantiate an `_index` variable for the current index
+      in the list.
     </Text>
 
     <Title small>if</Title>
