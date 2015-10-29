@@ -10,7 +10,7 @@ view DemoCounter {
         const up = () => count++
         const down = () => count--
 
-        <button onClick={up}>↓</button>
+        <button onClick={down}>↓</button>
         <button onClick={up}>↑</button>
         <strong>Count is {count}</strong>
       }
