@@ -73,8 +73,8 @@ view Main {
 
   $ = {
     color: color.text,
-    fontSize: 18,
-    lineHeight: '2rem',
+    fontSize: 16,
+    lineHeight: '1.8rem',
     fontFamily: font.sansSerif,
     overflow: 'hidden',
     background: color.bg,

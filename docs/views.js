@@ -158,7 +158,7 @@ view Docs.Views {
     <Title id="view-methods">View methods</Title>
     <p>When inside a view, you can access <code>view</code> to do a variety of things.</p>
 
-    <Title small>.refs</Title>
+    <Title small>view.refs</Title>
     <Code source={`
       view Button {
         on('mount', () => {
@@ -169,29 +169,52 @@ view Docs.Views {
       }
     `} />
 
-    <Title small>.mixin()</Title>
-    <p><em>Disabled!</em> We are working towards a nice way of using mixins. Open an issue if you have a proposal!</p>
-
-
-    <Title small>.pause()</Title>
+    <Title small>view.pause()</Title>
     <p>Prevent re-rendering. Useful for optimization and batching visual changes.</p>
 
-    <Title small>.resume()</Title>
+    <Title small>view.resume()</Title>
     <p>Resume from paused re-rendering.</p>
 
-    <Title small>.update()</Title>
+    <Title small>view.update()</Title>
     <p>Forces view to re-render.</p>
 
-    <Title small>.props</Title>
+    <Title small>What about shouldComponentUpdate?</Title>
+    <p>
+      Rather than having a special function for this, just call <code>view.pause()</code> at the top of your view. Then when you want to update it later, <code>view.update()</code>. This lets you use logic just like everything else in your app, without any special helpers. Here is a common pattern for optimizing a view:
+    </p>
+
+    <Code source={`
+      view ComplexComponent {
+        view.pause()
+
+        let title, date, body, name
+
+        on('props', () => {
+          title = ^title || ''
+          date = ^date || Date.now()
+          body = ^body || ''
+          name = ^name || ''
+          view.update()
+        })
+
+        <button ref="button">Hello</button>
+      }
+    `} />
+
+    <p>
+      Note that this isn't typically needed! Flint optimizes your app in production by batching changes, which essentially will do this for you.
+    </p>
+
+    <Title small>view.props</Title>
     <p>Access the entire props object with <code>view.props</code>.</p>
 
-    <Title small>.name</Title>
+    <Title small>view.name</Title>
     <p>Access the name of the view.</p>
 
-    <Title small>.el(name : string)</Title>
+    <Title small>view.el(name : string)</Title>
     <p>Programatically render a view. Pass in a view name to <code>view.el()</code> and it will render.</p>
 
-    <Title small>.childContext(context : object)</Title>
+    <Title small>view.childContext(context : object)</Title>
     <p><em>Alpha</em> This should work, but it's very much for testing at the moment. You can provide context to children like so:</p>
     <Code source={`
       view Main {

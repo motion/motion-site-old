@@ -1,9 +1,9 @@
 view Title {
-  <title-h2 yield />
+  <title-h2 id={^children.split().map(x => x.toLowerCase()).join('-')} yield />
 
   let size = 22
   if (^big) size = 28
-  if (^small) size = 22
+  if (^small) size = 20
 
   $h2 = [style.textGradient, {
     fontSize: size,
