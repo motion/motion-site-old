@@ -2,7 +2,7 @@ view Next {
   let over = true
 
   let go = () => {
-    Flint.router.go(^to)
+    Flint.router.go(view.props.to)
     setTimeout(() => window.scrollTo(0, 0))
   }
 
@@ -10,7 +10,7 @@ view Next {
         onMouseEnter={() => over = true}
         onMouseLeave={() => over = false}
         class={{over}}>
-    <span>{^children}</span>
+    <span>{view.props.children}</span>
     <arrow>❯</arrow>
   </next>
 

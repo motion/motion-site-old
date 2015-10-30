@@ -58,10 +58,10 @@ view Examples.Arena {
     }
 
     view Link {
-      <link-a onClick={link(^to)} yield />
+      <link-a onClick={link(view.props.to)} yield />
 
       $ = {
-        textDecoration: ^plain ? 'none' : 'underline',
+        textDecoration: view.props.plain ? 'none' : 'underline',
         cursor: 'pointer'
       }
     }
@@ -134,7 +134,7 @@ view Examples.Arena {
         on('props', load)
 
         async function load() {
-          id = ^params.id
+          id = view.props.params.id
           index = projectIds.indexOf(id)
           project = projects[index]
 
@@ -159,9 +159,9 @@ view Examples.Arena {
 
       view Project.Title {
         <main>
-          <Arrow left onClick={^left} />
-          <h1>{^children}</h1>
-          <Arrow right onClick={^right} />
+          <Arrow left onClick={view.props.left} />
+          <h1>{view.props.children}</h1>
+          <Arrow right onClick={view.props.right} />
         </main>
         <close>
           <Link to="/" plain>X</Link>
@@ -184,8 +184,8 @@ view Examples.Arena {
       }
 
       view Arrow {
-        <arrow-a if={^right} yield>&gt;</arrow>
-        <arrow-a if={^left} yield>&lt;</arrow>
+        <arrow-a if={view.props.right} yield>&gt;</arrow>
+        <arrow-a if={view.props.left} yield>&lt;</arrow>
 
         $ = { padding: 10 }
       }

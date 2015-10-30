@@ -173,7 +173,7 @@ view SubFeatures {
 view List {
   <Contain>
     <list>
-      <item repeat={^items}>
+      <item repeat={view.props.items}>
         <Check class="check" />
         <text>
           <feature>{_.title}</feature>

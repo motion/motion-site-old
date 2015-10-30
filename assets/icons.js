@@ -19,9 +19,9 @@ view PlayIcon {
 
   $ = false
   $svg = {
-    width: ^size || 50,
-    height: ^size || 50,
-    fill: ^color,
+    width: view.props.size || 50,
+    height: view.props.size || 50,
+    fill: view.props.color,
     margin: 'auto'
   }
 }

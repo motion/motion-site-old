@@ -13,8 +13,8 @@ view Code {
     highlight.highlightBlock(view.refs.code)
   })
 
-  <code ref="code" class={^lang || 'javascript'}>
-    {clean(^source)}
+  <code ref="code" class={view.props.lang || 'javascript'}>
+    {clean(view.props.source)}
   </code>
 
   $ = {

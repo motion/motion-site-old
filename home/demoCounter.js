@@ -10,7 +10,7 @@ view DemoCounter {
         const up = () => count++
         const down = () => count--
 
-        <button onClick={up}>↓</button>
+        <button onClick={down}>↓</button>
         <button onClick={up}>↑</button>
         <strong>Count is {count}</strong>
       }
@@ -52,10 +52,12 @@ view Counter {
     borderRadius: 100,
     width: 50,
     outline: 'none',
+    boxShadow: '0 2px 1px rgba(0,0,0,0.2)',
 
     ':active': {
-      background: color.brand1,
-      color: '#fff'
+      background: color.brand2,
+      color: '#fff',
+      boxShadow: 'inset 0 2px 1px rgba(0,0,0,0.2)',
     }
   }
 

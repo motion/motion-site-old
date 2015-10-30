@@ -87,7 +87,7 @@ view Password {
 
   const checkPass = () => {
     console.log('checkin pass', password)
-    if (password.toLowerCase() == 'love') ^onShow()
+    if (password.toLowerCase() == 'love') view.props.onShow()
   }
 
   on('mount', () => {

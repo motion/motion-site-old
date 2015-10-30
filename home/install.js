@@ -3,7 +3,7 @@ view Install {
   const select = () => view.refs.code.select()
 
   <Contain id="install">
-    <Interlude style={{margin: [0, 'auto']}} center if={^title}>
+    <Interlude style={{margin: [0, 'auto']}} center if={view.props.title}>
       Install
     </Interlude>
 
@@ -34,22 +34,22 @@ view Install {
     border: 'none'
   }
 
-  $.install = {
+  $install = {
     flexFlow: 'row',
     color: '#555',
     margin: [10, 'auto'],
   }
 
   $input = {
-    background: `linear-gradient(100deg, #aaa 20%, #888)`,
+    background: `linear-gradient(100deg, ${color.brand2}, ${color.brand1})`,
     borderRadius: 5,
-    border: '2px solid #eee',
+    border: 'none',
     padding: [8, 10, 8, 16],
-    fontSize: 20,
+    fontSize: 18,
     margin: [-8, 0, -5],
     fontFamily: font.monoSpace,
     width: '100%',
-    color: '#fff'
+    color: 'rgba(255,255,255,0.9)'
   }
 
   $afterward = {
@@ -57,7 +57,7 @@ view Install {
     margin: [5, 'auto', 0],
     flexFlow: 'row',
     color: '#999',
-    fontSize: 14,
+    fontSize: 15,
     fontWeight: 300,
     fontFamily: font.monoSpace
   }
@@ -90,7 +90,8 @@ view Help {
     boxShadow: '0 0 4px rgba(0,0,0,0.1)',
     borderRadius: 100,
     justifyContent: 'center',
-    fontSize: 20,
+    fontSize: 16,
+    color: color.brand1,
     cursor: 'pointer'
   }
 

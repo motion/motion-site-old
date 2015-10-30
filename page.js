@@ -3,7 +3,7 @@ view Page {
   <Contain>
     <Sidebar yield />
     <inner>
-      {^children}
+      {view.props.children}
     </inner>
   </Contain>
   <Footer />
@@ -30,10 +30,10 @@ view Page {
 }
 
 view Page.Sidebar {
-  const url = slug => ^base + '/' + slug
+  const url = slug => view.props.base + '/' + slug
 
   <a
-    repeat={^list}
+    repeat={view.props.list}
     class={{ active: router.isActive(url(_.slug)) }}
     key={_index} onClick={router.link(url(_.slug))}>
     {_.title}
@@ -71,11 +71,11 @@ view RoutedContent {
   let el
 
   on('props', () => {
-    el = ^content.filter(x => x.slug == ^params.slug)[0]
+    el = view.props.content.filter(x => x.slug == view.props.params.slug)[0]
   })
 
   <body>
-    {view.el(`${^parent}.${el.view}`)}
+    {view.el(`${view.props.parent}.${el.view}`)}
   </body>
 
   $body = {

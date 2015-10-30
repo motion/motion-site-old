@@ -6,7 +6,7 @@ view DemoCircles {
     inStyle={{ flexGrow: 0, width: 380 }}
     in={
       <Editor left light
-        lines={20}
+        lines={21}
         sources={[
           {
             title: 'Circles.js',
@@ -34,23 +34,24 @@ view DemoCircles {
           {
             title: 'Circle.js',
             source: `
+      import { spring, Motion } from 'react-motion'
+
       view Circle {
         let c = () => Math.round(Math.random()*255)
         let base = {
           background: [c(), c(), c()],
           position: 'absolute',
-          { top, left }: view.props,
-          [ width, height ]: [80, 80]
+          top: view.props.top,
+          left: view.props.left,
+          width: 80, height: 80
           borderRadius: 100
         }
-
         let style = scale =>
           ({ ...base, transform: { scale } })
 
-        <Motion
-          defaultStyle={{x: 0}}
+        <Motion defaultStyle={{x: 0}}
           style={{x: spring(1, [300, 10])}}>
-            {s => <c style={style(s.x)} /> }
+          {s => <circle style={style(s.x)} /> }
         </Motion>
       }
             `

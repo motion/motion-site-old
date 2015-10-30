@@ -31,6 +31,7 @@
 .hljs-params,
 .hljs-constant {
   color: #f5871f;
+  font-weight: 500;
 }
 
 /* Tomorrow Yellow */
@@ -49,6 +50,7 @@
 .ruby .hljs-symbol,
 .xml .hljs-cdata {
   color: #88a700;
+  font-weight: 500;
 }
 
 /* Tomorrow Aqua */

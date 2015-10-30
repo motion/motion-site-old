@@ -26,8 +26,8 @@ function H_js(hljs) {
         className: 'pi',
         relevance: 10,
         variants: [
-          {begin: /^\s*('|")use strict('|")/},
-          {begin: /^\s*('|")use asm('|")/}
+          {begin: /view.props.\s*('|")use strict('|")/},
+          {begin: /view.props.\s*('|")use asm('|")/}
         ]
       },
         { // E4X / JSX

@@ -5,51 +5,51 @@ view Editor {
   let tabs, sources = []
   let loaded = false
 
-  if (^sources) {
-    sources = ^sources.map(s => s.source)
-    tabs = ^sources.map(s => s.title)
+  if (view.props.sources) {
+    sources = view.props.sources.map(s => s.source)
+    tabs = view.props.sources.map(s => s.title)
   }
   else {
-    sources = [^source]
+    sources = [view.props.source]
   }
 
   function loadFrame() {
     loaded = true
-    ^onLoad && ^onLoad()
+    view.props.onLoad && view.props.onLoad()
   }
 
   <Toolbar
-    light={^light}
+    light={view.props.light}
     tabs={tabs}
     activeTab={index}
     changeTab={i => index = i} />
   <Code
-    if={!^iframe}
+    if={!view.props.iframe}
     repeat={sources}
     source={_}
     class={{hidden: _index != index}}
   />
   <iframe
-    if={^iframe}
-    src={^iframe}
-    id={^id}
+    if={view.props.iframe}
+    src={view.props.iframe}
+    id={view.props.id}
     onLoad={loadFrame}
     class={{ loaded }}>
   </iframe>
 
   $ = {
     flexFlow: 'column',
-    height: ^lines ? 28 + (24 * ^lines) : '100%',
+    height: view.props.lines ? 28 + (24 * view.props.lines) : '100%',
     borderRadius: 6,
-    boxShadow: `0 0 10px rgba(0,0,0,${^light ? 0.08 : 0.25})`,
+    boxShadow: `0 0 10px rgba(0,0,0,${view.props.light ? 0.08 : 0.25})`,
     margin: 10,
-    marginRight: ^right ? -10 : 10,
-    marginLeft: ^left ? -10 : 10,
+    marginRight: view.props.right ? -10 : 10,
+    marginLeft: view.props.left ? -10 : 10,
     fontFamily: font.monoSpace,
     position: 'relative',
     zIndex: 10,
     width: '100%',
-    background: ^light ? light : '#263640',
+    background: view.props.light ? light : '#263640',
 
     [device.small]: {
       marginRight: 10,
@@ -102,16 +102,16 @@ view Toolbar {
     <ctrl class="max" />
     <ctrl class="open" />
   </bar>
-  <tabs if={^tabs}>
+  <tabs if={view.props.tabs}>
     <tab
-      repeat={^tabs}
-      class={{ active: _index == ^activeTab }}
-      onClick={^changeTab.partial(_index)}>
+      repeat={view.props.tabs}
+      class={{ active: _index == view.props.activeTab }}
+      onClick={view.props.changeTab.partial(_index)}>
       {_}
     </tab>
   </tabs>
 
-  const borderColor = ^light ? '#fff' : '#222'
+  const borderColor = view.props.light ? '#fff' : '#222'
   const border = '1px solid ' + borderColor
 
   $ = {
@@ -154,7 +154,7 @@ view Toolbar {
   }
 
   $bar = {
-    background: ^light ? light : 'rgb(29, 38, 45)',
+    background: view.props.light ? light : 'rgb(29, 38, 45)',
     height: 12,
     minHeight: 12,
     padding: [0, 2],

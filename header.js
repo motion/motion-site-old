@@ -84,13 +84,13 @@ view Header {
   $ = {
     position: 'relative',
     overflow: 'hidden',
-    padding: [50, 60, 0, 0],
-    minWidth: 800,
+    padding: [60, 10, 0, 0],
+    minWidth: 700,
     margin: [0, 'auto'],
 
     [device.small]: {
       minWidth: 'auto',
-      padding: [70, 0, 0],
+      padding: [50, 0, 0],
     }
   }
 
@@ -100,8 +100,8 @@ view Header {
 
   $Nav = {
     position: 'absolute',
-    top: 10,
-    right: 20,
+    top: 20,
+    right: 38,
 
     [device.small] : {
       position: 'relative',
@@ -174,7 +174,7 @@ view Logo {
 
   const width = 1019
   const height = 282
-  const multiplier = ^small ? .11 : .25
+  const multiplier = view.props.small ? .11 : .25
 
   $img = {
     width: Math.round(width * multiplier),
@@ -185,7 +185,7 @@ view Logo {
 }
 
 view Desc {
-  let started = ^start
+  let started = view.props.start
 
   let how = ''
   let phrases = ['faster', 'creatively', 'with ease']
@@ -195,7 +195,7 @@ view Desc {
   let charPos = 0
 
   on('props', () => {
-    if (^start && !started) {
+    if (view.props.start && !started) {
       started = true
       run()
     }

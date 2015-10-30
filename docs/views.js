@@ -69,8 +69,8 @@ view Docs.Views {
       }
 
       view Hello {
-        <h1>Hello {^to}</h1>
-        $h1 = { fontSize: ^size }
+        <h1>Hello {view.props.to}</h1>
+        $h1 = { fontSize: view.props.size }
       }
     `} />
 
@@ -190,10 +190,10 @@ view Docs.Views {
         let title, date, body, name
 
         on('props', () => {
-          title = ^title || ''
-          date = ^date || Date.now()
-          body = ^body || ''
-          name = ^name || ''
+          title = view.props.title || ''
+          date = view.props.date || Date.now()
+          body = view.props.body || ''
+          name = view.props.name || ''
           view.update()
         })
 

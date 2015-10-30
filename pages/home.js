@@ -125,9 +125,9 @@ view Home.Examples {
 }
 
 view Example {
-  <Contain maxWidth={^maxWidth || 1000}>
-    <in>{^in}</in>
-    <out>{^out}</out>
+  <Contain maxWidth={view.props.maxWidth || 1000}>
+    <in>{view.props.in}</in>
+    <out>{view.props.out}</out>
   </Contain>
 
   $ = {
@@ -146,27 +146,27 @@ view Example {
     flexGrow: 2,
     justifyContent: 'center',
     position: 'relative',
-    order: ^flip ? 2 : 1,
+    order: view.props.flip ? 2 : 1,
 
     [device.small]: {
       width: '100%',
-      order: ^flipVertical ? 1 : 2,
-      padding: ^inPage ? '50px 0' : 0
+      order: view.props.flipVertical ? 1 : 2,
+      padding: view.props.inPage ? '50px 0' : 0
     }
-  }, ^outStyle]
+  }, view.props.outStyle]
 
   $in = [{
     flexGrow: 1,
-    order: ^flip ? 1 : 2,
+    order: view.props.flip ? 1 : 2,
     zIndex: 10,
     margin: 0,
 
     [device.small]: {
       width: '90%',
       margin: 'auto',
-      order: ^flipVertical ? 2 : 1
+      order: view.props.flipVertical ? 2 : 1
     }
-  }, ^inStyle]
+  }, view.props.inStyle]
 }
 
 view Slack {

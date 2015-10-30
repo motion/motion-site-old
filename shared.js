@@ -1,46 +1,46 @@
 view Blur {
-  const size = ^size || 500
+  const size = view.props.size || 500
 
   $ = {
     width: size,
     height: size,
-    background: ^bg || '#fdfdfd',
-    filter: `blur(${^blur || (size / 15)}px)`,
+    background: view.props.bg || '#fdfdfd',
+    filter: `blur(${view.props.blur || (size / 15)}px)`,
     borderRadius: size,
     position: 'absolute',
     zIndex: 0,
-    top: ^top || 0,
-    left: ^left || 0,
+    top: view.props.top || 0,
+    left: view.props.left || 0,
     transform: `translate3d(0, 0, 0)`,
   }
 }
 
 view Contain {
-  <contain id={^id}>
-    <content class={{ straight: ^straight }}>
-      <Title if={^title}>{^title}</Title>
-      {^children}
+  <contain id={view.props.id}>
+    <content class={{ straight: view.props.straight }}>
+      <Title if={view.props.title}>{view.props.title}</Title>
+      {view.props.children}
     </content>
   </contain>
 
-  const topPad = ^padTop ? 60 : (^strip ? 40 : 0)
-  const padding = ^pad ? [topPad, '15%'] : [topPad, 0]
+  const topPad = view.props.padTop ? 60 : (view.props.strip ? 40 : 0)
+  const padding = view.props.pad ? [topPad, '15%'] : [topPad, 0]
 
   $ = {
-    background: ^bg || (^strip ? color.strip : 'transparent'),
-    maxWidth: ^maxWidth || 1050,
-    minWidth: ^minWidth || 0,
+    background: view.props.bg || (view.props.strip ? color.strip : 'transparent'),
+    maxWidth: view.props.maxWidth || 1050,
+    minWidth: view.props.minWidth || 0,
     width: '100%',
-    color: ^color || 'auto',
+    color: view.props.color || 'auto',
     flexFlow: 'inherit',
     alignItems: 'inherit',
     justifyContent: 'inherit',
     flexGrow: 1,
-    margin: [^strip ? 30 : 0, 'auto'],
+    margin: [view.props.strip ? 30 : 0, 'auto'],
     padding,
     position: 'relative',
     zIndex: 10,
-    transform: { rotate: ^strip ? '-1.2deg' : 0 },
+    transform: { rotate: view.props.strip ? '-1.2deg' : 0 },
 
     [device.small]: {
       minWidth: 0
@@ -49,13 +49,13 @@ view Contain {
 
   $content = [{
     transform: {
-      rotate: ^straight ? '1.2deg' : 0
+      rotate: view.props.straight ? '1.2deg' : 0
     },
     flexFlow: 'inherit',
     alignItems: 'inherit',
     justifyContent: 'inherit',
     flexGrow: 1,
-  }, ^contentStyle]
+  }, view.props.contentStyle]
 
   $.end = {
     top: 'auto',
@@ -86,7 +86,7 @@ view Social {
     flexGrow: 1,
   }
 
-  $a = ^tiny ?  {
+  $a = view.props.tiny ?  {
     margin: [0, 20],
     transform: {
       scale: 0.8
