@@ -3,8 +3,8 @@ view Home {
   <Header />
   <welcome>
     Welcome to the Flint private beta. We are getting ready for launch
-    and prearing a demo video for this area. For now, you'll have to
-    dive on your own!
+    and preparing a demo video for here. For now, you'll have to
+    dive in yourself!
   </welcome>
   <Install title />
   <Video if={false} />

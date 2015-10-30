@@ -3,7 +3,9 @@ view Install {
   const select = () => view.refs.code.select()
 
   <Contain id="install">
-    <Interlude style={{margin:[0, 'auto']}} center if={^title}>Install Flint</Interlude>
+    <Interlude style={{margin: [0, 'auto']}} center if={^title}>
+      Install
+    </Interlude>
 
     <mainCode>
       <code onMouseUp={select} class="install">
@@ -19,7 +21,7 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [20, 0, 0]
+    margin: [5, 0, 0]
   }
 
   $mainCode = {
@@ -39,7 +41,7 @@ view Install {
   }
 
   $input = {
-    background: `linear-gradient(90deg, ${color.brand1}, ${color.brand2})`,
+    background: `linear-gradient(100deg, #aaa 20%, #888)`,
     borderRadius: 5,
     border: '2px solid #eee',
     padding: [8, 10, 8, 16],
@@ -52,10 +54,11 @@ view Install {
 
   $afterward = {
     display: 'block',
-    margin: [5, 'auto'],
+    margin: [5, 'auto', 0],
     flexFlow: 'row',
-    lineHeight: '1.2rem',
-    opacity: 0.7,
+    color: '#999',
+    fontSize: 14,
+    fontWeight: 300,
     fontFamily: font.monoSpace
   }
 
@@ -65,16 +68,22 @@ view Install {
 view Help {
   let hovered = false
 
-  <help onMouseEnter={() => hovered = true} onMouseLeave={() => hovered = false}>
-    ?
-  </help>
-  <modal>
-    This script fixes global npm permissions and helps set your default editor.
-  </modal>
+  <outer onMouseEnter={() => hovered = true} onMouseLeave={() => hovered = false}>
+    <question>?</question>
+    <modal>
+      This script fixes global npm permissions and helps set your default editor.
+      <a href="https://flint.love" target="_blank">View source.</a>
+    </modal>
+  </outer>
 
   const size = 30
 
   $ = {
+    margin: 'auto',
+    position: 'relative'
+  }
+
+  $question = {
     margin: ['auto', -(size + 20), 'auto', 20],
     width: size,
     height: size,
@@ -82,8 +91,7 @@ view Help {
     borderRadius: 100,
     justifyContent: 'center',
     fontSize: 20,
-    cursor: 'pointer',
-    position: 'relative'
+    cursor: 'pointer'
   }
 
   $modal = {
@@ -91,7 +99,7 @@ view Help {
     transition: 'all ease-in 300ms',
     position: 'absolute',
     left: hovered ? 150 : 140,
-    top: '-80%',
+    top: '-100%',
     marginLeft: -100,
     width: 200,
     padding: 10,
@@ -99,7 +107,10 @@ view Help {
     borderRadius: 4,
     fontSize: 14,
     lineHeight: '1.2rem',
-    background: '#fff',
-    pointerEvents: 'none'
+    background: '#fff'
   }
+
+  $a = [style.link, {
+    margin: 'auto'
+  }]
 }
