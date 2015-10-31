@@ -94,10 +94,10 @@ view Circles {
 
   <circles ref="circles" onClick={addCircle}>
     <Circle repeat={coords} left={_.x} top={_.y} />
+    <desc>
+      Try clicking around to add circles
+    </desc>
   </circles>
-  <desc>
-    Try clicking around above to add circles
-  </desc>
 
   $circles = {
     height: 430,
