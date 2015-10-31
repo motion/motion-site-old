@@ -87,6 +87,7 @@ view Header {
     padding: [60, 10, 0, 0],
     minWidth: 700,
     margin: [0, 'auto'],
+    flexFlow: 'row',
 
     [device.small]: {
       minWidth: 'auto',

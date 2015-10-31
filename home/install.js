@@ -24,6 +24,10 @@ view Install {
     margin: [5, 0, 0]
   }
 
+  $Contain = {
+    flexFlow: 'column'
+  }
+
   $mainCode = {
     flexFlow: 'row',
     margin: 'auto'

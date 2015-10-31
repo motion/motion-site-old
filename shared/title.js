@@ -1,5 +1,5 @@
 view Title {
-  <title-h2 id={view.props.children.split().map(x => x.toLowerCase()).join('-')} yield />
+  <h2 id={view.props.children.split().map(x => x.toLowerCase()).join('-')} yield />
 
   let size = 22
   if (view.props.big) size = 28

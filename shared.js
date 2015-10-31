@@ -15,55 +15,6 @@ view Blur {
   }
 }
 
-view Contain {
-  <contain id={view.props.id}>
-    <content class={{ straight: view.props.straight }}>
-      <Title if={view.props.title}>{view.props.title}</Title>
-      {view.props.children}
-    </content>
-  </contain>
-
-  const topPad = view.props.padTop ? 60 : (view.props.strip ? 40 : 0)
-  const padding = view.props.pad ? [topPad, '15%'] : [topPad, 0]
-
-  $ = {
-    background: view.props.bg || (view.props.strip ? color.strip : 'transparent'),
-    maxWidth: view.props.maxWidth || 1050,
-    minWidth: view.props.minWidth || 0,
-    width: '100%',
-    color: view.props.color || 'auto',
-    flexFlow: 'inherit',
-    alignItems: 'inherit',
-    justifyContent: 'inherit',
-    flexGrow: 1,
-    margin: [view.props.strip ? 30 : 0, 'auto'],
-    padding,
-    position: 'relative',
-    zIndex: 10,
-    transform: { rotate: view.props.strip ? '-1.2deg' : 0 },
-
-    [device.small]: {
-      minWidth: 0
-    }
-  }
-
-  $content = [{
-    transform: {
-      rotate: view.props.straight ? '1.2deg' : 0
-    },
-    flexFlow: 'inherit',
-    alignItems: 'inherit',
-    justifyContent: 'inherit',
-    flexGrow: 1,
-  }, view.props.contentStyle]
-
-  $.end = {
-    top: 'auto',
-    bottom: -20,
-    left: -100,
-  }
-}
-
 view Social {
   <a target="_blank" href="http://github.com/flintjs/flint">
     <IconGithub />
