@@ -90,8 +90,9 @@ view Header {
     flexFlow: 'row',
 
     [device.small]: {
+      flexFlow: 'column',
       minWidth: 'auto',
-      padding: [50, 0, 0],
+      padding: [80, 0, 0],
     }
   }
 
@@ -106,7 +107,7 @@ view Header {
 
     [device.small] : {
       position: 'relative',
-      top: -10,
+      top: -20,
       right: 0,
       margin: [-50, 'auto', 0]
     }
