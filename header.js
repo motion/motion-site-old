@@ -56,7 +56,6 @@ view Header {
     flipVertical
     inStyle={{
       maxWidth: 300,
-      marginRight: 90,
 
       [device.small]: {
         marginRight: 0
