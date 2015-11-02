@@ -31,7 +31,7 @@ view Password {
   let password = ''
 
   const checkPass = () => {
-    if (password.toLowerCase() == 'love') view.props.onShow()
+    if (password.toLowerCase() == 'love') view.props.onShow(true)
   }
 
   on('mount', () => {
