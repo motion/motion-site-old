@@ -48,14 +48,14 @@ view Counter {
   $button = {
     margin: 5,
     border: '1px solid #ccc',
-    background: 'linear-gradient(#fff, #eee)',
-    borderRadius: 10,
+    background: 'linear-gradient(#fff 50%, #f2f2f2)',
+    borderRadius: 8,
     width: 60,
     height: 40,
     justifyContent: 'center',
     fontSize: 20,
     outline: 'none',
-    boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
+    boxShadow: '1px 2px 2px rgba(0,0,0,0.08)',
 
     ':active': {
       background: color.brand2,
