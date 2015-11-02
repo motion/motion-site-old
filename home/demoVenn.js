@@ -3,15 +3,14 @@ view DemoVenn {
     maxWidth={900}
     inStyle={{ width: 300 }}
     in={
-      <Editor lines={15} left light source={`
+      <Editor lines={14} left light source={`
       view Venn {
-        <one class="circle" />
-        <two class="circle" />
+        <circle class="red" />
+        <circle class="blue" />
 
         $ = { flexFlow: 'row' }
-        $one = { background: 'blue' }
-        $two = { background: 'red' }
-
+        $blue = { background: 'blue' }
+        $red = { background: 'red' }
         $circle = {
           borderRadius: 100,
           width: 200, height: 200,

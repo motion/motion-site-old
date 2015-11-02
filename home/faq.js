@@ -24,16 +24,14 @@ view FAQ {
     </answer>
 
     <question>
-      What are "ultra-fast" hot reloads?
+      What are "super" hot reloads?
     </question>
     <answer>
       <p>
-        In general, you should see faster reloads than other systems.
-        Flint's static analyzer is built from the ground up to optimize for live development.
-      </p>
-      <p>
+        In general, you should see much faster feedback.
+        Flint's static analyzer is designed from the ground up to optimize for live development.
         By only injecting the code that you changed into your running app, we can
-        provide near-instant save-to-refresh times no matter how large your app grows.
+        provide near-instant reloads no matter how large your app grows. We also track state more accurately than other systems.
       </p>
     </answer>
 
@@ -42,7 +40,7 @@ view FAQ {
     </question>
     <answer>
       <p>
-        Flint is a static compiler that compiles to any web framework, meaning it can theoretically be used with any existing stack. Out of the box we compile to React.
+        Flint is a static compiler and compiles to regular JS, meaning you can  plug it into your existing app as a part of the page. You could also use the syntax within your regular apps with some work.
       </p>
       <p>
         However, many parts of Flint (CLI, build system) work best when it's used alone.
@@ -51,15 +49,11 @@ view FAQ {
     </answer>
 
     <question>
-      What about Flux, GraphQL, or data management in general?
+      What about Flux, GraphQL, or data management?
     </question>
     <answer>
       <p>
-        Flint works at a lower level, dealing with variables. You can use any data source,
-        such as an AJAX request or Websocket connection. When you set your variables using the response data, Flint will make sure your views stay up to date.
-      </p>
-      <p>
-        It is possible to write abstractions such as Flux above this, and this is something we'll be working on soon.
+        Flint is unopinionated on data management at the moment. You can integrate it with your favorite library, but we are exploring first class solutions for large apps including GraphQL.
       </p>
     </answer>
 
@@ -67,8 +61,6 @@ view FAQ {
     <answer>
       <p>
         Flint static compiler can output clean code in any framework. We're starting with React.
-      </p>
-      <p>
         At any point you can continue developing from the code we output if you choose to stop using Flint.
       </p>
     </answer>

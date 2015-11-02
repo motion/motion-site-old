@@ -30,6 +30,12 @@ function H_js(hljs) {
           {begin: /view.props.\s*('|")use asm('|")/}
         ]
       },
+      {
+        className: 'function',
+        relevance: 10,
+        begin: /\$[a-zA-Z]*/,
+        end: /\s/
+      },
         { // E4X / JSX
           begin: /</,
           end: /(\s\/>)|(<\/[a-zA-Z0-9]+>)/,

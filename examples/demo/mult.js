@@ -21,7 +21,7 @@ view MultDemo {
     next()
   }
 
-  <h1>Multiply!</h1>
+  <h3>Multiply!</h3>
   <streak if={streak > 0}>Streak: {streak}</streak>
   <question>{first} times {second} is</question>
   <input
@@ -31,11 +31,9 @@ view MultDemo {
   />
 
   $ = {
-    background: `linear-gradient(${color.brand1}, ${color.brand2})`,
-    color: '#fff',
-    borderRadius: 200,
     margin: [20, 0],
-    height: 330,
+    padding: [20, 0],
+    border: '1px solid #ddd',
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
@@ -49,13 +47,14 @@ view MultDemo {
 
   $streak = {
     flexFlow: 'row',
-    margin: [0, 'auto', -20],
+    margin: [10, 'auto'],
     fontSize: 24,
-    color: 'yellow'
+    color: 'green'
   }
 
   $input = {
-    background: 'white',
+    background: '#eee',
+    textAlign: 'center',
     color: '#000',
     fontSize: 20,
     fontWeight: 'bold',

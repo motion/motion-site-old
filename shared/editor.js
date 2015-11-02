@@ -40,8 +40,9 @@ view Editor {
   $ = {
     flexFlow: 'column',
     height: view.props.lines ? 28 + (24 * view.props.lines) : '100%',
-    borderRadius: 6,
-    boxShadow: `0 0 10px rgba(0,0,0,${view.props.light ? 0.08 : 0.25})`,
+    borderRadius: 5,
+    boxShadow: `0 0 8px rgba(0,0,0,${view.props.light ? 0.08 : 0.25})`,
+    border: '1px solid #ddd',
     fontFamily: font.monoSpace,
     position: 'relative',
     zIndex: 10,
@@ -120,8 +121,7 @@ view Toolbar {
     fontSize: 15,
     fontFamily: font.sansSerif,
     padding: [2, 4, 0, 4],
-    background: '#eee',
-    borderBottom: border,
+    borderBottom: '1px solid #ddd',
   }
 
   $tab = {
@@ -131,7 +131,7 @@ view Toolbar {
     padding: [3, 8],
     margin: [3, 4, 0, 0],
     background: 'linear-gradient(#f2f2f2, #eee)',
-    boxShadow: '0 0 6px rgba(0,0,0,0.2)',
+    border: '1px solid #ddd',
     borderBottom: 'none',
     borderTopLeftRadius: 3,
     borderTopRightRadius: 3,
@@ -140,9 +140,7 @@ view Toolbar {
 
   $active = {
     background: '#fff',
-    borderTop: border,
     borderLeft: `2px solid ${color.brand}`,
-    borderRight: border,
     marginTop: 1,
     marginBottom: -3,
     color: '#000',
