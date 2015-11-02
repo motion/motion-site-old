@@ -15,7 +15,7 @@ view Docs.Elements {
       <li><code>style</code> attribute accepts arrays/objects</li>
     </ul>
 
-    <Title small>repeat</Title>
+    <Title small>{'<tag repeat={array | num} />'}</Title>
     <Code source={`
       view Main {
         let shows = [
@@ -40,7 +40,7 @@ view Docs.Elements {
       in the list.
     </Text>
 
-    <Title small>if</Title>
+    <Title small>{'<tag if={any} />'}</Title>
     <Code source={`
       view Main {
         let greenlight = true
@@ -56,12 +56,14 @@ view Docs.Elements {
       If compiles to an if statement behind the scenes.
     </Text>
 
-    <Title small>sync and onEnter</Title>
+    <Title small>{'<tag sync={identifier} onEnter={function} />'}</Title>
     <Code source={`
       view Question {
         let response = ''
 
-        const submit = e => post(e.target.value)
+        function submit (e) {
+          console.log(e.target.value)
+        }
 
         <input sync={response} onEnter={submit} />
       }
@@ -73,7 +75,7 @@ view Docs.Elements {
       hits the enter key in the input.
     </Text>
 
-    <Title small>yield</Title>
+    <Title small>{'<tag yield />'}</Title>
 
     <Text>
       Yield passes all props given to the view through to a tag.

@@ -1,5 +1,6 @@
 view Docs.Views {
   <Title big>Views</Title>
+
   <Body>
     <Text big>Flint is based entirely on ES6 JavaScript with slight modifications for simplicity and clarity. By using a custom compiler, we remove the framework layer.</Text>
 
@@ -74,24 +75,25 @@ view Docs.Views {
       }
     `} />
 
-    <p>Views must capitalize their first letter, and you can pass props to views just as we have shown here. Any property besides a string must be passed in using <code>{}</code>, as seen here with the size prop.</p>
+    <p>Views must capitalize their first letter, and you can pass props to views just as we have shown here. Any property besides a string must be passed in using <code>{'{}'}</code>, as seen here with the size prop.</p>
 
     <p>"Props" are the attributes you pass down to children views. They are accessed with the <code>view.props.</code> prefix.</p>
 
     <Title three>Namespacing</Title>
+
     <p>
       When your app is getting bigger, you'll probably want to avoid cluttering up your view names. You can name views with dots to bring more order:
-
-      <Code source={`
-        view Main {
-          <Child.Button />
-        }
-
-        view Child.Button {
-          <button />
-        }
-      `} />
     </p>
+
+    <Code source={`
+      view Main {
+        <Child.Button />
+      }
+
+      view Child.Button {
+        <button />
+      }
+    `} />
 
     <Title three>Naming tags</Title>
 
@@ -109,22 +111,26 @@ view Docs.Views {
     <p>This helps with styling, avoiding using classes when unnecessary, and makes your view structure easier to understand.</p>
 
     <Title id="using-views">Using Views</Title>
+
     <p>You don't need to import/export views between files! Flint prevents naming collisions with helpful warnings. Because your views are small pieces that should be easy to move around, this system avoid a lot of pain day to day, but even more down the road, where it makes moving around views in complex apps dramatically more easy.</p>
 
     <Title id="view-lifecycles">View lifecycles</Title>
+
     <p>In React you have lifecycle methods. Flint has them too:</p>
+
     <ul>
-    <li>mount - called once after mounted in document</li>
-    <li>unmount - called once before unmount</li>
-    <li>props - called whenever props change</li>
-    <li>change - called before every render</li>
-    <li>render - called after every render</li>
+      <li>mount - called once after mounted in document</li>
+      <li>unmount - called once before unmount</li>
+      <li>props - called whenever props change</li>
+      <li>change - called before every render</li>
+      <li>render - called after every render</li>
     </ul>
+
     <p>See how to use it here:</p>
 
     <Title id="view-events">View events</Title>
-    <p>Flint provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views. It's optional, and lightweight (under 15 lines of code), but it avoid large amounts of hassle.</p>
 
+    <p>Flint provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views. It's optional, and lightweight (under 15 lines of code), but it avoid large amounts of hassle.</p>
 
     <Code source={`
       view Hello {
@@ -156,9 +162,11 @@ view Docs.Views {
     `} />
 
     <Title id="view-methods">View methods</Title>
+
     <p>When inside a view, you can access <code>view</code> to do a variety of things.</p>
 
     <Title small>view.refs</Title>
+
     <Code source={`
       view Button {
         on('mount', () => {
@@ -170,15 +178,19 @@ view Docs.Views {
     `} />
 
     <Title small>view.pause()</Title>
+
     <p>Prevent re-rendering. Useful for optimization and batching visual changes.</p>
 
     <Title small>view.resume()</Title>
+
     <p>Resume from paused re-rendering.</p>
 
     <Title small>view.update()</Title>
+
     <p>Forces view to re-render.</p>
 
     <Title small>What about shouldComponentUpdate?</Title>
+
     <p>
       Rather than having a special function for this, just call <code>view.pause()</code> at the top of your view. Then when you want to update it later, <code>view.update()</code>. This lets you use logic just like everything else in your app, without any special helpers. Here is a common pattern for optimizing a view:
     </p>
@@ -206,16 +218,21 @@ view Docs.Views {
     </p>
 
     <Title small>view.props</Title>
+
     <p>Access the entire props object with <code>view.props</code>.</p>
 
     <Title small>view.name</Title>
+
     <p>Access the name of the view.</p>
 
     <Title small>view.el(name : string)</Title>
+
     <p>Programatically render a view. Pass in a view name to <code>view.el()</code> and it will render.</p>
 
     <Title small>view.childContext(context : object)</Title>
+
     <p><em>Alpha</em> This should work, but it's very much for testing at the moment. You can provide context to children like so:</p>
+
     <Code source={`
       view Main {
         view.childContext({

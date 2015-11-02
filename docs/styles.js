@@ -42,7 +42,7 @@ view Docs.Styles {
       }
     `} />
 
-    <h4>Advanced styling</h4>
+    <Title small>Advanced styling</Title>
 
     <p>Flint optimizes your styles behind the scenes. We use a parser to extract your static styles into a separate object. We're working on having those styles exctract fully into CSS, along with other upgrades as we go.</p>
 
@@ -76,7 +76,7 @@ view Docs.Styles {
       }
     `} />
 
-    <h4>Styling sub-views</h4>
+    <Title small>Styling sub-views</Title>
 
     <p>You can also style the Child view wrapper:</p>
 

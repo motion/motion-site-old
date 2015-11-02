@@ -82,16 +82,12 @@ li {
 }
 
 code {
-  border: 1px solid #ddd;
+  border: 1px dotted #ddd;
   border-radius: 4px;
-  line-height: 1.8em;
-}
-
-p code {
+  line-height: 1.45rem;
   display: inline-block;
   padding: 0 4px;
   margin: -4px 0;
-  color: #666;
 }
 
 h2 {

@@ -1,10 +1,8 @@
 view Docs.Install {
   <Title big>Installing</Title>
-  
+
   <Body>
     <Text big>Install Flint CLI and create a new app.</Text>
-
-    <h4>Install</h4>
 
     <p>Our install script helps set you up a bit better:</p>
 
@@ -17,18 +15,16 @@ view Docs.Install {
     </p>
 
     <Code lang="bash" source={`
-      # install
       npm install -g flint
     `}/>
 
-    <h4>Running</h4>
+    <Title small>Running</Title>
 
     <p>
     Once set up, create your first app:
     </p>
 
     <Code lang="bash" source={`
-      # create app
       flint new appname
 
       # start app
@@ -40,7 +36,7 @@ view Docs.Install {
     Your app should open automatically in Chrome for you. Open your app to begin editing!
     </p>
 
-    <h4>When you're ready to deploy</h4>
+    <Title small>When you're ready to deploy</Title>
 
     <Code lang="bash" source={`
       flint build

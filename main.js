@@ -1,15 +1,15 @@
 view Main {
   let hidePass = false
 
-  let passCorrect = () => {
-    hidePass = true
-    localStorage.setItem('authed', true)
+  function passCorrect(val) {
+    hidePass = val
+    localStorage.setItem('authed', val)
   }
 
-  let correct = window.location.search == '?yc'
-             || localStorage.getItem('authed') === 'true'
-
-  if (correct) passCorrect()
+  passCorrect(
+    window.location.search == '?yc' ||
+    localStorage.getItem('authed') === 'true'
+  )
 
   <Password onShow={passCorrect} if={!hidePass} />
   <Home route={routes.home} />

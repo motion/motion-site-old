@@ -13,20 +13,26 @@ view Code {
     highlight.highlightBlock(view.refs.code)
   })
 
-  <code ref="code" class={view.props.lang || 'javascript'}>
-    {clean(view.props.source)}
-  </code>
+  <pre>
+    <code ref="code" class={view.props.lang || 'javascript'}>
+      {clean(view.props.source)}
+    </code>
+  </pre>
 
-  $ = {
+  $pre = {
     background: '#fff',
     border: '1px solid #ddd',
     boxShadow: '0 0 4px rgba(0,0,0,0.05)',
     padding: 10,
     margin: [10, 0],
-    fontSize: 15,
+    borderRadius: 4
+  }
+
+  $code = {
+    border: 'none',
+    padding: 0,
+    margin: 0,
     lineHeight: 1.4,
-    whiteSpace: 'pre',
-    borderRadius: 4,
-    display: 'block'
+    fontSize: 15,
   }
 }
