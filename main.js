@@ -86,7 +86,6 @@ view Password {
   let password = ''
 
   const checkPass = () => {
-    console.log('checkin pass', password)
     if (password.toLowerCase() == 'love') view.props.onShow()
   }
 
