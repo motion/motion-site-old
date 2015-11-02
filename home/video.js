@@ -58,6 +58,7 @@ view YouTube {
   //   if (!started) started = true
   // })
 
+  
   <cover if={started} />
   <cover if={false} class="bot" />
   <iframe
@@ -66,6 +67,9 @@ view YouTube {
     frameborder="0"
     device>
   </iframe>
+  <br />
+  <h4>Screencast with old syntax</h4>
+  <p>A screencast with modern Flint code is coming soon</p>
 
   const originalHeight = 800
   const originalWidth = 1440
