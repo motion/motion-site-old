@@ -343,7 +343,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: Consolas, monospace;
   font-size: 1rem;
 }
 

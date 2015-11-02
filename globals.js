@@ -27,7 +27,7 @@ color.strip = '#fff'
 
 const font = {}
 font.sansSerif = 'Open Sans, Helvetica, sans-serif'
-font.monoSpace = 'Hack, Source Code Pro, Inconsolata, monospace'
+font.monoSpace = 'Source Code Pro, Meslo, Inconsolata, Consolas, monospace'
 
 const device = {}
 device.small = '@media (max-width: 850px)'

@@ -101,8 +101,8 @@ view Header {
 
   $Nav = {
     position: 'absolute',
-    top: 20,
-    right: 38,
+    top: 15,
+    right: 0,
 
     [device.small] : {
       position: 'relative',
