@@ -16,7 +16,7 @@ view HeaderAlt {
     alignItems: 'center',
     justifyContent: 'center',
     width: '80%',
-    maxWidth: 1100,
+    maxWidth: 870,
     margin: [0, 'auto'],
 
     [device.small]: {
