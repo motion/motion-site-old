@@ -12,6 +12,7 @@ const docs = [
 
 view Docs {
   <Page list={docs} base="/docs">
+    <Docs.Intro if={location.pathname == "/docs"} />
     <RoutedContent
       parent="Docs"
       content={docs}
