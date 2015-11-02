@@ -1,5 +1,4 @@
 const docs = [
-  { title: "Intro", view: 'Intro', slug: '' },
   { title: "Intro", view: 'Intro', slug: 'intro' },
   { title: "Install", view: 'Install', slug: 'install' },
   { title: "Views", view: 'Views', slug: 'views' },
@@ -13,6 +12,7 @@ const docs = [
 
 view Docs {
   <Page list={docs} base="/docs">
+    <Docs.Intro if={location.pathname == "/docs"} />
     <RoutedContent
       parent="Docs"
       content={docs}
