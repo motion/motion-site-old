@@ -108,8 +108,7 @@ view Circles {
   $desc = {
     textAlign: 'center',
     fontSize: 15,
-    opacity: 0.8,
-    fontWeight: 'bold'
+    opacity: 0.8
   }
 }
 

@@ -84,7 +84,7 @@ view Home.Examples {
     <section>
       <Blur />
       <Interlude center left>
-        Flint introduces the view to JS (ES6)
+        Flint introduces the view to JavaScript
       </Interlude>
 
       <DemoCounter />
