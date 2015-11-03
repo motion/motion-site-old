@@ -39,7 +39,7 @@ view Editor {
 
   $ = {
     flexFlow: 'column',
-    height: view.props.lines ? 28 + (24 * view.props.lines) : '100%',
+    height: view.props.lines ? 22 + (23 * view.props.lines) : '100%',
     borderRadius: 5,
     boxShadow: `0 0 8px rgba(0,0,0,${view.props.light ? 0.08 : 0.25})`,
     border: '1px solid #ddd',
@@ -57,25 +57,17 @@ view Editor {
 
   $Code = {
     margin: 0,
-    padding: 15,
-    paddingRight: 0,
-    fontSize: 17,
-    lineHeight: '1.4em',
+    padding: 14,
     border: 'none',
-    overflow: 'hidden',
-    height: '100%',
-    width: '100%',
-    flexGrow: 1,
     boxShadow: 'none'
   }
-
   $hidden = { display: 'none' }
 
   $iframe = {
     border: 'none',
     height: '100%',
     width: '100%',
-    padding: 3,
+    padding: [0, 3],
     overflow: 'hidden',
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
