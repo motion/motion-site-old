@@ -175,7 +175,7 @@ view Logo {
 
   const width = 1019
   const height = 282
-  const multiplier = view.props.small ? .11 : .25
+  const multiplier = view.props.small ? .11 : .24
 
   $img = {
     width: Math.round(width * multiplier),

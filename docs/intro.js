@@ -11,7 +11,10 @@ view Docs.Intro {
 
       Views are just JavaScript. They replace HTML, CSS and your framework of choice with a simple syntax.
       Views have variables, JSX and style. When a variable changes, your view updates automatically.
-      <br />
+    </Text>
+
+    <Text>
+      You can think of Flint as a polyfill for the future. We know how we like to build apps today: small components that encapsulate all they need to render like <code>Icon</code>, <code>Button</code>, or <code>Modal</code>. Today, we have libraries to achieve this, but eventually we want a language to express it more naturally. Flint is the result of an extensive and ongoing process to make that language available today.
     </Text>
 
     <Title>Super Hot Reloads</Title>
