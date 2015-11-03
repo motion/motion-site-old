@@ -34,13 +34,11 @@ view Docs.Events {
         on('scroll', () => {
           // thats it!
         })
-
-        <main />
       }
     `} />
 
     <Text>
-      On simply listens for mount/unmount, and attaches and detaches it's event.
+      It simply listens for mount/unmount, and attaches and detaches it's event.
     </Text>
 
     <Text>
@@ -49,11 +47,49 @@ view Docs.Events {
 
     <Code source={`
       view Main {
-        on(window, 'scroll', () => {
-          // listen to window scroll
+        on(window, 'scroll', (e) => {
+          console.log(e.pageX)
         })
+      }
+    `} />
 
-        <main />
+    <Title small>
+      Using on inside views
+    </Title>
+
+    <Text>
+      See the views section for more docs on this, but you can access <code>mount</code>, <code>unmount</code>, <code>change</code>, <code>props</code>, and <code>render</code>.
+    </Text>
+
+    <Title small>
+      Extras
+    </Title>
+
+    <Text>
+      On also provides you with helpers for working with timeouts, intervals, and frames:
+    </Text>
+
+    <Code source={`
+      view Main {
+        on('delay', 1000, () => {
+          // after a second
+        })
+      }
+    `} />
+
+    <Code source={`
+      view Main {
+        on('every', 1000, () => {
+          // every second
+        })
+      }
+    `} />
+
+    <Code source={`
+      view Main {
+        on('frame', () => {
+          // every frame
+        })
       }
     `} />
 
