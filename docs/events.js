@@ -38,7 +38,7 @@ view Docs.Events {
     `} />
 
     <Text>
-      It simply listens for mount/unmount, and attaches and detaches it's event.
+      It simply listens for mount/unmount, and attaches/detaches the event.
     </Text>
 
     <Text>
@@ -54,42 +54,72 @@ view Docs.Events {
     `} />
 
     <Title small>
-      Using on inside views
+      Using inside views
     </Title>
 
     <Text>
-      See the views section for more docs on this, but you can access <code>mount</code>, <code>unmount</code>, <code>change</code>, <code>props</code>, and <code>render</code>.
+      Using <code>on</code> with views is powerful. It's aware of views and attaches / detaches it's events with the view. By default, <code>on</code> in views attaches to the root node of the view.
     </Text>
+
+    <Text>
+      On also gives you access directly to the view lifecycle events. See the <Link to="/docs/views">views</Link> section for more docs on this, but you can access <code>mount</code>, <code>unmount</code>, <code>change</code>, <code>props</code>, and <code>render</code> within a view only.
+    </Text>
+
+    <Title>
+      Extra events
+    </Title>
+
+    <Text>
+      Equivalents of setTimeout, setInterval, and requestAnimationFrame are provided:
+    </Text>
+
+    <Title tiny>
+      delay
+    </Title>
+
+    <Code source={`
+      view Main {
+        on('delay', 1000, run) // after a second
+      }
+    `} />
+
+    <Title tiny>
+      every
+    </Title>
+
+    <Code source={`
+      view Main {
+        on('every', 1000, run) // every second
+      }
+    `} />
+
+    <Title tiny>
+      frame
+    </Title>
+
+    <Code source={`
+      view Main {
+        on('frame', run) // every frame
+      }
+    `} />
 
     <Title small>
-      Extras
+      Shorthand
     </Title>
 
     <Text>
-      On also provides you with helpers for working with timeouts, intervals, and frames:
+      DOM level 2 events, and Flint provided events listed on this page, are provided in a helpful shorthand that avoids passing around strings:
     </Text>
 
     <Code source={`
       view Main {
-        on('delay', 1000, () => {
-          // after a second
-        })
-      }
-    `} />
+        on.mount(run)
+        on.click(run)
+        on.delay(500, run)
 
-    <Code source={`
-      view Main {
-        on('every', 1000, () => {
-          // every second
-        })
-      }
-    `} />
-
-    <Code source={`
-      view Main {
-        on('frame', () => {
-          // every frame
-        })
+        function run(e) {
+          console.log('received event', e)
+        }
       }
     `} />
 

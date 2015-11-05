@@ -1,12 +1,12 @@
+let go = to => {
+  Flint.router.go(to)
+  setTimeout(() => window.scrollTo(0, 0))
+}
+
 view Next {
   let over = true
 
-  let go = () => {
-    Flint.router.go(view.props.to)
-    setTimeout(() => window.scrollTo(0, 0))
-  }
-
-  <next onClick={go}
+  <next onClick={go.bind(null, view.props.to)}
         onMouseEnter={() => over = true}
         onMouseLeave={() => over = false}
         class={{over}}>
@@ -35,4 +35,10 @@ view Next {
     transition: '300ms all ease-in',
     marginLeft: over ? 12 : 8
   }
+}
+
+view Link {
+  <link-a onClick={() => go(view.props.to)} yield />
+
+  $ = [style.link]
 }

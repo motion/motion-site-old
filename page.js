@@ -25,7 +25,7 @@ view Page {
   }
 
   $inner = {
-    padding: [20, '4%'],
+    padding: [5, '4%'],
   }
 }
 
