@@ -5,7 +5,7 @@ view Interlude {
     textAlign: view.props.right ? 'right': 'left',
     fontSize: 30,
     margin: [60, 'auto'],
-    padding: [20, 0],
+    padding: [16, 0],
     fontWeight: 300,
     zIndex: 100
   }]

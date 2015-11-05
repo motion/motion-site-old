@@ -1,6 +1,6 @@
 view Signup {
   <Contain>
-    <Title center>Sign up to keep up with releases:</Title>
+    <Title light center>Sign up to keep up with releases:</Title>
     <SignupForm />
   </Contain>
 }
@@ -48,7 +48,7 @@ view SignupForm {
   }
 
   $form = {
-    minWidth: 300,
+    width: 300,
     margin: 'auto'
   }
 
@@ -62,7 +62,8 @@ view SignupForm {
     border: '1px solid #ccc'
   }
 
-  $label = {
-    margin: [10, 0]
+  $button = {
+    margin: 'auto',
+    background: color.brand2
   }
 }

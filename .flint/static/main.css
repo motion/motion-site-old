@@ -11,11 +11,6 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-::selection {
-  background: #E44E50;
-  color: #fff;
-}
-
 body * {
   display: -ms-flexbox;
   display: -webkit-flex;

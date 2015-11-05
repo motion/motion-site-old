@@ -15,7 +15,7 @@ view Install {
     </mainCode>
 
     <afterward>
-      or: npm install -g flint
+      or, npm install -g flint
     </afterward>
   </Contain>
 
@@ -45,15 +45,15 @@ view Install {
   }
 
   $input = {
-    background: `linear-gradient(100deg, ${color.brand2}, ${color.brand1})`,
-    borderRadius: 5,
+    background: color.brand2,
+    borderRadius: 8,
     border: 'none',
-    padding: [8, 10, 8, 16],
-    fontSize: 18,
+    padding: [10, 8, 10, 18],
+    fontSize: 20,
     margin: [-8, 0, -5],
     fontFamily: font.monoSpace,
     width: '100%',
-    color: 'rgba(255,255,255,0.9)'
+    color: '#fff'
   }
 
   $afterward = {
@@ -61,8 +61,7 @@ view Install {
     margin: [5, 'auto', 0],
     flexFlow: 'row',
     color: '#999',
-    fontSize: 15,
-    fontWeight: 300,
+    fontSize: 18,
     fontFamily: font.monoSpace
   }
 
@@ -80,7 +79,7 @@ view Help {
     </modal>
   </outer>
 
-  const size = 30
+  const size = 35
 
   $ = {
     margin: 'auto',
@@ -88,14 +87,14 @@ view Help {
   }
 
   $question = {
-    margin: ['auto', -(size + 20), 'auto', 20],
+    margin: ['auto', -(size + 25), 'auto', 20],
     width: size,
     height: size,
-    boxShadow: '0 0 4px rgba(0,0,0,0.1)',
+    // boxShadow: '0 0 4px rgba(0,0,0,0.1)',
     borderRadius: 100,
     justifyContent: 'center',
-    fontSize: 16,
-    color: color.brand1,
+    fontSize: 18,
+    color: color.brand2,
     cursor: 'pointer'
   }
 
