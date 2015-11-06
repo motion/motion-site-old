@@ -1,3 +1,8 @@
+Flint.router.onChange(location => {
+  if (typeof ga != 'undefined')
+    ga('send', 'pageview', location.pathname)
+})
+
 view Main {
   let hidePass = false
 
