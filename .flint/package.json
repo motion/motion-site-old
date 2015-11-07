@@ -7,6 +7,7 @@
   "main": "",
   "scripts": {},
   "dependencies": {
+    "babel-runtime": "^6.0.14",
     "chroma-js": "^1.1.1",
     "document-offset": "^1.0.4",
     "flint-js": "^1.0.0",
