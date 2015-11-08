@@ -213,13 +213,6 @@ view List {
     }
   }
 
-  $.check = {
-    width: 30,
-    height: 30,
-    fill: color(listColor).darken(0.2),
-    margin: [1, 10, -3, 0]
-  }
-
   $text = {
     flexFlow: 'column',
     textAlign: 'left',

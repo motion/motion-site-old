@@ -38,12 +38,12 @@ view Venn {
   $one = { background: 'blue' }
   $two = { background: 'red' }
 
-  $.circle = {
-    borderRadius: 100,
+  $circle = {
     width: 200,
     height: 200,
     flexShrink: 0,
     margin: ['auto', -40],
-    opacity: 0.5
+    opacity: 0.5,
+    borderRadius: 100
   }
 }
