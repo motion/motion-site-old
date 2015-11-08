@@ -27,6 +27,10 @@ body * {
   -webkit-flex-wrap: nowrap;
 }
 
+style {
+  display: none;
+}
+
 #_flintapp > .main {
   display: block;
 }

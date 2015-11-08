@@ -21,7 +21,7 @@ view SignupForm {
         <div class="response" id="mce-error-response"></div>
         <div class="response" id="mce-success-response"></div>
       </hide>
-      <hide style="position: absolute; left: -5000px;">
+      <hide>
         <input type="text" name="b_d6ee317984756a7f0f5e9378b_dcc2cefed5" tabindex="-1" value="" />
       </hide>
       <center class="clear">

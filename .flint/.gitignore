@@ -1,10 +1,6 @@
-out
-typed
+.internal
 node_modules
 .DS_Store
 npm-debug.log
-deps
 build
 public
-flint.js
-flint.json
