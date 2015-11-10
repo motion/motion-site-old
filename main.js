@@ -26,7 +26,6 @@ view Main {
     fontSize: 16,
     lineHeight: '1.8rem',
     fontFamily: font.sansSerif,
-    overflow: 'hidden',
     background: color.bg,
     position: 'relative'
   }

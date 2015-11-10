@@ -202,10 +202,7 @@ view Desc {
     }
   })
 
-  const run = () => {
-    if (started)
-      setTimeout(step, 1000)
-  }
+  const run = () => started && setTimeout(step, 1000)
 
   run()
 

@@ -61,7 +61,10 @@ view Editor {
     border: 'none',
     boxShadow: 'none'
   }
-  $hidden = { display: 'none' }
+
+  $hidden = {
+    display: 'none'
+  }
 
   $iframe = {
     border: 'none',

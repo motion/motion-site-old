@@ -54,7 +54,6 @@ view Page.Sidebar {
   }
 
   $active = {
-    color: 'black',
     fontWeight: 600
   }
 

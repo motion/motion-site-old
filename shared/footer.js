@@ -18,7 +18,7 @@ view Footer {
   }
 
   $content = {
-    margin: [80, 0]
+    margin: [80, 'auto']
   }
 
   $p = {
