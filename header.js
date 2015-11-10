@@ -31,8 +31,7 @@ view HeaderAlt {
   }
 
   $Nav = {
-    flexGrow: 1,
-    paddingLeft: 25
+    flexGrow: 1
   }
 
   $Social = {
