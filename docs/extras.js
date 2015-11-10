@@ -3,13 +3,13 @@ view Docs.Extras {
   <Body>
     <Text>Beyond the view macro and it's corresponding syntax, it is very much just ES6 JavaScript. We've made some small changes though to optimize for common use cases and have shimmed a few helpful modules.</Text>
 
-    <Title>ES2015 and...</Title>
+    <Title small>ES2015 and...</Title>
     <ul>
       <li>Promise - <a href="https://github.com/petkaantonov/bluebird/blob/master/API.md">Bluebird promises</a> are the default "Promise" implementation.</li>
       <li>fetch - <a href="https://github.com/matthew-andrews/isomorphic-fetch">isomorphic fetch</a> has been provided</li>
     </ul>
 
-    <Title>Hooking into Flint</Title>
+    <Title small>Hooking into Flint</Title>
     <Text>
       We're working on a full set of hooks for Flint. For now you can set Flint.preloaders to be an array of promises for doing anything asynchronously before your app loads. You can also log out <code>Flint</code> in your console, and <code>_Flint</code>, to see public and private state of whats happening in your app.
     </Text>

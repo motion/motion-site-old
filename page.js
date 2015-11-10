@@ -1,7 +1,7 @@
 view Page {
   <HeaderAlt />
   <Contain>
-    <Sidebar yield />
+    <Sidebar if={view.props.base} yield />
     <inner>
       {view.props.children}
     </inner>
@@ -16,7 +16,7 @@ view Page {
 
   $Contain = {
     width: '80%',
-    maxWidth: 870,
+    maxWidth: 820,
     flexFlow: 'row',
 
     [device.small]: {
@@ -25,7 +25,7 @@ view Page {
   }
 
   $inner = {
-    padding: [5, '4%'],
+    padding: [5, '5%'],
   }
 }
 

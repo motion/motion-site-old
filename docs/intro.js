@@ -14,7 +14,11 @@ view Docs.Intro {
     </Text>
 
     <Text>
-      You can think of Flint as a polyfill for the future. We know how we like to build apps today: small components that encapsulate all they need to render like <code>Icon</code>, <code>Button</code>, or <code>Modal</code>. Today, we have libraries to achieve this, but eventually we want a language to express it more naturally. Flint is the result of an extensive and ongoing process to make that language available today.
+      We know how we like to build apps today: small components that encapsulate all they need. Today, we have libraries to that let us do this, but eventually we'll want a first class language that understands what we build. Flint is the result of an extensive and ongoing process to make that available today.
+    </Text>
+
+    <Text>
+      Flint is built on the shoulders of giants. It runs on ES6, npm, Gulp, Babel, Webpack, React, Bluebird, and many many more libraries. It will always be open source, and we are actively interesting in building the best developer community around. Also, please <Link to="/community">read our community guidelines</Link> before you become active!
     </Text>
 
     <Title>Super Hot Reloads</Title>
@@ -60,7 +64,7 @@ view Docs.Intro {
     </Text>
 
     <Text>
-      Flint watches your files, builds to production, and will continuiously improve over time without you needing to ever learn a build system configuration syntax or write massive amounts of glue code to bring your app to life.
+      Flint watches your files, builds to production, and will continuously improve over time without you needing to ever learn a build system configuration syntax or write massive amounts of glue code to bring your app to life.
     </Text>
 
     <Title>Principles</Title>

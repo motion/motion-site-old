@@ -60,7 +60,7 @@ view Features {
       </text>
     </section>
 
-    <Next to='/docs/features'>Learn more about these</Next>
+    <Next to='/docs/intro'>Learn more about these</Next>
   </Contain>
 
   $ = {

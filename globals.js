@@ -13,6 +13,7 @@ const routes = {}
 routes.home = '/'
 routes.examples = '/examples'
 routes.docs = '/docs'
+routes.community = '/community'
 
 const color = chroma || function(){}
 color.brand = '#eb522d'

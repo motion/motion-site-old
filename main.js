@@ -20,6 +20,7 @@ view Main {
   <Home route={routes.home} />
   <Examples route={routes.examples} />
   <Docs route={routes.docs} />
+  <Community route={routes.community} />
 
   $ = {
     color: color.text,
