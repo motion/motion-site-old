@@ -46,7 +46,7 @@ view Install {
 
   $input = {
     background: color.brand2,
-    borderRadius: 8,
+    borderRadius: 0,
     border: 'none',
     padding: [10, 8, 10, 18],
     fontSize: 20,
