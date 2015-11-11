@@ -16,6 +16,11 @@ view Install {
 
     <afterward>
       or, npm install -g flint
+
+      <shields>
+        <img class="shield" src="https://img.shields.io/npm/dm/flint.svg" />
+        <img if={false} class="shield" src="https://img.shields.io/npm/v/flint.svg" />
+      </shields>
     </afterward>
   </Contain>
 
@@ -66,6 +71,18 @@ view Install {
   }
 
   $a = style.link
+
+  $shields = {
+    flexFlow: 'row',
+    margin: 20
+  }
+
+  $shield = {
+    opacity: 0.5,
+    hover: {
+      opacity: 1
+    }
+  }
 }
 
 view Help {

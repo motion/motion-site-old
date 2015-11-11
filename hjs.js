@@ -1,7 +1,4 @@
-highlight.configure({ useBR: false })
-highlight.registerLanguage('javascript', H_js)
-
-function H_js(hljs) {
+export default function H_js(hljs) {
   return {
     aliases: ['js'],
     keywords: {

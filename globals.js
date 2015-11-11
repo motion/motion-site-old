@@ -1,5 +1,6 @@
 import highlight from 'highlight.js'
 import chroma from 'chroma-js'
+import hjs from './hjs'
 
 if (window.location.search == '?demo')
   window.location = 'https://www.youtube.com/watch?t=1&v=VNfkk6lH0gg'
@@ -72,4 +73,7 @@ window.router = router
 window.device = device
 window.color = color
 window.util = util
+
 window.highlight = highlight
+highlight.configure({ useBR: false })
+highlight.registerLanguage('javascript', hjs)
