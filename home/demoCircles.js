@@ -3,6 +3,7 @@ import offset from 'mouse-event-offset'
 
 view DemoCircles {
   <Example flip inPage
+    inStyle={{ width: 340 }}
     in={
       <Editor left light
         lines={21}
@@ -108,7 +109,8 @@ view Circles {
     textAlign: 'center',
     fontSize: 15,
     opacity: 0.8,
-    pointerEvents: 'none'
+    pointerEvents: 'none',
+    userSelect: 'none',
   }
 }
 

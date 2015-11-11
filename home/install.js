@@ -18,7 +18,9 @@ view Install {
       or, npm install -g flint
 
       <shields>
-        <img class="shield" src="https://img.shields.io/npm/dm/flint.svg" />
+        <a href="https://www.npmjs.com/package/flint" target="_blank">
+          <img class="shield" src="https://img.shields.io/npm/dm/flint.svg" />
+        </a>
         <img if={false} class="shield" src="https://img.shields.io/npm/v/flint.svg" />
       </shields>
     </afterward>
@@ -70,15 +72,17 @@ view Install {
     fontFamily: font.monoSpace
   }
 
-  $a = style.link
-
   $shields = {
     flexFlow: 'row',
-    margin: 20
+    margin: [20, 'auto']
+  }
+
+  $a = {
+    margin: 'auto'
   }
 
   $shield = {
-    opacity: 0.5,
+    opacity: 0.7,
     hover: {
       opacity: 1
     }
