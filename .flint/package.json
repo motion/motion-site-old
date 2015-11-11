@@ -13,7 +13,7 @@
     "highlight.js": "^8.9.1",
     "history": "^1.13.0",
     "marked": "^0.3.5",
-    "mouse-event-offset": "^2.0.0",
+    "mouse-event-offset": "^3.0.2",
     "react": "^0.14.0",
     "react-markdown": "^1.0.3",
     "react-motion": "^0.3.1",

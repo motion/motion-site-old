@@ -12,6 +12,7 @@ view Home {
   <Features />
   <DemoVideo />
   <Slack />
+  <Powered />  
   <FAQ />
   <Signup />
   <Footer />
