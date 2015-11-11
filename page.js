@@ -54,7 +54,8 @@ view Page.Sidebar {
   }
 
   $active = {
-    fontWeight: 600
+    fontWeight: 600,
+    color: 'black',
   }
 
   $a = [style.link, {
