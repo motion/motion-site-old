@@ -71,7 +71,7 @@ view Features {
   }
 
   $Next = {
-    margin: [15, 'auto', 10]
+    margin: [25, 'auto', 20]
   }
 
   $section = {
@@ -83,7 +83,7 @@ view Features {
   $text = {
     flexFlow: 'row',
     textAlign: 'left',
-    margin: [-20, 0],
+    margin: [-15, 0],
     width: '50%',
     alignItems: 'center',
     position: 'relative',
@@ -95,8 +95,9 @@ view Features {
   }
 
   $img = {
-    width: 100,
-    margin: 0,
+    width: 250,
+    height: 100,
+    margin: ['auto', 0],
 
     [device.small]: {
       width: '12%',

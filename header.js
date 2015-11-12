@@ -2,7 +2,7 @@ view HeaderAlt {
   <wrap>
     <Logo small />
     <Nav />
-    <Social tiny />
+    <Social tiny noSlack />
   </wrap>
 
   $ = {
@@ -31,7 +31,8 @@ view HeaderAlt {
   }
 
   $Nav = {
-    flexGrow: 1
+    flexGrow: 1,
+    marginLeft: 20
   }
 
   $Social = {

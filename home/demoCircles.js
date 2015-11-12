@@ -86,14 +86,15 @@ view Circles {
 
   on('mount', () => {
     const targetY = util.docOffset(view.refs.circles).top + 400
-    onScrollTo(targetY, () =>
-      coords = coords.concat({ x: 200, y: 200 }))
+    onScrollTo(targetY, () => coords.push([200, 200]))
   })
 
-  const addCircle = e => coords = coords.concat(offset(e))
+  function addCircle (e) {
+    coords.push(offset(e))
+  }
 
   <circles ref="circles" onClick={addCircle}>
-    <Circle repeat={coords} left={_.x} top={_.y} />
+    <Circle repeat={coords} left={_[0]} top={_[1]} />
     <desc>
       Try clicking around to add circles
     </desc>

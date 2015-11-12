@@ -12,9 +12,9 @@ view Home {
   <Features />
   <DemoVideo />
   <Slack />
-  <Powered />  
   <FAQ />
   <Signup />
+  <Powered />  
   <Footer />
 
   $ = { width: '100%' }

@@ -19,7 +19,7 @@ view Social {
   <a target="_blank" href="http://github.com/flintjs/flint">
     <IconGithub />
   </a>
-  <a href="/?slack" onClick={util.linkScroll}>
+  <a if={!view.props.noSlack} href="/?slack" onClick={util.linkScroll}>
     <IconSlack />
   </a>
   <a target="_blank" href="https://twitter.com/flint_js">
