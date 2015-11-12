@@ -10,7 +10,7 @@ view Code {
   }
 
   on.mount(() => {
-    highlight.highlightBlock(view.refs.code)
+    hljs.highlightBlock(view.refs.code)
   })
 
   <code ref="code" class={view.props.lang || 'javascript'}>

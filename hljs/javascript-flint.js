@@ -1,6 +1,6 @@
 export default function H_js(hljs) {
+
   return {
-    aliases: ['js'],
     keywords: {
       keyword:
         'in of if for while finally var new function do return void else break catch ' +

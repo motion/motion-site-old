@@ -1,4 +1,3 @@
-import highlight from 'highlight.js'
 import chroma from 'chroma-js'
 import hjs from './hjs'
 
@@ -73,7 +72,3 @@ window.router = router
 window.device = device
 window.color = color
 window.util = util
-
-window.highlight = highlight
-highlight.configure({ useBR: false })
-highlight.registerLanguage('javascript', hjs)

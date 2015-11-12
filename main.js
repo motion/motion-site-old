@@ -1,3 +1,13 @@
+import hljs from './hljs/hljs'
+import flintLang from './hljs/javascript-flint'
+import xml from './hljs/xml'
+
+hljs.registerLanguage('javascript', flintLang)
+hljs.registerLanguage('xml', xml)
+hljs.configure({ useBR: false })
+
+window.hljs = hljs
+
 Flint.router.onChange(location => {
   if (typeof ga != 'undefined')
     ga('send', 'pageview', location.pathname)
