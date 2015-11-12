@@ -11,13 +11,13 @@ view Docs.Events {
       view Main {
         let scrollListener
 
-        on('mount', () => {
+        on.mount(() => {
           scrollListener = view.refs.main.addEventListener('scroll', e => {
             // handle scrolling
           })
         })
 
-        on('unmount', () => {
+        on.unmount(() => {
           view.refs.main.removeEventListener(scrollListener)
         })
 
@@ -31,7 +31,7 @@ view Docs.Events {
 
     <Code source={`
       view Main {
-        on('scroll', () => {
+        on.scroll(() => {
           // thats it!
         })
       }
@@ -47,7 +47,7 @@ view Docs.Events {
 
     <Code source={`
       view Main {
-        on(window, 'scroll', (e) => {
+        on.scroll(window, (e) => {
           console.log(e.pageX)
         })
       }
@@ -79,7 +79,7 @@ view Docs.Events {
 
     <Code source={`
       view Main {
-        on('delay', 1000, run) // after a second
+        on.delay(1000, run) // after a second
       }
     `} />
 
@@ -89,7 +89,7 @@ view Docs.Events {
 
     <Code source={`
       view Main {
-        on('every', 1000, run) // every second
+        on.every(1000, run) // every second
       }
     `} />
 
@@ -99,7 +99,7 @@ view Docs.Events {
 
     <Code source={`
       view Main {
-        on('frame', run) // every frame
+        on.frame(run) // every frame
       }
     `} />
 

@@ -70,7 +70,7 @@ view Page.Sidebar {
 view RoutedContent {
   let el
 
-  on('props', () => {
+  on.props(() => {
     el = view.props.content.filter(x => x.slug == view.props.params.slug)[0]
   })
 

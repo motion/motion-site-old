@@ -39,7 +39,7 @@ view Password {
     if (password.toLowerCase() == 'love') view.props.onShow(true)
   }
 
-  on('mount', () => {
+  on.mount(() => {
     view.refs.input.focus()
   })
 
