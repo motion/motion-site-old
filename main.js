@@ -38,7 +38,8 @@ view Main {
     lineHeight: '1.8rem',
     fontFamily: font.sansSerif,
     background: color.bg,
-    position: 'relative'
+    position: 'relative',
+    overflow: 'hidden'
   }
 }
 

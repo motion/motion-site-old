@@ -35,6 +35,12 @@ view Install {
     flexFlow: 'column'
   }
 
+  $Help = {
+    [device.small]: {
+      display: 'none'
+    }
+  }
+
   $mainCode = {
     flexFlow: 'row',
     margin: 'auto'

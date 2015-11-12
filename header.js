@@ -54,13 +54,7 @@ view Header {
   <Nav />
   <Example
     flipVertical
-    inStyle={{
-      maxWidth: 300,
-
-      [device.small]: {
-        marginRight: 0
-      }
-    }}
+    inStyle={instyle}
     out={
       <head>
         <Logo />
@@ -90,7 +84,7 @@ view Header {
 
     [device.small]: {
       flexFlow: 'column',
-      minWidth: 'auto',
+      minWidth: 0,
       padding: [80, 0, 0],
     }
   }
@@ -105,6 +99,7 @@ view Header {
     right: 0,
 
     [device.small] : {
+      justifyContent: 'center',
       position: 'relative',
       top: -20,
       right: 0,
@@ -112,7 +107,9 @@ view Header {
     }
   }
 
-  $Editor = {
+  const instyle = {
+    maxWidth: 300,
+
     [device.small]: {
       marginTop: 20,
       marginLeft: 'auto',

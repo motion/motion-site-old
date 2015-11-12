@@ -100,9 +100,7 @@ view Features {
     margin: ['auto', 0],
 
     [device.small]: {
-      width: '12%',
-      marginLeft: 0,
-      marginRight: 0
+      display: 'none'
     }
   }
 

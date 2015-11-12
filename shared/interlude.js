@@ -7,6 +7,12 @@ view Interlude {
     margin: [60, 'auto'],
     padding: [16, 0],
     fontWeight: 300,
-    zIndex: 100
+    zIndex: 100,
+    textAlign: 'center',
+
+    [device.small]: {
+      fontSize: 22,
+      padding: 0
+    }
   }]
 }

@@ -14,7 +14,7 @@ view Home {
   <Slack />
   <FAQ />
   <Signup />
-  <Powered />  
+  <Powered />
   <Footer />
 
   $ = { width: '100%' }

@@ -23,7 +23,6 @@ view YouTube2 {
 
   $ = {
     width: '100%',
-    minHeight: 350,
     position: 'absolute',
     top: -80,
     left: 0,
