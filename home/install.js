@@ -4,7 +4,7 @@ view Install {
 
   <Contain id="install">
     <Interlude style={{margin: [0, 'auto']}} center if={view.props.title}>
-      Install
+      Install Flint
     </Interlude>
 
     <mainCode>
@@ -30,7 +30,7 @@ view Install {
     textAlign: 'center',
     margin: [5, 0, 0]
   }
-
+  
   $Contain = {
     flexFlow: 'column'
   }

@@ -11,7 +11,7 @@ view Docs.Events {
       view Main {
         let scrollListener
 
-        on('mount', () => {
+        on.mount(() => {
           scrollListener = view.refs.main.addEventListener('scroll', e => {
             // handle scrolling
           })

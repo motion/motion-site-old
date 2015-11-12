@@ -67,7 +67,7 @@ const onScrollTo = (targetY, cb) => {
   let timeout = null
   let hasScrolledTo = false
 
-  on('scroll', () => {
+  on.scroll(() => {
     if (timeout || hasScrolledTo) return
     timeout = setTimeout(() => {
       clearTimeout(timeout)
@@ -84,7 +84,7 @@ const onScrollTo = (targetY, cb) => {
 view Circles {
   let coords = []
 
-  on('mount', () => {
+  on.mount(() => {
     const targetY = util.docOffset(view.refs.circles).top + 400
     onScrollTo(targetY, () =>
       coords = coords.concat({ x: 200, y: 200 }))

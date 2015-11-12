@@ -194,7 +194,7 @@ view Desc {
   let phrasePos = 0
   let charPos = 0
 
-  on('props', () => {
+  on.props(() => {
     if (view.props.start && !started) {
       started = true
       run()

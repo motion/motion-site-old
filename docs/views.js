@@ -134,7 +134,7 @@ view Docs.Views {
 
     <Code source={`
       view Hello {
-        on('mount', () => {
+        on.mount(() => {
           const width = view.refs.span.innerWidth
         })
 
@@ -169,7 +169,7 @@ view Docs.Views {
 
     <Code source={`
       view Button {
-        on('mount', () => {
+        on.mount(() => {
           view.refs.button.focus()
         })
 
@@ -201,7 +201,7 @@ view Docs.Views {
 
         let title, date, body, name
 
-        on('props', () => {
+        on.props(() => {
           title = view.props.title || ''
           date = view.props.date || Date.now()
           body = view.props.body || ''

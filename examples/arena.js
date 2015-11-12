@@ -131,7 +131,7 @@ view Examples.Arena {
         let fetched = false
         let contents = []
 
-        on('props', load)
+        on.props(load)
 
         async function load() {
           id = view.props.params.id

@@ -95,7 +95,7 @@ view Docs.Elements {
       view Main {
         let wide
 
-        on('mount', () => {
+        on.mount(() => {
           wide = view.refs.span.innerWidth
         })
 

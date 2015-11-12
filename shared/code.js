@@ -9,7 +9,7 @@ view Code {
       .join("\n")
   }
 
-  on('mount', () => {
+  on.mount(() => {
     highlight.highlightBlock(view.refs.code)
   })
 
