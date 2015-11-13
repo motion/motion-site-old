@@ -53,7 +53,7 @@ view Counter {
     width: 60,
     height: 40,
     justifyContent: 'center',
-    fontSize: 20,
+    fontSize: 22,
     outline: 'none',
     boxShadow: '1px 2px 2px rgba(0,0,0,0.08)',
     userSelect: 'none',
