@@ -3,8 +3,8 @@ view Interlude {
 
   $h2 = [style.textGradient, {
     textAlign: view.props.right ? 'right': 'left',
-    fontSize: 30,
-    margin: [60, 'auto'],
+    fontSize: 26,
+    margin: [40, 'auto'],
     padding: [16, 0],
     fontWeight: 300,
     zIndex: 100,

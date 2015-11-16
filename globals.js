@@ -44,8 +44,8 @@ style.link = {
 }
 style.textGradient = {
   background: `-webkit-linear-gradient(left,
-    ${color(color.brand1).darken(0.6)},
-    ${color(color.brand2).darken(0.6)})`,
+    ${color(color.brand1).darken(0.3)},
+    ${color(color.brand2).darken(0.3)})`,
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
 }

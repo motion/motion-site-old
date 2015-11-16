@@ -96,7 +96,8 @@ view Header {
   }
 
   $head = {
-    marginRight: '-30%',
+    margin: [-10, '-25%', 0, 0],
+    minWidth: 400,
 
     [device.small]: {
       margin: 0
@@ -118,9 +119,9 @@ view Header {
   }
 
   $Editor = {
-    margin: [0, 'auto'],
+    marginLeft: '5%',
     minWidth: 300,
-    width: '60%'
+    width: '70%'
   }
 
   const instyle = {
@@ -182,7 +183,9 @@ view Nav {
 view Logo {
   <img onClick={router.link(routes.home)} src="/assets/images/flintlogo20.png" />
 
-  $ = { flexShrink: 0 }
+  $ = {
+    flexShrink: 0
+  }
 
   const width = 1019
   const height = 282
@@ -241,9 +244,9 @@ view Desc {
     fontSize: 26,
     fontWeight: 300,
     lineHeight: '1.6rem',
-    padding: [0, 0, 17],
+    padding: [5, 0, 20],
     margin: [0, 'auto'],
     display: 'block',
-    color: '#888'
+    color: 'rgba(0,0,0,0.6)'
   }
 }

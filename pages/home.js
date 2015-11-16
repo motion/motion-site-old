@@ -76,7 +76,7 @@ view Intro {
 }
 
 view Home.Examples {
-  <Contain>
+  <Contain alt>
     <section>
       <Blur />
       <Interlude center left>

@@ -15,7 +15,7 @@ view Install {
     </mainCode>
 
     <afterward>
-      or: npm install -g flint
+       <extra>or, npm install -g flint</extra>
 
       <shields>
         <a href="https://www.npmjs.com/package/flint" target="_blank">
@@ -58,15 +58,17 @@ view Install {
   }
 
   $input = {
-    background: color.brand2,
+    border: `${1}px solid #ddd`,
+    fontWeight: 600,
+    background: '#fff',
+    color: color.brand2,
     borderRadius: 4,
     border: 'none',
     padding: [10, 8, 10, 18],
-    fontSize: 20,
+    fontSize: 18,
     margin: [-8, 0, -5],
     fontFamily: font.monoSpace,
-    width: '100%',
-    color: '#fff'
+    width: '100%'
   }
 
   $afterward = {
@@ -86,6 +88,11 @@ view Install {
 
   $a = {
     margin: 'auto'
+  }
+
+  $extra = {
+    display: 'inline',
+    fontWeight: 300
   }
 
   $shield = {
