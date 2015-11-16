@@ -64,7 +64,7 @@ view Install {
 
   $input = {
     border: `${1}px solid #ddd`,
-    fontWeight: 600,
+    color: '#666',
     background: '#fff',
     borderRadius: 4,
     border: 'none',

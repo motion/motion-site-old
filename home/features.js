@@ -57,9 +57,29 @@ view Features {
           </description>
         </col>
       </text>
+
+      <text class="right small">
+        <col>
+          <title>Use &lt;React /&gt; components</title>
+          <description>
+            With automatic installs you can import and use any React
+            component instantly, without even losing your current state.
+          </description>
+        </col>
+      </text>
+
+      <text class="small">
+        <col>
+          <title>Performance by default</title>
+          <description>
+            Out of the box Flint optimizes React to give you even better performance
+            in development and production.
+          </description>
+        </col>
+      </text>
     </section>
 
-    <Next to='/docs/intro'>Learn more about these</Next>
+    <Next to='/docs/intro'>Learn more in the docs</Next>
   </Contain>
 
   $ = {
@@ -106,6 +126,11 @@ view Features {
   $right = {
     alignSelf: 'flex-end',
     flexDirection: 'row-reverse'
+  }
+
+  $small = {
+    width: '40%',
+    margin: [0, '10%']
   }
 
   $title = {

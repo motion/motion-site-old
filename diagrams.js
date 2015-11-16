@@ -1,8 +1,4 @@
-view Test {
-  <Icon.Browser />
-  <Icon.Editor />
-  <Icon.Console />
-}
+const size = 100
 
 view Icon.Window {
   <window>
@@ -12,8 +8,6 @@ view Icon.Window {
       {view.props.children}
     </inner>
   </window>
-
-  let size = 100
 
   $ = {
     width: size,
@@ -59,6 +53,29 @@ view Icon.Editor {
     background: '#ddd',
     margin: 3,
     width: Math.max(0.8, Math.random()) * Math.min(100, Math.max(70, _index * 45 % 100 * (Math.random() * 2.5))) + '%'
+  }
+}
+
+view Icon.Flint {
+  <img src="/assets/flint.svg" />
+
+  const base = 1.5
+
+  $ = {
+    border: '2px solid #eee',
+    width: size / base,
+    height: size / base,
+    borderRadius: 100
+  }
+
+  $img = {
+    width: size / base,
+    height: size / base,
+    margin: 'auto',
+    margin: -2,
+    transform: {
+      scale: 0.9
+    }
   }
 }
 

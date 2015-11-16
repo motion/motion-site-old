@@ -14,7 +14,7 @@ view Next {
     <arrow>❯</arrow>
   </next>
 
-  let blue = '#2EA1F9'
+  let blue = [46,161,249].join(',')
 
   $next = {
     fontSize: 20,
@@ -23,12 +23,12 @@ view Next {
     marginTop: 25,
     cursor: 'pointer',
     transition: '300ms all ease-in',
-    color: blue,
+    color: `rgb(${blue})`,
     textAlign:'right',
   }
 
   $span = {
-    borderBottom: over ? `1px solid ${blue}` : 'none'
+    borderBottom: over ? `1px solid rgba(${blue}, 0.2)` : 'none'
   }
 
   $arrow = {

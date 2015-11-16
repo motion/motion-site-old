@@ -36,7 +36,8 @@ view Home {
   }
 
   $wow = [style.textGradient, {
-    fontSize: 30
+    fontSize: 30,
+    color: color.brand2
   }]
 }
 

@@ -2,31 +2,35 @@ view Diagram {
   <Contain>
     <line />
 
-    <section>
-      <title>Browser</title>
-      <Icon.Browser />
+    <section class="side">
+      <col>
+        <title>Browser</title>
+        <Icon.Browser class="icon" />
+      </col>
       <p>
-        <strong>Smart hot reloads</strong> individual views.
-        Handles runtime & compile errors. Inspect views to see in editor.
+        <strong>Smarter reloads</strong> hot swap instantly without losing state.
+        Run & compile errors. Jump to editor from any view.
       </p>
     </section>
 
-    <section>
+    <section class="point">
       <title>Compiler</title>
-      <Icon.Console />
+      <Icon.Flint class="icon" />
       <p>
-        Splits JS and CSS, passes to browser individually.&nbsp;
+        Inline styles that static extract to CSS.&nbsp;
         <strong>Automatic npm installs</strong>, injected into running app.
       </p>
     </section>
 
-    <section>
-      <title>Editor</title>
-      <Icon.Editor />
+    <section class="side right">
+      <col>
+        <title>Editor</title>
+        <Icon.Editor class="icon" />
+      </col>
       <p>
         <strong>Live updates</strong> as you type.&nbsp;
-        <strong>Focus</strong> for fast number/color changes.
-        Shows inline errors from compiler.
+        <strong>Focus</strong> mode: drag your numbers & colors.
+        Inline errors from compiler.
       </p>
     </section>
   </Contain>
@@ -56,6 +60,7 @@ view Diagram {
     alignSelf: 'flex-start',
     position: 'relative',
     zIndex: 10,
+    textAlign: 'center',
 
     [device.small]: {
       margin: 'auto',
@@ -65,16 +70,44 @@ view Diagram {
     }
   }
 
+  let sidePull = -100
+
+  $side = {
+    flexFlow: 'row-reverse',
+    width: '60%',
+    margin: [0, sidePull, 0, 0],
+    textAlign: 'right'
+  }
+
+  $right = {
+    flexFlow: 'row',
+    margin: [0, 0, 0, sidePull],
+    textAlign: 'left'
+  }
+
+  $point = {
+    margin: [200, 0, 0]
+  }
+
+  $col = {
+    flexFlow: 'column'
+  }
+
   $p = {
-    fontSize: 15,
-    textAlign: 'center'
+    margin: [20, 0, 0],
+    fontSize: 15
   }
 
   $title = {
     fontFamily: font.title,
-    color: '#000',
-    fontSize: 18,
-    margin: [-2, 0, 4, 0]
+    textAlign: 'center',
+    color: '#555',
+    fontSize: 17,
+    margin: [-5, 0, 4, 0]
+  }
+
+  $icon = {
+    margin: [0, 12]
   }
 
   $strong = {
@@ -85,8 +118,8 @@ view Diagram {
     height: 1,
     position: 'absolute',
     top: 90,
-    left: '20%',
-    right: '20%',
+    left: '40%',
+    right: '40%',
     background: '#eee',
     zIndex: 0,
 
