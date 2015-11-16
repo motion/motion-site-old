@@ -30,7 +30,7 @@ view Diagram {
   $ = {
     flexFlow: 'row',
     margin: 'auto',
-    width: 1000,
+    maxWidth: 1000,
     padding: [0, 0, 40, 0],
     color: '#555',
     alignItems: 'space-around',
@@ -48,6 +48,7 @@ view Diagram {
     alignItems: 'center',
     padding: [0, 20],
     margin: 'auto',
+    maxWidth: 400,
 
     [device.small]: {
       width: '90%',
