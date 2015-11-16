@@ -4,7 +4,7 @@ view Install {
 
   <Contain id="install">
     <Interlude style={{margin: [0, 'auto']}} center if={view.props.title}>
-      Install Flint
+      Install
     </Interlude>
 
     <mainCode>
@@ -15,7 +15,7 @@ view Install {
     </mainCode>
 
     <afterward>
-      or, npm install -g flint
+      or: npm install -g flint
 
       <shields>
         <a href="https://www.npmjs.com/package/flint" target="_blank">
@@ -30,7 +30,7 @@ view Install {
     textAlign: 'center',
     margin: [5, 0, 0]
   }
-  
+
   $Contain = {
     flexFlow: 'column'
   }
@@ -59,7 +59,7 @@ view Install {
 
   $input = {
     background: color.brand2,
-    borderRadius: 33,
+    borderRadius: 4,
     border: 'none',
     padding: [10, 8, 10, 18],
     fontSize: 20,
@@ -80,7 +80,8 @@ view Install {
 
   $shields = {
     flexFlow: 'row',
-    margin: [20, 'auto']
+    margin: [20, 'auto', 0],
+    height: 40
   }
 
   $a = {
@@ -121,7 +122,7 @@ view Help {
     borderRadius: 100,
     justifyContent: 'center',
     fontSize: 18,
-    color: color.brand2,
+    color: 'rgba(0,0,0,0.2)',
     cursor: 'pointer'
   }
 

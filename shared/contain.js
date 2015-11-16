@@ -11,7 +11,7 @@ view Contain {
 
   $ = {
     background: view.props.bg || (view.props.strip ? color.strip : 'transparent'),
-    maxWidth: view.props.maxWidth || 1050,
+    maxWidth: view.props.maxWidth || 1000,
     minWidth: view.props.minWidth || 0,
     width: '100%',
     color: view.props.color || 'auto',

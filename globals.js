@@ -71,3 +71,5 @@ window.router = router
 window.device = device
 window.color = color
 window.util = util
+
+window.gradient = (a, b) => `linear-gradient(${a}, ${b})`

@@ -17,7 +17,7 @@ view Example {
   }
 
   $out = [{
-    flexGrow: 2,
+    flexGrow: 1,
     justifyContent: 'center',
     position: 'relative',
     order: view.props.flip ? 2 : 1,

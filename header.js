@@ -77,10 +77,12 @@ view Header {
   $ = {
     position: 'relative',
     overflow: 'hidden',
-    padding: [60, 10, 0, 0],
+    padding: [80, 10],
+    margin: [0, 0, 40],
+    borderBottom: '1px solid rgba(0,0,0,0.05)',
     minWidth: 700,
-    margin: [0, 'auto'],
     flexFlow: 'row',
+    background: 'rgba(252,252,246,0.57)',
 
     [device.small]: {
       flexFlow: 'column',
@@ -93,10 +95,18 @@ view Header {
     margin: [10, 0, 20]
   }
 
+  $head = {
+    marginRight: '-30%',
+
+    [device.small]: {
+      margin: 0
+    }
+  }
+
   $Nav = {
     position: 'absolute',
-    top: 15,
-    right: 0,
+    top: 25,
+    right: '18%',
 
     [device.small] : {
       justifyContent: 'center',
@@ -107,9 +117,13 @@ view Header {
     }
   }
 
-  const instyle = {
-    maxWidth: 300,
+  $Editor = {
+    margin: [0, 'auto'],
+    minWidth: 300,
+    width: '60%'
+  }
 
+  const instyle = {
     [device.small]: {
       marginTop: 20,
       marginLeft: 'auto',

@@ -1,11 +1,6 @@
 view Home {
   <Blur left="45%" top={-200} />
   <Header />
-  <welcome>
-    Welcome to the Flint private beta. We are getting ready for launch
-    and preparing a demo video for here. For now, you'll have to
-    dive in yourself!
-  </welcome>
   <Install title />
   <Video if={false} />
   <Examples />

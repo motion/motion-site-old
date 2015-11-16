@@ -41,13 +41,13 @@ view Editor {
     flexFlow: 'column',
     height: view.props.lines ? 22 + (23 * view.props.lines) : '100%',
     borderRadius: 5,
-    boxShadow: `0 0 8px rgba(0,0,0,${view.props.light ? 0.08 : 0.25})`,
     border: '1px solid #ddd',
     fontFamily: font.monoSpace,
     position: 'relative',
     zIndex: 10,
     width: '100%',
     background: view.props.light ? light : '#263640',
+    margin: 'auto',
 
     [device.small]: {
       marginRight: 10,
@@ -57,7 +57,7 @@ view Editor {
 
   $Code = {
     margin: 0,
-    padding: 14,
+    padding: [0, 14],
     border: 'none',
     boxShadow: 'none'
   }
