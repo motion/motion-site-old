@@ -20,7 +20,8 @@ view Icon.Window {
     height: size,
     border: '2px solid rgba(0,0,0,0.1)',
     margin: 10,
-    borderRadius: 5
+    borderRadius: 5,
+    background: '#fff'
   }
 
   $inner = {

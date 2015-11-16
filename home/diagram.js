@@ -1,9 +1,11 @@
 view Diagram {
+  <line />
+
   <section>
     <title>Browser</title>
     <Icon.Browser />
     <p>
-      <strong>Smart hot reloads</strong> individual files.
+      <strong>Smart hot reloads</strong> individual views.
       Handles runtime & compile errors. Inspect views to see in editor.
     </p>
   </section>
@@ -22,7 +24,7 @@ view Diagram {
     <title>Compiler</title>
     <Icon.Console />
     <p>
-      Splits JS and CSS, passes files to browser individually.&nbsp;
+      Splits JS and CSS, passes to browser individually.&nbsp;
       <strong>Automatic npm installs</strong>, injected into running app.
     </p>
   </section>
@@ -35,6 +37,7 @@ view Diagram {
     color: '#555',
     alignItems: 'space-around',
     justifyContent: 'center',
+    position: 'relative',
 
     [device.small]: {
       width: 'auto',
@@ -49,6 +52,8 @@ view Diagram {
     padding: [0, 20],
     maxWidth: 400,
     alignSelf: 'flex-start',
+    position: 'relative',
+    zIndex: 10,
 
     [device.small]: {
       margin: 'auto',
@@ -72,5 +77,19 @@ view Diagram {
 
   $strong = {
     color: color.brand1
+  }
+
+  $line = {
+    height: 1,
+    position: 'absolute',
+    top: 90,
+    left: '20%',
+    right: '20%',
+    background: '#eee',
+    zIndex: 0,
+
+    [device.small]: {
+      display: 'none'
+    }
   }
 }

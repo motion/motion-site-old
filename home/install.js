@@ -60,14 +60,14 @@ view Install {
   }
 
   $input = {
-    border: `${1}px solid #ddd`,
+    border: `${2}px solid #ccc`,
     fontWeight: 600,
     background: '#fff',
     color: color.brand2,
     borderRadius: 4,
     border: 'none',
     padding: [10, 8, 10, 18],
-    fontSize: 18,
+    fontSize: 20,
     margin: [-8, 0, -5],
     fontFamily: font.monoSpace,
     width: '100%'
