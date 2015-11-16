@@ -90,7 +90,7 @@ view Header {
     [device.small]: {
       flexFlow: 'column',
       minWidth: 0,
-      padding: [80, 0, 0],
+      padding: [80, 0, 30],
     }
   }
 

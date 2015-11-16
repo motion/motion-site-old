@@ -1,5 +1,4 @@
 view Home {
-  <Blur left="45%" top={-200} />
   <Header />
   <welcome>
     <span>Flint removes the framework</span>
@@ -21,14 +20,20 @@ view Home {
 
   $welcome = {
     fontSize: 24,
-    color: 'rgba(0,0,0,0.6)',
+    color: 'rgba(0,0,0,0.7)',
     fontWeight: 300,
-    lineHeight: 1.9,
+    lineHeight: 1.75,
     margin: [10, 'auto', 55],
+    padding: [0, 10],
     textAlign: 'center',
     maxWidth: 650,
     zIndex: 100,
-    fontFamily: font.title
+    fontFamily: font.title,
+
+    [device.small]: {
+      fontSize: 20,
+      padding: [0, 30]
+    }
   }
 
   $wow = {
@@ -92,7 +97,6 @@ view Intro {
 view Home.Examples {
   <Contain alt>
     <section>
-      <Blur />
       <Interlude center left>
         Flint introduces the view to JavaScript
       </Interlude>
@@ -102,7 +106,6 @@ view Home.Examples {
     </section>
 
     <section>
-      <Blur left="60%" />
       <Interlude center>
         Style views with ease...
       </Interlude>
@@ -111,7 +114,6 @@ view Home.Examples {
     </section>
 
     <section>
-      <Blur />
       <Interlude center>
         Flint runs on ES6, npm & React
       </Interlude>

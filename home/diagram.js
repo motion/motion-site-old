@@ -3,8 +3,8 @@ view Diagram {
     <title>Browser</title>
     <Icon.Browser />
     <p>
-      Listens to compiler, <strong>hot reloads</strong> individual files.
-      Runtime & compile errors inline. Inspect & <strong>jump to views</strong> in your editor.
+      <strong>Smart hot reloads</strong> individual files.
+      Handles runtime & compile errors. Inspect views to see in editor.
     </p>
   </section>
 
@@ -12,9 +12,9 @@ view Diagram {
     <title>Editor</title>
     <Icon.Editor />
     <p>
-      Talks to your compiler for <strong>live updates</strong> as you type.&nbsp;
-      <strong>Focus mode</strong> for fast number/color selects.
-      Listens for inline errors from compiler.
+      <strong>Live updates</strong> as you type.&nbsp;
+      <strong>Focus</strong> for fast number/color changes.
+      Shows inline errors from compiler.
     </p>
   </section>
 
@@ -22,8 +22,8 @@ view Diagram {
     <title>Compiler</title>
     <Icon.Console />
     <p>
-      Statically extracts JS and CSS into individual files, sends them to browser.&nbsp;
-      <strong>Automatic npm installs</strong>, injects into running app.
+      Splits JS and CSS, passes files to browser individually.&nbsp;
+      <strong>Automatic npm installs</strong>, injected into running app.
     </p>
   </section>
 
@@ -44,27 +44,30 @@ view Diagram {
   }
 
   $section = {
-    width: '28%',
+    width: '30%',
     alignItems: 'center',
     padding: [0, 20],
-    margin: 'auto',
     maxWidth: 400,
+    alignSelf: 'flex-start',
 
     [device.small]: {
+      margin: 'auto',
       width: '90%',
-      padding: 0,
-      marginBottom: 20
+      padding: [0, 20],
+      marginBottom: 30
     }
   }
 
   $p = {
-    fontSize: 14,
+    fontSize: 15,
     textAlign: 'center'
   }
 
   $title = {
     fontFamily: font.title,
-    color: '#000'
+    color: '#000',
+    fontSize: 18,
+    margin: [-2, 0, 4, 0]
   }
 
   $strong = {
