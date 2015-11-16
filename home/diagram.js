@@ -1,43 +1,45 @@
 view Diagram {
-  <line />
+  <Contain>
+    <line />
 
-  <section>
-    <title>Browser</title>
-    <Icon.Browser />
-    <p>
-      <strong>Smart hot reloads</strong> individual views.
-      Handles runtime & compile errors. Inspect views to see in editor.
-    </p>
-  </section>
+    <section>
+      <title>Browser</title>
+      <Icon.Browser />
+      <p>
+        <strong>Smart hot reloads</strong> individual views.
+        Handles runtime & compile errors. Inspect views to see in editor.
+      </p>
+    </section>
 
-  <section>
-    <title>Editor</title>
-    <Icon.Editor />
-    <p>
-      <strong>Live updates</strong> as you type.&nbsp;
-      <strong>Focus</strong> for fast number/color changes.
-      Shows inline errors from compiler.
-    </p>
-  </section>
+    <section>
+      <title>Compiler</title>
+      <Icon.Console />
+      <p>
+        Splits JS and CSS, passes to browser individually.&nbsp;
+        <strong>Automatic npm installs</strong>, injected into running app.
+      </p>
+    </section>
 
-  <section>
-    <title>Compiler</title>
-    <Icon.Console />
-    <p>
-      Splits JS and CSS, passes to browser individually.&nbsp;
-      <strong>Automatic npm installs</strong>, injected into running app.
-    </p>
-  </section>
+    <section>
+      <title>Editor</title>
+      <Icon.Editor />
+      <p>
+        <strong>Live updates</strong> as you type.&nbsp;
+        <strong>Focus</strong> for fast number/color changes.
+        Shows inline errors from compiler.
+      </p>
+    </section>
+  </Contain>
 
   $ = {
     flexFlow: 'row',
-    margin: 'auto',
-    maxWidth: 1000,
     padding: [0, 0, 40, 0],
+    margin: [0, 0, 40, 0],
     color: '#555',
     alignItems: 'space-around',
     justifyContent: 'center',
     position: 'relative',
+    borderBottom: '1px solid #eee',
 
     [device.small]: {
       width: 'auto',

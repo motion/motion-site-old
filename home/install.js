@@ -16,7 +16,7 @@ view Install {
 
     <afterward>
       <line>
-        Flint is free & open source (npm install -g flint)
+        Flint is free & open source
       </line>
 
       <shields if={false}>
@@ -29,8 +29,7 @@ view Install {
   </Contain>
 
   $ = {
-    textAlign: 'center',
-    margin: [5, 0, 20]
+    textAlign: 'center'
   }
 
   $Contain = {
@@ -60,14 +59,14 @@ view Install {
   }
 
   $input = {
-    border: `${2}px solid #ccc`,
+    border: `${1}px solid #ddd`,
     fontWeight: 600,
     background: '#fff',
     color: color.brand2,
     borderRadius: 4,
     border: 'none',
-    padding: [10, 8, 10, 18],
-    fontSize: 20,
+    padding: [6, 0, 6, 14],
+    fontSize: 18,
     margin: [-8, 0, -5],
     fontFamily: font.monoSpace,
     width: '100%'
@@ -111,8 +110,9 @@ view Help {
   <outer onMouseEnter={() => hovered = true} onMouseLeave={() => hovered = false}>
     <question>?</question>
     <modal>
-      This script fixes global npm permissions and helps set your default editor.
-      <a href="https://flint.love" target="_blank">View source.</a>
+      This script fixes npm -g permissions & sets default editor.&nbsp;
+      <Link href="https://flint.love" target="_blank">View source.</Link>&nbsp;
+      <span>or install with <code>npm install -g flint</code></span>
     </modal>
   </outer>
 
@@ -124,7 +124,7 @@ view Help {
   }
 
   $question = {
-    margin: ['auto', -(size + 25), 'auto', 20],
+    margin: ['auto', -(size + 35), 'auto', 0],
     width: size,
     height: size,
     // boxShadow: '0 0 4px rgba(0,0,0,0.1)',
@@ -136,22 +136,27 @@ view Help {
   }
 
   $modal = {
+    display: 'block',
     opacity: hovered ? 1 : 0,
     transition: 'all ease-in 300ms',
     position: 'absolute',
     left: hovered ? 150 : 140,
     top: '-100%',
-    marginLeft: -100,
+    marginLeft: -120,
     width: 200,
     padding: 10,
     boxShadow: '0 0 4px rgba(0,0,0,0.2)',
     borderRadius: 4,
-    fontSize: 14,
-    lineHeight: '1.2rem',
+    fontSize: 13,
+    lineHeight: '1.25rem',
     background: '#fff'
   }
 
-  $a = [style.link, {
-    margin: 'auto'
-  }]
+  $code = {
+    border: 'none',
+    opacity: 0.7,
+    lineHeight: 1.2,
+    fontSize: 13,
+    display: 'inline'
+  }
 }

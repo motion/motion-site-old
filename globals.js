@@ -39,6 +39,7 @@ style.link = {
   cursor: 'pointer',
   textDecoration: 'none',
   borderBottom: '1px dotted #ddd',
+  display: 'inline',
   padding: 0,
 
   ':hover': { color: color.brand }

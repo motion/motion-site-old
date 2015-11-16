@@ -2,8 +2,7 @@ view Home {
   <Header />
   <welcome>
     <span>Flint removes the framework</span>
-    <span>It smartly connects compiler, editor & browser</span>
-    <span class="wow">It's a leap forward for frontend development</span>
+    <span>It smartly connects your compiler, editor & browser</span>
   </welcome>
   <Diagram />
   <Install title />
@@ -19,14 +18,14 @@ view Home {
   $ = { width: '100%' }
 
   $welcome = {
-    fontSize: 24,
+    fontSize: 26,
     color: 'rgba(0,0,0,0.7)',
     fontWeight: 300,
     lineHeight: 1.7,
     margin: [10, 'auto', 55],
     padding: [0, 10],
     textAlign: 'center',
-    maxWidth: 650,
+    maxWidth: 750,
     zIndex: 100,
     fontFamily: font.title,
 

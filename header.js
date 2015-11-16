@@ -80,8 +80,8 @@ view Header {
   $ = {
     position: 'relative',
     overflow: 'hidden',
-    padding: [70, 10, 50],
-    margin: [0, 0, 40],
+    padding: [70, 10, 45],
+    margin: [0, 0, 30],
     borderBottom: '1px solid rgba(0,0,0,0.05)',
     minWidth: 700,
     flexFlow: 'row',
@@ -124,7 +124,7 @@ view Header {
   $Editor = {
     marginLeft: '5%',
     minWidth: 300,
-    width: '70%'
+    width: '60%'
   }
 
   const instyle = {
