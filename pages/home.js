@@ -8,7 +8,6 @@ view Home {
   </welcome>
   <Diagram />
   <Install title />
-  <Video if={false} />
   <Examples />
   <Features />
   <DemoVideo />
