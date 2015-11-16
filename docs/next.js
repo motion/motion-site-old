@@ -36,9 +36,3 @@ view Next {
     marginLeft: over ? 12 : 8
   }
 }
-
-view Link {
-  <link-a onClick={() => go(view.props.to)} yield />
-
-  $ = [style.link]
-}
