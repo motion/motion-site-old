@@ -41,7 +41,7 @@ view Editor {
     flexFlow: 'column',
     height: view.props.lines ? 22 + (23 * view.props.lines) : '100%',
     borderRadius: 5,
-    border: '1px solid #ddd',
+    border: '2px solid #eee',
     fontFamily: font.monoSpace,
     position: 'relative',
     zIndex: 10,

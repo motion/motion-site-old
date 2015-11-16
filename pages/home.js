@@ -22,7 +22,7 @@ view Home {
     fontSize: 24,
     color: 'rgba(0,0,0,0.7)',
     fontWeight: 300,
-    lineHeight: 1.75,
+    lineHeight: 1.7,
     margin: [10, 'auto', 55],
     padding: [0, 10],
     textAlign: 'center',

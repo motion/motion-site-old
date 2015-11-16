@@ -1,7 +1,7 @@
 view DemoCounter {
   <Example flip inPage
     maxWidth={760}
-    inStyle={{ width: 280 }}
+    inStyle={{ width: 160 }}
     in={
       <Editor lines={10} left light source={`
       view Counter {
@@ -10,9 +10,9 @@ view DemoCounter {
         const up = () => count++
         const down = () => count--
 
+        <strong>Count is {count}</strong>
         <button onClick={down}>↓</button>
         <button onClick={up}>↑</button>
-        <strong>Count is {count}</strong>
       }
       `} />
     }
@@ -26,11 +26,11 @@ view Counter {
   const up = () => count++
   const down = () => count--
 
+  <count>Count is {count}</count>
   <center>
     <button onClick={down}>↓</button>
     <button onClick={up}>↑</button>
   </center>
-  <count>Count is {count}</count>
 
   $ = {
     margin: 'auto',
@@ -47,7 +47,7 @@ view Counter {
 
   $button = {
     margin: 5,
-    border: '1px solid #ccc',
+    border: '1px solid #ddd',
     background: '#fff',
     borderRadius: 5,
     width: 60,
@@ -65,7 +65,8 @@ view Counter {
 
   $count = {
     fontSize: 20,
-    fontWeight: 300,
-    flexFlow: 'row'
+    color: '#777',
+    flexFlow: 'row',
+    margin: [10, 0]
   }
 }

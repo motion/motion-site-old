@@ -3,9 +3,9 @@ view Interlude {
 
   $h2 = [{
     textAlign: view.props.right ? 'right': 'left',
-    fontSize: 24,
-    margin: [40, 'auto'],
-    padding: [22, 0],
+    fontSize: 22,
+    margin: [48, 'auto'],
+    padding: [16, 0],
     fontFamily: font.title,
     zIndex: 100,
     textAlign: 'center',

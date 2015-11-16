@@ -3,7 +3,7 @@ import offset from 'mouse-event-offset'
 
 view DemoCircles {
   <Example flip inPage
-    inStyle={{ width: 340 }}
+    inStyle={{ width: 240 }}
     in={
       <Editor left light
         lines={21}
