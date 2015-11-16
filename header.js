@@ -85,7 +85,7 @@ view Header {
     borderBottom: '1px solid rgba(0,0,0,0.05)',
     minWidth: 700,
     flexFlow: 'row',
-    background: 'rgba(252,252,246,0.57)',
+    background: color.alt,
 
     [device.small]: {
       flexFlow: 'column',

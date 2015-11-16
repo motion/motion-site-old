@@ -1,8 +1,8 @@
 view Home {
   <Header />
   <welcome>
-    <span>Flint removes the framework</span>
-    <span>It smartly connects your compiler, editor & browser</span>
+    <span class="wow">Flint is frontend without the framework</span>
+    <span>It&#39;s a compiler that unites your editor & browser</span>
   </welcome>
   <Diagram />
   <Install title />
@@ -18,10 +18,10 @@ view Home {
   $ = { width: '100%' }
 
   $welcome = {
-    fontSize: 26,
+    fontSize: 24,
     color: 'rgba(0,0,0,0.7)',
     fontWeight: 300,
-    lineHeight: 1.7,
+    lineHeight: 1.75,
     margin: [10, 'auto', 55],
     padding: [0, 10],
     textAlign: 'center',
@@ -35,9 +35,9 @@ view Home {
     }
   }
 
-  $wow = {
-    color: color.brand2
-  }
+  $wow = [style.textGradient, {
+    fontSize: 30
+  }]
 }
 
 view Video {

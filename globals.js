@@ -15,6 +15,7 @@ routes.docs = '/docs'
 routes.community = '/community'
 
 const color = chroma || function(){}
+color.alt = '#fdfdfa'
 color.brand = '#eb522d'
 color.brand1 = '#E86C3D'
 color.brand2 = '#DB415E'
@@ -45,9 +46,7 @@ style.link = {
   ':hover': { color: color.brand }
 }
 style.textGradient = {
-  background: `-webkit-linear-gradient(left,
-    ${color(color.brand1).darken(0.3)},
-    ${color(color.brand2).darken(0.3)})`,
+  background: `-webkit-linear-gradient(left, ${color.brand1}, ${color.brand2})`,
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
 }

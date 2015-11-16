@@ -10,7 +10,7 @@ view Interlude {
     zIndex: 100,
     textAlign: 'center',
     fontWeight: 300,
-    color: 'rgba(0,0,0,0.5)',
+    color: color.brand2,
 
     [device.small]: {
       fontSize: 22,

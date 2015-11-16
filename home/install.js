@@ -3,7 +3,7 @@ view Install {
   const select = () => view.refs.code.select()
 
   <Contain id="install">
-    <Interlude style={{margin: [0, 'auto']}} center if={view.props.title}>
+    <Interlude style={{margin: [-25, 'auto', 0]}} center if={view.props.title}>
       Install
     </Interlude>
 
@@ -29,7 +29,11 @@ view Install {
   </Contain>
 
   $ = {
-    textAlign: 'center'
+    textAlign: 'center',
+    background: color.alt,
+    padding: [40, 0],
+    margin: [-40, 0, 0],
+    borderBottom: '1px solid #eee'
   }
 
   $Contain = {
@@ -62,7 +66,6 @@ view Install {
     border: `${1}px solid #ddd`,
     fontWeight: 600,
     background: '#fff',
-    color: color.brand2,
     borderRadius: 4,
     border: 'none',
     padding: [6, 0, 6, 14],
