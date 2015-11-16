@@ -40,8 +40,10 @@ view HeaderAlt {
   }
 }
 
+let already = false
+
 view Header {
-  let start = false
+  let start = already || false
 
   const triggerEvent = (id, name)  => {
     event = document.createEvent('CustomEvent')
@@ -68,6 +70,7 @@ view Header {
         id="headeriframe"
         onLoad={() => {
           start = true
+          already = true
           triggerEvent('headeriframe', 'start')
         }}
         iframe="/assets/examples/example.html" />
@@ -77,7 +80,7 @@ view Header {
   $ = {
     position: 'relative',
     overflow: 'hidden',
-    padding: [80, 10],
+    padding: [70, 10, 50],
     margin: [0, 0, 40],
     borderBottom: '1px solid rgba(0,0,0,0.05)',
     minWidth: 700,
@@ -106,7 +109,7 @@ view Header {
 
   $Nav = {
     position: 'absolute',
-    top: 25,
+    top: 20,
     right: '18%',
 
     [device.small] : {
@@ -166,7 +169,7 @@ view Nav {
   }
 
   $a = [style.link, {
-    color: '#888',
+    color: 'rgba(0,0,0,0.5)',
     borderBottom: 'none',
     fontSize: 15,
     fontWeight: 500,
@@ -241,12 +244,11 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 26,
-    fontWeight: 300,
+    fontSize: 22,
     lineHeight: '1.6rem',
-    padding: [5, 0, 20],
+    padding: [0, 0, 12],
     margin: [0, 'auto'],
     display: 'block',
-    color: 'rgba(0,0,0,0.6)'
+    color: 'rgba(0,0,0,0.5)'
   }
 }

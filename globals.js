@@ -26,6 +26,7 @@ color.text = '#444'
 color.strip = '#fff'
 
 const font = {}
+font.title = 'Bitter, Slab, Georgia, serif'
 font.sansSerif = 'Open Sans, Helvetica, sans-serif'
 font.monoSpace = 'Source Code Pro, Meslo, Inconsolata, Consolas, monospace'
 

@@ -15,9 +15,11 @@ view Install {
     </mainCode>
 
     <afterward>
-       <extra>or, npm install -g flint</extra>
+      <line>
+        Flint is free & open source (npm install -g flint)
+      </line>
 
-      <shields>
+      <shields if={false}>
         <a href="https://www.npmjs.com/package/flint" target="_blank">
           <img class="shield" src="https://img.shields.io/npm/dm/flint.svg" />
         </a>
@@ -28,7 +30,7 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    margin: [5, 0, 0]
+    margin: [5, 0, 20]
   }
 
   $Contain = {
@@ -72,12 +74,13 @@ view Install {
   }
 
   $afterward = {
-    display: 'block',
     margin: [5, 'auto', 0],
-    flexFlow: 'row',
     color: '#999',
-    fontSize: 18,
-    fontFamily: font.monoSpace
+    fontSize: 16
+  }
+
+  $line = {
+    margin: [2, 0]
   }
 
   $shields = {
@@ -91,8 +94,7 @@ view Install {
   }
 
   $extra = {
-    display: 'inline',
-    fontWeight: 300
+    fontFamily: font.monoSpace
   }
 
   $shield = {

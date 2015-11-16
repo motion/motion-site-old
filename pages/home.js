@@ -1,6 +1,12 @@
 view Home {
   <Blur left="45%" top={-200} />
   <Header />
+  <welcome>
+    <span>Flint removes the framework</span>
+    <span>It smartly connects compiler, editor & browser</span>
+    <span class="wow">It's a leap forward for frontend development</span>
+  </welcome>
+  <Diagram />
   <Install title />
   <Video if={false} />
   <Examples />
@@ -15,10 +21,19 @@ view Home {
   $ = { width: '100%' }
 
   $welcome = {
-    margin: [80, 'auto', 30],
+    fontSize: 24,
+    color: 'rgba(0,0,0,0.6)',
+    fontWeight: 300,
+    lineHeight: 1.9,
+    margin: [10, 'auto', 55],
     textAlign: 'center',
-    maxWidth: 450,
-    zIndex: 100
+    maxWidth: 650,
+    zIndex: 100,
+    fontFamily: font.title
+  }
+
+  $wow = {
+    color: color.brand2
   }
 }
 

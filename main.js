@@ -31,6 +31,7 @@ view Main {
   <Examples route={routes.examples} />
   <Docs route={routes.docs} />
   <Community route={routes.community} />
+  <Test route="/test" />
 
   $ = {
     color: color.text,

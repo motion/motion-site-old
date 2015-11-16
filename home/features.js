@@ -41,9 +41,8 @@ view Features {
         <col>
           <title>Smart Errors</title>
           <description>
-            No disruptions. Runtime and compile
-            errors are shown inline and handled smartly.
-            Flint even helps with typos and suggests edits.
+            Your app never breaks as you edit. Runtime and compile
+            errors are shown inline and handled smartly, with helpful messages.
           </description>
         </col>
       </text>
@@ -110,8 +109,9 @@ view Features {
   }
 
   $title = {
-    fontSize: 22,
-    margin: [-10, 0, 0]
+    fontFamily: font.title,
+    fontSize: 20,
+    margin: [-10, 0, 5]
   }
 
   $col = {
@@ -120,7 +120,7 @@ view Features {
   }
 
   $description = {
-    fontSize: 20,
+    fontSize: 19,
     color: '#777',
     lineHeight: 1.5,
     fontWeight: 300

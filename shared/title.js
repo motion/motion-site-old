@@ -12,6 +12,7 @@ view Title {
   }
 
   $h2 = [style.textGradient, {
+    fontFamily: font.title,
     fontSize: size,
     padding: [pad, 0],
     marginTop: 20,

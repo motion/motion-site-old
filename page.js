@@ -15,8 +15,8 @@ view Page {
   }
 
   $Contain = {
-    width: '80%',
-    maxWidth: 820,
+    maxWidth: 900,
+    margin: 'auto',
     flexFlow: 'row',
 
     [device.small]: {

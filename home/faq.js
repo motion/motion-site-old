@@ -91,6 +91,7 @@ view FAQ {
 
   $question = {
     fontSize: 20,
+    fontFamily: font.title,
     display: 'block'
   }
 

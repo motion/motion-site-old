@@ -1,14 +1,16 @@
 view Interlude {
   <interlude-h2 yield />
 
-  $h2 = [style.textGradient, {
+  $h2 = [{
     textAlign: view.props.right ? 'right': 'left',
-    fontSize: 26,
+    fontSize: 24,
     margin: [40, 'auto'],
-    padding: [16, 0],
-    fontWeight: 300,
+    padding: [22, 0],
+    fontFamily: font.title,
     zIndex: 100,
     textAlign: 'center',
+    fontWeight: 300,
+    color: 'rgba(0,0,0,0.5)',
 
     [device.small]: {
       fontSize: 22,
