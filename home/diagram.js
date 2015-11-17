@@ -1,6 +1,6 @@
 view Diagram {
-  <Contain>
-    <line />
+  <Contain maxWidth="1300">
+    <line class="across" />
 
     <section class="side">
       <col>
@@ -8,19 +8,23 @@ view Diagram {
         <Icon.Browser class="icon" />
       </col>
       <p>
-        <strong>Smarter reloads</strong> hot swap instantly without losing state.
-        Run & compile errors. Jump to editor from any view.
+        <strong>Smart reloads</strong> hot swap instantly and keep state.
+        Inline <strong>safe</strong> errors. <strong>Inspect & jump</strong> to editor.
       </p>
     </section>
 
+    <line class="slantl" />
+
     <section class="point">
-      <title>Compiler</title>
       <Icon.Flint class="icon" />
+      <title class="below">Compiler</title>
       <p>
-        Inline styles that static extract to CSS.&nbsp;
+        Fast build system, statically extracts CSS for insane hot reloads.&nbsp;
         <strong>Automatic npm installs</strong>, injected into running app.
       </p>
     </section>
+
+    <line class="slantr" />
 
     <section class="side right">
       <col>
@@ -75,6 +79,7 @@ view Diagram {
   $side = {
     flexFlow: 'row-reverse',
     width: '60%',
+    padding: [0],
     margin: [0, sidePull, 0, 0],
     textAlign: 'right'
   }
@@ -86,7 +91,7 @@ view Diagram {
   }
 
   $point = {
-    margin: [200, 0, 0]
+    margin: [200, -50, 0]
   }
 
   $col = {
@@ -106,6 +111,10 @@ view Diagram {
     margin: [-5, 0, 4, 0]
   }
 
+  $below = {
+    margin: [10, 0, -15],
+  }
+
   $icon = {
     margin: [0, 12]
   }
@@ -116,15 +125,38 @@ view Diagram {
 
   $line = {
     height: 1,
+    width: 200,
     position: 'absolute',
-    top: 90,
-    left: '40%',
-    right: '40%',
     background: '#eee',
     zIndex: 0,
 
     [device.small]: {
       display: 'none'
+    }
+  }
+
+  $across = {
+    top: 90,
+    left: '40%',
+  }
+
+  $slantl = {
+    top: '40%',
+    left: '50%',
+    margin: [0, 0, 0, -130],
+    width: 140,
+    transform: {
+      rotate: `48deg`
+    }
+  }
+
+  $slantr = {
+    top: '40%',
+    right: '50%',
+    margin: [0, -130, 0, 0],
+    width: 140,
+    transform: {
+      rotate: `-48deg`
     }
   }
 }
