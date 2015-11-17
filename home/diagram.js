@@ -100,13 +100,15 @@ view Diagram {
 
   $p = {
     margin: [20, 0, 0],
-    fontSize: 15
+    fontSize: 15,
+    lineHeight: 1.7,
+    color: '#616161'
   }
 
   $title = {
     fontFamily: font.title,
     textAlign: 'center',
-    color: '#555',
+    color: '#333',
     fontSize: 17,
     margin: [-5, 0, 4, 0]
   }

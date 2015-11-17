@@ -57,7 +57,12 @@ view Icon.Editor {
 }
 
 view Icon.Flint {
+  let pulsing = false
+
+  on.every(2000, () => pulsing = !pulsing)
+
   <img src="/assets/flint.svg" />
+  <pulse />
 
   const base = 1.5
 
@@ -65,7 +70,8 @@ view Icon.Flint {
     border: '2px solid #eee',
     width: size / base,
     height: size / base,
-    borderRadius: 100
+    borderRadius: 100,
+    position: 'relative'
   }
 
   $img = {
@@ -75,6 +81,22 @@ view Icon.Flint {
     margin: -2,
     transform: {
       scale: 0.9
+    }
+  }
+
+  $pulse = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    opacity: pulsing ? 0 : 1,
+    margin: -2,
+    width: size / base,
+    height: size / base,
+    border: '2px solid #eee',
+    borderRadius: 100,
+    transition: pulsing && 'all ease-in 1500ms',
+    transform: {
+      scale: pulsing ? 1.5 : 1
     }
   }
 }
