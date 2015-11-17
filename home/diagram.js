@@ -42,12 +42,10 @@ view Diagram {
   $ = {
     flexFlow: 'row',
     padding: [0, 0, 40, 0],
-    margin: [0, 0, 40, 0],
     color: '#555',
     alignItems: 'space-around',
     justifyContent: 'center',
     position: 'relative',
-    borderBottom: '1px solid #eee',
 
     [device.small]: {
       width: 'auto',

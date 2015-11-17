@@ -53,34 +53,36 @@ view Header {
     frameWin.body.dispatchEvent(event)
   }
 
-  <Nav />
-  <Example
-    flipVertical
-    inStyle={instyle}
-    out={
-      <head>
-        <Logo />
-        <Desc start={start} />
-        <Social />
-      </head>
-    }
-    in={
-      <Editor right
-        lines={7}
-        id="headeriframe"
-        onLoad={() => {
-          start = true
-          already = true
-          triggerEvent('headeriframe', 'start')
-        }}
-        iframe="/assets/examples/example.html" />
-    }
-  />
+  <Contain>
+    <Nav />
+    <Example
+      flipVertical
+      inStyle={instyle}
+      out={
+        <head>
+          <Logo />
+          <Desc start={start} />
+          <Social />
+        </head>
+      }
+      in={
+        <Editor right
+          lines={7}
+          id="headeriframe"
+          onLoad={() => {
+            start = true
+            already = true
+            triggerEvent('headeriframe', 'start')
+          }}
+          iframe="/assets/examples/example.html" />
+      }
+    />
+  </Contain>
 
   $ = {
     position: 'relative',
     overflow: 'hidden',
-    padding: [70, 10, 45],
+    padding: [60, 10, 45],
     margin: [0, 0, 30],
     borderBottom: '1px solid rgba(0,0,0,0.05)',
     minWidth: 700,
@@ -109,8 +111,8 @@ view Header {
 
   $Nav = {
     position: 'absolute',
-    top: 20,
-    right: '18%',
+    top: -50,
+    right: 125,
 
     [device.small] : {
       justifyContent: 'center',
@@ -249,6 +251,6 @@ view Desc {
     padding: [0, 0, 12],
     margin: [0, 'auto'],
     display: 'block',
-    color: color(color.alt).darken(3)
+    color: color(color.alt).darken(2.4)
   }
 }

@@ -2,10 +2,10 @@ view Home {
   <Header />
   <welcome>
     <span class="wow">Frontend, without the framework</span>
-    <span>Flint is a powerful compiler that unites editor & browser</span>
+    <span>Flint is a compiler that unites editor & browser</span>
   </welcome>
   <Diagram />
-  <welcome class="secondary">
+  <welcome if={false} class="secondary">
     <span>Build state of the art apps on React</span>
     <span>without touching a config file or build system.</span>
   </welcome>

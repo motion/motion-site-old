@@ -1,5 +1,7 @@
 view Link {
-  <link-a onClick={() => go(view.props.to)} {...view.props} />
+  let to = view.props.to
+
+  <link-a onClick={to && Flint.router.link(to)} {...view.props} />
 
   $ = [style.link]
 }

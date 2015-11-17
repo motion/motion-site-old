@@ -29,15 +29,16 @@ view Install {
   </Contain>
 
   $ = {
+    background: color.alt,
     textAlign: 'center',
-    padding: [40, 0],
-    margin: [-50, 0, 0],
-    borderBottom: '1px solid #eee'
+    padding: [35, 0, 40, 0],
+    borderBottom: '1px solid #eee',
+    borderTop: '1px solid #eee'
   }
 
   $Interlude = {
-    margin: [-25, 'auto', 0],
-    fontSize: 22,
+    margin: [-20, 'auto', -5],
+    fontSize: 26,
     color: color.brand2
   }
 
