@@ -1,5 +1,5 @@
 view Powered {
-  <Interlude>Powered by</Interlude>
+  <Interlude>Powered by the node community</Interlude>
 
   <Contain>
     <cloud>

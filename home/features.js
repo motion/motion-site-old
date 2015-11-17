@@ -77,6 +77,16 @@ view Features {
           </description>
         </col>
       </text>
+
+      <text class="right small">
+        <col>
+          <title>Builds to production</title>
+          <description>
+            Builds all your assets, concats, minifies, sourcemaps,
+            autoprefixes, and outputs all your files for you.
+          </description>
+        </col>
+      </text>
     </section>
 
     <Next to='/docs/intro'>Learn more in the docs</Next>
