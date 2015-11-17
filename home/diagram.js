@@ -91,7 +91,7 @@ view Diagram {
   }
 
   $point = {
-    margin: [200, -50, 0]
+    margin: [170, -50, 0]
   }
 
   $col = {
@@ -110,7 +110,7 @@ view Diagram {
     textAlign: 'center',
     color: '#333',
     fontSize: 17,
-    margin: [-5, 0, 4, 0]
+    margin: [-5, 0, 0, 0]
   }
 
   $below = {

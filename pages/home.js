@@ -1,10 +1,14 @@
 view Home {
   <Header />
   <welcome>
-    <span class="wow">Flint is frontend without the framework</span>
-    <span>It&#39;s a compiler that unites your editor & browser</span>
+    <span class="wow">Frontend, without the framework</span>
+    <span>Flint is a powerful compiler that unites editor & browser</span>
   </welcome>
   <Diagram />
+  <welcome class="secondary">
+    <span>Build state of the art apps on React</span>
+    <span>without touching a config file or build system.</span>
+  </welcome>
   <Install title />
   <Examples />
   <Features />
@@ -36,9 +40,13 @@ view Home {
   }
 
   $wow = [style.textGradient, {
-    fontSize: 30,
+    fontSize: 32,
     color: color.brand2
   }]
+
+  $secondary = {
+    fontSize: 20
+  }
 }
 
 view Video {

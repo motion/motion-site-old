@@ -3,8 +3,8 @@ view Install {
   const select = () => view.refs.code.select()
 
   <Contain id="install">
-    <Interlude style={{margin: [-25, 'auto', 0]}} center if={view.props.title}>
-      Install
+    <Interlude center if={view.props.title}>
+      Install in a minute
     </Interlude>
 
     <mainCode>
@@ -31,8 +31,14 @@ view Install {
   $ = {
     textAlign: 'center',
     padding: [40, 0],
-    margin: [-40, 0, 0],
+    margin: [-50, 0, 0],
     borderBottom: '1px solid #eee'
+  }
+
+  $Interlude = {
+    margin: [-25, 'auto', 0],
+    fontSize: 22,
+    color: color.brand2
   }
 
   $Contain = {
