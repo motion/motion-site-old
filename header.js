@@ -82,7 +82,7 @@ view Header {
   $ = {
     position: 'relative',
     overflow: 'hidden',
-    padding: [60, 10, 45],
+    padding: [60, 10, 40],
     margin: [0, 0, 30],
     borderBottom: '1px solid rgba(0,0,0,0.05)',
     minWidth: 700,
@@ -101,7 +101,7 @@ view Header {
   }
 
   $head = {
-    margin: [-10, '-25%', 0, 0],
+    margin: [-5, '-25%', 0, 0],
     minWidth: 400,
 
     [device.small]: {
@@ -111,7 +111,7 @@ view Header {
 
   $Nav = {
     position: 'absolute',
-    top: -50,
+    top: -40,
     right: 125,
 
     [device.small] : {

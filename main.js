@@ -1,3 +1,6 @@
+import tapEvents from 'react-tap-event-plugin'
+tapEvents()
+
 import hljs from './hljs/hljs'
 import flintLang from './hljs/javascript-flint'
 import xml from './hljs/xml'
