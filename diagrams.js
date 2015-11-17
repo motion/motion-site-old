@@ -59,12 +59,12 @@ view Icon.Editor {
 view Icon.Flint {
   let pulsing = false
 
-  on.every(2000, () => pulsing = !pulsing)
+  on.every(1000, () => pulsing = !pulsing)
 
   <img src="/assets/flint.svg" />
   <pulse />
 
-  const base = 1.5
+  const base = 1.3
 
   $ = {
     border: '2px solid #eee',
@@ -75,12 +75,18 @@ view Icon.Flint {
   }
 
   $img = {
+    filter: 'grayscale(1) brightness(1.8)',
     width: size / base,
     height: size / base,
     margin: 'auto',
     margin: -2,
+    transition: 'all ease-in 300ms',
     transform: {
       scale: 0.9
+    },
+
+    hover: {
+      filter: 'none'
     }
   }
 
@@ -94,10 +100,11 @@ view Icon.Flint {
     height: size / base,
     border: '2px solid #eee',
     borderRadius: 100,
-    transition: pulsing && 'all ease-in 1500ms',
+    transition: pulsing && 'all ease-in 1000ms',
     transform: {
       scale: pulsing ? 1.5 : 1
-    }
+    },
+    pointerEvents: 'none'
   }
 }
 
