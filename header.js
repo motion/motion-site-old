@@ -249,6 +249,6 @@ view Desc {
     padding: [0, 0, 12],
     margin: [0, 'auto'],
     display: 'block',
-    color: 'rgba(0,0,0,0.6)'
+    color: color(color.alt).darken(3)
   }
 }

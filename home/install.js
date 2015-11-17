@@ -30,7 +30,6 @@ view Install {
 
   $ = {
     textAlign: 'center',
-    background: color.alt,
     padding: [40, 0],
     margin: [-40, 0, 0],
     borderBottom: '1px solid #eee'
