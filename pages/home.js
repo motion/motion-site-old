@@ -10,6 +10,7 @@ view Home {
     <span>without touching a config file or build system.</span>
   </welcome>
   <Install title />
+  <Performance />
   <Examples />
   <Features />
   <DemoVideo />
