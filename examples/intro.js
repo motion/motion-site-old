@@ -1,12 +1,20 @@
-view Examples.Mult {
+view Examples.Intro {
   <top>
     <Title>
-      Multiplication Game
+      Examples
     </Title>
-    <code-a href="http://github.com">See code on Github</code-a>
   </top>
 
   <Text big>
+    Flint is easy to learn up front, but contains a lot of power. It runs
+    on Babel which means you have the full power of the modern versions of JavaScript.
+  </Text>
+
+  <Text>
+    Check out the examples in the sidebar to learn more, or <Link href="https://github.com/flintjs/examples">check out our github repo</Link> where we push cool demos as we make them.
+  </Text>
+
+  <Text>
     In this example we introduce Flint by building a simple game.
     In the game the user solves multiplication problems, and can
     see their streak of correct guesses.
@@ -102,7 +110,6 @@ view Examples.Mult {
   $code = {
     marginRight: 15,
     marginTop: 10,
-    fontSize: 25,
     textDecoration: 'none',
     color: '#aaa',
     ':hover': {

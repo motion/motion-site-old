@@ -1,6 +1,6 @@
 const examples = [
-  { title: "Multiplication Game", view: 'Mult', slug: 'mult' },
-  { title: "Advanced Fetch", view: 'Arena', slug: 'fetch' },
+  { title: "Intro", view: 'Intro', slug: 'intro' },
+  { title: "Fetch", view: 'Arena', slug: 'fetch' },
 ]
 
 view Examples {
@@ -10,8 +10,4 @@ view Examples {
       content={examples}
       route="/examples/:slug" />
   </Page>
-
-  $RoutedContent = {
-    width: '120%'
-  }
 }

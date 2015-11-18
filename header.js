@@ -153,7 +153,7 @@ view Nav {
 
   const links = [
     { children: 'Docs', ...routeProps(routes.docs + '/intro')  },
-    { children: 'Examples', ...routeProps(routes.examples + '/mult')  },
+    { children: 'Examples', ...routeProps(routes.examples + '/intro')  },
     { children: 'Install', href: '#install', onClick: showInstall  },
   ]
 

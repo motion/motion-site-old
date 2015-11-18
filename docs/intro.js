@@ -2,23 +2,24 @@ view Docs.Intro {
   <Title big>What is Flint?</Title>
   <Body>
     <Text big>
-      It's a simple macro on top of ES6 that brings
-      an concise language to write web sites & apps faster, and more easily.
+      Flint is a rethinking of modern development. It combines a powerful compiler, and strong integration between browser and editor.  With Flint's view macro, you can use JavaScript to write modern web apps.
     </Text>
 
     <Text>
-      It's a step back to the basics. There's one abstraction: a <code>view</code>.
-
-      Views are just JavaScript. They replace HTML, CSS and your framework of choice with a simple syntax.
-      Views have variables, JSX and style. When a variable changes, your view updates automatically.
+      There's one abstraction in Flint: the <code>view</code>.
     </Text>
 
     <Text>
-      We know how we like to build apps today: small components that encapsulate all they need. Today, we have libraries to that let us do this, but eventually we'll want a first class language that understands what we build. Flint is the result of an extensive and ongoing process to make that available today.
+      Views replace HTML, CSS and your framework of choice with a simple statement: the view.
+      Views contain their logic, markup and style. Use normal JavaScript inside of them. When a variable changes, your view stays up to date.
     </Text>
 
     <Text>
-      Flint is built on the shoulders of giants. It runs on ES6, npm, Gulp, Babel, Webpack, React, Bluebird, and many many more libraries. It will always be open source, and we are actively interesting in building the best developer community around. Also, please <Link to="/community">read our community guidelines</Link> before you become active!
+      We like to build apps using small components that encapsulate all they need. Today, we have libraries to that let us do this but eventually we'll want a first class language that understands how we build. Flint is the result of an extensive and ongoing process to make that available.
+    </Text>
+
+    <Text>
+      Flint runs on node. It's powered by ES6, npm, Gulp, Babel, Webpack, React, Bluebird, and many more libraries. It's open source, and we are actively interesting in building an amazing developer community. Please <Link to="/community">read our community guidelines</Link> before joining!
     </Text>
 
     <Title>Super Hot Reloads</Title>

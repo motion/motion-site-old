@@ -9,13 +9,16 @@ view Page {
   <Footer />
 
   $ = {
+    fontSize: 18,
+    lineHeight: 1.8,
+
     [device.small]: {
       flexFlow: 'column'
     }
   }
 
   $Contain = {
-    maxWidth: 900,
+    maxWidth: 800,
     margin: 'auto',
     flexFlow: 'row',
 
@@ -63,6 +66,7 @@ view Page.Sidebar {
     padding: [10, 20],
     minWidth: 120,
     display: 'flex',
+    width: '100%',
     textAlign: 'right'
   }]
 }
