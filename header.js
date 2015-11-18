@@ -124,7 +124,7 @@ view Header {
   }
 
   $Editor = {
-    marginLeft: '5%',
+    marginLeft: '-2.5%',
     minWidth: 300,
     width: '60%'
   }

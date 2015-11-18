@@ -29,7 +29,7 @@ color.strip = '#fff'
 const font = {}
 font.title = 'Bitter, Slab, Georgia, serif'
 font.sansSerif = 'Open Sans, Helvetica, sans-serif'
-font.monoSpace = 'Source Code Pro, Meslo, Inconsolata, Consolas, monospace'
+font.monoSpace = '"Fira Code", Menlo, Meslo, Inconsolata, Source Code Pro, monospace'
 
 const device = {}
 device.small = '@media (max-width: 850px)'
