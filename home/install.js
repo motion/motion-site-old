@@ -38,7 +38,7 @@ view Install {
 
   $Interlude = {
     margin: [-20, 'auto', -5],
-    fontSize: 26,
+    fontSize: 31,
     color: color.brand2
   }
 

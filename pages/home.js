@@ -23,7 +23,7 @@ view Home {
   $ = { width: '100%' }
 
   $welcome = {
-    fontSize: 24,
+    fontSize: 25,
     color: 'rgba(0,0,0,0.7)',
     fontWeight: 300,
     lineHeight: 1.75,

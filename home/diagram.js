@@ -1,3 +1,30 @@
+view Attr {
+  let hovered = false
+
+  <attr onMouseEnter={() => hovered = true} onMouseLeave={() => hovered = false}>
+    <text>{view.props.children}</text>
+    <Overlay active={hovered}>
+      {view.props.alt}
+    </Overlay>
+  </attr>
+
+  $ = {
+    display: 'inline',
+    position: 'relative',
+    zIndex: 10000
+  }
+
+  $text = [{
+    display: 'inline',
+    color: color.brand1,
+    fontWeight: 600,
+    cursor: 'pointer'
+  }, hovered && {
+    fontWeight: 800,
+    textDecoration: 'underline'
+  }]
+}
+
 view Diagram {
   <Contain maxWidth="1300">
     <line class="across" />
@@ -8,8 +35,8 @@ view Diagram {
         <Icon.Browser class="icon" />
       </col>
       <p>
-        <strong>Smart reloads</strong> hot swap instantly and keep state.
-        Inline <strong>safe</strong> errors. <strong>Inspect & jump</strong> to editor.
+        <Attr alt="When combined with Live updates, smart reloads bring a whole new experience">Smart reloads</Attr> hot swap instantly and keep state.
+        Inline <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break.">safe</Attr> errors. <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor.">Inspect & jump</Attr> to editor.
       </p>
     </section>
 
@@ -20,7 +47,7 @@ view Diagram {
       <title class="below">Compiler</title>
       <p>
         Fast build system, statically extracts CSS for insane hot reloads.&nbsp;
-        <strong>Automatic npm installs</strong>, injected into running app.
+        <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">Automatic npm installs</Attr>, injected into running app.
       </p>
     </section>
 
@@ -32,8 +59,8 @@ view Diagram {
         <Icon.Editor class="icon" />
       </col>
       <p>
-        <strong>Live updates</strong> as you type.&nbsp;
-        <strong>Focus</strong> mode: drag your numbers & colors.
+        <Attr alt="Updates your app with each character, avoids writing to file system.">Live coding</Attr> with Atom.&nbsp;
+        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode: drag your numbers & colors.
         Inline errors from compiler.
       </p>
     </section>
@@ -46,6 +73,7 @@ view Diagram {
     alignItems: 'space-around',
     justifyContent: 'center',
     position: 'relative',
+    zIndex: 1000,
 
     [device.small]: {
       width: 'auto',

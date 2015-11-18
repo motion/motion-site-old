@@ -68,6 +68,7 @@ view Icon.Flint {
 
   $ = {
     border: '2px solid #eee',
+    background: '#fff',
     width: size / base,
     height: size / base,
     borderRadius: 100,
