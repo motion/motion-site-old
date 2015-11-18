@@ -26,37 +26,46 @@ view Attr {
 }
 
 view Diagram {
+  let hover = false
+
+  function sectionHover(i) {
+    return {
+      onMouseEnter: () => hover = i,
+      onMouseLeave: () => hover = false
+    }
+  }
+
   <Contain maxWidth="1300">
     <line class="across" />
 
-    <section class="side">
+    <section {...sectionHover(1)} class="side">
       <col>
         <title>Browser</title>
-        <Icon.Browser class="icon" />
+        <Icon.Browser class="icon" highlight={hover == 1} />
       </col>
       <p>
-        <Attr alt="When combined with Live updates, smart reloads bring a whole new experience">Smart reloads</Attr> hot swap instantly and keep state.
+        <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smart reloads</Attr> hot swap instantly and keep state.
         Inline <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break.">safe</Attr> errors. <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor.">Inspect & jump</Attr> to editor.
       </p>
     </section>
 
     <line class="slantl" />
 
-    <section class="point">
-      <Icon.Flint class="icon" />
+    <section {...sectionHover(2)} class="point">
+      <Icon.Flint class="icon" highlight={hover == 2} />
       <title class="below">Compiler</title>
       <p>
         Fast build system, statically extracts CSS for insane hot reloads.&nbsp;
-        <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">Automatic npm installs</Attr>, injected into running app.
+        <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">Automatic npm installs</Attr> inject right into your app.
       </p>
     </section>
 
     <line class="slantr" />
 
-    <section class="side right">
+    <section {...sectionHover(3)} class="side right">
       <col>
         <title>Editor</title>
-        <Icon.Editor class="icon" />
+        <Icon.Editor class="icon" highlight={hover == 3} />
       </col>
       <p>
         <Attr alt="Updates your app with each character, avoids writing to file system.">Live coding</Attr> with Atom.&nbsp;

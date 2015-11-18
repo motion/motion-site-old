@@ -1,7 +1,13 @@
 const size = 100
 
 view Icon.Window {
-  <window>
+  let highlight
+
+  on.props(() => {
+    highlight = view.props.highlight
+  })
+
+  <window class={{ highlight }}>
     <Toolbar light />
     {view.props.top}
     <inner>
@@ -9,42 +15,49 @@ view Icon.Window {
     </inner>
   </window>
 
-  $ = {
+  $window = {
     width: size,
     height: size,
     border: '2px solid rgba(0,0,0,0.1)',
     margin: 10,
     borderRadius: 5,
-    background: '#fff'
+    background: '#fff',
+    transition: 'all ease-in 500ms',
   }
 
   $inner = {
     padding: 5,
-    color: '#999'
+    color: '#555'
+  }
+
+  $highlight = {
+    boxShadow: '0 0 20px rgba(0,0,0,0.1)',
+    borderColor: 'rgba(0,0,0,0.15)',
+    opacity: 1
   }
 }
 
 view Icon.Browser {
-  <Icon.Window top={
+  <Icon.Window yield top={
     <top>
       <url class="item" />
     </top>
   } />
 
   $top = {
-    borderBottom: '1px solid #eee',
+    borderBottom: '1px solid #ddd',
     height: 15
   }
 
   $item = {
-    border: '1px solid #eee',
+    border: '1px solid #ddd',
     margin: 3,
     height: '100%'
   }
 }
 
 view Icon.Editor {
-  <Icon.Window>
+  <Icon.Window yield>
     <line repeat={10} />
   </Icon.Window>
 
@@ -58,6 +71,11 @@ view Icon.Editor {
 
 view Icon.Flint {
   let pulsing = false
+  let highlight
+
+  on.props(() => {
+    highlight = view.props.highlight
+  })
 
   on.every(1000, () => pulsing = !pulsing)
 
@@ -76,7 +94,7 @@ view Icon.Flint {
   }
 
   $img = {
-    filter: 'grayscale(1) brightness(1.8)',
+    filter: highlight ? 'none' : 'grayscale(1) brightness(1.8)',
     width: size / base,
     height: size / base,
     margin: 'auto',
@@ -84,10 +102,6 @@ view Icon.Flint {
     transition: 'all ease-in 300ms',
     transform: {
       scale: 0.9
-    },
-
-    hover: {
-      filter: 'none'
     }
   }
 

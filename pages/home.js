@@ -124,7 +124,7 @@ view Home.Examples {
 
     <section>
       <Interlude center>
-        Flint runs on ES6, npm & React
+        Flint works with ES6, npm & React
       </Interlude>
 
       <DemoCircles />
