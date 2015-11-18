@@ -30,11 +30,13 @@ view Main {
   )
 
   <Password onShow={passCorrect} if={!hidePass} />
-  <Home route={routes.home} />
-  <Examples route={routes.examples} />
-  <Docs route={routes.docs} />
-  <Community route={routes.community} />
-  <Test route="/test" />
+
+  <site if={hidePass}>
+    <Home route={routes.home} />
+    <Examples route={routes.examples} />
+    <Docs route={routes.docs} />
+    <Community route={routes.community} />
+  </site>
 
   $ = {
     color: color.text,
