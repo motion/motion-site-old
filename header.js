@@ -53,7 +53,7 @@ view Header {
     frameWin.body.dispatchEvent(event)
   }
 
-  <Contain maxWidth={830}>
+  <Contain maxWidth={750}>
     <Nav />
     <Example
       flipVertical
@@ -117,7 +117,7 @@ view Header {
   $Nav = {
     position: 'absolute',
     top: -45,
-    right: 180,
+    right: 82,
 
     [device.small] : {
       justifyContent: 'center',
@@ -129,7 +129,6 @@ view Header {
   }
 
   $Editor = {
-    marginLeft: '-2.5%',
     minWidth: 300,
     width: '60%',
 
