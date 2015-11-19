@@ -108,7 +108,7 @@ view Home.Examples {
   <Contain alt>
     <section>
       <Interlude center left>
-        Flint introduces the view to JavaScript
+        Learn Flint in two minutes
       </Interlude>
 
       <DemoCounter />

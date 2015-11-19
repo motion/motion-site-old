@@ -57,7 +57,7 @@ view Editor {
 
   $Code = {
     margin: 0,
-    padding: [0, 14],
+    padding: 13,
     border: 'none',
     boxShadow: 'none'
   }

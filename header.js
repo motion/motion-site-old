@@ -187,7 +187,7 @@ view Nav {
     cursor: 'pointer'
   }]
 
-  $.active = {
+  $active = {
     fontWeight: 600,
     color: '#000'
   }
