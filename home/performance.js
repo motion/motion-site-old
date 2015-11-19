@@ -6,17 +6,17 @@ view Performance {
 
     <section>
       <title>Faster</title>
-      <p>Flint injects individual files rather than a big bundle. For hot reloads up to 10x faster & in constant time.</p>
+      <p>Flint injects single files rather than one big bundle. Up to 10x faster & in constant time.</p>
     </section>
 
     <section>
       <title>Safer</title>
-      <p>Views keep state as you edit, updating only when necessary. Even deep children keep state as you change parents.</p>
+      <p>Views keep state as you edit. Even child views retain state while editing parents.</p>
     </section>
 
     <section>
       <title>Smarter</title>
-      <p>Flint extracts and hot updates static styles into CSS. It even prevents re-renders, injecting only styles when possible.</p>
+      <p>Flint extracts and hot updates static styles as CSS. JS isn't even run when possible!</p>
     </section>
   </Contain>
 
@@ -54,7 +54,8 @@ view Performance {
     fontFamily: font.title,
     fontSize: 18,
     margin: [-3, 0, 4],
-    color: '#666'
+    color: '#666',
+    color: color.brand2
   }
 
   $p = {

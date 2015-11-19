@@ -16,7 +16,7 @@ view Attr {
 
   $text = [{
     display: 'inline',
-    color: color.brand1,
+    color: color.brand2,
     fontWeight: 600,
     cursor: 'pointer'
   }, hovered && {
@@ -142,6 +142,7 @@ view Diagram {
 
   $title = {
     fontFamily: font.title,
+    color: color.brand2,
     textAlign: 'center',
     color: '#333',
     fontSize: 17,
@@ -154,10 +155,6 @@ view Diagram {
 
   $icon = {
     margin: [0, 12]
-  }
-
-  $strong = {
-    color: color.brand1
   }
 
   $line = {
