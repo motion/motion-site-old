@@ -58,35 +58,37 @@ view Features {
         </col>
       </text>
 
-      <text class="right small">
-        <col>
-          <title>Use &lt;React /&gt; components</title>
-          <description>
-            With automatic installs you can import and use any React
-            component instantly, without even losing your current state.
-          </description>
-        </col>
-      </text>
+      <thirdwrap>
+        <text class="third">
+          <col>
+            <title>Use &lt;React /&gt; components</title>
+            <description>
+              Automatic installs to import and use any React
+              component instantly, without losing state.
+            </description>
+          </col>
+        </text>
 
-      <text class="small">
-        <col>
-          <title>Performance by default</title>
-          <description>
-            Out of the box Flint optimizes React to give you even better performance
-            in development and production.
-          </description>
-        </col>
-      </text>
+        <text class="third">
+          <col>
+            <title>Performance by default</title>
+            <description>
+              Flint optimizes React to give you even better performance
+              in development and production.
+            </description>
+          </col>
+        </text>
 
-      <text class="right small">
-        <col>
-          <title>Builds to production</title>
-          <description>
-            Builds all your assets, concats, minifies, sourcemaps,
-            autoprefixes, and outputs all your files for you.
-          </description>
-        </col>
-      </text>
+        <text class="third">
+          <col>
+            <title>Builds to production</title>
+            <description>
+              Builds your assets, concats, minifies, sourcemaps,
+              autoprefixes, and outputs all your files for you.
+            </description>
+          </col>
+        </text>
+      </thirdwrap>
     </section>
 
     <Next to='/docs/intro'>Learn more in the docs</Next>
@@ -143,6 +145,26 @@ view Features {
     margin: [0, '10%']
   }
 
+  $third = {
+    width: '33%',
+    margin: [0],
+
+    [device.small]: {
+      width: '100%'
+    }
+  }
+
+  $thirdwrap = {
+    flexFlow: 'row',
+    margin: [50, 0, 0],
+    padding: [50, 0, 0],
+    borderTop: '1px solid #eee',
+
+    [device.small]: {
+      flexFlow: 'column'
+    }
+  }
+
   $title = {
     fontFamily: font.title,
     fontSize: 20,
@@ -155,7 +177,7 @@ view Features {
   }
 
   $description = {
-    fontSize: 19,
+    fontSize: 18,
     color: '#777',
     lineHeight: 1.5,
     fontWeight: 300

@@ -22,7 +22,7 @@ view Icon.Window {
     margin: 10,
     borderRadius: 5,
     background: '#fff',
-    transition: 'all ease-in 500ms',
+    transition: 'all ease-in 300ms',
   }
 
   $inner = {

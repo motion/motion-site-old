@@ -55,7 +55,7 @@ view Diagram {
       <Icon.Flint class="icon" highlight={hover == 2} />
       <title class="below">Compiler</title>
       <p>
-        Fast build system, statically extracts CSS for insane hot reloads.&nbsp;
+        Fast build system statically extracts CSS for insane hot reloads.&nbsp;
         <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">Automatic npm installs</Attr> inject right into your app.
       </p>
     </section>
@@ -69,8 +69,7 @@ view Diagram {
       </col>
       <p>
         <Attr alt="Updates your app with each character, avoids writing to file system.">Live coding</Attr> with Atom.&nbsp;
-        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode: drag your numbers & colors.
-        Inline errors from compiler.
+        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode lets you drag your numbers and colors. Shows inline errors.
       </p>
     </section>
   </Contain>
@@ -122,7 +121,7 @@ view Diagram {
   $right = {
     flexFlow: 'row',
     margin: [0, 0, 0, sidePull],
-    textAlign: 'left'
+    textAlign: 'left',
   }
 
   $point = {

@@ -3,14 +3,14 @@ view Interlude {
 
   $h2 = {
     textAlign: view.props.right ? 'right': 'left',
-    fontSize: 24,
-    margin: [48, 'auto'],
+    fontSize: 22,
+    margin: [40, 'auto'],
     padding: [23, 0],
     fontFamily: font.title,
     zIndex: 100,
     textAlign: 'center',
     fontWeight: 300,
-    color: '#43443d',
+    color: '#666',
 
     [device.small]: {
       fontSize: 22,
