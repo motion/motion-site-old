@@ -44,6 +44,7 @@ view Page.Sidebar {
 
   $ = {
     borderRight: '1px solid #ddd',
+    minWidth: 120,
     margin: 20,
     marginLeft: 0,
 

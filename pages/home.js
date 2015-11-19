@@ -42,7 +42,8 @@ view Home {
 
   $wow = [style.textGradient, {
     fontSize: 32,
-    color: color.brand2
+    color: color.brand2,
+    lineHeight: 1.4
   }]
 
   $secondary = {

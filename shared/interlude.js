@@ -2,7 +2,6 @@ view Interlude {
   <interlude-h2 yield />
 
   $h2 = {
-    textAlign: view.props.right ? 'right': 'left',
     fontSize: 22,
     margin: [40, 'auto'],
     padding: [23, 0],

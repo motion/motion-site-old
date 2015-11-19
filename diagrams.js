@@ -19,7 +19,7 @@ view Icon.Window {
     width: size,
     height: size,
     border: '2px solid rgba(0,0,0,0.1)',
-    margin: 10,
+    margin: [10, 'auto'],
     borderRadius: 5,
     background: '#fff',
     transition: 'all ease-in 300ms',

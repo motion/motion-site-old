@@ -53,11 +53,12 @@ view Header {
     frameWin.body.dispatchEvent(event)
   }
 
-  <Contain>
+  <Contain maxWidth={830}>
     <Nav />
     <Example
       flipVertical
       inStyle={instyle}
+      outStyle={{ width: 280 }}
       out={
         <head>
           <Logo />
@@ -106,17 +107,17 @@ view Header {
 
   $head = {
     margin: [-5, '-25%', 0, 0],
-    minWidth: 400,
+    width: 400,
 
     [device.small]: {
-      margin: 0
+      margin: 'auto'
     }
   }
 
   $Nav = {
     position: 'absolute',
-    top: -40,
-    right: 125,
+    top: -45,
+    right: 180,
 
     [device.small] : {
       justifyContent: 'center',
@@ -130,7 +131,11 @@ view Header {
   $Editor = {
     marginLeft: '-2.5%',
     minWidth: 300,
-    width: '60%'
+    width: '60%',
+
+    [device.small]: {
+      margin: 'auto'
+    }
   }
 
   const instyle = {
@@ -264,6 +269,7 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
+    fontWeight: 300,
     fontSize: 22,
     lineHeight: '1.6rem',
     padding: [0, 0, 12],

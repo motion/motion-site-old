@@ -4,7 +4,7 @@ view Install {
 
   <Contain id="install">
     <Interlude center if={view.props.title}>
-      Install in a minute
+      Try in a minute!
     </Interlude>
 
     <mainCode>
@@ -31,14 +31,13 @@ view Install {
   $ = {
     background: color.alt,
     textAlign: 'center',
-    padding: [35, 0, 40, 0],
+    padding: [25, 0, 30, 0],
     borderBottom: '1px solid #eee',
     borderTop: '1px solid #eee'
   }
 
   $Interlude = {
-    margin: [-20, 'auto', -5],
-    fontSize: 31,
+    margin: [-20, 'auto', -10],
     color: color.brand2
   }
 
@@ -54,7 +53,8 @@ view Install {
 
   $mainCode = {
     flexFlow: 'row',
-    margin: 'auto'
+    margin: 'auto',
+    maxWidth: 386
   }
 
   $code = {
@@ -65,12 +65,12 @@ view Install {
   $install = {
     flexFlow: 'row',
     color: '#555',
-    margin: [10, 'auto'],
+    margin: [10, 0],
   }
 
   $input = {
     border: `${1}px solid #ddd`,
-    color: '#666',
+    color: '#777',
     background: '#fff',
     borderRadius: 4,
     border: 'none',
@@ -88,7 +88,9 @@ view Install {
   }
 
   $line = {
-    margin: [2, 0]
+    margin: [0, 0, -2],
+    fontSize: 14,
+    opacity: 0.8
   }
 
   $shields = {
@@ -116,19 +118,18 @@ view Install {
 view Help {
   let hovered = false
 
-  <outer onMouseEnter={() => hovered = true} onMouseLeave={() => hovered = false}>
+  <help onMouseEnter={() => hovered = true} onMouseLeave={() => hovered = false}>
     <question>?</question>
     <modal>
       This script fixes npm -g permissions & sets default editor.&nbsp;
       <Link href="https://flint.love" target="_blank">View source.</Link>&nbsp;
       <span>or install with <code>npm install -g flint</code></span>
     </modal>
-  </outer>
+  </help>
 
   const size = 35
 
   $ = {
-    margin: 'auto',
     position: 'relative'
   }
 

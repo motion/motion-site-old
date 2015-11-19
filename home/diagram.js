@@ -52,8 +52,10 @@ view Diagram {
     <line class="slantl" />
 
     <section {...sectionHover(2)} class="point">
-      <Icon.Flint class="icon" highlight={hover == 2} />
-      <title class="below">Compiler</title>
+      <col class="reverse">
+        <title class="pointTitle">Compiler</title>
+        <Icon.Flint class="icon" highlight={hover == 2} />
+      </col>
       <p>
         Fast build system statically extracts CSS for insane hot reloads.&nbsp;
         <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">Automatic npm installs</Attr> inject right into your app.
@@ -102,9 +104,11 @@ view Diagram {
 
     [device.small]: {
       margin: 'auto',
-      width: '90%',
+      width: '100%',
       padding: [0, 20],
-      marginBottom: 30
+      marginBottom: 30,
+      flexFlow: 'row',
+      textAlign: 'left'
     }
   }
 
@@ -128,8 +132,31 @@ view Diagram {
     margin: [170, -50, 0]
   }
 
+  $pointTitle = {
+    margin: [10, 0, -10],
+
+    [device.small]: {
+      margin: [10, 0]
+    }
+  }
+
   $col = {
-    flexFlow: 'column'
+    flexFlow: 'column',
+    width: '100%',
+
+    [device.small]: {
+      width: 350,
+      marginLeft: -50
+    }
+  }
+
+  $reverse = {
+    flexFlow: 'column-reverse',
+
+    [device.small]: {
+      flexFlow: 'column',
+      marginLeft: -50, // bug in flint! this should come from $col
+    }
   }
 
   $p = {
@@ -148,12 +175,8 @@ view Diagram {
     margin: [-5, 0, 0, 0]
   }
 
-  $below = {
-    margin: [10, 0, -15],
-  }
-
   $icon = {
-    margin: [0, 12]
+    margin: [0, 'auto', 0]
   }
 
   $line = {
