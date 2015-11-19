@@ -123,6 +123,41 @@ view Docs.Events {
       }
     `} />
 
+    <Title>
+      Custom events
+    </Title>
+
+    <Text>
+      Warning! Custom events are great, but should be used sparingly. For larger apps, you'll want to check out patterns like Flux, Redux, or Observables to manage complex state.
+    </Text>
+
+    <Text>
+      Because <code>on</code> is just a lightweight wrapper around addEventListener that is smart about views we've added an <code>on.event</code> interface that gives you access to custom events.
+    </Text>
+
+    <Code source={`
+      view Main {
+        // listen for 'child:ran'
+        on.event('child:ran', () => {
+          console.log('received event from child')
+        })
+
+        <Child />
+      }
+
+      view Child {
+        // delay 1 second, then send event
+        on.delay(1000, () => {
+          on.event('child:ran') // send event with no callback argument
+        })
+      }
+    `} />
+
+    <Text>
+      By default, custom events are attached to the window. You can attach them to your view, or to any DOM node, by passing in an element as the first argument:
+    </Text>
+
+
     <Next to='/docs/routes'>Routes</Next>
   </Body>
 }

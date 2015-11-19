@@ -45,11 +45,11 @@ let already = false
 view Header {
   let start = already || false
 
-  const triggerEvent = (id, name)  => {
-    event = document.createEvent('CustomEvent')
+  function triggerEvent(id, name) {
+    let event = document.createEvent('CustomEvent')
     event.initCustomEvent(name, true, true, null)
-    const frame = document.getElementById(id);
-    const frameWin = (frame.contentDocument || frame.contentWindow.document)
+    let frame = document.getElementById(id)
+    let frameWin = frame.contentDocument || frame.contentWindow.document
     frameWin.body.dispatchEvent(event)
   }
 
@@ -61,7 +61,7 @@ view Header {
       out={
         <head>
           <Logo />
-          <Desc start={start} />
+          <Desc already={already} start={start} />
           <Social />
         </head>
       }
@@ -70,11 +70,15 @@ view Header {
           lines={7}
           id="headeriframe"
           onLoad={() => {
+            if (already) {
+              triggerEvent('headeriframe', 'end')
+              return
+            }
             start = true
             already = true
             triggerEvent('headeriframe', 'start')
           }}
-          iframe="/assets/examples/example.html" />
+          iframe={`/assets/examples/example.html`} />
       }
     />
   </Contain>
@@ -204,6 +208,8 @@ view Logo {
   }
 }
 
+let finished = false
+
 view Desc {
   let started = view.props.start
 
@@ -215,10 +221,19 @@ view Desc {
   let charPos = 0
 
   on.props(() => {
+    if (view.props.already && finished) {
+      how = phrases[2]
+      return
+    }
+
     if (view.props.start && !started) {
       started = true
       run()
     }
+  })
+
+  on.unmount(() => {
+    finished = true
   })
 
   const run = () => started && setTimeout(step, 1000)
@@ -226,7 +241,10 @@ view Desc {
   run()
 
   const step = () => {
-    if (phrasePos == phrases.length) return
+    if (phrasePos == phrases.length) {
+      finished = true
+      return
+    }
 
     // if typed to end of word
     if (charPos === phrases[phrasePos].length) {

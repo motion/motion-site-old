@@ -59,17 +59,25 @@
 
   <script>
     var phrases = ['faster', 'creatively', 'with ease']
-    var phrase = 0;
+    var phrase = 0
     var char = 0
-    var timeBetweenPhrases = 3000;
-    var typeSpeed = 130;
-    var curDelay = 0;
-    var typer;
+    var timeBetweenPhrases = 3000
+    var typeSpeed = 130
+    var curDelay = 0
+    var typer
 
     function run() {
       setTimeout(advance, 1000)
     }
 
+    function end() {
+      phrase = 2
+      char = phrases[2].length-1
+      document.querySelector('hr').className = 'hide'
+      advance()
+    }
+
+    document.body.addEventListener('end', end)
     document.body.addEventListener('start', run)
 
     function advance() {
