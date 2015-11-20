@@ -57,8 +57,7 @@ view Diagram {
         <Icon.Flint class="icon" highlight={hover == 2} />
       </col>
       <p>
-        Fast build system statically extracts CSS for insane hot reloads.&nbsp;
-        <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">Automatic npm installs</Attr> inject right into your app.
+        Flint's simple & powerful view engine. <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">Statically extracts CSS</Attr> and automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm packages</Attr>.
       </p>
     </section>
 
@@ -71,7 +70,7 @@ view Diagram {
       </col>
       <p>
         <Attr alt="Updates your app with each character, avoids writing to file system.">Live coding</Attr> with Atom.&nbsp;
-        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode lets you drag your numbers and colors. Shows inline errors.
+        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode lets you drag your numbers and colors. Instant inline errors.
       </p>
     </section>
   </Contain>
@@ -129,7 +128,8 @@ view Diagram {
   }
 
   $point = {
-    margin: [170, -50, 0]
+    maxWidth: 320,
+    margin: [170, -30, 0]
   }
 
   $pointTitle = {
@@ -162,13 +162,12 @@ view Diagram {
   $p = {
     margin: [20, 0, 0],
     fontSize: 15,
-    lineHeight: 1.7,
+    lineHeight: 1.6,
     color: '#616161'
   }
 
   $title = {
     fontFamily: font.title,
-    color: color.brand2,
     textAlign: 'center',
     color: '#333',
     fontSize: 17,

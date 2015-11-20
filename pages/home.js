@@ -2,7 +2,7 @@ view Home {
   <Header />
   <welcome>
     <span class="wow">Frontend, without the framework</span>
-    <span>Flint is a compiler that unites editor & browser</span>
+    <span>Flint is a compiler that unites JS, editor & browser</span>
   </welcome>
   <Diagram />
   <welcome if={false} class="secondary">
@@ -23,7 +23,7 @@ view Home {
   $ = { width: '100%' }
 
   $welcome = {
-    fontSize: 22,
+    fontSize: 24,
     color: 'rgba(0,0,0,0.7)',
     fontWeight: 300,
     lineHeight: 1.75,
@@ -41,9 +41,10 @@ view Home {
   }
 
   $wow = [style.textGradient, {
-    fontSize: 32,
+    fontSize: 36,
     color: color.brand2,
-    lineHeight: 1.4
+    lineHeight: 1.4,
+    marginBottom: 4
   }]
 
   $secondary = {

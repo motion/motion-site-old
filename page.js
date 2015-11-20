@@ -9,8 +9,6 @@ view Page {
   <Footer />
 
   $ = {
-    fontSize: 18,
-    lineHeight: 1.8,
 
     [device.small]: {
       flexFlow: 'column'
