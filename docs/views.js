@@ -234,17 +234,21 @@ view Docs.Views {
       Note that this isn't typically needed! Flint optimizes your app in production by batching changes, which essentially will do this for you.
     </p>
 
-    <Title small>view.props</Title>
+    <Title small>view.props : object</Title>
 
     <p>Access the entire props object with <code>view.props</code>.</p>
 
-    <Title small>view.name</Title>
+    <Title small>view.name : string</Title>
 
     <p>Access the name of the view.</p>
 
-    <Title small>view.el(name : string)</Title>
+    <Title small>view.el(name : string) : element</Title>
 
     <p>Programatically render a view. Pass in a view name to <code>view.el()</code> and it will render.</p>
+
+    <Title small>view.mounted : boolean</Title>
+
+    <p>Boolean, true if your view is mounted.</p>
 
     <Title small>view.childContext(context : object)</Title>
 
