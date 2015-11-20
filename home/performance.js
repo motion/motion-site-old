@@ -54,8 +54,7 @@ view Performance {
     fontFamily: font.title,
     fontSize: 18,
     margin: [-3, 0, 4],
-    color: '#666',
-    color: color.brand2
+    color: '#666'
   }
 
   $p = {

@@ -73,7 +73,6 @@ view Install {
     color: '#777',
     background: '#fff',
     borderRadius: 4,
-    border: 'none',
     padding: [6, 0, 6, 14],
     fontSize: 18,
     margin: [-8, 0, -5],

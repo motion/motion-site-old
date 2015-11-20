@@ -97,7 +97,6 @@ view Icon.Flint {
     filter: highlight ? 'none' : 'grayscale(1) brightness(1.8)',
     width: size / base,
     height: size / base,
-    margin: 'auto',
     margin: -2,
     transition: 'all ease-in 300ms',
     transform: {
