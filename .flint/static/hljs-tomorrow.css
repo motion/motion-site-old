@@ -18,7 +18,7 @@
 .css .hljs-id,
 .css .hljs-class,
 .css .hljs-pseudo {
-  color: #ef2828;
+  color: #db2222;
   font-weight: 500;
 }
 
@@ -30,7 +30,7 @@
 .hljs-literal,
 .hljs-params,
 .hljs-constant {
-  color: #f5871f;
+  color: #d47129;
   font-weight: 500;
 }
 
@@ -41,7 +41,7 @@
   font-weight: 500;
 }
 
-/* Tomorrow Green */
+/* Tomorrow Green (Red) */
 .hljs-string,
 .hljs-value,
 .hljs-inheritance,
@@ -49,7 +49,7 @@
 .hljs-name,
 .ruby .hljs-symbol,
 .xml .hljs-cdata {
-  color: #88a500;
+  color: #db2222;
   font-weight: 500;
 }
 
@@ -68,13 +68,13 @@
 .perl .hljs-sub,
 .javascript .hljs-title,
 .coffeescript .hljs-title {
-  color: #518edf;
+  color: #3c7cd1;
 }
 
 /* Tomorrow Purple */
 .hljs-keyword,
 .javascript .hljs-function {
-  color: #9d65c1;
+  color: #3c7cd1;
   font-weight: 500;
 }
 

@@ -83,7 +83,7 @@ view Editor {
   }
 
   $loaded = {
-    opacity: 1,
+    opacity: 1
   }
 }
 

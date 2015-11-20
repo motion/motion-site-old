@@ -5,7 +5,7 @@ view Social {
   <a if={!view.props.noSlack} href="/?slack" onClick={util.linkScroll}>
     <IconSlack />
   </a>
-  <a target="_blank" href="https://twitter.com/flint_js">
+  <a target="_blank" href="https://twitter.com/useflint">
     <IconTwitter />
   </a>
 

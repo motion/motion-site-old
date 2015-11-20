@@ -16,7 +16,7 @@ view Docs.Views {
 
     <Code source={`
       view Main {
-        let name = 'Nate'
+        let name = 'World'
 
         <h1>Hello {name}</h1>
       }
@@ -26,11 +26,11 @@ view Docs.Views {
 
     <Code source={`
       view Main {
-        let name = 'Nate'
+        let name = 'World'
 
         <h1>Hello {name}</h1>
-        <button onClick={() => name = 'Nick'}>
-          Change name to Nick
+        <button onClick={() => name = 'Universe'}>
+          Change to Universe
         </button>
       }
     `} />
@@ -39,13 +39,14 @@ view Docs.Views {
 
     <Code source={`
       view Main {
-        let name = 'Nate'
+        let name = 'World'
 
-        const changeName = () =>
-          name = 'Nick'
+        function change() {
+          name = 'Universe'
+        }
 
         <h1>Hello {name}</h1>
-        <button onClick={changeName}>Change!</button>
+        <button onClick={change}>Change!</button>
       }
     `} />
 
@@ -154,7 +155,7 @@ view Docs.Views {
 
     <Code source={`
       view WindowScroller {
-        on(window, 'scroll', e => {
+        on.scroll(window, e => {
           // window scrolling
           // optional first agument for scope
         })
@@ -189,10 +190,26 @@ view Docs.Views {
 
     <p>Forces view to re-render.</p>
 
-    <Title small>What about shouldComponentUpdate?</Title>
+    <Title small>view.shouldUpdate(fn)</Title>
 
     <p>
-      Rather than having a special function for this, just call <code>view.pause()</code> at the top of your view. Then when you want to update it later, <code>view.update()</code>. This lets you use logic just like everything else in your app, without any special helpers. Here is a common pattern for optimizing a view:
+      Use shouldUpdate to optimize your views. Returning false from your function will prevent a view from re-rendering.
+      The function passed to shouldUpdate received one argument, which is the upcoming props object. You can use this object to compare new props and old props to determine the update.
+    </p>
+
+    <Code source={`
+      view Child {
+        view.shouldUpdate(nextProps => {
+          if (!nextProps.active)
+            return false
+          else
+            return true
+        })
+      }
+    `} />
+
+    <p>
+      As a side note, there is a second, imperative pattern for handling view updates. Calling <code>view.pause()</code> at the top of your view will freeze it until you next call <code>view.update()</code>. In some cases, this may be a lot simpler to use. Here is one example:
     </p>
 
     <Code source={`

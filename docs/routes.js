@@ -1,11 +1,20 @@
 view Docs.Routes {
   <Title big>Routes</Title>
   <Body>
-    <Text big>Flint comes with a basic routing system, but lets you plug in any you'd like.</Text>
+    <Text big>Flint comes with a lightweight routing system, but lets you plug in any you'd like.</Text>
 
     <Text>
-      Routing is done through <code>Flint.router</code>, which has the following functions.
+      Routing is done through <code>Flint.router</code>, which has the following functions:
     </Text>
+
+    <ul>
+      <li><code>go</code> - Pass in a pathname to navigate to the route</li>
+      <li><code>link</code> - Returns a function that executes go</li>
+      <li><code>active</code> - Returns a boolean if route is active</li>
+      <li><code>onChange</code> - Pass a function, calls back with path when it changes</li>
+      <li><code>back</code> - Navigates backwards</li>
+      <li><code>forward</code> - Navigates forwards</li>
+    </ul>
 
     <Title small>Setting routes</Title>
     <Text>

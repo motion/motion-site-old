@@ -9,10 +9,19 @@ view Docs.Elements {
       You may also name your elements however you'd like. Avoid writing hundreds of meaningless <code>div</code>s and just write what your tag actually represents! Lowercase tags are scoped to the current view, and are unstyled except for browser defaults, while capitalized tags reference other views. Flint has some other minor modifications.
     </Text>
 
+    <Code source={`
+      view Main {
+        <shows class={{ active: true }}>
+          <show class="active">
+            <name>Breaking bad</name>
+          </show>
+        </shows>
+      }
+    `} />
+
     <ul>
       <li>Use attributes React-style or HTML-style, <code>class</code> as well as <code>className</code>.</li>
       <li><code>class</code> accepts an object of <code>{`{ className: bool }`}</code> to set multiple classes, or an array</li>
-      <li><code>style</code> attribute accepts arrays/objects</li>
     </ul>
 
     <Title small>{'<tag repeat={array | num} />'}</Title>
@@ -61,7 +70,7 @@ view Docs.Elements {
       view Question {
         let response = ''
 
-        function submit (e) {
+        function submit(e) {
           console.log(e.target.value)
         }
 

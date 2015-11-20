@@ -3,10 +3,10 @@ view Docs.Extras {
   <Body>
     <Text>Beyond the view macro and it's corresponding syntax, it is very much just ES6 JavaScript. We've made some small changes though to optimize for common use cases and have shimmed a few helpful modules.</Text>
 
-    <Title small>ES2015 and...</Title>
+    <Title small>Polyfills</Title>
     <ul>
-      <li>Promise - <a href="https://github.com/petkaantonov/bluebird/blob/master/API.md">Bluebird promises</a> are the default "Promise" implementation.</li>
-      <li>fetch - <a href="https://github.com/matthew-andrews/isomorphic-fetch">isomorphic fetch</a> has been provided</li>
+      <li><code>Promise</code> - <Link href="https://github.com/petkaantonov/bluebird/blob/master/API.md">Bluebird</Link></li>
+      <li><code>fetch</code> - <Link href="https://github.com/matthew-andrews/isomorphic-fetch">Isomorphic fetch</Link></li>
     </ul>
 
     <Title small>Hooking into Flint</Title>
