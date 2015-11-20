@@ -164,11 +164,11 @@ view Toolbar {
     opacity: 0.2
   }
 
-  $.max = {
+  $max = {
     background: '#F7C033'
   }
 
-  $.open = {
+  $open = {
     background: '#69CB43'
   }
 }
