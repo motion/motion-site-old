@@ -137,7 +137,7 @@ view Features {
 
   $right = {
     alignSelf: 'flex-end',
-    flexDirection: 'row-reverse'
+    flexDirection: 'row-reverse !important'
   }
 
   $small = {

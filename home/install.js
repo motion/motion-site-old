@@ -29,7 +29,6 @@ view Install {
   </Contain>
 
   $ = {
-    background: color.alt,
     textAlign: 'center',
     padding: [25, 0, 30, 0],
     borderBottom: '1px solid #eee',

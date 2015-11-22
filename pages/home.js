@@ -1,7 +1,7 @@
 view Home {
   <Header />
   <welcome>
-    <span class="wow">Frontend, without the framework</span>
+    <span class="wow">Frontend without the framework</span>
     <span>Flint is a compiler that unites JS, editor & browser</span>
   </welcome>
   <Diagram />

@@ -57,7 +57,7 @@ view Diagram {
         <Icon.Flint class="icon" highlight={hover == 2} />
       </col>
       <p>
-        Flint's simple & powerful view engine. <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">Statically extracts CSS</Attr> and automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm packages</Attr>.
+        <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">Statically extracts CSS</Attr> and automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm packages</Attr>.
       </p>
     </section>
 

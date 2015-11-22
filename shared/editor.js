@@ -123,7 +123,7 @@ view Toolbar {
     cursor: 'pointer',
     userSelect: 'none',
     color: '#333',
-    padding: [3, 8],
+    padding: [2, 8],
     margin: [3, 4, 0, 0],
     background: 'linear-gradient(#f2f2f2, #eee)',
     border: '1px solid #ddd',
@@ -135,7 +135,7 @@ view Toolbar {
 
   $active = {
     background: '#fff',
-    borderLeft: `2px solid ${color.brand}`,
+    borderLeft: `2px solid ${color.brand2}`,
     marginTop: 1,
     marginBottom: -3,
     color: '#000',
