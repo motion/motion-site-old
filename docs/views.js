@@ -276,6 +276,10 @@ view Docs.Views {
 
     <p>Access the entire props object with <code>view.props</code>.</p>
 
+    <Title small>view.state : object</Title>
+
+    <p>Access all your state variables, for use in debugging or decorating views.</p>
+
     <Title small>view.name : string</Title>
 
     <p>Access the name of the view.</p>
