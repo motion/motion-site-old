@@ -87,7 +87,7 @@ view Header {
   $ = {
     position: 'relative',
     overflow: 'hidden',
-    padding: [60, 10, 35],
+    padding: [60, 10, 46],
     margin: [0, 0, 30],
     borderBottom: '1px solid rgba(0,0,0,0.05)',
     minWidth: 700,
@@ -200,9 +200,9 @@ view Logo {
     flexShrink: 0
   }
 
-  const width = 1019
-  const height = 282
-  const multiplier = view.props.small ? .11 : .22
+  const width = 1400
+  const height = 387
+  const multiplier = view.props.small ? .08 : .18
 
   $img = {
     width: Math.round(width * multiplier),
@@ -267,7 +267,7 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 20,
+    fontSize: 23,
     lineHeight: '1.6rem',
     padding: [0, 0, 12],
     margin: [0, 'auto'],

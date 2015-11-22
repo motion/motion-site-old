@@ -1,8 +1,8 @@
 view Home {
   <Header />
   <welcome>
-    <span class="wow">Frontend without the framework</span>
-    <span>Flint is a compiler that unites JS, editor & browser</span>
+    <span class="wow">Frontend, without the framework</span>
+    <span>Flint is a compiler that unites editor & browser</span>
   </welcome>
   <Diagram />
   <welcome if={false} class="secondary">
@@ -27,8 +27,8 @@ view Home {
     color: 'rgba(0,0,0,0.7)',
     fontWeight: 300,
     lineHeight: 1.75,
-    margin: [10, 'auto', 45],
-    padding: [0, 10],
+    margin: [0, 'auto'],
+    padding: [15, 10, 45],
     textAlign: 'center',
     maxWidth: 750,
     zIndex: 100,

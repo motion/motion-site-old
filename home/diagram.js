@@ -57,7 +57,7 @@ view Diagram {
         <Icon.Flint class="icon" highlight={hover == 2} />
       </col>
       <p>
-        <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">Statically extracts CSS</Attr> and automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm packages</Attr>.
+        Javascript compiler that <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">statically extracts CSS</Attr> and automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm packages</Attr>.
       </p>
     </section>
 
@@ -77,7 +77,7 @@ view Diagram {
 
   $ = {
     flexFlow: 'row',
-    padding: [0, 0, 40, 0],
+    padding: [0, 0, 45, 0],
     color: '#555',
     alignItems: 'space-around',
     justifyContent: 'center',

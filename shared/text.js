@@ -4,7 +4,7 @@ view Text {
   $ = view.props.big && {
     fontSize: 20,
     lineHeight: '2rem',
-    color: 'rgba(0,0,0,0.6)',
+    opacity: 0.6,
     marginTop: -5
   }
 }

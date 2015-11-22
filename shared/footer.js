@@ -11,7 +11,9 @@ view Footer {
   </Contain>
 
   $ = {
-    margin: [0, 0, -40],
+    borderTop: '1px solid #eee',
+    background: color.alt,
+    margin: [30, 0, -40],
     textAlign: 'center',
     fontSize: 16
   }

@@ -19,8 +19,8 @@ view Next {
   $next = {
     fontSize: 20,
     flexFlow: 'row',
-    padding: 10,
-    marginTop: 25,
+    padding: [10, 0],
+    margin: [45, 0],
     cursor: 'pointer',
     transition: '300ms all ease-in',
     color: `rgb(${blue})`,
