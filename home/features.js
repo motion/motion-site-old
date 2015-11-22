@@ -1,5 +1,7 @@
 view Features {
   <Contain>
+    <Title center big light>Features</Title>
+
     <section>
       <text>
         <img src={`/assets/images/line/cloud-download.svg`} />
