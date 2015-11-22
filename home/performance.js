@@ -78,20 +78,20 @@ view Performance {
     background: 'linear-gradient(20deg, #134359, #3a7b9e)',
     color: '#eee',
     borderBottom: '1px solid #eee',
-    padding: [30, 0]
+    padding: [51, 0]
   }
 
   $title = {
     fontFamily: font.title,
     fontSize: 28,
     color: '#fff',
-    margin: [10, 'auto', 20]
+    margin: [10, 'auto', 11]
   }
 
   $Text = {
     maxWidth: '80%',
     textAlign: 'center',
-    margin: [0, 'auto', 20]
+    margin: [0, 'auto', 11]
   }
 
   $feature = {
@@ -140,7 +140,7 @@ view Performance {
     fontWeight: 100,
     fontSize: 18,
     margin: [-3, 0, 4],
-    color: [255,255,255,0.75]
+    color: [255,255,255,0.7]
   }
 
   $p = {

@@ -272,6 +272,6 @@ view Desc {
     padding: [0, 0, 12],
     margin: [0, 'auto'],
     display: 'block',
-    color: color(color.alt).darken(2.4)
+    color: color(color.alt).darken(2.4).hex()
   }
 }
