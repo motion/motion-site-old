@@ -5,8 +5,8 @@ view Performance {
     </title>
 
     <Text big>
-      For the first time your entire frontend system is talking to each other. From compiler to editor to browser,
-      we've just begun to tap into the possibility.
+      <line>For the first time your entire frontend system is communicating.</line>
+      <line>Compiler, editor & browser: we've just begun to tap into the possibility.</line>
     </Text>
 
     <feature class="first">
@@ -78,14 +78,14 @@ view Performance {
     background: 'linear-gradient(20deg, #134359, #3a7b9e)',
     color: '#eee',
     borderBottom: '1px solid #eee',
-    padding: [51, 0]
+    padding: [50, 0]
   }
 
   $title = {
     fontFamily: font.title,
     fontSize: 28,
     color: '#fff',
-    margin: [10, 'auto', 11]
+    margin: [0, 'auto', 11]
   }
 
   $Text = {
