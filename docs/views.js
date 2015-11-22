@@ -122,21 +122,60 @@ view Docs.Views {
     <ul>
       <li>mount - called once after mounted in document</li>
       <li>unmount - called once before unmount</li>
-      <li>props - called whenever props change</li>
+      <li>props - called once before mount and once when new props come have come in</li>
       <li>change - called before every render</li>
       <li>render - called after every render</li>
     </ul>
 
-    <p>See how to use it here:</p>
+    <p>
+      Pass each of these events a function and it will be called. The only event that passes in a value to its function is <code>on.props</code>, which gives you the current props for convenience (you may also still access <code>view.props</code> as well).
+    </p>
+
+    <p>
+      Here's an excerpt from our header on the homepage of this site which simulates some typing being done. In the view we listen for the start prop and trigger an action based on that.
+    </p>
+
+    <Code source={`
+      view Tagline {
+        let how = 'with ease'
+        let started = false
+
+        on.props(() => {
+          if (view.props.start && !started) {
+            started = true
+            // start typing!
+          }
+        })
+
+        <tagline>Web apps, {how}</tagline>
+      }
+    `} />
+
+    <p>
+      Because <code>on.props</code> receives the props object, you could write the same thing using ES6 destructing:
+    </p>
+
+    <Code source={`
+      view Tagline {
+        // destructure:
+        on.props(({ start }) => {
+          // and use as variable
+          if (start && !started) {
+            started = true
+          }
+        })
+      }
+    `} />
 
     <Title id="view-events">View events</Title>
 
-    <p>Flint provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views. It's optional, and lightweight (under 15 lines of code), but it avoid large amounts of hassle.</p>
+    <p>Flint provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views. It's optional, and very lightweight, but it avoid large amounts of hassle.</p>
 
     <Code source={`
       view Hello {
         on.mount(() => {
-          const width = view.refs.span.innerWidth
+          let spanWidth = view.refs.span.innerWidth
+          console.log('spans width is', spanWidth)
         })
 
         <span ref="span">Hello world</span>
@@ -161,6 +200,8 @@ view Docs.Views {
         })
       }
     `} />
+
+    <p>Read more about on in our <Link to="/docs/events">events docs</Link>.</p>
 
     <Title id="view-methods">View methods</Title>
 

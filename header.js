@@ -215,40 +215,39 @@ view Logo {
 let finished = false
 
 view Desc {
-  let started = view.props.start
-
-  let how = ''
-  let phrases = ['faster', 'creatively', 'with ease']
   const betweenPhrase = 3000
   const typeSpeed = 130
+  let started = view.props.start
+  let how = ''
+  let phrases = ['faster', 'creatively', 'with ease']
   let phrasePos = 0
   let charPos = 0
 
-  on.props(() => {
-    if (view.props.already && finished) {
+  on.mount(run)
+  on.unmount(stop)
+  on.props(({ already, start }) => {
+    if (already && finished) {
       how = phrases[2]
       return
     }
 
-    if (view.props.start && !started) {
+    if (start && !started) {
       started = true
       run()
     }
   })
 
-  on.unmount(() => {
+  function run() {
+    if (started) setTimeout(step, 1000)
+  }
+
+  function stop() {
     finished = true
-  })
+  }
 
-  const run = () => started && setTimeout(step, 1000)
-
-  run()
-
-  const step = () => {
-    if (phrasePos == phrases.length) {
-      finished = true
-      return
-    }
+  function step() {
+    if (phrasePos == phrases.length)
+      return stop()
 
     // if typed to end of word
     if (charPos === phrases[phrasePos].length) {
