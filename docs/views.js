@@ -240,11 +240,8 @@ view Docs.Views {
 
     <Code source={`
       view Child {
-        view.shouldUpdate(nextProps => {
-          if (!nextProps.active)
-            return false
-          else
-            return true
+        view.shouldUpdate((props, nextProps) => {
+          return props.active != nextProps.active
         })
       }
     `} />
