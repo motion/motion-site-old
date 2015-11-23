@@ -11,19 +11,19 @@ view Performance {
 
     <feature class="first">
       <section class="small">
-        <featureTitle>Hot Reloads ++</featureTitle>
+        <featureTitle>Hot Reloads++</featureTitle>
       </section>
 
       <section>
-        <p>Injects single files rather than a big bundle. Up to 10x faster, in constant time.</p>
+        <p>Inject one file, not a bundle. ~10x faster, constant time.</p>
       </section>
 
       <section>
-        <p>Keep state as you edit. Even child views when editing parents.</p>
+        <p>Keeps state, even children while editing parents.</p>
       </section>
 
       <section>
-        <p>Extracts and hot updates static styles as CSS. JS isn't even run when possible!</p>
+        <p>Hot reloads styles as CSS. JS isn't even run!</p>
       </section>
     </feature>
 
@@ -33,15 +33,33 @@ view Performance {
       </section>
 
       <section>
-        <p>Runtime and compile errors, shown in one place, debounced, and in english.</p>
+        <p>Runtime & compile errors, in one place, and in english.</p>
       </section>
 
       <section>
-        <p>Avoids app breaking, keeps previous state to avoid flashes of broken content.</p>
+        <p>Avoid breaking, state loss, and unstyled flashes.</p>
       </section>
 
       <section>
-        <p>Proper line numbers even in runtime, with helpful messages for many errors.</p>
+        <p>Real line numbers in runtime, better messages.</p>
+      </section>
+    </feature>
+
+    <feature>
+      <section class="small">
+        <featureTitle>Focus</featureTitle>
+      </section>
+
+      <section>
+        <p>Hold down option in Atom to enter focus mode.</p>
+      </section>
+
+      <section>
+        <p>Drag numbers & colors to use a realtime color picker.</p>
+      </section>
+
+      <section>
+        <p>Flint sockets stream file to browser for super speed.</p>
       </section>
     </feature>
 
@@ -52,15 +70,15 @@ view Performance {
       </section>
 
       <section>
-        <p>Javascript: view-scoped with support for media queries and pseudo selectors.</p>
+        <p>Javascript power in styles, locally scoped to view.</p>
       </section>
 
       <section>
-        <p>Dynamic styles inline, statics extract to stylesheet. The best of both worlds.</p>
+        <p>Static styles extract to stylesheet and hot inject.</p>
       </section>
 
       <section>
-        <p>Styles use names just as you defined them, easily editable in your inspector.</p>
+        <p>Simple class and tag name styles kept in CSS.</p>
       </section>
     </feature>
   </Contain>
@@ -87,7 +105,7 @@ view Performance {
 
   $feature = {
     flexFlow: 'row',
-    margin: [10, 0, 0],
+    margin: [0],
     borderTop: '1px solid rgba(255,255,255,0.05)',
 
     [device.small]: {
