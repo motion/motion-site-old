@@ -4,7 +4,7 @@ view DemoVideo {
   $ = {
     textAlign: 'center',
     alignItems: 'center',
-    margin: [50, 'auto', 20],
+    margin: [63, 'auto', 20],
     position: 'relative',
     zIndex: 100,
 
@@ -81,6 +81,8 @@ view YouTube {
     maxWidth: '100%',
     minHeight: 350,
     position: 'relative',
+    padding: [20, 0],
+    borderBottom: '1px solid #eee',
 
     [device.small]: {
       width: '100%',
@@ -111,5 +113,9 @@ view YouTube {
     top: 'auto',
     bottom: 0,
     height: 8
+  }
+
+  $h4 = {
+    fontFamily: font.title
   }
 }

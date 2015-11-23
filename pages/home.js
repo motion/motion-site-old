@@ -10,9 +10,9 @@ view Home {
     <span>without touching a config file or build system.</span>
   </welcome>
   <Install title />
-  <Performance />
   <Examples />
   <Features />
+  <Performance />
   <DemoVideo />
   <Slack />
   <FAQ />
@@ -161,6 +161,6 @@ view Slack {
   }
 
   $ = {
-    marginBottom: 20
+    margin: [-20, 0, 20]
   }
 }

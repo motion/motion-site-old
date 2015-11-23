@@ -77,7 +77,6 @@ view Performance {
   </Contain>
 
   $ = {
-    background: color.alt,
     borderBottom: '1px solid #eee',
     color: '#333',
     padding: [45, 0]
