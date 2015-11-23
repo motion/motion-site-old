@@ -3,9 +3,9 @@ view Install {
   const select = () => view.refs.code.select()
 
   <Contain id="install">
-    <Interlude center if={view.props.title}>
+    <title>
       Try in a minute!
-    </Interlude>
+    </title>
 
     <mainCode>
       <code onMouseUp={select} class="install">
@@ -35,9 +35,11 @@ view Install {
     borderTop: '1px solid #eee'
   }
 
-  $Interlude = {
-    margin: [-20, 'auto', -10],
-    color: color.brand2
+  $title = {
+    color: color.brand2,
+    fontFamily: font.title,
+    fontSize: 22,
+    margin: [-6, 0, 10, 0]
   }
 
   $Contain = {

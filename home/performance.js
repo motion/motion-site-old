@@ -1,13 +1,6 @@
 view Performance {
   <Contain>
-    <title>
-      How Flint makes you more effective
-    </title>
-
-    <Text big>
-      <line>For the first time your entire frontend system is communicating.</line>
-      <line>Compiler, editor & browser: we've just begun to tap into the possibility.</line>
-    </Text>
+    <Interlude>For the first time the entire frontend system is talking</Interlude>
 
     <feature class="first">
       <section class="small">
@@ -27,13 +20,13 @@ view Performance {
       </section>
     </feature>
 
-    <feature>
+    <feature class="odd">
       <section class="small">
         <featureTitle>Smart Errors</featureTitle>
       </section>
 
       <section>
-        <p>Runtime & compile errors, in one place, and in english.</p>
+        <p>Runtime, compile & build errors, all in one place.</p>
       </section>
 
       <section>
@@ -64,7 +57,7 @@ view Performance {
     </feature>
 
 
-    <feature>
+    <feature class="odd">
       <section class="small">
         <featureTitle>Amazing styles</featureTitle>
       </section>
@@ -84,23 +77,22 @@ view Performance {
   </Contain>
 
   $ = {
-    background: 'linear-gradient(20deg, #134359, #3a7b9e)',
-    color: '#eee',
+    background: color.alt,
     borderBottom: '1px solid #eee',
-    padding: [50, 0]
+    color: '#333',
+    padding: [45, 0]
   }
 
-  $title = {
-    fontFamily: font.title,
-    fontSize: 28,
-    color: '#fff',
-    margin: [0, 'auto', 11]
+  $Interlude = {
+    margin: [0, 0, 20],
+    padding: 0
   }
 
   $Text = {
     maxWidth: '80%',
     textAlign: 'center',
-    margin: [0, 'auto', 11]
+    lineHeight: 1.6,
+    margin: [-10, 'auto', 13]
   }
 
   $feature = {
@@ -114,6 +106,10 @@ view Performance {
     }
   }
 
+  $odd = {
+    background: [0,0,0,0.02]
+  }
+
   $first = {
     border: 'none'
   }
@@ -123,7 +119,7 @@ view Performance {
     textAlign: 'right',
     fontFamily: font.title,
     fontSize: 20,
-    color: '#fff'
+    color: '#333'
   }
 
   $section = {
@@ -148,7 +144,7 @@ view Performance {
   $p = {
     fontWeight: 100,
     fontSize: 18,
-    color: [255,255,255,0.85],
+    color: [0,0,0,0.55],
     margin: 0,
     lineHeight: 1.5
   }

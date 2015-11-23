@@ -99,6 +99,7 @@ view Features {
   $ = {
     padding: [30, 0],
     margin: [30, 0],
+    background: color.alt,
     borderTop: '1px solid #eee',
     borderBottom: '1px solid #eee',
   }
@@ -183,103 +184,5 @@ view Features {
     color: '#777',
     lineHeight: 1.5,
     fontWeight: 300
-  }
-}
-
-view SubFeatures {
-  <Contain>
-    <div id="test" height="50" width="50" />
-    <List items={[
-      {
-        title: "Automatic npm installs",
-        icon: "artist",
-        desc: "Flint installs as you type"
-      },
-      {
-        title: "Works with React",
-        icon: "artist",
-        desc: "Use any React component"
-      },
-      {
-        title: "Modern ES6, simplified",
-        icon: "artist",
-        desc: "No need for *this* or classes"
-      },
-      {
-        title: "Instant feedback",
-        icon: "artist",
-        desc: "Fastest hot updates of any system"
-      },
-      {
-        title: "Fast builds & runtime",
-        icon: "artist",
-        desc: "Compiler unlocks incredible speed"
-      },
-      {
-        title: "Smart errors & tools",
-        icon: "artist",
-        desc: "Inline errors and a state inspector"
-      },
-    ]} />
-  </Contain>
-
-  $ = {
-    position: 'relative'
-  }
-}
-
-view List {
-  <Contain>
-    <list>
-      <item repeat={view.props.items}>
-        <Check class="check" />
-        <text>
-          <feature>{_.title}</feature>
-          <description if={_.desc}>{_.desc}</description>
-        </text>
-      </item>
-    </list>
-  </Contain>
-
-  $ = {
-    margin: [20, 'auto'],
-    fontSize: 20,
-  }
-
-  const listColor = 'rgb(4, 139, 66)'
-
-  $list = {
-    maxWidth: 750,
-    margin: [0, 'auto'],
-    padding: [0, '5%'],
-    borderRadius: 5,
-    flexFlow: 'row',
-    flexWrap: 'wrap',
-    color: listColor
-  }
-
-  $item = {
-    margin: [12, 0, 8],
-    padding: [0, 10],
-    lineHeight: '1.5rem',
-    width: '50%',
-    flexFlow: 'row',
-    textAlign: 'center',
-
-    [device.small]: {
-      width: '100%'
-    }
-  }
-
-  $text = {
-    flexFlow: 'column',
-    textAlign: 'left',
-    margin: [0, 0, 5]
-  }
-
-  $description = {
-    margin: [5, 0, 0],
-    fontSize: 16,
-    color: '#666'
   }
 }
