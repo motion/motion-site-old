@@ -26,6 +26,7 @@ view Main {
 
   passCorrect(
     window.location.search == '?yc' ||
+    window.location.search == '?skipPassword' ||
     localStorage.getItem('authed') === 'true'
   )
 
