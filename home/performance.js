@@ -1,40 +1,40 @@
 view Performance {
   <Contain>
-    <Interlude>For the first time the entire frontend system is talking</Interlude>
+    <Interlude>What makes Flint different</Interlude>
 
     <feature class="first">
       <section class="small">
-        <featureTitle>Hot Reloads++</featureTitle>
+        <featureTitle>Reloads</featureTitle>
       </section>
 
       <section>
-        <p>Inject one file, not a bundle. ~10x faster, constant time.</p>
+        <p>Injects one file, not large bundle. Up to 10x faster.</p>
       </section>
 
       <section>
-        <p>Keeps state, even children while editing parents.</p>
+        <p>Keeps state, even child state while editing parents.</p>
       </section>
 
       <section>
-        <p>Hot reloads styles as CSS. JS isn't even run!</p>
+        <p>Static styles injected as CSS, avoids running JS!</p>
       </section>
     </feature>
 
     <feature class="odd">
       <section class="small">
-        <featureTitle>Smart Errors</featureTitle>
+        <featureTitle>Errors</featureTitle>
       </section>
 
       <section>
-        <p>Runtime, compile & build errors, all in one place.</p>
+        <p>Run, compile & build errors, all in one place.</p>
       </section>
 
       <section>
-        <p>Avoid breaking, state loss, and unstyled flashes.</p>
+        <p>Avoids breaking, state loss, & unstyled flashes.</p>
       </section>
 
       <section>
-        <p>Real line numbers in runtime, better messages.</p>
+        <p>Nice error messages with exact line numbers.</p>
       </section>
     </feature>
 
@@ -44,22 +44,22 @@ view Performance {
       </section>
 
       <section>
-        <p>Hold down option in Atom to enter focus mode.</p>
+        <p>Hold down option in Atom to enter focus.</p>
       </section>
 
       <section>
-        <p>Drag numbers & colors to use a realtime color picker.</p>
+        <p>Drag numbers & colors in realtime.</p>
       </section>
 
       <section>
-        <p>Flint sockets stream file to browser for super speed.</p>
+        <p>Avoids work by streaming straight to browser.</p>
       </section>
     </feature>
 
 
     <feature class="odd">
       <section class="small">
-        <featureTitle>Amazing styles</featureTitle>
+        <featureTitle>Styles</featureTitle>
       </section>
 
       <section>
