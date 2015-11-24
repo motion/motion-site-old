@@ -13,15 +13,20 @@ view Title {
     pad = 0
   }
 
-  $h2 = [style.textGradient, {
-    fontFamily: font.title,
-    fontSize: size,
-    padding: [pad, 0],
-    marginTop: 20,
-    textAlign: view.props.center ? 'center' : 'auto'
-  }, view.props.small && {
-    padding: 0
-  }, view.props.light && {
-    fontWeight: 300
-  }]
+  $h2 = [
+    style.textGradient,
+    {
+      fontFamily: font.title,
+      fontSize: size,
+      padding: [pad, 0],
+      marginTop: 20,
+      textAlign: view.props.center ? 'center' : 'auto'
+    },
+    view.props.small && {
+      padding: 0
+    },
+    view.props.light && {
+      fontWeight: 300
+    }
+  ]
 }
