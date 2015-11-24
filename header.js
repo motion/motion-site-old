@@ -91,7 +91,7 @@ view Header {
     display: 'block',
     position: 'relative',
     overflow: 'hidden',
-    padding: [60, 10, 30],
+    padding: [60, 10, 20],
     margin: [0, 0, 30],
     minWidth: 700,
     flexFlow: 'row',
