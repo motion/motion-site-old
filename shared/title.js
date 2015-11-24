@@ -1,5 +1,7 @@
+const sanitize = str => str.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s/g, '-')
+
 view Title {
-  <title-h2 id={view.props.children.split().map(x => x.toLowerCase()).join('-')} yield />
+  <title-h2 id={sanitize(view.props.children)} yield />
 
   let pad = 10
   let size = 22
