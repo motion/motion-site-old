@@ -38,21 +38,24 @@ view DemoCircles {
 
       view Circle {
         let c = () => Math.round(Math.random()*255)
-        let base = {
-          background: [c(), c(), c()],
+        let background = [c(), c(), c()]
+        let style = scale => ({ transform: { scale } })
+
+        <Motion defaultStyle={{ x: 0 }}
+          style={{ x: spring(1, [300, 10]) }}>
+          {i =>
+            <circle style={style(i.x)} />
+          }
+        </Motion>
+
+        $circle = {
+          background,
           position: 'absolute',
           top: view.props.top,
           left: view.props.left,
           width: 80, height: 80
           borderRadius: 100
         }
-        let style = scale =>
-          ({ ...base, transform: { scale } })
-
-        <Motion defaultStyle={{x: 0}}
-          style={{x: spring(1, [300, 10])}}>
-          {s => <circle style={style(s.x)} /> }
-        </Motion>
       }
             `
            }
@@ -117,22 +120,23 @@ view Circles {
 
 view Circle {
   const c = () => Math.round(Math.random()*255)
-  const baseStyle = {
-    background: [c(), c(), c()],
+  const background = [c(), c(), c()]
+
+  <Motion
+    defaultStyle={{scale: 0}}
+    style={{scale: spring(1, [300, 10])}}>{({ scale }) =>
+      <circle style={{ transform: { scale }}} />
+  }</Motion>
+
+  $circle = {
+    background,
     top: view.props.top,
     left: view.props.left,
     width: 80,
     height: 80,
     margin: [0, 0, 0, -40],
     borderRadius: 100,
-    position: 'absolute'
+    position: 'absolute',
+    translate3d: '0,0,0'
   }
-
-  const style = scale => ({ ...baseStyle, transform: { scale, translate3d: '0,0,0' } })
-
-  <Motion
-    defaultStyle={{x: 0}}
-    style={{x: spring(1, [300, 10])}}>
-      {i => <c style={style(i.x)} /> }
-  </Motion>
 }
