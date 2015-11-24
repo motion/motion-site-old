@@ -25,6 +25,8 @@ view HeaderAlt {
   }
 
   $Logo = {
+    margin: [5, 0, 0],
+
     [device.small]: {
       padding: [10, 0]
     }
@@ -32,7 +34,8 @@ view HeaderAlt {
 
   $Nav = {
     flexGrow: 1,
-    marginLeft: 20
+    marginLeft: 20,
+    marginTop: -3
   }
 
   $Social = {
@@ -85,6 +88,7 @@ view Header {
   </Contain>
 
   $ = {
+    display: 'block',
     position: 'relative',
     overflow: 'hidden',
     padding: [60, 10, 30],
@@ -100,12 +104,14 @@ view Header {
   }
 
   $Logo = {
-    margin: [10, 0, 20]
+    margin: [10, 0]
   }
 
   $head = {
+    display: 'block',
     margin: [-5, '-25%', 0, 0],
     width: 400,
+    textAlign: 'center',
 
     [device.small]: {
       margin: 'auto'
@@ -192,17 +198,14 @@ view Nav {
 }
 
 view Logo {
-  <img onClick={router.link(routes.home)} src="/assets/images/flintlogo.png" />
-
-  $ = {
-    flexShrink: 0
-  }
+  <logo-img onClick={router.link(routes.home)} src="/assets/images/flintlogo.png" />
 
   const width = 1400
   const height = 387
   const multiplier = view.props.small ? .08 : .18
 
   $img = {
+    display: 'inline-block',
     width: Math.round(width * multiplier),
     height: Math.round(height * multiplier),
     margin: [0, 'auto'],

@@ -17,13 +17,11 @@ body * {
   display: flex;
   flex-flow: column;
   flex-shrink: 1;
-  align-items: stretch;
   box-sizing: border-box;
   flex-wrap: wrap;
 
   -webkit-flex-flow: column;
   -webkit-flex-shrink: 1;
-  -webkit-align-items: stretch;
   -webkit-flex-wrap: wrap;
 }
 
