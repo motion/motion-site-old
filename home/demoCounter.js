@@ -53,6 +53,7 @@ view Counter {
     width: 60,
     height: 40,
     justifyContent: 'center',
+    alignItems: 'center',
     fontSize: 22,
     outline: 'none',
     userSelect: 'none',
