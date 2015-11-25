@@ -182,14 +182,19 @@ view Nav {
     }
   }
 
-  $a = [style.link, {
+  $a = {
     color: 'rgba(0,0,0,0.5)',
     borderBottom: 'none',
     fontSize: 15,
     fontWeight: 500,
     padding: [0, 12],
-    cursor: 'pointer'
-  }]
+    cursor: 'pointer',
+    textDecoration: 'none',
+
+    hover: {
+      color: color.brand
+    }
+  }
 
   $active = {
     fontWeight: 600,
