@@ -28,36 +28,31 @@ view DemoCircles {
         </circles>
 
         $circles = { height: 400 }
-      }
-        `
+      }`
           },
           {
             title: 'Circle.js',
             source: `
       import { spring, Motion } from 'react-motion'
+      let c = () => Math.round(Math.random()*255)
 
       view Circle {
-        let c = () => Math.round(Math.random()*255)
         let background = [c(), c(), c()]
-        let style = scale => ({ transform: { scale } })
+        let x = spring(1, [300, 10])
+        let size = scale => ({ transform: { scale } })
 
-        <Motion defaultStyle={{ x: 0 }}
-          style={{ x: spring(1, [300, 10]) }}>
-          {i =>
-            <circle style={style(i.x)} />
-          }
+        <Motion defaultStyle={{ x: 0 }} style={{ x }}>
+          {i => <circle style={size(i.x)} /> }
         </Motion>
 
+        let { top, left } = view.props
         $circle = {
-          background,
+          background, top, left,
           position: 'absolute',
-          top: view.props.top,
-          left: view.props.left,
-          width: 80, height: 80
+          width: 80, height: 80,
           borderRadius: 100
         }
-      }
-            `
+      }`
            }
         ]} />
     }

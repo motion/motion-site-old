@@ -23,12 +23,14 @@ view Editor {
     tabs={tabs}
     activeTab={index}
     changeTab={i => index = i} />
-  <Code
-    if={!view.props.iframe}
-    repeat={sources}
-    source={_}
-    class={{hidden: _index != index}}
-  />
+  <content>
+    <Code
+      if={!view.props.iframe}
+      repeat={sources}
+      source={_}
+      class={{hidden: _index != index}}
+    />
+  </content>
   <iframe
     if={view.props.iframe}
     src={view.props.iframe}
@@ -53,6 +55,10 @@ view Editor {
       marginRight: 10,
       marginLeft: 0,
     }
+  }
+
+  $content = {
+    overflow: 'scroll',
   }
 
   $Code = {
