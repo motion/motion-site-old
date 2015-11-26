@@ -35,17 +35,17 @@ view DemoCircles {
             source: `
       import { spring, Motion } from 'react-motion'
       let c = () => Math.round(Math.random()*255)
+      let x = spring(1, [300, 10])
+      let size = scale => ({ transform: { scale } })
 
       view Circle {
         let background = [c(), c(), c()]
-        let x = spring(1, [300, 10])
-        let size = scale => ({ transform: { scale } })
+        let { top, left } = view.props
 
         <Motion defaultStyle={{ x: 0 }} style={{ x }}>
           {i => <circle style={size(i.x)} /> }
         </Motion>
 
-        let { top, left } = view.props
         $circle = {
           background, top, left,
           position: 'absolute',
@@ -132,6 +132,7 @@ view Circle {
     margin: [0, 0, 0, -40],
     borderRadius: 100,
     position: 'absolute',
-    translate3d: '0,0,0'
+    backfaceVisibility: 'hidden',
+    perspective: 1000
   }
 }
