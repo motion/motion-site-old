@@ -10,10 +10,18 @@ view Docs.Routes {
     <ul>
       <li><code>go</code> - Pass in a pathname to navigate to the route</li>
       <li><code>link</code> - Returns a function that executes go</li>
-      <li><code>active</code> - Returns a boolean if route is active</li>
+      <li><code>isActive</code> - Returns a boolean if route is active</li>
       <li><code>onChange</code> - Pass a function, calls back with path when it changes</li>
       <li><code>back</code> - Navigates backwards</li>
       <li><code>forward</code> - Navigates forwards</li>
+    </ul>
+
+    <Text>
+      It also has the following objects available to check:
+    </Text>
+
+    <ul>
+      <li><code>params</code> - Param object for the deepest matched route</li>
     </ul>
 
     <Title small>Setting routes</Title>
