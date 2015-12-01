@@ -1,7 +1,7 @@
 view Home {
   <Header />
   <welcome>
-    <span class="wow">Frontend, without the framework</span>
+    <span class="wow gradient">Frontend, without the framework</span>
     <span>Flint is a compiler that unites editor & browser</span>
   </welcome>
   <Diagram />
@@ -40,12 +40,14 @@ view Home {
     }
   }
 
-  $wow = [style.textGradient, {
-    fontSize: 36,
+  $gradient = style.textGradient
+
+  $wow = {
+    fontSize: 38,
     color: color.brand2,
     lineHeight: 1.4,
     marginBottom: 4
-  }]
+  }
 
   $secondary = {
     fontSize: 18

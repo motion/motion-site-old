@@ -2,7 +2,7 @@ view Interlude {
   <interlude-h2 yield />
 
   $h2 = [style.textGradient, {
-    fontSize: 26,
+    fontSize: 27,
     margin: [45, 'auto'],
     padding: [23, 0],
     fontFamily: font.title,
