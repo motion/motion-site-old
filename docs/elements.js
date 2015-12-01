@@ -98,7 +98,7 @@ view Docs.Elements {
       }
     `} />
 
-    <Title id="accessing-dom-nodes">Accessing DOM nodes (refs)</Title>
+    <Title>Accessing DOM nodes (refs)</Title>
     <p>Sometimes you need to access nodes in the DOM.</p>
     <Code source={`
       view Main {
@@ -109,6 +109,17 @@ view Docs.Elements {
         })
 
         <span ref="span">I am {wide}</span>
+      }
+    `} />
+
+    <Title>Cloning Elements</Title>
+    <p>Clone an element with new props, like React.cloneElement:</p>
+
+    <Code source={`
+      view PassThrough {
+        <child repeat={view.props.children}>
+          {view.clone(_, { newProp: true })}
+        </child>
       }
     `} />
 
