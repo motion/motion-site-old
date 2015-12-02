@@ -16,59 +16,6 @@ view Home {
   $ = { width: '100%' }
 }
 
-view Video {
-  <browser />
-  <editor />
-
-  $ = {
-    flexFlow: 'row',
-    justifyContent: 'center'
-  }
-
-  const shared = {
-    width: 498,
-    margin: [50, 4, 0],
-    borderRadius: 10,
-    height: 410,
-    boxShadow: '0 0 6px rgba(0,0,0,0.1)'
-  }
-
-  $editor = [shared, {
-
-  }]
-
-  $browser = [shared, {
-
-  }]
-}
-
-view Intro {
-  <Contain yield />
-
-  $ = {
-    fontWeight: 300,
-    fontSize: 28,
-    padding: [20, 0],
-    margin: [30, 0],
-    border: '1px dotted #ddd',
-    borderLeft: 'none',
-    borderRight: 'none'
-  }
-
-  $Contain = {
-    textAlign: 'center'
-  }
-
-  $p = {
-    margin: [7, 0]
-  }
-
-  $strong = {
-    fontSize: 34,
-    marginBottom: 12,
-  }
-}
-
 view Home.Examples {
   <Contain alt>
     <section>
