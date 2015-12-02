@@ -101,7 +101,7 @@ view Intro {
     margin: [7, 0]
   }
 
-  $.strong = {
+  $strong = {
     fontSize: 34,
     marginBottom: 12,
   }

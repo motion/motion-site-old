@@ -36,7 +36,7 @@ view Contain {
     flexGrow: 1,
   }, view.props.contentStyle]
 
-  $.end = {
+  $end = {
     top: 'auto',
     bottom: -20,
     left: -100,

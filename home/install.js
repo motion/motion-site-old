@@ -16,7 +16,7 @@ view Install {
 
     <afterward>
       <line>
-        Flint is free & open source
+        Flint is <Link href="https://github.com/flintjs/flint" target="_blank">open source</Link>
       </line>
 
       <shields if={false}>
@@ -89,9 +89,10 @@ view Install {
   }
 
   $line = {
-    margin: [0, 0, -2],
+    margin: [0, 0, -5],
     fontSize: 14,
-    opacity: 0.8
+    opacity: 0.8,
+    display: 'block'
   }
 
   $shields = {
