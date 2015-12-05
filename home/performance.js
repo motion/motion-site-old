@@ -26,15 +26,15 @@ view Performance {
       </section>
 
       <section>
-        <p>Run, compile & build errors, all in one place.</p>
+        <p>Run, compile, build errors all in one place.</p>
       </section>
 
       <section>
-        <p>Avoids breaking, state loss, & unstyled flashes.</p>
+        <p>Avoid breaks, state loss, interruptions.</p>
       </section>
 
       <section>
-        <p>Nice error messages with exact line numbers.</p>
+        <p>Helpful error messages with exact line numbers.</p>
       </section>
     </feature>
 
@@ -44,7 +44,7 @@ view Performance {
       </section>
 
       <section>
-        <p>Hold down option in Atom to enter focus.</p>
+        <p>Quickly see all your colors and numbers in Atom.</p>
       </section>
 
       <section>
@@ -52,7 +52,7 @@ view Performance {
       </section>
 
       <section>
-        <p>Avoids work by streaming straight to browser.</p>
+        <p>10x faster, streams straight to browser.</p>
       </section>
     </feature>
 
@@ -63,7 +63,7 @@ view Performance {
       </section>
 
       <section>
-        <p>Javascript power in styles, locally scoped to view.</p>
+        <p>Javascript powered styles locally scoped to view.</p>
       </section>
 
       <section>
@@ -77,21 +77,13 @@ view Performance {
   </Contain>
 
   $ = {
-    borderBottom: '1px solid #eee',
     color: '#333',
     padding: [45, 0]
   }
 
   $Interlude = {
-    margin: [0, 0, 20],
+    margin: [0, 0, 40],
     padding: 0
-  }
-
-  $Text = {
-    maxWidth: '80%',
-    textAlign: 'center',
-    lineHeight: 1.6,
-    margin: [-10, 'auto', 13]
   }
 
   $feature = {

@@ -101,7 +101,7 @@ view Header {
     display: 'block',
     position: 'relative',
     overflow: 'hidden',
-    padding: [60, 10, 20],
+    padding: [70, 10, 20],
     margin: [0, 0, 30],
     minWidth: 700,
     flexFlow: 'row',
@@ -283,10 +283,10 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 23,
+    fontSize: 26,
     fontWeight: 300,
     lineHeight: '1.6rem',
-    padding: [0, 0, 12],
+    padding: [6, 0, 16],
     margin: [0, 'auto'],
     display: 'block',
     color: color(color.alt).darken(2.4).hex()

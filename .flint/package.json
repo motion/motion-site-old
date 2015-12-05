@@ -13,7 +13,6 @@
     "mouse-event-offset": "^3.0.2",
     "react": "^0.14.2",
     "react-motion": "^0.3.1",
-    "react-tap-event-plugin": "^0.2.1",
     "scroll": "^1.0.0"
   }
 }

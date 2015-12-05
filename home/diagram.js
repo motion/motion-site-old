@@ -53,11 +53,10 @@ view Diagram {
 
     <section {...sectionHover(2)} class="point">
       <col class="reverse">
-        <title class="pointTitle">Compiler</title>
         <Icon.Flint class="icon" highlight={hover == 2} />
       </col>
       <p>
-        Javascript compiler that <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">statically extracts CSS</Attr> and automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm packages</Attr>.
+        Flint ES6 compiler <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">statically extracts CSS</Attr> & automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm packages</Attr>.
       </p>
     </section>
 
@@ -78,7 +77,6 @@ view Diagram {
   $ = {
     flexFlow: 'row',
     padding: [0, 0, 45, 0],
-    color: '#555',
     alignItems: 'space-around',
     justifyContent: 'center',
     position: 'relative',
@@ -133,7 +131,7 @@ view Diagram {
   }
 
   $pointTitle = {
-    margin: [10, 0, -10],
+    margin: [14, 0, -14],
 
     [device.small]: {
       margin: [10, 0]
@@ -161,16 +159,16 @@ view Diagram {
 
   $p = {
     margin: [20, 0, 0],
-    fontSize: 15,
-    lineHeight: 1.6,
-    color: '#616161'
+    fontSize: 16,
+    lineHeight: 1.8,
+    color: '#777'
   }
 
   $title = {
     fontFamily: font.title,
     textAlign: 'center',
-    color: '#333',
-    fontSize: 17,
+    color: '#555',
+    fontSize: 18,
     margin: [-5, 0, 0, 0]
   }
 

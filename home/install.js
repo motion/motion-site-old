@@ -15,8 +15,8 @@ view Install {
     </mainCode>
 
     <afterward>
-      <line>
-        Flint is <Link href="https://github.com/flintjs/flint" target="_blank">open source</Link>
+      <line if={false}>
+        Flint is <Link color="rgba(255,255,255,0.5)" noborder href="https://github.com/flintjs/flint" target="_blank">open source</Link>
       </line>
 
       <shields if={false}>
@@ -31,16 +31,14 @@ view Install {
   $ = {
     textAlign: 'center',
     padding: [40, 0],
-    background: '#f9fbff',
     borderBottom: '1px solid #eee',
-    borderTop: '1px solid #eee'
+    borderTop: '1px solid #eee',
   }
 
   $title = {
-    color: color.brand2,
     fontFamily: font.title,
-    fontSize: 22,
-    margin: [-6, 0, 10, 0]
+    fontSize: 24,
+    margin: [-6, 0, 20, 0]
   }
 
   $Contain = {
@@ -55,8 +53,7 @@ view Install {
 
   $mainCode = {
     flexFlow: 'row',
-    margin: 'auto',
-    maxWidth: 386
+    margin: 'auto'
   }
 
   $code = {
@@ -71,20 +68,18 @@ view Install {
   }
 
   $input = {
-    border: `${1}px solid #ddd`,
-    color: '#777',
+    border: [2, 'solid', '#ddd'],
+    color: color.brand2,
     background: '#fff',
-    borderRadius: 4,
-    padding: [6, 0, 6, 14],
-    fontSize: 18,
+    borderRadius: 10,
+    padding: 10,
+    fontSize: 20,
     margin: [-8, 0, -5],
-    fontFamily: font.monoSpace,
-    width: '100%'
+    fontFamily: font.monoSpace
   }
 
   $afterward = {
     margin: [5, 'auto', 0],
-    color: '#999',
     fontSize: 16
   }
 
@@ -139,28 +134,28 @@ view Help {
     margin: ['auto', -(size + 35), 'auto', 0],
     width: size,
     height: size,
-    // boxShadow: '0 0 4px rgba(0,0,0,0.1)',
-    borderRadius: 100,
     justifyContent: 'center',
-    fontSize: 18,
-    color: 'rgba(0,0,0,0.2)',
+    fontSize: 22,
+    color: [0,0,0,0.2],
+    fontWeight: 600,
     cursor: 'pointer'
   }
 
   $modal = {
+    color: '#555',
     display: 'block',
     opacity: hovered ? 1 : 0,
     transition: 'all ease-in 300ms',
     position: 'absolute',
     left: hovered ? 150 : 140,
-    top: '-100%',
+    top: '-80%',
     marginLeft: -120,
     width: 200,
     padding: 10,
     boxShadow: '0 0 4px rgba(0,0,0,0.2)',
     borderRadius: 4,
     fontSize: 13,
-    lineHeight: '1.25rem',
+    lineHeight: '1.2rem',
     background: '#fff'
   }
 

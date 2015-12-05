@@ -98,10 +98,7 @@ view Features {
 
   $ = {
     padding: [30, 0],
-    margin: [30, 0],
-    background: color.alt,
-    borderTop: '1px solid #eee',
-    borderBottom: '1px solid #eee',
+    margin: [30, 0]
   }
 
   $Next = {
