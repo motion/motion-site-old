@@ -9,6 +9,8 @@ view Page {
   <Footer />
 
   $ = {
+    fontSize: 18,
+    lineHeight: '2.1rem',
 
     [device.small]: {
       flexFlow: 'column'
@@ -16,9 +18,10 @@ view Page {
   }
 
   $Contain = {
-    maxWidth: 800,
+    maxWidth: 900,
     margin: 'auto',
     flexFlow: 'row',
+    padding: [40, 0, 0],
 
     [device.small]: {
       flexFlow: 'column'
@@ -26,7 +29,7 @@ view Page {
   }
 
   $inner = {
-    padding: [5, '5%'],
+    padding: [5, 150, 0, 20],
   }
 }
 
@@ -41,10 +44,10 @@ view Page.Sidebar {
   </a>
 
   $ = {
-    borderRight: '1px solid #ddd',
-    minWidth: 120,
-    margin: 20,
-    marginLeft: 0,
+    width: 120,
+    margin: [30, 0, 0],
+    position: 'fixed',
+    right: 20,
 
     [device.small]: {
       borderRight: 'none',
@@ -55,19 +58,29 @@ view Page.Sidebar {
     }
   }
 
-  $active = {
-    fontWeight: 600,
-    color: 'black',
-  }
-
-  $a = [style.link, {
+  $a = {
+    borderRight: [3, 'solid', 'transparent'],
+    color: '#777',
+    fontSize: 18,
     whiteSpace: 'nowrap',
-    padding: [10, 20],
+    padding: [8, 20],
     minWidth: 120,
     display: 'flex',
     width: '100%',
-    textAlign: 'right'
-  }]
+    textAlign: 'right',
+    cursor: 'pointer',
+
+    hover: {
+      color: color.brand1
+    }
+  }
+
+  $active = {
+    fontWeight: 600,
+    color: 'black',
+    borderColor: color.brand
+  }
+
 }
 
 view RoutedContent {

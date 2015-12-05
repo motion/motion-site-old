@@ -1,22 +1,32 @@
 view HeaderAlt {
   <wrap>
     <Logo small />
-    <Nav />
+    <Nav large />
     <Social tiny noSlack />
   </wrap>
 
   $ = {
     borderBottom: '1px solid #ddd',
-    padding: [5, 0],
-    width: '100%'
+    padding: [1, 0],
+    width: '100%',
+    position: 'fixed',
+    background: '#fff',
+    zIndex: 100,
+    boxShadow: [0, 0, 5, 'rgba(0,0,0,0.1)'],
+
+    [device.small]: {
+      position: 'relative',
+      marginBottom: -50
+    }
   }
 
   $wrap = {
     flexFlow: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '80%',
-    maxWidth: 870,
+    width: '100%',
+    maxWidth: 900,
+    padding: [0, 20],
     margin: [0, 'auto'],
 
     [device.small]: {
@@ -185,7 +195,7 @@ view Nav {
   $a = {
     color: 'rgba(0,0,0,0.5)',
     borderBottom: 'none',
-    fontSize: 15,
+    fontSize: view.props.large ? 16 : 15,
     fontWeight: 500,
     padding: [0, 12],
     cursor: 'pointer',
