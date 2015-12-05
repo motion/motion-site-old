@@ -94,7 +94,6 @@ view Icon.Flint {
   }
 
   $img = {
-    filter: highlight ? 'none' : 'grayscale(1) brightness(1.8)',
     width: size / base,
     height: size / base,
     margin: -2,

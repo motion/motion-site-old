@@ -32,7 +32,7 @@ view IconGithub {
   </svg>
 
   $ = false
-  $svg = [icon, { opacity: 0.3 }]
+  $svg = [icon, { opacity: 0.32 }]
 }
 
 view IconTwitter {
@@ -56,7 +56,7 @@ view IconSlack {
   </svg>
 
   $ = false
-  $svg = [icon, { opacity: 0.3 }]
+  $svg = [icon, { opacity: 0.33 }]
 }
 
 view Check {

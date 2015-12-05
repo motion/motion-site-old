@@ -101,7 +101,7 @@ view Header {
     display: 'block',
     position: 'relative',
     overflow: 'hidden',
-    padding: [70, 10, 20],
+    padding: [70, 10, 15],
     margin: [0, 0, 30],
     minWidth: 700,
     flexFlow: 'row',
@@ -193,9 +193,9 @@ view Nav {
   }
 
   $a = {
-    color: 'rgba(0,0,0,0.5)',
+    color: 'rgba(0,0,0,0.4)',
     borderBottom: 'none',
-    fontSize: view.props.large ? 16 : 15,
+    fontSize: 16,
     fontWeight: 500,
     padding: [0, 12],
     cursor: 'pointer',

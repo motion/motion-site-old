@@ -56,7 +56,7 @@ view Diagram {
         <Icon.Flint class="icon" highlight={hover == 2} />
       </col>
       <p>
-        Flint ES6 compiler <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">statically extracts CSS</Attr> & automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm packages</Attr>.
+        Flint's ES6 compiler <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">statically extracts CSS</Attr> & automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm packages</Attr>.
       </p>
     </section>
 
@@ -92,7 +92,7 @@ view Diagram {
   $section = {
     width: '30%',
     alignItems: 'center',
-    padding: [0, 20],
+    padding: [0, 25],
     maxWidth: 400,
     alignSelf: 'flex-start',
     position: 'relative',
@@ -168,7 +168,7 @@ view Diagram {
     fontFamily: font.title,
     textAlign: 'center',
     color: '#555',
-    fontSize: 18,
+    fontSize: 16,
     margin: [-5, 0, 0, 0]
   }
 
