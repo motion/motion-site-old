@@ -7,7 +7,6 @@ view Welcome {
   $welcome = {
     fontSize: 28,
     color: 'rgba(0,0,0,0.7)',
-    fontWeight: 300,
     lineHeight: 1.75,
     margin: [0, 'auto'],
     padding: [10, 10, 45],

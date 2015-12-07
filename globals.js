@@ -27,8 +27,8 @@ color.text = '#444'
 color.strip = '#fff'
 
 const font = {}
-font.title = 'Bitter, Slab, Georgia, serif'
-font.sansSerif = '"PT Sans", "San Francisco", Helvetica, Arial, sans-serif'
+font.title = '"Bitter", Slab, Georgia, serif'
+font.sansSerif = '"Hind", "San Francisco", Helvetica, Arial, sans-serif'
 font.monoSpace = '"Fira Code", Menlo, Meslo, Inconsolata, Source Code Pro, monospace'
 
 const device = {}
