@@ -13,6 +13,7 @@ routes.home = '/'
 routes.examples = '/examples'
 routes.docs = '/docs'
 routes.community = '/community'
+routes.spark = '/spark'
 
 const color = chroma || function(){}
 color.alt = '#fdfdfa'

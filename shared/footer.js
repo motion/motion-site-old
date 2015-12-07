@@ -18,7 +18,8 @@ view Footer {
   }
 
   $content = {
-    margin: [80, 'auto']
+    margin: [80, 'auto'],
+    flexFlow: 'column'
   }
 
   $p = {

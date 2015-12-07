@@ -37,6 +37,7 @@ view Main {
     <Examples route={routes.examples} />
     <Docs route={routes.docs} />
     <Community route={routes.community} />
+    <Spark route={routes.spark} />
   </site>
 
   $ = {

@@ -14,6 +14,7 @@ view Title {
   }
 
   $h2 = [
+    style.textGradient,
     {
       fontFamily: font.title,
       color: '#444',
