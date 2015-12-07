@@ -26,9 +26,9 @@ view Social {
       scale: 0.8
     }
   } : {
-    margin: [0, 18, -10],
+    margin: [0, 14, -10],
     transform: {
-      scale: 0.9
+      scale: 0.8
     }
   }
 }

@@ -10,7 +10,7 @@ view Page {
 
   $ = {
     fontSize: 18,
-    lineHeight: '2.1rem',
+    lineHeight: '1.95rem',
 
     [device.small]: {
       flexFlow: 'column'
@@ -21,7 +21,7 @@ view Page {
     maxWidth: 900,
     margin: 'auto',
     flexFlow: 'row',
-    padding: [40, 0, 0],
+    padding: [0, 0, 0],
 
     [device.small]: {
       flexFlow: 'column'
@@ -29,7 +29,7 @@ view Page {
   }
 
   $inner = {
-    padding: [5, 150, 0, 20],
+    padding: [5, 30, 0, 30],
   }
 }
 
@@ -45,9 +45,9 @@ view Page.Sidebar {
 
   $ = {
     width: 120,
-    margin: [30, 0, 0],
-    position: 'fixed',
+    margin: [30, 10, 0],
     right: 20,
+    userSelect: 'none',
 
     [device.small]: {
       borderRight: 'none',
@@ -63,7 +63,8 @@ view Page.Sidebar {
     color: '#777',
     fontSize: 18,
     whiteSpace: 'nowrap',
-    padding: [8, 20],
+    padding: [2, 16],
+    margin: [2, 0],
     minWidth: 120,
     display: 'flex',
     width: '100%',
@@ -77,7 +78,7 @@ view Page.Sidebar {
 
   $active = {
     fontWeight: 600,
-    color: 'black',
+    color: '#444',
     borderColor: color.brand
   }
 

@@ -2,7 +2,7 @@ view Docs.Intro {
   <Title big>What is Flint?</Title>
   <Body>
     <Text big>
-      Flint is a rethinking of modern development. It combines a powerful compiler, and strong integration between browser and editor.  With Flint's view macro, you can use JavaScript to write modern web apps.
+      Flint is a rethinking of modern development. It's a smart compiler that understands how you build apps & connects your browser, editor and code.
     </Text>
 
     <Text>

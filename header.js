@@ -7,9 +7,8 @@ view HeaderAlt {
 
   $ = {
     borderBottom: '1px solid #ddd',
-    padding: [1, 0],
+    padding: [5, 0],
     width: '100%',
-    position: 'fixed',
     background: '#fff',
     zIndex: 100,
     boxShadow: [0, 0, 5, 'rgba(0,0,0,0.1)'],
@@ -182,6 +181,7 @@ view Nav {
   <a repeat={links} {..._} />
 
   $ = {
+    userSelect: 'none',
     margin: [0, 'auto'],
     flexFlow: 'row',
     zIndex: 100,
@@ -283,12 +283,12 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 26,
+    fontSize: 22,
     fontWeight: 300,
     lineHeight: '1.6rem',
-    padding: [6, 0, 16],
+    padding: [0, 0, 8],
     margin: [0, 'auto'],
     display: 'block',
-    color: color(color.alt).darken(2.4).hex()
+    color: '#888'
   }
 }

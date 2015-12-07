@@ -1,7 +1,7 @@
 view Welcome {
   <welcome>
-    <span class="wow gradient">Frontend, without the framework</span>
-    <span>Flint is a Javascript compiler connects your tools</span>
+    <span class="wow">Frontend, without the framework</span>
+    <span>An easy, smart way to build apps</span>
   </welcome>
 
   $welcome = {
@@ -10,7 +10,7 @@ view Welcome {
     fontWeight: 300,
     lineHeight: 1.75,
     margin: [0, 'auto'],
-    padding: [15, 10, 45],
+    padding: [10, 10, 45],
     textAlign: 'center',
     maxWidth: 750,
     zIndex: 100,
@@ -25,7 +25,7 @@ view Welcome {
   $gradient = style.textGradient
 
   $wow = {
-    fontSize: 40,
+    fontSize: 34,
     color: color.brand2,
     lineHeight: 1.4,
     marginBottom: 4

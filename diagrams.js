@@ -45,12 +45,13 @@ view Icon.Browser {
   } />
 
   $top = {
-    borderBottom: '1px solid #ddd',
+    borderBottom: '1px solid #eee',
     height: 15
   }
 
   $item = {
-    border: '1px solid #ddd',
+    border: '1px solid #eee',
+    borderRadius: 10,
     margin: 3,
     height: '100%'
   }
@@ -63,7 +64,7 @@ view Icon.Editor {
 
   $line = {
     height: 1,
-    background: '#ddd',
+    background: '#eee',
     margin: 3,
     width: Math.max(0.8, Math.random()) * Math.min(100, Math.max(70, _index * 45 % 100 * (Math.random() * 2.5))) + '%'
   }
@@ -97,9 +98,14 @@ view Icon.Flint {
     width: size / base,
     height: size / base,
     margin: -2,
-    transition: 'all ease-in 300ms',
+    transition: 'all ease-in 200ms',
     transform: {
       scale: 0.9
+    },
+    filter: 'grayscale(1) brightness(2)',
+
+    hover: {
+      filter: 'none'
     }
   }
 
