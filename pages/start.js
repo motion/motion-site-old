@@ -1,4 +1,10 @@
 view Start {
+  let showInstall = false
+
+  function toggleStart() {
+    showInstall = !showInstall
+  }
+
   <Page>
     <Title big>Welcome to The Spark Beta</Title>
 
@@ -7,14 +13,18 @@ view Start {
     </Text>
 
     <Text>
-      If you already have node/atom, skip to the next section!
+
     </Text>
 
     <Title>
       Installing from scratch
     </Title>
 
-    <ol>
+    <Text>
+      If you already have node/atom, skip to the next section! Otherwise, <Link onClick={toggleStart}>show the instructions here</Link>.
+    </Text>
+
+    <ol if={showInstall}>
       <li>
         Install atom from <Link href="http://atom.io/">atom.io</Link>
       </li>
@@ -52,6 +62,18 @@ view Start {
       `} />
     </ol>
 
+    <Title>
+      Join the Spark Slack
+    </Title>
+
+    <Text>
+      We have a private chat room in our Slack for everyone in Spark. We will add you to it, be sure to sign up to our chat here:
+    </Text>
+
+    <col>
+      <Slack />
+    </col>
+
 
     <Title>
       Building a great app
@@ -79,11 +101,7 @@ view Start {
         <Link href="https://github.com/natew/arena">Arena</Link> - A simple portfolio site that uses a simple REST API. Uses async/await and fetch together to show some advanced fetching patterns as well as routes
       </li>
     </ul>
-
   </Page>
-
-
-
 
   $content = {
     margin: [100, 'auto'],
@@ -98,5 +116,10 @@ view Start {
     maxWidth: 450,
     textAlign: 'left',
     margin: [15, 'auto']
+  }
+
+  $col = {
+    flexFlow: 'column',
+    flowDirection: 'column'
   }
 }
