@@ -13,7 +13,10 @@ view Home {
   <Powered />
   <Footer />
 
-  $ = { width: '100%' }
+  $ = {
+    width: '100%',
+    color: '#fff'
+  }
 }
 
 view Home.Examples {

@@ -14,7 +14,7 @@ view Code {
   })
 
   <code ref="code" class={view.props.lang || 'javascript'}>
-    {clean(view.props.source)}
+    {clean(view.props.source) || view.props.children}
   </code>
 
   $ = {

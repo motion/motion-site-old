@@ -14,6 +14,7 @@ routes.examples = '/examples'
 routes.docs = '/docs'
 routes.community = '/community'
 routes.spark = '/spark'
+routes.start = '/start'
 
 const color = chroma || function(){}
 color.alt = '#fdfdfa'
@@ -29,7 +30,7 @@ color.strip = '#fff'
 
 const font = {}
 font.title = '"Bitter", Slab, Georgia, serif'
-font.sansSerif = '"Hind", "San Francisco", Helvetica, Arial, sans-serif'
+font.sansSerif = '"Open Sans", "San Francisco", Helvetica, Arial, sans-serif'
 font.monoSpace = '"Fira Code", Menlo, Meslo, Inconsolata, Source Code Pro, monospace'
 
 const device = {}

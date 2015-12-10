@@ -38,6 +38,7 @@ view Main {
     <Docs route={routes.docs} />
     <Community route={routes.community} />
     <Spark route={routes.spark} />
+    <Start route={routes.start} />
   </site>
 
   $ = {
