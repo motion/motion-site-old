@@ -14,8 +14,7 @@ view Home {
   <Footer />
 
   $ = {
-    width: '100%',
-    color: '#fff'
+    width: '100%'
   }
 }
 
