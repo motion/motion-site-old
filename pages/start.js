@@ -12,7 +12,7 @@ view Start {
 view Start.Learning {
   <Title>Learning Flint</Title>
   <Text>We've found that Flint can be learned quicky by those who have programmed in JS before.</Text>
-  <Text>Our <a href="/editor">interactive code editor</a> is a great way to learn the basics, and our <a href="https://flintjs.com/docs">documentation</a> can help you learn more specific features of Flint.</Text>
+  <Text>Our <a href="http://learn.flintjs.com">interactive code editor</a> is a great way to learn the basics, and our <a href="https://flintjs.com/docs">documentation</a> can help you learn more specific features of Flint.</Text>
 }
 
 view Start.Examples {
