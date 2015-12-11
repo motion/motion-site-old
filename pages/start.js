@@ -1,6 +1,4 @@
 view Start {
-  let node = true
-
   <Page>
     <Start.Intro />
     <Start.Getting />
@@ -9,18 +7,6 @@ view Start {
     <Start.Examples />
     <Start.Joining />
   </Page>
-
-  $content = {
-    margin: [100, 'auto'],
-  }
-
-  $Text = { padding: [10, 40] }
-
-  $text = {
-    maxWidth: 450,
-    textAlign: 'left',
-    margin: [15, 'auto']
-  }
 }
 
 view Start.Learning {
