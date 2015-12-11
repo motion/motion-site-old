@@ -1,22 +1,31 @@
 view Start {
   <Page>
-    <Start.Intro />
-    <Start.Getting />
-    <Start.Slack />
-    <Start.Learning />
-    <Start.Examples />
-    <Start.Joining />
+    <contain>
+      <Start.Intro />
+      <Start.Getting />
+      <Start.Slack />
+      <Start.Learning />
+      <Start.Examples />
+      <Start.Joining />
+    </contain>
   </Page>
+
+  $contain = {
+    padding: [50, 100],
+    fontSize: 20,
+    lineHeight: '2.2rem',
+    color: '#545454'
+  }
 }
 
 view Start.Learning {
-  <Title>Learning Flint</Title>
+  <Title big>Learning Flint</Title>
   <Text>We've found that Flint can be learned quicky by those who have programmed in JS before.</Text>
   <Text>Our <a href="http://learn.flintjs.com">interactive code editor</a> is a great way to learn the basics, and our <a href="https://flintjs.com/docs">documentation</a> can help you learn more specific features of Flint.</Text>
 }
 
 view Start.Examples {
-  <Title>
+  <Title big>
     Flint Examples
   </Title>
 
@@ -47,21 +56,25 @@ view Start.Examples {
 view Start.Getting {
   let node = true
 
-  <Title>
+  <Title big>
     Getting Flint
   </Title>
-  <Row>
+  <Row class="space">
     <choice onClick={() => node = true}
             class={{bold: node}}>I have node</choice>
     <choice onClick={() => node = false}
-            class={{bold: !node}}>Starting from scratch</choice>
+            class={{bold: !node}}>Start from scratch</choice>
   </Row>
 
   <Start.Node if={node} />
   <Start.Scratch if={!node} />
 
+  $space = {
+    justifyContent: 'space-around',
+    margin: [20, 0]
+  }
+
   $choice = {
-    marginLeft: 144,
     border: '3px solid #eee',
     cursor: 'pointer',
     padding: 10,
@@ -138,7 +151,7 @@ view Start.Node {
 }
 
 view Start.Slack {
-  <Title>Join our Slack</Title>
+  <Title big>Join our Slack</Title>
   <Text>Direct message Nick Cammarata to get access to the Private Beta channel.</Text>
   <iframe seamless="seamless" src="https://flint-slack.herokuapp.com/"></iframe>
 
@@ -167,8 +180,6 @@ view Start.Intro {
     Here's some help getting started with Flint. We'll assume you're really starting from scratch on a new machine.
   </Text>
 
-  $Text = { padding: [10, 40] }
-
   $spark = {
     maxWidth: '30%',
     margin: [20, 'auto']
@@ -176,14 +187,12 @@ view Start.Intro {
 }
 
 view Start.Joining {
-  <Title>We're Joining You</Title>
+  <Title big>We're Joining You</Title>
   <Text>Flint's founders (Nick and Nate) will be joining you in Spark by building Groop, a fun group chat app where votes can decide any action, small spontaneous games can take place, and generaly tomfoolery can be had.</Text>
 
   <groop-img src="/assets/images/groop.png" />
 
   <Text>We'll be open sourcing Groop and using it as a way to teach Flint. We'll try to provide weekly updates in the Slack channel</Text>
-
-  $Text = { padding: [10, 40] }
 
   $groop = {
     maxWidth: '30%',
