@@ -21,7 +21,8 @@ view Start {
 view Start.Learning {
   <Title big>Learning Flint</Title>
   <Text>We've found that Flint can be learned quicky by those who have programmed in JS before.</Text>
-  <Text>Our <a href="http://learn.flintjs.com">interactive code editor</a> is a great way to learn the basics, and our <a href="https://flintjs.com/docs">documentation</a> can help you learn more specific features of Flint.</Text>
+  <Text>Our <a href="https://flintjs.com/docs">documentation</a> can help you learn more specific features of Flint and our <a href="https://github.com/flintjs/examples">examples repo</a> has a variety of small examples showing working code.</Text>
+  <Text>We're working on an online live <a href="http://learn.flintjs.com">interactive code editor</a>, but it's <em>not yet ready</em>, we'll notify you once it's up.</Text>
 }
 
 view Start.Examples {
@@ -39,12 +40,12 @@ view Start.Examples {
   </Text>
 
   <ul>
-    <li>
+    <li if={false}>
       <Link href="">FlashCash</Link> - A simple one-off site that integrates firebase, accounts and payments
     </li>
 
     <li>
-      <Link href="https://github.com/flintjs/site">Flint.js Homepage</Link> - Our homepage has over 200 views, it's not very dynamic but we've tried to keep it well written (besides the globals).
+      <Link href="https://github.com/flintjs/site">Flint.js Homepage</Link> - Our homepage has over 200 views, it's not very dynamic but we've tried to keep it well written.
     </li>
 
     <li>
