@@ -40,8 +40,8 @@ view Start.Examples {
   </Text>
 
   <ul>
-    <li if={false}>
-      <Link href="">FlashCash</Link> - A simple one-off site that integrates firebase, accounts and payments
+    <li>
+      <Link href="https://github.com/flintjs/flashcash">FlashCash</Link> - A simple one-off site that integrates firebase, accounts and payments
     </li>
 
     <li>
