@@ -168,6 +168,7 @@ view Nav {
   }
 
   const routeProps = path => ({
+    href: path,
     onClick: router.link(path),
     className: { active: router.isActive(path) }
   })
