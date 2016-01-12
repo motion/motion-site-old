@@ -4,7 +4,7 @@ view Docs.Styles {
     <Text big>The final thing to understand about views are styles. Styles are written in JavaScript, which makes creating dynamic styles easy. We designate a style with $.</Text>
 
     <Text>
-      Flint styles are conceputally similar to CSS, but far simpler. They are inspired by this talk from <Link href="https://speakerdeck.com/vjeux/react-css-in-js" target="_blank">Christopher Chedeau</Link>, and the subsequent amazing work by the JS community. They are powered by <Link href="https://github.com/FormidableLabs/radium" target="_blank">Radium</Link> and <Link href="https://github.com/kodyl/stilr" target="_blank">Stilr</Link> under the hood.
+      Flint styles are conceptually similar to CSS, but far simpler. They are inspired by this talk from <Link href="https://speakerdeck.com/vjeux/react-css-in-js" target="_blank">Christopher Chedeau</Link>, and the subsequent amazing work by the JS community. They are powered by <Link href="https://github.com/FormidableLabs/radium" target="_blank">Radium</Link> and <Link href="https://github.com/kodyl/stilr" target="_blank">Stilr</Link> under the hood.
     </Text>
 
     <Code source={`
@@ -80,7 +80,7 @@ view Docs.Styles {
 
     <Title small>Advanced styling</Title>
 
-    <Text>Flint optimizes your styles behind the scenes. We use a parser to extract your static styles into a separate object. We're working on having those styles exctract fully into CSS, along with other upgrades as we go.</Text>
+    <Text>Flint optimizes your styles behind the scenes. We use a parser to extract your static styles into a separate object. We're working on having those styles extract fully into CSS, along with other upgrades as we go.</Text>
 
     <Text><b>Share styles</b> between tags with ease using arrays:</Text>
 
@@ -135,7 +135,7 @@ view Docs.Styles {
         }
       }
     `} />
-    
+
     <Next to='/docs/events'>Events</Next>
   </Body>
 }
