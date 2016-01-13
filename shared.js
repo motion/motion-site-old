@@ -18,3 +18,10 @@ view Blur {
 view Row {
   $ = { flexFlow: 'row' }
 }
+
+view Col {
+  $ = {
+    flexFlow: 'column',
+    flexGrow: 1
+  }
+}

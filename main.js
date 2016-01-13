@@ -34,6 +34,7 @@ view Main {
 
   <site if={hidePass}>
     <Home route={routes.home} />
+    <Home2 route="/home2" />
     <Examples route={routes.examples} />
     <Docs route={routes.docs} />
     <Community route={routes.community} />
