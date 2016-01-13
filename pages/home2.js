@@ -9,6 +9,7 @@ view Home2 {
   <Home.Syntax />
   <Home.Errors />
   <Home.Install />
+  <Home.State />
 
   <section>
     <h2>Amazing tools without the boilerplate</h2>
@@ -188,10 +189,18 @@ view Home.Install {
       <source src="assets/video/install.mp4" type="video/mp4" />
     </video>
   </Feature>
+}
 
-  $img = {
-    maxWidth: '100%'
-  }
+view Home.State {
+  <Feature>
+    <Col>
+      <Home.Title>State Inspector</Home.Title>
+      <Home.Sub>Easy, pinable, simple state inspector.</Home.Sub>
+    </Col>
+    <video width="320" height="240" autoplay="autoplay" loop>
+      <source src="assets/video/state.mp4" type="video/mp4" />
+    </video>
+  </Feature>
 }
 
 view Feature {
