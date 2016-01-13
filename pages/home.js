@@ -3,7 +3,7 @@ view Home {
   <Welcome />
   <Diagram />
   <Install title />
-  <Examples />
+  <Home.Examples />
   <Features />
   <Performance />
   <DemoVideo />

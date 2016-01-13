@@ -1,10 +1,14 @@
 view Home2 {
+
   <head>
     <h1>A coherent way to build modern apps</h1>
   </head>
 
-  <Art />
-  <Connected />
+  <Home.Art />
+  <Home.Connected />
+  <Home.Syntax />
+  <Home.Errors />
+  <Home.Install />
 
   <section>
     <h2>Amazing tools without the boilerplate</h2>
@@ -88,8 +92,8 @@ view Home2 {
   }
 }
 
-view Connected {
-  <Feature center>
+view Home.Connected {
+  <Feature center col>
     <Home.Title>Connects your tools</Home.Title>
     <Home.Sub>Flint's compiler communicates between browser and editor to enable new developer powers</Home.Sub>
 
@@ -97,17 +101,17 @@ view Connected {
       <Col>
         <Icon.Browser />
         <Home.Sub>Something</Home.Sub>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
       </Col>
       <Col>
         <Icon.Editor />
         <Home.Sub>Something</Home.Sub>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
       </Col>
       <Col>
         <Icon.Flint />
         <Home.Sub>Something</Home.Sub>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
       </Col>
     </Row>
 
@@ -118,16 +122,21 @@ view Connected {
   }
 }
 
-view Art {
+view Home.Art {
   <Feature>
-    <Home.Title>State of the art</Home.Title>
-    <p>
-      An ultra modern React stack with everything you need to start in minutes and deploy today.
-    </p>
+    <Col>
+      <Home.Title>State of the art</Home.Title>
+      <Text>
+        An ultra modern React stack with everything you need to start in minutes and deploy today.
+      </Text>
 
-    <p>
-      Powerful and never before seen tools to make you and your team happy with development again.
-    </p>
+      <Text>
+        Powerful and never before seen tools to make you and your team happy with development again.
+      </Text>
+    </Col>
+    <Col>
+
+    </Col>
   </Feature>
 
   $p = {
@@ -137,12 +146,61 @@ view Art {
   }
 }
 
+view Home.Syntax {
+  <Feature col>
+    <Home.Title>Brings views to Javascript</Home.Title>
+    <Home.Sub>Less to learn, less to code, easier to read, easier to mantain.</Home.Sub>
+
+    <Row>
+      <Col>
+        <DemoCounter />
+      </Col>
+    </Row>
+
+  </Feature>
+
+  $Col = {
+    padding: 30
+  }
+}
+
+view Home.Errors {
+  <Feature col>
+    <Home.Title>Amazing Errors</Home.Title>
+    <Home.Sub>Flint recovers gracefully from errors and shows you exactly what you need.</Home.Sub>
+    <img src="/assets/images/errors.png" />
+  </Feature>
+
+  $img = {
+    maxWidth: '100%'
+  }
+}
+
+view Home.Install {
+  <Feature>
+    <Col>
+      <Home.Title>Automatic NPM Installs</Home.Title>
+      <Home.Sub>As you type, Flint installs npm packages, and injects them into your running app without losing state.</Home.Sub>
+    </Col>
+    <video width="320" height="240" autoplay="autoplay" loop>
+      <source src="assets/video/install.webm" type="video/webm" />
+      <source src="assets/video/install.ogg" type="video/ogg" />
+      <source src="assets/video/install.mp4" type="video/mp4" />
+    </video>
+  </Feature>
+
+  $img = {
+    maxWidth: '100%'
+  }
+}
+
 view Feature {
   <Contain yield />
 
   $ = {
     padding: 50,
-    textAlign: view.props.center ? 'center' : 'left'
+    textAlign: view.props.center ? `center` : `left`,
+    flexFlow: view.props.col ? `column` : `row`
   }
 }
 
@@ -151,14 +209,24 @@ view Home.Title {
 
   $ = {
     fontWeight: 200,
-    fontSize: 30
+    fontSize: 28
   }
 }
 
 view Home.Sub {
-  $ = {
-    opacity: 0.4,
-    fontWeight: 300,
+  <Text root yield />
+
+  $Text = {
     fontSize: 18
+  }
+}
+
+view Text {
+  <p root yield />
+
+  $ = {
+    color: `rgba(0,0,0,0.5)`,
+    fontWeight: 300,
+    fontSize: 16
   }
 }
