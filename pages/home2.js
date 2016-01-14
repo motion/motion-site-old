@@ -1,15 +1,15 @@
 view Home.Head {
   <head>
-    <h1>A coherent way to build modern apps</h1>
+    <Header />
   </head>
 
   $head = {
-    background: `linear-gradient(20deg, #bd8ce4, #88f7f7)`,
+    background: `linear-gradient(20deg, #6e319e, #20d2d2)`,
     color: '#fff',
-    height: 300,
-    padding: [50, 20],
+    padding: [20, 20],
     textAlign: 'center',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
+    flexFlow: 'column'
   }
 
   $h1 = {

@@ -185,7 +185,6 @@ view Nav {
     margin: [0, 'auto'],
     flexFlow: 'row',
     zIndex: 100,
-    fontWeight: 300,
 
     [device.small]: {
       marginBottom: 0
@@ -193,10 +192,10 @@ view Nav {
   }
 
   $a = {
-    color: 'rgba(0,0,0,0.4)',
+    color: 'rgba(255,255,255,0.9)',
+    fontWeight: 300,
     borderBottom: 'none',
-    fontSize: 16,
-    fontWeight: 500,
+    fontSize: 13,
     padding: [0, 12],
     cursor: 'pointer',
     textDecoration: 'none',
@@ -213,7 +212,7 @@ view Nav {
 }
 
 view Logo {
-  <logo-img onClick={router.link(routes.home)} src="/assets/images/flintlogo.png" />
+  <img root onClick={router.link(routes.home)} src="/assets/images/flintlogowhite.png" />
 
   const width = 1400
   const height = 387
@@ -286,9 +285,9 @@ view Desc {
     fontSize: 22,
     fontWeight: 300,
     lineHeight: '1.6rem',
-    padding: [0, 0, 8],
+    padding: [0, 0, 18],
     margin: [0, 'auto'],
     display: 'block',
-    color: '#888'
+    color: '#fff'
   }
 }
