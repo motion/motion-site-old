@@ -66,6 +66,7 @@ view Check {
   </check-svg>
 
   $svg = {
+    fill: '#34b634',
     width: 400,
     height: 400
   }

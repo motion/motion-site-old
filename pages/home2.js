@@ -102,17 +102,25 @@ view Home.Connected {
       <Col>
         <Icon.Browser />
         <Home.Sub>Something</Home.Sub>
-        <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+        <Text>
+          <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smart reloads</Attr> hot swap instantly and keep state.
+          Inline <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break.">safe</Attr> errors. <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor.">Inspect & jump</Attr> to editor.
+        </Text>
       </Col>
       <Col>
         <Icon.Editor />
         <Home.Sub>Something</Home.Sub>
-        <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+        <Text>
+          Flint's ES6 compiler <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">statically extracts CSS</Attr> & automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm</Attr>.
+        </Text>
       </Col>
       <Col>
         <Icon.Flint />
         <Home.Sub>Something</Home.Sub>
-        <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+        <Text>
+          <Attr alt="Updates your app with each character, avoids writing to file system.">Live coding</Attr> with Atom.&nbsp;
+          <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode lets you drag your numbers and colors. Instant inline errors.
+        </Text>
       </Col>
     </Row>
 
@@ -136,7 +144,11 @@ view Home.Art {
       </Text>
     </Col>
     <Col>
-
+      <LI>React, babel, webpack, and more</LI>
+      <LI>React, babel, webpack, and more</LI>
+      <LI>React, babel, webpack, and more</LI>
+      <LI>React, babel, webpack, and more</LI>
+      <LI>React, babel, webpack, and more</LI>
     </Col>
   </Feature>
 
@@ -144,6 +156,32 @@ view Home.Art {
     fontSize: 18,
     color: '#999',
     width: 500
+  }
+
+  $Col = {
+    width: '50%',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+}
+
+view LI {
+  <item>
+    <Check />
+    {view.props.children}
+  </item>
+
+  $item = {
+    flexFlow: 'row',
+    alignItems: 'center',
+    color: '#34b634',
+    margin: [0, 0, 10]
+  }
+
+  $Check = {
+    width: 22,
+    height: 22,
+    marginRight: 10
   }
 }
 
