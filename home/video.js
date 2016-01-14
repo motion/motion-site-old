@@ -58,20 +58,17 @@ view YouTube {
   // })
 
 
-  <cover if={started} />
-  <cover if={false} class="bot" />
+  <cover />
   <iframe
     onClick={clicked}
     src={getUrl()}
     frameborder="0"
     device>
   </iframe>
-  <h4>Screencast with old syntax</h4>
-  <p>A screencast with modern Flint code is coming soon</p>
 
   const originalHeight = 800
   const originalWidth = 1440
-  const scale = 0.5
+  const scale = 0.4
   const height = Math.round(originalHeight * scale)
   const width = Math.round(originalWidth * scale)
 
@@ -79,10 +76,8 @@ view YouTube {
     width,
     maxHeight: '100%',
     maxWidth: '100%',
-    minHeight: 350,
+    minHeight: height,
     position: 'relative',
-    padding: [20, 0],
-    borderBottom: '1px solid #eee',
 
     [device.small]: {
       width: '100%',
@@ -93,11 +88,11 @@ view YouTube {
   $iframe = {
     width: '100%',
     height: '100%',
-    minHeight: 350,
+    minHeight: height,
     border: 'none',
-    boxShadow: '0 0 16px rgba(0,0,0,0.25)',
-    margin: [0, 0, 30],
-    background: color.bg
+    boxShadow: '0 0 26px rgba(0,0,0,0.25)',
+    background: color.bg,
+    borderRadius: 6
   }
 
   $cover = {
@@ -105,8 +100,15 @@ view YouTube {
     top: 0,
     left: 0,
     right: 0,
-    height: 7,
-    background: color.bg
+    bottom: 0,
+    background: 'rgba(0,0,0,0.2)',
+    transition: 'all ease-in 400ms',
+    cursor: 'pointer',
+    borderRadius: 6,
+
+    hover: {
+      background: 'rgba(0,0,0,0)'
+    }
   }
 
   $bot = {

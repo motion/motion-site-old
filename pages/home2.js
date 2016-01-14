@@ -1,12 +1,13 @@
 view Home.Head {
   <head>
     <Header />
+    <DemoVideo />
   </head>
 
   $head = {
     background: `linear-gradient(20deg, #6e319e, #20d2d2)`,
     color: '#fff',
-    padding: [20, 20],
+    padding: [0, 20, 20],
     textAlign: 'center',
     justifyContent: 'flex-end',
     flexFlow: 'column'
@@ -14,6 +15,10 @@ view Home.Head {
 
   $h1 = {
     fontWeight: 300
+  }
+
+  $DemoVideo = {
+    margin: [40, 0, -220]
   }
 }
 
@@ -164,7 +169,7 @@ view Home.Art {
           Powerful and never before seen tools to make you and your team happy with development again.
         </Home.Sub>
       </Col>
-      <Col>
+      <Col class="example">
         <img src="/assets/images/emoti.png" />
       </Col>
     </inner>
@@ -177,12 +182,17 @@ view Home.Art {
 
   $inner = {
     flexFlow: 'row',
-    margin: [-20, 0, -120]
+    margin: [200, 0, -20]
+  }
+
+  $example = {
+    margin: [0, 0, -130]
   }
 
   $content = {
     padding: [30, 50, 30, 20],
-    width: '20%'
+    width: '20%',
+    justifyContent: 'center'
   }
 
   $p = {

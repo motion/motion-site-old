@@ -75,12 +75,12 @@ view Header {
         <head>
           <Logo />
           <Desc already={already} start={start} />
-          <Social />
+          <Social tiny />
         </head>
       }
       in={
         <Editor right
-          lines={7}
+          lines={6}
           id="headeriframe"
           onLoad={() => {
             if (already) {
@@ -100,8 +100,8 @@ view Header {
     display: 'block',
     position: 'relative',
     overflow: 'hidden',
-    padding: [70, 10, 15],
-    margin: [0, 0, 30],
+    padding: [70, 10, 0],
+    margin: [0, 0],
     minWidth: 700,
     flexFlow: 'row',
 
@@ -142,7 +142,7 @@ view Header {
   }
 
   $Editor = {
-    minWidth: 300,
+    minWidth: 250,
     width: '60%',
 
     [device.small]: {
@@ -216,7 +216,7 @@ view Logo {
 
   const width = 1400
   const height = 387
-  const multiplier = view.props.small ? .08 : .18
+  const multiplier = view.props.small ? .08 : .14
 
   $img = {
     display: 'inline-block',
@@ -282,7 +282,7 @@ view Desc {
 
   $desc = {
     textAlign: 'center',
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: 300,
     lineHeight: '1.6rem',
     padding: [0, 0, 18],
