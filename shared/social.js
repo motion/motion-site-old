@@ -17,7 +17,6 @@ view Social {
     margin: [5, 'auto', 0],
     alignItems: 'center',
     justifyContent: 'center',
-    flexGrow: 1,
   }
 
   $a = view.props.tiny ?  {

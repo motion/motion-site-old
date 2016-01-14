@@ -1,6 +1,6 @@
 view Home.Head {
   <Row>
-    <Col>
+    <Col center>
       <Logo />
       <Desc />
       <Social tiny />
@@ -14,7 +14,7 @@ view Home.Head {
   $ = {
     background: `linear-gradient(20deg, #6e319e, #20d2d2)`,
     color: '#fff',
-    padding: [0, 20, 20],
+    padding: [60, 20],
     textAlign: 'center',
     justifyContent: 'flex-end',
     flexFlow: 'column'
@@ -136,7 +136,7 @@ view Home.Art {
 
   <Feature>
     <inner>
-      <Col class="content">
+      <Col grow={2} class="content">
         <Home.Title>State of the art</Home.Title>
         <Home.Sub>
           An ultra modern React stack with everything you need to start in minutes and deploy today.
@@ -181,10 +181,6 @@ view Home.Art {
   $inner = {
     flexFlow: 'row',
     margin: [0, 0, -20]
-  }
-
-  $example = {
-    margin: [0, 0, -130]
   }
 
   $content = {

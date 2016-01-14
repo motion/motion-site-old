@@ -71,13 +71,6 @@ view Header {
       flipVertical
       inStyle={instyle}
       outStyle={{ width: 280 }}
-      out={
-        <head>
-          <Logo />
-          <Desc already={already} start={start} />
-          <Social tiny />
-        </head>
-      }
       in={
         <Editor right
           lines={6}

@@ -24,8 +24,12 @@ view Row {
 }
 
 view Col {
+  prop center
+  prop grow:? number
+
   $ = {
     flexFlow: 'column',
-    flexGrow: 1
+    justifyContent: center ? 'center' : 'flex-start',
+    flexGrow: typeof grow != 'undefined' ? grow : 1
   }
 }

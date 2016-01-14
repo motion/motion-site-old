@@ -4,39 +4,13 @@ view DemoVideo {
   $ = {
     textAlign: 'center',
     alignItems: 'center',
-    margin: [63, 'auto', 20],
+    margin: [0, 'auto'],
     position: 'relative',
     zIndex: 100,
 
     [device.small]: {
       width: '100%',
     }
-  }
-}
-
-view YouTube2 {
-  const base = 'https://www.youtube.com/embed/VNfkk6lH0gg'
-  const params = '?rel=0&showinfo=0&VQ=HD720&autoplay=1'
-  const getUrl = () => base + params
-
-  <iframe src={getUrl()} frameborder="0" device></iframe>
-
-  $ = {
-    width: '100%',
-    position: 'absolute',
-    top: -80,
-    left: 0,
-    right: 0,
-    height: 900,
-    opacity: 0.2,
-    pointerEvents: 'none'
-  }
-
-  $iframe = {
-    width: '100%',
-    height: '100%',
-    minHeight: 900,
-    border: 'none'
   }
 }
 
