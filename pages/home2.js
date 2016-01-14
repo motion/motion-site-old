@@ -28,8 +28,8 @@ view Home.Head {
 view Home2 {
   <Home.Head />
   <Home.Art />
-  <Home.Apps />
   <Home.Connected />
+  <Home.Apps />
   <Home.Syntax />
   <Home.Errors />
   <Contain>
@@ -39,10 +39,7 @@ view Home2 {
     </Row>
   </Contain>
   <Home.Community />
-  <Home.Flexible />
   <Home.Features />
-  <Home.Production />
-  <Home.Love />
   <Footer />
 
   $h2 = {
@@ -76,7 +73,7 @@ view Home2 {
 }
 
 view Home.Connected {
-  <Feature center col>
+  <Feature odd center col>
     <Home.Title>Connects your tools</Home.Title>
     <Home.Sub>Flint's compiler communicates between browser and editor to enable new developer powers</Home.Sub>
 
@@ -109,11 +106,6 @@ view Home.Connected {
 
   $Col = {
     padding: 30
-  }
-
-  $Feature = {
-    background: '#fcfcfc',
-    borderBottom: '1px solid #eee'
   }
 
   $diagrams = {
@@ -222,7 +214,6 @@ view Home.Apps {
   </Feature>
 
   $Feature = {
-    borderBottom: [1, 'solid', '#eee'],
     overflow: 'hidden'
   }
 
@@ -256,9 +247,9 @@ view Home.Apps {
 view Home.Syntax {
   let demo = 'DemoCounter'
 
-  <Feature col>
-    <Home.Title>Brings views to Javascript</Home.Title>
-    <Row>
+  <Feature col odd>
+    <Home.Title center>Bringing views to Javascript</Home.Title>
+    <Row center>
       <Sel>Examples:</Sel>
       <Sel onClick={() => demo = 'DemoCounter'}>Counter</Sel>
       <Sel onClick={() => demo = 'DemoVenn'}>Styling</Sel>
@@ -363,7 +354,6 @@ view Home.Community {
   </Feature>
 
   $Feature = {
-    borderBottom: [1, 'solid', '#eee'],
     overflow: 'hidden'
   }
 
@@ -399,31 +389,42 @@ view Home.Community {
 }
 
 view Home.Features {
-  <Home.Title>Everything you need</Home.Title>
-  <Features />
-  <Performance />
+  <Feature col>
+    <Home.Title center>Everything you need</Home.Title>
+    <Features />
+    <Performance />
+  </Feature>
 }
 
 
 
 
 view Feature {
+  prop center
+  prop col
+  prop odd
+
   <Contain yield />
 
   $ = {
     padding: 50,
-    textAlign: view.props.center ? `center` : `left`,
-    flexFlow: view.props.col ? `column` : `row`
+    textAlign: center ? `center` : `left`,
+    flexFlow: col ? `column` : `row`,
+    borderBottom: [1, 'solid', '#eee'],
+    background: odd ? `#fcfcfc` : `auto`
   }
 }
 
 view Home.Title {
+  prop center
+
   <h2 root yield />
 
   $ = {
     fontWeight: 200,
     fontSize: 28,
-    margin: [0, 0, 20]
+    margin: [0, 0, 20],
+    textAlign: center ? `center` : `auto`
   }
 }
 
@@ -431,7 +432,8 @@ view Home.Sub {
   <Text root yield />
 
   $Text = {
-    fontSize: 18
+    fontSize: 18,
+    lineHeight: '1.9rem'
   }
 }
 
@@ -442,6 +444,6 @@ view Text {
     color: `rgba(0,0,0,0.5)`,
     fontWeight: 300,
     fontSize: 15,
-    lineHeight: '1.8rem'
+    lineHeight: '1.6rem'
   }
 }

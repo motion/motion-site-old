@@ -1,6 +1,5 @@
 view DemoVenn {
-  <Example inPage
-    maxWidth={900}
+  <Example flip inPage
     inStyle={{ width: 160 }}
     in={
       <Editor lines={14} left light source={`

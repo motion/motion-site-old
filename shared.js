@@ -17,9 +17,13 @@ view Blur {
 
 view Row {
   prop reverse
+  prop center
+  prop centered
 
   $ = {
-    flexFlow: reverse ? 'row-reverse' : 'row'
+    flexFlow: reverse ? 'row-reverse' : 'row',
+    justifyContent: center ? 'center' : 'flex-start',
+    alignItems: centered ? 'center' : 'flex-start',
   }
 }
 
