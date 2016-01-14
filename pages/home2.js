@@ -28,57 +28,17 @@ view Home2 {
   <Home.Connected />
   <Home.Syntax />
   <Home.Errors />
-
   <Contain>
     <Row>
       <Home.Install />
       <Home.State />
     </Row>
   </Contain>
-
-  <section>
-    <h2>Amazing tools without the boilerplate</h2>
-
-    <ul>
-      <li>Amazing extensible pre-configured build system</li>
-      <li>Start to deploy in seconds</li>
-      <li>Dramatically easier interface to React</li>
-      <li>State inspector</li>
-      <li>Error recovery</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Powered by community</h2>
-    <p>Runs on React, Babel, NPM, Webpack, Gulp, Radium, Autoprefixer, and more.</p>
-  </section>
-
-  <section>
-    <h2>Flexible yet sensible</h2>
-    <p>Use any React component, full featured by default but open and configurable.</p>
-  </section>
-
-  <section>
-    <h2>Amazing features</h2>
-    <p>
-      The fastest and smartest hot reloads, interactive state inspector, full error recovery,
-      Atom integration with as-you-type updates.
-    </p>
-  </section>
-
-  <section>
-    <h2>Used in production</h2>
-    <p>
-      In use by fortune 500 companies.
-    </p>
-  </section>
-
-  <section>
-    <h2>:)</h2>
-    <p>
-      Made with  by
-    </p>
-  </section>
+  <Home.Community />
+  <Home.Flexible />
+  <Home.Features />
+  <Home.Production />
+  <Home.Love />
 
   $h2 = {
     textAlign: 'center',
@@ -290,6 +250,70 @@ view Home.State {
     </video>
   </Feature>
 }
+
+view Home.Community {
+  <Feature>
+    <inner>
+      <Col class="content">
+        <Home.Title>Powered by Community</Home.Title>
+        <Home.Sub>
+          We've been working with amazing Open Source contributors and projects since day 1.
+        </Home.Sub>
+
+        <cloud>
+          <a href="http://facebook.github.io/react" target="_blank"><img src="/assets/images/logos/react.svg" /></a>
+          <a href="http://npmjs.com" target="_blank"><img src="/assets/images/logos/npm.svg" /></a>
+          <a href="http://babeljs.io" target="_blank"><img src="/assets/images/logos/babel.svg" /></a>
+          <a href="https://webpack.github.io/" target="_blank"><img src="/assets/images/logos/webpack.svg" /></a>
+          <a href="http://gulpjs.com/" target="_blank"><img src="/assets/images/logos/gulp.svg" /></a>
+          <a href="https://github.com/postcss/autoprefixer" target="_blank"><img src="/assets/images/logos/autoprefixr.svg" /></a>
+          <a href="http://projects.formidablelabs.com/radium/" target="_blank"><img src="/assets/images/logos/radium.png" /></a>
+        </cloud>
+      </Col>
+      <Col class="example">
+        <Slack />
+      </Col>
+    </inner>
+  </Feature>
+
+  $Feature = {
+    borderBottom: [1, 'solid', '#eee'],
+    overflow: 'hidden'
+  }
+
+  $inner = {
+    flexFlow: 'row',
+  }
+
+  $content = {
+    padding: [30, 50, 30, 20],
+    width: '20%',
+    justifyContent: 'center'
+  }
+
+  $cloud = {
+    flexFlow: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    margin: [0, 'auto']
+  }
+
+  const size  = 40
+
+  $img = {
+    width: size,
+    maxHeight: size,
+    margin: [0, 20, 20],
+    alignSelf: 'center'
+  }
+
+  $a = {
+    alignSelf: 'center'
+  }
+}
+
+
+
 
 view Feature {
   <Contain yield />

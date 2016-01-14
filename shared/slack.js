@@ -1,6 +1,5 @@
 view Slack {
   <Contain id="slack">
-    <Interlude center>Join us on Slack!</Interlude>
     <iframe seamless="seamless" src="https://flint-slack.herokuapp.com/"></iframe>
   </Contain>
 
