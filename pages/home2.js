@@ -27,7 +27,7 @@ view Home.Head {
 
 view Home2 {
   <Home.Head />
-  <Home.Art />
+  <Home.Modern />
   <Home.Connected />
   <Home.Apps />
   <Home.Syntax />
@@ -75,15 +75,15 @@ view Home2 {
 view Home.Connected {
   <Feature odd center col>
     <Home.Title>Connects your tools</Home.Title>
-    <Home.Sub>Flint's compiler communicates between browser and editor to enable new developer powers</Home.Sub>
+    <Home.Sub>A platform to make all your tools talk</Home.Sub>
 
     <Row class="diagrams">
       <Col>
         <Icon.Browser />
         <Home.Sub>Browser</Home.Sub>
         <Text>
-          <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smart reloads</Attr> hot swap instantly and keep state.
-          Inline <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break.">safe</Attr> errors. <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor.">Inspect & jump</Attr> to editor.
+          <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smart reloads</Attr> instantly refresh with state.
+          Helpful & <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break.">safe</Attr> errors. <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor.">Jump</Attr> to editor.
         </Text>
       </Col>
       <Col>
@@ -91,7 +91,7 @@ view Home.Connected {
         <Home.Sub>Compiler</Home.Sub>
         <Text>
           <Attr alt="Updates your app with each character, avoids writing to file system.">Live coding</Attr> with Atom.&nbsp;
-          <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode lets you drag your numbers and colors. Instant inline errors.
+          <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode lets you drag your numbers and colors.
         </Text>
       </Col>
       <Col>
@@ -104,18 +104,19 @@ view Home.Connected {
     </Row>
   </Feature>
 
-  $Col = {
-    padding: 30
+  $diagrams = {
+    padding: [20, 90, 0]
   }
 
-  $diagrams = {
-    padding: [0, 90]
+  $Col = {
+    padding: [0, 25],
+    width: '33%'
   }
 }
 
 let already = false
 
-view Home.Art {
+view Home.Modern {
   let start = already || false
 
   function triggerEvent(id, name) {
@@ -127,7 +128,7 @@ view Home.Art {
   }
 
   <Feature>
-    <inner>
+    <Row centered>
       <Col grow={2} class="content">
         <Home.Title>State of the art</Home.Title>
         <Home.Sub>
@@ -140,7 +141,7 @@ view Home.Art {
       </Col>
       <Col class="example">
         <Editor right
-          lines={6}
+          lines={7}
           id="headeriframe"
           onLoad={() => {
             if (already) {
@@ -153,7 +154,7 @@ view Home.Art {
           }}
           iframe={`/assets/examples/example.html`} />
       </Col>
-    </inner>
+    </Row>
   </Feature>
 
   $Editor = {
@@ -170,21 +171,10 @@ view Home.Art {
     overflow: 'hidden'
   }
 
-  $inner = {
-    flexFlow: 'row',
-    margin: [0, 0, -20]
-  }
-
   $content = {
-    padding: [30, 50, 30, 20],
+    padding: [0, 50, 0, 20],
     width: '20%',
     justifyContent: 'center'
-  }
-
-  $p = {
-    fontSize: 18,
-    color: '#999',
-    width: 500
   }
 
   $img = {
@@ -248,12 +238,12 @@ view Home.Syntax {
   let demo = 'DemoCounter'
 
   <Feature col odd>
-    <Home.Title center>Bringing views to Javascript</Home.Title>
+    <Home.Title center>Views in Javascript</Home.Title>
+    <Home.Sub center>Learn in two minutes (TODO FIX FLINT.js BUGS HERE)</Home.Sub>
     <Row center>
-      <Sel>Examples:</Sel>
-      <Sel onClick={() => demo = 'DemoCounter'}>Counter</Sel>
-      <Sel onClick={() => demo = 'DemoVenn'}>Styling</Sel>
-      <Sel onClick={() => demo = 'DemoCircles'}>Animation</Sel>
+      <Sel active={demo} name="DemoCounter" onClick={_ => demo = _}>Counter</Sel>
+      <Sel active={demo} name="DemoVenn" onClick={_ => demo = _}>Styling</Sel>
+      <Sel active={demo} name="DemoCircles" onClick={_ => demo = _}>Animation</Sel>
     </Row>
 
     <Row>
@@ -274,6 +264,18 @@ view Home.Syntax {
 }
 
 view Sel {
+  prop onClick
+  prop name
+
+  <a
+    root
+    yield
+    onClick={() => {
+      debugger
+      onClick(name)
+    }}
+  />
+
   $ = [
     {
       padding: 10,
@@ -429,11 +431,14 @@ view Home.Title {
 }
 
 view Home.Sub {
+  prop center
+
   <Text root yield />
 
   $Text = {
     fontSize: 18,
-    lineHeight: '1.9rem'
+    lineHeight: '1.9rem',
+    textAlign: center ? `center` : `auto`
   }
 }
 

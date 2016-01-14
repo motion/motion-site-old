@@ -7,8 +7,8 @@
 
     code {
       color: #fff;
-      font-size: 13px;
-      line-height: 1.1rem;
+      font-size: 14px;
+      line-height: 1.3rem;
       font-family: 'Fira Code', Menlo, Meslo, Inconsolata, Source Code Pro, monospace;
     }
 
@@ -48,17 +48,16 @@
 </head>
 <body>
   <code><pre>
-<span class="o">view</span> Header {
-  let <span class="b">how</span> = <span class="y">&#39;<span id="change"></span><hr />&#39;</span>
+<span class="o">view</span> Intro {
+  let <span class="b">title</span> = <span class="y">&#39;<span id="change"></span><hr />&#39;</span>
 
-  <span class="r">&lt;img src=</span><span class="y">&quot;flint.png&quot;</span><span class="r"> /&gt;</span>
-  <span class="r">&lt;h2&gt;</span>Web apps, {<span class="b">how</span>}<span class="r">&lt;/h2&gt;</span>
-  <span class="r">&lt;Links /&gt;</span>
+  <span class="r">&lt;h2&gt;</span>{<span class="b">how</span>}<span class="r">&lt;/h2&gt;</span>
+  <span class="r">&lt;IntroText /&gt;</span>
 }<pre></code>
 
 
   <script>
-    var phrases = ['faster', 'creatively', 'with ease']
+    var phrases = ['State of the art', 'creatively', 'with ease']
     var phrase = 0
     var char = 0
     var timeBetweenPhrases = 3000
