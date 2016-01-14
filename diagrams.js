@@ -101,7 +101,7 @@ view Icon.Flint {
     transform: {
       scale: 0.9
     },
-    filter: 'grayscale(1) brightness(2)',
+    // filter: 'grayscale(1) brightness(2)',
 
     hover: {
       filter: 'none'
