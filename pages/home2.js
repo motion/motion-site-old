@@ -208,21 +208,49 @@ view Home.Art {
 }
 
 view Home.Syntax {
+  let demo = 'DemoCounter'
+
   <Feature col>
     <Home.Title>Brings views to Javascript</Home.Title>
-    <Home.Sub>Less to learn, less to code, easier to read, easier to mantain.</Home.Sub>
+    <Row>
+      <Sel>Examples:</Sel>
+      <Sel onClick={() => demo = 'DemoCounter'}>Counter</Sel>
+      <Sel onClick={() => demo = 'DemoVenn'}>Styling</Sel>
+      <Sel onClick={() => demo = 'DemoCircles'}>Animation</Sel>
+    </Row>
 
     <Row>
       <Col>
-        <DemoCounter />
+        {view.el(demo)}
       </Col>
     </Row>
 
   </Feature>
 
   $Col = {
-    padding: 30
+    padding: [30, 0]
   }
+
+  $side = {
+    maxWidth: 200
+  }
+}
+
+view Sel {
+  $ = [
+    {
+      padding: 10,
+    },
+
+    view.props.onClick && {
+      color: 'blue',
+      cursor: 'pointer',
+
+      hover: {
+        background: `rgba(0,0,0,0.05)`
+      }
+    }
+  ]
 }
 
 view Home.Errors {
