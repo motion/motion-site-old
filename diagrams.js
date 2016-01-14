@@ -83,20 +83,19 @@ view Icon.Flint {
   <img src="/assets/flint.svg" />
   <pulse />
 
-  const base = 1.3
-
   $ = {
     border: '2px solid #eee',
     background: '#fff',
-    width: size / base,
-    height: size / base,
+    width: size,
+    height: size,
     borderRadius: 100,
-    position: 'relative'
+    position: 'relative',
+    margin: 'auto'
   }
 
   $img = {
-    width: size / base,
-    height: size / base,
+    width: size,
+    height: size,
     margin: -2,
     transition: 'all ease-in 200ms',
     transform: {
@@ -115,8 +114,8 @@ view Icon.Flint {
     left: 0,
     opacity: pulsing ? 0 : 1,
     margin: -2,
-    width: size / base,
-    height: size / base,
+    width: size,
+    height: size,
     border: '2px solid #eee',
     borderRadius: 100,
     transition: pulsing && 'all ease-in 1000ms',

@@ -117,21 +117,25 @@ view Home.Connected {
         <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
       </Col>
       <Col>
+        <Icon.Flint />
+        <Home.Sub>Compiler</Home.Sub>
+        <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+      </Col>
+      <Col>
         <Icon.Editor />
         <Home.Sub>Something</Home.Sub>
         <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
       </Col>
-      <Col>
-        <Icon.Flint />
-        <Home.Sub>Something</Home.Sub>
-        <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
-      </Col>
     </Row>
-
   </Feature>
 
   $Col = {
     padding: 30
+  }
+
+  $Feature = {
+    background: '#fcfcfc',
+    borderBottom: '1px solid #eee'
   }
 }
 
@@ -161,11 +165,11 @@ view Home.Art {
 
   $inner = {
     flexFlow: 'row',
-    margin: [-20, 0]
+    margin: [-20, 0, -120]
   }
 
   $content = {
-    padding: [30, 50],
+    padding: [30, 50, 30, 20],
     width: '20%'
   }
 
@@ -176,7 +180,7 @@ view Home.Art {
   }
 
   $img = {
-    width: 500,
+    width: 425,
     margin: [0, -300, 0, 0]
   }
 }
