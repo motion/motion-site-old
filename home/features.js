@@ -1,7 +1,5 @@
 view Features {
   <Contain>
-    <Title center big light>Features</Title>
-
     <section>
       <text>
         <img src={`/assets/images/line/cloud-download.svg`} />
@@ -92,8 +90,6 @@ view Features {
         </text>
       </thirdwrap>
     </section>
-
-    <Next to='/docs/intro'>Learn more in the docs</Next>
   </Contain>
 
   $ = {

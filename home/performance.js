@@ -1,7 +1,5 @@
 view Performance {
   <Contain>
-    <Interlude>What makes Flint different</Interlude>
-
     <feature class="first">
       <section class="small">
         <featureTitle>Reloads</featureTitle>

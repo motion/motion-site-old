@@ -39,6 +39,7 @@ view Home2 {
   <Home.Features />
   <Home.Production />
   <Home.Love />
+  <Footer />
 
   $h2 = {
     textAlign: 'center',
@@ -310,6 +311,12 @@ view Home.Community {
   $a = {
     alignSelf: 'center'
   }
+}
+
+view Home.Features {
+  <Home.Title>Everything you need</Home.Title>
+  <Features />
+  <Performance />
 }
 
 
