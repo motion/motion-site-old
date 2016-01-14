@@ -19,21 +19,24 @@ view Row {
   prop reverse
   prop center
   prop centered
+  prop spread
 
   $ = {
     flexFlow: reverse ? 'row-reverse' : 'row',
-    justifyContent: center ? 'center' : 'flex-start',
+    justifyContent: spread ? 'space-between' : center ? 'center' : 'flex-start',
     alignItems: centered ? 'center' : 'flex-start',
   }
 }
 
 view Col {
   prop center
+  prop centered
   prop grow:? number
 
   $ = {
     flexFlow: 'column',
     justifyContent: center ? 'center' : 'flex-start',
+    alignItems: centered ? 'center' : 'auto',
     flexGrow: typeof grow != 'undefined' ? grow : 1
   }
 }

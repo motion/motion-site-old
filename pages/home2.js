@@ -1,27 +1,44 @@
 view Home.Head {
-  <Row>
-    <Col center>
-      <Logo />
-      <Desc />
-      <Social tiny />
-    </Col>
+  <stripe />
 
-    <Col>
-      <DemoVideo />
-    </Col>
+  <Row spread class="top">
+    <Logo />
+    <Social tiny />
+  </Row>
+
+  <Row>
+    <DemoVideo />
   </Row>
 
   $ = {
-    background: `linear-gradient(20deg, #6e319e, #20d2d2)`,
+    background: `linear-gradient(-20deg, #e6ff00, #ffae00)`,
     color: '#fff',
-    padding: [60, 20],
+    padding: [0, 20, 50],
     textAlign: 'center',
     justifyContent: 'flex-end',
-    flexFlow: 'column'
+    flexFlow: 'column',
+    overflow: 'hidden',
+  }
+
+  $top = {
+    padding: [20, 0, 50]
   }
 
   $h1 = {
     fontWeight: 300
+  }
+
+  $stripe = {
+    display: 'none',
+    background: [0,0,0,0.1],
+    width: 1000,
+    height: 2000,
+    position: 'absolute',
+    left: '20%',
+    top: -300,
+    transform: {
+      rotate: `40deg`
+    }
   }
 }
 
@@ -80,7 +97,7 @@ view Home.Connected {
     <Row class="diagrams">
       <Col>
         <Icon.Browser />
-        <Home.Sub>Browser</Home.Sub>
+        <Home.Sub class="sub">Browser</Home.Sub>
         <Text>
           <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smart reloads</Attr> instantly refresh with state.
           Helpful & <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break.">safe</Attr> errors. <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor.">Jump</Attr> to editor.
@@ -88,7 +105,7 @@ view Home.Connected {
       </Col>
       <Col>
         <Icon.Flint />
-        <Home.Sub>Compiler</Home.Sub>
+        <Home.Sub class="sub">Compiler</Home.Sub>
         <Text>
           <Attr alt="Updates your app with each character, avoids writing to file system.">Live coding</Attr> with Atom.&nbsp;
           <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode lets you drag your numbers and colors.
@@ -96,7 +113,7 @@ view Home.Connected {
       </Col>
       <Col>
         <Icon.Editor />
-        <Home.Sub>Editor</Home.Sub>
+        <Home.Sub class="sub">Editor</Home.Sub>
         <Text>
           Flint's ES6 compiler <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">statically extracts CSS</Attr> & automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm</Attr>.
         </Text>
@@ -111,6 +128,10 @@ view Home.Connected {
   $Col = {
     padding: [0, 25],
     width: '33%'
+  }
+
+  $sub = {
+    margin: [10, 0, 0]
   }
 }
 
@@ -409,7 +430,7 @@ view Feature {
   <Contain yield />
 
   $ = {
-    padding: 50,
+    padding: [70, 50],
     textAlign: center ? `center` : `left`,
     flexFlow: col ? `column` : `row`,
     borderBottom: [1, 'solid', '#eee'],
