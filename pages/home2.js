@@ -1,10 +1,17 @@
 view Home.Head {
-  <head>
-    <Header />
-    <DemoVideo />
-  </head>
+  <Row>
+    <Col>
+      <Logo />
+      <Desc />
+      <Social tiny />
+    </Col>
 
-  $head = {
+    <Col>
+      <DemoVideo />
+    </Col>
+  </Row>
+
+  $ = {
     background: `linear-gradient(20deg, #6e319e, #20d2d2)`,
     color: '#fff',
     padding: [0, 20, 20],
@@ -16,15 +23,12 @@ view Home.Head {
   $h1 = {
     fontWeight: 300
   }
-
-  $DemoVideo = {
-    margin: [40, 0, -220]
-  }
 }
 
 view Home2 {
   <Home.Head />
   <Home.Art />
+  <Home.Apps />
   <Home.Connected />
   <Home.Syntax />
   <Home.Errors />
@@ -117,7 +121,19 @@ view Home.Connected {
   }
 }
 
+let already = false
+
 view Home.Art {
+  let start = already || false
+
+  function triggerEvent(id, name) {
+    let event = document.createEvent('CustomEvent')
+    event.initCustomEvent(name, true, true, null)
+    let frame = document.getElementById(id)
+    let frameWin = frame.contentDocument || frame.contentWindow.document
+    frameWin.body.dispatchEvent(event)
+  }
+
   <Feature>
     <inner>
       <Col class="content">
@@ -131,10 +147,31 @@ view Home.Art {
         </Home.Sub>
       </Col>
       <Col class="example">
-        <img src="/assets/images/emoti.png" />
+        <Editor right
+          lines={6}
+          id="headeriframe"
+          onLoad={() => {
+            if (already) {
+              triggerEvent('headeriframe', 'end')
+              return
+            }
+            start = true
+            already = true
+            triggerEvent('headeriframe', 'start')
+          }}
+          iframe={`/assets/examples/example.html`} />
       </Col>
     </inner>
   </Feature>
+
+  $Editor = {
+    minWidth: 250,
+    width: '60%',
+
+    [device.small]: {
+      margin: 'auto'
+    }
+  }
 
   $Feature = {
     borderBottom: [1, 'solid', '#eee'],
@@ -143,7 +180,59 @@ view Home.Art {
 
   $inner = {
     flexFlow: 'row',
-    margin: [200, 0, -20]
+    margin: [0, 0, -20]
+  }
+
+  $example = {
+    margin: [0, 0, -130]
+  }
+
+  $content = {
+    padding: [30, 50, 30, 20],
+    width: '20%',
+    justifyContent: 'center'
+  }
+
+  $p = {
+    fontSize: 18,
+    color: '#999',
+    width: 500
+  }
+
+  $img = {
+    width: 425,
+    margin: [0, -300, 0, 0]
+  }
+}
+
+view Home.Apps {
+  <Feature>
+    <Row reverse>
+      <Col class="example">
+        <img src="/assets/images/emoti.png" />
+      </Col>
+
+      <Col class="content">
+        <Home.Title>Build amazing apps</Home.Title>
+        <Home.Sub>
+          An ultra modern React stack with everything you need to start in minutes and deploy today.
+        </Home.Sub>
+
+        <Home.Sub>
+          Powerful and never before seen tools to make you and your team happy with development again.
+        </Home.Sub>
+      </Col>
+    </Row>
+  </Feature>
+
+  $Feature = {
+    borderBottom: [1, 'solid', '#eee'],
+    overflow: 'hidden'
+  }
+
+  $Row = {
+    flexFlow: 'row',
+    margin: [0, 0, -20]
   }
 
   $example = {

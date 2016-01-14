@@ -16,7 +16,11 @@ view Blur {
 }
 
 view Row {
-  $ = { flexFlow: 'row' }
+  prop reverse
+
+  $ = {
+    flexFlow: reverse ? 'row-reverse' : 'row'
+  }
 }
 
 view Col {
