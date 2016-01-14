@@ -423,7 +423,7 @@ view Home.Title {
   $ = {
     fontWeight: 200,
     fontSize: 28,
-    margin: [0, 0, 20],
+    margin: [0, 0, 13],
     textAlign: center ? `center` : `auto`
   }
 }
