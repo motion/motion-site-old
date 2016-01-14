@@ -1,15 +1,35 @@
-view Home2 {
-
+view Home.Head {
   <head>
     <h1>A coherent way to build modern apps</h1>
   </head>
 
+  $head = {
+    background: `linear-gradient(20deg, #bd8ce4, #88f7f7)`,
+    color: '#fff',
+    height: 300,
+    padding: [50, 20],
+    textAlign: 'center',
+    justifyContent: 'flex-end'
+  }
+
+  $h1 = {
+    fontWeight: 300
+  }
+}
+
+view Home2 {
+  <Home.Head />
   <Home.Art />
   <Home.Connected />
   <Home.Syntax />
   <Home.Errors />
-  <Home.Install />
-  <Home.State />
+
+  <Contain>
+    <Row>
+      <Home.Install />
+      <Home.State />
+    </Row>
+  </Contain>
 
   <section>
     <h2>Amazing tools without the boilerplate</h2>
@@ -54,14 +74,6 @@ view Home2 {
       Made with  by
     </p>
   </section>
-
-  $head = {
-    background: `linear-gradient(20deg, #d659b5, #f0800e)`,
-    color: '#fff',
-    height: 500,
-    padding: [50, 20],
-    textAlign: 'center'
-  }
 
   $h2 = {
     textAlign: 'center',
@@ -125,25 +137,47 @@ view Home.Connected {
 
 view Home.Art {
   <Feature>
-    <Col>
-      <Home.Title>State of the art</Home.Title>
-      <Text>
-        An ultra modern React stack with everything you need to start in minutes and deploy today.
-      </Text>
+    <inner>
+      <Col class="content">
+        <Home.Title>State of the art</Home.Title>
+        <Home.Sub>
+          An ultra modern React stack with everything you need to start in minutes and deploy today.
+        </Home.Sub>
 
-      <Text>
-        Powerful and never before seen tools to make you and your team happy with development again.
-      </Text>
-    </Col>
-    <Col>
-
-    </Col>
+        <Home.Sub>
+          Powerful and never before seen tools to make you and your team happy with development again.
+        </Home.Sub>
+      </Col>
+      <Col>
+        <img src="/assets/images/emoti.png" />
+      </Col>
+    </inner>
   </Feature>
+
+  $Feature = {
+    borderBottom: [1, 'solid', '#eee'],
+    overflow: 'hidden'
+  }
+
+  $inner = {
+    flexFlow: 'row',
+    margin: [-20, 0]
+  }
+
+  $content = {
+    padding: [30, 50],
+    width: '20%'
+  }
 
   $p = {
     fontSize: 18,
     color: '#999',
     width: 500
+  }
+
+  $img = {
+    width: 500,
+    margin: [0, -300, 0, 0]
   }
 }
 
@@ -182,12 +216,12 @@ view Home.Install {
     <Col>
       <Home.Title>Automatic NPM Installs</Home.Title>
       <Home.Sub>As you type, Flint installs npm packages, and injects them into your running app without losing state.</Home.Sub>
+      <video width="320" height="240" autoplay="autoplay" loop>
+        <source src="assets/video/install.webm" type="video/webm" />
+        <source src="assets/video/install.ogg" type="video/ogg" />
+        <source src="assets/video/install.mp4" type="video/mp4" />
+      </video>
     </Col>
-    <video width="320" height="240" autoplay="autoplay" loop>
-      <source src="assets/video/install.webm" type="video/webm" />
-      <source src="assets/video/install.ogg" type="video/ogg" />
-      <source src="assets/video/install.mp4" type="video/mp4" />
-    </video>
   </Feature>
 }
 
@@ -218,7 +252,8 @@ view Home.Title {
 
   $ = {
     fontWeight: 200,
-    fontSize: 28
+    fontSize: 28,
+    margin: [0, 0, 20]
   }
 }
 
@@ -226,7 +261,7 @@ view Home.Sub {
   <Text root yield />
 
   $Text = {
-    fontSize: 18
+    fontSize: 17
   }
 }
 
@@ -236,6 +271,6 @@ view Text {
   $ = {
     color: `rgba(0,0,0,0.5)`,
     fontWeight: 300,
-    fontSize: 16
+    fontSize: 15
   }
 }
