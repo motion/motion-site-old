@@ -1,11 +1,38 @@
+let rotateAnimation = Flint.keyframes({
+  '100%': { transform: 'rotate(360deg)' }
+}, 'pulse')
+
 view Home.Head {
   <stripe />
+  $stripe = {
+    display: 'none',
+    background: [0,0,0,0.1],
+    width: 1000,
+    height: 2000,
+    position: 'absolute',
+    left: '20%',
+    top: -300,
+    transform: {
+      rotate: `40deg`
+    }
+  }
 
   <HeaderAlt />
 
+  <CanvasMation />
+  $CanvasMation = {
+    position: 'absolute',
+    top: -400,
+    opacity: 0.1,
+    zIndex: 0,
+    pointerEvents: 'none',
+    animation: `pulse 3s ease 0s infinite`,
+    animationName: rotateAnimation
+  }
+
   <Row contain class="mid">
     <Col center class="text">
-      <UI.Title>Make development great again</UI.Title>
+      <UI.Title class="lead">Make development great again</UI.Title>
       <UI.SubTitle>
         Flint is a rethinking of modern development.
       </UI.SubTitle>
@@ -20,7 +47,7 @@ view Home.Head {
         editor and compiler.
       </Text>
     </Col>
-    <Col>
+    <Col center>
       <DemoVideo />
     </Col>
   </Row>
@@ -31,27 +58,23 @@ view Home.Head {
     justifyContent: 'flex-end',
     flexFlow: 'column',
     overflow: 'hidden',
+    position: 'relative'
+  }
+
+  $lead = {
+    fontSize: 40,
+    lineHeight: '3.0rem',
+    fontWeight: 700
   }
 
   $mid = {
-    padding: [40, 0]
+    padding: [20, 0],
+    position: 'relative',
+    zIndex: 10
   }
 
   $text = {
     marginRight: 40
-  }
-
-  $stripe = {
-    display: 'none',
-    background: [0,0,0,0.1],
-    width: 1000,
-    height: 2000,
-    position: 'absolute',
-    left: '20%',
-    top: -300,
-    transform: {
-      rotate: `40deg`
-    }
   }
 }
 

@@ -182,7 +182,8 @@ view Nav {
   }
 
   $a = {
-    color: 'rgba(255,255,255,0.9)',
+    color: 'rgba(255,255,255,0.8)',
+    textShadow: '0 1px 1px rgba(0,0,0,0.2)',
     fontWeight: 300,
     borderBottom: 'none',
     fontSize: 13,
