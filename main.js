@@ -40,6 +40,7 @@ view Main {
     <Community route={routes.community} />
     <Spark route={routes.spark} />
     <Start route={routes.start} />
+    <Roadmap route={routes.roadmap} />
   </site>
 
   $ = {

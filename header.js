@@ -1,15 +1,15 @@
 view HeaderAlt {
   <wrap>
-    <Logo small />
-    <Nav large />
-    <Social tiny noSlack />
+    <Contain>
+      <Logo small />
+      <Nav large />
+      <Social tiny noSlack />
+    </Contain>
   </wrap>
 
   $ = {
-    borderBottom: '1px solid #ddd',
     padding: [5, 0],
     width: '100%',
-    background: '#fff',
     zIndex: 100,
     boxShadow: [0, 0, 5, 'rgba(0,0,0,0.1)'],
 
@@ -24,9 +24,6 @@ view HeaderAlt {
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    maxWidth: 900,
-    padding: [0, 20],
-    margin: [0, 'auto'],
 
     [device.small]: {
       flexFlow: 'column'

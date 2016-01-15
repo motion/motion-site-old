@@ -15,6 +15,7 @@ routes.docs = '/docs'
 routes.community = '/community'
 routes.spark = '/spark'
 routes.start = '/start'
+routes.roadmap = '/roadmap'
 
 const color = chroma || function(){}
 color.alt = '#fdfdfa'

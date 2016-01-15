@@ -1,31 +1,44 @@
 view Home.Head {
   <stripe />
 
-  <Row spread class="top">
-    <Logo />
-    <Social tiny />
-  </Row>
+  <HeaderAlt />
 
-  <Row>
-    <DemoVideo />
+  <Row contain class="mid">
+    <Col center class="text">
+      <UI.Title>Make development great again</UI.Title>
+      <UI.SubTitle>
+        Flint is a rethinking of modern development.
+      </UI.SubTitle>
+
+      <Text>
+        We've brought together React, Babel, routing, and incredible hot reloads into a simple stack.
+      </Text>
+
+      <Text>
+        It brings the concept of the view to JS,
+        with amazing tools that connect your browser,
+        editor and compiler.
+      </Text>
+    </Col>
+    <Col>
+      <DemoVideo />
+    </Col>
   </Row>
 
   $ = {
-    background: `linear-gradient(-20deg, #e6ff00, #ffae00)`,
+    background: `linear-gradient(-20deg, #a62061, #e0644a, #ffae00)`,
     color: '#fff',
-    padding: [0, 20, 50],
-    textAlign: 'center',
     justifyContent: 'flex-end',
     flexFlow: 'column',
     overflow: 'hidden',
   }
 
-  $top = {
-    padding: [20, 0, 50]
+  $mid = {
+    padding: [40, 0]
   }
 
-  $h1 = {
-    fontWeight: 300
+  $text = {
+    marginRight: 40
   }
 
   $stripe = {
@@ -91,13 +104,13 @@ view Home2 {
 
 view Home.Connected {
   <Feature odd center col>
-    <Home.Title>Connects your tools</Home.Title>
-    <Home.Sub>A platform to make all your tools talk</Home.Sub>
+    <UI.Title>Connects your tools</UI.Title>
+    <UI.SubTitle>A platform to make all your tools talk</UI.SubTitle>
 
     <Row class="diagrams">
       <Col>
         <Icon.Browser />
-        <Home.Sub class="sub">Browser</Home.Sub>
+        <UI.SubTitle class="sub">Browser</UI.SubTitle>
         <Text>
           <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smart reloads</Attr> instantly refresh with state.
           Helpful & <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break.">safe</Attr> errors. <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor.">Jump</Attr> to editor.
@@ -105,7 +118,7 @@ view Home.Connected {
       </Col>
       <Col>
         <Icon.Flint />
-        <Home.Sub class="sub">Compiler</Home.Sub>
+        <UI.SubTitle class="sub">Compiler</UI.SubTitle>
         <Text>
           <Attr alt="Updates your app with each character, avoids writing to file system.">Live coding</Attr> with Atom.&nbsp;
           <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode lets you drag your numbers and colors.
@@ -113,7 +126,7 @@ view Home.Connected {
       </Col>
       <Col>
         <Icon.Editor />
-        <Home.Sub class="sub">Editor</Home.Sub>
+        <UI.SubTitle class="sub">Editor</UI.SubTitle>
         <Text>
           Flint's ES6 compiler <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">statically extracts CSS</Attr> & automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm</Attr>.
         </Text>
@@ -151,14 +164,14 @@ view Home.Modern {
   <Feature>
     <Row centered>
       <Col grow={2} class="content">
-        <Home.Title>State of the art</Home.Title>
-        <Home.Sub>
+        <UI.Title>State of the art</UI.Title>
+        <UI.SubTitle>
           An ultra modern React stack with everything you need to start in minutes and deploy today.
-        </Home.Sub>
+        </UI.SubTitle>
 
-        <Home.Sub>
+        <UI.SubTitle>
           Powerful and never before seen tools to make you and your team happy with development again.
-        </Home.Sub>
+        </UI.SubTitle>
       </Col>
       <Col class="example">
         <Editor right
@@ -212,14 +225,14 @@ view Home.Apps {
       </Col>
 
       <Col class="content">
-        <Home.Title>Build amazing apps</Home.Title>
-        <Home.Sub>
+        <UI.Title>Build amazing apps</UI.Title>
+        <UI.SubTitle>
           An ultra modern React stack with everything you need to start in minutes and deploy today.
-        </Home.Sub>
+        </UI.SubTitle>
 
-        <Home.Sub>
+        <UI.SubTitle>
           Powerful and never before seen tools to make you and your team happy with development again.
-        </Home.Sub>
+        </UI.SubTitle>
       </Col>
     </Row>
   </Feature>
@@ -259,8 +272,8 @@ view Home.Syntax {
   let demo = 'DemoCounter'
 
   <Feature col odd>
-    <Home.Title center>Views in Javascript</Home.Title>
-    <Home.Sub center>Learn in two minutes (TODO FIX FLINT.js BUGS HERE)</Home.Sub>
+    <UI.Title center>Views in Javascript</UI.Title>
+    <UI.SubTitle center>Learn in two minutes (TODO FIX FLINT.js BUGS HERE)</UI.SubTitle>
     <Row center>
       <Sel active={demo} name="DemoCounter" onClick={_ => demo = _}>Counter</Sel>
       <Sel active={demo} name="DemoVenn" onClick={_ => demo = _}>Styling</Sel>
@@ -315,8 +328,8 @@ view Sel {
 
 view Home.Errors {
   <Feature col>
-    <Home.Title>Amazing Errors</Home.Title>
-    <Home.Sub>Flint recovers gracefully from errors and shows you exactly what you need.</Home.Sub>
+    <UI.Title>Amazing Errors</UI.Title>
+    <UI.SubTitle>Flint recovers gracefully from errors and shows you exactly what you need.</UI.SubTitle>
     <img src="/assets/images/errors.png" />
   </Feature>
 
@@ -328,8 +341,8 @@ view Home.Errors {
 view Home.Install {
   <Feature>
     <Col>
-      <Home.Title>Automatic NPM Installs</Home.Title>
-      <Home.Sub>As you type, Flint installs npm packages, and injects them into your running app without losing state.</Home.Sub>
+      <UI.Title>Automatic NPM Installs</UI.Title>
+      <UI.SubTitle>As you type, Flint installs npm packages, and injects them into your running app without losing state.</UI.SubTitle>
       <video width="320" height="240" autoplay="autoplay" loop>
         <source src="assets/video/install.webm" type="video/webm" />
         <source src="assets/video/install.ogg" type="video/ogg" />
@@ -342,8 +355,8 @@ view Home.Install {
 view Home.State {
   <Feature>
     <Col>
-      <Home.Title>State Inspector</Home.Title>
-      <Home.Sub>Easy, pinable, simple state inspector.</Home.Sub>
+      <UI.Title>State Inspector</UI.Title>
+      <UI.SubTitle>Easy, pinable, simple state inspector.</UI.SubTitle>
     </Col>
     <video width="320" height="240" autoplay="autoplay" loop>
       <source src="assets/video/state.mp4" type="video/mp4" />
@@ -355,10 +368,10 @@ view Home.Community {
   <Feature>
     <inner>
       <Col class="content">
-        <Home.Title>Powered by Community</Home.Title>
-        <Home.Sub>
+        <UI.Title>Powered by Community</UI.Title>
+        <UI.SubTitle>
           We've been working with amazing Open Source contributors and projects since day 1.
-        </Home.Sub>
+        </UI.SubTitle>
 
         <cloud>
           <a href="http://facebook.github.io/react" target="_blank"><img src="/assets/images/logos/react.svg" /></a>
@@ -413,7 +426,7 @@ view Home.Community {
 
 view Home.Features {
   <Feature col>
-    <Home.Title center>Everything you need</Home.Title>
+    <UI.Title center>Everything you need</UI.Title>
     <Features />
     <Performance />
   </Feature>
@@ -438,7 +451,7 @@ view Feature {
   }
 }
 
-view Home.Title {
+view UI.Title {
   prop center
 
   <h2 root yield />
@@ -451,7 +464,7 @@ view Home.Title {
   }
 }
 
-view Home.Sub {
+view UI.SubTitle {
   prop center
 
   <Text root yield />
