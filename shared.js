@@ -27,7 +27,8 @@ view Row {
   $ = {
     flexFlow: reverse ? 'row-reverse' : 'row',
     justifyContent: spread ? 'space-between' : center ? 'center' : 'flex-start',
-    alignItems: centered ? 'center' : 'flex-start'
+    alignItems: centered ? 'center' : 'flex-start',
+    width: '100%'
   }
 
   $contain = {

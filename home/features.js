@@ -58,37 +58,38 @@ view Features {
         </col>
       </text>
 
-      <thirdwrap>
-        <text class="third">
-          <col>
-            <title>Use &lt;React /&gt; components</title>
-            <Text>
-              Automatic installs to import and use any React
-              component instantly, without losing state.
-            </Text>
-          </col>
-        </text>
+      <text class="right">
+        <img src={`/assets/images/line/snowflake.svg`} />
+        <col>
+          <title>Use &lt;React /&gt; components</title>
+          <Text>
+            Automatic installs to import and use any React
+            component instantly, without losing state.
+          </Text>
+        </col>
+      </text>
 
-        <text class="third">
-          <col>
-            <title>Performance by default</title>
-            <Text>
-              Flint optimizes React to give you even better performance
-              in development and production.
-            </Text>
-          </col>
-        </text>
+      <text>
+        <img src={`/assets/images/line/snowflake.svg`} />
+        <col>
+          <title>Performance by default</title>
+          <Text>
+            Flint optimizes React to give you even better performance
+            in development and production.
+          </Text>
+        </col>
+      </text>
 
-        <text class="third">
-          <col>
-            <title>Builds to production</title>
-            <Text>
-              Builds your assets, concats, minifies, sourcemaps,
-              autoprefixes, and outputs all your files for you.
-            </Text>
-          </col>
-        </text>
-      </thirdwrap>
+      <text class="right">
+        <img src={`/assets/images/line/snowflake.svg`} />
+        <col>
+          <title>Builds to production</title>
+          <Text>
+            Builds your assets, concats, minifies, sourcemaps,
+            autoprefixes, and outputs all your files for you.
+          </Text>
+        </col>
+      </text>
     </section>
   </Contain>
 

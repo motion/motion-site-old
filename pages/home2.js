@@ -1,3 +1,44 @@
+view Home2 {
+  <Home.Head />
+  <Home.Modern />
+  <Home.Connected />
+  <Home.Apps />
+  <Home.Syntax />
+  <Home.Tools />
+  <Home.Community />
+  <Home.Features />
+  <Footer />
+
+  $h2 = {
+    textAlign: 'center',
+    margin: 0
+  }
+
+  $section = {
+    textAlign: 'center',
+    padding: [20, 0, 0],
+    borderBottom: [1, 'solid', '#ddd']
+  }
+
+  $p = {
+    padding: 20,
+    paddingBottom: 0
+  }
+
+  $ul = {
+    margin: 0,
+    textAlign: 'left',
+    display: 'flex',
+    flexFlow: 'row'
+  }
+
+  $li = {
+    display: 'flex',
+    padding: 20,
+    flexGrow: 1
+  }
+}
+
 let rotateAnimation = Flint.keyframes({
   '100%': { transform: 'rotate(360deg)' }
 }, 'pulse')
@@ -75,53 +116,6 @@ view Home.Head {
 
   $text = {
     marginRight: 40
-  }
-}
-
-view Home2 {
-  <Home.Head />
-  <Home.Modern />
-  <Home.Connected />
-  <Home.Apps />
-  <Home.Syntax />
-  <Home.Errors />
-  <Contain>
-    <Row>
-      <Home.Install />
-      <Home.State />
-    </Row>
-  </Contain>
-  <Home.Community />
-  <Home.Features />
-  <Footer />
-
-  $h2 = {
-    textAlign: 'center',
-    margin: 0
-  }
-
-  $section = {
-    textAlign: 'center',
-    padding: [20, 0, 0],
-    borderBottom: [1, 'solid', '#ddd']
-  }
-
-  $p = {
-    padding: 20,
-    paddingBottom: 0
-  }
-
-  $ul = {
-    margin: 0,
-    textAlign: 'left',
-    display: 'flex',
-    flexFlow: 'row'
-  }
-
-  $li = {
-    display: 'flex',
-    padding: 20,
-    flexGrow: 1
   }
 }
 
@@ -349,42 +343,64 @@ view Sel {
   ]
 }
 
-view Home.Errors {
+view Home.Tools {
   <Feature col>
-    <UI.Title>Amazing Errors</UI.Title>
-    <UI.SubTitle>Flint recovers gracefully from errors and shows you exactly what you need.</UI.SubTitle>
-    <img src="/assets/images/errors.png" />
+    <UI.Title center>
+      Tools that make you happy
+    </UI.Title>
+
+    <Row>
+      <Col>
+        <title>Amazing Errors</title>
+        <UI.SubTitle>Flint recovers gracefully from errors and shows you exactly what you need.</UI.SubTitle>
+      </Col>
+      <Col class="side">
+        <img src="/assets/images/errors.png" />
+      </Col>
+    </Row>
+
+    <Row>
+      <Col>
+      <title small>Automatic NPM Installs</title>
+      <UI.SubTitle>As you type, Flint installs npm packages, and injects them into your running app without losing state.</UI.SubTitle>
+      </Col>
+      <Col class="side">
+        <video width="320" height="240" autoplay="autoplay" loop>
+          <source src="assets/video/install.webm" type="video/webm" />
+          <source src="assets/video/install.ogg" type="video/ogg" />
+          <source src="assets/video/install.mp4" type="video/mp4" />
+        </video>
+      </Col>
+    </Row>
+
+    <Row>
+      <Col>
+        <title>State Inspector</title>
+        <UI.SubTitle>Easy, pinable, simple state inspector.</UI.SubTitle>
+      </Col>
+      <Col class="side">
+        <video width="320" height="240" autoplay="autoplay" loop>
+          <source src="assets/video/state.mp4" type="video/mp4" />
+        </video>
+      </Col>
+    </Row>
   </Feature>
 
   $img = {
-    maxWidth: '100%'
+    height: 354 / 2
   }
-}
 
-view Home.Install {
-  <Feature>
-    <Col>
-      <UI.Title>Automatic NPM Installs</UI.Title>
-      <UI.SubTitle>As you type, Flint installs npm packages, and injects them into your running app without losing state.</UI.SubTitle>
-      <video width="320" height="240" autoplay="autoplay" loop>
-        <source src="assets/video/install.webm" type="video/webm" />
-        <source src="assets/video/install.ogg" type="video/ogg" />
-        <source src="assets/video/install.mp4" type="video/mp4" />
-      </video>
-    </Col>
-  </Feature>
-}
+  $side = {
+    width: 300,
+    overflow: 'hidden'
+  }
 
-view Home.State {
-  <Feature>
-    <Col>
-      <UI.Title>State Inspector</UI.Title>
-      <UI.SubTitle>Easy, pinable, simple state inspector.</UI.SubTitle>
-    </Col>
-    <video width="320" height="240" autoplay="autoplay" loop>
-      <source src="assets/video/state.mp4" type="video/mp4" />
-    </video>
-  </Feature>
+  $Row = {
+    alignItems: 'center',
+    borderBottom: '1px dotted #ddd',
+    padding: [10, 10],
+    width: '100%'
+  }
 }
 
 view Home.Community {
@@ -462,12 +478,14 @@ view Feature {
   prop center
   prop col
   prop odd
+  prop slim
 
   <Contain yield />
 
   $ = {
-    padding: [70, 50],
+    padding: [slim ? 15 : 60, 50],
     textAlign: center ? `center` : `left`,
+    alignItems: 'center',
     flexFlow: col ? `column` : `row`,
     borderBottom: [1, 'solid', '#eee'],
     background: odd ? `#fcfcfc` : `auto`
