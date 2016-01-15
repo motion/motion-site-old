@@ -26,7 +26,7 @@ view Home.Head {
   </Row>
 
   $ = {
-    background: `linear-gradient(-20deg, #a62061, #e0644a, #ffae00)`,
+    background: `linear-gradient(-30deg, #a62061, #e0644a, #ffc240)`,
     color: '#fff',
     justifyContent: 'flex-end',
     flexFlow: 'column',
