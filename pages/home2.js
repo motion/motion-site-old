@@ -157,7 +157,8 @@ view Home.Connected {
 
   $Col = {
     padding: [0, 25],
-    width: '33%'
+    width: '33%',
+    alignItems: 'center'
   }
 
   $sub = {
