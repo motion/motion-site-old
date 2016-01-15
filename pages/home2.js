@@ -23,10 +23,10 @@ view Home.Head {
   $CanvasMation = {
     position: 'absolute',
     top: -400,
-    opacity: 0.1,
+    opacity: 0.15,
     zIndex: 0,
     pointerEvents: 'none',
-    animation: `pulse 3s ease 0s infinite`,
+    animation: `pulse 120s ease 0s infinite`,
     animationName: rotateAnimation
   }
 
@@ -62,7 +62,7 @@ view Home.Head {
   }
 
   $lead = {
-    fontSize: 40,
+    fontSize: 38,
     lineHeight: '3.0rem',
     fontWeight: 700
   }
