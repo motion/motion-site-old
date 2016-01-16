@@ -468,7 +468,6 @@ view Home.Features {
   <Feature col>
     <UI.Title center>Everything you need</UI.Title>
     <Features />
-    <Performance />
   </Feature>
 }
 
