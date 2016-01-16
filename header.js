@@ -10,11 +10,10 @@ view HeaderAlt {
   </wrap>
 
   $ = {
-    padding: [5, 0],
+    padding: [10, 0, 20],
     width: '100%',
     zIndex: 100,
-    boxShadow: [0, 0, 5, 'rgba(0,0,0,0.1)'],
-    background: nobg ? 'none' : style.gradient,
+    background: nobg ? 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0))' : style.gradient,
 
     [device.small]: {
       position: 'relative',

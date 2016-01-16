@@ -44,45 +44,40 @@ let rotateAnimation = Flint.keyframes({
 }, 'pulse')
 
 view Home.Head {
-  <stripe />
-  $stripe = {
-    display: 'none',
-    background: [0,0,0,0.1],
-    width: 1000,
-    height: 2000,
-    position: 'absolute',
-    left: '20%',
-    top: -300,
-    transform: {
-      rotate: `40deg`
-    }
-  }
-
   <HeaderAlt nobg />
 
-  <CanvasMation />
-  $CanvasMation = {
-    display: 'none',
-    position: 'absolute',
-    top: -400,
-    opacity: 0.15,
-    zIndex: 0,
-    pointerEvents: 'none',
-    animation: `pulse 120s ease 0s infinite`,
-    animationName: rotateAnimation
+  <banner>
+    Welcome to the fucking future
+    <svg viewBox="0 0 510 510">
+      <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
+    </svg>
+  </banner>
+  $banner = {
+    margin: 'auto',
+    zIndex: 1000,
+    fontSize: 30,
+    fontWeight: 600
   }
 
-  <Row contain class="mid">
-    <Col center class="text">
-      <UI.Title class="lead">Make development great again</UI.Title>
-      <UI.SubTitle light>
-        Flint is rethinking of modern development.
-      </UI.SubTitle>
-    </Col>
-    <Col center>
-      <DemoVideo />
-    </Col>
-  </Row>
+  $svg = {
+    fill: '#fff',
+    width: 60,
+    height: 60,
+    margin: [20, 'auto', 0],
+    boxShadow: [255,255,255, 10,0.2]
+  }
+
+  <fakebg />
+  $fakebg = {
+    background: style.lightGradient,
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    height: 120,
+    left: 0,
+    zIndex: 1,
+    opacity: 0.3
+  }
 
   <BackgroundVideo />
   $BackgroundVideo = {
@@ -90,7 +85,7 @@ view Home.Head {
     bottom: 0,
     right: 0,
     width: '100%',
-    opacity: 0.04,
+    opacity: 0.5,
     transform: {
       scale: 1.2,
     }
@@ -99,11 +94,10 @@ view Home.Head {
   $ = {
     background: style.gradient,
     color: '#fff',
-    justifyContent: 'flex-end',
     flexFlow: 'column',
     overflow: 'hidden',
     position: 'relative',
-    minHeight: 600,
+    minHeight: 700,
     textShadow: '0 1px 1px rgba(0,0,0,0.2)'
   }
 
@@ -125,7 +119,7 @@ view Home.Head {
 }
 
 view BackgroundVideo {
-  <video root preload autoplay width="1131" height="706">
+  <video root muted preload autoplay loop>
     <source src="https://d2p1e9awn3tn6.cloudfront.net/3LiSUD9TiF.webm" />
   </video>
 }
@@ -193,7 +187,7 @@ view Home.Modern {
   <Feature>
     <Row centered>
       <Col grow={2} class="content">
-        <UI.Title>State of the art</UI.Title>
+        <UI.Title>Make America Great Again</UI.Title>
         <UI.SubTitle>
           An ultra modern React stack with everything you need to start in minutes and deploy today.
         </UI.SubTitle>
@@ -356,47 +350,58 @@ view Sel {
 }
 
 view Home.Tools {
-  <Feature col>
-    <UI.Title center>
-      Tools that make you happy
+  <Feature dark col>
+    <UI.Title large center>
+    Tools that make you happy
     </UI.Title>
 
-    <Row>
-      <Col>
-        <title>Amazing Errors</title>
-        <UI.SubTitle>Flint recovers gracefully from errors and shows you exactly what you need.</UI.SubTitle>
-      </Col>
-      <Col class="side">
-        <img src="/assets/images/errors.png" />
-      </Col>
-    </Row>
-
-    <Row>
-      <Col>
-      <title small>Automatic NPM Installs</title>
-      <UI.SubTitle>As you type, Flint installs npm packages, and injects them into your running app without losing state.</UI.SubTitle>
-      </Col>
-      <Col class="side">
-        <video width="320" height="240" autoplay="autoplay" loop>
-          <source src="assets/video/install.webm" type="video/webm" />
-          <source src="assets/video/install.ogg" type="video/ogg" />
-          <source src="assets/video/install.mp4" type="video/mp4" />
-        </video>
-      </Col>
-    </Row>
-
-    <Row>
-      <Col>
-        <title>State Inspector</title>
-        <UI.SubTitle>Easy, pinable, simple state inspector.</UI.SubTitle>
-      </Col>
-      <Col class="side">
-        <video width="320" height="240" autoplay="autoplay" loop>
-          <source src="assets/video/state.mp4" type="video/mp4" />
-        </video>
-      </Col>
-    </Row>
+    <img src="/assets/images/tools.png" />
   </Feature>
+
+  $img = {
+    width: '100%',
+    margin: [80, 'auto', 20]
+  }
+
+
+}
+
+view Old {
+  <Row>
+    <Col>
+      <title>Amazing Errors</title>
+      <UI.SubTitle>Flint recovers gracefully from errors and shows you exactly what you need.</UI.SubTitle>
+    </Col>
+    <Col class="side">
+      <img src="/assets/images/errors.png" />
+    </Col>
+  </Row>
+
+  <Row>
+    <Col>
+    <title small>Automatic NPM Installs</title>
+    <UI.SubTitle>As you type, Flint installs npm packages, and injects them into your running app without losing state.</UI.SubTitle>
+    </Col>
+    <Col class="side">
+      <video width="320" height="240" autoplay="autoplay" loop>
+        <source src="assets/video/install.webm" type="video/webm" />
+        <source src="assets/video/install.ogg" type="video/ogg" />
+        <source src="assets/video/install.mp4" type="video/mp4" />
+      </video>
+    </Col>
+  </Row>
+
+  <Row>
+    <Col>
+      <title>State Inspector</title>
+      <UI.SubTitle>Easy, pinable, simple state inspector.</UI.SubTitle>
+    </Col>
+    <Col class="side">
+      <video width="320" height="240" autoplay="autoplay" loop>
+        <source src="assets/video/state.mp4" type="video/mp4" />
+      </video>
+    </Col>
+  </Row>
 
   $img = {
     height: 354 / 2
@@ -490,6 +495,7 @@ view Feature {
   prop col
   prop odd
   prop slim
+  prop dark
 
   <Contain yield />
 
@@ -499,18 +505,20 @@ view Feature {
     alignItems: 'center',
     flexFlow: col ? `column` : `row`,
     borderBottom: [1, 'solid', '#eee'],
-    background: odd ? `#fcfcfc` : `auto`
+    color: dark ? `#fff` : `auto`,
+    background: dark ? `linear-gradient(#060646, #101038)` : odd ? `#fcfcfc` : `auto`
   }
 }
 
 view UI.Title {
   prop center
+  prop large
 
   <h2 root yield />
 
   $ = {
     fontWeight: 200,
-    fontSize: 28,
+    fontSize: large ? 32 : 28,
     margin: [0, 0, 13],
     textAlign: center ? `center` : `auto`
   }

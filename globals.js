@@ -61,7 +61,7 @@ const c3 = '#ecb337'
 const light = c => `rgba(${color(c).alpha(0.9).rgba()})`
 
 style.gradient = `linear-gradient(-30deg, ${c1}, ${c2}, ${c3})`
-style.lightGradient = `linear-gradient(-30deg, ${light(c1)}, ${light(c2)}, ${light(c3)})`
+style.lightGradient = `linear-gradient(180deg, ${c1}, rgba(${color(c1).alpha(0).rgba()}))`
 
 const util = {}
 
