@@ -1,4 +1,6 @@
 view HeaderAlt {
+  prop nobg
+
   <wrap>
     <Contain>
       <Logo small />
@@ -12,6 +14,7 @@ view HeaderAlt {
     width: '100%',
     zIndex: 100,
     boxShadow: [0, 0, 5, 'rgba(0,0,0,0.1)'],
+    background: nobg ? 'none' : style.gradient,
 
     [device.small]: {
       position: 'relative',
@@ -181,6 +184,11 @@ view Nav {
     }
   }
 
+  const bordered = {
+    border: '1px solid rgba(255,255,255,0.1)',
+    borderRadius: 10
+  }
+
   $a = {
     color: 'rgba(255,255,255,0.8)',
     textShadow: '0 1px 1px rgba(0,0,0,0.2)',
@@ -192,13 +200,14 @@ view Nav {
     textDecoration: 'none',
 
     hover: {
-      color: color.brand
+      color: color.brand,
+      ...bordered
     }
   }
 
   $active = {
-    fontWeight: 600,
-    color: '#000'
+    fontWeight: 800,
+    color: '#fff'
   }
 }
 

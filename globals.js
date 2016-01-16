@@ -54,6 +54,8 @@ style.textGradient = {
   WebkitTextFillColor: 'transparent',
 }
 
+style.gradient = `linear-gradient(-30deg, #a6207e, #e04a59, #ecb337)`
+
 const util = {}
 
 // to keep isomorphism for now, should be handled by flint
