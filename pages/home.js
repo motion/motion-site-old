@@ -325,14 +325,13 @@ view Home.Syntax {
 
   <Feature col>
     <UI.Title center>Views in Javascript</UI.Title>
-    <UI.SubTitle center>Learn in two minutes (TODO FIX FLINT.js BUGS HERE)</UI.SubTitle>
     <Row center>
       <Sel active={demo} name="DemoCounter" onClick={_ => demo = _}>Counter</Sel>
       <Sel active={demo} name="DemoVenn" onClick={_ => demo = _}>Styling</Sel>
       <Sel active={demo} name="DemoCircles" onClick={_ => demo = _}>Animation</Sel>
     </Row>
 
-    <Row>
+    <Row class="demos">
       <Col>
         {view.el(demo)}
       </Col>
@@ -347,32 +346,40 @@ view Home.Syntax {
   $side = {
     maxWidth: 200
   }
+
+  $demos = {
+    maxWidth: 900
+  }
 }
 
 view Sel {
   prop onClick
   prop name
+  prop active
 
-  <a
-    root
-    yield
+  const isActive = () => active == name
+
+  <a root yield
     onClick={() => {
-      debugger
       onClick(name)
     }}
   />
 
   $ = [
     {
-      padding: 10,
+      padding: [5, 15],
+      margin: [0, 2]
     },
 
-    view.props.onClick && {
-      color: 'blue',
+    onClick && {
+      color: isActive() ? '#333' : 'blue',
       cursor: 'pointer',
+      border: '1px solid transparent',
+      borderColor: 'transparent',
+      borderRadius: 100,
 
       hover: {
-        background: `rgba(0,0,0,0.05)`
+        borderColor: `rgba(0,0,0,0.1)`
       }
     }
   ]
