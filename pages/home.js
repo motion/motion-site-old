@@ -46,12 +46,33 @@ let rotateAnimation = Flint.keyframes({
 view Home.Head {
   <HeaderAlt nobg />
 
-  <banner>
+  <vid>
+    <banner>
     Amazing developer experience
-    <svg viewBox="0 0 510 510">
-      <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
-    </svg>
-  </banner>
+      <svg viewBox="0 0 510 510">
+        <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
+      </svg>
+    </banner>
+    <top class="bg" />
+    <top class="bg2" />
+    <top class="bg3" />
+    <BackgroundVideo />
+  </vid>
+
+  $ = {
+    background: style.gradient,
+    color: '#fff',
+    flexFlow: 'column',
+    overflow: 'hidden',
+    position: 'relative',
+    minHeight: 700,
+    textShadow: '0 1px 1px rgba(0,0,0,0.35)'
+  }
+
+  $vid = {
+    flexGrow: 1
+  }
+
   $banner = {
     margin: 'auto',
     zIndex: 1000,
@@ -66,11 +87,6 @@ view Home.Head {
     margin: [20, 'auto', 0],
     boxShadow: [255,255,255, 10,0.2]
   }
-
-  <top class="bg" />
-  <top class="bg2" />
-  <top class="bg3" />
-
 
   $top = {
     background: 'rgba(0,0,0,0.2)',
@@ -94,7 +110,6 @@ view Home.Head {
     height: '100%'
   }
 
-  <BackgroundVideo />
   $BackgroundVideo = {
     position: 'absolute',
     bottom: 0,
@@ -104,16 +119,6 @@ view Home.Head {
     transform: {
       scale: 1.2,
     }
-  }
-
-  $ = {
-    background: style.gradient,
-    color: '#fff',
-    flexFlow: 'column',
-    overflow: 'hidden',
-    position: 'relative',
-    minHeight: 700,
-    textShadow: '0 1px 1px rgba(0,0,0,0.35)'
   }
 
   $lead = {
