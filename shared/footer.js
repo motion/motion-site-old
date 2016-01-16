@@ -5,13 +5,14 @@ view Footer {
       <br />
       <Social />
       <p>
-        Made with Flint. <Link href="https://github.com/flintjs/site" target="_blank">View source</Link>.
+        Made with Flint.
       </p>
     </content>
   </Contain>
 
   $ = {
-    borderTop: '1px solid #eee',
+    background: 'linear-gradient(-20deg, #666, #222)',
+    color: '#fff',
     margin: [30, 0, -40],
     textAlign: 'center',
     fontSize: 16

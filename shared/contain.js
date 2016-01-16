@@ -34,6 +34,7 @@ view Contain {
     alignItems: 'inherit',
     justifyContent: 'inherit',
     flexGrow: 1,
+    width: '100%'
   }, view.props.contentStyle]
 
   $end = {

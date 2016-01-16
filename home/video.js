@@ -42,7 +42,7 @@ view YouTube {
 
   const originalHeight = 800
   const originalWidth = 1440
-  const scale = 0.4
+  const scale = 0.35
   const height = Math.round(originalHeight * scale)
   const width = Math.round(originalWidth * scale)
 

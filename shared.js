@@ -20,11 +20,22 @@ view Row {
   prop center
   prop centered
   prop spread
+  prop contain
+
+  <row class={{ contain }} yield />
 
   $ = {
     flexFlow: reverse ? 'row-reverse' : 'row',
     justifyContent: spread ? 'space-between' : center ? 'center' : 'flex-start',
     alignItems: centered ? 'center' : 'flex-start',
+    width: '100%'
+  }
+
+  $contain = {
+    maxWidth: 1100,
+    minWidth: 700,
+    width: '80%',
+    margin: `auto`,
   }
 }
 
@@ -36,7 +47,11 @@ view Col {
   $ = {
     flexFlow: 'column',
     justifyContent: center ? 'center' : 'flex-start',
-    alignItems: centered ? 'center' : 'auto',
-    flexGrow: typeof grow != 'undefined' ? grow : 1
+    alignItems: centered ? 'center' : 'flex-start',
+    margin: center ? 'auto' : 0,
+    flexGrow: typeof grow != 'undefined' ? grow : 1,
+    flexShrink: 1,
+    maxWidth: '100%',
+    padding: [0, 20]
   }
 }

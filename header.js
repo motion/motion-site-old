@@ -1,17 +1,19 @@
 view HeaderAlt {
+  prop nobg
+
   <wrap>
-    <Logo small />
-    <Nav large />
-    <Social tiny noSlack />
+    <Contain>
+      <Logo small />
+      <Nav large />
+      <Social tiny noSlack />
+    </Contain>
   </wrap>
 
   $ = {
-    borderBottom: '1px solid #ddd',
-    padding: [5, 0],
+    padding: [10, 0, 20],
     width: '100%',
-    background: '#fff',
     zIndex: 100,
-    boxShadow: [0, 0, 5, 'rgba(0,0,0,0.1)'],
+    background: nobg ? 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0))' : style.gradient,
 
     [device.small]: {
       position: 'relative',
@@ -24,9 +26,6 @@ view HeaderAlt {
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    maxWidth: 900,
-    padding: [0, 20],
-    margin: [0, 'auto'],
 
     [device.small]: {
       flexFlow: 'column'
@@ -184,8 +183,14 @@ view Nav {
     }
   }
 
+  const bordered = {
+    border: '1px solid rgba(255,255,255,0.1)',
+    borderRadius: 10
+  }
+
   $a = {
-    color: 'rgba(255,255,255,0.9)',
+    color: 'rgba(255,255,255,0.8)',
+    textShadow: '0 1px 1px rgba(0,0,0,0.2)',
     fontWeight: 300,
     borderBottom: 'none',
     fontSize: 13,
@@ -194,13 +199,14 @@ view Nav {
     textDecoration: 'none',
 
     hover: {
-      color: color.brand
+      color: color.brand,
+      ...bordered
     }
   }
 
   $active = {
-    fontWeight: 600,
-    color: '#000'
+    fontWeight: 800,
+    color: '#fff'
   }
 }
 

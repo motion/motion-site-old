@@ -17,6 +17,10 @@ view DemoCounter {
     }
     out={<Counter />}
   />
+
+  $ = {
+    width: '100%'
+  }
 }
 
 view Counter {
