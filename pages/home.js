@@ -62,6 +62,7 @@ view Home.Head {
 
   <CanvasMation />
   $CanvasMation = {
+    display: 'none',
     position: 'absolute',
     top: -400,
     opacity: 0.15,
@@ -74,24 +75,26 @@ view Home.Head {
   <Row contain class="mid">
     <Col center class="text">
       <UI.Title class="lead">Make development great again</UI.Title>
-      <UI.SubTitle>
-        Flint is a rethinking of modern development.
+      <UI.SubTitle light>
+        Flint is rethinking of modern development.
       </UI.SubTitle>
-
-      <Text>
-        We've brought together React, Babel, routing, and incredible hot reloads into a simple stack.
-      </Text>
-
-      <Text>
-        It brings the concept of the view to JS,
-        with amazing tools that connect your browser,
-        editor and compiler.
-      </Text>
     </Col>
     <Col center>
       <DemoVideo />
     </Col>
   </Row>
+
+  <BackgroundVideo />
+  $BackgroundVideo = {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    width: '100%',
+    opacity: 0.04,
+    transform: {
+      scale: 1.2,
+    }
+  }
 
   $ = {
     background: style.gradient,
@@ -99,7 +102,9 @@ view Home.Head {
     justifyContent: 'flex-end',
     flexFlow: 'column',
     overflow: 'hidden',
-    position: 'relative'
+    position: 'relative',
+    minHeight: 600,
+    textShadow: '0 1px 1px rgba(0,0,0,0.2)'
   }
 
   $lead = {
@@ -117,6 +122,12 @@ view Home.Head {
   $text = {
     marginRight: 40
   }
+}
+
+view BackgroundVideo {
+  <video root preload autoplay width="1131" height="706">
+    <source src="https://d2p1e9awn3tn6.cloudfront.net/3LiSUD9TiF.webm" />
+  </video>
 }
 
 view Home.Connected {
@@ -518,10 +529,12 @@ view UI.SubTitle {
 }
 
 view Text {
+  prop light
+
   <p root yield />
 
   $ = {
-    color: `rgba(0,0,0,0.5)`,
+    color: light ? `rgba(255,255,255,0.9)` : `rgba(0,0,0,0.5)`,
     fontWeight: 300,
     fontSize: 15,
     lineHeight: '1.6rem'
