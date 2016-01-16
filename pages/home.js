@@ -1,7 +1,7 @@
 view Home {
   <Home.Head />
   <Home.Modern />
-  <Home.Connected />
+  <Home.Platform />
   <Home.Syntax />
   <Home.Tools />
   <Home.Apps />
@@ -153,34 +153,26 @@ view BackgroundVideo {
   }
 }
 
-view Home.Connected {
+view Home.Triple {
   <Feature odd center col>
-    <UI.Title>Connects your tools</UI.Title>
+    <UI.Title>Triple section</UI.Title>
     <UI.SubTitle>A platform to make all your tools talk</UI.SubTitle>
 
     <Row class="diagrams">
       <Col>
         <Icon.Browser />
         <UI.SubTitle class="sub">Browser</UI.SubTitle>
-        <Text>
-          <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smart reloads</Attr> instantly refresh with state.
-          Helpful & <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break.">safe</Attr> errors. <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor.">Jump</Attr> to editor.
-        </Text>
+
       </Col>
       <Col>
         <Icon.Flint />
         <UI.SubTitle class="sub">Compiler</UI.SubTitle>
-        <Text>
-          <Attr alt="Updates your app with each character, avoids writing to file system.">Live coding</Attr> with Atom.&nbsp;
-          <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode lets you drag your numbers and colors.
-        </Text>
+
       </Col>
       <Col>
         <Icon.Editor />
         <UI.SubTitle class="sub">Editor</UI.SubTitle>
-        <Text>
-          Flint's ES6 compiler <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">statically extracts CSS</Attr> & automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm</Attr>.
-        </Text>
+
       </Col>
     </Row>
   </Feature>
@@ -199,6 +191,182 @@ view Home.Connected {
     margin: [10, 0, 0]
   }
 }
+
+
+view Home.Platform {
+  let sections = () => ([
+    {
+      title: 'Browser',
+      description: <Text>
+        <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smart reloads</Attr> instantly refresh with state.
+        Helpful & <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break.">safe</Attr> errors. <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor.">Jump</Attr> to editor.
+      </Text>
+    },
+    {
+      title: 'Editor',
+      description: <Text>
+        Flint's ES6 compiler <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">statically extracts CSS</Attr> & automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm</Attr>.
+      </Text>
+    },
+    {
+      title: 'Compiler',
+      description: <Text>
+        <Attr alt="Updates your app with each character, avoids writing to file system.">Live coding</Attr> with Atom.&nbsp;
+        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode lets you drag your numbers and colors.
+      </Text>
+    },
+  ])
+
+  <Feature odd reverse>
+    <Col>
+      <section repeat={sections()}>
+        <UI.SubTitle class="subtitle">{_.title}</UI.SubTitle>
+        {_.description}
+      </section>
+    </Col>
+
+    <Col>
+      <UI.Title>Connects your tools</UI.Title>
+      <UI.SubTitle>Flint's compiler connects your browser and editor</UI.SubTitle>
+      <Diagram />
+    </Col>
+  </Feature>
+
+  $Col = {
+    padding: [0, 25],
+  }
+
+  $sub = {
+    margin: [10, 0, 0]
+  }
+}
+
+
+view Diagram {
+  let hover = false
+
+  function sectionHover(i) {
+    return {
+      onMouseEnter: () => hover = i,
+      onMouseLeave: () => hover = false
+    }
+  }
+
+  <line class="across" />
+  <line class="slantl" />
+  <line class="slantr" />
+
+  <section {...sectionHover(1)} class="side">
+    <Icon.Browser class="icon" highlight={hover == 1} />
+  </section>
+  <section {...sectionHover(2)} class="point">
+    <Icon.Flint class="icon" highlight={hover == 2} />
+  </section>
+  <section {...sectionHover(3)} class="side right">
+    <Icon.Editor class="icon" highlight={hover == 3} />
+  </section>
+
+  $ = {
+    flexFlow: 'row',
+    alignItems: 'space-around',
+    justifyContent: 'center',
+    position: 'relative',
+    zIndex: 1000,
+    width: 450,
+    height: 240,
+    margin: 'auto',
+
+    [device.small]: {
+      width: 'auto',
+      flexFlow: 'column',
+      alignItems: 'center'
+    }
+  }
+
+  $section = {
+    alignItems: 'center',
+    padding: [0, 40],
+    maxWidth: 400,
+    alignSelf: 'flex-start',
+    position: 'relative',
+    zIndex: 10,
+    textAlign: 'center',
+
+    [device.small]: {
+      margin: 'auto',
+      width: '100%',
+      padding: [0, 20],
+      marginBottom: 30,
+      flexFlow: 'row',
+      textAlign: 'left'
+    }
+  }
+
+  let sidePull = 0
+
+  $side = {
+    flexFlow: 'row-reverse',
+    padding: [0],
+    margin: [0, sidePull, 0, 0],
+    textAlign: 'right'
+  }
+
+  $right = {
+    flexFlow: 'row',
+    margin: [0, 0, 0, sidePull],
+    textAlign: 'left',
+  }
+
+  const lineSize = 200
+  const iconSize = 100
+
+  $point = {
+    maxWidth: 320,
+    margin: [iconSize + 40, -30, 0]
+  }
+
+  $line = {
+    height: 1,
+    width: lineSize,
+    position: 'absolute',
+    background: '#eee',
+    zIndex: 0,
+
+    [device.small]: {
+      display: 'none'
+    }
+  }
+
+  $across = {
+    top: iconSize / 2,
+    left: '50%',
+    marginLeft: -lineSize / 2
+  }
+
+  const slantPos = iconSize + 40
+
+  $slantl = {
+    top: slantPos,
+    left: '50%',
+    margin: [0, 0, 0, -slantPos],
+    width: slantPos,
+    transform: {
+      rotate: `48deg`
+    }
+  }
+
+  $slantr = {
+    top: slantPos,
+    right: '50%',
+    margin: [0, -slantPos, 0, 0],
+    width: slantPos,
+    transform: {
+      rotate: `-48deg`
+    }
+  }
+}
+
+
 
 let already = false
 
@@ -542,6 +710,7 @@ view Feature {
   prop odd
   prop slim
   prop dark
+  prop reverse
 
   <Contain yield />
 
@@ -549,7 +718,7 @@ view Feature {
     padding: [slim ? 15 : 60, 50],
     textAlign: center ? `center` : `left`,
     alignItems: 'center',
-    flexFlow: col ? `column` : `row`,
+    flexFlow: col ? `column` : reverse ? `row-reverse` : `row`,
     borderBottom: [1, 'solid', '#eee'],
     color: dark ? `#fff` : `auto`,
     background: dark ? `linear-gradient(#060646, #101038)` : odd ? `#fcfcfc` : `auto`
