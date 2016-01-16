@@ -5,13 +5,13 @@ view Slack {
 
   $iframe = {
     border: 'none',
-    width: '100%',
-    height: 240,
+    width: 400,
+    height: 340,
     overflow: 'hidden'
   }
 
   $ = {
-    margin: [-20, 0, 20]
+    margin: [-40, 0, 20]
   }
 
   $Contain = {

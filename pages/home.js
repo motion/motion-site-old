@@ -2,9 +2,9 @@ view Home {
   <Home.Head />
   <Home.Modern />
   <Home.Connected />
-  <Home.Apps />
   <Home.Syntax />
   <Home.Tools />
+  <Home.Apps />
   <Home.Community />
   <Home.Features />
   <Footer />
@@ -323,7 +323,7 @@ view Home.Apps {
 view Home.Syntax {
   let demo = 'DemoCounter'
 
-  <Feature col odd>
+  <Feature col>
     <UI.Title center>Views in Javascript</UI.Title>
     <UI.SubTitle center>Learn in two minutes (TODO FIX FLINT.js BUGS HERE)</UI.SubTitle>
     <Row center>
@@ -453,10 +453,14 @@ view Home.Community {
   <Feature>
     <inner>
       <Col class="content">
-        <UI.Title>Powered by Community</UI.Title>
+        <UI.Title>Powered by Open</UI.Title>
         <UI.SubTitle>
-          We've been working with amazing Open Source contributors and projects since day 1.
+        Flint is and runs on open source. We keep a public roadmap, make decisions with the community on Github, and sponsor open source on Patreon.
         </UI.SubTitle>
+
+        <Text>
+        Join our community on Slack today and read our code of conduct.
+        </Text>
 
         <cloud>
           <a href="http://facebook.github.io/react" target="_blank"><img src="/assets/images/logos/react.svg" /></a>
@@ -468,6 +472,7 @@ view Home.Community {
           <a href="http://projects.formidablelabs.com/radium/" target="_blank"><img src="/assets/images/logos/radium.png" /></a>
         </cloud>
       </Col>
+
       <Col class="example">
         <Slack />
       </Col>
@@ -483,8 +488,8 @@ view Home.Community {
   }
 
   $content = {
-    padding: [30, 50, 30, 20],
-    width: '20%',
+    padding: [20, 50, 0, 20],
+    width: '50%',
     justifyContent: 'center'
   }
 
@@ -492,15 +497,18 @@ view Home.Community {
     flexFlow: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    margin: [0, 'auto']
+    margin: [20, 'auto', 0]
   }
 
-  const size  = 40
+  const size  = 50
 
   $img = {
     width: size,
     maxHeight: size,
-    margin: [0, 20, 20],
+    margin: [0, 5, 20],
+    filter: 'grayscale(100%) opacity(50%)',
+    transition: 'all ease-in 400ms',
+    hover: { filter: 'grayscale(0%) opacity(100%)' },
     alignSelf: 'center'
   }
 
@@ -511,9 +519,11 @@ view Home.Community {
 
 view Home.Features {
   <Feature col>
-    <UI.Title center>Everything you need</UI.Title>
+    <UI.Title center>Everything you need to deploy today</UI.Title>
+    <UI.SubTitle center>Start in seconds, be more creative & deploy today</UI.SubTitle>
     <Features />
   </Feature>
+  $Feature = { border: 'none', paddingBottom: 0 }
 }
 
 
