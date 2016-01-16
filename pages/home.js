@@ -227,7 +227,7 @@ view Home.Platform {
 
     <Col>
       <UI.Title>Connects your tools</UI.Title>
-      <UI.SubTitle>Flint's compiler connects your browser and editor</UI.SubTitle>
+      <UI.SubTitle>Flint connects your tools in smarter ways</UI.SubTitle>
       <Diagram />
     </Col>
   </Feature>
@@ -236,8 +236,23 @@ view Home.Platform {
     padding: [0, 25],
   }
 
-  $sub = {
-    margin: [10, 0, 0]
+  $section = {
+    padding: [10, 20],
+    cursor: 'pointer',
+    borderRadius: 3,
+
+    hover: {
+      background: 'rgba(0,0,0,0.05)'
+    }
+  }
+
+  $subtitle = {
+    margin: [0, 0, -5],
+    color: '#555',
+  }
+
+  $Diagram = {
+    margin: [40, 'auto', 0]
   }
 }
 
@@ -285,7 +300,7 @@ view Diagram {
 
   $section = {
     alignItems: 'center',
-    padding: [0, 40],
+    padding: [0, 25],
     maxWidth: 400,
     alignSelf: 'flex-start',
     position: 'relative',
@@ -343,7 +358,7 @@ view Diagram {
     marginLeft: -lineSize / 2
   }
 
-  const slantPos = iconSize + 40
+  const slantPos = iconSize + 30
 
   $slantl = {
     top: slantPos,
@@ -418,11 +433,6 @@ view Home.Modern {
     [device.small]: {
       margin: 'auto'
     }
-  }
-
-  $Feature = {
-    borderBottom: [1, 'solid', '#eee'],
-    overflow: 'hidden'
   }
 
   $content = {
@@ -714,7 +724,7 @@ view Feature {
   <Contain yield />
 
   $ = {
-    padding: [slim ? 15 : 60, 50],
+    padding: [slim ? 15 : 65, 50],
     textAlign: center ? `center` : `left`,
     alignItems: 'center',
     flexFlow: col ? `column` : reverse ? `row-reverse` : `row`,
