@@ -47,7 +47,7 @@ view Home.Head {
   <HeaderAlt nobg />
 
   <banner>
-    Welcome to the fucking future
+    Amazing developer experience
     <svg viewBox="0 0 510 510">
       <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
     </svg>
@@ -67,16 +67,31 @@ view Home.Head {
     boxShadow: [255,255,255, 10,0.2]
   }
 
-  <fakebg />
-  $fakebg = {
-    background: style.lightGradient,
+  <top class="bg" />
+  <top class="bg2" />
+  <top class="bg3" />
+
+
+  $top = {
+    background: 'rgba(0,0,0,0.2)',
     position: 'absolute',
     top: 0,
     right: 0,
-    height: 120,
+    height: 55,
     left: 0,
     zIndex: 1,
-    opacity: 0.3
+    backdropFilter: 'blur(10px)'
+  }
+
+  $bg2 = {
+    background: style.gradient,
+    opacity: 0.9
+  }
+
+  $bg3 = {
+    background: `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.15))`,
+    zIndex: 1,
+    height: '100%'
   }
 
   <BackgroundVideo />
@@ -85,7 +100,7 @@ view Home.Head {
     bottom: 0,
     right: 0,
     width: '100%',
-    opacity: 0.5,
+    opacity: 0.4,
     transform: {
       scale: 1.2,
     }
@@ -98,7 +113,7 @@ view Home.Head {
     overflow: 'hidden',
     position: 'relative',
     minHeight: 700,
-    textShadow: '0 1px 1px rgba(0,0,0,0.2)'
+    textShadow: '0 1px 1px rgba(0,0,0,0.35)'
   }
 
   $lead = {
@@ -122,6 +137,20 @@ view BackgroundVideo {
   <video root muted preload autoplay loop>
     <source src="https://d2p1e9awn3tn6.cloudfront.net/3LiSUD9TiF.webm" />
   </video>
+
+  $ = {
+    ':before': {
+      display: 'block',
+      content: ' ',
+      position: 'absolute',
+      zIndex: 100,
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: 'red'
+    }
+  }
 }
 
 view Home.Connected {
@@ -187,7 +216,7 @@ view Home.Modern {
   <Feature>
     <Row centered>
       <Col grow={2} class="content">
-        <UI.Title>Make America Great Again</UI.Title>
+        <UI.Title>Make Code Great Again</UI.Title>
         <UI.SubTitle>
           An ultra modern React stack with everything you need to start in minutes and deploy today.
         </UI.SubTitle>
