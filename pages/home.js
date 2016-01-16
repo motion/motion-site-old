@@ -492,8 +492,8 @@ view Home.Syntax {
   let demo = 'DemoCounter'
 
   <Feature col>
-    <UI.Title center>Views in Javascript</UI.Title>
-    <Row center>
+    <UI.Title>Views in Javascript</UI.Title>
+    <Row>
       <Sel active={demo} name="DemoCounter" onClick={_ => demo = _}>Counter</Sel>
       <Sel active={demo} name="DemoVenn" onClick={_ => demo = _}>Styling</Sel>
       <Sel active={demo} name="DemoCircles" onClick={_ => demo = _}>Animation</Sel>
@@ -504,7 +504,6 @@ view Home.Syntax {
         {view.el(demo)}
       </Col>
     </Row>
-
   </Feature>
 
   $Col = {
@@ -556,7 +555,7 @@ view Sel {
 view Home.Tools {
   <Feature dark col>
     <UI.Title large center>
-    Tools that make you happy
+      Tools that make you happy
     </UI.Title>
 
     <img src="/assets/images/tools.png" />
@@ -564,7 +563,7 @@ view Home.Tools {
 
   $img = {
     width: '100%',
-    margin: [80, 'auto', 20]
+    margin: [20, 'auto', 0]
   }
 
 
@@ -721,7 +720,7 @@ view Feature {
     flexFlow: col ? `column` : reverse ? `row-reverse` : `row`,
     borderBottom: [1, 'solid', '#eee'],
     color: dark ? `#fff` : `auto`,
-    background: dark ? `linear-gradient(#060646, #101038)` : odd ? `#fcfcfc` : `auto`
+    background: dark ? `linear-gradient(130deg, #3f3f95 70%, #333360)` : odd ? `#fcfcfc` : `auto`
   }
 }
 
