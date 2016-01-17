@@ -776,12 +776,7 @@ view Home.Features {
 
 
 view Feature {
-  prop center
-  prop col
-  prop odd
-  prop slim
-  prop dark
-  prop reverse
+  prop center, col, odd, slim, dark, reverse
 
   <Contain yield />
 
@@ -797,8 +792,7 @@ view Feature {
 }
 
 view UI.Title {
-  prop center
-  prop large
+  prop center, large
 
   <h2 root yield />
 
