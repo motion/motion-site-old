@@ -21,7 +21,7 @@ view Page {
     maxWidth: 900,
     margin: 'auto',
     flexFlow: 'row',
-    padding: [0, 0, 0],
+    padding: [50, 0, 0],
 
     [device.small]: {
       flexFlow: 'column'

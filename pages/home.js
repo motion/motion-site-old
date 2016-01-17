@@ -1,11 +1,13 @@
 view Home {
   <Home.Head />
+  <Home.Install />
   <Home.Modern />
-  <Home.Connected />
-  <Home.Apps />
+  <Home.Platform />
   <Home.Syntax />
   <Home.Tools />
+  <Home.Apps />
   <Home.Community />
+  <Home.Triple />
   <Home.Features />
   <Footer />
 
@@ -39,57 +41,22 @@ view Home {
   }
 }
 
-let rotateAnimation = Flint.keyframes({
-  '100%': { transform: 'rotate(360deg)' }
-}, 'pulse')
 
 view Home.Head {
   <HeaderAlt nobg />
-
-  <banner>
-    Welcome to the fucking future
-    <svg viewBox="0 0 510 510">
-      <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
-    </svg>
-  </banner>
-  $banner = {
-    margin: 'auto',
-    zIndex: 1000,
-    fontSize: 30,
-    fontWeight: 600
-  }
-
-  $svg = {
-    fill: '#fff',
-    width: 60,
-    height: 60,
-    margin: [20, 'auto', 0],
-    boxShadow: [255,255,255, 10,0.2]
-  }
-
-  <fakebg />
-  $fakebg = {
-    background: style.lightGradient,
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    height: 120,
-    left: 0,
-    zIndex: 1,
-    opacity: 0.3
-  }
-
-  <BackgroundVideo />
-  $BackgroundVideo = {
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-    width: '100%',
-    opacity: 0.5,
-    transform: {
-      scale: 1.2,
-    }
-  }
+  <vid>
+    <banner>
+      <h1>Development, smarter</h1>
+      <svg viewBox="0 0 510 510">
+        <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
+      </svg>
+    </banner>
+    <top class="bg" />
+    <top class="bg2" />
+    <top class="bg3" />
+    <top class="bg4" />
+    <BackgroundVideo />
+  </vid>
 
   $ = {
     background: style.gradient,
@@ -97,8 +64,76 @@ view Home.Head {
     flexFlow: 'column',
     overflow: 'hidden',
     position: 'relative',
-    minHeight: 700,
-    textShadow: '0 1px 1px rgba(0,0,0,0.2)'
+    minHeight: 680,
+    textShadow: '0 1px 1px rgba(0,0,0,0.35)'
+  }
+
+  $vid = {
+    flexGrow: 1
+  }
+
+  $banner = {
+    margin: 'auto',
+    zIndex: 1000,
+    fontWeight: 600
+  }
+
+  $h1 = {
+    fontSize: 33,
+    textShadow: '0 2px 6px rgba(0,0,0,0.2)',
+    margin: [10, 0]
+  }
+
+  $svg = {
+    fill: '#fff',
+    width: 75,
+    height: 75,
+    margin: [20, 'auto', -20],
+    boxShadow: [255,255,255, 10,0.2],
+    opacity: 0.5,
+
+    hover: {
+      opacity: 1
+    }
+  }
+
+  $top = {
+    background: 'rgba(0,0,0,0.2)',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    height: 55,
+    left: 0,
+    zIndex: 2,
+    backdropFilter: 'blur(10px)'
+  }
+
+  $bg2 = {
+    background: style.gradient,
+    opacity: 0
+  }
+
+  $bg3 = {
+    background: `linear-gradient(-10deg, rgba(0,0,0,0) 60%, rgba(250,100,100,1))`,
+    zIndex: 1,
+    height: '100%'
+  }
+
+  $bg4 = {
+    background: `linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,0.45))`,
+    zIndex: 1,
+    height: '100%'
+  }
+
+  $BackgroundVideo = {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    width: '100%',
+    opacity: 0.4,
+    transform: {
+      scale: 1.2,
+    }
   }
 
   $lead = {
@@ -122,36 +157,84 @@ view BackgroundVideo {
   <video root muted preload autoplay loop>
     <source src="https://d2p1e9awn3tn6.cloudfront.net/3LiSUD9TiF.webm" />
   </video>
+
+  $ = {
+    ':before': {
+      display: 'block',
+      content: ' ',
+      position: 'absolute',
+      zIndex: 100,
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: 'red'
+    }
+  }
 }
 
-view Home.Connected {
+
+view Home.Intro {
+  <Feature>
+    <Row centered>
+      <Col grow={2} class="content">
+        <UI.Title>Power with simplicity</UI.Title>
+        <UI.SubTitle>
+          Development made much better through a smart compiler and novel tools.
+        </UI.SubTitle>
+
+        <UI.SubTitle>
+          An open platform developers can bet on and continuously improve.
+        </UI.SubTitle>
+      </Col>
+      <Col class="example">
+      </Col>
+    </Row>
+  </Feature>
+
+  $Editor = {
+    minWidth: 250,
+    width: '60%',
+
+    [device.small]: {
+      margin: 'auto'
+    }
+  }
+
+  $content = {
+    padding: [0, 50, 0, 20],
+    width: '20%',
+    justifyContent: 'center'
+  }
+
+  $img = {
+    width: 425,
+    margin: [0, -300, 0, 0]
+  }
+}
+
+
+
+view Home.Triple {
   <Feature odd center col>
-    <UI.Title>Connects your tools</UI.Title>
+    <UI.Title>Triple section</UI.Title>
     <UI.SubTitle>A platform to make all your tools talk</UI.SubTitle>
 
     <Row class="diagrams">
       <Col>
         <Icon.Browser />
         <UI.SubTitle class="sub">Browser</UI.SubTitle>
-        <Text>
-          <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smart reloads</Attr> instantly refresh with state.
-          Helpful & <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break.">safe</Attr> errors. <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor.">Jump</Attr> to editor.
-        </Text>
+
       </Col>
       <Col>
         <Icon.Flint />
         <UI.SubTitle class="sub">Compiler</UI.SubTitle>
-        <Text>
-          <Attr alt="Updates your app with each character, avoids writing to file system.">Live coding</Attr> with Atom.&nbsp;
-          <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode lets you drag your numbers and colors.
-        </Text>
+
       </Col>
       <Col>
         <Icon.Editor />
         <UI.SubTitle class="sub">Editor</UI.SubTitle>
-        <Text>
-          Flint's ES6 compiler <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">statically extracts CSS</Attr> & automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm</Attr>.
-        </Text>
+
       </Col>
     </Row>
   </Feature>
@@ -171,6 +254,197 @@ view Home.Connected {
   }
 }
 
+
+view Home.Platform {
+  let sections = () => ([
+    {
+      title: 'Browser',
+      description: <Text>
+        <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smart reloads</Attr> instantly refresh with state.
+        Helpful & <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break.">safe</Attr> errors. <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor.">Jump</Attr> to editor.
+      </Text>
+    },
+    {
+      title: 'Editor',
+      description: <Text>
+        Flint's ES6 compiler <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">statically extracts CSS</Attr> & automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm</Attr>.
+      </Text>
+    },
+    {
+      title: 'Compiler',
+      description: <Text>
+        <Attr alt="Updates your app with each character, avoids writing to file system.">Live coding</Attr> with Atom.&nbsp;
+        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode lets you drag your numbers and colors.
+      </Text>
+    },
+  ])
+
+  <Feature odd reverse>
+    <Col>
+      <section repeat={sections()}>
+        <UI.SubTitle class="subtitle">{_.title}</UI.SubTitle>
+        {_.description}
+      </section>
+    </Col>
+
+    <Col>
+      <UI.Title>Connects your tools</UI.Title>
+      <UI.SubTitle>Flint connects your tools in smarter ways</UI.SubTitle>
+      <Diagram />
+    </Col>
+  </Feature>
+
+  $Col = {
+    padding: [0, 25],
+  }
+
+  $section = {
+    padding: [10, 20],
+    cursor: 'pointer',
+    borderRadius: 3,
+
+    hover: {
+      background: 'rgba(0,0,0,0.05)'
+    }
+  }
+
+  $subtitle = {
+    margin: [0, 0, -5],
+    color: '#555',
+  }
+
+  $Diagram = {
+    margin: [40, 'auto', 0]
+  }
+}
+
+
+view Diagram {
+  let hover = false
+
+  function sectionHover(i) {
+    return {
+      onMouseEnter: () => hover = i,
+      onMouseLeave: () => hover = false
+    }
+  }
+
+  <line class="across" />
+  <line class="slantl" />
+  <line class="slantr" />
+
+  <section {...sectionHover(1)} class="side">
+    <Icon.Browser class="icon" highlight={hover == 1} />
+  </section>
+  <section {...sectionHover(2)} class="point">
+    <Icon.Flint class="icon" highlight={hover == 2} />
+  </section>
+  <section {...sectionHover(3)} class="side right">
+    <Icon.Editor class="icon" highlight={hover == 3} />
+  </section>
+
+  $ = {
+    flexFlow: 'row',
+    alignItems: 'space-around',
+    justifyContent: 'center',
+    position: 'relative',
+    zIndex: 1000,
+    width: 450,
+    height: 240,
+    margin: 'auto',
+
+    [device.small]: {
+      width: 'auto',
+      flexFlow: 'column',
+      alignItems: 'center'
+    }
+  }
+
+  $section = {
+    alignItems: 'center',
+    padding: [0, 25],
+    maxWidth: 400,
+    alignSelf: 'flex-start',
+    position: 'relative',
+    zIndex: 10,
+    textAlign: 'center',
+
+    [device.small]: {
+      margin: 'auto',
+      width: '100%',
+      padding: [0, 20],
+      marginBottom: 30,
+      flexFlow: 'row',
+      textAlign: 'left'
+    }
+  }
+
+  let sidePull = 0
+
+  $side = {
+    flexFlow: 'row-reverse',
+    padding: [0],
+    margin: [0, sidePull, 0, 0],
+    textAlign: 'right'
+  }
+
+  $right = {
+    flexFlow: 'row',
+    margin: [0, 0, 0, sidePull],
+    textAlign: 'left',
+  }
+
+  const lineSize = 200
+  const iconSize = 100
+
+  $point = {
+    maxWidth: 320,
+    margin: [iconSize + 40, -30, 0]
+  }
+
+  $line = {
+    height: 1,
+    width: lineSize,
+    position: 'absolute',
+    background: '#eee',
+    zIndex: 0,
+
+    [device.small]: {
+      display: 'none'
+    }
+  }
+
+  $across = {
+    top: iconSize / 2,
+    left: '50%',
+    marginLeft: -lineSize / 2
+  }
+
+  const slantPos = iconSize + 30
+
+  $slantl = {
+    top: slantPos,
+    left: '50%',
+    margin: [0, 0, 0, -slantPos],
+    width: slantPos,
+    transform: {
+      rotate: `48deg`
+    }
+  }
+
+  $slantr = {
+    top: slantPos,
+    right: '50%',
+    margin: [0, -slantPos, 0, 0],
+    width: slantPos,
+    transform: {
+      rotate: `-48deg`
+    }
+  }
+}
+
+
+
 let already = false
 
 view Home.Modern {
@@ -187,13 +461,13 @@ view Home.Modern {
   <Feature>
     <Row centered>
       <Col grow={2} class="content">
-        <UI.Title>Make America Great Again</UI.Title>
+        <UI.Title>Power with simplicity</UI.Title>
         <UI.SubTitle>
-          An ultra modern React stack with everything you need to start in minutes and deploy today.
+          Development made much better through a smart compiler and novel tools.
         </UI.SubTitle>
 
         <UI.SubTitle>
-          Powerful and never before seen tools to make you and your team happy with development again.
+          An open platform developers can bet on and continuously improve.
         </UI.SubTitle>
       </Col>
       <Col class="example">
@@ -221,11 +495,6 @@ view Home.Modern {
     [device.small]: {
       margin: 'auto'
     }
-  }
-
-  $Feature = {
-    borderBottom: [1, 'solid', '#eee'],
-    overflow: 'hidden'
   }
 
   $content = {
@@ -294,21 +563,19 @@ view Home.Apps {
 view Home.Syntax {
   let demo = 'DemoCounter'
 
-  <Feature col odd>
-    <UI.Title center>Views in Javascript</UI.Title>
-    <UI.SubTitle center>Learn in two minutes (TODO FIX FLINT.js BUGS HERE)</UI.SubTitle>
-    <Row center>
+  <Feature col>
+    <UI.Title>Views in Javascript</UI.Title>
+    <Row>
       <Sel active={demo} name="DemoCounter" onClick={_ => demo = _}>Counter</Sel>
       <Sel active={demo} name="DemoVenn" onClick={_ => demo = _}>Styling</Sel>
       <Sel active={demo} name="DemoCircles" onClick={_ => demo = _}>Animation</Sel>
     </Row>
 
-    <Row>
+    <Row class="demos">
       <Col>
         {view.el(demo)}
       </Col>
     </Row>
-
   </Feature>
 
   $Col = {
@@ -318,32 +585,40 @@ view Home.Syntax {
   $side = {
     maxWidth: 200
   }
+
+  $demos = {
+    maxWidth: 900
+  }
 }
 
 view Sel {
   prop onClick
   prop name
+  prop active
 
-  <a
-    root
-    yield
+  const isActive = () => active == name
+
+  <a root yield
     onClick={() => {
-      debugger
       onClick(name)
     }}
   />
 
   $ = [
     {
-      padding: 10,
+      padding: [5, 15],
+      margin: [0, 2]
     },
 
-    view.props.onClick && {
-      color: 'blue',
+    onClick && {
+      color: isActive() ? '#333' : 'blue',
       cursor: 'pointer',
+      border: '1px solid transparent',
+      borderColor: 'transparent',
+      borderRadius: 100,
 
       hover: {
-        background: `rgba(0,0,0,0.05)`
+        borderColor: `rgba(0,0,0,0.1)`
       }
     }
   ]
@@ -352,7 +627,7 @@ view Sel {
 view Home.Tools {
   <Feature dark col>
     <UI.Title large center>
-    Tools that make you happy
+      Tools that make you happy
     </UI.Title>
 
     <img src="/assets/images/tools.png" />
@@ -360,7 +635,7 @@ view Home.Tools {
 
   $img = {
     width: '100%',
-    margin: [80, 'auto', 20]
+    margin: [20, 'auto', 0]
   }
 
 
@@ -424,10 +699,14 @@ view Home.Community {
   <Feature>
     <inner>
       <Col class="content">
-        <UI.Title>Powered by Community</UI.Title>
+        <UI.Title>Powered by Open</UI.Title>
         <UI.SubTitle>
-          We've been working with amazing Open Source contributors and projects since day 1.
+        Flint is and runs on open source. We keep a public roadmap, make decisions with the community on Github, and sponsor open source on Patreon.
         </UI.SubTitle>
+
+        <Text>
+        Join our community on Slack today and read our code of conduct.
+        </Text>
 
         <cloud>
           <a href="http://facebook.github.io/react" target="_blank"><img src="/assets/images/logos/react.svg" /></a>
@@ -439,6 +718,7 @@ view Home.Community {
           <a href="http://projects.formidablelabs.com/radium/" target="_blank"><img src="/assets/images/logos/radium.png" /></a>
         </cloud>
       </Col>
+
       <Col class="example">
         <Slack />
       </Col>
@@ -454,8 +734,8 @@ view Home.Community {
   }
 
   $content = {
-    padding: [30, 50, 30, 20],
-    width: '20%',
+    padding: [20, 50, 0, 20],
+    width: '50%',
     justifyContent: 'center'
   }
 
@@ -463,15 +743,18 @@ view Home.Community {
     flexFlow: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    margin: [0, 'auto']
+    margin: [20, 'auto', 0]
   }
 
-  const size  = 40
+  const size  = 50
 
   $img = {
     width: size,
     maxHeight: size,
-    margin: [0, 20, 20],
+    margin: [0, 5, 20],
+    filter: 'grayscale(100%) opacity(50%)',
+    transition: 'all ease-in 400ms',
+    hover: { filter: 'grayscale(0%) opacity(100%)' },
     alignSelf: 'center'
   }
 
@@ -482,9 +765,11 @@ view Home.Community {
 
 view Home.Features {
   <Feature col>
-    <UI.Title center>Everything you need</UI.Title>
+    <UI.Title center>Everything you need to deploy today</UI.Title>
+    <UI.SubTitle center>Start in seconds, be more creative & deploy today</UI.SubTitle>
     <Features />
   </Feature>
+  $Feature = { border: 'none', paddingBottom: 0 }
 }
 
 
@@ -496,17 +781,18 @@ view Feature {
   prop odd
   prop slim
   prop dark
+  prop reverse
 
   <Contain yield />
 
   $ = {
-    padding: [slim ? 15 : 60, 50],
+    padding: [slim ? 15 : 65, 50],
     textAlign: center ? `center` : `left`,
     alignItems: 'center',
-    flexFlow: col ? `column` : `row`,
+    flexFlow: col ? `column` : reverse ? `row-reverse` : `row`,
     borderBottom: [1, 'solid', '#eee'],
     color: dark ? `#fff` : `auto`,
-    background: dark ? `linear-gradient(#060646, #101038)` : odd ? `#fcfcfc` : `auto`
+    background: dark ? `linear-gradient(130deg, #3f3f95 70%, #333360)` : odd ? `#fcfcfc` : `auto`
   }
 }
 

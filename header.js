@@ -10,10 +10,14 @@ view HeaderAlt {
   </wrap>
 
   $ = {
-    padding: [10, 0, 20],
-    width: '100%',
+    padding: [5, 0],
+    position: 'absolute',
+    top: 0,
+    left: -20,
+    right: -20,
     zIndex: 100,
-    background: nobg ? 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0))' : style.gradient,
+    background: nobg ? 'none' : style.gradient,
+    boxShadow: '0 0 4px rgba(0,0,0,0.2)',
 
     [device.small]: {
       position: 'relative',
@@ -184,22 +188,22 @@ view Nav {
   }
 
   const bordered = {
-    border: '1px solid rgba(255,255,255,0.1)',
     borderRadius: 10
   }
 
   $a = {
+    border: '1px solid transparent',
     color: 'rgba(255,255,255,0.8)',
-    textShadow: '0 1px 1px rgba(0,0,0,0.2)',
+    textShadow: '0 1px 1px rgba(0,0,0,0.35)',
     fontWeight: 300,
     borderBottom: 'none',
-    fontSize: 13,
+    fontSize: 14,
     padding: [0, 12],
     cursor: 'pointer',
     textDecoration: 'none',
 
     hover: {
-      color: color.brand,
+      color: '#fff',
       ...bordered
     }
   }
