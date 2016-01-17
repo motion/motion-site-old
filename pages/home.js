@@ -10,37 +10,7 @@ view Home {
   <Home.Triple />
   <Home.Features />
   <Footer />
-
-  $h2 = {
-    textAlign: 'center',
-    margin: 0
-  }
-
-  $section = {
-    textAlign: 'center',
-    padding: [20, 0, 0],
-    borderBottom: [1, 'solid', '#ddd']
-  }
-
-  $p = {
-    padding: 20,
-    paddingBottom: 0
-  }
-
-  $ul = {
-    margin: 0,
-    textAlign: 'left',
-    display: 'flex',
-    flexFlow: 'row'
-  }
-
-  $li = {
-    display: 'flex',
-    padding: 20,
-    flexGrow: 1
-  }
 }
-
 
 view Home.Head {
   <HeaderAlt nobg />
