@@ -53,6 +53,7 @@ view Home.Head {
     <top class="bg" />
     <top class="bg2" />
     <top class="bg3" />
+    <top class="bg4" />
     <BackgroundVideo />
   </vid>
 
@@ -62,7 +63,7 @@ view Home.Head {
     flexFlow: 'column',
     overflow: 'hidden',
     position: 'relative',
-    minHeight: 600,
+    minHeight: 680,
     textShadow: '0 1px 1px rgba(0,0,0,0.35)'
   }
 
@@ -102,17 +103,23 @@ view Home.Head {
     right: 0,
     height: 55,
     left: 0,
-    zIndex: 1,
+    zIndex: 2,
     backdropFilter: 'blur(10px)'
   }
 
   $bg2 = {
     background: style.gradient,
-    opacity: 0.9
+    opacity: 0
   }
 
   $bg3 = {
-    background: `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.15))`,
+    background: `linear-gradient(-10deg, rgba(0,0,0,0) 60%, rgba(250,100,100,1))`,
+    zIndex: 1,
+    height: '100%'
+  }
+
+  $bg4 = {
+    background: `linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,0.45))`,
     zIndex: 1,
     height: '100%'
   }
