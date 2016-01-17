@@ -46,7 +46,7 @@ view Home.Head {
   <HeaderAlt nobg />
   <vid>
     <banner>
-      <h1>Insert Long Term Branding Strategy</h1>
+      <h1>Development, smarter</h1>
       <svg viewBox="0 0 510 510">
         <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
       </svg>
