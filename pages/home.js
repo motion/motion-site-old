@@ -6,6 +6,7 @@ view Home {
   <Home.Tools />
   <Home.Apps />
   <Home.Community />
+  <Home.Triple />
   <Home.Features />
   <Footer />
 
@@ -39,16 +40,12 @@ view Home {
   }
 }
 
-let rotateAnimation = Flint.keyframes({
-  '100%': { transform: 'rotate(360deg)' }
-}, 'pulse')
 
 view Home.Head {
   <HeaderAlt nobg />
-
   <vid>
     <banner>
-    Amazing developer experience
+      <h1>Insert Long Term Branding Strategy</h1>
       <svg viewBox="0 0 510 510">
         <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
       </svg>
@@ -65,7 +62,7 @@ view Home.Head {
     flexFlow: 'column',
     overflow: 'hidden',
     position: 'relative',
-    minHeight: 700,
+    minHeight: 600,
     textShadow: '0 1px 1px rgba(0,0,0,0.35)'
   }
 
@@ -76,16 +73,26 @@ view Home.Head {
   $banner = {
     margin: 'auto',
     zIndex: 1000,
-    fontSize: 30,
     fontWeight: 600
+  }
+
+  $h1 = {
+    fontSize: 33,
+    textShadow: '0 2px 6px rgba(0,0,0,0.2)',
+    margin: [10, 0]
   }
 
   $svg = {
     fill: '#fff',
-    width: 60,
-    height: 60,
-    margin: [20, 'auto', 0],
-    boxShadow: [255,255,255, 10,0.2]
+    width: 75,
+    height: 75,
+    margin: [20, 'auto', -20],
+    boxShadow: [255,255,255, 10,0.2],
+    opacity: 0.5,
+
+    hover: {
+      opacity: 1
+    }
   }
 
   $top = {
@@ -157,6 +164,49 @@ view BackgroundVideo {
     }
   }
 }
+
+
+
+view Home.Intro {
+  <Feature>
+    <Row centered>
+      <Col grow={2} class="content">
+        <UI.Title>Power with simplicity</UI.Title>
+        <UI.SubTitle>
+          Development made much better through a smart compiler and novel tools.
+        </UI.SubTitle>
+
+        <UI.SubTitle>
+          An open platform developers can bet on and continuously improve.
+        </UI.SubTitle>
+      </Col>
+      <Col class="example">
+      </Col>
+    </Row>
+  </Feature>
+
+  $Editor = {
+    minWidth: 250,
+    width: '60%',
+
+    [device.small]: {
+      margin: 'auto'
+    }
+  }
+
+  $content = {
+    padding: [0, 50, 0, 20],
+    width: '20%',
+    justifyContent: 'center'
+  }
+
+  $img = {
+    width: 425,
+    margin: [0, -300, 0, 0]
+  }
+}
+
+
 
 view Home.Triple {
   <Feature odd center col>
@@ -404,13 +454,13 @@ view Home.Modern {
   <Feature>
     <Row centered>
       <Col grow={2} class="content">
-        <UI.Title>Make Code Great Again</UI.Title>
+        <UI.Title>Power with simplicity</UI.Title>
         <UI.SubTitle>
-          An ultra modern React stack with everything you need to start in minutes and deploy today.
+          Development made much better through a smart compiler and novel tools.
         </UI.SubTitle>
 
         <UI.SubTitle>
-          Powerful and never before seen tools to make you and your team happy with development again.
+          An open platform developers can bet on and continuously improve.
         </UI.SubTitle>
       </Col>
       <Col class="example">
