@@ -1,10 +1,10 @@
-view Install {
+view Home.Install {
   const install = 'sh <(curl -L https://flint.love)'
   const select = () => view.refs.code.select()
 
-  <Contain id="install">
+  <Feature row>
     <title>
-      Try in a minute!
+      Installs in a minute:
     </title>
 
     <mainCode>
@@ -14,35 +14,31 @@ view Install {
       <Help />
     </mainCode>
 
-    <afterward>
-      <line if={false}>
-        Flint is <Link color="rgba(255,255,255,0.5)" noborder href="https://github.com/flintjs/flint" target="_blank">open source</Link>
-      </line>
-
-      <shields if={false}>
+    <afterward if={false}>
+      <shields>
         <a href="https://www.npmjs.com/package/flint" target="_blank">
           <img class="shield" src="https://img.shields.io/npm/dm/flint.svg" />
         </a>
-        <img if={false} class="shield" src="https://img.shields.io/npm/v/flint.svg" />
+        <img class="shield" src="https://img.shields.io/npm/v/flint.svg" />
       </shields>
     </afterward>
-  </Contain>
+  </Feature>
 
   $ = {
-    textAlign: 'center',
-    padding: [40, 0],
-    borderBottom: '1px solid #eee',
-    borderTop: '1px solid #eee',
+    background: '#222',
+    color: '#fff'
   }
 
   $title = {
-    fontFamily: font.title,
-    fontSize: 24,
-    margin: [-6, 0, 20, 0]
+    fontSize: 18,
+    fontWeight: 600,
+    marginRight: 10
   }
 
-  $Contain = {
-    flexFlow: 'column'
+  $Feature = {
+    margin: 'auto',
+    padding: [20, 0],
+    border: 'none'
   }
 
   $Help = {
@@ -68,19 +64,14 @@ view Install {
   }
 
   $input = {
-    border: [2, 'solid', '#ddd'],
-    color: color.brand2,
+    border: 'none',
+    color: 'green',
     background: '#fff',
-    borderRadius: 10,
+    borderRadius: 6,
     padding: 10,
-    fontSize: 20,
+    fontSize: 22,
     margin: [-8, 0, -5],
     fontFamily: font.monoSpace
-  }
-
-  $afterward = {
-    margin: [5, 'auto', 0],
-    fontSize: 16
   }
 
   $line = {
@@ -124,19 +115,22 @@ view Help {
     </modal>
   </help>
 
-  const size = 35
+  const size = 45
 
   $ = {
     position: 'relative'
   }
 
   $question = {
-    margin: ['auto', -(size + 35), 'auto', 0],
+    margin: ['auto', 0, 'auto', 10],
     width: size,
     height: size,
     justifyContent: 'center',
     fontSize: 22,
-    color: [0,0,0,0.2],
+    border: '1px solid rgba(255,255,255,0.3)',
+    borderRadius: 1000,
+    textAlign: 'center',
+    color: [255,255,255,0.4],
     fontWeight: 600,
     cursor: 'pointer'
   }
@@ -156,7 +150,7 @@ view Help {
     borderRadius: 4,
     fontSize: 13,
     lineHeight: '1.2rem',
-    background: '#fff'
+    background: '#fff',
   }
 
   $code = {

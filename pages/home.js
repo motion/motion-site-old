@@ -1,5 +1,6 @@
 view Home {
   <Home.Head />
+  <Home.Install />
   <Home.Modern />
   <Home.Platform />
   <Home.Syntax />
@@ -171,7 +172,6 @@ view BackgroundVideo {
     }
   }
 }
-
 
 
 view Home.Intro {
