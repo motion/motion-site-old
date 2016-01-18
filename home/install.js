@@ -25,8 +25,8 @@ view Home.Install {
   </Feature>
 
   $ = {
-    background: '#222',
-    color: '#fff'
+    background: 'linear-gradient(-10deg, #222, #263640)',
+    color: '#eee'
   }
 
   $title = {
@@ -37,7 +37,7 @@ view Home.Install {
 
   $Feature = {
     margin: 'auto',
-    padding: [20, 0],
+    padding: [15, 0],
     border: 'none'
   }
 

@@ -7,7 +7,7 @@ view Home {
   <Home.Tools />
   <Home.Apps />
   <Home.Community />
-  <Home.Triple />
+  // <Home.Triple />
   <Home.Features />
   <Footer />
 }
@@ -16,7 +16,7 @@ view Home.Head {
   <HeaderAlt nobg />
   <vid>
     <banner>
-      <h1>Development, smarter</h1>
+      <h1>A new, open way to build apps</h1>
       <svg viewBox="0 0 510 510">
         <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
       </svg>
@@ -142,47 +142,6 @@ view BackgroundVideo {
     }
   }
 }
-
-
-view Home.Intro {
-  <Feature>
-    <Row centered>
-      <Col grow={2} class="content">
-        <UI.Title>Power with simplicity</UI.Title>
-        <UI.SubTitle>
-          Development made much better through a smart compiler and novel tools.
-        </UI.SubTitle>
-
-        <UI.SubTitle>
-          An open platform developers can bet on and continuously improve.
-        </UI.SubTitle>
-      </Col>
-      <Col class="example">
-      </Col>
-    </Row>
-  </Feature>
-
-  $Editor = {
-    minWidth: 250,
-    width: '60%',
-
-    [device.small]: {
-      margin: 'auto'
-    }
-  }
-
-  $content = {
-    padding: [0, 50, 0, 20],
-    width: '20%',
-    justifyContent: 'center'
-  }
-
-  $img = {
-    width: 425,
-    margin: [0, -300, 0, 0]
-  }
-}
-
 
 
 view Home.Triple {
@@ -453,35 +412,45 @@ view Home.Modern {
   <Feature>
     <Row centered>
       <Col grow={2} class="content">
-        <UI.Title>Power with simplicity</UI.Title>
+        <UI.Title>A smart stack for apps</UI.Title>
         <UI.SubTitle>
-          Development made much better through a smart compiler and novel tools.
+          An <b>extensible</b> and <b>sensible</b> set of defaults for building apps in a whole new way.
         </UI.SubTitle>
 
-        <UI.SubTitle>
-          An open platform developers can bet on and continuously improve.
-        </UI.SubTitle>
+        <Text>
+        It's what you get when you design from the ground up for cohesion and plugability.
+        </Text>
       </Col>
       <Col class="example">
         <Editor right
           lines={7}
           id="headeriframe"
           onLoad={() => {
-            if (already) {
-              triggerEvent('headeriframe', 'end')
-              return
-            }
-            start = true
-            already = true
-            triggerEvent('headeriframe', 'start')
+          if (already) {
+          triggerEvent('headeriframe', 'end')
+          return
+          }
+          start = true
+          already = true
+          triggerEvent('headeriframe', 'start')
           }}
-          iframe={`/assets/examples/example.html`} />
+        iframe={`/assets/examples/example.html`} />
       </Col>
     </Row>
   </Feature>
 
+  $Feature = {
+    maxWidth: 920,
+    margin: 'auto',
+    border: 'none'
+  }
+
+  $Col = {
+    padding: 0
+  }
+
   $Editor = {
-    minWidth: 250,
+    minWidth: 320,
     width: '60%',
 
     [device.small]: {
@@ -557,7 +526,8 @@ view Home.Syntax {
 
   <Feature col>
     <UI.Title>Views in Javascript</UI.Title>
-    <Row>
+    <Text>In just a few examples you can learn all of Flint</Text>
+    <Row class="nav" center>
       <Sel active={demo} name="DemoCounter" onClick={_ => demo = _}>Counter</Sel>
       <Sel active={demo} name="DemoVenn" onClick={_ => demo = _}>Styling</Sel>
       <Sel active={demo} name="DemoCircles" onClick={_ => demo = _}>Animation</Sel>
@@ -572,6 +542,11 @@ view Home.Syntax {
 
   $Col = {
     padding: [30, 0]
+  }
+
+  $nav = {
+    margin: [8, 'auto', -7],
+    padding: [3, 0]
   }
 
   $side = {
@@ -598,15 +573,16 @@ view Sel {
 
   $ = [
     {
-      padding: [5, 15],
+      fontSize: 14,
+      padding: [3, 12],
       margin: [0, 2]
     },
 
     onClick && {
-      color: isActive() ? '#333' : 'blue',
+      color: isActive() ? '#333' : '#999',
       cursor: 'pointer',
       border: '1px solid transparent',
-      borderColor: 'transparent',
+      borderColor: isActive() ? '#eee' : 'transparent',
       borderRadius: 100,
 
       hover: {
@@ -627,10 +603,8 @@ view Home.Tools {
 
   $img = {
     width: '100%',
-    margin: [20, 'auto', 0]
+    margin: [0, 'auto', -40]
   }
-
-
 }
 
 view Old {
@@ -777,7 +751,8 @@ view Feature {
     textAlign: center ? `center` : `left`,
     alignItems: 'center',
     flexFlow: col ? `column` : reverse ? `row-reverse` : `row`,
-    borderBottom: [1, 'solid', '#eee'],
+    borderBottom: dark ? [10, 'solid', '#eee'] : [1, 'solid', '#eee'],
+    borderTop: dark ? [10, 'solid', '#eee'] : 'none',
     color: dark ? `#fff` : `auto`,
     background: dark ? `linear-gradient(130deg, #3f3f95 70%, #333360)` : odd ? `#fcfcfc` : `auto`
   }
