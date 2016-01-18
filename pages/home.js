@@ -10,37 +10,7 @@ view Home {
   <Home.Triple />
   <Home.Features />
   <Footer />
-
-  $h2 = {
-    textAlign: 'center',
-    margin: 0
-  }
-
-  $section = {
-    textAlign: 'center',
-    padding: [20, 0, 0],
-    borderBottom: [1, 'solid', '#ddd']
-  }
-
-  $p = {
-    padding: 20,
-    paddingBottom: 0
-  }
-
-  $ul = {
-    margin: 0,
-    textAlign: 'left',
-    display: 'flex',
-    flexFlow: 'row'
-  }
-
-  $li = {
-    display: 'flex',
-    padding: 20,
-    flexGrow: 1
-  }
 }
-
 
 view Home.Head {
   <HeaderAlt nobg />
@@ -798,12 +768,7 @@ view Home.Features {
 
 
 view Feature {
-  prop center
-  prop col
-  prop odd
-  prop slim
-  prop dark
-  prop reverse
+  prop center, col, odd, slim, dark, reverse
 
   <Contain yield />
 
@@ -819,8 +784,7 @@ view Feature {
 }
 
 view UI.Title {
-  prop center
-  prop large
+  prop center, large
 
   <h2 root yield />
 
