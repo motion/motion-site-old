@@ -17,7 +17,7 @@ view HeaderAlt {
     right: -20,
     zIndex: 100,
     background: nobg ? 'none' : style.gradient,
-    boxShadow: '0 0 4px rgba(0,0,0,0.2)',
+    boxShadow: nobg ? 'none' : '0 0 4px rgba(0,0,0,0.2)',
 
     [device.small]: {
       position: 'relative',
@@ -193,7 +193,7 @@ view Nav {
 
   $a = {
     border: '1px solid transparent',
-    color: 'rgba(255,255,255,0.8)',
+    color: 'rgba(255,255,255,1)',
     textShadow: '0 1px 1px rgba(0,0,0,0.35)',
     fontWeight: 300,
     borderBottom: 'none',
@@ -203,7 +203,6 @@ view Nav {
     textDecoration: 'none',
 
     hover: {
-      color: '#fff',
       ...bordered
     }
   }

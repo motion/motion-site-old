@@ -25,8 +25,7 @@ view Home.Install {
   </Feature>
 
   $ = {
-    background: 'linear-gradient(-10deg, #222, #263640)',
-    color: '#eee'
+    borderBottom: '1px solid #eee'
   }
 
   $title = {
@@ -127,10 +126,10 @@ view Help {
     height: size,
     justifyContent: 'center',
     fontSize: 22,
-    border: '1px solid rgba(255,255,255,0.3)',
+    border: '1px solid rgba(0,0,0,0.3)',
     borderRadius: 1000,
     textAlign: 'center',
-    color: [255,255,255,0.4],
+    color: [0,0,0,0.4],
     fontWeight: 600,
     cursor: 'pointer'
   }
