@@ -25,12 +25,12 @@ view Home.Install {
   </Feature>
 
   $ = {
-    borderBottom: '1px solid #eee'
+    borderBottom: '1px solid #eee',
+    color: 'rgba(0,0,0,0.5)'
   }
 
   $title = {
     fontSize: 18,
-    fontWeight: 600,
     marginRight: 10
   }
 
@@ -59,7 +59,7 @@ view Home.Install {
   $install = {
     flexFlow: 'row',
     color: '#555',
-    margin: [10, 0],
+    margin: [10, 0, 7],
   }
 
   $input = {
@@ -68,16 +68,9 @@ view Home.Install {
     background: '#fff',
     borderRadius: 6,
     padding: 10,
-    fontSize: 22,
+    fontSize: 20,
     margin: [-8, 0, -5],
     fontFamily: font.monoSpace
-  }
-
-  $line = {
-    margin: [0, 0, -5],
-    fontSize: 14,
-    opacity: 0.8,
-    display: 'block'
   }
 
   $shields = {
@@ -108,13 +101,12 @@ view Help {
   <help onMouseEnter={() => hovered = true} onMouseLeave={() => hovered = false}>
     <question>?</question>
     <modal>
-      This script fixes npm -g permissions & sets default editor.&nbsp;
-      <Link href="https://flint.love" target="_blank">View source.</Link>&nbsp;
-      <span>or install with <code>npm install -g flint</code></span>
+      This fixes npm permissions!&nbsp;
+      Or: <code>npm install -g flint</code>
     </modal>
   </help>
 
-  const size = 45
+  const size = 35
 
   $ = {
     position: 'relative'
@@ -125,12 +117,11 @@ view Help {
     width: size,
     height: size,
     justifyContent: 'center',
-    fontSize: 22,
-    border: '1px solid rgba(0,0,0,0.3)',
+    fontSize: 16,
+    border: '1px solid rgba(0,0,0,0.1)',
     borderRadius: 1000,
     textAlign: 'center',
     color: [0,0,0,0.4],
-    fontWeight: 600,
     cursor: 'pointer'
   }
 
@@ -138,12 +129,12 @@ view Help {
     color: '#555',
     display: 'block',
     opacity: hovered ? 1 : 0,
-    transition: 'all ease-in 300ms',
+    transition: 'all ease-in 200ms',
     position: 'absolute',
-    left: hovered ? 150 : 140,
-    top: '-80%',
+    left: hovered ? 165 : 160,
+    top: '-8%',
     marginLeft: -120,
-    width: 200,
+    width: 202,
     padding: 10,
     boxShadow: '0 0 4px rgba(0,0,0,0.2)',
     borderRadius: 4,
@@ -154,7 +145,7 @@ view Help {
 
   $code = {
     border: 'none',
-    opacity: 0.7,
+    color: 'rgba(0,0,0,0.4)',
     lineHeight: 1.2,
     fontSize: 13,
     display: 'inline'

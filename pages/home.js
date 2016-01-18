@@ -441,8 +441,7 @@ view Home.Modern {
 
   $Feature = {
     maxWidth: 920,
-    margin: 'auto',
-    border: 'none'
+    margin: 'auto'
   }
 
   $Col = {
@@ -527,6 +526,7 @@ view Home.Syntax {
   <Feature col>
     <UI.Title>Views in Javascript</UI.Title>
     <Text>In just a few examples you can learn all of Flint</Text>
+
     <Row class="nav" center>
       <Sel active={demo} name="DemoCounter" onClick={_ => demo = _}>Counter</Sel>
       <Sel active={demo} name="DemoVenn" onClick={_ => demo = _}>Styling</Sel>
@@ -535,7 +535,7 @@ view Home.Syntax {
 
     <Row class="demos">
       <Col>
-        {view.el(demo)}
+        {view.el(demo, { className: 'example' })}
       </Col>
     </Row>
   </Feature>
@@ -556,21 +556,20 @@ view Home.Syntax {
   $demos = {
     maxWidth: 900
   }
+
+  $example = {
+    width: '100%'
+  }
 }
 
 view Sel {
-  prop onClick
-  prop name
-  prop active
+  prop onClick, name, active, children
+
+  <a root onClick={() => onClick(name)}>
+    {children}
+  </a>
 
   const isActive = () => active == name
-
-  <a root yield
-    onClick={() => {
-      onClick(name)
-    }}
-  />
-
   $ = [
     {
       fontSize: 14,
