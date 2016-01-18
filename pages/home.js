@@ -279,27 +279,36 @@ view Home.Platform {
     },
   ])
 
-  <Feature odd reverse>
-    <Col>
-      <section repeat={sections()}>
-        <UI.SubTitle class="subtitle">{_.title}</UI.SubTitle>
-        {_.description}
-      </section>
-    </Col>
+  <Feature odd col>
+    <UI.Title>Connects your tools</UI.Title>
+    <UI.SubTitle>Flint connects your tools in smarter ways</UI.SubTitle>
 
-    <Col>
-      <UI.Title>Connects your tools</UI.Title>
-      <UI.SubTitle>Flint connects your tools in smarter ways</UI.SubTitle>
-      <Diagram />
-    </Col>
+    <Row class="small">
+      <Col centered>
+        <Diagram />
+      </Col>
+
+      <Col class="sections">
+        <section repeat={sections()}>
+          <UI.SubTitle small class="subtitle">{_.title}</UI.SubTitle>
+          {_.description}
+        </section>
+      </Col>
+    </Row>
   </Feature>
 
-  $Col = {
-    padding: [0, 25],
+  $small = {
+    width: '80%',
+    padding: [10, 0, 0],
+    marginBottom: -140
+  }
+
+  $sections = {
+    width: 400,
   }
 
   $section = {
-    padding: [10, 20],
+    padding: [5, 20],
     cursor: 'pointer',
     borderRadius: 3,
 
@@ -309,12 +318,11 @@ view Home.Platform {
   }
 
   $subtitle = {
-    margin: [0, 0, -5],
-    color: '#555',
+    margin: [0, 0, -10],
   }
 
   $Diagram = {
-    margin: [40, 'auto', 0]
+    margin: [45, 'auto', 0]
   }
 }
 
@@ -329,10 +337,10 @@ view Diagram {
     }
   }
 
+  <round />
   <line class="across" />
   <line class="slantl" />
   <line class="slantr" />
-
   <section {...sectionHover(1)} class="side">
     <Icon.Browser class="icon" highlight={hover == 1} />
   </section>
@@ -349,7 +357,7 @@ view Diagram {
     justifyContent: 'center',
     position: 'relative',
     zIndex: 1000,
-    width: 450,
+    width: 330,
     height: 240,
     margin: 'auto',
 
@@ -358,6 +366,21 @@ view Diagram {
       flexFlow: 'column',
       alignItems: 'center'
     }
+  }
+
+  const roundSize = 230
+
+  $round = {
+    position: 'absolute',
+    top: '45%',
+    left: '50%',
+    width: roundSize,
+    height: roundSize,
+    margin: [-(roundSize / 2), 0, 0, -(roundSize / 2)],
+    border: '10px solid rgba(255,255,255,1)',
+    zIndex: 0,
+    background: 'rgba(0,0,0,0.02)',
+    borderRadius: 10000,
   }
 
   $section = {
@@ -384,13 +407,13 @@ view Diagram {
   $side = {
     flexFlow: 'row-reverse',
     padding: [0],
-    margin: [0, sidePull, 0, 0],
+    margin: [15, sidePull, 0, 0],
     textAlign: 'right'
   }
 
   $right = {
     flexFlow: 'row',
-    margin: [0, 0, 0, sidePull],
+    margin: [15, 0, 0, sidePull],
     textAlign: 'left',
   }
 
@@ -398,12 +421,11 @@ view Diagram {
   const iconSize = 100
 
   $point = {
-    maxWidth: 320,
     margin: [iconSize + 40, -30, 0]
   }
 
   $line = {
-    height: 1,
+    height: 3,
     width: lineSize,
     position: 'absolute',
     background: '#eee',
@@ -415,7 +437,7 @@ view Diagram {
   }
 
   $across = {
-    top: iconSize / 2,
+    top: iconSize / 2 + 15,
     left: '50%',
     marginLeft: -lineSize / 2
   }
@@ -424,21 +446,21 @@ view Diagram {
 
   $slantl = {
     top: slantPos,
-    left: '50%',
-    margin: [0, 0, 0, -slantPos],
+    left: '55%',
+    margin: [15, 0, 0, -slantPos],
     width: slantPos,
     transform: {
-      rotate: `48deg`
+      rotate: `52deg`
     }
   }
 
   $slantr = {
     top: slantPos,
-    right: '50%',
-    margin: [0, -slantPos, 0, 0],
+    right: '55%',
+    margin: [15, -slantPos, 0, 0],
     width: slantPos,
     transform: {
-      rotate: `-48deg`
+      rotate: `-52deg`
     }
   }
 }
@@ -812,13 +834,19 @@ view UI.Title {
 
 view UI.SubTitle {
   prop center
+  prop small
 
-  <Text root yield />
+  <Text root yield class={{ small }} />
 
   $Text = {
-    fontSize: 18,
+    fontSize: small ? 14 : 18,
     lineHeight: '1.9rem',
     textAlign: center ? `center` : `auto`
+  }
+
+  $small = {
+    textTransform: 'uppercase',
+    color: '#333'
   }
 }
 
