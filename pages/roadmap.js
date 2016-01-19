@@ -1,5 +1,5 @@
 view Roadmap {
-  <HeaderAlt />
+  <Header />
   <Roadmap.Intro />
   <Roadmap.NextRelease />
   <Roadmap.Immediate />

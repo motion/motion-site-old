@@ -1,8 +1,8 @@
-view HeaderAlt {
+view Header {
   prop nobg
 
   <wrap>
-    <Contain>
+    <Contain maxWidth={880}>
       <Logo small />
       <Nav large />
       <Social tiny noSlack />
@@ -10,14 +10,14 @@ view HeaderAlt {
   </wrap>
 
   $ = {
-    padding: [5, 0],
+    padding: [2, 0],
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
     zIndex: 100,
-    background: nobg ? 'rgba(0,0,0,0.1)' : style.gradient,
-    boxShadow: nobg ? 'none' : '0 0 4px rgba(0,0,0,0.2)',
+    background: style.gradient,
+    boxShadow: '0 0 4px rgba(0,0,0,0.25)',
 
     [device.small]: {
       position: 'relative',
@@ -29,7 +29,6 @@ view HeaderAlt {
     flexFlow: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%',
 
     [device.small]: {
       flexFlow: 'column'
@@ -48,96 +47,6 @@ view HeaderAlt {
 }
 
 let already = false
-
-view Header {
-  let start = already || false
-
-  function triggerEvent(id, name) {
-    let event = document.createEvent('CustomEvent')
-    event.initCustomEvent(name, true, true, null)
-    let frame = document.getElementById(id)
-    let frameWin = frame.contentDocument || frame.contentWindow.document
-    frameWin.body.dispatchEvent(event)
-  }
-
-  <Contain maxWidth={750}>
-    <Nav />
-    <Example
-      flipVertical
-      inStyle={instyle}
-      outStyle={{ width: 280 }}
-      in={
-        <Editor right
-          lines={6}
-          id="headeriframe"
-          onLoad={() => {
-            if (already) {
-              triggerEvent('headeriframe', 'end')
-              return
-            }
-            start = true
-            already = true
-            triggerEvent('headeriframe', 'start')
-          }}
-          iframe={`/assets/examples/example.html`} />
-      }
-    />
-  </Contain>
-
-  $ = {
-    display: 'block',
-    position: 'relative',
-    overflow: 'hidden',
-    padding: [70, 10, 0],
-    margin: [0, 0],
-    minWidth: 700,
-    flexFlow: 'row',
-
-    [device.small]: {
-      flexFlow: 'column',
-      minWidth: 0,
-      padding: [80, 0, 30],
-    }
-  }
-
-  $Logo = {
-    margin: [10, 0]
-  }
-
-  $head = {
-    display: 'block',
-    margin: [-5, '-25%', 0, 0],
-    width: 400,
-    textAlign: 'center',
-
-    [device.small]: {
-      margin: 'auto'
-    }
-  }
-
-  $Nav = {
-    position: 'absolute',
-    top: -45,
-    right: 82
-  }
-
-  $Editor = {
-    minWidth: 250,
-    width: '60%',
-
-    [device.small]: {
-      margin: 'auto'
-    }
-  }
-
-  const instyle = {
-    [device.small]: {
-      marginTop: 20,
-      marginLeft: 'auto',
-      marginRight: 'auto'
-    }
-  }
-}
 
 view Nav {
   function showInstall(e) {
@@ -174,14 +83,18 @@ view Nav {
 
   $a = {
     border: '1px solid transparent',
-    color: 'rgba(255,255,255,1)',
+    color: 'rgba(255,255,255,0.85)',
     textShadow: '0 1px 1px rgba(0,0,0,0.35)',
     fontWeight: 300,
     borderBottom: 'none',
-    fontSize: 17,
-    padding: [0, 12],
+    fontSize: 15,
+    padding: [0, 10],
     cursor: 'pointer',
-    textDecoration: 'none'
+    textDecoration: 'none',
+
+    hover: {
+      color: 'rgba(255,255,255,1)',
+    }
   }
 
   $active = {

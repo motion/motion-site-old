@@ -1,5 +1,5 @@
 view Page {
-  <HeaderAlt />
+  <Header />
   <Contain style={{ maxWidth: 900 }}>
     <Sidebar if={view.props.base} yield />
     <inner>

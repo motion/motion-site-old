@@ -19,9 +19,9 @@ routes.roadmap = '/roadmap'
 
 const color = chroma || function(){}
 color.alt = '#fdfdfa'
-color.brand = '#39dbf1'
-color.brand1 = '#ee5d9a'
-color.brand2 = '#ffc9c9'
+color.brand = '#18c7de'
+color.brand1 = '#fb4893'
+color.brand2 = '#1cb5df'
 color.green = '#259630'
 color.blue = 'rgb(48, 111, 207)'
 color.darkred = color(color.brand)//.darken(0.3)
@@ -55,7 +55,7 @@ style.textGradient = {
 
 const light = c => `rgba(${color(c).alpha(0.9).rgba()})`
 
-style.gradient = `linear-gradient(-30deg, ${color.brand}, ${color.brand1}, ${color.brand2})`
+style.gradient = `linear-gradient(-30deg, ${color.brand1}, ${color.brand2})`
 
 const util = {}
 

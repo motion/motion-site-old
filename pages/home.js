@@ -14,12 +14,28 @@ view Home {
   $ = { width: '100%' }
 }
 
+view Button {
+  <button yield />
+
+  $ = {
+    color: '#fff',
+    textShadow: '0 1px 0 rgba(0,0,0,0.2)',
+    boxShadow: '0 0 10px rgba(0,0,0,0.2)',
+    background: color.brand1,
+    border: 'none',
+    borderBottom: [2, 'solid', color(color.brand1).darken(1).hex()],
+    borderRadius: 5,
+    fontSize: 18,
+    padding: [8, 28]
+  }
+}
+
 view Home.Head {
-  <HeaderAlt nobg />
+  <Header nobg />
   <vid>
     <banner>
       <h1>Build great applications faster than ever before</h1>
-      <IntroText light center>Demo video coming soon!</IntroText>
+      <Button>Watch the video now</Button>
       <svg if={false} viewBox="0 0 510 510">
         <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
       </svg>
@@ -36,8 +52,19 @@ view Home.Head {
     flexFlow: 'column',
     overflow: 'hidden',
     position: 'relative',
-    minHeight: 620,
+    minHeight: Math.min(window.innerHeight, 680),
     textShadow: '0 1px 1px rgba(0,0,0,0.35)'
+  }
+
+  $Button = {
+    margin: [25, 'auto', 0],
+    transition: 'all linear 200ms',
+
+    hover: {
+      transform: {
+        scale: 1.1
+      }
+    }
   }
 
   $vid = {
@@ -52,9 +79,10 @@ view Home.Head {
   }
 
   $h1 = {
-    fontSize: 36,
-    textShadow: '0 2px 1px rgba(0,0,0,0.3)',
-    margin: [20, 'auto'],
+    fontSize: 34,
+    letterSpacing: -1,
+    textShadow: '0 2px 1px rgba(0,0,0,0.2)',
+    margin: [20, 'auto', 0],
     lineHeight: 1.3,
     textAlign: 'center'
   }
@@ -73,11 +101,10 @@ view Home.Head {
   }
 
   $top = {
-    background: 'rgba(0,0,0,0.1)',
     position: 'absolute',
     top: 0,
     right: 0,
-    height: 55,
+    height: 50,
     left: 0,
     zIndex: 2,
     backdropFilter: 'blur(10px)',
@@ -89,7 +116,7 @@ view Home.Head {
 
   $bg2 = {
     background: style.gradient,
-    opacity: 0.5
+    opacity: 0.8
   }
 
   $bg4 = {
@@ -217,14 +244,14 @@ view Home.Platform {
     <Title>Tools that make you happy</Title>
     <IntroText class="sub">An extensible platform that enables new types of tools</IntroText>
 
-    <Row class="small">
+    <Row class="small2">
       <Col centered>
         <Diagram />
       </Col>
 
       <Col class="sections">
         <section repeat={sections()}>
-          <IntroText small class="IntroText">{_.title}</IntroText>
+          <IntroText small>{_.title}</IntroText>
           {_.description}
         </section>
       </Col>
@@ -238,7 +265,7 @@ view Home.Platform {
     }
   }
 
-  $small = {
+  $small2 = {
     width: '80%',
     padding: [10, 0, 0],
 
@@ -250,10 +277,11 @@ view Home.Platform {
 
   $sections = {
     width: 400,
+    margin: 'auto'
   }
 
   $section = {
-    padding: [0, 15, 0],
+    padding: [5, 15],
     cursor: 'pointer',
     borderRadius: 3,
 
@@ -267,7 +295,7 @@ view Home.Platform {
   }
 
   $IntroText = {
-    margin: [-2, 0, -10]
+    margin: [0, 0, 0]
   }
 
   $Diagram = {

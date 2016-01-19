@@ -2,7 +2,6 @@ const icon = {
   width: 32,
   height: 32,
   transition: 'all ease-in 100ms',
-  opacity: 0.7,
   margin: [0, -10],
 
   ':hover': {

@@ -12,10 +12,10 @@ view Title {
 
   $ = {
     fontWeight: 400,
-    fontSize: 28,
-    margin: [30, 0, 5],
+    fontSize: 27,
+    margin: [30, 0, 10],
     textAlign: center ? `center` : `auto`,
-    color: 'rgba(0,0,0,0.78)'
+    color: 'rgba(0,0,0,0.7)'
   }
 }
 
