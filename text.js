@@ -2,11 +2,13 @@ const sanitize = str => str.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '').replace(
 
 view Title {
   prop center
+  prop light
 
   <Text
     root
     yield
     id={sanitize(view.props.children)}
+    class={{ light }}
     tagName="h2"
   />
 
@@ -16,6 +18,10 @@ view Title {
     margin: [30, 0, 10],
     textAlign: center ? `center` : `auto`,
     color: 'rgba(0,0,0,0.7)'
+  }
+
+  $light = {
+    color: '#fff'
   }
 }
 

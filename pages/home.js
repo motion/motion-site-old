@@ -4,7 +4,7 @@ view Home {
   <Home.Modern />
   <Home.Platform />
   <Home.Syntax />
-  <Home.Tools if={false} />
+  // <Home.Tools />
   <Home.Apps />
   <Home.Community />
   // <Home.Triple />
@@ -653,9 +653,9 @@ view Sel {
 }
 
 view Home.Tools {
-  <Feature dark col>
-    <Title large center>
-      Tools that make you happy
+  <Feature bg={`linear-gradient(${color.brand2} 60%, ${color(color.brand2).darken(0.3).hex()})`} col>
+    <Title light center>
+      Seamless development with powerful tools
     </Title>
 
     <img src="/assets/images/tools.png" />
@@ -748,9 +748,9 @@ view Home.Features {
 
 
 view Feature {
-  prop center, col, odd, slim, dark, reverse
+  prop bg, center, col, odd, slim, dark, reverse, children
 
-  <Contain yield />
+  <Contain>{children}</Contain>
 
   const padheight = slim ? 0 : 75
 
@@ -762,7 +762,7 @@ view Feature {
     borderBottom: dark ? [10, 'solid', '#eee'] : [1, 'solid', '#eee'],
     borderTop: dark ? [10, 'solid', '#eee'] : 'none',
     color: dark ? `#fff` : `auto`,
-    background: dark ? `linear-gradient(130deg, #3f3f95 70%, #333360)` : odd ? `#fcfcfc` : `auto`,
+    background: bg ? bg : dark ? `linear-gradient(130deg, #3f3f95 70%, #333360)` : odd ? `#fcfcfc` : `auto`,
 
     [device.small]: {
       padding: [30, 30]
