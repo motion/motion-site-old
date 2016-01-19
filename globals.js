@@ -31,7 +31,7 @@ color.strip = '#fff'
 
 const font = {}
 font.title = '"Bitter", Slab, Georgia, serif'
-font.sansSerif = '"Open Sans", "San Francisco", Helvetica, Arial, sans-serif'
+font.sansSerif = '"Source Sans Pro", "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif'
 font.monoSpace = '"Fira Code", Menlo, Meslo, Inconsolata, Source Code Pro, monospace'
 
 const device = {}

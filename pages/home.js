@@ -798,26 +798,30 @@ view Feature {
 view UI.Title {
   prop center, large
 
-  <h2 root yield />
+  <Text root yield />
 
-  $ = {
-    fontWeight: 200,
-    fontSize: large ? 32 : 26,
-    margin: [0, 0, 13],
-    textAlign: center ? `center` : `auto`
+  $Text = {
+    fontWeight: 400,
+    fontSize: large ? 38 : 28,
+    margin: [0, 0, 5],
+    textAlign: center ? `center` : `auto`,
+    color: 'rgba(0,0,0,0.78)'
   }
 }
 
 view UI.SubTitle {
   prop center
   prop small
+  prop light
 
   <Text root yield class={{ small }} />
 
   $Text = {
-    fontSize: small ? 14 : 18,
-    lineHeight: '1.9rem',
-    textAlign: center ? `center` : `auto`
+    fontSize: small ? 14 : 22,
+    lineHeight: '2rem',
+    textAlign: center ? `center` : `auto`,
+    color: light ? 'auto' : 'rgba(0,0,0,0.65)',
+    fontWeight: 300
   }
 
   $small = {
@@ -833,8 +837,8 @@ view Text {
 
   $ = {
     color: light ? `rgba(255,255,255,0.9)` : `rgba(0,0,0,0.5)`,
-    fontWeight: 300,
+    fontWeight: 400,
     fontSize: 15,
-    lineHeight: '1.6rem'
+    lineHeight: '1.45rem'
   }
 }

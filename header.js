@@ -176,7 +176,7 @@ view Nav {
     border: '1px solid transparent',
     color: 'rgba(255,255,255,1)',
     textShadow: '0 1px 1px rgba(0,0,0,0.35)',
-    fontWeight: 300,
+    fontWeight: 400,
     borderBottom: 'none',
     fontSize: 14,
     padding: [0, 12],
@@ -185,7 +185,7 @@ view Nav {
   }
 
   $active = {
-    fontWeight: 800,
+    fontWeight: 600,
     color: '#fff'
   }
 }

@@ -48,6 +48,7 @@ view Main {
     fontSize: 16,
     lineHeight: '1.8rem',
     fontFamily: font.sansSerif,
+    textRendering: 'optimizeLegibility',
     background: color.bg,
     position: 'relative',
     overflow: 'hidden'
