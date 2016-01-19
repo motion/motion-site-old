@@ -57,6 +57,7 @@ view Home.Head {
     textShadow: '0 2px 4px rgba(0,0,0,0.4)',
     margin: [20, 'auto'],
     lineHeight: 1.3,
+    textAlign: 'center'
   }
 
   $svg = {
@@ -80,7 +81,11 @@ view Home.Head {
     height: 55,
     left: 0,
     zIndex: 2,
-    backdropFilter: 'blur(10px)'
+    backdropFilter: 'blur(10px)',
+
+    [device.small]: {
+      display: 'none'
+    }
   }
 
   $bg2 = {
