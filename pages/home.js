@@ -753,7 +753,11 @@ view Feature {
     borderBottom: dark ? [10, 'solid', '#eee'] : [1, 'solid', '#eee'],
     borderTop: dark ? [10, 'solid', '#eee'] : 'none',
     color: dark ? `#fff` : `auto`,
-    background: dark ? `linear-gradient(130deg, #3f3f95 70%, #333360)` : odd ? `#fcfcfc` : `auto`
+    background: dark ? `linear-gradient(130deg, #3f3f95 70%, #333360)` : odd ? `#fcfcfc` : `auto`,
+
+    [device.small]: {
+      padding: [30, 0]
+    }
   }
 }
 
