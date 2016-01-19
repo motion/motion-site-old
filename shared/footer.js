@@ -27,4 +27,8 @@ view Footer {
     margin: [30, 0],
     fontSize: 14
   }
+
+  $Nav = {
+    justifyContent: 'center'
+  }
 }

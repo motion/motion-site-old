@@ -12,7 +12,8 @@ view Example {
     WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
     [device.small]: {
-      flexFlow: 'column'
+      flexFlow: 'column',
+      width: '100%'
     }
   }
 
@@ -25,7 +26,7 @@ view Example {
     [device.small]: {
       width: '100%',
       order: view.props.flipVertical ? 1 : 2,
-      padding: view.props.inPage ? '50px 0' : 0
+      padding: view.props.inPage ? [50, 0] : 0
     }
   }, view.props.outStyle]
 
@@ -36,7 +37,7 @@ view Example {
     margin: 0,
 
     [device.small]: {
-      width: '90%',
+      width: '100%',
       margin: 'auto',
       order: view.props.flipVertical ? 2 : 1
     }

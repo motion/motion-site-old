@@ -55,11 +55,10 @@ view Col {
     flexGrow: typeof grow != 'undefined' ? grow : 1,
     flexShrink: 1,
     maxWidth: '100%',
-    // padding: [0, 20],
 
     [device.small]: {
       width: '90%',
-      // padding: [20]
+      margin: 'auto'
     }
   }
 }

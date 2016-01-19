@@ -14,13 +14,10 @@ view Attr {
     zIndex: 10000
   }
 
-  $text = [{
+  $text = {
     display: 'inline',
     color: color.brand2,
     fontWeight: 600,
     cursor: 'pointer'
-  }, hovered && {
-    fontWeight: 800,
-    textDecoration: 'underline'
-  }]
+  }
 }

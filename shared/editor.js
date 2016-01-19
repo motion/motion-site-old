@@ -52,8 +52,9 @@ view Editor {
     margin: 'auto',
 
     [device.small]: {
-      marginRight: 10,
-      marginLeft: 0,
+      margin: 0,
+      flexGrow: 1,
+      width: '100%'
     }
   }
 

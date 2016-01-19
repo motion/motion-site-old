@@ -55,7 +55,7 @@ view Home.Head {
   $h1 = {
     fontSize: 33,
     textShadow: '0 2px 4px rgba(0,0,0,0.4)',
-    margin: [20, 0],
+    margin: [20, 'auto'],
     lineHeight: 1.3,
   }
 
@@ -217,7 +217,7 @@ view Home.Platform {
 
   <Feature odd col>
     <UI.Title>Tools that make you happy</UI.Title>
-    <UI.SubTitle>An extensible platform that enables new types of tools</UI.SubTitle>
+    <UI.SubTitle class="sub">An extensible platform that enables new types of tools</UI.SubTitle>
 
     <Row class="small">
       <Col centered>
@@ -233,10 +233,16 @@ view Home.Platform {
     </Row>
   </Feature>
 
+  $sub = {
+    [device.small]: {
+      textAlign: 'center',
+      marginBottom: 20
+    }
+  }
+
   $small = {
     width: '80%',
     padding: [10, 0, 0],
-    marginBottom: -250,
 
     [device.small]: {
       marginTop: 20,
@@ -249,7 +255,7 @@ view Home.Platform {
   }
 
   $section = {
-    padding: [5, 20],
+    padding: [0, 15, 0],
     cursor: 'pointer',
     borderRadius: 3,
 
@@ -260,15 +266,19 @@ view Home.Platform {
     [device.small]: {
       marginTop: 20,
     }
-
   }
 
   $subtitle = {
-    margin: [0, 0, -10],
+    margin: [-2, 0, -8]
   }
 
   $Diagram = {
-    margin: [60, 'auto', 0]
+    margin: [60, 'auto', 0],
+
+    [device.small]: {
+      margin: [0, 'auto'],
+      height: 'auto'
+    }
   }
 }
 
@@ -305,13 +315,7 @@ view Diagram {
     zIndex: 1000,
     width: 330,
     height: 240,
-    margin: 'auto',
-
-    [device.small]: {
-      width: 'auto',
-      flexFlow: 'column',
-      alignItems: 'center'
-    }
+    margin: 'auto'
   }
 
   const roundSize = 230
@@ -327,6 +331,10 @@ view Diagram {
     zIndex: 0,
     background: 'rgba(0,0,0,0.02)',
     borderRadius: 10000,
+
+    [device.small]: {
+      display: 'none'
+    }
   }
 
   $section = {
@@ -341,10 +349,7 @@ view Diagram {
     [device.small]: {
       margin: 'auto',
       width: '100%',
-      padding: [0, 20],
-      marginBottom: 30,
-      flexFlow: 'row',
-      textAlign: 'left'
+      flexFlow: 'row'
     }
   }
 
@@ -473,7 +478,13 @@ view Home.Modern {
 
   $content = {
     width: '40%',
-    justifyContent: 'center'
+    paddingRight: 40,
+    justifyContent: 'center',
+
+    [device.small]: {
+      padding: [0, 0, 30],
+      width: '100%'
+    }
   }
 
   $img = {
