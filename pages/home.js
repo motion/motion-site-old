@@ -50,7 +50,7 @@ view Home.Head {
 
   $h1 = {
     fontSize: 33,
-    textShadow: '0 2px 6px rgba(0,0,0,0.2)',
+    textShadow: '0 2px 4px rgba(0,0,0,0.4)',
     margin: [10, 0]
   }
 
@@ -229,7 +229,11 @@ view Home.Platform {
   $small = {
     width: '80%',
     padding: [10, 0, 0],
-    marginBottom: -140
+    marginBottom: -140,
+
+    [device.small]: {
+      margin: 0
+    }
   }
 
   $sections = {
@@ -412,14 +416,14 @@ view Home.Modern {
   <Feature>
     <Row centered>
       <Col grow={2} class="content">
-        <UI.Title>A smart stack for apps</UI.Title>
+        <UI.Title>State of the smart</UI.Title>
+        <UI.SubTitle>
+          Bringing view systems to Javascript first class, powered by React and open source.
+        </UI.SubTitle>
+
         <UI.SubTitle>
           An <b>extensible</b> and <b>sensible</b> set of defaults for building apps in a whole new way.
         </UI.SubTitle>
-
-        <Text>
-        It's what you get when you design from the ground up for cohesion and plugability.
-        </Text>
       </Col>
       <Col class="example">
         <Editor right
@@ -444,10 +448,6 @@ view Home.Modern {
     margin: 'auto'
   }
 
-  $Col = {
-    padding: 0
-  }
-
   $Editor = {
     minWidth: 320,
     width: '60%',
@@ -458,8 +458,7 @@ view Home.Modern {
   }
 
   $content = {
-    padding: [0, 50, 0, 20],
-    width: '20%',
+    width: '40%',
     justifyContent: 'center'
   }
 
@@ -546,7 +545,11 @@ view Home.Syntax {
 
   $nav = {
     margin: [8, 'auto', -7],
-    padding: [3, 0]
+    padding: [3, 0],
+
+    [device.small]: {
+      margin: 'auto',
+    }
   }
 
   $side = {
