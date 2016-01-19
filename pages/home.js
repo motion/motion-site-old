@@ -91,7 +91,7 @@ view Home.Head {
   }
 
   $bg4 = {
-    // background: `linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,0.45))`,
+    background: `linear-gradient(rgba(0,0,0,0) 70%, rgba(0,0,0,0.25))`,
     zIndex: 1,
     height: '100%'
   }
