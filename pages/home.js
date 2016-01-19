@@ -136,7 +136,7 @@ view Home.Head {
     bottom: 0,
     right: 0,
     width: '100%',
-    opacity: 0.4,
+    opacity: 0.2,
     transform: {
       scale: 1.2,
     }
@@ -664,60 +664,6 @@ view Home.Tools {
   $img = {
     width: '100%',
     margin: [0, 'auto', -40]
-  }
-}
-
-view Old {
-  <Row>
-    <Col>
-      <title>Amazing Errors</title>
-      <IntroText>Flint recovers gracefully from errors and shows you exactly what you need.</IntroText>
-    </Col>
-    <Col class="side">
-      <img src="/assets/images/errors.png" />
-    </Col>
-  </Row>
-
-  <Row>
-    <Col>
-    <title small>Automatic NPM Installs</title>
-    <IntroText>As you type, Flint installs npm packages, and injects them into your running app without losing state.</IntroText>
-    </Col>
-    <Col class="side">
-      <video width="320" height="240" autoplay="autoplay" loop>
-        <source src="assets/video/install.webm" type="video/webm" />
-        <source src="assets/video/install.ogg" type="video/ogg" />
-        <source src="assets/video/install.mp4" type="video/mp4" />
-      </video>
-    </Col>
-  </Row>
-
-  <Row>
-    <Col>
-      <title>State Inspector</title>
-      <IntroText>Easy, pinable, simple state inspector.</IntroText>
-    </Col>
-    <Col class="side">
-      <video width="320" height="240" autoplay="autoplay" loop>
-        <source src="assets/video/state.mp4" type="video/mp4" />
-      </video>
-    </Col>
-  </Row>
-
-  $img = {
-    height: 354 / 2
-  }
-
-  $side = {
-    width: 300,
-    overflow: 'hidden'
-  }
-
-  $Row = {
-    alignItems: 'center',
-    borderBottom: '1px dotted #ddd',
-    padding: [10, 10],
-    width: '100%'
   }
 }
 
