@@ -57,9 +57,10 @@ view Features {
           </Text>
         </col>
       </text>
+    </section>
 
+    <section if={false}>
       <text class="right">
-        <img src={`/assets/images/line/snowflake.svg`} />
         <col>
           <title>Use &lt;React /&gt; components</title>
           <Text>
@@ -70,7 +71,6 @@ view Features {
       </text>
 
       <text>
-        <img src={`/assets/images/line/snowflake.svg`} />
         <col>
           <title>Performance by default</title>
           <Text>
@@ -81,7 +81,6 @@ view Features {
       </text>
 
       <text class="right">
-        <img src={`/assets/images/line/snowflake.svg`} />
         <col>
           <title>Builds to production</title>
           <Text>

@@ -48,7 +48,7 @@ view Editor {
     zIndex: 10,
     width: '100%',
     background: view.props.light ? light : '#263640',
-    border: view.props.light ? `2px solid #ddd` : `none`,
+    border: view.props.light ? `2px solid #eee` : `none`,
     margin: 'auto',
 
     [device.small]: {

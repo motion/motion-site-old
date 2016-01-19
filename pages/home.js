@@ -4,7 +4,7 @@ view Home {
   <Home.Modern />
   <Home.Platform />
   <Home.Syntax />
-  <Home.Tools />
+  <Home.Tools if={false} />
   <Home.Apps />
   <Home.Community />
   // <Home.Triple />
@@ -16,7 +16,8 @@ view Home.Head {
   <HeaderAlt nobg />
   <vid>
     <banner>
-      <h1>A new, open way to develop</h1>
+      <h1>Build great applications faster than ever before</h1>
+      <UI.SubTitle light center>Demo video coming soon!</UI.SubTitle>
       <svg if={false} viewBox="0 0 510 510">
         <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
       </svg>
@@ -51,7 +52,7 @@ view Home.Head {
   $h1 = {
     fontSize: 33,
     textShadow: '0 2px 4px rgba(0,0,0,0.4)',
-    margin: [10, 0]
+    margin: [20, 0]
   }
 
   $svg = {
@@ -189,28 +190,30 @@ view Home.Platform {
     {
       title: 'Browser',
       description: <Text>
-        <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smart reloads</Attr> instantly refresh with state.
-        Helpful & <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break.">safe</Attr> errors. <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor.">Jump</Attr> to editor.
-      </Text>
-    },
-    {
-      title: 'Editor',
-      description: <Text>
-        Flint's ES6 compiler <Attr alt="Parses your static styles. Injects them without reloading JS for super fast reloads.">statically extracts CSS</Attr> & automatically <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no refresh needed.">installs npm</Attr>.
+        <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smarter hot reloads</Attr> refresh instantly & retain child state.
+        <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break."> Helpful</Attr> errors from compiler.
+        <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor."> Jump to editor</Attr> just by right clicking.
       </Text>
     },
     {
       title: 'Compiler',
       description: <Text>
-        <Attr alt="Updates your app with each character, avoids writing to file system.">Live coding</Attr> with Atom.&nbsp;
-        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Focus</Attr> mode lets you drag your numbers and colors.
+        <Attr alt="Static style changes don't even reload Javascript for insane performance.">Static CSS extraction</Attr> gives amazing performance.
+        <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> to totally avoid touching the command line.
+      </Text>
+    },
+    {
+      title: 'Editor',
+      description: <Text>
+        Websockets enable <Attr alt="Updates your app with each character, avoids writing to file system.">as-you-type updates</Attr> with Atom.&nbsp;
+        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Drag numbers and colors</Attr> to instantly see results.
       </Text>
     },
   ])
 
   <Feature odd col>
-    <UI.Title>Connects your tools</UI.Title>
-    <UI.SubTitle>Flint connects your tools in smarter ways</UI.SubTitle>
+    <UI.Title>Tools that make you happy</UI.Title>
+    <UI.SubTitle>An extensible platform that enables new types of tools</UI.SubTitle>
 
     <Row class="small">
       <Col centered>
@@ -229,7 +232,7 @@ view Home.Platform {
   $small = {
     width: '80%',
     padding: [10, 0, 0],
-    marginBottom: -140,
+    marginBottom: -250,
 
     [device.small]: {
       margin: 0
@@ -255,7 +258,7 @@ view Home.Platform {
   }
 
   $Diagram = {
-    margin: [45, 'auto', 0]
+    margin: [60, 'auto', 0]
   }
 }
 
@@ -416,14 +419,15 @@ view Home.Modern {
   <Feature>
     <Row centered>
       <Col grow={2} class="content">
-        <UI.Title>State of the smart</UI.Title>
+        <UI.Title>Start in seconds, not days</UI.Title>
         <UI.SubTitle>
-          Bringing view systems to Javascript first class, powered by React and open source.
+          No configuration. No boilerplate.<br />
+          An ultra-modern React stack is just the start.
         </UI.SubTitle>
 
-        <UI.SubTitle>
-          An <b>extensible</b> and <b>sensible</b> set of defaults for building apps in a whole new way.
-        </UI.SubTitle>
+        <Text>
+          Flint is an <b>extensible</b> and <b>sensible</b> stack designed to let you be more productive and creative.
+        </Text>
       </Col>
       <Col class="example">
         <Editor right
@@ -472,18 +476,19 @@ view Home.Apps {
   <Feature>
     <Row reverse>
       <Col class="example">
-        <img src="/assets/images/emoti.png" />
+        <a href="https://emotipost.com" target="_blank"><img src="/assets/images/emoti.png" /></a>
       </Col>
 
       <Col class="content">
-        <UI.Title>Build amazing apps</UI.Title>
+        <UI.Title>Ready for Production</UI.Title>
         <UI.SubTitle>
-          An ultra modern React stack with everything you need to start in minutes and deploy today.
+          Flint is in use at large companies and for small projects. We're gathering some quotes and
+          examples for this section.
         </UI.SubTitle>
 
-        <UI.SubTitle>
-          Powerful and never before seen tools to make you and your team happy with development again.
-        </UI.SubTitle>
+        <Text>
+          <Link href="https://emotipost.com" target="_blank">Emotipost</Link> was built by an early adopter in just two weeks.
+        </Text>
       </Col>
     </Row>
   </Feature>
@@ -524,7 +529,7 @@ view Home.Syntax {
 
   <Feature col>
     <UI.Title>Views in Javascript</UI.Title>
-    <Text>In just a few examples you can learn all of Flint</Text>
+    <UI.SubTitle>Learn all of Flint in minutes:</UI.SubTitle>
 
     <Row class="nav" center>
       <Sel active={demo} name="DemoCounter" onClick={_ => demo = _}>Counter</Sel>
@@ -733,7 +738,7 @@ view Home.Community {
 
 view Home.Features {
   <Feature col>
-    <UI.Title center>Everything you need to deploy today</UI.Title>
+    <UI.Title center>Everything you need to be productive today</UI.Title>
     <UI.SubTitle center>Start in seconds, be more creative & deploy today</UI.SubTitle>
     <Features />
   </Feature>
@@ -771,7 +776,7 @@ view UI.Title {
 
   $ = {
     fontWeight: 200,
-    fontSize: large ? 32 : 28,
+    fontSize: large ? 32 : 26,
     margin: [0, 0, 13],
     textAlign: center ? `center` : `auto`
   }

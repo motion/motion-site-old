@@ -9,7 +9,7 @@ view Home.Install {
 
     <mainCode>
       <code onMouseUp={select} class="install">
-        <input ref="code" value={install} readOnly size={install.length} />
+        <input ref="code" value={install} readOnly size={install.length - 1} />
       </code>
       <Help />
     </mainCode>
@@ -76,7 +76,7 @@ view Home.Install {
     background: '#fff',
     borderRadius: 6,
     padding: [10, 5],
-    fontSize: 20,
+    fontSize: 18,
     margin: [-8, 0, -5],
     fontFamily: font.monoSpace
   }
