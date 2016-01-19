@@ -26,7 +26,6 @@ view Home.Head {
     </banner>
     <top class="bg" />
     <top class="bg2" />
-    <top class="bg3" />
     <top class="bg4" />
     <BackgroundVideo />
   </vid>
@@ -53,10 +52,11 @@ view Home.Head {
   }
 
   $h1 = {
-    fontSize: 33,
-    textShadow: '0 2px 4px rgba(0,0,0,0.4)',
+    fontSize: 38,
+    textShadow: '0 2px 1px rgba(0,0,0,0.3)',
     margin: [20, 'auto'],
     lineHeight: 1.3,
+    fontWeight: 300,
     textAlign: 'center'
   }
 
@@ -90,13 +90,7 @@ view Home.Head {
 
   $bg2 = {
     background: style.gradient,
-    opacity: 0.3
-  }
-
-  $bg3 = {
-    // background: `linear-gradient(-3deg, rgba(0,0,0,0) 70%, rgba(255,255,255, 1))`,
-    zIndex: 1,
-    height: '100%'
+    opacity: 0.5
   }
 
   $bg4 = {
