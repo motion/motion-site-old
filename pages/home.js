@@ -26,7 +26,8 @@ view Button {
     borderBottom: [2, 'solid', color(color.brand1).darken(1).hex()],
     borderRadius: 5,
     fontSize: 18,
-    padding: [8, 28]
+    padding: [8, 28],
+    alignItems: 'center'
   }
 }
 
@@ -35,7 +36,7 @@ view Home.Head {
   <vid>
     <banner>
       <h1>Build great applications faster than ever before</h1>
-      <Button>Watch the video now</Button>
+      <Button><lt>Watch the video now</lt> Coming soon!</Button>
       <svg if={false} viewBox="0 0 510 510">
         <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
       </svg>
@@ -65,6 +66,11 @@ view Home.Head {
         scale: 1.1
       }
     }
+  }
+
+  $lt = {
+    textDecoration: 'line-through',
+    opacity: 0.5,
   }
 
   $vid = {
@@ -217,6 +223,13 @@ view Home.Triple {
 view Home.Platform {
   let sections = () => ([
     {
+      title: 'Editor',
+      description: <Text small>
+        Websockets enable <Attr alt="Updates your app with each character, avoids writing to file system.">as-you-type updates</Attr> with Atom.&nbsp;
+        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Drag numbers and colors</Attr> to instantly see results.
+      </Text>
+    },
+    {
       title: 'Browser',
       description: <Text small>
         <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smarter hot reloads</Attr> refresh instantly & retain child state.
@@ -231,18 +244,11 @@ view Home.Platform {
         <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> to totally avoid touching the command line.
       </Text>
     },
-    {
-      title: 'Editor',
-      description: <Text small>
-        Websockets enable <Attr alt="Updates your app with each character, avoids writing to file system.">as-you-type updates</Attr> with Atom.&nbsp;
-        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Drag numbers and colors</Attr> to instantly see results.
-      </Text>
-    },
   ])
 
   <Feature odd col>
-    <Title>Tools that make you happy</Title>
-    <IntroText class="sub">An extensible platform that enables new types of tools</IntroText>
+    <Title>An open & extensible platform</Title>
+    <IntroText class="sub">We unite your tools enabling <em>entirely new ways of programming</em></IntroText>
 
     <Row class="small2">
       <Col centered>
@@ -267,10 +273,10 @@ view Home.Platform {
 
   $small2 = {
     width: '80%',
-    padding: [10, 0, 0],
+    margin: [30, 0, -100],
 
     [device.small]: {
-      marginTop: 20,
+      margin: [20, 0],
       flexFlow: 'column',
     }
   }
@@ -596,7 +602,7 @@ view Home.Syntax {
   }
 
   $nav = {
-    margin: [8, 'auto', -7],
+    margin: [-8, 'auto', 10],
     padding: [3, 0],
 
     [device.small]: {
