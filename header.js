@@ -13,8 +13,8 @@ view HeaderAlt {
     padding: [5, 0],
     position: 'absolute',
     top: 0,
-    left: -20,
-    right: -20,
+    left: 0,
+    right: 0,
     zIndex: 100,
     background: nobg ? 'none' : style.gradient,
     boxShadow: nobg ? 'none' : '0 0 4px rgba(0,0,0,0.2)',
@@ -37,11 +37,7 @@ view HeaderAlt {
   }
 
   $Logo = {
-    margin: [5, 0, 0],
-
-    [device.small]: {
-      padding: [10, 0]
-    }
+    margin: [5, 0, 0]
   }
 
   $Nav = {
@@ -126,15 +122,7 @@ view Header {
   $Nav = {
     position: 'absolute',
     top: -45,
-    right: 82,
-
-    [device.small] : {
-      justifyContent: 'center',
-      position: 'relative',
-      top: -20,
-      right: 0,
-      margin: [-50, 'auto', 0]
-    }
+    right: 82
   }
 
   $Editor = {
@@ -183,12 +171,9 @@ view Nav {
     zIndex: 100,
 
     [device.small]: {
-      marginBottom: 0
+      marginBottom: 0,
+      margin: [10, 'auto', 0]
     }
-  }
-
-  const bordered = {
-    borderRadius: 10
   }
 
   $a = {
@@ -200,11 +185,7 @@ view Nav {
     fontSize: 14,
     padding: [0, 12],
     cursor: 'pointer',
-    textDecoration: 'none',
-
-    hover: {
-      ...bordered
-    }
+    textDecoration: 'none'
   }
 
   $active = {
@@ -221,11 +202,14 @@ view Logo {
   const multiplier = view.props.small ? .08 : .14
 
   $img = {
-    display: 'inline-block',
     width: Math.round(width * multiplier),
-    height: Math.round(height * multiplier),
+    // height: Math.round(height * multiplier),
     margin: [0, 'auto'],
-    cursor: 'pointer'
+    cursor: 'pointer',
+
+    [device.small]: {
+      alignSelf: 'center'
+    }
   }
 }
 

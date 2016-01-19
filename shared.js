@@ -28,14 +28,19 @@ view Row {
     flexFlow: reverse ? 'row-reverse' : 'row',
     justifyContent: spread ? 'space-between' : center ? 'center' : 'flex-start',
     alignItems: centered ? 'center' : 'flex-start',
-    width: '100%'
+    width: '100%',
+
+    [device.small]: {
+      minWidth: 0,
+      flexFlow: 'column'
+    }
   }
 
   $contain = {
     maxWidth: 1100,
     minWidth: 700,
     width: '80%',
-    margin: `auto`,
+    margin: `auto`
   }
 }
 

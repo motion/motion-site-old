@@ -16,8 +16,8 @@ view Home.Head {
   <HeaderAlt nobg />
   <vid>
     <banner>
-      <h1>A new, open way to build apps</h1>
-      <svg viewBox="0 0 510 510">
+      <h1>A new, open way to develop</h1>
+      <svg if={false} viewBox="0 0 510 510">
         <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
       </svg>
     </banner>
@@ -34,7 +34,7 @@ view Home.Head {
     flexFlow: 'column',
     overflow: 'hidden',
     position: 'relative',
-    minHeight: 680,
+    minHeight: 620,
     textShadow: '0 1px 1px rgba(0,0,0,0.35)'
   }
 
