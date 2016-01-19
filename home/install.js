@@ -4,10 +4,11 @@ view Home.Install {
 
   <Feature row>
     <title>
-      <dark>Install</dark> $
+      <dark>Install</dark>
     </title>
 
     <mainCode>
+      <dollar>$</dollar>
       <code onMouseUp={select} class="install">
         <input ref="code" value={install} readOnly size={install.length - 1} />
       </code>
@@ -44,8 +45,15 @@ view Home.Install {
 
   $Feature = {
     margin: 'auto',
-    padding: [15, 0],
+    padding: [15, 5],
     border: 'none',
+    flexWrap: 'wrap',
+  }
+
+  $dollar = {
+    marginTop: 10,
+    fontSize: 20,
+    [device.small]: { display: 'none' }
   }
 
   $Help = {
@@ -56,7 +64,8 @@ view Home.Install {
 
   $mainCode = {
     flexFlow: 'row',
-    margin: 'auto'
+    margin: 'auto',
+    [device.small]: { fontSize: 20, marginTop: 5 },
   }
 
   $code = {

@@ -8,6 +8,7 @@ const docs = [
   { title: "Routes", view: 'Routes', slug: 'routes' },
   { title: "Extras", view: 'Extras', slug: 'extras' },
   { title: "Building", view: 'Building', slug: 'building' },
+  { title: "Editor", view: 'Editor', slug: 'editor' },
 ]
 
 view Docs {

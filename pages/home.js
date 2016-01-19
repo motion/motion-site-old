@@ -10,6 +10,8 @@ view Home {
   // <Home.Triple />
   <Home.Features />
   <Footer />
+
+  $ = { width: '100%' }
 }
 
 view Home.Head {
@@ -40,7 +42,8 @@ view Home.Head {
   }
 
   $vid = {
-    flexGrow: 1
+    flexGrow: 1,
+    padding: 20,
   }
 
   $banner = {
@@ -52,7 +55,8 @@ view Home.Head {
   $h1 = {
     fontSize: 33,
     textShadow: '0 2px 4px rgba(0,0,0,0.4)',
-    margin: [20, 0]
+    margin: [20, 0],
+    lineHeight: 1.3,
   }
 
   $svg = {
@@ -235,7 +239,8 @@ view Home.Platform {
     marginBottom: -250,
 
     [device.small]: {
-      margin: 0
+      marginTop: 20,
+      flexFlow: 'column',
     }
   }
 
@@ -250,7 +255,12 @@ view Home.Platform {
 
     hover: {
       background: 'rgba(0,0,0,0.05)'
+    },
+
+    [device.small]: {
+      marginTop: 20,
     }
+
   }
 
   $subtitle = {
@@ -764,7 +774,7 @@ view Feature {
     background: dark ? `linear-gradient(130deg, #3f3f95 70%, #333360)` : odd ? `#fcfcfc` : `auto`,
 
     [device.small]: {
-      padding: [30, 0]
+      padding: [30, 30]
     }
   }
 }
