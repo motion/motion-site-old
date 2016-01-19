@@ -19,9 +19,9 @@ routes.roadmap = '/roadmap'
 
 const color = chroma || function(){}
 color.alt = '#fdfdfa'
-color.brand = '#eb522d'
-color.brand1 = '#E86C3D'
-color.brand2 = '#DB415E'
+color.brand = '#39dbf1'
+color.brand1 = '#ee5d9a'
+color.brand2 = '#ffc9c9'
 color.green = '#259630'
 color.blue = 'rgb(48, 111, 207)'
 color.darkred = color(color.brand)//.darken(0.3)
@@ -53,13 +53,9 @@ style.textGradient = {
   WebkitTextFillColor: 'transparent',
 }
 
-const c1 = '#39dbf1'
-const c2 = '#ee5d9a'
-const c3 = '#ffc9c9'
-
 const light = c => `rgba(${color(c).alpha(0.9).rgba()})`
 
-style.gradient = `linear-gradient(-30deg, ${c1}, ${c2}, ${c3})`
+style.gradient = `linear-gradient(-30deg, ${color.brand}, ${color.brand1}, ${color.brand2})`
 
 const util = {}
 

@@ -19,7 +19,7 @@ view Home.Head {
   <vid>
     <banner>
       <h1>Build great applications faster than ever before</h1>
-      <SubTitle light center>Demo video coming soon!</SubTitle>
+      <IntroText light center>Demo video coming soon!</IntroText>
       <svg if={false} viewBox="0 0 510 510">
         <path d="M255,0C114.75,0,0,114.75,0,255s114.75,255,255,255s255-114.75,255-255S395.25,0,255,0z M204,369.75v-229.5L357,255 L204,369.75z"/>
       </svg>
@@ -52,11 +52,10 @@ view Home.Head {
   }
 
   $h1 = {
-    fontSize: 38,
+    fontSize: 36,
     textShadow: '0 2px 1px rgba(0,0,0,0.3)',
     margin: [20, 'auto'],
     lineHeight: 1.3,
-    fontWeight: 300,
     textAlign: 'center'
   }
 
@@ -151,22 +150,22 @@ view BackgroundVideo {
 view Home.Triple {
   <Feature odd center col>
     <Title>Triple section</Title>
-    <SubTitle>A platform to make all your tools talk</SubTitle>
+    <IntroText>A platform to make all your tools talk</IntroText>
 
     <Row class="diagrams">
       <Col>
         <Icon.Browser />
-        <SubTitle class="sub">Browser</SubTitle>
+        <IntroText class="sub">Browser</IntroText>
 
       </Col>
       <Col>
         <Icon.Flint />
-        <SubTitle class="sub">Compiler</SubTitle>
+        <IntroText class="sub">Compiler</IntroText>
 
       </Col>
       <Col>
         <Icon.Editor />
-        <SubTitle class="sub">Editor</SubTitle>
+        <IntroText class="sub">Editor</IntroText>
 
       </Col>
     </Row>
@@ -216,7 +215,7 @@ view Home.Platform {
 
   <Feature odd col>
     <Title>Tools that make you happy</Title>
-    <SubTitle class="sub">An extensible platform that enables new types of tools</SubTitle>
+    <IntroText class="sub">An extensible platform that enables new types of tools</IntroText>
 
     <Row class="small">
       <Col centered>
@@ -225,7 +224,7 @@ view Home.Platform {
 
       <Col class="sections">
         <section repeat={sections()}>
-          <SubTitle small class="subtitle">{_.title}</SubTitle>
+          <IntroText small class="IntroText">{_.title}</IntroText>
           {_.description}
         </section>
       </Col>
@@ -267,7 +266,7 @@ view Home.Platform {
     }
   }
 
-  $subtitle = {
+  $IntroText = {
     margin: [-2, 0, -10]
   }
 
@@ -434,10 +433,10 @@ view Home.Modern {
     <Row centered>
       <Col grow={2} class="content">
         <Title>Start in seconds, not days</Title>
-        <SubTitle>
+        <IntroText>
           No configuration. No boilerplate.<br />
           An ultra-modern React stack is just the start.
-        </SubTitle>
+        </IntroText>
 
         <Text small>
           Flint is an <b>extensible</b> and <b>sensible</b> stack designed to let you be more productive and creative.
@@ -501,10 +500,10 @@ view Home.Apps {
 
       <Col class="content">
         <Title>Ready for Production</Title>
-        <SubTitle>
+        <IntroText>
           Flint is in use at large companies and for small projects. We're gathering some quotes and
           examples for this section.
-        </SubTitle>
+        </IntroText>
 
         <Text>
           <Link href="https://emotipost.com" target="_blank">Emotipost</Link> was built by an early adopter in just two weeks.
@@ -549,7 +548,7 @@ view Home.Syntax {
 
   <Feature col>
     <Title>Views in Javascript</Title>
-    <SubTitle>Learn all of Flint in minutes:</SubTitle>
+    <IntroText>Learn all of Flint in minutes:</IntroText>
 
     <Row class="nav" center>
       <Sel active={demo} name="DemoCounter" onClick={_ => demo = _}>Counter</Sel>
@@ -638,7 +637,7 @@ view Old {
   <Row>
     <Col>
       <title>Amazing Errors</title>
-      <SubTitle>Flint recovers gracefully from errors and shows you exactly what you need.</SubTitle>
+      <IntroText>Flint recovers gracefully from errors and shows you exactly what you need.</IntroText>
     </Col>
     <Col class="side">
       <img src="/assets/images/errors.png" />
@@ -648,7 +647,7 @@ view Old {
   <Row>
     <Col>
     <title small>Automatic NPM Installs</title>
-    <SubTitle>As you type, Flint installs npm packages, and injects them into your running app without losing state.</SubTitle>
+    <IntroText>As you type, Flint installs npm packages, and injects them into your running app without losing state.</IntroText>
     </Col>
     <Col class="side">
       <video width="320" height="240" autoplay="autoplay" loop>
@@ -662,7 +661,7 @@ view Old {
   <Row>
     <Col>
       <title>State Inspector</title>
-      <SubTitle>Easy, pinable, simple state inspector.</SubTitle>
+      <IntroText>Easy, pinable, simple state inspector.</IntroText>
     </Col>
     <Col class="side">
       <video width="320" height="240" autoplay="autoplay" loop>
@@ -693,9 +692,9 @@ view Home.Community {
     <inner>
       <Col class="content">
         <Title>Powered by Open</Title>
-        <SubTitle>
+        <IntroText>
         Flint is and runs on open source. We keep a public roadmap, make decisions with the community on Github, and sponsor open source on Patreon.
-        </SubTitle>
+        </IntroText>
 
         <Text>
         Join our community on Slack today and read our code of conduct.
@@ -759,7 +758,7 @@ view Home.Community {
 view Home.Features {
   <Feature col>
     <Title center>Everything you need to be productive today</Title>
-    <SubTitle center>Start in seconds, be more creative & deploy today</SubTitle>
+    <IntroText center>Start in seconds, be more creative & deploy today</IntroText>
     <Features />
   </Feature>
   $Feature = { border: 'none', paddingBottom: 0 }
@@ -776,7 +775,7 @@ view Feature {
   const padheight = slim ? 0 : 75
 
   $ = {
-    padding: [padheight - 20, 50, padheight],
+    padding: [padheight - 30, 50, padheight],
     textAlign: center ? `center` : `left`,
     alignItems: 'center',
     flexFlow: col ? `column` : reverse ? `row-reverse` : `row`,
@@ -788,53 +787,5 @@ view Feature {
     [device.small]: {
       padding: [30, 30]
     }
-  }
-}
-
-view SubTitle {
-  prop center
-  prop small
-  prop light
-  prop children
-
-  <Text root class={{ small }} tagName="h3">
-    {children}
-  </Text>
-
-  $ = {
-    fontSize: 22,
-    lineHeight: '2rem',
-    textAlign: center ? `center` : `auto`,
-    color: light ? 'auto' : 'rgba(0,0,0,0.65)',
-    fontWeight: 300
-  }
-
-  $small = {
-    color: '#333',
-    fontWeight: 400,
-    fontSize: 16
-  }
-}
-
-view Text {
-  prop light
-  prop small
-
-  <p root yield class={{ small, light }} />
-
-  $ = {
-    fontWeight: 400,
-    fontSize: 17,
-    lineHeight: '1.65rem'
-  }
-
-  $light = {
-    color: `rgba(255,255,255,0.9)`
-  }
-
-  $small = {
-    fontSize: 15,
-    lineHeight: '1.45rem',
-    color: `rgba(0,0,0,0.45)`,
   }
 }

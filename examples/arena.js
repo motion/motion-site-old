@@ -1,12 +1,12 @@
 view Examples.Arena {
   <Title>Advanced Fetching</Title>
 
-  <Text big>
+  <IntroText>
     Fetching data is a big concern in frontend applications.
     Here we show advanced features of ESnext including async/await
     and template literals. We also show routing, repeat, globals and
     other Flint features.
-  </Text>
+  </IntroText>
 
   <Text>
     This app fetches data from the Are.na API, and

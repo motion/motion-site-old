@@ -1,9 +1,9 @@
 view Docs.Intro {
-  <Title big>What is Flint?</Title>
+  <Title>What is Flint?</Title>
   <Body>
-    <Text big>
+    <IntroText>
       Flint is a rethinking of modern development. It's a smart compiler that understands how you build apps & connects your browser, editor and code.
-    </Text>
+    </IntroText>
 
     <Text>
       There's one abstraction in Flint: the <code>view</code>.
@@ -22,27 +22,25 @@ view Docs.Intro {
       Flint runs on node. It's powered by ES6, npm, Gulp, Babel, Webpack, React, Bluebird, and many more libraries. It's open source, and we are actively interesting in building an amazing developer community. Please <Link to="/community">read our community guidelines</Link> before joining!
     </Text>
 
-    <Title>Super Hot Reloads</Title>
+    <SubTitle>Super Hot Reloads</SubTitle>
     <Text>
       Hot reloads are when you edit your app and it never "resets" its state. Typically hot reloads retain state of your component tree, but lose it in certain situations. <b>Super hot reloads</b> take it a step further, with two features:
     </Text>
 
-    <Text>
-      <ul>
-        <li>
-          <b>Nested state</b> - Flint tracks all of your variables and view properties. Parent views won't lose their child view state (unless you change one of the child properties). So you can edit a Modal, without losing the Toggle positions inside of it.
-        </li>
-        <li>
-          <b>Internal state</b> - When editing a view, Flint also tracks how your values change over time. It will keep state that you haven't changed, avoiding having the entire state of a view reset when you're only changing some wording.
-        </li>
-      </ul>
-    </Text>
+    <ul>
+      <li>
+        <b>Nested state</b> - Flint tracks all of your variables and view properties. Parent views won't lose their child view state (unless you change one of the child properties). So you can edit a Modal, without losing the Toggle positions inside of it.
+      </li>
+      <li>
+        <b>Internal state</b> - When editing a view, Flint also tracks how your values change over time. It will keep state that you haven't changed, avoiding having the entire state of a view reset when you're only changing some wording.
+      </li>
+    </ul>
 
     <Text>
       Flint's compiler is not only smarter than others, it's faster too due to avoiding a large amount of AST parsing.
     </Text>
 
-    <Title>Powerful Styles</Title>
+    <SubTitle>Powerful Styles</SubTitle>
     <Text>
       Flint's <code>$</code> style variables are automatically attached to your view elements, to bring back the ease of styling found in CSS. But they go much further. Styles are just objects, and you have the full power of ES6.
     </Text>
@@ -51,17 +49,17 @@ view Docs.Intro {
       Flint also optimizes styles in a big way. It statically analyzes your style objects and extracts the non-dynamic keys. It then hoists those styles out of your view and into classes, giving you the full power of CSS in JS, without any performance downside, all without having to think about it.
     </Text>
 
-    <Title>Smart Errors</Title>
+    <SubTitle>Smart Errors</SubTitle>
     <Text>
       Runtime and compile time errors are instantly visible in your browser and your editor. Flint recovers from errors gracefully so your app doesn't break. It notifies you when you tried to access a view that doesn't exist and recovers previous good states when you've made an error, to avoid large amounts of distractions in your browser.
     </Text>
 
-    <Title>Automatic NPM Installs</Title>
+    <SubTitle>Automatic NPM Installs</SubTitle>
     <Text>
       Flint understands your code as though modern ES6 were supported in every browser. This means when you type an import, Flint knows to install the package, and refresh your browser. This happens automatically for you without ever needing to refresh the browser.
     </Text>
 
-    <Title>No boilerplate</Title>
+    <SubTitle>No boilerplate</SubTitle>
     <Text>
       Create and start your app instantly, the only files in your directory is your own code. And the only code you write is directly representing what your app is doing, no writing around a library.
     </Text>
@@ -70,7 +68,7 @@ view Docs.Intro {
       Flint watches your files, builds to production, and will continuously improve over time without you needing to ever learn a build system configuration syntax or write massive amounts of glue code to bring your app to life.
     </Text>
 
-    <Title>Principles</Title>
+    <SubTitle>Principles</SubTitle>
 
     <Text>
       Throughout the process of building there are countless moments where ease of

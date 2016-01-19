@@ -1,10 +1,10 @@
-view Docs.Building {
-  <Title big>Builds & Going to Production</Title>
+view Docs.Deploying {
+  <Title>Deploying</Title>
   <Body>
-    <Text big>
-      Flint lets you build your app, with all of your assets, code, and template ready for production
-      with a single command.
-    </Text>
+    <IntroText>
+      Flint lets you build your app with all your assets, code, and template ready for production
+      in a single command.
+    </IntroText>
 
     <Text>
       To build your app, run <code>flint build</code>. This will output your production app code into
@@ -18,7 +18,7 @@ view Docs.Building {
       and provide an excellent and simple onboarding experience.
     </Text>
 
-    <Title>Assets</Title>
+    <SubTitle>Assets</SubTitle>
 
     <Text>
       Put them in your app folder and the are available

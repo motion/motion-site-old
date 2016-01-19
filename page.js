@@ -21,7 +21,7 @@ view Page {
     maxWidth: 900,
     margin: 'auto',
     flexFlow: 'row',
-    padding: [50, 0, 0],
+    padding: [40, 0, 0],
 
     [device.small]: {
       flexFlow: 'column'
@@ -29,7 +29,7 @@ view Page {
   }
 
   $inner = {
-    padding: [5, 30, 0, 30],
+    padding: [0, 30, 0, 30],
     width: '100%'
   }
 }

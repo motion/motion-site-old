@@ -1,28 +1,26 @@
 view Docs.Install {
-  <Title big>Installing</Title>
+  <Title>Installing</Title>
 
   <Body>
-    <Text big>Install Flint CLI and create a new app.</Text>
-
-    <p>Our install script helps set you up a bit better:</p>
+    <IntroText>Install Flint CLI and create a new app</IntroText>
 
     <Code lang="bash" source={`
       sh <(curl -sL https://flint.love)
     `}/>
 
-    <p>
-    Or you can just:
-    </p>
+    <Text>
+      Or you can install with just npm.
+    </Text>
 
     <Code lang="bash" source={`
       npm install -g flint
     `}/>
 
-    <Title small>Running</Title>
+    <SubTitle>Running</SubTitle>
 
-    <p>
-    Once set up, create your first app:
-    </p>
+    <Text>
+      Once set up, create your first app:
+    </Text>
 
     <Code lang="bash" source={`
       flint new appname
@@ -32,19 +30,19 @@ view Docs.Install {
       flint
     `}/>
 
-    <p>
+    <Text>
     Your app should open automatically in Chrome for you. Open your app to begin editing!
-    </p>
+    </Text>
 
-    <Title small>When you're ready to deploy</Title>
+    <SubTitle>When you're ready to deploy</SubTitle>
 
     <Code lang="bash" source={`
       flint build
     `}/>
 
-    <p>
-      You app is now built into <code>.flint/build</code>. Try uploading it to divshot or surge.sh to see it instantly.
-    </p>
+    <Text>
+      You app is now built into <code>.flint/build</code>, ready to deploy!
+    </Text>
     <Next to='/docs/views'>Using Views</Next>
   </Body>
 }

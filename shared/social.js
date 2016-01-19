@@ -30,5 +30,5 @@ view Social {
 }
 
 view Body {
-  <body yield />
+  <body root yield />
 }

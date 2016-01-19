@@ -1,7 +1,7 @@
 view Docs.Routes {
-  <Title big>Routes</Title>
+  <Title>Routes</Title>
   <Body>
-    <Text big>Flint comes with a lightweight routing system, but lets you plug in any you'd like.</Text>
+    <IntroText>Flint comes with a lightweight routing system, but lets you plug in any you'd like.</IntroText>
 
     <Text>
       Routing is done through <code>Flint.router</code>, which has the following functions:
@@ -24,7 +24,7 @@ view Docs.Routes {
       <li><code>params</code> - Param object for the deepest matched route</li>
     </ul>
 
-    <Title small>Setting routes</Title>
+    <SubTitle>Setting routes</SubTitle>
     <Text>
       You don't need to instantiate routes, you can just use
       the <code>route</code> property on any JSX element. Flint will then
@@ -32,7 +32,7 @@ view Docs.Routes {
       or hide the element.
     </Text>
 
-    <Title>Example</Title>
+    <SubTitle>Example</SubTitle>
     <Code source={`
       view Main {
         <h1>Welcome to our store</h1>

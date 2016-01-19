@@ -1,11 +1,11 @@
 view Docs.Editor {
-  <Title big>Editor Integration</Title>
+  <Title>Editor Integration</Title>
   <Body>
-    <Text big>
-      Flint is an environment that aims to seamlessly integrate the browser and editor, giving you a live, smart environment.
-    </Text>
+    <IntroText>
+      Flint is an environment that aims to seamlessly integrate the browser and editor to give you a live, smart environment.
+    </IntroText>
 
-    <Title>Live Coding</Title>
+    <SubTitle>Live Coding</SubTitle>
 
     <Text>
       Live coding is an optional mode that hot reloads the current view you are editing into the application as you type. When this mode is activated, you will see a <b>Live Coding</b> indiciator on Atom's bottom status bar.
@@ -46,7 +46,7 @@ view Docs.Editor {
       Flint's compiler is not only smarter than others, it's faster too due to avoiding a large amount of AST parsing.
     </Text>
 
-    <Title>Powerful Styles</Title>
+    <SubTitle>Powerful Styles</SubTitle>
     <Text>
       Flint's <code>$</code> style variables are automatically attached to your view elements, to bring back the ease of styling found in CSS. But they go much further. Styles are just objects, and you have the full power of ES6.
     </Text>
@@ -55,17 +55,17 @@ view Docs.Editor {
       Flint also optimizes styles in a big way. It statically analyzes your style objects and extracts the non-dynamic keys. It then hoists those styles out of your view and into classes, giving you the full power of CSS in JS, without any performance downside, all without having to think about it.
     </Text>
 
-    <Title>Smart Errors</Title>
+    <SubTitle>Smart Errors</SubTitle>
     <Text>
       Runtime and compile time errors are instantly visible in your browser and your editor. Flint recovers from errors gracefully so your app doesn't break. It notifies you when you tried to access a view that doesn't exist and recovers previous good states when you've made an error, to avoid large amounts of distractions in your browser.
     </Text>
 
-    <Title>Automatic NPM Installs</Title>
+    <SubTitle>Automatic NPM Installs</SubTitle>
     <Text>
       Flint understands your code as though modern ES6 were supported in every browser. This means when you type an import, Flint knows to install the package, and refresh your browser. This happens automatically for you without ever needing to refresh the browser.
     </Text>
 
-    <Title>No boilerplate</Title>
+    <SubTitle>No boilerplate</SubTitle>
     <Text>
       Create and start your app instantly, the only files in your directory is your own code. And the only code you write is directly representing what your app is doing, no writing around a library.
     </Text>
@@ -74,7 +74,7 @@ view Docs.Editor {
       Flint watches your files, builds to production, and will continuously improve over time without you needing to ever learn a build system configuration syntax or write massive amounts of glue code to bring your app to life.
     </Text>
 
-    <Title>Principles</Title>
+    <SubTitle>Principles</SubTitle>
 
     <Text>
       Throughout the process of building there are countless moments where ease of

@@ -1,9 +1,9 @@
 view Docs.Events {
-  <Title big>Events</Title>
+  <Title>Events</Title>
   <Body>
-    <Text big>
+    <IntroText>
       Flint includes a simple helper to ease attaching and detaching events.
-    </Text>
+    </IntroText>
 
     <Text><strong>Without</strong> <code>on</code>, you'd need to write this:</Text>
 
@@ -53,9 +53,9 @@ view Docs.Events {
       }
     `} />
 
-    <Title small>
+    <SubTitle>
       Using inside views
-    </Title>
+    </SubTitle>
 
     <Text>
       Using <code>on</code> with views is powerful. It's aware of views and attaches / detaches it's events with the view. By default, <code>on</code> in views attaches to the root node of the view.
@@ -65,17 +65,17 @@ view Docs.Events {
       On also gives you access directly to the view lifecycle events. See the <Link to="/docs/views">views</Link> section for more docs on this, but you can access <code>mount</code>, <code>unmount</code>, <code>change</code>, <code>props</code>, and <code>render</code> within a view only.
     </Text>
 
-    <Title>
+    <SubTitle>
       Extra events
-    </Title>
+    </SubTitle>
 
     <Text>
       Equivalents of setTimeout, setInterval, and requestAnimationFrame are provided:
     </Text>
 
-    <Title tiny>
+    <SubTitle>
       delay
-    </Title>
+    </SubTitle>
 
     <Code source={`
       view Main {
@@ -83,9 +83,9 @@ view Docs.Events {
       }
     `} />
 
-    <Title tiny>
+    <SubTitle>
       every
-    </Title>
+    </SubTitle>
 
     <Code source={`
       view Main {
@@ -93,9 +93,9 @@ view Docs.Events {
       }
     `} />
 
-    <Title tiny>
+    <SubTitle>
       frame
-    </Title>
+    </SubTitle>
 
     <Code source={`
       view Main {
@@ -103,9 +103,9 @@ view Docs.Events {
       }
     `} />
 
-    <Title small>
+    <SubTitle>
       Shorthand
-    </Title>
+    </SubTitle>
 
     <Text>
       DOM level 2 events, and Flint provided events listed on this page, are provided in a helpful shorthand that avoids passing around strings:
@@ -123,9 +123,9 @@ view Docs.Events {
       }
     `} />
 
-    <Title>
+    <SubTitle>
       Custom events
-    </Title>
+    </SubTitle>
 
     <Text>
       Warning! Custom events are great, but should be used sparingly. For larger apps, you'll want to check out patterns like Flux, Redux, or Observables to manage complex state.

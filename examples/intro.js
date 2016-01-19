@@ -5,10 +5,10 @@ view Examples.Intro {
     </Title>
   </top>
 
-  <Text big>
+  <IntroText>
     Flint is easy to learn up front, but contains a lot of power. It runs
     on Babel which means you have the full power of the modern versions of JavaScript.
-  </Text>
+  </IntroText>
 
   <Text>
     Check out the examples in the sidebar to learn more, or <Link href="https://github.com/flintjs/examples">check out our github repo</Link> where we push cool demos as we make them.

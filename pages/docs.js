@@ -7,7 +7,7 @@ const docs = [
   { title: "Events", view: 'Events', slug: 'events' },
   { title: "Routes", view: 'Routes', slug: 'routes' },
   { title: "Extras", view: 'Extras', slug: 'extras' },
-  { title: "Building", view: 'Building', slug: 'building' },
+  { title: "Deploying", view: 'Deploying', slug: 'deploying' },
   { title: "Editor", view: 'Editor', slug: 'editor' },
 ]
 
@@ -19,4 +19,8 @@ view Docs {
       content={docs}
       route="/docs/:slug" />
   </Page>
+
+  $ = {
+    padding: [20, 0]
+  }
 }

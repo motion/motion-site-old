@@ -1,9 +1,9 @@
 view Docs.Elements {
-  <Title big>Elements</Title>
+  <Title>Elements</Title>
   <Body>
-    <Text big>
+    <IntroText>
       Flint uses JSX, with a couple optional helpers.
-    </Text>
+    </IntroText>
 
     <Text>
       You may also name your elements however you'd like. Avoid writing hundreds of meaningless <code>div</code>s and just write what your tag actually represents! Lowercase tags are scoped to the current view, and are unstyled except for browser defaults, while capitalized tags reference other views. Flint has some other minor modifications.
@@ -24,7 +24,7 @@ view Docs.Elements {
       <li><code>class</code> accepts an object of <code>{`{ className: bool }`}</code> to set multiple classes, or an array</li>
     </ul>
 
-    <Title small>{'<tag repeat={array | num} />'}</Title>
+    <SubTitle>{'<tag repeat={array | num} />'}</SubTitle>
     <Code source={`
       view Main {
         let shows = [
@@ -49,7 +49,7 @@ view Docs.Elements {
       in the list.
     </Text>
 
-    <Title small>{'<tag if={any} />'}</Title>
+    <SubTitle>{'<tag if={any} />'}</SubTitle>
     <Code source={`
       view Main {
         let greenlight = true
@@ -65,7 +65,7 @@ view Docs.Elements {
       If compiles to an if statement behind the scenes.
     </Text>
 
-    <Title small>{'<tag sync={identifier} onEnter={function} />'}</Title>
+    <SubTitle>{'<tag sync={identifier} onEnter={function} />'}</SubTitle>
     <Code source={`
       view Question {
         let response = ''
@@ -84,7 +84,7 @@ view Docs.Elements {
       hits the enter key in the input.
     </Text>
 
-    <Title small>{'<tag yield />'}</Title>
+    <SubTitle>{'<tag yield />'}</SubTitle>
 
     <Text>
       Yield passes all props given to the view through to a tag.
@@ -98,7 +98,7 @@ view Docs.Elements {
       }
     `} />
 
-    <Title>Accessing DOM nodes (refs)</Title>
+    <SubTitle>Accessing DOM nodes (refs)</SubTitle>
     <p>Sometimes you need to access nodes in the DOM.</p>
     <Code source={`
       view Main {
@@ -112,7 +112,7 @@ view Docs.Elements {
       }
     `} />
 
-    <Title>Cloning Elements</Title>
+    <SubTitle>Cloning Elements</SubTitle>
     <p>Clone an element with new props, like React.cloneElement:</p>
 
     <Code source={`

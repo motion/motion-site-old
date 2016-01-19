@@ -1,10 +1,10 @@
 view Docs.Views {
-  <Title big>Views</Title>
+  <Title>Views</Title>
 
   <Body>
-    <Text big>Flint is based entirely on ES6 JavaScript with slight modifications for simplicity and clarity. By using a custom compiler, we remove the framework layer.</Text>
+    <IntroText>Flint is based entirely on ES6 JavaScript with slight modifications for simplicity and clarity. By using a custom compiler, we remove the framework layer.</IntroText>
 
-    <p>Here is a view:</p>
+    <Text>Here is a view:</Text>
 
     <Code source={`
       view Main {
@@ -12,7 +12,7 @@ view Docs.Views {
       }
     `} />
 
-    <p>A view can contain variables and constants:</p>
+    <Text>A view can contain variables and constants:</Text>
 
     <Code source={`
       view Main {
@@ -22,7 +22,7 @@ view Docs.Views {
       }
     `} />
 
-    <p>When you change a variable, your view will update:</p>
+    <Text>When you change a variable, your view will update:</Text>
 
     <Code source={`
       view Main {
@@ -35,7 +35,7 @@ view Docs.Views {
       }
     `} />
 
-    <p>Since it's just ES6, we can use a named function and call it.</p>
+    <Text>Since it's just ES6, we can use a named function and call it.</Text>
 
     <Code source={`
       view Main {
@@ -50,7 +50,7 @@ view Docs.Views {
       }
     `} />
 
-    <p>We can even use regular javascript functions like Array.push</p>
+    <Text>We can even use regular javascript functions like Array.push</Text>
 
     <Code source={`
       view Main {
@@ -63,7 +63,7 @@ view Docs.Views {
       }
     `} />
 
-    <p>You'll want to keep your views small and composable. You can use them together like so:</p>
+    <Text>You'll want to keep your views small and composable. You can use them together like so:</Text>
 
     <Code source={`
       view Main {
@@ -76,15 +76,15 @@ view Docs.Views {
       }
     `} />
 
-    <p>Views must capitalize their first letter, and you can pass props to views just as we have shown here. Any property besides a string must be passed in using <code>{'{}'}</code>, as seen here with the size prop.</p>
+    <Text>Views must capitalize their first letter, and you can pass props to views just as we have shown here. Any property besides a string must be passed in using <code>{'{}'}</code>, as seen here with the size prop.</Text>
 
-    <p>"Props" are the attributes you pass down to children views. They are accessed with the <code>view.props.</code> prefix.</p>
+    <Text>"Props" are the attributes you pass down to children views. They are accessed with the <code>view.props.</code> prefix.</Text>
 
-    <Title three>Namespacing</Title>
+    <SubTitle>Namespacing</SubTitle>
 
-    <p>
+    <Text>
       When your app is getting bigger, you'll probably want to avoid cluttering up your view names. You can name views with dots to bring more order:
-    </p>
+    </Text>
 
     <Code source={`
       view Main {
@@ -96,9 +96,9 @@ view Docs.Views {
       }
     `} />
 
-    <Title three>Naming tags</Title>
+    <SubTitle>Naming tags</SubTitle>
 
-    <p>Some final niceties of Flint. You can name your tags whatever you like:</p>
+    <Text>Some final niceties of Flint. You can name your tags whatever you like:</Text>
 
     <Code source={`
       view Main {
@@ -109,15 +109,15 @@ view Docs.Views {
       }
     `} />
 
-    <p>This helps with styling, avoiding using classes when unnecessary, and makes your view structure easier to understand.</p>
+    <Text>This helps with styling, avoiding using classes when unnecessary, and makes your view structure easier to understand.</Text>
 
-    <Title id="using-views">Using Views</Title>
+    <SubTitle>Using Views</SubTitle>
 
-    <p>You don't need to import/export views between files! Flint prevents naming collisions with helpful warnings. Because your views are small pieces that should be easy to move around, this system avoid a lot of pain day to day, but even more down the road, where it makes moving around views in complex apps dramatically more easy.</p>
+    <Text>You don't need to import/export views between files! Flint prevents naming collisions with helpful warnings. Because your views are small pieces that should be easy to move around, this system avoid a lot of pain day to day, but even more down the road, where it makes moving around views in complex apps dramatically more easy.</Text>
 
-    <Title id="view-lifecycles">View lifecycles</Title>
+    <SubTitle>View lifecycles</SubTitle>
 
-    <p>In React you have lifecycle methods. Flint has them too:</p>
+    <Text>In React you have lifecycle methods. Flint has them too:</Text>
 
     <ul>
       <li>mount - called once after mounted in document</li>
@@ -127,13 +127,13 @@ view Docs.Views {
       <li>render - called after every render</li>
     </ul>
 
-    <p>
+    <Text>
       Pass each of these events a function and it will be called. The only event that passes in a value to its function is <code>on.props</code>, which gives you the current props for convenience (you may also still access <code>view.props</code> as well).
-    </p>
+    </Text>
 
-    <p>
+    <Text>
       Here's an excerpt from our header on the homepage of this site which simulates some typing being done. In the view we listen for the start prop and trigger an action based on that.
-    </p>
+    </Text>
 
     <Code source={`
       view Tagline {
@@ -151,9 +151,9 @@ view Docs.Views {
       }
     `} />
 
-    <p>
+    <Text>
       Because <code>on.props</code> receives the props object, you could write the same thing using ES6 destructing:
-    </p>
+    </Text>
 
     <Code source={`
       view Tagline {
@@ -167,9 +167,9 @@ view Docs.Views {
       }
     `} />
 
-    <Title id="view-events">View events</Title>
+    <SubTitle>View events</SubTitle>
 
-    <p>Flint provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views. It's optional, and very lightweight, but it avoid large amounts of hassle.</p>
+    <Text>Flint provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views. It's optional, and very lightweight, but it avoid large amounts of hassle.</Text>
 
     <Code source={`
       view Hello {
@@ -182,7 +182,7 @@ view Docs.Views {
       }
     `} />
 
-    <p><code>on</code> works with views, automatically unbinding it's events when the view un-mounts.</p>
+    <Text><code>on</code> works with views, automatically unbinding it's events when the view un-mounts.</Text>
 
     <Code source={`
       view Scroller {
@@ -201,13 +201,13 @@ view Docs.Views {
       }
     `} />
 
-    <p>Read more about on in our <Link to="/docs/events">events docs</Link>.</p>
+    <Text>Read more about on in our <Link to="/docs/events">events docs</Link>.</Text>
 
-    <Title id="view-methods">View methods</Title>
+    <SubTitle>View methods</SubTitle>
 
-    <p>When inside a view, you can access <code>view</code> to do a variety of things.</p>
+    <Text>When inside a view, you can access <code>view</code> to do a variety of things.</Text>
 
-    <Title small>view.refs</Title>
+    <SubTitle>view.refs</SubTitle>
 
     <Code source={`
       view Button {
@@ -219,24 +219,24 @@ view Docs.Views {
       }
     `} />
 
-    <Title small>view.pause()</Title>
+    <SubTitle>view.pause()</SubTitle>
 
-    <p>Prevent re-rendering. Useful for optimization and batching visual changes.</p>
+    <Text>Prevent re-rendering. Useful for optimization and batching visual changes.</Text>
 
-    <Title small>view.resume()</Title>
+    <SubTitle>view.resume()</SubTitle>
 
-    <p>Resume from paused re-rendering.</p>
+    <Text>Resume from paused re-rendering.</Text>
 
-    <Title small>view.update()</Title>
+    <SubTitle>view.update()</SubTitle>
 
-    <p>Forces view to re-render.</p>
+    <Text>Forces view to re-render.</Text>
 
-    <Title small>view.shouldUpdate(fn)</Title>
+    <SubTitle>view.shouldUpdate(fn)</SubTitle>
 
-    <p>
+    <Text>
       Use shouldUpdate to optimize your views. Returning false from your function will prevent a view from re-rendering.
       The function passed to shouldUpdate received one argument, which is the upcoming props object. You can use this object to compare new props and old props to determine the update.
-    </p>
+    </Text>
 
     <Code source={`
       view Child {
@@ -246,9 +246,9 @@ view Docs.Views {
       }
     `} />
 
-    <p>
+    <Text>
       As a side note, there is a second, imperative pattern for handling view updates. Calling <code>view.pause()</code> at the top of your view will freeze it until you next call <code>view.update()</code>. In some cases, this may be a lot simpler to use. Here is one example:
-    </p>
+    </Text>
 
     <Code source={`
       view ComplexComponent {
@@ -268,33 +268,33 @@ view Docs.Views {
       }
     `} />
 
-    <p>
+    <Text>
       Note that this isn't typically needed! Flint optimizes your app in production by batching changes, which essentially will do this for you.
-    </p>
+    </Text>
 
-    <Title small>view.props : object</Title>
+    <SubTitle>view.props : object</SubTitle>
 
-    <p>Access the entire props object with <code>view.props</code>.</p>
+    <Text>Access the entire props object with <code>view.props</code>.</Text>
 
-    <Title small>view.state : object</Title>
+    <SubTitle>view.state : object</SubTitle>
 
-    <p>Access all your state variables, for use in debugging or decorating views.</p>
+    <Text>Access all your state variables, for use in debugging or decorating views.</Text>
 
-    <Title small>view.name : string</Title>
+    <SubTitle>view.name : string</SubTitle>
 
-    <p>Access the name of the view.</p>
+    <Text>Access the name of the view.</Text>
 
-    <Title small>view.el(name : string) : element</Title>
+    <SubTitle>view.el(name : string) : element</SubTitle>
 
-    <p>Programatically render a view. Pass in a view name to <code>view.el()</code> and it will render.</p>
+    <Text>Programatically render a view. Pass in a view name to <code>view.el()</code> and it will render.</Text>
 
-    <Title small>view.mounted : boolean</Title>
+    <SubTitle>view.mounted : boolean</SubTitle>
 
-    <p>Boolean, true if your view is mounted.</p>
+    <Text>Boolean, true if your view is mounted.</Text>
 
-    <Title small>view.childContext(context : object)</Title>
+    <SubTitle>view.childContext(context : object)</SubTitle>
 
-    <p><em>Alpha</em> This should work, but it's very much for testing at the moment. You can provide context to children like so:</p>
+    <Text><em>Alpha</em> This should work, but it's very much for testing at the moment. You can provide context to children like so:</Text>
 
     <Code source={`
       view Main {

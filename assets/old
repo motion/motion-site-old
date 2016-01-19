@@ -114,12 +114,12 @@ view Speed {
     <Title>The 10 ways Flint makes you faster</Title>
 
     <section>
-      <SubTitle>Shorter syntax</SubTitle>
+      <IntroText>Shorter syntax</IntroText>
       <p></p>
     </section>
 
     <section>
-      <SubTitle>Global views and constants</SubTitle>
+      <IntroText>Global views and constants</IntroText>
       <p>
         Views and constants don't change. Once defined, they
         stay the same for their life. Because of this, allowing
@@ -153,7 +153,7 @@ view Speed {
     </section>
 
     <section>
-      <SubTitle>Errors from every level</SubTitle>
+      <IntroText>Errors from every level</IntroText>
       <p>
         Try and render a view that doesn't exist? We tell you inline,
         with a helpful error. Make a syntax error with ES2015? That also
@@ -182,7 +182,7 @@ view Speed {
     </section>
 
     <section>
-      <SubTitle>Views + Styles, inline and handled</SubTitle>
+      <IntroText>Views + Styles, inline and handled</IntroText>
       <p>
         Like Radium? Good, but you'd have to integrate it, and write
         your styles in React using a verbose syntax that is different
@@ -198,27 +198,27 @@ view Speed {
     </section>
 
     <section>
-      <SubTitle>Amazing build system</SubTitle>
+      <IntroText>Amazing build system</IntroText>
       <p></p>
     </section>
 
     <section>
-      <SubTitle>Share with a single command</SubTitle>
+      <IntroText>Share with a single command</IntroText>
       <p></p>
     </section>
 
     <section>
-      <SubTitle>Shorter syntax</SubTitle>
+      <IntroText>Shorter syntax</IntroText>
       <p></p>
     </section>
 
     <section>
-      <SubTitle>Shorter syntax</SubTitle>
+      <IntroText>Shorter syntax</IntroText>
       <p></p>
     </section>
 
     <section>
-      <SubTitle>Shorter syntax</SubTitle>
+      <IntroText>Shorter syntax</IntroText>
       <p></p>
     </section>
   </Contain>

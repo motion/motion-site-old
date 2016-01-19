@@ -14,10 +14,10 @@ view Roadmap.Intro {
 
     <Row>
       <Col>
-        <SubTitle>
+        <IntroText>
           We're taking a stab at changing the way we do frontend development. Here's our current, evolving, high-level
           overview or where we are and where we want to go.
-        </SubTitle>
+        </IntroText>
       </Col>
     </Row>
   </Feature>
