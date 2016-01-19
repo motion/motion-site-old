@@ -44,7 +44,7 @@ view Main {
   </site>
 
   $ = {
-    color: color.text,
+    color: `rgba(0,0,0,0.6)`,
     fontSize: 16,
     lineHeight: '1.8rem',
     fontFamily: font.sansSerif,

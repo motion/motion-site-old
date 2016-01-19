@@ -27,14 +27,16 @@ view Docs.Intro {
       Hot reloads are when you edit your app and it never "resets" its state. Typically hot reloads retain state of your component tree, but lose it in certain situations. <b>Super hot reloads</b> take it a step further, with two features:
     </Text>
 
-    <ul>
-      <li>
-        <b>Nested state</b> - Flint tracks all of your variables and view properties. Parent views won't lose their child view state (unless you change one of the child properties). So you can edit a Modal, without losing the Toggle positions inside of it.
-      </li>
-      <li>
-        <b>Internal state</b> - When editing a view, Flint also tracks how your values change over time. It will keep state that you haven't changed, avoiding having the entire state of a view reset when you're only changing some wording.
-      </li>
-    </ul>
+    <Text>
+      <ul>
+        <li>
+          <b>Nested state</b> - Flint tracks all of your variables and view properties. Parent views won't lose their child view state (unless you change one of the child properties). So you can edit a Modal, without losing the Toggle positions inside of it.
+        </li>
+        <li>
+          <b>Internal state</b> - When editing a view, Flint also tracks how your values change over time. It will keep state that you haven't changed, avoiding having the entire state of a view reset when you're only changing some wording.
+        </li>
+      </ul>
+    </Text>
 
     <Text>
       Flint's compiler is not only smarter than others, it's faster too due to avoiding a large amount of AST parsing.

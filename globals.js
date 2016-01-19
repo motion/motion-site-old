@@ -26,7 +26,6 @@ color.green = '#259630'
 color.blue = 'rgb(48, 111, 207)'
 color.darkred = color(color.brand)//.darken(0.3)
 color.bg = '#fff'
-color.text = '#444'
 color.strip = '#fff'
 
 const font = {}

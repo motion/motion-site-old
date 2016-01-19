@@ -198,7 +198,7 @@ view Home.Platform {
   let sections = () => ([
     {
       title: 'Browser',
-      description: <Text>
+      description: <Text small>
         <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smarter hot reloads</Attr> refresh instantly & retain child state.
         <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break."> Helpful</Attr> errors from compiler.
         <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor."> Jump to editor</Attr> just by right clicking.
@@ -206,14 +206,14 @@ view Home.Platform {
     },
     {
       title: 'Compiler',
-      description: <Text>
+      description: <Text small>
         <Attr alt="Static style changes don't even reload Javascript for insane performance.">Static CSS extraction</Attr> gives amazing performance.
         <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> to totally avoid touching the command line.
       </Text>
     },
     {
       title: 'Editor',
-      description: <Text>
+      description: <Text small>
         Websockets enable <Attr alt="Updates your app with each character, avoids writing to file system.">as-you-type updates</Attr> with Atom.&nbsp;
         <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Drag numbers and colors</Attr> to instantly see results.
       </Text>
@@ -274,7 +274,7 @@ view Home.Platform {
   }
 
   $subtitle = {
-    margin: [-2, 0, -8]
+    margin: [-2, 0, -10]
   }
 
   $Diagram = {
@@ -445,7 +445,7 @@ view Home.Modern {
           An ultra-modern React stack is just the start.
         </SubTitle>
 
-        <Text>
+        <Text small>
           Flint is an <b>extensible</b> and <b>sensible</b> stack designed to let you be more productive and creative.
         </Text>
       </Col>
@@ -801,11 +801,14 @@ view SubTitle {
   prop center
   prop small
   prop light
+  prop children
 
-  <Text root yield class={{ small }} />
+  <Text root class={{ small }} tagName="h3">
+    {children}
+  </Text>
 
-  $Text = {
-    fontSize: small ? 14 : 22,
+  $ = {
+    fontSize: 22,
     lineHeight: '2rem',
     textAlign: center ? `center` : `auto`,
     color: light ? 'auto' : 'rgba(0,0,0,0.65)',
@@ -813,8 +816,9 @@ view SubTitle {
   }
 
   $small = {
-    textTransform: 'uppercase',
-    color: '#333'
+    color: '#333',
+    fontWeight: 400,
+    fontSize: 16
   }
 }
 
@@ -825,7 +829,6 @@ view Text {
   <p root yield class={{ small, light }} />
 
   $ = {
-    color: `rgba(0,0,0,0.5)`,
     fontWeight: 400,
     fontSize: 17,
     lineHeight: '1.65rem'
@@ -837,6 +840,7 @@ view Text {
 
   $small = {
     fontSize: 15,
-    lineHeight: '1.45rem'
+    lineHeight: '1.45rem',
+    color: `rgba(0,0,0,0.45)`,
   }
 }
