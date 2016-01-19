@@ -191,11 +191,11 @@ view Nav {
 }
 
 view Logo {
-  <img root onClick={router.link(routes.home)} src="/assets/images/flintlogowhite.png" />
+  <img root onClick={router.link(routes.home)} src="/assets/images/flintlogo.png" />
 
-  const width = 1400
-  const height = 387
-  const multiplier = view.props.small ? .07 : .14
+  const width = 700
+  const height = 198
+  const multiplier = view.props.small ? .14 : .28
 
   $img = {
     width: Math.round(width * multiplier),
