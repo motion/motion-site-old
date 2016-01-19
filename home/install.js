@@ -26,7 +26,8 @@ view Home.Install {
 
   $ = {
     borderBottom: '1px solid #eee',
-    color: 'rgba(0,0,0,0.5)'
+    color: 'rgba(0,0,0,0.5)',
+    boxShadow: '0 2px 2px rgba(0,0,0,0.045)',
   }
 
   $title = {
@@ -37,7 +38,7 @@ view Home.Install {
   $Feature = {
     margin: 'auto',
     padding: [15, 0],
-    border: 'none'
+    border: 'none',
   }
 
   $Help = {
@@ -119,6 +120,7 @@ view Help {
     justifyContent: 'center',
     fontSize: 16,
     border: '1px solid rgba(0,0,0,0.1)',
+    boxShadow: '0 2px 2px rgba(0,0,0,0.045)',
     borderRadius: 1000,
     textAlign: 'center',
     color: [0,0,0,0.4],
