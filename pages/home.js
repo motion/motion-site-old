@@ -80,17 +80,17 @@ view Home.Head {
 
   $bg2 = {
     background: style.gradient,
-    opacity: 0
+    opacity: 0.3
   }
 
   $bg3 = {
-    background: `linear-gradient(-10deg, rgba(0,0,0,0) 60%, rgba(250,100,100,1))`,
+    // background: `linear-gradient(-3deg, rgba(0,0,0,0) 70%, rgba(255,255,255, 1))`,
     zIndex: 1,
     height: '100%'
   }
 
   $bg4 = {
-    background: `linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,0.45))`,
+    // background: `linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,0.45))`,
     zIndex: 1,
     height: '100%'
   }

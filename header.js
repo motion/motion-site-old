@@ -36,10 +36,6 @@ view HeaderAlt {
     }
   }
 
-  $Logo = {
-    margin: [5, 0, 0]
-  }
-
   $Nav = {
     flexGrow: 1,
     marginLeft: 20,
@@ -199,12 +195,12 @@ view Logo {
 
   const width = 1400
   const height = 387
-  const multiplier = view.props.small ? .08 : .14
+  const multiplier = view.props.small ? .07 : .14
 
   $img = {
     width: Math.round(width * multiplier),
     // height: Math.round(height * multiplier),
-    margin: [0, 'auto'],
+    margin: 'auto',
     cursor: 'pointer',
 
     [device.small]: {

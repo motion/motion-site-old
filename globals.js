@@ -54,9 +54,9 @@ style.textGradient = {
   WebkitTextFillColor: 'transparent',
 }
 
-const c1 = '#ee95aa'
-const c2 = '#ee5d6c'
-const c3 = '#eebb4d'
+const c1 = '#39dbf1'
+const c2 = '#ee5d9a'
+const c3 = '#ffc9c9'
 
 const light = c => `rgba(${color(c).alpha(0.9).rgba()})`
 

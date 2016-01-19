@@ -4,7 +4,7 @@ view Home.Install {
 
   <Feature row>
     <title>
-      Installs in a minute:
+      <dark>Install</dark> $
     </title>
 
     <mainCode>
@@ -26,12 +26,19 @@ view Home.Install {
 
   $ = {
     borderBottom: '1px solid #eee',
-    color: 'rgba(0,0,0,0.5)',
+    color: 'rgba(0,0,0,0.3)',
     boxShadow: '0 2px 2px rgba(0,0,0,0.045)',
   }
 
   $title = {
     fontSize: 18,
+    marginRight: 0,
+    flexFlow: 'row'
+  }
+
+  $dark = {
+    color: '#222',
+    fontWeight: 'bold',
     marginRight: 10
   }
 
@@ -65,10 +72,10 @@ view Home.Install {
 
   $input = {
     border: 'none',
-    color: 'green',
+    color: 'rgb(13, 149, 217)',
     background: '#fff',
     borderRadius: 6,
-    padding: 10,
+    padding: [10, 5],
     fontSize: 20,
     margin: [-8, 0, -5],
     fontFamily: font.monoSpace
