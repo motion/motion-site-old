@@ -4,8 +4,10 @@ view Code {
     let arr = src.split("\n")
     arr.shift()
 
+    let firstLineLen = arr[0].match(/\s+/)[0].length
+
     return arr
-      .map(l => l.slice(6))
+      .map(l => l.slice(firstLineLen))
       .join("\n")
   }
 

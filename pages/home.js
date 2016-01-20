@@ -32,7 +32,6 @@ view Button {
 }
 
 view Home.Head {
-  <Header nobg />
   <vid>
     <banner>
       <h1>Build great applications faster than ever before</h1>
@@ -42,7 +41,6 @@ view Home.Head {
       </svg>
     </banner>
     <top class="bg" />
-    <top class="bg2" />
     <top class="bg4" />
     <BackgroundVideo />
   </vid>

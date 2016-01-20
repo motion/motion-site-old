@@ -1,6 +1,5 @@
 view Page {
-  <Header />
-  <Contain style={{ maxWidth: 900 }}>
+  <Contain>
     <Sidebar if={view.props.base} yield />
     <inner>
       {view.props.children}
@@ -18,7 +17,7 @@ view Page {
   }
 
   $Contain = {
-    maxWidth: 900,
+    maxWidth: 840,
     margin: 'auto',
     flexFlow: 'row',
     padding: [40, 0, 0],
@@ -66,7 +65,7 @@ view Page.Sidebar {
     whiteSpace: 'nowrap',
     padding: [2, 16],
     margin: [2, 0],
-    minWidth: 120,
+    minWidth: 130,
     display: 'flex',
     width: '100%',
     textAlign: 'right',
@@ -82,7 +81,6 @@ view Page.Sidebar {
     color: '#444',
     borderColor: color.brand
   }
-
 }
 
 view RoutedContent {

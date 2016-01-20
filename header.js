@@ -61,13 +61,11 @@ view Nav {
     className: { active: router.isActive(path) }
   })
 
-  const links = [
+  <a repeat={[
     { children: 'Docs', ...routeProps(routes.docs + '/intro')  },
     { children: 'Examples', ...routeProps(routes.examples + '/intro')  },
     { children: 'Install', href: '#install', onClick: showInstall  },
-  ]
-
-  <a repeat={links} {..._} />
+  ]} {..._} />
 
   $ = {
     userSelect: 'none',

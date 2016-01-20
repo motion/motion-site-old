@@ -33,6 +33,7 @@ view Main {
   <Password onShow={passCorrect} if={!hidePass} />
 
   <site if={hidePass}>
+    <Header />
     <Home route={routes.home} />
     <Home2 route="/home2" />
     <Examples route={routes.examples} />
