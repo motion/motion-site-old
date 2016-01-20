@@ -31,7 +31,6 @@ view Title2 {
   $Title = {
     fontSize: 24,
     color: 'rgba(0,0,0,0.6)',
-    marginBottom: -10
   }
 }
 
@@ -39,9 +38,9 @@ view SubTitle {
   <Title root yield />
 
   $Title = {
-    fontSize: 18,
-    color: 'rgba(0,0,0,0.4)',
-    textTransform: 'uppercase',
+    fontSize: 20,
+    color: color(color.brand).darken(1).rgba(),
+    marginTop: 15
   }
 }
 

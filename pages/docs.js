@@ -2,6 +2,7 @@ const docs = [
   { title: "Intro", view: 'Intro', slug: 'intro' },
   { title: "Install", view: 'Install', slug: 'install' },
   { title: "Views", view: 'Views', slug: 'views' },
+  { title: "Helpers", view: 'Helpers', slug: 'helpers' },
   { title: "Elements", view: 'Elements', slug: 'elements' },
   { title: "Styles", view: 'Styles', slug: 'styles' },
   { title: "Events", view: 'Events', slug: 'events' },
