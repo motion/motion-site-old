@@ -16,7 +16,7 @@ view Header {
     left: 0,
     right: 0,
     zIndex: 100,
-    background: style.gradient,
+    background: nobg ? 'transparent' : style.gradient,
     boxShadow: '0 0 4px rgba(0,0,0,0.25)',
 
     [device.small]: {

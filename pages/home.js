@@ -10,8 +10,6 @@ view Home {
   // <Home.Triple />
   <Home.Features />
   <Footer />
-
-  $ = { width: '100%' }
 }
 
 view Button {
@@ -217,8 +215,9 @@ view Home.Triple {
   }
 }
 
-
 view Home.Platform {
+  let hoverIndex = false
+
   let sections = () => ([
     {
       title: 'Editor',
@@ -244,13 +243,15 @@ view Home.Platform {
     },
   ])
 
+  // onMouseEnter={() => hoverIndex = _index + 1}
+
   <Feature odd col>
     <Title>An open & extensible platform</Title>
     <IntroText class="sub">We unite your tools enabling <em>entirely new ways of programming</em></IntroText>
 
     <Row class="small2">
       <Col centered>
-        <Diagram />
+        <Diagram hoverIndex={hoverIndex} />
       </Col>
 
       <Col class="sections">
@@ -314,7 +315,13 @@ view Home.Platform {
 
 
 view Diagram {
+  prop hoverIndex
+
   let hover = false
+
+  on.props(() => {
+    hover = typeof hoverIndex != 'undefined' ? hoverIndex : hover
+  })
 
   function sectionHover(i) {
     return {
@@ -383,7 +390,16 @@ view Diagram {
     }
   }
 
-  let sidePull = 0
+  $icon = {
+    transition: 'all ease-in 200ms',
+    transform: { scale: 0.95 },
+
+    hover: {
+      transform: { scale: 1 }
+    }
+  }
+
+  let sidePull = -20
 
   $side = {
     flexFlow: 'row-reverse',

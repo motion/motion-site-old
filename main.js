@@ -33,7 +33,7 @@ view Main {
   <Password onShow={passCorrect} if={!hidePass} />
 
   <site if={hidePass}>
-    <Header />
+    <Header nobg={Flint.router.isActive(routes.home)} />
     <Home route={routes.home} />
     <Home2 route="/home2" />
     <Examples route={routes.examples} />
