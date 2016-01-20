@@ -6,21 +6,33 @@ view Docs.Intro {
   </IntroText>
 
   <Text>
-    There's one abstraction in Flint: the <code>view</code>.
+    Flint adds the <code>view</code>, which replaces HTML, CSS and your framework of choice with a simple, first-class statement in Javascript.
+    Views contain their logic, markup and style & are JavaScript blocks. When a variable changes, your view renders.
   </Text>
 
   <Text>
-    Views replace HTML, CSS and your framework of choice with a simple statement: the view.
-    Views contain their logic, markup and style. Use normal JavaScript inside of them. When a variable changes, your view stays up to date.
+    Flint attempts to bring the concepts we use in our libraries to our language. Though the syntax may not be perfect yet, the
+    logic is sound: our compiler understanding how we code realizes big gains in expressiveness, performance, and features.
   </Text>
 
   <Text>
-    We like to build apps using small components that encapsulate all they need. Today, we have libraries to that let us do this but eventually we'll want a first class language that understands how we build. Flint is the result of an extensive and ongoing process to make that available.
+    Flint runs on open source. It's a node app powered by ES6, npm, Gulp, Babel, Webpack, React, and tons of libraries. It's open source, and we are actively interesting in building an amazing developer community including feedback on making views better!
   </Text>
 
   <Text>
-    Flint runs on node. It's powered by ES6, npm, Gulp, Babel, Webpack, React, Bluebird, and many more libraries. It's open source, and we are actively interesting in building an amazing developer community. Please <Link to="/community">read our community guidelines</Link> before joining!
+    Please <Link to="/community">read our community guidelines</Link>!
   </Text>
+
+  <SubTitle>Principles</SubTitle>
+
+  <Text>
+    Throughout the process of building there are countless moments where ease of
+    experimentation unlocks entirely new paths. You stumble on solutions only
+    because you have fast and lightweight tools. With instant feedback and a smart environment,
+    Flint aims to unlock whole new levels of productive creativity.
+  </Text>
+
+  <Title2>High level features</Title2>
 
   <SubTitle>Super Hot Reloads</SubTitle>
   <Text>
@@ -56,24 +68,14 @@ view Docs.Intro {
 
   <SubTitle>Automatic NPM Installs</SubTitle>
   <Text>
-    Flint understands your code as though modern ES6 were supported in every browser. This means when you type an import, Flint knows to install the package, and refresh your browser. This happens automatically for you without ever needing to refresh the browser.
+    Flint understands your code as though modern ES6 were supported in every browser.
+    This means when you type an import Flint installs the package automatically without losing your state.
   </Text>
 
   <SubTitle>No boilerplate</SubTitle>
   <Text>
-    Create and start your app instantly, the only files in your directory is your own code. And the only code you write is directly representing what your app is doing, no writing around a library.
-  </Text>
-
-  <Text>
-    Flint watches your files, builds to production, and will continuously improve over time without you needing to ever learn a build system configuration syntax or write massive amounts of glue code to bring your app to life.
-  </Text>
-
-  <SubTitle>Principles</SubTitle>
-
-  <Text>
-    Throughout the process of building there are countless moments where ease of
-    experimentation unlocks entirely new paths. You stumble on solutions only
-    because you have fast and lightweight tools. By bringing you close to your canvas Flint enables new ways to create.
+    Create and start your app instantly, the only files in your directory are logical code. No more writing around a library.
+    Flint watches your files & builds to production. It will rapidly improve without you needing to ever learn a build system configuration, and with code mods it can upgrade your syntax to new versions automatically.
   </Text>
 
   <Next to='/docs/install'>Install Flint</Next>

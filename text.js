@@ -25,6 +25,16 @@ view Title {
   }
 }
 
+view Title2 {
+  <Title root yield />
+
+  $Title = {
+    fontSize: 24,
+    color: 'rgba(0,0,0,0.6)',
+    marginBottom: -10
+  }
+}
+
 view SubTitle {
   <Title root yield />
 

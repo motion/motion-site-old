@@ -1,6 +1,6 @@
 view Page {
   <Contain>
-    <Sidebar if={view.props.base} yield />
+    <Page.Sidebar if={view.props.base} yield />
     <inner>
       {view.props.children}
     </inner>
