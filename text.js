@@ -78,9 +78,10 @@ view IntroText {
 
 view Text {
   prop light
+  prop dim
   prop small
 
-  <p root yield class={{ small, light }} />
+  <p root yield class={{ small, light, dim }} />
 
   $ = {
     fontWeight: 400,
@@ -93,8 +94,12 @@ view Text {
   }
 
   $small = {
-    fontSize: 15,
-    lineHeight: '1.45rem',
+    fontSize: 16,
+    lineHeight: '1.55rem',
+    color: `rgba(0,0,0,0.45)`,
+  }
+
+  $dim = {
     color: `rgba(0,0,0,0.45)`,
   }
 }

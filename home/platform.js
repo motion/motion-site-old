@@ -14,14 +14,14 @@ view Home.Platform {
       description: <Text small>
         <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smarter hot reloads</Attr> refresh instantly & retain child state.
         <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break."> Helpful</Attr> errors from compiler.
-        <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor."> Jump to editor</Attr> just by right clicking.
+        <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor."> Jump to editor</Attr>.
       </Text>
     },
     {
       title: 'Compiler',
       description: <Text small>
         <Attr alt="Static style changes don't even reload Javascript for insane performance.">Static CSS extraction</Attr> gives amazing performance.
-        <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> to totally avoid touching the command line.
+        <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> are awesome.
       </Text>
     },
   ])
@@ -33,7 +33,7 @@ view Home.Platform {
     <IntroText class="sub">We unite your tools enabling <em>entirely new ways of programming</em></IntroText>
 
     <Row class="small2">
-      <Col centered>
+      <Col centered class="diagram">
         <Diagram hoverIndex={hoverIndex} />
       </Col>
 
@@ -54,8 +54,8 @@ view Home.Platform {
   }
 
   $small2 = {
-    width: '80%',
-    margin: [30, 0, -100],
+    width: '100%',
+    margin: [30, 0, -20],
 
     [device.small]: {
       margin: [20, 0],
@@ -64,8 +64,13 @@ view Home.Platform {
   }
 
   $sections = {
-    width: 400,
+    maxWidth: 385,
+    marginRight: 80,
     margin: 'auto'
+  }
+
+  $diagram = {
+    marginLeft: 80
   }
 
   $section = {
