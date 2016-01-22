@@ -61,30 +61,15 @@ view DemoCircles {
     } />
 }
 
-const onScrollTo = (targetY, cb) => {
-  let timeout = null
-  let hasScrolledTo = false
-
-  on.scroll(() => {
-    if (timeout || hasScrolledTo) return
-    timeout = setTimeout(() => {
-      clearTimeout(timeout)
-      timeout = null
-
-      if (window.scrollY + window.innerHeight >= targetY) {
-        hasScrolledTo = true
-        cb();
-      }
-    }, 100)
-  })
-}
-
 view Circles {
   let coords = []
 
   on.mount(() => {
     const targetY = util.docOffset(view.refs.circles).top + 400
-    onScrollTo(targetY, () => coords.push([200, 200]))
+
+    if (!coords.length) {
+      coords.push([200, 200])
+    }
   })
 
   function addCircle (e) {

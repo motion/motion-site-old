@@ -4,7 +4,6 @@ view Docs.Extras {
 
   <SubTitle>Polyfills</SubTitle>
   <ul>
-    <li><code>Promise</code> - <Link href="https://github.com/petkaantonov/bluebird/blob/master/API.md">Bluebird</Link></li>
     <li><code>fetch</code> - <Link href="https://github.com/matthew-andrews/isomorphic-fetch">Isomorphic fetch</Link></li>
   </ul>
 

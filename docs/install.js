@@ -41,5 +41,6 @@ view Docs.Install {
   <Text>
     You app is now built into <code>.flint/build</code>, ready to deploy!
   </Text>
+
   <Next to='/docs/views'>Using Views</Next>
 }

@@ -1,3 +1,12 @@
+view Home.Features {
+  <Feature col>
+    <Title center>Everything you need to be productive today</Title>
+    <IntroText center>Start in seconds, be more creative & deploy today</IntroText>
+    <Features />
+  </Feature>
+  $Feature = { border: 'none', paddingBottom: 0 }
+}
+
 view Features {
   <Contain>
     <section>

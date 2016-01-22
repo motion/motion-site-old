@@ -13,6 +13,7 @@ const docs = [
 ]
 
 view Docs {
+  <Banner.Transition />
   <Page list={docs} base="/docs">
     <Docs.Intro if={location.pathname == "/docs"} />
     <RoutedContent
@@ -20,8 +21,4 @@ view Docs {
       content={docs}
       route="/docs/:slug" />
   </Page>
-
-  $ = {
-    padding: [20, 0]
-  }
 }

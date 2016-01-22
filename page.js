@@ -10,6 +10,7 @@ view Page {
   $ = {
     fontSize: 18,
     lineHeight: '1.95rem',
+    padding: [20, 0],
 
     [device.small]: {
       flexFlow: 'column'
@@ -17,7 +18,6 @@ view Page {
   }
 
   $Contain = {
-    maxWidth: 840,
     margin: 'auto',
     flexFlow: 'row',
     padding: [40, 0, 0],

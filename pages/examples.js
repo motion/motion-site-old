@@ -4,7 +4,7 @@ const examples = [
 ]
 
 view Examples {
-  <Page list={examples} base="/examples" containStyle={{ width: '100%' }}>
+  <Page list={examples} base="/examples">
     <RoutedContent
       parent="Examples"
       content={examples}

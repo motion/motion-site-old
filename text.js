@@ -1,14 +1,15 @@
-const sanitize = str => str.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s/g, '-')
+const sanitize = str => str ? str.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s/g, '-') : ''
 
 view Title {
   prop center
   prop light
+  prop big
 
   <Text
     root
     yield
     id={sanitize(view.props.children)}
-    class={{ light }}
+    class={{ light, big }}
     tagName="h2"
   />
 
@@ -22,6 +23,11 @@ view Title {
 
   $light = {
     color: '#fff'
+  }
+
+  $big = {
+    fontSize: 32,
+    color: color.brand1
   }
 }
 

@@ -42,6 +42,7 @@ view Main {
     <Spark route={routes.spark} />
     <Start route={routes.start} />
     <Roadmap route={routes.roadmap} />
+    <Transition route={routes.transition} />
   </site>
 
   $ = {
@@ -60,7 +61,7 @@ view Password {
   let password = ''
 
   const checkPass = () => {
-    if (password.toLowerCase() == 'love') view.props.onShow(true)
+    if (password.toLowerCase() == 'launch') view.props.onShow(true)
   }
 
   on.mount(() => {

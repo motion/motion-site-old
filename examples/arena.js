@@ -78,10 +78,7 @@ view Examples.Arena {
   </Text>
 
   <Text>
-    Fetch returns a promise. Promises are also polyfilled by Flint,
-    using the excellent <a href="https://github.com/petkaantonov/bluebird">Bluebird</a> library. Promises
-    are a nice abstraction that give you more control over asynchronous
-    code.
+    Fetch returns a promise. Promises are a nice abstraction that give you more control over asynchronous code.
   </Text>
 
   <Text>

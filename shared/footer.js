@@ -5,13 +5,13 @@ view Footer {
       <br />
       <Social />
       <p>
-        Made with Flint.
+        Made with ❤︎ and Flint
       </p>
     </content>
   </Contain>
 
   $ = {
-    background: 'linear-gradient(-20deg, #666, #222)',
+    background: `linear-gradient(-20deg, ${color.brand}, ${color.brand1})`,
     color: '#fff',
     margin: [30, 0, -40],
     textAlign: 'center',

@@ -1,13 +1,11 @@
 view Start {
+  <Head
+    title="Getting Started"
+    subtitle="Flint brings React concepts to javascript the language. It optimizes for developer experience."
+  />
   <Page>
-    <contain>
-      <Start.Intro />
-      <Start.Getting />
-      <Start.Slack />
-      <Start.Learning />
-      <Start.Examples />
-      <Start.Joining />
-    </contain>
+    <Docs.Install />
+    <Banner.Transition />
   </Page>
 
   $contain = {
@@ -18,48 +16,12 @@ view Start {
   }
 }
 
-view Start.Learning {
-  <Title big>Learning Flint</Title>
-  <Text>We've found that Flint can be learned quicky by those who have programmed in JS before.</Text>
-  <Text>Our <a href="https://flintjs.com/docs">documentation</a> can help you learn more specific features of Flint and our <a href="https://github.com/flintjs/examples">examples repo</a> has a variety of small examples showing working code.</Text>
-  <Text>We're working on an online live <a href="http://learn.flintjs.com">interactive code editor</a>, but it's <em>not yet ready</em>, we'll notify you once it's up.</Text>
-}
-
-view Start.Examples {
-  <Title big>
-    Flint Examples
-  </Title>
-
-  <Text>
-    Flint is early so there are less resources to find around the web, but fear not!
-  </Text>
-
-  <Text>
-    We have a few large apps we've been building ourselves, with friends and with companies over the last
-    few months that can serve as your example.
-  </Text>
-
-  <ul>
-    <li>
-      <Link href="https://github.com/flintjs/flashcash">FlashCash</Link> - A simple one-off site that integrates firebase, accounts and payments
-    </li>
-
-    <li>
-      <Link href="https://github.com/flintjs/site">Flint.js Homepage</Link> - Our homepage has over 200 views, it's not very dynamic but we've tried to keep it well written.
-    </li>
-
-    <li>
-      <Link href="https://github.com/natew/arena">Arena</Link> - A simple portfolio site that uses a simple REST API. Uses async/await and fetch together to show some advanced fetching patterns as well as routes
-    </li>
-  </ul>
-}
-
 view Start.Getting {
   let node = true
 
-  <Title big>
+  <SubTitle>
     Getting Flint
-  </Title>
+  </SubTitle>
   <Row class="space">
     <choice onClick={() => node = true}
             class={{bold: node}}>I have node</choice>

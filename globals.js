@@ -16,11 +16,12 @@ routes.community = '/community'
 routes.spark = '/spark'
 routes.start = '/start'
 routes.roadmap = '/roadmap'
+routes.transition = '/transition'
 
 const color = chroma || function(){}
 color.alt = '#fdfdfa'
 color.brand = '#18c7de'
-color.brand1 = '#fb4893'
+color.brand1 = '#de166a'
 color.brand2 = '#1cb5df'
 color.green = '#259630'
 color.blue = 'rgb(48, 111, 207)'
