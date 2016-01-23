@@ -24,7 +24,8 @@ view Next {
     cursor: 'pointer',
     transition: '300ms all ease-in',
     color: `rgb(${blue})`,
-    textAlign:'right',
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end'
   }
 
   $span = {

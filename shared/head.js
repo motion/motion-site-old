@@ -20,4 +20,8 @@ view Head {
   $inner = {
     padding: [0, 30]
   }
+
+  $IntroText = {
+    width: '60%'
+  }
 }
