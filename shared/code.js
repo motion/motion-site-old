@@ -1,4 +1,6 @@
 view Code {
+  prop lang = 'javascript'
+
   function clean(src) {
     if (!src) return
     let arr = src.split("\n")
@@ -12,21 +14,23 @@ view Code {
   }
 
   on.mount(() => {
-    hljs.highlightBlock(view.refs.code)
+    if (lang)
+      hljs.highlightBlock(view.refs.code)
   })
 
-  <code ref="code" class={view.props.lang || 'javascript'}>
+  <code ref="code" class={lang || 'javascript'}>
     {clean(view.props.source) || view.props.children}
   </code>
 
   $ = {
     background: '#fff',
     border: '1px solid #ddd',
+    color: 'rgba(0,0,0,0.55)',
     boxShadow: '0 0 4px rgba(0,0,0,0.05)',
     padding: 10,
     margin: [10, 0],
     borderRadius: 4,
-    fontSize: 15,
+    fontSize: 14,
     lineHeight: 1.4,
     whiteSpace: 'pre'
   }

@@ -2,7 +2,7 @@ view Docs.Install {
   <Title>Installing</Title>
   <IntroText>Install Flint CLI and create a new app</IntroText>
 
-  <Code lang="bash" source={`
+  <Code lang={false} source={`
     sh <(curl -sL https://flint.love)
   `}/>
 
@@ -10,7 +10,7 @@ view Docs.Install {
     Or you can install with just npm.
   </Text>
 
-  <Code lang="bash" source={`
+  <Code lang={false} source={`
     npm install -g flint
   `}/>
 
@@ -20,10 +20,8 @@ view Docs.Install {
     Once set up, create your first app:
   </Text>
 
-  <Code lang="bash" source={`
+  <Code lang={false} source={`
     flint new appname
-
-    # start app
     cd appname
     flint
   `}/>
@@ -34,7 +32,7 @@ view Docs.Install {
 
   <SubTitle>When you're ready to deploy</SubTitle>
 
-  <Code lang="bash" source={`
+  <Code lang={false} source={`
     flint build
   `}/>
 

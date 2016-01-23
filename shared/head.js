@@ -7,21 +7,33 @@ view Head {
       <Title big>{title}</Title>
       <IntroText>{subtitle}</IntroText>
     </inner>
+    <img src="/assets/images/watercolor.jpg" />
   </Contain>
 
   $ = {
     background: '#fefefe',
-    marginTop: 55,
+    marginTop: 49,
     marginBottom: -50,
     padding: [20, 0, 20],
-    borderBottom: '1px solid #eee'
+    borderBottom: '1px solid #eee',
+    overflow: 'hidden'
   }
 
   $inner = {
-    padding: [0, 30]
+    padding: [0, 30],
+    position: 'relative',
+    zIndex: 10
   }
 
   $IntroText = {
     width: '60%'
+  }
+
+  $img = {
+    position: 'absolute',
+    top: -120,
+    right: -30,
+    opacity: 0.25,
+    zIndex: 0
   }
 }
