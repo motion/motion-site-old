@@ -86,16 +86,26 @@ view Docs.Elements {
   <SubTitle>{'<tag yield />'}</SubTitle>
 
   <Text>
-    Yield passes all props given to the view through to a tag.
+    Yield passes all props given to the view through to a tag. It also smartly merges classnames and styles for you.
   </Text>
 
   <Code source={`
     view DecoratedButton {
       <button yield />
 
-      $button = { fontWeight: 600 }
+      $button = {
+        fontWeight: 600
+      }
     }
   `} />
+
+  <SubTitle>{'<tag tagName="a" />'}</SubTitle>
+
+  <Text>
+    Tagname gives you access to programatically control the final output of the element in DOM.
+    Tags will pick up any styles that target their tagName. This is also helpful with <code>yield</code>,
+    which would then make the yielded element inherit the tagName from <code>view.props</code>.
+  </Text>
 
   <SubTitle>Accessing DOM nodes (refs)</SubTitle>
   <p>Sometimes you need to access nodes in the DOM.</p>

@@ -132,28 +132,74 @@ view Docs.Events {
 
   <Text>
     Because <code>on</code> is just a lightweight wrapper around addEventListener that is smart about views we've added an <code>on.event</code> interface that gives you access to custom events.
+    Here's an example:
   </Text>
 
   <Code source={`
     view Main {
       // listen for 'child:ran'
-      on.event('child:ran', () => {
-        console.log('received event from child')
+      on.event('child:ran', (data) => {
+        console.log('received event from child, with data', data.local)
       })
 
       <Child />
     }
 
     view Child {
+      let local = 'hello'
+
       // delay 1 second, then send event
       on.delay(1000, () => {
-        on.event('child:ran') // send event with no callback argument
+        on.event('child:ran', { local }) // send event with no callback argument
       })
     }
   `} />
 
   <Text>
-    By default, custom events are attached to the window. You can attach them to your view, or to any DOM node, by passing in an element as the first argument:
+    By default, custom events are attached to the window. You can attach them to your view, or to any DOM node, by passing in an element as the first argument.
+  </Text>
+
+  <SubTitle>
+    Event List
+  </SubTitle>
+
+  <Text>
+    You can access the following events (matching the DOM Level 2 events list) directly from <code>on</code>:
+  </Text>
+
+  <Text>
+    <ul>
+      <li>click</li>
+      <li>mousedown</li>
+      <li>mouseenter</li>
+      <li>mouseleave</li>
+      <li>mousemove</li>
+      <li>mouseover</li>
+      <li>mouseout</li>
+      <li>mouseup</li>
+      <li>touchdown</li>
+      <li>touchenter</li>
+      <li>touchleave</li>
+      <li>touchmove</li>
+      <li>touchout</li>
+      <li>touchup</li>
+      <li>keydown</li>
+      <li>keypress</li>
+      <li>keyup</li>
+      <li>abort</li>
+      <li>beforeunload</li>
+      <li>error</li>
+      <li>load</li>
+      <li>resize</li>
+      <li>scroll</li>
+      <li>unload</li>
+      <li>blur</li>
+      <li>change</li>
+      <li>focus</li>
+      <li>reset</li>
+      <li>select</li>
+      <li>submit</li>
+    </ul>
   </Text>
 
 
