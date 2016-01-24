@@ -14,9 +14,5 @@ view Feature {
     borderTop: dark ? [10, 'solid', '#eee'] : 'none',
     color: dark ? `#fff` : `auto`,
     background: bg ? bg : dark ? `linear-gradient(130deg, #3f3f95 70%, #333360)` : odd ? `#fcfcfc` : `auto`,
-
-    [device.small]: {
-      padding: [30, 30]
-    }
   }
 }

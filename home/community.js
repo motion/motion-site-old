@@ -34,12 +34,21 @@ view Home.Community {
 
   $inner = {
     flexFlow: 'row',
+
+    [device.small]: {
+      flexFlow: 'column'
+    }
   }
 
   $content = {
     padding: [20, 50, 0, 20],
     width: '50%',
-    justifyContent: 'center'
+    justifyContent: 'center',
+
+    [device.small]: {
+      width: '100%',
+      padding: 0
+    }
   }
 
   $cloud = {

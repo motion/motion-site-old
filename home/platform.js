@@ -99,6 +99,12 @@ view Home.Platform {
       height: 'auto'
     }
   }
+
+  $Title = {
+    [device.small]: {
+      textAlign: 'center'
+    }
+  }
 }
 
 
@@ -249,4 +255,3 @@ view Diagram {
     }
   }
 }
-

@@ -25,7 +25,7 @@ view Counter {
   const up = () => count++
   const down = () => count--
 
-  <count>Count is {count}</count>
+  <count>Count is  {count}</count>
   <center>
     <button onClick={down}>↓</button>
     <button onClick={up}>↑</button>

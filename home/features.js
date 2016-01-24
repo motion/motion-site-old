@@ -126,7 +126,7 @@ view Features {
 
     [device.small]: {
       width: '100%',
-      margin: 0
+      margin: [0, 'auto', 15]
     }
   }
 
@@ -172,7 +172,11 @@ view Features {
 
   $title = {
     fontSize: 18,
-    margin: [-40, 0, 0]
+    margin: [-40, 0, 0],
+
+    [device.small]: {
+      fontWeight: 'bold'
+    }
   }
 
   $col = {
