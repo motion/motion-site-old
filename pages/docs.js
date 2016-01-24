@@ -13,7 +13,6 @@ const docs = [
 ]
 
 view Docs {
-  <Banner.Transition />
   <Page list={docs} base="/docs">
     <Docs.Intro if={location.pathname == "/docs"} />
     <RoutedContent
