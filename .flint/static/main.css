@@ -14,7 +14,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-html, body, #_flintapp, .__flintRoot {
+html, body {
   height: 100%;
   overflow: auto;
 }
@@ -23,9 +23,15 @@ body * {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   -webkit-flex-flow: column;
   box-sizing: border-box;
+
+  flex-shrink: 1;
+  -webkit-flex-shrink: 1;
+
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
 }
 
 style {
