@@ -14,4 +14,8 @@ view NotFound {
       }
     `} />
   </Page>
+
+  $ = {
+    flexGrow: 1
+  }
 }
