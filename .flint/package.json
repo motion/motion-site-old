@@ -11,7 +11,7 @@
     "chroma-js": "^1.1.1",
     "document-offset": "^1.0.4",
     "mouse-event-offset": "^3.0.2",
-    "react": "^0.14.2",
+    "react": "^0.14.6",
     "react-motion": "^0.3.1",
     "scroll": "^1.0.0"
   }

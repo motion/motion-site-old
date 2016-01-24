@@ -7,11 +7,15 @@ view Slack {
     border: 'none',
     width: 400,
     height: 340,
-    overflow: 'hidden'
+    overflow: 'hidden',
+
+    [device.small]: {
+      width: 380
+    }
   }
 
   $ = {
-    margin: [-40, 0, 20]
+    margin: [-40, -20, 20]
   }
 
   $Contain = {

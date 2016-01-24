@@ -20,7 +20,6 @@ view Header {
     boxShadow: '0 0 4px rgba(0,0,0,0.25)',
 
     [device.small]: {
-      position: 'relative',
       marginBottom: -50
     }
   }
@@ -43,6 +42,12 @@ view Header {
 
   $Social = {
     justifyContent: 'flex-end'
+  }
+
+  $Logo = {
+    [device.small]: {
+      marginTop: 15
+    }
   }
 }
 
@@ -111,7 +116,7 @@ view Logo {
 
   $img = {
     width: Math.round(width * multiplier),
-    // height: Math.round(height * multiplier),
+    height: Math.round(height * multiplier),
     margin: 'auto',
     cursor: 'pointer',
 

@@ -57,7 +57,6 @@ view Col {
     maxWidth: '100%',
 
     [device.small]: {
-      width: '90%',
       margin: 'auto'
     }
   }
