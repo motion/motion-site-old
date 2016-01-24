@@ -25,17 +25,29 @@ view Home.Production {
 
   $Row = {
     flexFlow: 'row',
-    margin: [0, 0, -20]
+    margin: [0, 0, -20],
+
+    [device.small]: {
+      flexFlow: 'column'
+    }
   }
 
   $example = {
-    margin: [0, 0, -130]
+    margin: [0, 0, -130],
+
+    [device.small]: {
+      marginBottom: 0
+    }
   }
 
   $content = {
     padding: [30, 50, 30, 20],
     width: '20%',
-    justifyContent: 'center'
+    justifyContent: 'center',
+
+    [device.small]: {
+      width: '100%'
+    }
   }
 
   $p = {
@@ -46,6 +58,10 @@ view Home.Production {
 
   $img = {
     width: 425,
-    margin: [0, -300, 0, 0]
+    margin: [0, -300, 0, 0],
+
+    [device.small]: {
+      width: '100%'
+    }
   }
 }
