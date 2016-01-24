@@ -64,6 +64,7 @@ view Nav {
   <a repeat={[
     { children: 'Start', ...routeProps(routes.start)  },
     { children: 'Docs', ...routeProps(routes.docs + '/intro')  },
+    { children: 'Run React Apps', ...routeProps('/use')  },
     { children: 'Learn', ...routeProps('/learn')  },
   ]} {..._} />
 

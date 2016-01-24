@@ -40,6 +40,7 @@ view Main {
     <Community route={routes.community} />
     <Spark route={routes.spark} />
     <Start route={routes.start} />
+    <Use route={routes.use} />
     <Roadmap route={routes.roadmap} />
     <Transition route={routes.transition} />
     <NotFound route={404} />
