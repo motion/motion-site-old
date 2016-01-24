@@ -20,7 +20,10 @@ view Header {
     boxShadow: '0 0 4px rgba(0,0,0,0.25)',
 
     [device.small]: {
-      marginBottom: -50
+      marginBottom: -50,
+      background: style.gradient,
+      boxShadow: 'none',
+      position: 'relative'
     }
   }
 

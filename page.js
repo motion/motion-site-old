@@ -53,9 +53,9 @@ view Page.Sidebar {
     [device.small]: {
       borderRight: 'none',
       flexFlow: 'row',
-      width: '100%',
+      width: '90%',
       flexWrap: 'wrap',
-      justifyContent: 'center'
+      justifyContent: 'center',
     }
   }
 
@@ -74,13 +74,23 @@ view Page.Sidebar {
 
     hover: {
       color: color.brand1
+    },
+
+    [device.small]: {
+      width: 'auto'
     }
   }
 
   $active = {
     fontWeight: 600,
     color: '#444',
-    borderColor: color.brand
+    borderColor: color.brand,
+
+    [device.small]: {
+      border: 'none',
+      textAlign: 'center',
+      width: 'auto'
+    }
   }
 }
 

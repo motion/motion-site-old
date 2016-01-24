@@ -55,7 +55,7 @@ style.textGradient = {
   WebkitTextFillColor: 'transparent',
 }
 
-const light = c => `rgba(${color(c).alpha(0.9).rgba()})`
+const light = c => color(c).alpha(0.9).css()
 
 style.gradient = `linear-gradient(-30deg, ${color.brand1}, ${color.brand2})`
 
