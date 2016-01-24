@@ -38,6 +38,7 @@ view Docs.Routes {
       <Home route="/" />
       <About route="/about" />
       <Product route="/products/:id" />
+      <NotFound route={404} />
     }
 
     view Home {
@@ -61,6 +62,10 @@ view Docs.Routes {
     view Product {
       <h2>Product {view.props.params.id}</h2>
       <a onClick={() => Flint.router.go('/')}>home</a>
+    }
+
+    view NotFound {
+      <h2>404!</h2>
     }
   `} />
 

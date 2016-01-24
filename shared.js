@@ -22,7 +22,7 @@ view Row {
   prop spread
   prop contain
 
-  <row class={{ contain }} yield />
+  <row root class={{ contain }} yield />
 
   $ = {
     flexFlow: reverse ? 'row-reverse' : 'row',

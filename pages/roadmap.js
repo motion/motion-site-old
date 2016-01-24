@@ -100,39 +100,3 @@ view ReleaseCards {
     overflowX: 'scroll'
   }
 }
-
-
-view Card {
-  prop title
-  prop children
-
-  <card>
-    <title if={title}>{title}</title>
-    <Check />
-    <body>
-      {children}
-    </body>
-  </card>
-
-  $ = {
-    boxShadow: `2px 2px 10px rgba(0,0,0,0.1)`,
-    padding: 0,
-    margin: 10,
-    minWidth: '20%'
-  }
-
-  $title = {
-    padding: 10,
-    fontSize: 18
-  }
-
-  $body = {
-    padding: 10
-  }
-
-  $Check = {
-    width: 40,
-    height: 40,
-    margin: [10, 'auto']
-  }
-}

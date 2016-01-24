@@ -14,18 +14,18 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+html, body, #_flintapp, .__flintRoot {
+  height: 100%;
+  overflow: auto;
+}
+
 body * {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-flow: column;
-  flex-shrink: 1;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-
+  flex-direction: column;
   -webkit-flex-flow: column;
-  -webkit-flex-shrink: 1;
-  -webkit-flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 style {

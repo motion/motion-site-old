@@ -43,10 +43,10 @@ view Title2 {
 view SubTitle {
   <Title root yield />
 
-  $Title = {
-    fontSize: 20,
+  $ = {
     color: color(color.brand).darken(1).rgba(),
-    marginTop: 15
+    marginTop: 15,
+    fontSize: 20,
   }
 }
 

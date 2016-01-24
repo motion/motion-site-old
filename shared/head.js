@@ -15,7 +15,7 @@ view Head {
     marginTop: 49,
     marginBottom: -50,
     padding: [20, 0, 20],
-    borderBottom: '1px solid #eee',
+    borderBottom: '1px solid #f9f9f9',
     overflow: 'hidden'
   }
 

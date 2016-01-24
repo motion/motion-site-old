@@ -31,11 +31,10 @@ view Main {
   )
 
   <Password onShow={passCorrect} if={!hidePass} />
-
   <site if={hidePass}>
     <Header nobg={Flint.router.isActive(routes.home)} />
     <Home route={routes.home} />
-    <Home2 route="/home2" />
+    <Learn route="/learn" />
     <Examples route={routes.examples} />
     <Docs route={routes.docs} />
     <Community route={routes.community} />
@@ -43,6 +42,7 @@ view Main {
     <Start route={routes.start} />
     <Roadmap route={routes.roadmap} />
     <Transition route={routes.transition} />
+    <NotFound route={404} />
   </site>
 
   $ = {
@@ -53,7 +53,11 @@ view Main {
     textRendering: 'optimizeLegibility',
     background: color.bg,
     position: 'relative',
-    overflow: 'hidden'
+    flexGrow: 1,
+  }
+
+  $site = {
+    flexGrow: 1
   }
 }
 

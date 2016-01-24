@@ -21,4 +21,8 @@ view Docs {
       content={docs}
       route="/docs/:slug" />
   </Page>
+
+  $ = {
+    flexGrow: 1
+  }
 }
