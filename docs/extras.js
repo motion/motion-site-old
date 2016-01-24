@@ -17,10 +17,28 @@ view Docs.Extras {
     Set it to a Promise or array of Promises that will execute and fulfill before running your app.
   </Text>
 
-  <SubTitle>Flint.decorateViews : function</SubTitle>
+  <SubTitle>Flint._decorateView : function</SubTitle>
   <Text>
-    Pass decorateViews a function that's called and passed in each view after it mounts. This allows you to decorate the view with a lot of power, like accessing its props.
+    Pass this a function to get access the the React class created. This is in testing so it's prefixed "_",
+    and for now it's required to happen above the view declaration.
   </Text>
+
+  <Code source={`
+    Flint._decorateView('Main', (Main) => {
+      return React.createClass({
+        render() {
+          return <div>
+            <h1>Decorated</h1>
+            {React.createElement(Main)}
+          </div>
+          }
+      })
+    })
+
+    view Main {
+      <h1>Hello</h1>
+    }
+  `} />
 
   <Next to='/docs/building'>Building</Next>
 }
