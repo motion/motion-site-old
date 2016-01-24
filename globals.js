@@ -10,6 +10,7 @@ const router = Flint.router
 
 const routes = {}
 routes.home = '/'
+routes.use = '/use'
 routes.examples = '/examples'
 routes.docs = '/docs'
 routes.community = '/community'
