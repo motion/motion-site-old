@@ -115,7 +115,7 @@ view Home.Head {
     bottom: 0,
     right: 0,
     width: '100%',
-    opacity: 0.15,
+    opacity: 0.1,
     transform: {
       scale: 1.2,
     }

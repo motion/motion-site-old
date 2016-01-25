@@ -82,7 +82,6 @@ view Editor {
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
     transition: 'all ease-in 300ms',
-    opacity: 0,
 
     [device.small]: {
       pointerEvents: 'none'

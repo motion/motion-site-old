@@ -16,8 +16,8 @@ view Header {
     left: 0,
     right: 0,
     zIndex: 100,
-    background: nobg ? 'rgba(0,0,0,0.1)' : style.gradient,
-    boxShadow: '0 0 4px rgba(0,0,0,0.25)',
+    background: nobg ? 'transparent' : style.gradient,
+    boxShadow: nobg ? 'transparent' : '0 0 4px rgba(0,0,0,0.25)',
 
     [device.small]: {
       marginBottom: -50,
@@ -90,9 +90,9 @@ view Nav {
 
   $a = {
     border: '1px solid transparent',
-    color: 'rgba(255,255,255,0.85)',
+    color: 'rgba(255,255,255,0.9)',
     textShadow: '0 1px 1px rgba(0,0,0,0.35)',
-    fontWeight: 300,
+    fontWeight: 500,
     borderBottom: 'none',
     fontSize: 15,
     padding: [0, 10],
