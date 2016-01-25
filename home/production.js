@@ -2,7 +2,7 @@ view Home.Production {
   <Feature>
     <Row reverse>
       <Col class="example">
-        <a href="https://emotipost.com" target="_blank"><img src="/assets/images/emoti.png" /></a>
+        <a href="https://emotipost.com" target="_blank"><img src="/assets/images/emoti.jpg" /></a>
       </Col>
 
       <Col class="content">
