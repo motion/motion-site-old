@@ -1,5 +1,5 @@
 view Home.Tools {
-  <Feature bg={`linear-gradient(${color.brand2} 60%, ${color(color.brand2).darken(0.3).hex()})`} col>
+  <Feature dark stars col>
     <Title light center>
       Seamless development with powerful tools
     </Title>
@@ -8,7 +8,8 @@ view Home.Tools {
   </Feature>
 
   $img = {
-    width: '100%',
-    margin: [0, 'auto', -40]
+    display: 'block',
+    height: 500,
+    margin: [40, 'auto', 0]
   }
 }

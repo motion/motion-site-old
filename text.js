@@ -41,7 +41,7 @@ view Title2 {
 }
 
 view SubTitle {
-  <Title root yield />
+  <Title tagName="h3" root yield />
 
   $ = {
     color: color(color.brand).darken(1).rgba(),
@@ -56,7 +56,7 @@ view IntroText {
   prop light
   prop children
 
-  <Text root class={{ small }} tagName="h3">
+  <Text root class={{ small }} tagName="h2">
     {children}
   </Text>
 

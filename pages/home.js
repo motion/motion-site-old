@@ -4,7 +4,7 @@ view Home {
   <Home.Intro />
   <Home.Platform />
   <Home.Syntax />
-  // <Home.Tools />
+  //<Home.Tools />
   <Home.Production />
   <Home.Community />
   // <Home.Triple />
