@@ -75,7 +75,7 @@ view Password {
   }
 
   on.mount(() => {
-    view.element('input')[0].focus()
+    view.element('input').focus()
   })
 
   <password>
