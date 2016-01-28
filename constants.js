@@ -50,6 +50,7 @@ style.textGradient = {
 }
 
 const light = c => color(c).alpha(0.9).css()
+const dark = c => color(c).darken(1).alpha(0.9).css()
 
 style.gradient = `linear-gradient(-30deg, ${color.brand1}, ${color.brand2})`
 

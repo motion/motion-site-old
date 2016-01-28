@@ -23,7 +23,6 @@ view Page {
   $Contain = {
     margin: 'auto',
     flexFlow: 'row',
-    padding: [40, 0, 0],
 
     [device.small]: {
       flexFlow: 'column'
@@ -48,7 +47,7 @@ view Page.Sidebar {
 
   $ = {
     width: 120,
-    margin: [30, 10, 0],
+    margin: [20, 10, 0],
     right: 20,
     userSelect: 'none',
 

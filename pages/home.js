@@ -34,7 +34,7 @@ view Home.Head {
     flexFlow: 'column',
     overflow: 'hidden',
     position: 'relative',
-    minHeight: Math.min(window.innerHeight, 680),
+    minHeight: Math.max(Math.min(window.innerHeight - 80, 800), 400),
     textShadow: '0 1px 1px rgba(0,0,0,0.35)'
   }
 
@@ -101,13 +101,8 @@ view Home.Head {
     }
   }
 
-  $bg2 = {
-    background: style.gradient,
-    opacity: 0.8
-  }
-
   $bg4 = {
-    background: `linear-gradient(rgba(0,0,0,0) 70%, rgba(0,0,0,0.25))`,
+    background: `linear-gradient(rgba(0,0,0,0) 70%, rgba(0,0,0,0))`,
     zIndex: 1,
     height: '100%'
   }
@@ -116,11 +111,9 @@ view Home.Head {
     position: 'absolute',
     bottom: 0,
     right: 0,
-    width: '100%',
-    opacity: 0.1,
-    transform: {
-      scale: 1.2,
-    }
+    top: 0,
+    left: 0,
+    opacity: 0.15
   }
 
   $lead = {

@@ -14,14 +14,14 @@ view Home.Intro {
   }
 
   <Feature col>
-    <Row>
+    <Row centered>
       <Col class="content">
         <Title>Start in seconds, not days</Title>
         <IntroText>
           No configuration. No boilerplate.<br />
           An ultra-modern React stack is just the start.
         </IntroText>
-        <Text>
+        <Text dim>
           Flint is a sensible and open stack that
           brings joy to frontend development.
         </Text>
@@ -29,11 +29,15 @@ view Home.Intro {
       <Col class="example">
       <Editor right
         lines={7}
+        large
+        lang={false}
         source={`
+          $ npm install -g flint
           $ flint new project
           $ cd project
           $ flint
-            ⇢  http://localhost:4000
+
+                       ⇢  localhost:4000
         `} />
       </Col>
     </Row>

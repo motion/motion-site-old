@@ -1,19 +1,21 @@
 view Docs.Install {
-  <Title>Installing</Title>
   <Docs.InstallContent />
-
-  <Next to='/docs/views'>Using Views</Next>
 }
 
 view Docs.InstallContent {
+  <Title>Installing</Title>
   <IntroText>Install Flint CLI and create a new app</IntroText>
+  <Text>
+    Our install script lets you choose to: fix your npm globals have permissions issues &
+    install the Atom plugin.
+  </Text>
 
   <Code lang={false} source={`
     $ sh <(curl -sL https://flint.love)
   `}/>
 
   <Text>
-    Or you can install with just npm.
+    Or you can install with just npm,
   </Text>
 
   <Code lang={false} source={`
@@ -46,4 +48,6 @@ view Docs.InstallContent {
   <Text>
     You app is now built into <code>.flint/build</code>, ready to deploy!
   </Text>
+
+  <Next to='/docs/views'>Using Views</Next>
 }

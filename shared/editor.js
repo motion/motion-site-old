@@ -28,6 +28,8 @@ view Editor {
   <content>
     <Code
       if={!view.props.iframe}
+      large={view.props.large}
+      lang={view.props.lang}
       repeat={sources}
       source={_}
       class={{hidden: _index != index}}

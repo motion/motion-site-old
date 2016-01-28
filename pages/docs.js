@@ -22,6 +22,7 @@ view Docs {
   </Page>
 
   $ = {
+    paddingTop: 40,
     flexGrow: 1
   }
 }

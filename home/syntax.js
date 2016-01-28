@@ -1,7 +1,7 @@
 import { style, color, routes, font, device } from '../constants'
 
 view Home.Syntax {
-  let demo = 'DemoCounter'
+  let demo = 'DemoVenn'
 
   <Feature col>
     <Title>Views in Javascript</Title>

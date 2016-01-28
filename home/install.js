@@ -2,15 +2,15 @@ import { style, color, routes, font, device } from '../constants'
 
 view Home.Install {
   const install = 'sh <(curl -L https://flint.love)'
-  const select = () => view.element('code').select()
+  const select = () => {
+    view.element('input').select()
+  }
 
   <Feature row>
     <title>
-      <dark>Install</dark>
+      <dark>Install:</dark>
     </title>
-
     <mainCode>
-      <prompt>$</prompt>
       <code onMouseUp={select} class="install">
         <input value={install} readOnly size={install.length - 1} />
       </code>
@@ -34,7 +34,7 @@ view Home.Install {
   }
 
   $title = {
-    fontSize: 18,
+    fontSize: 20,
     marginRight: 0,
     flexFlow: 'row',
 
@@ -44,9 +44,8 @@ view Home.Install {
   }
 
   $dark = {
-    color: '#222',
+    color: '#555',
     fontWeight: 'bold',
-    marginRight: 10
   }
 
   $Feature = {
@@ -91,7 +90,7 @@ view Home.Install {
     background: '#fff',
     borderRadius: 6,
     padding: [10, 5, 10, 10],
-    fontSize: 18,
+    fontSize: 20,
     margin: [-8, 0, -5],
     fontFamily: font.monoSpace
   }
@@ -155,9 +154,9 @@ view Help {
     opacity: hovered ? 1 : 0,
     transition: 'all ease-in 200ms',
     position: 'absolute',
-    left: hovered ? 165 : 160,
+    left: hovered ? 54 : 50,
     top: '-8%',
-    marginLeft: -120,
+    marginLeft: 0,
     width: 202,
     padding: 10,
     boxShadow: '0 0 4px rgba(0,0,0,0.2)',
