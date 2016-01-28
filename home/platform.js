@@ -6,25 +6,25 @@ view Home.Platform {
   let sections = () => ([
     {
       title: 'Editor',
-      description: <text>
+      description: <p>
         Websockets enable <Attr alt="Updates your app with each character, avoids writing to file system.">as-you-type updates</Attr> with Atom.&nbsp;
         <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Drag numbers and colors</Attr> to instantly see results.
-      </text>
+      </p>
     },
     {
       title: 'Browser',
-      description: <text>
+      description: <p>
         <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smarter hot reloads</Attr> refresh instantly & retain child state.
         <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break."> Helpful</Attr> errors from compiler.
         <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor."> Jump to editor</Attr>.
-      </text>
+      </p>
     },
     {
       title: 'Compiler',
-      description: <text>
+      description: <p>
         <Attr alt="Static style changes don't even reload Javascript for insane performance.">Static CSS extraction</Attr> gives amazing performance.
         <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> are awesome.
-      </text>
+      </p>
     },
   ])
 
@@ -56,8 +56,8 @@ view Home.Platform {
   }
 
   $small2 = {
-    width: '100%',
-    margin: [30, 0, -20],
+    width: '95%',
+    margin: [30, 0, 0],
 
     [device.small]: {
       margin: [20, 0],
@@ -66,13 +66,12 @@ view Home.Platform {
   }
 
   $sections = {
-    maxWidth: 385,
-    marginRight: 80,
-    margin: 'auto'
+    marginRight: 60,
+    width: '30%'
   }
 
   $diagram = {
-    marginLeft: 80
+    margin: [0, -40, 0, 60]
   }
 
   $section = {

@@ -3,10 +3,10 @@ import offset from 'mouse-event-offset'
 
 view DemoCircles {
   <Example flip inPage
-    inStyle={{ width: 240 }}
+    inStyle={{ width: 290 }}
     in={
       <Editor left light
-        lines={21}
+        lines={24}
         sources={[
           {
             title: 'Circles.js',
@@ -34,6 +34,7 @@ view DemoCircles {
             title: 'Circle.js',
             source: `
       import { spring, Motion } from 'react-motion'
+
       let c = () => Math.round(Math.random()*255)
       let x = spring(1, [300, 10])
       let size = scale => ({ transform: { scale } })
@@ -42,7 +43,9 @@ view DemoCircles {
         let background = [c(), c(), c()]
         let { top, left } = view.props
 
-        <Motion defaultStyle={{ x: 0 }} style={{ x }}>
+        <Motion
+          defaultStyle={{ x: 0 }}
+          style={{ x }}>
           {i => <circle style={size(i.x)} /> }
         </Motion>
 

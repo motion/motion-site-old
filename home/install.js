@@ -2,7 +2,7 @@ import { style, color, routes, font, device } from '../constants'
 
 view Home.Install {
   const install = 'sh <(curl -L https://flint.love)'
-  const select = () => view.refs.code.select()
+  const select = () => view.element('code').select()
 
   <Feature row>
     <title>

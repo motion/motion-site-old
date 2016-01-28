@@ -8,8 +8,8 @@ view Home.Syntax {
     <IntroText>Learn all of Flint in minutes:</IntroText>
 
     <Row class="nav" center>
-      <Sel active={demo} name="DemoCounter" onClick={_ => demo = _}>Counter</Sel>
       <Sel active={demo} name="DemoVenn" onClick={_ => demo = _}>Styling</Sel>
+      <Sel active={demo} name="DemoCounter" onClick={_ => demo = _}>Counter</Sel>
       <Sel active={demo} name="DemoCircles" onClick={_ => demo = _}>Animation</Sel>
     </Row>
 
@@ -20,12 +20,16 @@ view Home.Syntax {
     </Row>
   </Feature>
 
+  $IntroText = {
+    margin: [0, 0, 15]
+  }
+
   $Col = {
     padding: [30, 0]
   }
 
   $nav = {
-    margin: [-8, 'auto', 10],
+    margin: [0, 'auto', 10],
     padding: [3, 0],
 
     [device.small]: {

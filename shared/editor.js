@@ -109,7 +109,7 @@ view Toolbar {
     <tab
       repeat={view.props.tabs}
       class={{ active: _index == view.props.activeTab }}
-      onClick={view.props.changeTab.partial(_index)}>
+      onClick={() => view.props.changeTab(_index)}>
       {_}
     </tab>
   </tabs>
@@ -134,7 +134,7 @@ view Toolbar {
     userSelect: 'none',
     color: '#333',
     padding: [2, 8],
-    margin: [3, 4, 0, 0],
+    margin: [3, 4, -1, 0],
     background: 'linear-gradient(#f2f2f2, #eee)',
     border: '1px solid #ddd',
     borderBottom: 'none',

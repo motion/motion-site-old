@@ -42,7 +42,7 @@ view Card {
 view Card.List {
   <Row root spread tagName="ul" yield />
 
-  $ul = {
+  $ = {
     padding: 0
   }
 }

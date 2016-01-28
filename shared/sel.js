@@ -8,7 +8,7 @@ view Sel {
   const isActive = () => active == name
   $ = [
     {
-      fontSize: 14,
+      fontSize: 15,
       padding: [3, 12],
       margin: [0, 2]
     },
