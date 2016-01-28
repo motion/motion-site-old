@@ -1,3 +1,5 @@
+import { style, color, routes, font, device } from './constants'
+
 view Blur {
   const size = view.props.size || 500
 

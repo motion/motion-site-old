@@ -4,7 +4,7 @@ view Start {
     subtitle="Flint brings React concepts to javascript the language. It optimizes for developer experience."
   />
   <Page>
-    <Docs.Install />
+    <Docs.InstallContent />
     <Banner.Transition />
   </Page>
 

@@ -1,3 +1,5 @@
+import { style, color, routes, font, device } from '../constants'
+
 view Home.Production {
   <Feature>
     <Row reverse>

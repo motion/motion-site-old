@@ -1,5 +1,8 @@
+import { style, color, routes, font, device } from '../constants'
+
 view Code {
   prop lang = 'javascript'
+  prop large
 
   function clean(src) {
     if (!src) return
@@ -15,10 +18,10 @@ view Code {
 
   on.mount(() => {
     if (lang)
-      hljs.highlightBlock(view.refs.code)
+      hljs.highlightBlock(view.element())
   })
 
-  <code ref="code" class={lang || 'javascript'}>
+  <code class={{ [lang]: true, large }}>
     {clean(view.props.source) || view.props.children}
   </code>
 
@@ -32,6 +35,13 @@ view Code {
     borderRadius: 4,
     fontSize: 14,
     lineHeight: 1.4,
-    whiteSpace: 'pre'
+    whiteSpace: 'pre',
+    fontFamily: font.monoSpace
+  }
+
+  $large = {
+    fontSize: 16,
+    lineHeight: 1.5,
+    minWidth: '100%'
   }
 }

@@ -1,3 +1,5 @@
+import { style, color, routes, font, device } from '../constants'
+
 view Contain {
   <contain id={view.props.id}>
     <content class={{ straight: view.props.straight }}>

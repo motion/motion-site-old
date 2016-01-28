@@ -1,3 +1,5 @@
+import { style, color, routes, font, device } from './constants'
+
 view Page {
   <Contain>
     <Page.Sidebar if={view.props.base} yield />
@@ -39,8 +41,8 @@ view Page.Sidebar {
 
   <a
     repeat={view.props.list}
-    class={{ active: router.isActive(url(_.slug)) }}
-    key={_index} onClick={router.link(url(_.slug))}>
+    class={{ active: Flint.router.isActive(url(_.slug)) }}
+    key={_index} onClick={Flint.router.link(url(_.slug))}>
     {_.title}
   </a>
 

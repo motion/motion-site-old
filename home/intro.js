@@ -1,3 +1,5 @@
+import { style, color, routes, font, device } from '../constants'
+
 let already = false
 
 view Home.Intro {
@@ -11,33 +13,28 @@ view Home.Intro {
     frameWin.body.dispatchEvent(event)
   }
 
-  <Feature>
-    <Row centered>
-      <Col grow={2} class="content">
+  <Feature col>
+    <Row>
+      <Col class="content">
         <Title>Start in seconds, not days</Title>
         <IntroText>
           No configuration. No boilerplate.<br />
           An ultra-modern React stack is just the start.
         </IntroText>
-
-        <Text small>
-          Flint is an <b>extensible</b> and <b>sensible</b> stack designed to let you be more productive and creative.
+        <Text>
+          Flint is a sensible and open stack that
+          brings joy to frontend development.
         </Text>
       </Col>
       <Col class="example">
-        <Editor right
-          lines={7}
-          id="headeriframe"
-          onLoad={() => {
-          if (already) {
-          triggerEvent('headeriframe', 'end')
-          return
-          }
-          start = true
-          already = true
-          triggerEvent('headeriframe', 'start')
-          }}
-        iframe={`/assets/examples/example.html`} />
+      <Editor right
+        lines={7}
+        source={`
+          $ flint new project
+          $ cd project
+          $ flint
+            ⇢  http://localhost:4000
+        `} />
       </Col>
     </Row>
   </Feature>

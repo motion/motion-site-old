@@ -1,3 +1,5 @@
+import { style, font } from '../constants'
+
 view FAQ {
   <Contain pad>
     <question>

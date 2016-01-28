@@ -1,3 +1,5 @@
+import { style, color, routes, font, device } from '../constants'
+
 view Home.Features {
   <Feature col>
     <Title center>Everything you need to be productive today</Title>

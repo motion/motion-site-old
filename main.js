@@ -1,3 +1,8 @@
+import { style, color, routes, font, device } from './constants'
+
+if (window.location.search == '?slack')
+  window.location = 'https://flint-slack.herokuapp.com/'
+
 // import tapEvents from 'react-tap-event-plugin'
 // tapEvents()
 
@@ -70,12 +75,11 @@ view Password {
   }
 
   on.mount(() => {
-    view.refs.input.focus()
+    view.element('input')[0].focus()
   })
 
   <password>
     <input
-      ref="input"
       onEnter={checkPass}
       sync={password} />
 

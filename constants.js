@@ -1,11 +1,5 @@
 import chroma from 'chroma-js'
 
-if (window.location.search == '?demo')
-  window.location = 'https://www.youtube.com/watch?t=1&v=VNfkk6lH0gg'
-
-if (window.location.search == '?slack')
-  window.location = 'https://flint-slack.herokuapp.com/'
-
 const router = Flint.router
 
 const routes = {}
@@ -33,7 +27,7 @@ color.strip = '#fff'
 const font = {}
 font.title = '"Bitter", Slab, Georgia, serif'
 font.sansSerif = '"Source Sans Pro", "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif'
-font.monoSpace = '"Fira Code", Menlo, Meslo, Inconsolata, Source Code Pro, monospace'
+font.monoSpace = 'Source Code Pro, Menlo, Meslo, Inconsolata, monospace'
 
 const device = {}
 device.small = '@media (max-width: 850px)'
@@ -73,12 +67,15 @@ util.linkScroll = e => {
   e.preventDefault()
 }
 
-window.style = style
-window.font = font
-window.routes = routes
-window.router = router
-window.device = device
-window.color = color
-window.util = util
+const gradient = (a, b) => `linear-gradient(${a}, ${b})`
 
-window.gradient = (a, b) => `linear-gradient(${a}, ${b})`
+export default {
+  style,
+  font,
+  routes,
+  router,
+  device,
+  color,
+  util,
+  gradient
+}

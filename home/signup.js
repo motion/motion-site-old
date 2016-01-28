@@ -1,3 +1,5 @@
+import { color } from '../constants'
+
 view Signup {
   <Contain>
     <Title light center>Sign up to keep up with releases:</Title>

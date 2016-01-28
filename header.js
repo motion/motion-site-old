@@ -1,3 +1,5 @@
+import { style, color, routes, font, device } from './constants'
+
 view Header {
   prop nobg
 
@@ -58,15 +60,15 @@ let already = false
 
 view Nav {
   function showInstall(e) {
-    if (router.isActive(routes.home))
+    if (Flint.router.isActive(routes.home))
       util.linkScroll(e)
     else
-      router.go(routes.home)
+      Flint.router.go(routes.home)
   }
 
   const routeProps = path => ({
-    onClick: router.link(path),
-    className: { active: router.isActive(path) }
+    onClick: Flint.router.link(path),
+    className: { active: Flint.router.isActive(path) }
   })
 
   <a repeat={[
@@ -111,7 +113,7 @@ view Nav {
 }
 
 view Logo {
-  <img root onClick={router.link(routes.home)} src="/assets/images/flintlogo.png" />
+  <img root onClick={Flint.router.link(routes.home)} src="/assets/images/flintlogo.png" />
 
   const width = 700
   const height = 198

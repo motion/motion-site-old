@@ -1,3 +1,5 @@
+import { style, color, routes, font, device, util } from '../constants'
+
 view Social {
   <a target="_blank" href="http://github.com/flintjs/flint">
     <IconGithub />

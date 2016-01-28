@@ -1,3 +1,5 @@
+import { style, color, routes, font, device } from '../constants'
+
 view Welcome {
   <welcome>
     <span class="wow">Frontend, without the framework</span>

@@ -1,3 +1,5 @@
+import { style, color } from '../constants'
+
 view Feature {
   prop bg, center, col, odd, slim, dark, reverse, children, stars
 

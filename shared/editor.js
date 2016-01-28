@@ -1,3 +1,5 @@
+import { style, color, routes, font, device } from '../constants'
+
 const light = '#fefefe'
 
 view Editor {
@@ -66,6 +68,8 @@ view Editor {
     margin: 0,
     padding: 13,
     border: 'none',
+    background: 'none',
+    color: view.props.light ? 'auto' : '#fff',
     boxShadow: 'none'
   }
 

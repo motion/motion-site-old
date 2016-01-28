@@ -1,28 +1,30 @@
+import { style, color, routes, font, device } from '../constants'
+
 view Home.Platform {
   let hoverIndex = false
 
   let sections = () => ([
     {
       title: 'Editor',
-      description: <Text small>
+      description: <text>
         Websockets enable <Attr alt="Updates your app with each character, avoids writing to file system.">as-you-type updates</Attr> with Atom.&nbsp;
         <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Drag numbers and colors</Attr> to instantly see results.
-      </Text>
+      </text>
     },
     {
       title: 'Browser',
-      description: <Text small>
+      description: <text>
         <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smarter hot reloads</Attr> refresh instantly & retain child state.
         <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break."> Helpful</Attr> errors from compiler.
         <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor."> Jump to editor</Attr>.
-      </Text>
+      </text>
     },
     {
       title: 'Compiler',
-      description: <Text small>
+      description: <text>
         <Attr alt="Static style changes don't even reload Javascript for insane performance.">Static CSS extraction</Attr> gives amazing performance.
         <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> are awesome.
-      </Text>
+      </text>
     },
   ])
 

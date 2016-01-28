@@ -65,7 +65,7 @@ view Circles {
   let coords = []
 
   on.mount(() => {
-    const targetY = util.docOffset(view.refs.circles).top + 400
+    // const targetY = util.docOffset(view.refs.circles).top + 400
 
     if (!coords.length) {
       coords.push([200, 200])
@@ -76,7 +76,7 @@ view Circles {
     coords.push(offset(e))
   }
 
-  <circles ref="circles" onClick={addCircle}>
+  <circles onClick={addCircle}>
     <Circle repeat={coords} left={_[0]} top={_[1]} />
     <desc>
       Try clicking around to add circles

@@ -1,3 +1,5 @@
+import { style, font } from './constants'
+
 const size = 100
 
 view Icon.Window {

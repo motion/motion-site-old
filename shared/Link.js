@@ -1,3 +1,5 @@
+import { style } from '../constants'
+
 view Link {
   let to = view.props.to
 

@@ -1,3 +1,5 @@
+import { style, color } from '../constants'
+
 const sanitize = str => str ? str.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s/g, '-') : ''
 
 view Title {
@@ -15,8 +17,8 @@ view Title {
 
   $ = {
     fontWeight: 400,
-    fontSize: 27,
-    margin: [30, 0, 10],
+    fontSize: 30,
+    margin: [20, 0],
     textAlign: center ? `center` : `auto`,
     color: 'rgba(0,0,0,0.7)'
   }
@@ -65,7 +67,7 @@ view IntroText {
     lineHeight: '2rem',
     textAlign: center ? `center` : `auto`,
     color: light ? 'auto' : 'rgba(0,0,0,0.65)',
-    marginBottom: 20,
+    marginBottom: 10,
     fontWeight: 300
   }
 
@@ -81,7 +83,7 @@ view Text {
   prop dim
   prop small
 
-  <p root yield class={{ small, light, dim }} />
+  <text tagName="p" root yield class={{ small, light, dim }} />
 
   $ = {
     fontWeight: 400,

@@ -1,3 +1,5 @@
+import { color } from '../constants'
+
 view DemoCounter {
   <Example flip inPage
     inStyle={{ width: 0 }}

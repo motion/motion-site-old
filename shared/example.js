@@ -1,3 +1,5 @@
+import { style, color, routes, font, device } from '../constants'
+
 view Example {
   <Contain maxWidth={view.props.maxWidth || 1000}>
     <in>{view.props.in}</in>

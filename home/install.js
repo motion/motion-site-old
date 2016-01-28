@@ -1,3 +1,5 @@
+import { style, color, routes, font, device } from '../constants'
+
 view Home.Install {
   const install = 'sh <(curl -L https://flint.love)'
   const select = () => view.refs.code.select()
@@ -8,9 +10,9 @@ view Home.Install {
     </title>
 
     <mainCode>
-      <dollar>$</dollar>
+      <prompt>$</prompt>
       <code onMouseUp={select} class="install">
-        <input ref="code" value={install} readOnly size={install.length - 1} />
+        <input value={install} readOnly size={install.length - 1} />
       </code>
       <Help />
     </mainCode>
@@ -54,8 +56,8 @@ view Home.Install {
     flexWrap: 'wrap',
   }
 
-  $dollar = {
-    marginTop: 10,
+  $prompt = {
+    margin: ['auto'],
     fontSize: 20,
     [device.small]: { display: 'none' }
   }
@@ -88,7 +90,7 @@ view Home.Install {
     color: 'rgb(13, 149, 217)',
     background: '#fff',
     borderRadius: 6,
-    padding: [10, 5],
+    padding: [10, 5, 10, 10],
     fontSize: 18,
     margin: [-8, 0, -5],
     fontFamily: font.monoSpace

@@ -1,3 +1,5 @@
+import { color } from '../constants'
+
 view Button {
   <button yield />
 
