@@ -1,30 +1,75 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Home.Install {
+view Install.Input {
   const install = 'sh <(curl -L https://flint.love)'
   const select = () => {
     view.element('input').select()
   }
 
+  <code onMouseUp={select} class="install">
+    <input value={install} readOnly size={install.length - 1} />
+  </code>
+
+  $code = {
+    background: 'none',
+    border: 'none'
+  }
+
+  $install = {
+    flexFlow: 'row',
+    color: '#555',
+    margin: [10, 0, 7],
+  }
+
+  $input = {
+    border: 'none',
+    color: 'rgb(13, 149, 217)',
+    background: '#fff',
+    borderRadius: 6,
+    padding: [10, 5, 10, 10],
+    fontSize: 20,
+    margin: [-8, 0, -5],
+    fontFamily: font.monoSpace
+  }
+}
+
+view Install.Shields {
+  <afterward if={false}>
+    <shields>
+      <a href="https://www.npmjs.com/package/flint" target="_blank">
+        <img class="shield" src="https://img.shields.io/npm/dm/flint.svg" />
+      </a>
+      <img class="shield" src="https://img.shields.io/npm/v/flint.svg" />
+    </shields>
+  </afterward>
+
+  $shields = {
+    flexFlow: 'row',
+    margin: [20, 'auto', 0],
+    height: 40
+  }
+
+  $a = {
+    margin: 'auto'
+  }
+
+  $shield = {
+    opacity: 0.7,
+    hover: {
+      opacity: 1
+    }
+  }
+}
+
+view Home.Install {
   <Feature row>
     <title>
       <dark>Install:</dark>
     </title>
     <mainCode>
-      <code onMouseUp={select} class="install">
-        <input value={install} readOnly size={install.length - 1} />
-      </code>
+      <Install.Input />
       <Help />
     </mainCode>
-
-    <afterward if={false}>
-      <shields>
-        <a href="https://www.npmjs.com/package/flint" target="_blank">
-          <img class="shield" src="https://img.shields.io/npm/dm/flint.svg" />
-        </a>
-        <img class="shield" src="https://img.shields.io/npm/v/flint.svg" />
-      </shields>
-    </afterward>
   </Feature>
 
   $ = {
@@ -55,12 +100,6 @@ view Home.Install {
     flexWrap: 'wrap',
   }
 
-  $prompt = {
-    margin: ['auto'],
-    fontSize: 20,
-    [device.small]: { display: 'none' }
-  }
-
   $Help = {
     [device.small]: {
       display: 'none'
@@ -71,49 +110,6 @@ view Home.Install {
     flexFlow: 'row',
     margin: 'auto',
     [device.small]: { fontSize: 20, marginTop: 5 },
-  }
-
-  $code = {
-    background: 'none',
-    border: 'none'
-  }
-
-  $install = {
-    flexFlow: 'row',
-    color: '#555',
-    margin: [10, 0, 7],
-  }
-
-  $input = {
-    border: 'none',
-    color: 'rgb(13, 149, 217)',
-    background: '#fff',
-    borderRadius: 6,
-    padding: [10, 5, 10, 10],
-    fontSize: 20,
-    margin: [-8, 0, -5],
-    fontFamily: font.monoSpace
-  }
-
-  $shields = {
-    flexFlow: 'row',
-    margin: [20, 'auto', 0],
-    height: 40
-  }
-
-  $a = {
-    margin: 'auto'
-  }
-
-  $extra = {
-    fontFamily: font.monoSpace
-  }
-
-  $shield = {
-    opacity: 0.7,
-    hover: {
-      opacity: 1
-    }
   }
 }
 

@@ -6,10 +6,10 @@ view Button {
   $ = {
     color: '#fff',
     textShadow: '0 1px 0 rgba(0,0,0,0.2)',
-    boxShadow: '0 0 10px rgba(0,0,0,0.2)',
-    background: color.brand1,
+    boxShadow: '0 0 10px rgba(0,0,0,0.1)',
+    background: '#333',
     border: 'none',
-    borderBottom: [2, 'solid', color(color.brand1).darken(1).hex()],
+    borderBottom: [1, 'solid', color(color.brand1).darken(1).hex()],
     borderRadius: 5,
     fontSize: 18,
     padding: [8, 28],
