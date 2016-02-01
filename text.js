@@ -17,8 +17,8 @@ view Title {
 
   $ = {
     fontWeight: 400,
-    fontSize: 30,
-    margin: [20, 0],
+    fontSize: 28,
+    margin: [20, 0, 2],
     textAlign: center ? `center` : `auto`,
     color: 'rgba(0,0,0,0.7)'
   }
@@ -28,7 +28,7 @@ view Title {
   }
 
   $big = {
-    fontSize: 32,
+    fontSize: 30,
     color: color.brand1
   }
 }

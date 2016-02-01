@@ -18,12 +18,12 @@ view Header {
     left: 0,
     right: 0,
     zIndex: 100,
-    background: nobg ? 'rgba(0,0,0,0.1)' : style.gradient,
+    background: nobg ? 'rgba(0,0,0,0.05)' : style.gradient,
     boxShadow: nobg ? 'transparent' : '0 0 4px rgba(0,0,0,0.25)',
 
     [device.small]: {
       marginBottom: -50,
-      background: style.gradient,
+      background: color.brand,
       boxShadow: 'none',
       position: 'relative'
     }
@@ -74,8 +74,8 @@ view Nav {
   <a repeat={[
     { children: 'Start', ...routeProps(routes.start)  },
     { children: 'Docs', ...routeProps(routes.docs + '/intro')  },
-    { children: 'Learn', ...routeProps('/learn')  },
-    { children: 'Move to Flint', ...routeProps('/transition')  },
+    { children: 'Examples', ...routeProps('/learn')  },
+    { children: 'Migrate', ...routeProps('/transition')  },
   ]} {..._} />
 
   $ = {
@@ -92,9 +92,9 @@ view Nav {
 
   $a = {
     border: '1px solid transparent',
-    color: 'rgba(255,255,255,0.9)',
-    textShadow: '0 1px 1px rgba(0,0,0,0.35)',
-    fontWeight: 500,
+    color: 'rgba(255,255,255,0.8)',
+    textShadow: '0 1px 1px rgba(0,0,0,0.15)',
+    fontWeight: 300,
     borderBottom: 'none',
     fontSize: 15,
     padding: [0, 10],

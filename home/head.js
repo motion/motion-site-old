@@ -39,12 +39,12 @@ view Demo {
 
 view Home.Head {
   <Contain>
-    <Stars num={100} />
+    <Stars num={25} />
     <banner>
       <h1>Great applications, faster than ever before</h1>
       <IntroText light>
-        Flint is an environment that combines the best from open source
-        into one cohesive, insanely smart package.
+        Flint is an environment that brings React together
+        into a&nbsp;cohesive, insanely smart package.
       </IntroText>
       <Button if={false}><lt>Watch the video now</lt> Coming soon!</Button>
     </banner>
@@ -58,8 +58,8 @@ view Home.Head {
     flexFlow: 'column',
     overflow: 'hidden',
     position: 'relative',
-    height: 820,
-    textShadow: '0 1px 1px rgba(0,0,0,0.35)',
+    height: 740,
+    textShadow: '0 1px 1px rgba(0,0,0,0.25)',
     padding: [50, 0, 0]
   }
 
@@ -68,7 +68,7 @@ view Home.Head {
       bottom: 0,
       left: 0,
       right: 0,
-      boxShadow: '0 0 10px rgba(0,0,0,0.5)',
+      boxShadow: '0 0 15px rgba(0,0,0,0.5)',
       zIndex: 10000000,
       height: 1,
       background: '#fff'
@@ -97,7 +97,7 @@ view Home.Head {
     fontSize: 34,
     fontWeight: 300,
     letterSpacing: -1,
-    textShadow: '0 2px 1px rgba(0,0,0,0.2)',
+    textShadow: '0 1px 1px rgba(0,0,0,0.2)',
     margin: [0, 'auto', 20],
     lineHeight: 1.3,
   }
