@@ -15,9 +15,9 @@ routes.transition = '/transition'
 
 const color = chroma || function(){}
 color.alt = '#fdfdfa'
-color.brand = '#18c7de'
-color.brand1 = '#de166a'
-color.brand2 = '#1cb5df'
+color.brand = '#38a0cc'
+color.brand1 = '#5b18d9'
+color.brand2 = '#2ed6a9'
 color.green = '#259630'
 color.blue = 'rgb(48, 111, 207)'
 color.darkred = color(color.brand)//.darken(0.3)
