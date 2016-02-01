@@ -1,34 +1,45 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Browser {
-  <browser>
-    <head>
-      <url>localhost</url>
-    </head>
-    <content yield />
-  </browser>
+view Demo {
+  <mask>
+    <BackgroundVideo />
+  </mask>
 
   $ = {
-    width: '130%',
-    marginLeft: '-15%',
-    height: 500,
+    width: '110%',
+    marginLeft: '-5%',
+    height: 420,
     position: 'relative',
     borderRadius: 5,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
     boxShadow: '0 10px 60px rgba(0,0,0,0.25)',
     overflow: 'hidden',
-    background: '#fff',
   }
 
-    $head = {
-      height: 50,
-      background: 'linear-gradient(#eee, #f2f2f2)'
-    }
+  $mask = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    WebkitMaskImage: `url(/assets/images/browsermask.svg)`
+  }
+
+  $BackgroundVideo = {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    left: 0,
+    top: -18,
+    maxWidth: '100%',
+  }
+
 }
 
 view Home.Head {
   <Contain>
+    <Stars num={100} />
     <banner>
       <h1>Great applications, faster than ever before</h1>
       <IntroText light>
@@ -37,9 +48,7 @@ view Home.Head {
       </IntroText>
       <Button if={false}><lt>Watch the video now</lt> Coming soon!</Button>
     </banner>
-    <Browser>
-      <BackgroundVideo />
-    </Browser>
+    <Demo />
   </Contain>
   <selfShadow />
 
@@ -97,15 +106,6 @@ view Home.Head {
     color: 'rgba(255,255,255,0.9)',
     margin: 'auto',
     padding: [0, 110]
-  }
-
-  $BackgroundVideo = {
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-    left: 0,
-    top: -22,
-    maxWidth: '100%'
   }
 
   $lead = {

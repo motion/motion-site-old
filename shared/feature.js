@@ -3,7 +3,7 @@ import { style, color } from '../constants'
 view Feature {
   prop bg, center, col, odd, slim, dark, reverse, children, stars
 
-  <stars if={stars} repeat={50} />
+  <Stars if={stars} num={50} />
   <Contain maxWidth={1100}>{children}</Contain>
 
   const padheight = slim ? 0 : 75
@@ -19,7 +19,15 @@ view Feature {
     position: 'relative'
   }
 
-  $stars = {
+  $Contain = {
+    flexFlow: col ? `column` : reverse ? `row-reverse` : `row`,
+  }
+}
+
+view Stars {
+  <star repeat={view.props.num} />
+
+  $star = {
     position: 'absolute',
     top: Math.random() * (_index + 100),
     left: Math.random() * (_index + 1000),
@@ -29,9 +37,5 @@ view Feature {
     height: 1,
     background: '#fff',
     zIndex: 10,
-  }
-
-  $Contain = {
-    flexFlow: col ? `column` : reverse ? `row-reverse` : `row`,
   }
 }
