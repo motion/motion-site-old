@@ -2,6 +2,7 @@ import { style, color, routes, font, device } from './constants'
 
 view Page {
   <Contain>
+    <sidebar if={view.props.sidebar}>{view.props.sidebar}</sidebar>
     <Page.Sidebar if={view.props.base} yield />
     <inner>
       {view.props.children}
@@ -30,24 +31,20 @@ view Page {
   }
 
   $inner = {
-    padding: [0, 30, 0, 30],
+    padding: [0, 40, 0, 40],
     width: '100%'
   }
 }
 
 view Page.Sidebar {
-  const url = slug => view.props.base + '/' + slug
-
-  <a
-    repeat={view.props.list}
-    class={{ active: Flint.router.isActive(url(_.slug)) }}
-    key={_index} onClick={Flint.router.link(url(_.slug))}>
-    {_.title}
-  </a>
+  <links if={view.props.list}>
+    <Page.Link repeat={view.props.list} {..._} />
+  </links>
+  <content if={!view.props.list} yield />
 
   $ = {
     width: 120,
-    margin: [20, 10, 0],
+    margin: [20, 10],
     right: 20,
     userSelect: 'none',
 
@@ -59,13 +56,23 @@ view Page.Sidebar {
       justifyContent: 'center',
     }
   }
+}
+
+view Page.Link {
+  const url = slug => view.props.base + '/' + slug
+
+  <a
+    class={{ active: Flint.router.isActive(url(view.props.slug)) }}
+    onClick={Flint.router.link(url(view.props.slug))}>
+    {view.props.title}
+  </a>
 
   $a = {
     borderRight: [3, 'solid', 'transparent'],
-    color: '#777',
+    color: '#555',
     fontSize: 18,
     whiteSpace: 'nowrap',
-    padding: [2, 16],
+    padding: [0, 13],
     margin: [2, 0],
     minWidth: 130,
     display: 'flex',

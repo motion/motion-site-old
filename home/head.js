@@ -34,12 +34,11 @@ view Demo {
     top: -18,
     maxWidth: '100%',
   }
-
 }
 
 view Home.Head {
   <Contain>
-    <Stars num={100} />
+    <Stars num={50} />
     <banner>
       <h1>Great applications, faster than ever before</h1>
       <IntroText light>
