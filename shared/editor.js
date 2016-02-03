@@ -3,17 +3,17 @@ import { style, color, routes, font, device } from '../constants'
 const light = '#fefefe'
 
 view Editor {
+  prop sources, source
+
   let index = 0
-  let tabs, sources = []
+  let tabs, code = []
   let loaded = false
 
-  if (view.props.sources) {
-    sources = view.props.sources.map(s => s.source)
-    tabs = view.props.sources.map(s => s.title)
-  }
-  else {
-    sources = [view.props.source]
-  }
+  on.props(() => {
+    sources = sources || [source]
+    code = sources.map(s => s.source)
+    tabs = sources.map(s => s.title)
+  })
 
   function loadFrame() {
     loaded = true
@@ -63,7 +63,7 @@ view Editor {
   }
 
   $content = {
-    overflow: 'scroll',
+    overflow: 'auto',
   }
 
   $Code = {
@@ -100,6 +100,11 @@ view Editor {
 }
 
 view Toolbar {
+  prop tabs = []
+  prop activeTab = 0
+  prop changeTab = Flint.noop
+  prop light = false
+
   const demoBorder = 4
 
   <bar>
@@ -107,16 +112,16 @@ view Toolbar {
     <ctrl class="max" />
     <ctrl class="open" />
   </bar>
-  <tabs if={view.props.tabs}>
+  <tabs if={tabs.length}>
     <tab
-      repeat={view.props.tabs}
-      class={{ active: _index == view.props.activeTab }}
-      onClick={() => view.props.changeTab(_index)}>
+      repeat={tabs}
+      class={{ active: _index == activeTab }}
+      onClick={() => changeTab(_index)}>
       {_}
     </tab>
   </tabs>
 
-  const borderColor = view.props.light ? '#fff' : '#222'
+  const borderColor = light ? '#fff' : '#222'
   const border = '1px solid ' + borderColor
 
   $ = {

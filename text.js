@@ -28,7 +28,7 @@ view Title {
   }
 
   $big = {
-    fontSize: 32,
+    fontSize: 30,
     color: color.brand1
   }
 }
