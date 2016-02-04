@@ -42,8 +42,8 @@ view Home.Head {
     <banner>
       <h1>Great applications, faster than ever before</h1>
       <IntroText light>
-        Flint is an environment that brings React together
-        into a&nbsp;cohesive, insanely smart package.
+        Motion is an environment that brings React
+        into one cohesive, insanely smart package.
       </IntroText>
       <Button if={false}><lt>Watch the video now</lt> Coming soon!</Button>
     </banner>
@@ -57,7 +57,7 @@ view Home.Head {
     flexFlow: 'column',
     overflow: 'hidden',
     position: 'relative',
-    height: 740,
+    height: Math.min(window.innerHeight, 820),
     textShadow: '0 1px 1px rgba(0,0,0,0.25)',
     padding: [50, 0, 0]
   }
@@ -73,53 +73,53 @@ view Home.Head {
       background: '#fff'
     }
 
-  $Button = {
-    margin: [25, 0, 0],
-    transition: 'all linear 200ms',
-    hover: { transform: { scale: 1.1 } }
-  }
+    $Button = {
+      margin: [25, 0, 0],
+      transition: 'all linear 200ms',
+      hover: { transform: { scale: 1.1 } }
+    }
 
-  $lt = {
-    textDecoration: 'line-through',
-    opacity: 0.5,
-  }
+    $lt = {
+      textDecoration: 'line-through',
+      opacity: 0.5,
+    }
 
-  $banner = {
-    margin: ['auto', 'auto'],
-    textAlign: 'center',
-    padding: [0, '10%'],
-    zIndex: 1000,
-    fontWeight: 600
-  }
+    $banner = {
+      margin: ['auto', 'auto'],
+      textAlign: 'center',
+      padding: [0, '10%'],
+      zIndex: 1000,
+      fontWeight: 600
+    }
 
-  $h1 = {
-    fontSize: 34,
-    fontWeight: 300,
-    letterSpacing: -1,
-    textShadow: '0 1px 1px rgba(0,0,0,0.2)',
-    margin: [0, 'auto', 20],
-    lineHeight: 1.3,
-  }
+    $h1 = {
+      fontSize: 34,
+      fontWeight: 300,
+      letterSpacing: -1,
+      textShadow: '0 1px 1px rgba(0,0,0,0.2)',
+      margin: [0, 'auto', 20],
+      lineHeight: 1.3,
+    }
 
-  $IntroText = {
-    color: 'rgba(255,255,255,0.9)',
-    margin: 'auto',
-    padding: [0, 110]
-  }
+    $IntroText = {
+      color: 'rgba(255,255,255,0.9)',
+      margin: 'auto',
+      padding: [0, 110]
+    }
 
-  $lead = {
-    fontSize: 38,
-    lineHeight: '3.0rem',
-    fontWeight: 700
-  }
+    $lead = {
+      fontSize: 38,
+      lineHeight: '3.0rem',
+      fontWeight: 700
+    }
 
-  $mid = {
-    padding: [20, 0],
-    position: 'relative',
-    zIndex: 10
-  }
+    $mid = {
+      padding: [20, 0],
+      position: 'relative',
+      zIndex: 10
+    }
 
-  $text = {
-    marginRight: 40
-  }
+    $text = {
+      marginRight: 40
+    }
 }
