@@ -1,10 +1,12 @@
 import { style, color, routes, font, device } from './constants'
 
 view Page {
+  prop base, children
+
   <Contain>
-    <Page.Sidebar if={view.props.base} yield />
+    <Page.Sidebar if={base} yield />
     <inner>
-      {view.props.children}
+      {children}
     </inner>
   </Contain>
   <Footer />
@@ -36,10 +38,11 @@ view Page {
 }
 
 view Page.Sidebar {
-  const url = slug => view.props.base + '/' + slug
+  prop base, list
 
-  <a
-    repeat={view.props.list}
+  const url = slug => base + '/' + slug
+
+  <a repeat={list}
     class={{ active: Flint.router.isActive(url(_.slug)) }}
     key={_index} onClick={Flint.router.link(url(_.slug))}>
     {_.title}
@@ -96,17 +99,12 @@ view Page.Sidebar {
 }
 
 view RoutedContent {
-  let el
-
-  on.props(() => {
-    el = view.props.content.filter(x => x.slug == view.props.params.slug)[0]
-  })
+  prop parent, content, params
+  prop el = content.filter(item => item.slug == params.slug)[0]
 
   <body>
-    {view.el(`${view.props.parent}.${el.view}`)}
+    {view.el(`${parent}.${el.view}`)}
   </body>
 
-  $body = {
-    width: '100%'
-  }
+  $body = { width: '100%' }
 }

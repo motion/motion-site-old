@@ -14,10 +14,8 @@ view Learn {
     title="Learn Flint"
     subtitle="Get familiar with Flint through these quick tutorials."
   />
-
   <Page>
     <SubTitle>Introduction</SubTitle>
-
     <Card.List>
       <Card repeat={examples} title={_.title} onClick={() => Flint.router.go(`/examples/${_.slug}`)}>
         {_.description}

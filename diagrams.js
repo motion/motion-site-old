@@ -3,17 +3,13 @@ import { style, font } from './constants'
 const size = 100
 
 view Icon.Window {
-  let highlight
-
-  on.props(() => {
-    highlight = view.props.highlight
-  })
+  prop highlight, top, children
 
   <window class={{ highlight }}>
     <Toolbar light />
-    {view.props.top}
+    {top}
     <inner>
-      {view.props.children}
+      {children}
     </inner>
   </window>
 
@@ -73,12 +69,9 @@ view Icon.Editor {
 }
 
 view Icon.Flint {
-  let pulsing = false
-  let highlight
+  prop highlight
 
-  on.props(() => {
-    highlight = view.props.highlight
-  })
+  let pulsing = false
 
   on.every(1000, () => pulsing = !pulsing)
 
@@ -100,14 +93,8 @@ view Icon.Flint {
     height: size,
     margin: -2,
     transition: 'all ease-in 200ms',
-    transform: {
-      scale: 0.9
-    },
-    // filter: 'grayscale(1) brightness(2)',
-
-    hover: {
-      filter: 'none'
-    }
+    transform: { scale: 0.9 },
+    hover: { filter: 'none' }
   }
 
   $pulse = {

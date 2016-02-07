@@ -18,11 +18,7 @@ view Blur {
 }
 
 view Row {
-  prop reverse
-  prop center
-  prop centered
-  prop spread
-  prop contain
+  prop reverse, center, centered, spread, contain
 
   <row root class={{ contain }} yield />
 

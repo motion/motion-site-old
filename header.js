@@ -56,27 +56,15 @@ view Header {
   }
 }
 
-let already = false
-
 view Nav {
-  function showInstall(e) {
-    if (Flint.router.isActive(routes.home))
-      util.linkScroll(e)
-    else
-      Flint.router.go(routes.home)
-  }
-
-  const routeProps = path => ({
-    onClick: Flint.router.link(path),
-    className: { active: Flint.router.isActive(path) }
-  })
-
-  <a repeat={[
+  const navs = [
     { children: 'Start', ...routeProps(routes.start)  },
     { children: 'Docs', ...routeProps(routes.docs + '/intro')  },
     { children: 'Examples', ...routeProps('/learn')  },
     { children: 'Migrate', ...routeProps('/transition')  },
-  ]} {..._} />
+  ]
+
+  <a repeat={navs} {..._} />
 
   $ = {
     userSelect: 'none',
@@ -112,6 +100,20 @@ view Nav {
   }
 }
 
+function routeProps(path) {
+  return {
+    onClick: Flint.router.link(path),
+    className: { active: Flint.router.isActive(path) }
+  }
+}
+
+function showInstall(e) {
+  if (Flint.router.isActive(routes.home))
+    util.linkScroll(e)
+  else
+    Flint.router.go(routes.home)
+}
+
 view Logo {
   <img root onClick={Flint.router.link(routes.home)} src="/assets/images/flintlogo.png" />
 
@@ -132,11 +134,14 @@ view Logo {
 }
 
 let finished = false
+let already = false
 
 view Desc {
+  prop already, start
+
   const betweenPhrase = 3000
   const typeSpeed = 130
-  let started = view.props.start
+  let started = start
   let how = ''
   let phrases = ['faster', 'creatively', 'with ease']
   let phrasePos = 0
@@ -144,7 +149,7 @@ view Desc {
 
   on.mount(run)
   on.unmount(stop)
-  on.props(({ already, start }) => {
+  on.props(() => {
     if (already && finished) {
       how = phrases[2]
       return

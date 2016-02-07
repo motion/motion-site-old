@@ -18,22 +18,18 @@ view Home.Triple {
   <Feature odd center col>
     <Title>Triple section</Title>
     <IntroText>A platform to make all your tools talk</IntroText>
-
     <Row class="diagrams">
       <Col>
         <Icon.Browser />
         <IntroText class="sub">Browser</IntroText>
-
       </Col>
       <Col>
         <Icon.Flint />
         <IntroText class="sub">Compiler</IntroText>
-
       </Col>
       <Col>
         <Icon.Editor />
         <IntroText class="sub">Editor</IntroText>
-
       </Col>
     </Row>
   </Feature>

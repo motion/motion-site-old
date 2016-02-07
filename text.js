@@ -6,11 +6,12 @@ view Title {
   prop center
   prop light
   prop big
+  prop children
 
   <Text
     root
     yield
-    id={sanitize(view.props.children)}
+    id={sanitize(children)}
     class={{ light, big }}
     tagName="h2"
   />
