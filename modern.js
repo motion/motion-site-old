@@ -3,12 +3,14 @@ let already = false
 view Home.Modern {
   let start = already || false
 
-  function triggerEvent(id, name) {
-    let event = document.createEvent('CustomEvent')
-    event.initCustomEvent(name, true, true, null)
-    let frame = document.getElementById(id)
-    let frameWin = frame.contentDocument || frame.contentWindow.document
-    frameWin.body.dispatchEvent(event)
+  const onLoad = () => {
+    if (already) {
+      triggerEvent('headeriframe', 'end')
+      return
+    }
+    start = true
+    already = true
+    triggerEvent('headeriframe', 'start')
   }
 
   <Feature>
@@ -28,15 +30,7 @@ view Home.Modern {
         <Editor right
           lines={7}
           id="headeriframe"
-          onLoad={() => {
-          if (already) {
-          triggerEvent('headeriframe', 'end')
-          return
-          }
-          start = true
-          already = true
-          triggerEvent('headeriframe', 'start')
-          }}
+          onLoad={onLoad}
         iframe={`/assets/examples/example.html`} />
       </Col>
     </Row>
@@ -71,4 +65,12 @@ view Home.Modern {
     width: 425,
     margin: [0, -300, 0, 0]
   }
+}
+
+function triggerEvent(id, name) {
+  let event = document.createEvent('CustomEvent')
+  event.initCustomEvent(name, true, true, null)
+  let frame = document.getElementById(id)
+  let frameWin = frame.contentDocument || frame.contentWindow.document
+  frameWin.body.dispatchEvent(event)
 }
