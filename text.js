@@ -80,11 +80,12 @@ view IntroText {
 }
 
 view Text {
-  prop light
-  prop dim
-  prop small
+  prop light, dim, small, children
+  prop tagName = 'p'
 
-  <text tagName="p" root yield class={{ small, light, dim }} />
+  <text tagName={tagName} class={{ small, light, dim }}>
+    {children}
+  </text>
 
   $ = {
     fontWeight: 400,
