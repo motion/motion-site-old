@@ -18,8 +18,8 @@ view Title {
 
   $ = {
     fontWeight: 400,
-    fontSize: 28,
-    margin: [20, 0, 2],
+    fontSize: 30,
+    margin: [20, 0, 10],
     textAlign: center ? `center` : `auto`,
     color: 'rgba(0,0,0,0.7)'
   }

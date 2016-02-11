@@ -1,7 +1,7 @@
 import { style, color, routes, font, device } from '../constants'
 
 view Install.Input {
-  const install = 'sh <(curl -L https://flint.love)'
+  const install = 'npm install -g flint '
   const select = () => {
     view.element('input').select()
   }
@@ -61,6 +61,9 @@ view Install.Shields {
   }
 }
 
+// <Help />
+
+
 view Home.Install {
   <Feature row>
     <title>
@@ -68,7 +71,6 @@ view Home.Install {
     </title>
     <mainCode>
       <Install.Input />
-      <Help />
     </mainCode>
   </Feature>
 

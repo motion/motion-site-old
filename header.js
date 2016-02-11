@@ -115,11 +115,11 @@ function showInstall(e) {
 }
 
 view Logo {
-  <img root onClick={Flint.router.link(routes.home)} src="/assets/images/flintlogo.png" />
+  <img root onClick={Flint.router.link(routes.home)} src="/assets/images/motion4.png" />
 
-  const width = 700
-  const height = 198
-  const multiplier = view.props.small ? .14 : .28
+  const width = 2936
+  const height = 713
+  const multiplier = view.props.small ? .04 : .28
 
   $img = {
     width: Math.round(width * multiplier),

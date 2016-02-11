@@ -23,6 +23,16 @@ view Docs.Routes {
     <li><code>params</code> - Param object for the deepest matched route</li>
   </ul>
 
+  <Text>
+    <code>Flint.router.go</code> takes a few options as it's second argument:
+
+    <ul>
+      <li><code>dontPush</code> - false (default), avoid updating browser history</li>
+      <li><code>dontRender</code> - false (default), avoids re-rendering the page, just pushes state</li>
+      <li><code>keepScroll</code> - false (default), avoid scrolling back to top of page</li>
+    </ul>
+  </Text>
+
   <SubTitle>Setting routes</SubTitle>
   <Text>
     You don't need to instantiate routes, you can just use
