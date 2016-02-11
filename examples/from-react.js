@@ -1,4 +1,4 @@
-view Examples.Intro {
+view Examples.FromReactIntro {
   <top>
     <Title>
       Coming from React
