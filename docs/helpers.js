@@ -1,7 +1,7 @@
 view Docs.Helpers {
   <Title>View Helpers</Title>
 
-  <IntroText>Flint provides helpers for common actions needed in views, many of which map directly to React.</IntroText>
+  <IntroText>Motion provides helpers for common actions needed in views, many of which map directly to React.</IntroText>
 
   <Text>When inside a view, you can access <code>view</code> to do a variety of things.</Text>
 
@@ -46,7 +46,7 @@ view Docs.Helpers {
   <Text>Forces view to re-render.</Text>
 
   <Text>
-    Note that this isn't typically needed! Flint optimizes your app in production by batching changes, which essentially will do this for you.
+    Note that this isn't typically needed! Motion optimizes your app in production by batching changes, which essentially will do this for you.
   </Text>
 
   <SubTitle>view.props : object</SubTitle>

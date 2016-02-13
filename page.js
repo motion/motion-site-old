@@ -64,8 +64,8 @@ view Page.Link {
   const url = slug => view.props.base + '/' + slug
 
   <a
-    class={{ active: Flint.router.isActive(url(view.props.slug)) }}
-    onClick={Flint.router.link(url(view.props.slug))}>
+    class={{ active: Motion.router.isActive(url(view.props.slug)) }}
+    onClick={Motion.router.link(url(view.props.slug))}>
     {view.props.title}
   </a>
 

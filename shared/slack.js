@@ -2,7 +2,7 @@ import { style, color, routes, font, device } from '../constants'
 
 view Slack {
   <Contain id="slack">
-    <iframe seamless="seamless" src="https://flint-slack.herokuapp.com/"></iframe>
+    <iframe seamless="seamless" src="https://motion-slack.herokuapp.com/"></iframe>
   </Contain>
 
   $iframe = {

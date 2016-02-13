@@ -1,7 +1,7 @@
 import { color } from '../constants'
 
 let go = to => {
-  Flint.router.go(to)
+  Motion.router.go(to)
   setTimeout(() => window.scrollTo(0, 0))
 }
 

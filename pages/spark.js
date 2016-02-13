@@ -4,7 +4,7 @@ view Spark {
       <spark-img src="/assets/images/spark.jpg" />
 
       <Title big>
-        Welcome to the Flint Spark Private Beta.
+        Welcome to the Motion Spark Private Beta.
       </Title>
 
       <text>

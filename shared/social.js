@@ -1,13 +1,13 @@
 import { style, color, routes, font, device, util } from '../constants'
 
 view Social {
-  <a target="_blank" href="http://github.com/flintjs/flint">
+  <a target="_blank" href="http://github.com/motionjs/motion">
     <IconGithub />
   </a>
   <a if={!view.props.noSlack} href="/?slack" onClick={util.linkScroll}>
     <IconSlack />
   </a>
-  <a target="_blank" href="https://twitter.com/useflint">
+  <a target="_blank" href="https://twitter.com/usemotion">
     <IconTwitter />
   </a>
 

@@ -23,7 +23,7 @@ view Home.Modern {
         </IntroText>
 
         <Text small>
-          Flint is an <b>extensible</b> and <b>sensible</b> stack designed to let you be more productive and creative.
+          Motion is an <b>extensible</b> and <b>sensible</b> stack designed to let you be more productive and creative.
         </Text>
       </Col>
       <Col class="example">

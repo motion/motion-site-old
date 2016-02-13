@@ -10,7 +10,7 @@ view Home.Production {
       <Col class="content">
         <Title>Ready for Production</Title>
         <IntroText>
-          Flint is in use at large companies and for small projects. We're gathering some quotes and
+          Motion is in use at large companies and for small projects. We're gathering some quotes and
           examples for this section.
         </IntroText>
 

@@ -5,7 +5,7 @@ view Use {
 
   <Head
     title="Let us do it for you"
-    subtitle="Flint Developer Team will convert your React application to use Flint for you"
+    subtitle="Motion Developer Team will convert your React application to use Motion for you"
   />
   <Page>
     <Title>Tell us about your company</Title>
@@ -39,10 +39,10 @@ view Use {
         </Button>
       </buttons>
       <br />
-      <Text>We'll will convert your codebase to Flint for ${(small ? 100 : 500) * (wait ? 1 : 2)}.</Text>
+      <Text>We'll will convert your codebase to Motion for ${(small ? 100 : 500) * (wait ? 1 : 2)}.</Text>
       <Text>Just add us to your Github project and we'll submit a pull request.</Text>
       <Text>The payment will be refunded if we cannot convert your application for some reason</Text>
-      <Text>(insert quote about how flint made user twice as effective)</Text>
+      <Text>(insert quote about how motion made user twice as effective)</Text>
       <Text>(insert little calculator of "if this saves your x engineers x time, you made up this price in x minutes"</Text>
     </size>
   </Page>

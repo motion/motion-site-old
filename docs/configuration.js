@@ -1,7 +1,7 @@
 view Docs.Configuration {
   <Title>Configuration</Title>
   <IntroText>
-    Configuration is located in <code>.flint/config.js</code>
+    Configuration is located in <code>.motion/config.js</code>
   </IntroText>
 
   <Code
@@ -13,7 +13,7 @@ view Docs.Configuration {
        // enforce a port
        port: 4000,
 
-       // can disable flint router and route="" property
+       // can disable motion router and route="" property
        routing: true,
 
        // babel configuration

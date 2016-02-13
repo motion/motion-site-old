@@ -8,7 +8,7 @@ view Signup {
 }
 
 view SignupForm {
-  <form action="//flintlang.us11.list-manage.com/subscribe/post?u=d6ee317984756a7f0f5e9378b&amp;id=dcc2cefed5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  <form action="//motionlang.us11.list-manage.com/subscribe/post?u=d6ee317984756a7f0f5e9378b&amp;id=dcc2cefed5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
       <div class="mc-field-group">
         <input type="text" placeholder="Name" name="NAME" class="" id="mce-NAME" />
@@ -17,7 +17,7 @@ view SignupForm {
         <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" />
       </div>
       <div if={false} class="mc-field-group">
-        <textarea name="ABOUT" class="" placeholder="What are you most interested in with Flint? Any feedback?" id="mce-ABOUT"></textarea>
+        <textarea name="ABOUT" class="" placeholder="What are you most interested in with Motion? Any feedback?" id="mce-ABOUT"></textarea>
       </div>
       <hide id="mce-responses" class="clear">
         <div class="response" id="mce-error-response"></div>

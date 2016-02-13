@@ -1,6 +1,6 @@
 import chroma from 'chroma-js'
 
-const router = Flint.router
+const router = Motion.router
 
 const routes = {}
 routes.home = '/'
@@ -56,7 +56,7 @@ style.gradient = `linear-gradient(-30deg, ${color.brand1}, ${color.brand2})`
 
 const util = {}
 
-// to keep isomorphism for now, should be handled by flint
+// to keep isomorphism for now, should be handled by motion
 if (typeof window != 'undefined') {
   util.docOffset = require('document-offset')
   util.scroll = require('scroll')

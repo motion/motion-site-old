@@ -5,7 +5,7 @@ export default function H_js(hljs) {
       keyword:
         'in of if for while finally var new function do return void else break catch ' +
         'instanceof with throw case default try this switch continue typeof delete ' +
-        'let yield const class export import as super extends debugger view',
+        'let yield const class export import as super extends debugger view Motion',
       literal:
         'true false null undefined NaN Infinity',
       built_in:

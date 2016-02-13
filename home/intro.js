@@ -22,7 +22,7 @@ view Home.Intro {
           An ultra-modern React stack is just the start.
         </IntroText>
         <Text dim>
-          Flint is a sensible and open stack that
+          Motion is a sensible and open stack that
           brings joy to frontend development.
         </Text>
       </Col>
@@ -32,10 +32,10 @@ view Home.Intro {
         large
         lang={false}
         source={`
-          $ npm install -g flint
-          $ flint new project
+          $ npm install -g motion
+          $ motion new project
           $ cd project
-          $ flint
+          $ motion
 
                        ⇢  localhost:4000
         `} />

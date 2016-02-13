@@ -6,7 +6,7 @@ view Home.Community {
       <Col class="content">
         <Title>Powered by Open</Title>
         <IntroText>
-        Flint is and runs on open source. We keep a public roadmap, make decisions with the community on Github, and sponsor open source on Patreon.
+        Motion is and runs on open source. We keep a public roadmap, make decisions with the community on Github, and sponsor open source on Patreon.
         </IntroText>
 
         <Text>

@@ -4,14 +4,14 @@ view Docs.Install {
 
 view Docs.InstallContent {
   <Title>Installing</Title>
-  <IntroText>Install Flint CLI and create a new app</IntroText>
+  <IntroText>Install Motion CLI and create a new app</IntroText>
   <Text>
     Our install script lets you choose to: fix your npm globals have permissions issues &
     install the Atom plugin.
   </Text>
 
   <Code lang={false} source={`
-    $ sh <(curl -sL https://flint.love)
+    $ sh <(curl -sL https://motion.love)
   `}/>
 
   <Text>
@@ -19,7 +19,7 @@ view Docs.InstallContent {
   </Text>
 
   <Code lang={false} source={`
-    $ npm install -g flint
+    $ npm install -g motion
   `}/>
 
   <SubTitle>Running</SubTitle>
@@ -29,9 +29,9 @@ view Docs.InstallContent {
   </Text>
 
   <Code large source={`
-    $ flint new project
+    $ motion new project
     $ cd project
-    $ flint
+    $ motion
       ⇢  http://localhost:4000
   `} />
 
@@ -42,11 +42,11 @@ view Docs.InstallContent {
   <SubTitle>When you're ready to deploy</SubTitle>
 
   <Code lang={false} source={`
-    flint build
+    motion build
   `}/>
 
   <Text>
-    You app is now built into <code>.flint/build</code>, ready to deploy!
+    You app is now built into <code>.motion/build</code>, ready to deploy!
   </Text>
 
   <Next to='/docs/views'>Using Views</Next>

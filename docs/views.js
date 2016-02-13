@@ -1,7 +1,7 @@
 view Docs.Views {
   <Title>Views</Title>
 
-  <IntroText>Flint is based entirely on ES6 JavaScript with slight modifications for simplicity and clarity. By using a custom compiler, we remove the framework layer.</IntroText>
+  <IntroText>Motion is based entirely on ES6 JavaScript with slight modifications for simplicity and clarity. By using a custom compiler, we remove the framework layer.</IntroText>
 
   <Text>Here is a view:</Text>
 
@@ -97,7 +97,7 @@ view Docs.Views {
 
   <SubTitle>Naming tags</SubTitle>
 
-  <Text>Some final niceties of Flint. You can name your tags whatever you like:</Text>
+  <Text>Some final niceties of Motion. You can name your tags whatever you like:</Text>
 
   <Code source={`
     view Main {
@@ -112,11 +112,11 @@ view Docs.Views {
 
   <SubTitle>Using Views</SubTitle>
 
-  <Text>You don't need to import/export views between files! Flint prevents naming collisions with helpful warnings. Because your views are small pieces that should be easy to move around, this system avoid a lot of pain day to day, but even more down the road, where it makes moving around views in complex apps dramatically more easy.</Text>
+  <Text>You don't need to import/export views between files! Motion prevents naming collisions with helpful warnings. Because your views are small pieces that should be easy to move around, this system avoid a lot of pain day to day, but even more down the road, where it makes moving around views in complex apps dramatically more easy.</Text>
 
   <SubTitle>View lifecycles</SubTitle>
 
-  <Text>In React you have lifecycle methods. Flint has them too:</Text>
+  <Text>In React you have lifecycle methods. Motion has them too:</Text>
 
   <ul>
     <li>mount - called once after mounted in document</li>
@@ -168,7 +168,7 @@ view Docs.Views {
 
   <SubTitle>View events</SubTitle>
 
-  <Text>Flint provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views. It's optional, and very lightweight, but it avoid large amounts of hassle.</Text>
+  <Text>Motion provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views. It's optional, and very lightweight, but it avoid large amounts of hassle.</Text>
 
   <Code source={`
     view Hello {

@@ -1,9 +1,9 @@
 view Docs.Routes {
   <Title>Routes</Title>
-  <IntroText>Flint comes with a lightweight routing system, but lets you plug in any you'd like.</IntroText>
+  <IntroText>Motion comes with a lightweight routing system, but lets you plug in any you'd like.</IntroText>
 
   <Text>
-    Routing is done through <code>Flint.router</code>, which has the following functions:
+    Routing is done through <code>Motion.router</code>, which has the following functions:
   </Text>
 
   <ul>
@@ -24,7 +24,7 @@ view Docs.Routes {
   </ul>
 
   <Text>
-    <code>Flint.router.go</code> takes a few options as it's second argument:
+    <code>Motion.router.go</code> takes a few options as it's second argument:
 
     <ul>
       <li><code>dontPush</code> - false (default), avoid updating browser history</li>
@@ -36,7 +36,7 @@ view Docs.Routes {
   <SubTitle>Setting routes</SubTitle>
   <Text>
     You don't need to instantiate routes, you can just use
-    the <code>route</code> property on any JSX element. Flint will then
+    the <code>route</code> property on any JSX element. Motion will then
     watch your location and automatically determine if it should show
     or hide the element.
   </Text>
@@ -52,7 +52,7 @@ view Docs.Routes {
     }
 
     view Home {
-      let toProduct = id => Flint.router.go('/products/' + id)
+      let toProduct = id => Motion.router.go('/products/' + id)
 
       <h2>Come on by</h2>
       <links>
@@ -60,8 +60,8 @@ view Docs.Routes {
         <a onClick={() => toProduct(30)}>or cakes</a>
         <a onClick={() => toProduct(12)}>or hammers</a>
 
-        // Flint.router.link returns a function, for use in links
-        <a onClick={Flint.router.link('/products')}>or hammers</a>
+        // Motion.router.link returns a function, for use in links
+        <a onClick={Motion.router.link('/products')}>or hammers</a>
       </links>
     }
 
@@ -71,7 +71,7 @@ view Docs.Routes {
 
     view Product {
       <h2>Product {view.props.params.id}</h2>
-      <a onClick={() => Flint.router.go('/')}>home</a>
+      <a onClick={() => Motion.router.go('/')}>home</a>
     }
 
     view NotFound {

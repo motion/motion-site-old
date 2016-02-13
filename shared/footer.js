@@ -4,7 +4,7 @@ view Footer {
     <br />
     <Social />
     <p>
-      Made with ❤︎ and Flint
+      Made with ❤︎ and Motion
     </p>
   </Feature>
 

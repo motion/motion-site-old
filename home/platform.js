@@ -8,7 +8,7 @@ view Home.Platform {
       title: 'Editor',
       description: <p>
         <Attr alt="Updates your app with each character, avoids writing to file system.">As you type updates</Attr><br />
-        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Move numbers and colors</Attr>
+        <Attr alt="While you Focus, Motion avoids file watchers & streams updates at fast as they happen.">Move numbers and colors</Attr>
       </p>
     },
     {
@@ -23,7 +23,7 @@ view Home.Platform {
       title: 'Compiler',
       description: <p>
         <Attr alt="Static style changes don't even reload Javascript for insane performance.">Static CSS extraction</Attr> with inline styles.<br />
-        <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> without losing state.
+        <Attr alt="Motion scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> without losing state.
       </p>
     },
   ])
@@ -129,7 +129,7 @@ view Diagram {
     <Icon.Browser class="icon" highlight={hover == 1} />
   </section>
   <section {...sectionHover(2)} class="point">
-    <Icon.Flint class="icon" highlight={hover == 2} />
+    <Icon.Motion class="icon" highlight={hover == 2} />
   </section>
   <section {...sectionHover(3)} class="side right">
     <Icon.Editor class="icon" highlight={hover == 3} />

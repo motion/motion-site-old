@@ -102,20 +102,20 @@ view Nav {
 
 function routeProps(path) {
   return {
-    onClick: Flint.router.link(path),
-    className: { active: Flint.router.isActive(path) }
+    onClick: Motion.router.link(path),
+    className: { active: Motion.router.isActive(path) }
   }
 }
 
 function showInstall(e) {
-  if (Flint.router.isActive(routes.home))
+  if (Motion.router.isActive(routes.home))
     util.linkScroll(e)
   else
-    Flint.router.go(routes.home)
+    Motion.router.go(routes.home)
 }
 
 view Logo {
-  <img root onClick={Flint.router.link(routes.home)} src="/assets/images/motion3.png" />
+  <img root onClick={Motion.router.link(routes.home)} src="/assets/images/motion3.png" />
 
   const width = 1250
   const height = 280

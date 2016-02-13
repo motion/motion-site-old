@@ -3,7 +3,7 @@ view Docs.Styles {
   <IntroText>The final thing to understand about views are styles. Styles are written in JavaScript, which makes creating dynamic styles easy. We designate a style with $.</IntroText>
 
   <Text>
-    Flint styles are conceptually similar to CSS, but far simpler. They are inspired by this talk from <Link href="https://speakerdeck.com/vjeux/react-css-in-js" target="_blank">Christopher Chedeau</Link>, and the subsequent amazing work by the JS community. They are powered by <Link href="https://github.com/FormidableLabs/radium" target="_blank">Radium</Link> and <Link href="https://github.com/kodyl/stilr" target="_blank">Stilr</Link> under the hood.
+    Motion styles are conceptually similar to CSS, but far simpler. They are inspired by this talk from <Link href="https://speakerdeck.com/vjeux/react-css-in-js" target="_blank">Christopher Chedeau</Link>, and the subsequent amazing work by the JS community. They are powered by <Link href="https://github.com/FormidableLabs/radium" target="_blank">Radium</Link> and <Link href="https://github.com/kodyl/stilr" target="_blank">Stilr</Link> under the hood.
   </Text>
 
   <Code source={`
@@ -18,7 +18,7 @@ view Docs.Styles {
   `} />
 
   <Text>
-    Styles inside views are incredibly power. They give you the full abilities of JavaScript, scoped to the current view, with a simple, declarative syntax that saves time and keeps things clean. Flint styles are really powerful too, they are:
+    Styles inside views are incredibly power. They give you the full abilities of JavaScript, scoped to the current view, with a simple, declarative syntax that saves time and keeps things clean. Motion styles are really powerful too, they are:
   </Text>
 
   <ul>
@@ -41,7 +41,7 @@ view Docs.Styles {
   `} />
 
   <Text>
-    Notice that Flint's style syntax doesn't distinguish between class and tag. Because you can name your tags as you like, we've kept it simple.
+    Notice that Motion's style syntax doesn't distinguish between class and tag. Because you can name your tags as you like, we've kept it simple.
   </Text>
 
   <Text>Styles are also dynamic, and can access variables in the view just like you'd expect:</Text>
@@ -61,7 +61,7 @@ view Docs.Styles {
 
   <SubTitle>Element state helpers</SubTitle>
 
-  <Text>Flint keeps things simple and light. Use any of <code>active</code>, <code>hover</code>, <code>focus</code>, <code>visited</code> and more to add CSS psuedo state styles.</Text>
+  <Text>Motion keeps things simple and light. Use any of <code>active</code>, <code>hover</code>, <code>focus</code>, <code>visited</code> and more to add CSS psuedo state styles.</Text>
 
   <Code source={`
     view Main {
@@ -79,7 +79,7 @@ view Docs.Styles {
 
   <SubTitle>Advanced styling</SubTitle>
 
-  <Text>Flint optimizes your styles behind the scenes. We use a parser to extract your static styles into a separate object. We're working on having those styles extract fully into CSS, along with other upgrades as we go.</Text>
+  <Text>Motion optimizes your styles behind the scenes. We use a parser to extract your static styles into a separate object. We're working on having those styles extract fully into CSS, along with other upgrades as we go.</Text>
 
   <Text><b>Share styles</b> between tags with ease using arrays:</Text>
 

@@ -1,13 +1,13 @@
 view Docs.Deploying {
   <Title>Deploying</Title>
   <IntroText>
-    Flint lets you build your app with all your assets, code, and template ready for production
+    Motion lets you build your app with all your assets, code, and template ready for production
     in a single command.
   </IntroText>
 
   <Text>
-    To build your app, run <code>flint build</code>. This will output your production app code into
-    the <code>.flint/build</code> directory.
+    To build your app, run <code>motion build</code>. This will output your production app code into
+    the <code>.motion/build</code> directory.
   </Text>
 
   <Text>
@@ -33,7 +33,7 @@ view Docs.Deploying {
   `} />
 
   <Text>
-    Your base stylesheet is located at <strong>.flint/static/main</strong>. If
+    Your base stylesheet is located at <strong>.motion/static/main</strong>. If
     you have some base CSS styles you'd like to tweak, you can adjust
     them in there and refresh.
   </Text>

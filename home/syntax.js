@@ -5,7 +5,7 @@ view Home.Syntax {
 
   <Feature col>
     <Title>Views in Javascript</Title>
-    <IntroText>Learn all of Flint in minutes:</IntroText>
+    <IntroText>Learn all of Motion in minutes:</IntroText>
 
     <Row class="nav" center>
       <Sel active={demo} name="DemoVenn" onClick={_ => demo = _}>Styling</Sel>

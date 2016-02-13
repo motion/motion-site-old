@@ -68,14 +68,14 @@ view Icon.Editor {
   }
 }
 
-view Icon.Flint {
+view Icon.Motion {
   prop highlight
 
   let pulsing = false
 
   on.every(1000, () => pulsing = !pulsing)
 
-  <img src="/assets/flint.svg" />
+  <img src="/assets/motion.svg" />
   <pulse />
 
   $ = {

@@ -1,7 +1,7 @@
 import { style, color, routes, font, device } from '../constants'
 
 view Install.Input {
-  const install = 'npm install -g flint '
+  const install = 'npm install -g motion '
   const select = () => {
     view.element('input').select()
   }
@@ -36,10 +36,10 @@ view Install.Input {
 view Install.Shields {
   <afterward if={false}>
     <shields>
-      <a href="https://www.npmjs.com/package/flint" target="_blank">
-        <img class="shield" src="https://img.shields.io/npm/dm/flint.svg" />
+      <a href="https://www.npmjs.com/package/motion" target="_blank">
+        <img class="shield" src="https://img.shields.io/npm/dm/motion.svg" />
       </a>
-      <img class="shield" src="https://img.shields.io/npm/v/flint.svg" />
+      <img class="shield" src="https://img.shields.io/npm/v/motion.svg" />
     </shields>
   </afterward>
 
@@ -122,7 +122,7 @@ view Help {
     <question>?</question>
     <modal>
       This fixes npm permissions!&nbsp;
-      Or: <code>npm install -g flint</code>
+      Or: <code>npm install -g motion</code>
     </modal>
   </help>
 

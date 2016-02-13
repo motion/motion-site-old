@@ -1,9 +1,9 @@
 view Card {
   prop title
   prop children
-  prop onClick = Flint.noop
+  prop onClick = Motion.noop
 
-  <card tagName="li" onClick={onClick} class={{ hover: onClick != Flint.noop }}>
+  <card tagName="li" onClick={onClick} class={{ hover: onClick != Motion.noop }}>
     <body>
       <SubTitle if={title}>{title}</SubTitle>
       <Text small>{children}</Text>

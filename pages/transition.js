@@ -1,7 +1,7 @@
 view Transition {
   <Head
-    title="Moving your React app to Flint"
-    subtitle="Flint runs on React, so migrating an existing React stack is possible. Follow these instructions."
+    title="Moving your React app to Motion"
+    subtitle="Motion runs on React, so migrating an existing React stack is possible. Follow these instructions."
   />
   <Page>
     <SubTitle>Video Tutorial</SubTitle>
@@ -10,7 +10,7 @@ view Transition {
     <br />
 
     <Text>
-      Moving to Flint from your current React build system is relatively easy.
+      Moving to Motion from your current React build system is relatively easy.
       We are still working on supporting a wider variety of configurations, but are eager
       to get them all working. If you're having trouble migrating, please join our Slack and
       open a ticket on our Github.

@@ -1,11 +1,11 @@
 view Docs.Elements {
   <Title>Elements</Title>
   <IntroText>
-    Flint uses JSX, with a couple optional helpers.
+    Motion uses JSX, with a couple optional helpers.
   </IntroText>
 
   <Text>
-    You may also name your elements however you'd like. Avoid writing hundreds of meaningless <code>div</code>s and just write what your tag actually represents! Lowercase tags are scoped to the current view, and are unstyled except for browser defaults, while capitalized tags reference other views. Flint has some other minor modifications.
+    You may also name your elements however you'd like. Avoid writing hundreds of meaningless <code>div</code>s and just write what your tag actually represents! Lowercase tags are scoped to the current view, and are unstyled except for browser defaults, while capitalized tags reference other views. Motion has some other minor modifications.
   </Text>
 
   <Code source={`
@@ -27,7 +27,7 @@ view Docs.Elements {
   <Code source={`
     view Main {
       let shows = [
-        { name: 'flintstones' },
+        { name: 'motionstones' },
         { name: 'jetsons' },
       ]
 

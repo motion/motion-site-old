@@ -1,7 +1,7 @@
 view Docs.Editor {
   <Title>Editor Integration</Title>
   <IntroText>
-    Flint is an environment that aims to seamlessly integrate the browser and editor to give you a live, smart environment.
+    Motion is an environment that aims to seamlessly integrate the browser and editor to give you a live, smart environment.
   </IntroText>
 
   <SubTitle>Live Coding</SubTitle>
@@ -14,5 +14,5 @@ view Docs.Editor {
     <b>⌘+⌥+s</b> (command + options + s) toggles Live Coding.
   </Text>
 
-  <Next to='/docs/install'>Install Flint</Next>
+  <Next to='/docs/install'>Install Motion</Next>
 }

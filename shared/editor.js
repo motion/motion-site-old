@@ -108,7 +108,7 @@ view Editor {
 view Tabs {
   prop tabs = []
   prop activeTab = 0
-  prop changeTab = Flint.noop
+  prop changeTab = Motion.noop
   prop light = false
 
   <tabs if={tabs.length}>

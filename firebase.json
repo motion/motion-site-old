@@ -1,6 +1,6 @@
 {
-  "firebase": "flintjs",
-  "public": ".flint/build",
+  "firebase": "motionjs",
+  "public": ".motion/build",
   "ignore": [
     "firebase.json",
     "**/.*",

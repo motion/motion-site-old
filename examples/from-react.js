@@ -6,7 +6,7 @@ view Examples.FromReactIntro {
   </top>
 
   <IntroText>
-    Flint has brought the concepts of React down to the language level. This is a
+    Motion has brought the concepts of React down to the language level. This is a
     result of having the luxury of using React for a few years, and applying its
     ideas to modern JavaScript.
   </IntroText>

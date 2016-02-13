@@ -2,7 +2,7 @@ import { routes } from '../constants'
 
 view Banner.Transition {
   <Banner root>
-    Using React? Flint can run your stack. <Link to={routes.transition}>Check out our docs to see how</Link>.
+    Using React? Motion can run your stack. <Link to={routes.transition}>Check out our docs to see how</Link>.
   </Banner>
 }
 

@@ -1,7 +1,7 @@
 view NotFound {
   <Head
     title="Not found!"
-    subtitle="Yes, you can do 404 routes with Flint :)"
+    subtitle="Yes, you can do 404 routes with Motion :)"
   />
   <Page>
     <Code source={`

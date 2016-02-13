@@ -1,7 +1,7 @@
 view Start {
   <Head
     title="Getting Started"
-    subtitle="Flint brings React concepts to javascript the language. It optimizes for developer experience."
+    subtitle="Motion brings React concepts to javascript the language. It optimizes for developer experience."
   />
   <Page>
     <Docs.InstallContent />
@@ -20,7 +20,7 @@ view Start.Getting {
   let node = true
 
   <SubTitle>
-    Getting Flint
+    Getting Motion
   </SubTitle>
   <Row class="space">
     <choice onClick={() => node = true}
@@ -72,19 +72,19 @@ view Start.Scratch {
       nvm install 5.2
     `} />
     <li>
-      Install Flint
+      Install Motion
     </li>
     <Code source={`
-      sh <(curl -L https://flint.love)
+      sh <(curl -L https://motion.love)
     `} />
     <li>
       Create your app
     </li>
     <Code source={`
       cd ~
-      flint new beautifulapp
+      motion new beautifulapp
       cd beautifulapp
-      flint
+      motion
     `} />
   </ol>
 }
@@ -96,19 +96,19 @@ view Start.Node {
     </li>
 
     <li>
-      Install Flint Beta
+      Install Motion Beta
     </li>
     <Code source={`
-      sh <(curl -L https://flint.love/beta)
+      sh <(curl -L https://motion.love/beta)
     `} />
     <li>
       Create your app
     </li>
     <Code source={`
       cd ~
-      flint new beautifulapp
+      motion new beautifulapp
       cd beautifulapp
-      flint
+      motion
     `} />
   </ol>
 }
@@ -116,7 +116,7 @@ view Start.Node {
 view Start.Slack {
   <Title big>Join our Slack</Title>
   <Text>Direct message Nick Cammarata to get access to the Private Beta channel.</Text>
-  <iframe seamless="seamless" src="https://flint-slack.herokuapp.com/"></iframe>
+  <iframe seamless="seamless" src="https://motion-slack.herokuapp.com/"></iframe>
 
   $iframe = {
     border: 'none',
@@ -140,7 +140,7 @@ view Start.Intro {
   <Text>We're looking forward to seeing what you build and hearing your feedback.</Text>
 
   <Text>
-    Here's some help getting started with Flint. We'll assume you're really starting from scratch on a new machine.
+    Here's some help getting started with Motion. We'll assume you're really starting from scratch on a new machine.
   </Text>
 
   $spark = {
@@ -151,11 +151,11 @@ view Start.Intro {
 
 view Start.Joining {
   <Title big>We're Joining You</Title>
-  <Text>Flint's founders (Nick and Nate) will be joining you in Spark by building Groop, a fun group chat app where votes can decide any action, small spontaneous games can take place, and generaly tomfoolery can be had.</Text>
+  <Text>Motion's founders (Nick and Nate) will be joining you in Spark by building Groop, a fun group chat app where votes can decide any action, small spontaneous games can take place, and generaly tomfoolery can be had.</Text>
 
   <groop-img src="/assets/images/groop.png" />
 
-  <Text>We'll be open sourcing Groop and using it as a way to teach Flint. We'll try to provide weekly updates in the Slack channel</Text>
+  <Text>We'll be open sourcing Groop and using it as a way to teach Motion. We'll try to provide weekly updates in the Slack channel</Text>
 
   $groop = {
     maxWidth: '30%',

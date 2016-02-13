@@ -1,7 +1,7 @@
 view Docs.Events {
   <Title>Events</Title>
   <IntroText>
-    Flint includes a simple helper to ease attaching and detaching events.
+    Motion includes a simple helper to ease attaching and detaching events.
   </IntroText>
 
   <Text><strong>Without</strong> <code>on</code>, you'd need to write this:</Text>
@@ -107,7 +107,7 @@ view Docs.Events {
   </SubTitle>
 
   <Text>
-    DOM level 2 events, and Flint provided events listed on this page, are provided in a helpful shorthand that avoids passing around strings:
+    DOM level 2 events, and Motion provided events listed on this page, are provided in a helpful shorthand that avoids passing around strings:
   </Text>
 
   <Code source={`

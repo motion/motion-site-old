@@ -1,22 +1,22 @@
 import { style, color, routes, font, device } from './constants'
 
 if (window.location.search == '?slack')
-  window.location = 'https://flint-slack.herokuapp.com/'
+  window.location = 'https://motion-slack.herokuapp.com/'
 
 // import tapEvents from 'react-tap-event-plugin'
 // tapEvents()
 
 import hljs from './hljs/hljs'
-import flintLang from './hljs/javascript-flint'
+import motionLang from './hljs/javascript'
 import xml from './hljs/xml'
 
-hljs.registerLanguage('javascript', flintLang)
+hljs.registerLanguage('javascript', motionLang)
 hljs.registerLanguage('xml', xml)
 hljs.configure({ useBR: false })
 
 window.hljs = hljs
 
-Flint.router.onChange(location => {
+Motion.router.onChange(location => {
   if (typeof ga != 'undefined')
     ga('send', 'pageview', location.pathname)
 })
@@ -37,7 +37,7 @@ view Main {
 
   <Password onShow={passCorrect} if={!hidePass} />
   <site if={hidePass}>
-    <Header nobg={Flint.router.isActive(routes.home)} />
+    <Header nobg={Motion.router.isActive(routes.home)} />
     <Home route={routes.home} />
     <Learn route="/learn" />
     <Examples route={routes.examples} />
@@ -83,7 +83,7 @@ view Password {
       onEnter={checkPass}
       sync={password} />
 
-    <p>Curious? <a href="http://flint-slack.herokuapp.com">Say hi in Slack</a></p>
+    <p>Curious? <a href="http://motion-slack.herokuapp.com">Say hi in Slack</a></p>
   </password>
 
   $password = {

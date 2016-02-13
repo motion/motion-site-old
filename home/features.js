@@ -17,7 +17,7 @@ view Features {
         <col>
           <title>Automatic NPM Installs</title>
           <Text>
-            Flint scans your code as you type & installs npm packages instantly.
+            Motion scans your code as you type & installs npm packages instantly.
             No need to refresh your browser.
           </Text>
         </col>
@@ -85,7 +85,7 @@ view Features {
         <col>
           <title>Performance by default</title>
           <Text>
-            Flint optimizes React to give you even better performance
+            Motion optimizes React to give you even better performance
             in development and production.
           </Text>
         </col>

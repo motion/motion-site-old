@@ -5,7 +5,7 @@ view Examples.Arena {
     Fetching data is a big concern in frontend applications.
     Here we show advanced features of ESnext including async/await
     and template literals. We also show routing, repeat, globals and
-    other Flint features.
+    other Motion features.
   </IntroText>
 
   <Text>
@@ -29,8 +29,8 @@ view Examples.Arena {
       api.channels = \`\${api.base}/channels\`
       api.channel = id => \`\${api.base}/channels/\${id}\`
 
-      export const go = Flint.router.go
-      export const link = Flint.router.link
+      export const go = Motion.router.go
+      export const link = Motion.router.link
 
       export const route = {}
       route.home = '/'
@@ -48,7 +48,7 @@ view Examples.Arena {
     but in this case we want the view to just return a single element,
     the <code>a</code> tag. To prevent wrapping, you define your tag
     to be the same as the view name, but lowercase. We define it as
-    <code>link-a</code> to tell Flint to render it as a link.
+    <code>link-a</code> to tell Motion to render it as a link.
   </Text>
 
   <Code source={`
@@ -71,7 +71,7 @@ view Examples.Arena {
 
   <Text>
     If you already know <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">fetch</a></code> you can skip
-    this paragraph. Fetch is coming to browsers, but Flint provides
+    this paragraph. Fetch is coming to browsers, but Motion provides
     it for you by default. It's a radically improved API for doing AJAX
     requests, or simply, getting data from anywhere else on the web.
     Read more on fetch here.
@@ -84,7 +84,7 @@ view Examples.Arena {
   <Text>
     But, we can do better. <code>async/await</code> are two keywords
     coming to JavaScript. They make using asynchronous code a pleasure.
-    Because Flint runs on Babel, you can use them today, and save
+    Because Motion runs on Babel, you can use them today, and save
     yourself a huge amount of complexity. See how they are used:
   </Text>
 
