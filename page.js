@@ -106,7 +106,12 @@ view Page.Link {
 
 view RoutedContent {
   prop parent, content, params
-  prop el = content.filter(item => item.slug == params.slug)[0]
+
+  let el
+
+  on.props(() => {
+    el = content.filter(item => item.slug == params.slug)[0]
+  })
 
   <body>
     {view.el(`${parent}.${el.view}`)}

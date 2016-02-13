@@ -15,7 +15,7 @@ view Code {
   $ = {
     background: '#fff',
     border: '1px solid #ddd',
-    color: 'rgba(0,0,0,0.55)',
+    color: 'rgba(0,0,0,0.75)',
     boxShadow: '0 0 4px rgba(0,0,0,0.05)',
     padding: 10,
     margin: [10, 0],

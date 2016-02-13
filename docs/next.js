@@ -1,3 +1,5 @@
+import { color } from '../constants'
+
 let go = to => {
   Flint.router.go(to)
   setTimeout(() => window.scrollTo(0, 0))
@@ -14,8 +16,6 @@ view Next {
     <arrow>❯</arrow>
   </next>
 
-  let blue = [46,161,249].join(',')
-
   $next = {
     fontSize: 20,
     flexFlow: 'row',
@@ -23,8 +23,8 @@ view Next {
     margin: [45, 0],
     cursor: 'pointer',
     transition: '300ms all ease-in',
-    color: `rgb(${blue})`,
-    alignItems: 'flex-end',
+    color: `rgb(${color.brand})`,
+    alignItems: 'center',
     justifyContent: 'flex-end'
   }
 
@@ -34,6 +34,6 @@ view Next {
 
   $arrow = {
     transition: '300ms all ease-in',
-    marginLeft: over ? 12 : 8
+    margin: [12, 0, 10, 12]
   }
 }

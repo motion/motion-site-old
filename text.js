@@ -18,8 +18,8 @@ view Title {
 
   $ = {
     fontWeight: 400,
-    fontSize: 30,
-    margin: [20, 0, 10],
+    fontSize: 26,
+    margin: [20, 0, 5],
     textAlign: center ? `center` : `auto`,
     color: 'rgba(0,0,0,0.7)'
   }
@@ -50,6 +50,7 @@ view SubTitle {
     color: color(color.brand).darken(1).rgba(),
     marginTop: 15,
     fontSize: 20,
+    fontWeight: 400
   }
 }
 
