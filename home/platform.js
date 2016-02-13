@@ -7,38 +7,34 @@ view Home.Platform {
     {
       title: 'Editor',
       description: <p>
-        Websockets enable <Attr alt="Updates your app with each character, avoids writing to file system.">as-you-type updates</Attr> with Atom.&nbsp;
-        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Drag numbers and colors</Attr> to instantly see results.
+        <Attr alt="Updates your app with each character, avoids writing to file system.">As you type updates</Attr><br />
+        <Attr alt="While you Focus, Flint avoids file watchers & streams updates at fast as they happen.">Move numbers and colors</Attr>
       </p>
     },
     {
       title: 'Browser',
       description: <p>
-        <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smarter hot reloads</Attr> refresh instantly & retain child state.
-        <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break."> Helpful</Attr> errors from compiler.
+        <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smart Hot Reloads</Attr> retain child state.<br />
+        <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break."> Helpful errors</Attr> inline without breaking.<br />
         <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor."> Jump to editor</Attr>.
       </p>
     },
     {
       title: 'Compiler',
       description: <p>
-        <Attr alt="Static style changes don't even reload Javascript for insane performance.">Static CSS extraction</Attr> gives amazing performance.
-        <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> are awesome.
+        <Attr alt="Static style changes don't even reload Javascript for insane performance.">Static CSS extraction</Attr> with inline styles.<br />
+        <Attr alt="Flint scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> without losing state.
       </p>
     },
   ])
 
-  // onMouseEnter={() => hoverIndex = _index + 1}
-
   <Feature odd col>
     <Title>An open & extensible platform</Title>
-    <IntroText class="sub">We unite your tools enabling <em>entirely new ways of programming</em></IntroText>
-
+    <IntroText class="sub">Motions unites your tools in smart ways</IntroText>
     <Row class="small2">
       <Col centered class="diagram">
         <Diagram hoverIndex={hoverIndex} />
       </Col>
-
       <Col class="sections">
         <section repeat={sections()}>
           <IntroText small>{_.title}</IntroText>
@@ -67,7 +63,7 @@ view Home.Platform {
 
   $sections = {
     marginRight: 60,
-    width: '30%'
+    width: '20%'
   }
 
   $diagram = {

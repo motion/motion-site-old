@@ -4,7 +4,7 @@ view Header {
   prop nobg
 
   <wrap>
-    <Contain maxWidth={880}>
+    <Contain maxWidth={890}>
       <Logo small />
       <Nav large />
       <Social tiny noSlack />

@@ -3,16 +3,22 @@ import { style, color, routes, font, device } from '../constants'
 const light = '#fefefe'
 
 view Editor {
-  prop sources, source
+  prop sources = []
+  prop source
 
   let index = 0
-  let tabs, code = []
+  let tabs
+  let code = []
   let loaded = false
 
   on.props(() => {
-    sources = sources || [source]
-    code = sources.map(s => s.source)
-    tabs = sources.map(s => s.title)
+    if (sources.length) {
+      code = sources.map(s => s.source)
+      tabs = sources.map(s => s.title)
+    }
+    else {
+      code = [source]
+    }
   })
 
   function loadFrame() {
@@ -30,7 +36,7 @@ view Editor {
       if={!view.props.iframe}
       large={view.props.large}
       lang={view.props.lang}
-      repeat={sources}
+      repeat={code}
       source={_}
       class={{hidden: _index != index}}
     />
@@ -99,19 +105,12 @@ view Editor {
   }
 }
 
-view Toolbar {
+view Tabs {
   prop tabs = []
   prop activeTab = 0
   prop changeTab = Flint.noop
   prop light = false
 
-  const demoBorder = 4
-
-  <bar>
-    <ctrl class="close" />
-    <ctrl class="max" />
-    <ctrl class="open" />
-  </bar>
   <tabs if={tabs.length}>
     <tab
       repeat={tabs}
@@ -120,13 +119,6 @@ view Toolbar {
       {_}
     </tab>
   </tabs>
-
-  const borderColor = light ? '#fff' : '#222'
-  const border = '1px solid ' + borderColor
-
-  $ = {
-    flexFlow: 'column'
-  }
 
   $tabs = {
     flexFlow: 'row',
@@ -158,6 +150,28 @@ view Toolbar {
     color: '#000',
     fontWeight: 700,
     borderBottom: 'none',
+  }
+}
+
+view Toolbar {
+  prop light = false
+  prop changeTab
+  prop tabs
+
+  const demoBorder = 4
+
+  <bar>
+    <ctrl class="close" />
+    <ctrl class="max" />
+    <ctrl class="open" />
+  </bar>
+  <Tabs if={tabs && tabs.length} tabs={tabs} changeTab={changeTab} />
+
+  const borderColor = light ? '#fff' : '#222'
+  const border = '1px solid ' + borderColor
+
+  $ = {
+    flexFlow: 'column'
   }
 
   $bar = {
