@@ -115,11 +115,11 @@ function showInstall(e) {
 }
 
 view Logo {
-  <img root onClick={Motion.router.link(routes.home)} src="/assets/images/motion3.png" />
+  <img root onClick={Motion.router.link(routes.home)} src="/assets/images/motion.png" />
 
-  const width = 1250
-  const height = 280
-  const multiplier = view.props.small ? .09 : .28
+  const width = 1340
+  const height = 320
+  const multiplier = view.props.small ? .08 : .28
 
   $img = {
     width: Math.round(width * multiplier),

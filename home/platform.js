@@ -6,31 +6,31 @@ view Home.Platform {
   let sections = () => ([
     {
       title: 'Editor',
-      description: <p>
-        <Attr alt="Updates your app with each character, avoids writing to file system.">As you type updates</Attr><br />
-        <Attr alt="While you Focus, Motion avoids file watchers & streams updates at fast as they happen.">Move numbers and colors</Attr>
-      </p>
+      description: <Text dim>
+        Live updates <Attr alt="Updates your app with each character, avoids writing to file system.">as you type</Attr> let you edit your apps like a living document.
+        <Attr alt="While you Focus, Motion avoids file watchers & streams updates at fast as they happen."> Drag numbers and colors</Attr> and move between code and style with ease.
+      </Text>
     },
     {
       title: 'Browser',
-      description: <p>
-        <Attr alt="When combined with Live updates, smart reloads allow a faster, simpler way to program.">Smart Hot Reloads</Attr> retain child state.<br />
-        <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break."> Helpful errors</Attr> inline without breaking.<br />
-        <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor."> Jump to editor</Attr>.
-      </p>
+      description: <Text dim>
+        <Attr alt="Child and view state is smartly preserved while editing, enabled by compiler.">Smart Hot Reloads</Attr> retain state better than any other system.
+        <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break."> Helpful errors</Attr> inline without breaking.
+        <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor."> Jump to DOM or style</Attr> from any view for quick editing.
+      </Text>
     },
     {
       title: 'Compiler',
-      description: <p>
-        <Attr alt="Static style changes don't even reload Javascript for insane performance.">Static CSS extraction</Attr> with inline styles.<br />
-        <Attr alt="Motion scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> without losing state.
-      </p>
+      description: <Text dim>
+        Performance from a smart compiler, including inline styles with <Attr alt="Static style changes don't even reload Javascript for insane performance.">static CSS extraction</Attr>.
+        <Attr alt="Motion scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> without touching your terminal or browser.
+      </Text>
     },
   ])
 
   <Feature odd col>
-    <Title>An open & extensible platform</Title>
-    <IntroText class="sub">Motions unites your tools in smart ways</IntroText>
+    <Title>Motion unites your tools in smart ways</Title>
+    <IntroText class="sub">Sockets connect browser, editor, and compiler</IntroText>
     <Row class="small2">
       <Col centered class="diagram">
         <Diagram hoverIndex={hoverIndex} />
@@ -68,6 +68,11 @@ view Home.Platform {
 
   $diagram = {
     margin: [0, -40, 0, 60]
+  }
+
+  $Text = {
+    fontSize: 15,
+    lineHeight: 1.8
   }
 
   $section = {
