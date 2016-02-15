@@ -115,7 +115,7 @@ function showInstall(e) {
 }
 
 view Logo {
-  <img root onClick={Motion.router.link(routes.home)} src="/assets/images/motion.png" />
+  <img root onClick={Motion.router.link(routes.home)} src="/assets/images/motion-small.png" />
 
   const width = 1340
   const height = 320

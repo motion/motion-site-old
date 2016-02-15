@@ -16,7 +16,7 @@ view Features {
         <img src={`/assets/images/line/cloud-download.svg`} />
         <col>
           <title>Automatic NPM Installs</title>
-          <Text>
+          <Text dim>
             Motion scans your code as you type & installs npm packages instantly.
             No need to refresh your browser.
           </Text>
@@ -27,7 +27,7 @@ view Features {
         <img src={`/assets/images/line/rocket.svg`} />
         <col>
           <title>Super Hot Updates</title>
-          <Text>
+          <Text dim>
             Stays fast even with thousands
             of views in large apps.
             Retains deep nested state when editing parent views,
@@ -40,7 +40,7 @@ view Features {
         <img src={`/assets/images/line/cog.svg`} />
         <col>
           <title>No boilerplate</title>
-          <Text>
+          <Text dim>
             Forget configs, gulp systems, and having to spend weeks
             researching and assembling a modern stack on React.
           </Text>
@@ -51,7 +51,7 @@ view Features {
         <img src={`/assets/images/line/bulb.svg`} />
         <col>
           <title>Smart Errors</title>
-          <Text>
+          <Text dim>
             Your app never breaks as you edit. Runtime and compile
             errors are shown inline and handled smartly, with helpful messages.
           </Text>
@@ -62,7 +62,7 @@ view Features {
         <img src={`/assets/images/line/snowflake.svg`} />
         <col>
           <title>Powerful Styles</title>
-          <Text>
+          <Text dim>
             Inline styles with static extraction to stylesheets.
             Helpers for interaction, media queries, arrays, objects & more.
           </Text>

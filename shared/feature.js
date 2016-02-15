@@ -4,9 +4,9 @@ view Feature {
   prop bg, center, col, odd, slim, dark, reverse, children, stars
 
   <Stars if={stars} num={50} />
-  <Contain maxWidth={1100}>{children}</Contain>
+  <Contain maxWidth={1000}>{children}</Contain>
 
-  const padheight = slim ? 0 : 75
+  const padheight = slim ? 0 : 100
 
   $ = {
     padding: [padheight - 30, 20, padheight],

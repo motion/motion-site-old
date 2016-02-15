@@ -21,24 +21,21 @@ view Home.Intro {
           No configuration. No boilerplate.<br />
           An ultra-modern React stack is just the start.
         </IntroText>
-        <Text dim>
+        <Text dim small>
           Motion is a sensible and open stack that
           brings joy to frontend development.
         </Text>
       </Col>
       <Col class="example">
-      <Editor right
-        lines={7}
-        large
-        lang={false}
+      <Editor right lines={7}
         source={`
-          $ npm install -g motion
-          $ motion new project
-          $ cd project
-          $ motion
+        $ npm install -g motion
+        $ motion new project
+        $ cd project
+        $ motion
 
-                       ⇢  localhost:4000
-        `} />
+                      ⇢  localhost:4000
+      `} />
       </Col>
     </Row>
   </Feature>
@@ -66,6 +63,12 @@ view Home.Intro {
       padding: [0, 0, 30],
       width: '100%'
     }
+  }
+
+  $pre = {
+    color: '#fff',
+    padding: [3, 10],
+    lineHeight: 1.5
   }
 
   $img = {

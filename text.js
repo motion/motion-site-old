@@ -17,8 +17,8 @@ view Title {
   />
 
   $ = {
-    fontWeight: 400,
-    fontSize: 26,
+    fontWeight: 600,
+    fontSize: 24,
     margin: [20, 0, 5],
     textAlign: center ? `center` : `auto`,
     color: 'rgba(0,0,0,0.7)'

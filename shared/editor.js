@@ -5,6 +5,8 @@ const light = '#fefefe'
 view Editor {
   prop sources = []
   prop source
+  prop children
+  prop iframe
 
   let index = 0
   let tabs
@@ -16,7 +18,7 @@ view Editor {
       code = sources.map(s => s.source)
       tabs = sources.map(s => s.title)
     }
-    else {
+    else if (source) {
       code = [source]
     }
   })
@@ -33,17 +35,18 @@ view Editor {
     changeTab={i => index = i} />
   <content>
     <Code
-      if={!view.props.iframe}
+      if={!children && !iframe}
       large={view.props.large}
       lang={view.props.lang}
       repeat={code}
       source={_}
       class={{hidden: _index != index}}
     />
+    <children if={children}>{children}</children>
   </content>
   <iframe
-    if={view.props.iframe}
-    src={view.props.iframe}
+    if={iframe}
+    src={iframe}
     id={view.props.id}
     onLoad={loadFrame}
     class={{ loaded }}>
@@ -77,7 +80,7 @@ view Editor {
     padding: 13,
     border: 'none',
     background: 'none',
-    color: view.props.light ? 'auto' : '#fff',
+    color: view.props.light ? 'auto' : 'rgba(255,255,255,0.8)',
     boxShadow: 'none'
   }
 
