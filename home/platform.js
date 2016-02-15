@@ -8,21 +8,21 @@ view Home.Platform {
       title: 'Editor',
       description: <Text dim>
         Live updates <Attr alt="Updates your app with each character, avoids writing to file system.">as you type</Attr> let you edit your apps like a living document.
-        <Attr alt="While you Focus, Motion avoids file watchers & streams updates at fast as they happen."> Drag numbers and colors</Attr> and move between code and style with ease.
+        <Attr alt="While you Focus, Motion avoids file watchers & streams updates at fast as they happen."> Drag numbers and colors</Attr>. Move between code and style with ease.
       </Text>
     },
     {
       title: 'Browser',
       description: <Text dim>
-        <Attr alt="Child and view state is smartly preserved while editing, enabled by compiler.">Smart Hot Reloads</Attr> retain state better than any other system.
-        <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break."> Helpful errors</Attr> inline without breaking.
+        <Attr alt="Child and view state is smartly preserved while editing, enabled by compiler.">Smart Hot Reloads</Attr> retain state better.
+        <Attr alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break."> Helpful errors</Attr> keep you in flow.
         <Attr alt="Right click on any part of your app and jump to the appropriate view in your editor."> Jump to DOM or style</Attr> from any view for quick editing.
       </Text>
     },
     {
       title: 'Compiler',
       description: <Text dim>
-        Performance from a smart compiler, including inline styles with <Attr alt="Static style changes don't even reload Javascript for insane performance.">static CSS extraction</Attr>.
+        Inline styles with <Attr alt="Static style changes don't even reload Javascript for insane performance.">static CSS extraction</Attr>.
         <Attr alt="Motion scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr> without touching your terminal or browser.
       </Text>
     },
@@ -53,7 +53,7 @@ view Home.Platform {
 
   $small2 = {
     width: '95%',
-    margin: [30, 0, 0],
+    margin: [30, 0, -20],
 
     [device.small]: {
       margin: [20, 0],
@@ -77,7 +77,7 @@ view Home.Platform {
 
   $Text = {
     fontSize: 15,
-    lineHeight: 1.6
+    lineHeight: 1.5
   }
 
   $section = {

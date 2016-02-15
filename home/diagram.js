@@ -19,7 +19,6 @@ view Attr {
   $text = {
     display: 'inline',
     color: color.blue,
-    fontWeight: 600,
     cursor: 'pointer'
   }
 }

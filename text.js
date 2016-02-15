@@ -65,8 +65,8 @@ view IntroText {
   </Text>
 
   $ = {
-    fontSize: 22,
-    lineHeight: '2rem',
+    fontSize: 20,
+    lineHeight: '1.9rem',
     textAlign: center ? `center` : `auto`,
     color: light ? 'auto' : 'rgba(0,0,0,0.65)',
     marginBottom: 10,
