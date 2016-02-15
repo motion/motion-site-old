@@ -8,10 +8,6 @@ view Example {
 
   $ = {
     flexFlow: 'row',
-    flexGrow: 1,
-    alignItems: 'space-between',
-    justifyContent: 'center',
-    WebkitTapHighlightColor: 'rgba(0,0,0,0)',
 
     [device.small]: {
       flexFlow: 'column',

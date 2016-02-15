@@ -7,6 +7,7 @@ view Home {
   <Home.Platform />
   <Home.Syntax />
   //<Home.Tools />
+  <Home.CaseStudy />
   <Home.Production />
   <Home.Community />
   // <Home.Triple />

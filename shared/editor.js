@@ -60,6 +60,7 @@ view Editor {
     position: 'relative',
     zIndex: 10,
     width: '100%',
+    minWidth: 350,
     background: view.props.light ? light : '#263640',
     border: view.props.light ? `2px solid #eee` : `none`,
     margin: 'auto',

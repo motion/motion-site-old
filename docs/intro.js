@@ -6,13 +6,16 @@ view Docs.Intro {
   </IntroText>
 
   <Text>
-    Motion adds the <code>view</code>, which replaces HTML, CSS and your framework of choice with a simple, first-class statement in Javascript.
-    Views contain their logic, markup and style & are JavaScript blocks. When a variable changes, your view renders.
+    Motion adds the <code>view</code> statement to Javascript.  It replaces the need for HTML, CSS and your framework of choice with a simple construct.
   </Text>
 
   <Text>
-    Motion attempts to bring the concepts we use in our libraries to our language. Though the syntax may not be perfect yet, the
-    logic is sound: our compiler understanding how we code realizes big gains in expressiveness, performance, and features.
+    Views are everything you need: they contain logic, markup and style. When a variable in the view changes, your view updates.
+  </Text>
+
+  <Text>
+    Motion attempts to bring the concepts we use today in libraries to Javascript. Though the syntax may not yet be perfect, the
+    upsides are great: expressiveness, performance, and new features.
   </Text>
 
   <Text>
@@ -32,7 +35,7 @@ view Docs.Intro {
     Motion aims to unlock whole new levels of productive creativity.
   </Text>
 
-  <Title2>High level features</Title2>
+  <Title>High level features</Title>
 
   <SubTitle>Super Hot Reloads</SubTitle>
   <Text>

@@ -58,6 +58,7 @@ view Home.Head {
     overflow: 'hidden',
     position: 'relative',
     height: Math.min(window.innerHeight, 820),
+    minHeight: 700,
     textShadow: '0 1px 1px rgba(0,0,0,0.25)',
     padding: [50, 0, 0],
 
@@ -65,6 +66,12 @@ view Home.Head {
       padding: [200, 0, 0]
     }
   }
+
+    $Contain = {
+      [device.small]: {
+        maxWidth: '80%'
+      }
+    }
 
     $selfShadow = {
       position: 'absolute',
@@ -102,7 +109,7 @@ view Home.Head {
       fontWeight: 300,
       letterSpacing: -1,
       textShadow: '0 1px 1px rgba(0,0,0,0.2)',
-      margin: [0, 'auto', 20],
+      margin: [0, 'auto', 14],
       lineHeight: 1.3,
 
       [device.small]: {

@@ -17,7 +17,7 @@ view Title {
   />
 
   $ = {
-    fontWeight: 600,
+    fontWeight: 400,
     fontSize: 24,
     margin: [20, 0, 10],
     textAlign: center ? `center` : `auto`,
@@ -84,8 +84,9 @@ view IntroText {
 view Text {
   prop light, dim, small, children
   prop tagName = 'p'
+  prop center
 
-  <text tagName={tagName} class={{ small, light, dim }}>
+  <text tagName={tagName} class={{ small, light, dim, center }}>
     {children}
   </text>
 
@@ -107,5 +108,9 @@ view Text {
 
   $dim = {
     color: `rgba(0,0,0,0.45)`,
+  }
+
+  $center = {
+    textAlign: 'center'
   }
 }

@@ -19,6 +19,11 @@ view DemoCounter {
     }
     out={<Counter />}
   />
+
+  $Example = {
+    width: '82%',
+    margin: 'auto'
+  }
 }
 
 view Counter {
@@ -37,7 +42,6 @@ view Counter {
     margin: 'auto',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%',
     textAlign: 'center'
   }
 

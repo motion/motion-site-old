@@ -27,7 +27,7 @@ view Home.Production {
 
   $Row = {
     flexFlow: 'row',
-    margin: [0, 0, -20],
+    margin: [0, 0, -28],
 
     [device.small]: {
       flexFlow: 'column'
