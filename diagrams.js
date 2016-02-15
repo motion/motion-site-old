@@ -75,7 +75,7 @@ view Icon.Motion {
 
   on.every(1000, () => pulsing = !pulsing)
 
-  <img src="/assets/motion.svg" />
+  <img src="/assets/images/o.jpg" />
   <pulse />
 
   $ = {
@@ -92,6 +92,7 @@ view Icon.Motion {
     width: size,
     height: size,
     margin: -2,
+    borderRadius: 100,
     transition: 'all ease-in 200ms',
     transform: { scale: 0.9 },
     hover: { filter: 'none' }

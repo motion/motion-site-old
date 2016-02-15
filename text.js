@@ -19,9 +19,9 @@ view Title {
   $ = {
     fontWeight: 600,
     fontSize: 24,
-    margin: [20, 0, 5],
+    margin: [20, 0, 10],
     textAlign: center ? `center` : `auto`,
-    color: 'rgba(0,0,0,0.7)'
+    color: 'rgba(0,0,0,0.8)'
   }
 
   $light = {
@@ -38,8 +38,8 @@ view Title2 {
   <Title root yield />
 
   $Title = {
-    fontSize: 24,
-    color: 'rgba(0,0,0,0.6)',
+    fontSize: 20,
+    color: color.brand1,
   }
 }
 
@@ -70,6 +70,7 @@ view IntroText {
     textAlign: center ? `center` : `auto`,
     color: light ? 'auto' : 'rgba(0,0,0,0.65)',
     marginBottom: 10,
+    marginTop: 0,
     fontWeight: 300
   }
 

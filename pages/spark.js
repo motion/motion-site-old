@@ -1,7 +1,7 @@
 view Spark {
   <Page>
     <content>
-      <spark-img src="/assets/images/spark.jpg" />
+      <img src="/assets/images/o.jpg" />
 
       <Title big>
         Welcome to the Motion Spark Private Beta.

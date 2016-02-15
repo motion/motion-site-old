@@ -29,7 +29,7 @@ view Next {
   }
 
   $span = {
-    borderBottom: over ? `1px solid rgba(${blue}, 0.2)` : 'none'
+    borderBottom: over ? `1px solid rgba(${color.brand}, 0.2)` : 'none'
   }
 
   $arrow = {

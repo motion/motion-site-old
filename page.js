@@ -33,7 +33,7 @@ view Page {
   }
 
   $inner = {
-    padding: [0, 40, 0, 40],
+    padding: [5, 40, 100, 40],
     width: '100%'
   }
 }

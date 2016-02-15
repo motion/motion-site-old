@@ -160,6 +160,7 @@ view Toolbar {
   prop light = false
   prop changeTab
   prop tabs
+  prop activeTab
 
   const demoBorder = 4
 
@@ -168,7 +169,12 @@ view Toolbar {
     <ctrl class="max" />
     <ctrl class="open" />
   </bar>
-  <Tabs if={tabs && tabs.length} tabs={tabs} changeTab={changeTab} />
+  <Tabs
+    if={tabs && tabs.length}
+    tabs={tabs}
+    changeTab={changeTab}
+    activeTab={activeTab}
+  />
 
   const borderColor = light ? '#fff' : '#222'
   const border = '1px solid ' + borderColor

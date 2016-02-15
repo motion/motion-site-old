@@ -72,7 +72,7 @@ view Home.Platform {
 
   $Text = {
     fontSize: 15,
-    lineHeight: 1.8
+    lineHeight: 1.6
   }
 
   $section = {

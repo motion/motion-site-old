@@ -107,7 +107,7 @@ view Circle {
 
   <Motion
     defaultStyle={{scale: 0}}
-    style={{scale: spring(1, [300, 10])}}>{({ scale }) =>
+    style={{scale: spring(1, { stiffness: 300, damping: 10 })}}>{({ scale }) =>
       <circle style={{ transform: { scale }}} />
   }</Motion>
 
@@ -117,7 +117,7 @@ view Circle {
     left: view.props.left,
     width: 80,
     height: 80,
-    margin: [0, 0, 0, -40],
+    margin: [40, 0, 0, -40],
     borderRadius: 100,
     position: 'absolute',
     backfaceVisibility: 'hidden',
