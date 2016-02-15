@@ -40,10 +40,10 @@ view Home.Head {
   <Contain>
     <Stars num={25} />
     <banner>
-      <h1>Great applications, faster than ever before</h1>
+      <h1><b>Great applications</b>, faster than ever before</h1>
       <IntroText light>
-        Motion is an environment that brings React
-        into one cohesive, insanely smart package.
+        Motion brings together Javascript and React<br />
+        into one insanely smart environment.
       </IntroText>
       <Button if={false}><lt>Watch the video now</lt> Coming soon!</Button>
     </banner>
@@ -98,7 +98,7 @@ view Home.Head {
     }
 
     $h1 = {
-      fontSize: 34,
+      fontSize: 32,
       fontWeight: 300,
       letterSpacing: -1,
       textShadow: '0 1px 1px rgba(0,0,0,0.2)',
