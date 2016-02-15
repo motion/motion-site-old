@@ -15,7 +15,7 @@ routes.transition = '/transition'
 
 const color = chroma || function(){}
 color.alt = '#fdfdfa'
-color.brand = '#cc3838'
+color.brand = '#5f34bb'
 color.brand1 = '#775da8'
 color.brand2 = '#0e1571'
 color.green = '#259630'

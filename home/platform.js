@@ -62,8 +62,13 @@ view Home.Platform {
   }
 
   $sections = {
-    marginRight: 60,
-    width: '20%'
+    margin: [0, 60, 0, 0],
+    width: '20%',
+
+    [device.small]: {
+      width: 'auto',
+      margin: 'auto'
+    }
   }
 
   $diagram = {

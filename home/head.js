@@ -59,7 +59,11 @@ view Home.Head {
     position: 'relative',
     height: Math.min(window.innerHeight, 820),
     textShadow: '0 1px 1px rgba(0,0,0,0.25)',
-    padding: [50, 0, 0]
+    padding: [50, 0, 0],
+
+    [device.small]: {
+      padding: [200, 0, 0]
+    }
   }
 
     $selfShadow = {
@@ -89,7 +93,8 @@ view Home.Head {
       textAlign: 'center',
       padding: [0, '10%'],
       zIndex: 1000,
-      fontWeight: 600
+      fontWeight: 600,
+      flexWrap: 'no-wrap'
     }
 
     $h1 = {
@@ -99,6 +104,10 @@ view Home.Head {
       textShadow: '0 1px 1px rgba(0,0,0,0.2)',
       margin: [0, 'auto', 20],
       lineHeight: 1.3,
+
+      [device.small]: {
+        fontSize: 32
+      }
     }
 
     $IntroText = {

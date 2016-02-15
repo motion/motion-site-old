@@ -22,8 +22,7 @@ view Header {
     boxShadow: nobg ? 'transparent' : '0 0 4px rgba(0,0,0,0.25)',
 
     [device.small]: {
-      marginBottom: -50,
-      background: color.brand,
+      marginBottom: -150,
       boxShadow: 'none',
       position: 'relative'
     }
