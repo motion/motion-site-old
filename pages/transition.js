@@ -1,7 +1,6 @@
 view Transition {
   <Head
-    title="Moving your React app to Motion"
-    subtitle="Motion runs on React, so migrating an existing React stack is possible. Follow these instructions."
+    title="Using Motion with your existing React app"
   />
   <Page>
     <SubTitle>Video Tutorial</SubTitle>
@@ -23,7 +22,7 @@ view Transition {
   </Page>
 
   const dim = () => {
-    const wide = Math.min(window.innerWidth, 900)
+    const wide = Math.min(window.innerWidth, 800)
     const dim = { width: 1280, height: 720 }
     const ratio = wide / dim.width
 

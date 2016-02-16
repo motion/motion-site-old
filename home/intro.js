@@ -1,47 +1,36 @@
 import { style, color, routes, font, device } from '../constants'
 
-let already = false
-
 view Home.Intro {
-  let start = already || false
-
-  function triggerEvent(id, name) {
-    let event = document.createEvent('CustomEvent')
-    event.initCustomEvent(name, true, true, null)
-    let frame = document.getElementById(id)
-    let frameWin = frame.contentDocument || frame.contentWindow.document
-    frameWin.body.dispatchEvent(event)
-  }
-
   <Feature col>
     <Row centered>
       <Col class="content">
         <Title>Start in seconds, not days</Title>
         <IntroText>
           No configuration. No boilerplate.<br />
-          An ultra-modern React stack is just the start.
+          An ultra-modern React stack.
         </IntroText>
-        <Text dim small>
-          Motion is a sensible and open stack that
-          brings joy to frontend development.
+        <Text dim>
+          Motion is a sensible and open stack<br />
+          with tools that are always improving.
         </Text>
       </Col>
       <Col class="example">
-      <Editor right lines={7}
-        source={`
-        $ npm install -g motion
-        $ motion new project
-        $ cd project
-        $ motion
+        <Editor right lines={7}
+          source={`
+          $ npm install -g motion
+          $ motion new project
+          $ cd project
+          $ motion
 
-                      ⇢  localhost:4000
-      `} />
+                        ⇢  localhost:4000
+        `} />
       </Col>
     </Row>
   </Feature>
 
   $Feature = {
-    maxWidth: 920,
+    maxWidth: 820,
+    width: '100%',
     margin: 'auto'
   }
 
@@ -55,14 +44,18 @@ view Home.Intro {
   }
 
   $content = {
-    width: '40%',
     paddingRight: 40,
     justifyContent: 'center',
 
     [device.small]: {
-      padding: [0, 0, 30],
-      width: '100%'
+      padding: [0, 20, 30],
+      margin: [-50, 'auto', 20],
+      width: '90%'
     }
+  }
+
+  $Col = {
+    width: '50%'
   }
 
   $pre = {

@@ -33,7 +33,7 @@ view Page {
   }
 
   $inner = {
-    padding: [5, 40, 100, 40],
+    padding: [5, 110, 100, 60],
     width: '100%'
   }
 }
@@ -72,10 +72,10 @@ view Page.Link {
   $a = {
     borderRight: [3, 'solid', 'transparent'],
     color: '#555',
-    fontSize: 18,
+    fontSize: 16,
     whiteSpace: 'nowrap',
     padding: [0, 13],
-    margin: [2, 0],
+    margin: [1, 0],
     minWidth: 130,
     display: 'flex',
     width: '100%',

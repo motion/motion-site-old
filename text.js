@@ -49,7 +49,7 @@ view SubTitle {
   $ = {
     color: color(color.brand).darken(1).rgba(),
     marginTop: 15,
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 400
   }
 }
@@ -69,7 +69,7 @@ view IntroText {
     lineHeight: '1.9rem',
     textAlign: center ? `center` : `auto`,
     color: light ? 'auto' : 'rgba(0,0,0,0.65)',
-    marginBottom: 10,
+    marginBottom: 15,
     marginTop: 0,
     fontWeight: 300
   }
@@ -92,8 +92,8 @@ view Text {
 
   $ = {
     fontWeight: 400,
-    fontSize: 17,
-    lineHeight: '1.65rem'
+    fontSize: 15,
+    lineHeight: '1.6rem'
   }
 
   $light = {
@@ -101,7 +101,7 @@ view Text {
   }
 
   $small = {
-    fontSize: 16,
+    fontSize: 14,
     lineHeight: '1.55rem',
     color: `rgba(0,0,0,0.45)`,
   }

@@ -12,8 +12,8 @@ view Docs.Deploying {
 
   <Text>
     From there, you can deploy it to any number of static hosts. We have tested with
-    with <a href="http://surge.sh">Surge.sh</a> and
-    with <a href="http://firebase.com">Firebase</a>. Both are very easy to use
+    with <Link to="http://surge.sh">Surge.sh</Link> and
+    with <Link to="http://firebase.com">Firebase</Link>. Both are very easy to use
     and provide an excellent and simple onboarding experience.
   </Text>
 

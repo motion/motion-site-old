@@ -7,13 +7,12 @@ view Head {
       <Title big>{title}</Title>
       <IntroText>{subtitle}</IntroText>
     </inner>
-    <img src="/assets/images/watercolor.jpg" />
+    <img if={false} src="/assets/images/watercolor.jpg" />
   </Contain>
 
   $ = {
     background: '#fefefe',
     marginTop: 49,
-    marginBottom: -50,
     padding: [20, 0, 20],
     borderBottom: '1px solid #f9f9f9',
     overflow: 'hidden'

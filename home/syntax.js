@@ -4,8 +4,10 @@ view Home.Syntax {
   let demo = 'DemoVenn'
 
   <Feature col>
-    <Title>Views in Javascript</Title>
-    <IntroText>Learn all of Motion in minutes:</IntroText>
+    <Title>Learn Motion in Minutes</Title>
+    <IntroText>
+      Motion introduces views to modern Javascript
+    </IntroText>
 
     <Row class="nav" center>
       <Sel active={demo} name="DemoVenn" onClick={_ => demo = _}>Styling</Sel>

@@ -27,7 +27,7 @@ view Card {
   $SubTitle = {
     marginTop: 0,
     marginBottom: 0,
-    color: 'rgba(0,0,0,0.5)'
+    fontSize: 16
   }
 
   $hover = {
@@ -43,6 +43,9 @@ view Card.List {
   <Row root spread tagName="ul" yield />
 
   $ = {
-    padding: 0
+    padding: 0,
+    margin: -10,
+    marginTop: 0,
+    flexFlow: 'row'
   }
 }

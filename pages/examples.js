@@ -1,12 +1,30 @@
 const examples = [
-  { title: "Intro", view: 'Intro', slug: 'intro', description: `
-    Learn how to use views in Motion. Learn the complete style syntax, using variables
-    for dynamic content, and basics of adding events.
-  ` },
-  { title: "Fetch", view: 'Arena', slug: 'fetch', description: `
-    Now that you have views down, learn how to fetch data from anywhere on the web and use it in your views.
-    This tutorial also teaches routing, and how to use the Motion router with views.
-  ` },
+  {
+    title: 'Introduction',
+    examples: [
+      { title: "Begin", view: 'Intro', slug: 'intro', description: `
+        Learn how to use views in Motion. Learn the complete style syntax, using variables
+        for dynamic content, and basics of adding events.
+      ` },
+      { title: "Routing and Fetching", view: 'Arena', slug: 'fetch', description: `
+        Learn how to fetch data using fetch as well as async/await.
+        This tutorial also teaches routing, and how to use the Motion router with views.
+      ` },
+    ]
+  },
+  {
+    title: 'Integration',
+    examples: [
+      { title: "Begin", view: 'Intro', slug: 'intro', description: `
+        Learn how to use views in Motion. Learn the complete style syntax, using variables
+        for dynamic content, and basics of adding events.
+      ` },
+      { title: "Routing and Fetching", view: 'Arena', slug: 'fetch', description: `
+        Learn how to fetch data using fetch as well as async/await.
+        This tutorial also teaches routing, and how to use the Motion router with views.
+      ` },
+    ]
+  }
 ]
 
 view Learn {
@@ -15,12 +33,16 @@ view Learn {
     subtitle="Get familiar with Motion through these quick tutorials."
   />
   <Page>
-    <SubTitle>Introduction</SubTitle>
-    <Card.List>
-      <Card repeat={examples} title={_.title} onClick={() => Motion.router.go(`/examples/${_.slug}`)}>
-        {_.description}
-      </Card>
-    </Card.List>
+    <section repeat={examples}>
+      <SubTitle>{_.title}</SubTitle>
+      <Card.List>
+        <Card repeat={_.examples}
+          title={_.title}
+          onClick={() => Motion.router.go(`/examples/${_.slug}`)}>
+            {_.description}
+        </Card>
+      </Card.List>
+    </section>
   </Page>
 
   $ = {
@@ -33,6 +55,10 @@ view Learn {
 
   $Card = {
     width: '46%'
+  }
+
+  $section = {
+    marginBottom: 30
   }
 }
 
