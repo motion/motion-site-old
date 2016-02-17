@@ -14,13 +14,12 @@ view Code {
 
   $ = {
     background: '#fff',
-    border: '1px solid #ddd',
+    border: '1px solid #eee',
     color: 'rgba(0,0,0,0.75)',
-    boxShadow: '0 0 4px rgba(0,0,0,0.05)',
     padding: 10,
     margin: [10, 0],
     borderRadius: 4,
-    fontSize: 15,
+    fontSize: 14,
     lineHeight: 1.5,
     whiteSpace: 'pre',
     fontFamily: font.monoSpace,

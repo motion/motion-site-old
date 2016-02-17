@@ -75,7 +75,7 @@ view Page.Link {
     fontSize: 16,
     whiteSpace: 'nowrap',
     padding: [0, 13],
-    margin: [1, 0],
+    margin: 0,
     minWidth: 130,
     display: 'flex',
     width: '100%',

@@ -19,7 +19,7 @@ const docs = [
   },
 
   {
-    section: 'Features',
+    section: 'Extras',
     pages: [
       { title: "Events", view: 'Events', slug: 'events' },
       { title: "Routes", view: 'Routes', slug: 'routes' },

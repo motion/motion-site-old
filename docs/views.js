@@ -1,8 +1,6 @@
 view Docs.Views {
   <Title>Views</Title>
 
-  <IntroText>Motion is based entirely on ES6 JavaScript with slight modifications for simplicity and clarity. By using a custom compiler, we remove the framework layer.</IntroText>
-
   <Text>Here is a view:</Text>
 
   <Code source={`
@@ -71,7 +69,10 @@ view Docs.Views {
 
     view Hello {
       <h1>Hello {view.props.to}</h1>
-      $h1 = { fontSize: view.props.size }
+
+      $h1 = {
+        fontSize: view.props.size
+      }
     }
   `} />
 
@@ -104,7 +105,9 @@ view Docs.Views {
       <greet>Hello World</greet>
       <sub>Show as h2, named greet</sub>
 
-      $greet = { fontWeight: 'bold' }
+      $greet = {
+        fontWeight: 'bold'
+      }
     }
   `} />
 
@@ -121,7 +124,7 @@ view Docs.Views {
   <ul>
     <li>mount - called once after mounted in document</li>
     <li>unmount - called once before unmount</li>
-    <li>props - called once before mount and once when new props come have come in</li>
+    <li>props - called once before mount and on new props</li>
     <li>change - called before every render</li>
     <li>render - called after every render</li>
   </ul>
@@ -147,22 +150,6 @@ view Docs.Views {
       })
 
       <tagline>Web apps, {how}</tagline>
-    }
-  `} />
-
-  <Text>
-    Because <code>on.props</code> receives the props object, you could write the same thing using ES6 destructing:
-  </Text>
-
-  <Code source={`
-    view Tagline {
-      // destructure:
-      on.props(({ start }) => {
-        // and use as variable
-        if (start && !started) {
-          started = true
-        }
-      })
     }
   `} />
 
