@@ -6,11 +6,11 @@ view Home {
   <Home.Intro />
   <Home.Platform />
   <Home.Syntax />
-  //<Home.Tools />
+  <Home.Signup />
   <Home.CaseStudy />
-  <Home.Production />
+  //<Home.Production />
   <Home.Community />
-  // <Home.Triple />
+  <Home.Tools />
   <Home.Features />
   <Footer />
 }

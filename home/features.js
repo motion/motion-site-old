@@ -41,7 +41,7 @@ view Features {
         <col>
           <title>No boilerplate</title>
           <Text dim small>
-            Forget configs, gulp systems, and having to spend weeks
+            Forget configs, build systems, and having to spend weeks
             researching and assembling a modern stack on React.
           </Text>
         </col>
