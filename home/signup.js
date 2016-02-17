@@ -1,10 +1,25 @@
 import { color } from '../constants'
 
-view Signup {
-  <Contain>
-    <Title light center>Sign up to keep up with releases:</Title>
-    <SignupForm />
-  </Contain>
+view Home.Signup {
+  <Feature dark>
+    <Row center centered>
+      <Col class="text">
+        <Title light>Motion Beta</Title>
+        <IntroText light>
+          Motion Beta is starting with Native support. We're looking for developers to help build out the best possible native experience.
+        </IntroText>
+      </Col>
+
+      <Col center>
+        <SignupForm />
+      </Col>
+    </Row>
+  </Feature>
+
+  $text = {
+    width: 300,
+    marginRight: 100
+  }
 }
 
 view SignupForm {
@@ -27,7 +42,8 @@ view SignupForm {
         <input type="text" name="b_d6ee317984756a7f0f5e9378b_dcc2cefed5" tabindex="-1" value="" />
       </hide>
       <center class="clear">
-        <submit-input
+        <input
+          type="submit"
           class="button"
           type="submit"
           value="Sign up!"

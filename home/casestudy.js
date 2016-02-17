@@ -1,7 +1,7 @@
 import { style, color, routes, font, device } from '../constants'
 
 view Home.CaseStudy {
-  <Feature col if={false}>
+  <Feature col>
     <Title>Case Study</Title>
     <img src="/assets/images/quixey.png" />
     <Row>

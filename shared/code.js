@@ -23,7 +23,8 @@ view Code {
     fontSize: 15,
     lineHeight: 1.5,
     whiteSpace: 'pre',
-    fontFamily: font.monoSpace
+    fontFamily: font.monoSpace,
+    overflow: 'hidden'
   }
 
   $large = {
