@@ -1,24 +1,26 @@
 import { color } from '../constants'
 
 view Home.Signup {
-  <Feature dark>
-    <Row center centered>
-      <Col class="text">
-        <Title light>Motion Beta</Title>
-        <IntroText light>
-          Motion Beta is starting with Native support. We're looking for developers to help build out the best possible native experience.
+  <Feature odd narrow>
+    <Row center>
+      <Col pad>
+        <Title>Motion Native</Title>
+        <IntroText>
+          Motion Native Beta is starting with Native support. We're looking for developers to help build out the best possible native experience.
         </IntroText>
       </Col>
 
-      <Col center>
-        <SignupForm />
+      <Col centered pad>
+        <around>
+          <IntroText>Sign up for the beta</IntroText>
+          <SignupForm />
+        </around>
       </Col>
     </Row>
   </Feature>
 
-  $text = {
-    width: 300,
-    marginRight: 100
+  $Col = {
+    width: '50%'
   }
 }
 
@@ -44,18 +46,9 @@ view SignupForm {
       <center class="clear">
         <input
           type="submit"
-          class="button"
+          class="button thing"
           type="submit"
           value="Sign up!"
-          style={{
-            border: 'none',
-            color: '#fff',
-            fontWeight: 'bold',
-            background: `linear-gradient(left, #E86C3D, #DC405B)`,
-            padding: 10,
-            fontSize: 22,
-            width: '50%'
-          }}
           name="subscribe" id="mc-embedded-subscribe" />
       </center>
     </div>
@@ -75,13 +68,21 @@ view SignupForm {
     marginBottom: 10,
     borderRadius: 5,
     background: '#fff',
-    padding: 10,
+    padding: 8,
+    fontSize: 15,
     color: '#666',
     border: '1px solid #ccc'
   }
 
-  $button = {
+  $thing = {
     margin: 'auto',
-    background: color.brand2
+    background: color.brand2,
+    color: '#fff',
+    border: 'none',
+    fontWeight: 200,
+    textAlign: 'center',
+    padding: 10,
+    fontSize: 17,
+    width: '50%'
   }
 }

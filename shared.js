@@ -43,7 +43,9 @@ view Row {
 }
 
 view Col {
-  prop center, centered, grow:? number
+  prop center, centered
+  prop pad
+  prop grow:? number
 
   $ = {
     flexFlow: 'column',
@@ -53,6 +55,7 @@ view Col {
     flexGrow: typeof grow != 'undefined' ? grow : 1,
     flexShrink: 1,
     maxWidth: '100%',
+    padding: pad ? 20 : 0,
 
     [device.small]: {
       margin: 0,

@@ -1,12 +1,12 @@
 import { style, color } from '../constants'
 
 view Feature {
-  prop bg, center, col, odd, slim, dark, reverse, children, stars
+  prop bg, center, col, odd, slim, dark, reverse, children, stars, narrow
 
   <Stars if={stars} num={50} />
-  <Contain maxWidth={1000}>{children}</Contain>
+  <Contain maxWidth={narrow ? 850 : 1000}>{children}</Contain>
 
-  const padheight = slim ? 0 : 100
+  const padheight = slim ? 0 : 90
 
   $ = {
     padding: [padheight - 30, 20, padheight],
@@ -21,6 +21,7 @@ view Feature {
 
   $Contain = {
     flexFlow: col ? `column` : reverse ? `row-reverse` : `row`,
+    margin: 'auto'
   }
 }
 

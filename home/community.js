@@ -1,9 +1,9 @@
 import { style, color, routes, font, device } from '../constants'
 
 view Home.Community {
-  <Feature>
+  <Feature narrow>
     <inner>
-      <Col class="content">
+      <Col pad>
         <Title>Powered by Open</Title>
         <IntroText>
           Motion is and runs on open source. We keep a public roadmap, make decisions with the community on Github, and sponsor open source on Patreon.
@@ -43,8 +43,6 @@ view Home.Community {
   }
 
   $content = {
-    padding: [20, 50, 0, 20],
-    width: '50%',
     justifyContent: 'center',
 
     [device.small]: {

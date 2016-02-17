@@ -1,8 +1,3 @@
-view Diagram.Demo {
-
-}
-
-
 view Overlay {
   let active
 
@@ -20,6 +15,7 @@ view Overlay {
     transition: 'all ease-in 300ms',
     position: 'absolute',
     left: -75,
+    color: 'rgba(0,0,0,0.7)',
     textAlign: 'left',
     bottom: active ? '140%' : '130%',
     width: 200,

@@ -24,10 +24,10 @@ view Install.Input {
   $input = {
     border: 'none',
     color: 'rgb(13, 149, 217)',
-    background: '#fff',
+    background: 'none',
     borderRadius: 6,
     padding: [10, 5, 10, 10],
-    fontSize: 20,
+    fontSize: 18,
     margin: [-8, 0, -5],
     fontFamily: font.monoSpace
   }
@@ -75,13 +75,13 @@ view Home.Install {
   </Feature>
 
   $ = {
-    borderBottom: '1px solid #eee',
+    background: 'linear-gradient(#f2f2f2, #fff)',
     color: 'rgba(0,0,0,0.3)',
-    boxShadow: '0 2px 2px rgba(0,0,0,0.045)'
+    // boxShadow: '0 2px 2px rgba(0,0,0,0.045)'
   }
 
   $title = {
-    fontSize: 20,
+    fontSize: 18,
     marginRight: 0,
     flexFlow: 'row',
 
@@ -97,7 +97,7 @@ view Home.Install {
 
   $Feature = {
     margin: 'auto',
-    padding: [15, 5],
+    padding: [10, 5],
     border: 'none',
     flexWrap: 'wrap',
   }

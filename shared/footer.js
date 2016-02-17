@@ -9,7 +9,7 @@ view Footer {
   </Feature>
 
   $Feature = {
-    padding: [120, 0]
+    padding: [80, 0]
   }
 
   $p = {

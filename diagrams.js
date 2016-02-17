@@ -19,7 +19,7 @@ view Icon.Window {
     border: '2px solid rgba(0,0,0,0.1)',
     margin: [0, 'auto'],
     borderRadius: 5,
-    background: '#fff',
+    background: 'rgba(0,0,0,0.05)',
     transition: 'all ease-in 300ms',
   }
 
@@ -43,12 +43,12 @@ view Icon.Browser {
   } />
 
   $top = {
-    borderBottom: '1px solid #eee',
+    borderBottom: '1px solid rgba(0,0,0,0.2)',
     height: 15
   }
 
   $item = {
-    border: '1px solid #eee',
+    border: '1px solid rgba(0,0,0,0.2)',
     borderRadius: 10,
     margin: 3,
     height: '100%'
@@ -62,7 +62,7 @@ view Icon.Editor {
 
   $line = {
     height: 1,
-    background: '#eee',
+    background: 'rgba(0,0,0,0.2)',
     margin: 3,
     width: Math.max(0.8, Math.random()) * Math.min(100, Math.max(70, _index * 45 % 100 * (Math.random() * 2.5))) + '%'
   }
@@ -79,8 +79,7 @@ view Icon.Motion {
   <pulse />
 
   $ = {
-    border: '2px solid #eee',
-    background: '#fff',
+    border: '2px solid rgba(0,0,0,0)',
     width: size,
     height: size,
     borderRadius: 100,
@@ -106,7 +105,7 @@ view Icon.Motion {
     margin: -2,
     width: size,
     height: size,
-    border: '2px solid #eee',
+    border: '2px solid rgba(0,0,0,0.2)',
     borderRadius: 100,
     transition: pulsing && 'all ease-in 1000ms',
     transform: {
@@ -136,7 +135,7 @@ view Icon.Console {
   $cursor = {
     width: 7,
     height: 10,
-    background: '#eee'
+    background: 'rgba(0,0,0,0.2)'
   }
 
   $line = {
