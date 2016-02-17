@@ -100,6 +100,7 @@ view Home.Head {
       textAlign: 'center',
       padding: [0, '10%'],
       zIndex: 1000,
+      width: '100%',
       fontWeight: 600,
       flexWrap: 'no-wrap'
     }
