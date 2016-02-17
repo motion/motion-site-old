@@ -9,7 +9,7 @@ view Home {
   //<Home.Production />
   <Home.Community />
   <Home.Platform />
-  <Home.CaseStudy />
+  //<Home.CaseStudy />
   <Home.Features />
   <Footer />
 }
