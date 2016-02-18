@@ -33,8 +33,6 @@ view Diagram {
     justifyContent: 'center',
     position: 'relative',
     zIndex: 1000,
-    width: 330,
-    height: 240,
     margin: 'auto'
   }
 

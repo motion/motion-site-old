@@ -6,7 +6,11 @@ view Home.Features {
     <IntroText center>Start in seconds, be more creative & deploy today</IntroText>
     <Features />
   </Feature>
-  $Feature = { border: 'none', paddingBottom: 0 }
+
+  $Feature = {
+    border: 'none',
+    paddingBottom: 0
+  }
 }
 
 view Features {

@@ -18,10 +18,10 @@ view Icon.Window {
   $window = {
     width: size,
     height: size,
-    border: `2px solid #333`,
+    border: `1px solid rgba(0,0,0,0.2)`,
     margin: [0, 'auto'],
-    borderRadius: 5,
-    background: '#fff',
+    borderRadius: 8,
+    background: 'rgba(255,255,255,0.9)',
     transition: 'all ease-in 300ms',
   }
 

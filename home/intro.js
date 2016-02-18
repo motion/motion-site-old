@@ -29,9 +29,10 @@ view Home.Intro {
   </Feature>
 
   $Feature = {
-    maxWidth: 820,
+    maxWidth: 800,
     width: '100%',
-    margin: 'auto'
+    margin: [0, 'auto', -40],
+    border: 'none'
   }
 
   $Editor = {

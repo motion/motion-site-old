@@ -28,11 +28,19 @@ view Home.Platform {
   }
 
   $Attr = {
-    position: 'absolute'
+    position: 'absolute',
+
+    [device.small]: {
+      position: 'relative',
+      top: 'auto',
+      left: 'auto',
+      right: 'auto',
+      textAlign: "center",
+    }
   }
 
   $content = {
-    margin: [30, 0, 0],
+    margin: [60, 0],
     padding: [0, 80],
 
     [device.small]: {
@@ -87,11 +95,6 @@ view Home.Platform {
 
   $Diagram = {
     margin: [20, 'auto', 20],
-
-    [device.small]: {
-      margin: [0, 'auto'],
-      height: 'auto'
-    }
   }
 
   $Title = {

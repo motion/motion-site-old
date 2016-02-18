@@ -75,10 +75,10 @@ view Home.Head {
 
     $selfShadow = {
       position: 'absolute',
-      bottom: 0,
+      bottom: -1,
       left: 0,
       right: 0,
-      boxShadow: '0 0 15px rgba(0,0,0,0.5)',
+      boxShadow: '0 0 15px rgba(0,0,0,0.8)',
       zIndex: 10000000,
       height: 1,
       background: '#fff'

@@ -5,10 +5,10 @@ view Home {
   <Home.Install />
   <Home.Intro />
   <Home.Syntax />
-  <Home.Signup />
   //<Home.Production />
-  <Home.Community />
   <Home.Platform />
+  <Home.Community />
+  <Home.Signup />
   //<Home.CaseStudy />
   <Home.Features />
   <Footer />
