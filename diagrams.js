@@ -1,6 +1,8 @@
-import { style, font } from './constants'
+import { style, font, color } from './constants'
 
 const size = 100
+
+const base = 'rgb(86, 58, 145)'
 
 view Icon.Window {
   prop highlight, top, children
@@ -16,10 +18,10 @@ view Icon.Window {
   $window = {
     width: size,
     height: size,
-    border: '2px solid rgba(0,0,0,0.1)',
+    border: `2px solid #333`,
     margin: [0, 'auto'],
     borderRadius: 5,
-    background: 'rgba(0,0,0,0.05)',
+    background: '#fff',
     transition: 'all ease-in 300ms',
   }
 
@@ -43,12 +45,12 @@ view Icon.Browser {
   } />
 
   $top = {
-    borderBottom: '1px solid rgba(0,0,0,0.2)',
+    borderBottom: '1px solid rgba(0,0,0,0.1)',
     height: 15
   }
 
   $item = {
-    border: '1px solid rgba(0,0,0,0.2)',
+    border: '1px solid rgba(0,0,0,0.1)',
     borderRadius: 10,
     margin: 3,
     height: '100%'
@@ -62,9 +64,9 @@ view Icon.Editor {
 
   $line = {
     height: 1,
-    background: 'rgba(0,0,0,0.2)',
+    background: 'rgba(0,0,0,0.1)',
     margin: 3,
-    width: Math.max(0.8, Math.random()) * Math.min(100, Math.max(70, _index * 45 % 100 * (Math.random() * 2.5))) + '%'
+    width: Math.max(0.7, Math.random()) * Math.min(100, Math.max(70, _index * 45 % 100 * (Math.random() * 2.5))) + '%'
   }
 }
 
@@ -73,7 +75,7 @@ view Icon.Motion {
 
   let pulsing = false
 
-  on.every(1000, () => pulsing = !pulsing)
+  on.every(2000, () => pulsing = !pulsing)
 
   <img src="/assets/images/o.jpg" />
   <pulse />
@@ -107,7 +109,7 @@ view Icon.Motion {
     height: size,
     border: '2px solid rgba(0,0,0,0.2)',
     borderRadius: 100,
-    transition: pulsing && 'all ease-in 1000ms',
+    transition: pulsing ? 'all ease-in 1000ms' : 'opacity ease-in 300ms',
     transform: {
       scale: pulsing ? 1.5 : 1
     },

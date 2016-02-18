@@ -121,7 +121,11 @@ view Home.Head {
     $IntroText = {
       color: 'rgba(255,255,255,0.9)',
       margin: 'auto',
-      padding: [0, 110]
+      padding: [0, 110],
+
+      [device.small]: {
+        display: 'none'
+      }
     }
 
     $lead = {

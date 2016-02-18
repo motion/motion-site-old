@@ -17,9 +17,6 @@ view Diagram {
   }
 
   <round />
-  <line class="across" />
-  <line class="slantl" />
-  <line class="slantr" />
   <section {...sectionHover(1)} class="side">
     <Icon.Browser class="icon" highlight={hover == 1} />
   </section>
@@ -41,7 +38,7 @@ view Diagram {
     margin: 'auto'
   }
 
-  const roundSize = 230
+  const roundSize = 200
 
   $round = {
     position: 'absolute',
@@ -61,7 +58,7 @@ view Diagram {
 
   $section = {
     alignItems: 'center',
-    padding: [0, 25],
+    padding: [0, 22],
     maxWidth: 400,
     alignSelf: 'flex-start',
     position: 'relative',
