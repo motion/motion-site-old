@@ -43,7 +43,7 @@ view Home.Head {
       <h1><b>Great applications</b>, faster than ever before</h1>
       <IntroText light>
         Motion brings together Javascript and React<br />
-        into one insanely smart environment.
+        into one insanely smart environment
       </IntroText>
       <Button if={false}><lt>Watch the video now</lt> Coming soon!</Button>
     </banner>

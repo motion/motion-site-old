@@ -18,8 +18,6 @@ view Header {
     left: 0,
     right: 0,
     zIndex: 100,
-    background: nobg ? 'rgba(0,0,0,0.05)' : style.gradient,
-    boxShadow: nobg ? 'transparent' : '0 0 4px rgba(0,0,0,0.25)',
 
     [device.small]: {
       marginBottom: -150,
@@ -32,6 +30,9 @@ view Header {
     flexFlow: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    background: nobg ? 'rgba(0,0,0,0.05)' : style.gradient,
+    boxShadow: nobg ? 'transparent' : '0 0 4px rgba(0,0,0,0.25)',
+    transition: 'all ease-in 300ms',
 
     [device.small]: {
       flexFlow: 'column'
@@ -40,7 +41,7 @@ view Header {
 
   $Nav = {
     flexGrow: 1,
-    marginLeft: 20,
+    marginLeft: 10,
     marginTop: -3
   }
 
@@ -83,7 +84,7 @@ view Nav {
     textShadow: '0 1px 1px rgba(0,0,0,0.15)',
     fontWeight: 300,
     borderBottom: 'none',
-    fontSize: 15,
+    fontSize: 14,
     padding: [0, 10],
     cursor: 'pointer',
     textDecoration: 'none',
@@ -116,9 +117,9 @@ function showInstall(e) {
 view Logo {
   <img root onClick={Motion.router.link(routes.home)} src="/assets/images/motion-small.png" />
 
-  const width = 1340
-  const height = 320
-  const multiplier = view.props.small ? .08 : .28
+  const width = 256
+  const height = 61
+  const multiplier = view.props.small ? .33333 : .28
 
   $img = {
     width: Math.round(width * multiplier),
