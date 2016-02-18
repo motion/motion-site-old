@@ -18,7 +18,13 @@ view Attr {
 
   $text = {
     display: 'inline',
-    color: '#fff',
-    cursor: 'pointer'
+    color: 'rgba(255,255,255,0.8)',
+    fontWeight: 300,
+    cursor: 'pointer',
+    transition: 'all ease-in 300ms',
+
+    hover: {
+      color: '#fff'
+    }
   }
 }

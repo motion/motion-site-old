@@ -14,7 +14,7 @@ view Overlay {
     opacity: active ? 1 : 0,
     transition: 'all ease-in 300ms',
     position: 'absolute',
-    left: -75,
+    left: -20,
     color: 'rgba(0,0,0,0.7)',
     textAlign: 'left',
     bottom: active ? '140%' : '130%',

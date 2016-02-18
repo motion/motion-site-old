@@ -77,7 +77,7 @@ view Icon.Motion {
 
   on.every(2000, () => pulsing = !pulsing)
 
-  <img src="/assets/images/o.jpg" />
+  <img src="/assets/images/o.png" />
   <pulse />
 
   $ = {
