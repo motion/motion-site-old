@@ -75,7 +75,7 @@ view Start.Scratch {
       Install Motion
     </li>
     <Code source={`
-      sh <(curl -L https://motion.love)
+      sh <(curl -L https://motion.run)
     `} />
     <li>
       Create your app

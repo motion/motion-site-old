@@ -11,7 +11,7 @@ view Docs.InstallContent {
   </Text>
 
   <Code lang={false} source={`
-    $ sh <(curl -sL https://motion.love)
+    $ sh <(curl -sL https://motion.run)
   `}/>
 
   <Text>
