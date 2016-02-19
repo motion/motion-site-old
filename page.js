@@ -40,7 +40,7 @@ view Page {
 
 view Page.Sidebar {
   <links if={view.props.list}>
-    <Page.Link repeat={view.props.list} {..._} />
+    <Page.Link base={view.props.base} repeat={view.props.list} {..._} />
   </links>
   <content if={!view.props.list} yield />
 

@@ -74,7 +74,6 @@ view Examples.Fetch {
     this paragraph. Fetch is coming to browsers, but Motion provides
     it for you by default. It's a radically improved API for doing AJAX
     requests, or simply, getting data from anywhere else on the web.
-    Read more on fetch here.
   </Text>
 
   <Text>
