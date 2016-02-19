@@ -15,7 +15,7 @@ view Page {
   $ = {
     fontSize: 18,
     lineHeight: '1.95rem',
-    padding: [20, 0],
+    padding: [20, 0, 0],
     flexGrow: 1,
 
     [device.small]: {

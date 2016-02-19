@@ -12,7 +12,7 @@ view Header {
   </wrap>
 
   $ = {
-    padding: [2, 0],
+    padding: 0,
     position: 'absolute',
     top: 0,
     left: 0,

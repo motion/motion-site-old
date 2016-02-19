@@ -9,6 +9,5 @@ view BackgroundVideo {
   $video = {
     borderRadius: 5,
     overflow: 'hidden',
-    opacity: 0.2,
   }
 }

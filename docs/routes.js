@@ -2,6 +2,12 @@ view Docs.Routes {
   <Title>Routes</Title>
   <IntroText>Motion comes with a lightweight routing system, but lets you plug in any you'd like.</IntroText>
 
+  <SubTitle>Note</SubTitle>
+  <Text>
+    Routing in Motion is simple and stripped down. If you're building a larger
+    application, we recommend using the fantastic <Link to="https://github.com/reactjs/react-router">React Router</Link> library.
+  </Text>
+
   <Text>
     Routing is done through <code>Motion.router</code>, which has the following functions:
   </Text>

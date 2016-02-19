@@ -6,9 +6,9 @@ view Demo {
   </mask>
 
   $ = {
-    width: '110%',
-    marginLeft: '-5%',
-    height: 420,
+    width: '105%',
+    marginLeft: '-2.5%',
+    height: 400,
     position: 'relative',
     borderRadius: 5,
     borderBottomLeftRadius: 0,

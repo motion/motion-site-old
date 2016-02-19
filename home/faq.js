@@ -20,8 +20,8 @@ view FAQ {
     </question>
     <answer>
       <ul>
-        <li>The <a href="https://github.com/motionjs/examples">examples repo</a> has example apps</li>
-        <li>Check out the Motion <a href="https://github.com/motionjs/site">source for this site</a></li>
+        <li>The <a href="https://github.com/motion/examples">examples repo</a> has example apps</li>
+        <li>Check out the Motion <a href="https://github.com/motion/site">source for this site</a></li>
       </ul>
     </answer>
 

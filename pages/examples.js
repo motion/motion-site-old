@@ -6,7 +6,7 @@ const examples = [
         Learn how to use views in Motion. Learn the complete style syntax, using variables
         for dynamic content, and basics of adding events.
       ` },
-      { title: "Routing and Fetching", view: 'Arena', slug: 'fetch', description: `
+      { title: "Routes/Fetch", view: 'Fetch', slug: 'fetch', description: `
         Learn how to fetch data using fetch as well as async/await.
         This tutorial also teaches routing, and how to use the Motion router with views.
       ` },
@@ -19,7 +19,7 @@ const examples = [
         Learn how to use views in Motion. Learn the complete style syntax, using variables
         for dynamic content, and basics of adding events.
       ` },
-      { title: "Routing and Fetching", view: 'Arena', slug: 'fetch', description: `
+      { title: "Routing and Fetching", view: 'Fetch', slug: 'fetch', description: `
         Learn how to fetch data using fetch as well as async/await.
         This tutorial also teaches routing, and how to use the Motion router with views.
       ` },
@@ -27,22 +27,29 @@ const examples = [
   }
 ]
 
+let active = 0
+
 view Learn {
   <Head
     title="Learn Motion"
     subtitle="Get familiar with Motion through these quick tutorials."
   />
   <Page>
-    <section repeat={examples}>
-      <SubTitle>{_.title}</SubTitle>
-      <Card.List>
-        <Card repeat={_.examples}
-          title={_.title}
-          onClick={() => Motion.router.go(`/examples/${_.slug}`)}>
-            {_.description}
-        </Card>
-      </Card.List>
-    </section>
+    {examples.map((example, i) =>
+      <section key={i}>
+        <SubTitle>{example.title}</SubTitle>
+        <Card.List>
+          <Card repeat={example.examples}
+            title={example.title}
+            onClick={() => {
+              active = i
+              Motion.router.go(`/examples/${_.slug}`)
+            }}>
+              {_.description}
+          </Card>
+        </Card.List>
+      </section>
+    )}
   </Page>
 
   $ = {
@@ -62,11 +69,14 @@ view Learn {
   }
 }
 
+const capitalize = str => str[0].toUpperCase() + str.slice(1)
+
 view Examples {
-  <Page list={examples} base="/examples">
-    <RoutedContent
-      parent="Examples"
-      content={examples}
-      route="/examples/:slug" />
+  prop params
+
+  <Page list={examples[active].examples} base="/examples">
+    {view.el(`Examples.${capitalize(params.slug)}`)}
   </Page>
+
+  $body = { width: '100%' }
 }

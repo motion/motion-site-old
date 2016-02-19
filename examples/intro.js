@@ -11,7 +11,7 @@ view Examples.Intro {
   </IntroText>
 
   <Text>
-    Check out the examples in the sidebar to learn more, or <Link href="https://github.com/motionjs/examples">check out our github repo</Link> where we push cool demos as we make them.
+    Check out the examples in the sidebar to learn more, or <Link href="https://github.com/motion/examples">check out our github repo</Link> where we push cool demos as we make them.
   </Text>
 
   <Text>

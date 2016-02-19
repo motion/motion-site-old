@@ -1,7 +1,7 @@
 import { style, color, routes, font, device, util } from '../constants'
 
 view Social {
-  <a target="_blank" href="http://github.com/motionjs/motion">
+  <a target="_blank" href="http://github.com/motion/motion">
     <IconGithub />
   </a>
   <a if={!view.props.noSlack} href="/?slack" onClick={util.linkScroll}>

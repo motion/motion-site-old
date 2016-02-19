@@ -1,4 +1,4 @@
-view Examples.Arena {
+view Examples.Fetch {
   <Title>Advanced Fetching</Title>
 
   <IntroText>
