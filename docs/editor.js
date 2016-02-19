@@ -4,6 +4,27 @@ view Docs.Editor {
     Motion is an environment that aims to seamlessly integrate the browser and editor to give you a live, smart environment.
   </IntroText>
 
+  <SubTitle>Introduction</SubTitle>
+
+  <Text>
+    Motion uses <a href="https://atom.io">Atom</a>, a Hackable TextEditor for the 21st Century as it's base. Motion integration transforms a TextEditor into an IDE providing you with a comfortable and productive programming environment.
+  </Text>
+
+  <SubTitle>Installation</SubTitle>
+
+  <Text>
+    Motion's Atom integration is published as <a href="https://atom.io/packages/motion">motion</a> package.
+    To install this package there are two easy ways
+  </Text>
+  <ul>
+    <li>
+      <b>From CLI:</b> Execute <code>apm install motion</code> in terminal/cmd
+    </li>
+    <li>
+      <b>Settings View:</b> Open settings view from top bar or by executing <code>settings-view:open</code> command, goto the install tab, type the name of package and click install
+    </li>
+  </ul>
+
   <SubTitle>Live Coding</SubTitle>
 
   <Text>
