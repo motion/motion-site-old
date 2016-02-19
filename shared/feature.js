@@ -26,6 +26,8 @@ view Feature {
 }
 
 view Stars {
+  view.pause()
+
   <star repeat={view.props.num} />
 
   $star = {

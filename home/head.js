@@ -1,14 +1,31 @@
 import { style, color, routes, font, device } from '../constants'
 
 view Demo {
+  prop onStart = Motion.noop
+
+  let isPlaying = false
+
+  view.pause()
+
+  on.props(() => {
+    if (view.props.play && !isPlaying) {
+      isPlaying = true
+      view.element('video').play()
+      onStart()
+    }
+  })
+
   <mask>
-    <BackgroundVideo />
+    <video muted preload loop>
+      <source src="https://d2p1e9awn3tn6.cloudfront.net/3LiSUD9TiF.webm" />
+    </video>
   </mask>
 
   $ = {
     width: '105%',
     marginLeft: '-2.5%',
-    height: 400,
+    height: 980,
+    marginBottom: isPlaying ? 80 : -600,
     position: 'relative',
     borderRadius: 5,
     borderBottomLeftRadius: 0,
@@ -26,28 +43,36 @@ view Demo {
     WebkitMaskImage: `url(/assets/images/browsermask.svg)`
   }
 
-  $BackgroundVideo = {
+  $video = {
     position: 'absolute',
     bottom: 0,
     right: 0,
     left: 0,
     top: -18,
     maxWidth: '100%',
+    borderRadius: 5,
+    overflow: 'hidden',
   }
 }
 
 view Home.Head {
+  let play = false
+
+  function start() {
+    play = true
+  }
+
   <Contain>
     <Stars num={25} />
-    <banner>
+    <banner class={{ hide: play }}>
       <h1><b>Great applications</b>, faster than ever before</h1>
       <IntroText light>
         Motion brings together Javascript and React<br />
         into one insanely smart environment
       </IntroText>
-      <Button if={false}><lt>Watch the video now</lt> Coming soon!</Button>
+      <Watch onClick={start}>Watch the demo</Watch>
     </banner>
-    <Demo />
+    <Demo play={play} />
   </Contain>
   <selfShadow />
 
@@ -96,14 +121,19 @@ view Home.Head {
     }
 
     $banner = {
-      margin: ['auto', 'auto'],
+      margin: 'auto',
       textAlign: 'center',
       padding: [0, '10%'],
       zIndex: 1000,
       width: '100%',
       fontWeight: 600,
-      flexWrap: 'no-wrap'
+      flexWrap: 'no-wrap',
+      transition: 'all ease-in 300ms'
     }
+
+      $hide = {
+        opacity: 0
+      }
 
     $h1 = {
       fontSize: 32,
@@ -143,4 +173,30 @@ view Home.Head {
     $text = {
       marginRight: 40
     }
+}
+
+
+view Watch {
+  <button yield />
+
+  $button = {
+    margin: [18, 'auto', -10],
+    padding: [3, 12],
+    lineHeight: '1.5em',
+    color: color.brand1,
+    background: 'rgba(255,255,255,1)',
+    borderRadius: 5,
+    border: 'none',
+    outline: 'none',
+    fontWeight: 600,
+    fontSize: 14,
+    transition: 'all ease-in 200ms',
+
+    hover: {
+      boxShadow: '0 5px 10px rgba(0,0,0,0.1)',
+      transform: {
+        scale: 1.05
+      }
+    }
+  }
 }
