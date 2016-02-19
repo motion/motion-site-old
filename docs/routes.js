@@ -10,7 +10,7 @@ view Docs.Routes {
     <li><code>go</code> - Pass in a pathname to navigate to the route</li>
     <li><code>link</code> - Returns a function that executes go</li>
     <li><code>isActive</code> - Returns a boolean if route is active</li>
-    <li><code>onChange</code> - Pass a function, calls back with path when it changes</li>
+    <li><code>onChange</code> - Pass a function, calls back with path when it changes. Returns a function that removes the listener.</li>
     <li><code>back</code> - Navigates backwards</li>
     <li><code>forward</code> - Navigates forwards</li>
   </ul>

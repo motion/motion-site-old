@@ -56,15 +56,20 @@ view Header {
   }
 }
 
+const routeProps = path => ({
+  onClick: Motion.router.link(path),
+  className: { active: Motion.router.isActive(path) }
+})
+
 view Nav {
-  const navs = [
-    { children: 'Start', ...routeProps(routes.start)  },
-    { children: 'Docs', ...routeProps(routes.docs + '/intro')  },
-    { children: 'Examples', ...routeProps('/learn')  },
-    { children: 'Migrate', ...routeProps('/transition')  },
+  const items = [
+    { label: 'Start', route: '/start' },
+    { label: 'Docs', route: routes.docs + '/intro' },
+    { label: 'Examples', route: '/learn' },
+    { label: 'Migrate', route: '/transition' },
   ]
 
-  <a repeat={navs} {..._} />
+  <a repeat={items} {...routeProps(_.route)}>{_.label}</a>
 
   $ = {
     userSelect: 'none',
@@ -100,12 +105,6 @@ view Nav {
   }
 }
 
-function routeProps(path) {
-  return {
-    onClick: Motion.router.link(path),
-    className: { active: Motion.router.isActive(path) }
-  }
-}
 
 function showInstall(e) {
   if (Motion.router.isActive(routes.home))
