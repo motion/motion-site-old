@@ -7,13 +7,13 @@ view Docs.Editor {
   <SubTitle>Introduction</SubTitle>
 
   <Text>
-    Motion uses <a href="https://atom.io">Atom</a>, a hackable Text Editor created by Github as it's base. Motion integrates with Atom to connect your application and your editor, providing you with a comfortable and productive programming environment.
+    Motion uses <Link href="https://atom.io">Atom</Link>, a hackable Text Editor created by Github as it's base. Motion integrates with Atom to connect your application and your editor, providing you with a comfortable and productive programming environment.
   </Text>
 
   <SubTitle>Installation</SubTitle>
 
   <Text>
-    Motion's Atom integration is published as <a href="https://atom.io/packages/motion">motion</a> package.
+    Motion's Atom integration is published as <Link href="https://atom.io/packages/motion">motion</Link> package.
     To install this package there are two easy ways
   </Text>
   <ul>
