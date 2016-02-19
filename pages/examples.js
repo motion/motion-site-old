@@ -40,7 +40,7 @@ view Learn {
         <SubTitle>{example.title}</SubTitle>
         <Card.List>
           <Card repeat={example.examples}
-            title={example.title}
+            title={_.title}
             onClick={() => {
               active = i
               Motion.router.go(`/examples/${_.slug}`)
