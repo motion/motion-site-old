@@ -7,10 +7,16 @@ view Demo {
 
   view.pause()
 
+  const dim = {
+    width: 1920 * .75,
+    height: 1080 * .75
+  }
+
   on.props(() => {
     if (view.props.play && !isPlaying) {
       isPlaying = true
       view.element('video').play()
+      view.element().style.transform = `translateY(-300px) scale(1)`
       onStart()
     }
   })
@@ -24,14 +30,20 @@ view Demo {
   $ = {
     width: '105%',
     marginLeft: '-2.5%',
-    height: 980,
-    marginBottom: isPlaying ? 80 : -600,
+    height: dim.height - 40,
+    marginBottom: -300,
     position: 'relative',
     borderRadius: 5,
     borderBottomLeftRadius: 0,
     borderBottomRightRadius: 0,
     boxShadow: '0 10px 60px rgba(0,0,0,0.25)',
     overflow: 'hidden',
+    transition: "all ease 500ms",
+    zIndex: 1000,
+
+    transform: {
+      scale: 0.9
+    }
   }
 
   $mask = {
