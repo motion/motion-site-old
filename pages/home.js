@@ -9,7 +9,8 @@ view Home {
   <Home.Platform />
   <Home.Community />
   <Home.Signup />
-  //<Home.CaseStudy />
+  <Home.CaseStudy />
+  //<Home.CaseSmall />
   <Home.Features />
   <Footer />
 }
