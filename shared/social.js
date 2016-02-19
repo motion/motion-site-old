@@ -7,7 +7,7 @@ view Social {
   <a if={!view.props.noSlack} href="/?slack" onClick={util.linkScroll}>
     <IconSlack />
   </a>
-  <a target="_blank" href="https://twitter.com/usemotion">
+  <a target="_blank" href="https://twitter.com/with_motion">
     <IconTwitter />
   </a>
 
