@@ -34,6 +34,12 @@ view Docs.Editor {
     Intentions mode allows you to open color picker, increase/decrease numbers and jump between elements and their styles, all with some simple clicking / dragging.
   </Text>
 
+  <SubTitle>Browser Integration</SubTitle>
+
+  <Text>
+    Motion binds your editor and running application. At any point, you can right click your application while in Intentions mode to see the view hierarchy for that element. You can easily jump to it's definition in your editor to start editing it immediately.
+  </Text>
+
   <SubTitle>Live Coding</SubTitle>
 
   <Text>
