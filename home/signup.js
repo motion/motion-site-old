@@ -46,9 +46,15 @@ view SignupForm {
       <center class="clear">
         <input
           type="submit"
-          class="button thing"
-          type="submit"
-          value="Sign up!"
+          value="Sign up for early access"
+          style={{
+            background: color.brand2,
+            hover: {
+              background: color.brand1
+            },
+            color: '#fff',
+            border: 'none'
+          }}
           name="subscribe" id="mc-embedded-subscribe" />
       </center>
     </div>
@@ -60,7 +66,7 @@ view SignupForm {
 
   $form = {
     width: 300,
-    margin: 'auto'
+    margin: 'auto',
   }
 
   $input = {
@@ -76,11 +82,9 @@ view SignupForm {
 
   $thing = {
     margin: 'auto',
-    background: color.brand2,
     color: '#fff',
     border: 'none',
     fontWeight: 200,
-    textAlign: 'center',
     padding: 10,
     fontSize: 17,
     width: '50%'

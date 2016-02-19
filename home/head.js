@@ -16,17 +16,27 @@ view Demo {
     isPlaying = false
   })
 
+
+
   on.props(() => {
     if (view.props.play && !isPlaying) {
       isPlaying = true
       view.element('video').play()
-      view.element().style.transform = `translateY(-300px) scale(1)`
+      view.element().style.transform = `translateY(-280px) scale(1)`
       onStart()
+    }
+
+    if (!view.props.play && isPlaying) {
+      isPlaying = false
+      view.element('video').pause()
+      view.element().style.transform = `translateY(0px) scale(1)`
+      view.update()
     }
   })
 
   <mask>
-    <video muted preload loop>
+    <close>x</close>
+    <video preload controls>
       <source src="https://d2p1e9awn3tn6.cloudfront.net/3LiSUD9TiF.webm" />
     </video>
   </mask>
@@ -50,13 +60,11 @@ view Demo {
     }
   }
 
-  $mask = {
+  $close = {
+    color: '#fff',
     position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    WebkitMaskImage: `url(/assets/images/browsermask.svg)`
+    top: -20,
+    right: -20,
   }
 
   $video = {
@@ -76,6 +84,12 @@ view Home.Head {
 
   on.mount(() => {
     play = false
+  })
+
+  on.keydown(window, (e) => {
+    if (e.keyCode == 27) {
+      play = false
+    }
   })
 
   function start() {
