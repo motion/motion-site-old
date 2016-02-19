@@ -7,7 +7,7 @@ view Docs.Editor {
   <SubTitle>Introduction</SubTitle>
 
   <Text>
-    Motion uses <a href="https://atom.io">Atom</a>, a Hackable TextEditor for the 21st Century as it's base. Motion integration transforms a TextEditor into an IDE providing you with a comfortable and productive programming environment.
+    Motion uses <a href="https://atom.io">Atom</a>, a hackable Text Editor created by Github as it's base. Motion integrates with Atom to connect your application and your editor, providing you with a comfortable and productive programming environment.
   </Text>
 
   <SubTitle>Installation</SubTitle>
