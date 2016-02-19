@@ -59,11 +59,6 @@ view Main {
     textRendering: 'optimizeLegibility',
     background: color.bg,
     position: 'relative',
-    flexGrow: 1,
-  }
-
-  $site = {
-    flexGrow: 1
   }
 }
 

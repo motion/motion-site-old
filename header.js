@@ -57,6 +57,7 @@ view Header {
 }
 
 const routeProps = path => ({
+  href: path,
   onClick: Motion.router.link(path),
   className: { active: Motion.router.isActive(path) }
 })
@@ -66,7 +67,7 @@ view Nav {
     { label: 'Start', route: '/start' },
     { label: 'Docs', route: routes.docs + '/intro' },
     { label: 'Examples', route: '/learn' },
-    { label: 'Migrate', route: '/transition' },
+    // { label: 'Migrate', route: '/transition' },
   ]
 
   <a repeat={items} {...routeProps(_.route)}>{_.label}</a>

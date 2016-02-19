@@ -4,7 +4,10 @@ view Home.Platform {
   let hoverIndex = false
 
   <Feature odd col dark stars>
-    <Title light>Bringing together your tools</Title>
+    <Title light>Bring together your tools</Title>
+    <IntroText light center>
+      Motion connects browser, editor and compiler through websockets.<br />
+    </IntroText>
     <Row class="content">
       <Col class="diagram">
         <wrap>
@@ -13,13 +16,16 @@ view Home.Platform {
           <Attr style={{ top: 0, left: -200 }} alt="Updates your app with each character, avoids writing to file system.">Live updates as you type</Attr>
           <Attr style={{ top: 100, left: -200 }} alt="Child and view state is smartly preserved while editing, enabled by compiler.">Smart Hot Reloads</Attr>
           <Attr style={{ top: 200, left: -200 }} alt="While you Focus, Motion avoids file watchers & streams updates at fast as they happen."> Drag numbers and colors</Attr>
-          <Attr style={{ top: 0, right: -200 }} alt="Errors are recovered from automatically, displayed in your browser, and your app won't flicker or break."> Helpful errors</Attr>
+          <Attr style={{ top: 0, right: -200 }} alt="Errors are recovered from, displayed in your browser, and avoid breaking your app."> Helpful errors</Attr>
           <Attr style={{ top: 100, right: -200 }} alt="Right click on any part of your app and jump to the appropriate view in your editor."> Jump to DOM or style</Attr>
-          <Attr style={{ top: 200, right: -200 }} alt="Static style changes don't even reload Javascript for insane performance.">Static CSS extraction</Attr>
+          <Attr style={{ top: 200, right: -200 }} alt="Static changes don't even reload Javascript for insane hot reload performance.">Static CSS extraction</Attr>
           <Attr style={{ top: 300, left: '26%' }} alt="Motion scans your code as you type, installs any found npm packages & injects them into your app: no state lost."> Automatic npm installs</Attr>
         </wrap>
       </Col>
     </Row>
+    <Watch onClick={Motion.router.link('/docs/intro')}>
+      Read more about these
+    </Watch>
   </Feature>
 
   $wrap = {

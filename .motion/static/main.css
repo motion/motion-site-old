@@ -14,14 +14,6 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-#_motionapp {
-  overflow: hidden;
-}
-
-html, body {
-  height: 100%;
-  overflow: auto;
-}
 
 body * {
   display: -ms-flexbox;

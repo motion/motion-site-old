@@ -49,5 +49,5 @@ view Docs.InstallContent {
     You app is now built into <code>.motion/build</code>, ready to deploy!
   </Text>
 
-  <Next to='/docs/views'>Using Views</Next>
+  <Next to='/docs/deploying'>Deploying</Next>
 }

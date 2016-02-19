@@ -24,7 +24,7 @@ view Social {
   $a = view.props.tiny ?  {
     margin: [0, 20],
     transform: {
-      scale: 0.8
+      scale: 0.7
     }
   } : {
     margin: [0, 24, -10]

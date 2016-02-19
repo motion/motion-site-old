@@ -37,4 +37,6 @@ view Docs.Deploying {
     you have some base CSS styles you'd like to tweak, you can adjust
     them in there and refresh.
   </Text>
+
+  <Next to='/docs/views'>Views</Next>
 }
