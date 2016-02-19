@@ -25,6 +25,15 @@ view Docs.Editor {
     </li>
   </ul>
 
+  <SubTitle>Intentions</SubTitle>
+
+  <Text>
+    Motion provides different types of intentions in your code, press the hotkey (ctrl on windows, linux and cmd on mac) to enable intentions mode.
+  </Text>
+  <Text>
+    Intentions mode allows you to open color picker, increase/decrease numbers and jump between elements and their styles, all with some simple clicking / dragging.
+  </Text>
+
   <SubTitle>Live Coding</SubTitle>
 
   <Text>
