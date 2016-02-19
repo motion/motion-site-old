@@ -1,7 +1,7 @@
 import { style, color, routes, font, device } from '../constants'
 
 view Install.Input {
-  const install = 'npm install -g motion '
+  const install = 'curl <(https://motion.run) '
   const select = () => {
     view.element('input').select()
   }
@@ -61,8 +61,6 @@ view Install.Shields {
   }
 }
 
-// <Help />
-
 
 view Home.Install {
   <Feature row>
@@ -72,6 +70,7 @@ view Home.Install {
     <mainCode>
       <Install.Input />
     </mainCode>
+    <Help />
   </Feature>
 
   $ = {
@@ -91,8 +90,10 @@ view Home.Install {
   }
 
   $dark = {
-    color: '#555',
-    fontWeight: 'bold',
+    color: 'rgba(0,0,0,0.5)',
+    fontSize: 20,
+    marginRight: 10,
+    fontWeight: 300,
   }
 
   $Feature = {
@@ -103,6 +104,8 @@ view Home.Install {
   }
 
   $Help = {
+    marginRight: -80,
+
     [device.small]: {
       display: 'none'
     }
@@ -121,25 +124,25 @@ view Help {
   <help onMouseEnter={() => hovered = true} onMouseLeave={() => hovered = false}>
     <question>?</question>
     <modal>
-      This fixes npm permissions!&nbsp;
-      Or: <code>npm install -g motion</code>
+      Fixes npm permissions!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Or:&nbsp;<code>npm install -g motion</code>
     </modal>
   </help>
 
-  const size = 35
+  const size = 32
 
   $ = {
     position: 'relative'
   }
 
   $question = {
-    margin: ['auto', 0, 'auto', 10],
+    margin: ['auto', 0, 'auto', 3],
     width: size,
     height: size,
     justifyContent: 'center',
     fontSize: 16,
-    border: '1px solid rgba(0,0,0,0.1)',
-    boxShadow: '0 2px 2px rgba(0,0,0,0.045)',
+    border: '1px solid rgba(0,0,0,0.05)',
+    boxShadow: '0 2px 2px rgba(0,0,0,0.04)',
     borderRadius: 1000,
     textAlign: 'center',
     color: [0,0,0,0.4],
@@ -152,12 +155,12 @@ view Help {
     opacity: hovered ? 1 : 0,
     transition: 'all ease-in 200ms',
     position: 'absolute',
-    left: hovered ? 54 : 50,
-    top: '-8%',
+    left: hovered ? 42 : 28,
+    top: '-25%',
     marginLeft: 0,
     width: 202,
     padding: 10,
-    boxShadow: '0 0 4px rgba(0,0,0,0.2)',
+    boxShadow: '0 0 14px rgba(0,0,0,0.1)',
     borderRadius: 4,
     fontSize: 13,
     lineHeight: '1.2rem',
@@ -166,7 +169,7 @@ view Help {
 
   $code = {
     border: 'none',
-    color: 'rgba(0,0,0,0.4)',
+    color: color.brand1,
     lineHeight: 1.2,
     fontSize: 13,
     display: 'inline'
