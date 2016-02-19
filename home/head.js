@@ -12,6 +12,10 @@ view Demo {
     height: 1080 * .75
   }
 
+  on.mount(() => {
+    isPlaying = false
+  })
+
   on.props(() => {
     if (view.props.play && !isPlaying) {
       isPlaying = true
@@ -69,6 +73,10 @@ view Demo {
 
 view Home.Head {
   let play = false
+
+  on.mount(() => {
+    play = false
+  })
 
   function start() {
     play = true
