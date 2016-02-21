@@ -53,6 +53,7 @@ view Main {
 
   $ = {
     color: `rgba(0,0,0,0.65)`,
+    overflowX: 'hidden',
     fontSize: 16,
     lineHeight: '1.8rem',
     fontFamily: font.sansSerif,
