@@ -3,7 +3,7 @@ import { style, color, routes, font, device } from '../constants'
 view Home.Platform {
   let hoverIndex = false
 
-  <Feature odd col dark stars>
+  <Feature odd col dark stars pad>
     <Title light>Bring together your tools</Title>
     <IntroText light center>
       Motion connects browser, editor and compiler through websockets.<br />

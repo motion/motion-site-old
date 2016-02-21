@@ -1,12 +1,12 @@
 import { style, color } from '../constants'
 
 view Feature {
-  prop bg, center, col, odd, slim, dark, reverse, children, stars, narrow
+  prop pad, bg, center, col, odd, slim, dark, reverse, children, stars, narrow
 
   <Stars if={stars} num={50} />
   <Contain maxWidth={narrow ? 850 : 1000}>{children}</Contain>
 
-  const padheight = slim ? 0 : 90
+  const padheight = pad ? 120 : slim ? 0 : 90
 
   $ = {
     padding: [padheight - 30, 20, padheight],

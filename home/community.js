@@ -6,11 +6,11 @@ view Home.Community {
       <Col pad>
         <Title>Powered by Open</Title>
         <IntroText>
-          Motion is and runs on open source. We keep a public roadmap, make decisions with the community on Github, and sponsor open source on Patreon.
+          Motion is and runs on open source. We work with the community on Github, and sponsor open source on Patreon.
         </IntroText>
 
         <Text>
-          Join our community on Slack today and read our code of conduct.
+          Join us on Slack and read our <Link to="/community">community guidelines</Link>.
         </Text>
 
         <cloud>

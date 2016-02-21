@@ -104,12 +104,13 @@ view Circles {
 view Circle {
   const c = () => Math.round(Math.random()*255)
   const background = [c(), c(), c()]
+  const scale = spring(1, { stiffness: 300, damping: 10 })
 
   <Motion
-    defaultStyle={{scale: 0}}
-    style={{scale: spring(1, { stiffness: 300, damping: 10 })}}>{({ scale }) =>
-      <circle style={{ transform: { scale }}} />
-  }</Motion>
+    defaultStyle={{ scale: 0 }}
+    style={{ scale }}>
+      {x => <circle style={{ transform: { scale: x.scale } }} /> }
+  </Motion>
 
   $circle = {
     background,

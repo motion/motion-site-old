@@ -18,8 +18,8 @@ view Title {
 
   $ = {
     fontWeight: 400,
-    fontSize: 24,
-    margin: [20, 0, 10],
+    fontSize: 25,
+    margin: [18, 0, 8],
     textAlign: center ? `center` : `auto`,
     color: 'rgba(0,0,0,0.8)'
   }
@@ -65,8 +65,8 @@ view IntroText {
   </Text>
 
   $ = {
-    fontSize: 20,
-    lineHeight: '1.9rem',
+    fontSize: 22,
+    lineHeight: '1.95rem',
     textAlign: center ? `center` : `auto`,
     color: light ? 'auto' : 'rgba(0,0,0,0.65)',
     marginBottom: 15,
@@ -92,8 +92,8 @@ view Text {
 
   $ = {
     fontWeight: 400,
-    fontSize: 15,
-    lineHeight: '1.6rem'
+    fontSize: 16,
+    lineHeight: '1.55rem'
   }
 
   $light = {

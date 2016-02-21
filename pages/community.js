@@ -26,4 +26,8 @@ view Community {
 
     <br />
   </Page>
+
+  $ = {
+    padding: [50, 0]
+  }
 }

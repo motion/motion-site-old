@@ -48,8 +48,8 @@ view Demo {
     transition: "all ease 500ms",
     zIndex: 1000,
 
-    transform: {
-      scale: 0.9
+    [device.small]: {
+      boxShadow: 'none',
     }
   }
 
@@ -93,10 +93,10 @@ view Home.Head {
   <Contain>
     <Stars num={25} />
     <banner class={{ hide: play }}>
-      <h1><b>Great applications</b>, faster than ever before</h1>
+      <h1><b>An amazing stack on React</b></h1>
       <IntroText light>
-        Motion brings together Javascript and React<br />
-        into one insanely smart environment
+        Motion sets you up with the best of Javascript and React<br />
+        in one insanely smart environment
       </IntroText>
       <Watch onClick={start} if={false}>Watch the demo</Watch>
     </banner>
@@ -110,8 +110,8 @@ view Home.Head {
     flexFlow: 'column',
     overflow: 'hidden',
     position: 'relative',
-    height: Math.min(window.innerHeight, 820),
-    minHeight: 700,
+    height: Math.min(window.innerHeight, 720),
+    minHeight: 600,
     textShadow: '0 1px 1px rgba(0,0,0,0.25)',
     padding: [50, 0, 0],
 
