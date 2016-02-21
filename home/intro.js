@@ -49,8 +49,10 @@ view Home.Intro {
     justifyContent: 'center',
 
     [device.small]: {
-      padding: [0, 20, 30],
+      alignItems: 'center',
       margin: [-50, 'auto', 20],
+      padding: [0, 20, 30],
+      textAlign: 'center',
       width: '90%'
     }
   }

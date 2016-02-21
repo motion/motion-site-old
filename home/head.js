@@ -4,26 +4,20 @@ view Demo {
   prop onStart = Motion.noop
 
   let isPlaying = false
+  let dim = {
+    width: 800,
+    height: 400
+  }
 
   view.pause()
-
-  const dim = {
-    width: 1920 * .75,
-    height: 1080 * .75
-  }
 
   on.mount(() => {
     isPlaying = false
   })
 
-
-
   on.props(() => {
     if (view.props.play && !isPlaying) {
       isPlaying = true
-      view.element('video').play()
-      view.element().style.transform = `translateY(-280px) scale(1)`
-      onStart()
     }
 
     if (!view.props.play && isPlaying) {
@@ -37,15 +31,14 @@ view Demo {
   <mask>
     <close>x</close>
     <video preload controls>
-      <source src="https://d2p1e9awn3tn6.cloudfront.net/3LiSUD9TiF.webm" />
+      <source src="https://s3-us-west-1.amazonaws.com/flint123/finalexport.m4v" />
     </video>
   </mask>
 
   $ = {
-    width: '105%',
-    marginLeft: '-2.5%',
-    height: dim.height - 40,
-    marginBottom: -300,
+    width: dim.width,
+    height: dim.height,
+    marginBottom: -30,
     position: 'relative',
     borderRadius: 5,
     borderBottomLeftRadius: 0,
@@ -76,6 +69,7 @@ view Demo {
     maxWidth: '100%',
     borderRadius: 5,
     overflow: 'hidden',
+    opacity: 0.2
   }
 }
 
@@ -104,7 +98,7 @@ view Home.Head {
         Motion brings together Javascript and React<br />
         into one insanely smart environment
       </IntroText>
-      <Watch onClick={start}>Watch the demo</Watch>
+      <Watch onClick={start} if={false}>Watch the demo</Watch>
     </banner>
     <Demo play={play} />
   </Contain>
@@ -124,6 +118,10 @@ view Home.Head {
     [device.small]: {
       padding: [200, 0, 0]
     }
+  }
+
+  $Demo = {
+    width: '100%'
   }
 
     $Contain = {

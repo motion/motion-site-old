@@ -17,7 +17,13 @@ view Slack {
   }
 
   $ = {
-    margin: [-40, -20, 20]
+    margin: [-40, -20, 20],
+
+    [device.small]: {
+      alignItems: 'center',
+      margin: [-40, 0],
+      width: '100%'
+    }
   }
 
   $Contain = {
