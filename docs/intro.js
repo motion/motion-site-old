@@ -2,40 +2,56 @@ view Docs.Intro {
   <Title>What is Motion?</Title>
 
   <IntroText>
-    Motion is a rethinking of modern development. It's a smart compiler that understands how you build apps & connects your browser, editor and code.
+    Motion is a cohesive frontend development environment. It's everything you need to build modern apps. It's powered by React.
+  </IntroText>
+
+  <IntroText>
+    Start an app in seconds, deploy it with one command, ready to deploy on any host.
   </IntroText>
 
   <Text>
-    Motion adds the <code>view</code> statement to Javascript.  It replaces the need for HTML, CSS and your framework of choice with a simple construct.
+    Motion runs on open source. It's a node CLI powered by ES6, npm, Gulp, Babel, Webpack, React, and tons of libraries. It's open source, and we are actively building an amazing developer community!
   </Text>
 
   <Text>
-    Views are everything you need: they contain logic, markup and style. When a variable in the view changes, your view updates.
+    Motion attempts to bring the the best of what we use today in libraries into a single system. It doesn't prescribe any data management system. It works with all of React, so you can use your favorite tools from React Router to Redux, or any components you enjoy.
   </Text>
 
   <Text>
-    Motion attempts to bring the concepts we use today in libraries to Javascript. Though the syntax may not yet be perfect, the
-    upsides are great: expressiveness, performance, and new features.
+    Motion also brings the concept of the <code>view</code> to Javascript for when you want to quickly build and test out things in your app.
   </Text>
 
   <Text>
-    Motion runs on open source. It's a node app powered by ES6, npm, Gulp, Babel, Webpack, React, and tons of libraries. It's open source, and we are actively interesting in building an amazing developer community including feedback on making views better!
+    Views bring amazing power and upside.  They singletons which means they are easy to regonize and use anywhere in your app. It also means they are about 10x faster to hot reload. They require on average 60% less code than classes. And they let you express your logic using variables, like you should be able to. This means it's easer to write, and easier to understand.
   </Text>
 
   <Text>
-    Please <Link to="/community">read our community guidelines</Link>!
+    Because they encapsulate styles, we also can do amazing optimizations. We statically extract CSS from your views for huge upsides: faster rendering, faster hot reloading, smaller payloads, cacheable payloads, and dramatically smaller memory overhead, especially important on mobile.
   </Text>
-
-  <SubTitle>Principles</SubTitle>
 
   <Text>
-    Throughout the process of building there are countless moments where ease of
-    experimentation unlocks entirely new paths. You stumble on solutions only
-    because you have fast and lightweight tools. With instant feedback and a smart environment,
-    Motion aims to unlock whole new levels of productive creativity.
+    That said, they are a work in progress! We commit to providing codemods as we continue to refine and work with community to determine the best way to write views in Javascript. We may even end up with an amazing way to it just using functions! But for now we've found views to strike the right balance between
+    low-risk and high-reward.
   </Text>
 
-  <Title>High level features</Title>
+  <Text>
+    We want to have a great community, that fosters innovation and selfless work that benefits us all. Please <Link to="/community">read our community guidelines</Link>!
+  </Text>
+
+  <SubTitle>No Boilerplate</SubTitle>
+  <Text>
+    Create and start your app instantly, the only files in your directory are logical code. No more writing around a library.
+    Motion watches your files & builds to production. It will improve without you needing to ever learn a build system configuration, and with code mods it can upgrade your syntax to new versions automatically.
+  </Text>
+
+  <Text>
+    Motion is also configurable. You can plug in your favorite babel plugin, determine various settings for production builds, and more.
+  </Text>
+
+  <Text>
+    Further, we have an Atom plugin that will bring you everything you've ever dreamed of for every app your run: from full IDE features like jumping between views and styles, to showing dead styles and code, to linting, automatic flow checks, and more.
+    We want your environment as a whole to always get smarter, without you needing to think about it.
+  </Text>
 
   <SubTitle>Super Hot Reloads</SubTitle>
   <Text>
@@ -73,12 +89,6 @@ view Docs.Intro {
   <Text>
     Motion understands your code as though modern ES6 were supported in every browser.
     This means when you type an import Motion installs the package automatically without losing your state.
-  </Text>
-
-  <SubTitle>No boilerplate</SubTitle>
-  <Text>
-    Create and start your app instantly, the only files in your directory are logical code. No more writing around a library.
-    Motion watches your files & builds to production. It will rapidly improve without you needing to ever learn a build system configuration, and with code mods it can upgrade your syntax to new versions automatically.
   </Text>
 
   <Next to='/docs/install'>Install Motion</Next>
