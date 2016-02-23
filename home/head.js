@@ -93,10 +93,10 @@ view Home.Head {
   <Contain>
     <Stars num={25} />
     <banner class={{ hide: play }}>
-      <h1><b>An amazing stack on React</b></h1>
+      <h1><b>A leap forward for building on React</b></h1>
       <IntroText light>
-        Motion sets you up with the best of Javascript and React<br />
-        in one insanely smart environment
+        Start a best-practice React app instantly,<br />
+        with incredible tools and instant feedback loops
       </IntroText>
       <Watch onClick={start} if={false}>Watch the demo</Watch>
     </banner>

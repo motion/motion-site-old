@@ -4,9 +4,9 @@ view Home.Platform {
   let hoverIndex = false
 
   <Feature odd col dark stars pad>
-    <Title light>Bring together your tools</Title>
+    <Title light>A connected environment</Title>
     <IntroText light center>
-      Motion connects browser, editor and compiler through websockets.<br />
+      Motion is bringing unity to React tooling
     </IntroText>
     <Row class="content">
       <Col class="diagram">

@@ -90,7 +90,7 @@ view Nav {
     textShadow: '0 1px 1px rgba(0,0,0,0.15)',
     fontWeight: 300,
     borderBottom: 'none',
-    fontSize: 14,
+    fontSize: 16,
     padding: [0, 10],
     cursor: 'pointer',
     textDecoration: 'none',

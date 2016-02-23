@@ -13,6 +13,7 @@ view Attr {
   $ = {
     display: 'inline',
     position: 'relative',
+    fontSize: 18,
     zIndex: 10000
   }
 

@@ -93,7 +93,7 @@ view Text {
   $ = {
     fontWeight: 400,
     fontSize: 16,
-    lineHeight: '1.55rem'
+    lineHeight: '1.6rem'
   }
 
   $light = {

@@ -19,7 +19,7 @@ view Code {
     padding: 10,
     margin: [10, 0],
     borderRadius: 4,
-    fontSize: 14,
+    fontSize: 15,
     lineHeight: 1.5,
     whiteSpace: 'pre',
     fontFamily: font.monoSpace,
