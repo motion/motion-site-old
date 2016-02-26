@@ -1,197 +1,199 @@
-export const Docs.Views = () => $(
-  <Title>Views</Title>
+export const DocsViews = () => $(
+  <doc>
+    <Title>Views</Title>
 
-  <Text>Here is a view:</Text>
+    <Text>Here is a view:</Text>
 
-  <Code source={`
-    export const Main = () => $(
-      <h1>Hello world</h1>
-    }
-  `} />
-
-  <Text>A view can contain variables and constants:</Text>
-
-  <Code source={`
-    export const Main = () => $(
-      let name = 'World'
-
-      <h1>Hello {name}</h1>
-    }
-  `} />
-
-  <Text>When you change a variable, your view will update:</Text>
-
-  <Code source={`
-    export const Main = () => $(
-      let name = 'World'
-
-      <h1>Hello {name}</h1>
-      <button onClick={() => name = 'Universe'}>
-        Change to Universe
-      </button>
-    }
-  `} />
-
-  <Text>Since it's just ES6, we can use a named function and call it.</Text>
-
-  <Code source={`
-    export const Main = () => $(
-      let name = 'World'
-
-      function change() {
-        name = 'Universe'
+    <Code source={`
+      export const Main = () => $(
+        <h1>Hello world</h1>
       }
+    `} />
 
-      <h1>Hello {name}</h1>
-      <button onClick={change}>Change!</button>
-    }
-  `} />
+    <Text>A view can contain variables and constants:</Text>
 
-  <Text>We can even use regular javascript functions like Array.push</Text>
+    <Code source={`
+      export const Main = () => $(
+        let name = 'World'
 
-  <Code source={`
-    export const Main = () => $(
-      let animals = []
-
-      <h1>My animals are {animals.join(', ')}</h1>
-      <button onClick={() => animals.push("cat")}>more cats</button>
-      <button onClick={() => animals.push("dog")}>more dogs</button>
-      <button onClick={() => animals.push("zebra")}>more zebras</button>
-    }
-  `} />
-
-  <Text>You'll want to keep your views small and composable. You can use them together like so:</Text>
-
-  <Code source={`
-    export const Main = () => $(
-      <Hello to="World" size={18} />
-    }
-
-    export const Hello = () => $(
-      <h1>Hello {view.props.to}</h1>
-
-      $h1 = {
-        fontSize: view.props.size
+        <h1>Hello {name}</h1>
       }
-    }
-  `} />
+    `} />
 
-  <Text>Views must capitalize their first letter, and you can pass props to views just as we have shown here. Any property besides a string must be passed in using <code>{'{}'}</code>, as seen here with the size prop.</Text>
+    <Text>When you change a variable, your view will update:</Text>
 
-  <Text>"Props" are the attributes you pass down to children views. They are accessed with the <code>view.props.</code> prefix.</Text>
+    <Code source={`
+      export const Main = () => $(
+        let name = 'World'
 
-  <SubTitle>Namespacing</SubTitle>
-
-  <Text>
-    When your app is getting bigger, you'll probably want to avoid cluttering up your view names. You can name views with dots to bring more order:
-  </Text>
-
-  <Code source={`
-    export const Main = () => $(
-      <Child.Button />
-    }
-
-    export const Child.Button = () => $(
-      <button />
-    }
-  `} />
-
-  <SubTitle>Naming tags</SubTitle>
-
-  <Text>Some final niceties of Motion. You can name your tags whatever you like:</Text>
-
-  <Code source={`
-    export const Main = () => $(
-      <greet>Hello World</greet>
-      <sub>Show as h2, named greet</sub>
-
-      greet: {
-        fontWeight: 'bold'
+        <h1>Hello {name}</h1>
+        <button onClick={() => name = 'Universe'}>
+          Change to Universe
+        </button>
       }
-    }
-  `} />
+    `} />
 
-  <Text>This helps with styling, avoiding using classes when unnecessary, and makes your view structure easier to understand.</Text>
+    <Text>Since it's just ES6, we can use a named function and call it.</Text>
 
-  <SubTitle>Using Views</SubTitle>
+    <Code source={`
+      export const Main = () => $(
+        let name = 'World'
 
-  <Text>You don't need to import/export views between files! Motion prevents naming collisions with helpful warnings. Because your views are small pieces that should be easy to move around, this system avoid a lot of pain day to day, but even more down the road, where it makes moving around views in complex apps dramatically more easy.</Text>
-
-  <SubTitle>View lifecycles</SubTitle>
-
-  <Text>In React you have lifecycle methods. Motion has them too:</Text>
-
-  <ul>
-    <li>mount - called once after mounted in document</li>
-    <li>unmount - called once before unmount</li>
-    <li>props - called once before mount and on new props</li>
-    <li>change - called before every render</li>
-    <li>render - called after every render</li>
-  </ul>
-
-  <Text>
-    Pass each of these events a function and it will be called. The only event that passes in a value to its function is <code>on.props</code>, which gives you the current props for convenience (you may also still access <code>view.props</code> as well).
-  </Text>
-
-  <Text>
-    Here's an excerpt from our header on the homepage of this site which simulates some typing being done. In the view we listen for the start prop and trigger an action based on that.
-  </Text>
-
-  <Code source={`
-    export const Tagline = () => $(
-      let how = 'with ease'
-      let started = false
-
-      on.props(() => {
-        if (view.props.start && !started) {
-          started = true
-          // start typing!
+        function change() {
+          name = 'Universe'
         }
-      })
 
-      <tagline>Web apps, {how}</tagline>
-    }
-  `} />
+        <h1>Hello {name}</h1>
+        <button onClick={change}>Change!</button>
+      }
+    `} />
 
-  <SubTitle>View events</SubTitle>
+    <Text>We can even use regular javascript functions like Array.push</Text>
 
-  <Text>Motion provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views. It's optional, and very lightweight, but it avoid large amounts of hassle.</Text>
+    <Code source={`
+      export const Main = () => $(
+        let animals = []
 
-  <Code source={`
-    export const Hello = () => $(
-      on.mount(() => {
-        let spanWidth = view.refs.span.innerWidth
-        console.log('spans width is', spanWidth)
-      })
+        <h1>My animals are {animals.join(', ')}</h1>
+        <button onClick={() => animals.push("cat")}>more cats</button>
+        <button onClick={() => animals.push("dog")}>more dogs</button>
+        <button onClick={() => animals.push("zebra")}>more zebras</button>
+      }
+    `} />
 
-      <span ref="span">Hello world</span>
-    }
-  `} />
+    <Text>You'll want to keep your views small and composable. You can use them together like so:</Text>
 
-  <Text><code>on</code> works with views, automatically unbinding it's events when the view un-mounts.</Text>
+    <Code source={`
+      export const Main = () => $(
+        <Hello to="World" size={18} />
+      }
 
-  <Code source={`
-    export const Scroller = () => $(
-      on.scroll(e => {
-        // view scrolling
-      })
-    }
-  `} />
+      export const Hello = () => $(
+        <h1>Hello {view.props.to}</h1>
 
-  <Code source={`
-    export const WindowScroller = () => $(
-      on.scroll(window, e => {
-        // window scrolling
-        // optional first agument for scope
-      })
-    }
-  `} />
+        $h1 = {
+          fontSize: view.props.size
+        }
+      }
+    `} />
 
-  <Text>Read more about on in our <Link to="/docs/events">events docs</Link>.</Text>
+    <Text>Views must capitalize their first letter, and you can pass props to views just as we have shown here. Any property besides a string must be passed in using <code>{'{}'}</code>, as seen here with the size prop.</Text>
 
-  <br />
+    <Text>"Props" are the attributes you pass down to children views. They are accessed with the <code>view.props.</code> prefix.</Text>
 
-  <Text><b>Note!</b> The next section contains more helpers that you can use inside views.</Text>
+    <SubTitle>Namespacing</SubTitle>
 
-  <Next to='/docs/helpers'>Helpers</Next>
-}
+    <Text>
+      When your app is getting bigger, you'll probably want to avoid cluttering up your view names. You can name views with dots to bring more order:
+    </Text>
+
+    <Code source={`
+      export const Main = () => $(
+        <Child.Button />
+      }
+
+      export const Child.Button = () => $(
+        <button />
+      }
+    `} />
+
+    <SubTitle>Naming tags</SubTitle>
+
+    <Text>Some final niceties of Motion. You can name your tags whatever you like:</Text>
+
+    <Code source={`
+      export const Main = () => $(
+        <greet>Hello World</greet>
+        <sub>Show as h2, named greet</sub>
+
+        greet: {
+          fontWeight: 'bold'
+        }
+      }
+    `} />
+
+    <Text>This helps with styling, avoiding using classes when unnecessary, and makes your view structure easier to understand.</Text>
+
+    <SubTitle>Using Views</SubTitle>
+
+    <Text>You don't need to import/export views between files! Motion prevents naming collisions with helpful warnings. Because your views are small pieces that should be easy to move around, this system avoid a lot of pain day to day, but even more down the road, where it makes moving around views in complex apps dramatically more easy.</Text>
+
+    <SubTitle>View lifecycles</SubTitle>
+
+    <Text>In React you have lifecycle methods. Motion has them too:</Text>
+
+    <ul>
+      <li>mount - called once after mounted in document</li>
+      <li>unmount - called once before unmount</li>
+      <li>props - called once before mount and on new props</li>
+      <li>change - called before every render</li>
+      <li>render - called after every render</li>
+    </ul>
+
+    <Text>
+      Pass each of these events a function and it will be called. The only event that passes in a value to its function is <code>on.props</code>, which gives you the current props for convenience (you may also still access <code>view.props</code> as well).
+    </Text>
+
+    <Text>
+      Here's an excerpt from our header on the homepage of this site which simulates some typing being done. In the view we listen for the start prop and trigger an action based on that.
+    </Text>
+
+    <Code source={`
+      export const Tagline = () => $(
+        let how = 'with ease'
+        let started = false
+
+        on.props(() => {
+          if (view.props.start && !started) {
+            started = true
+            // start typing!
+          }
+        })
+
+        <tagline>Web apps, {how}</tagline>
+      }
+    `} />
+
+    <SubTitle>View events</SubTitle>
+
+    <Text>Motion provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views. It's optional, and very lightweight, but it avoid large amounts of hassle.</Text>
+
+    <Code source={`
+      export const Hello = () => $(
+        on.mount(() => {
+          let spanWidth = view.refs.span.innerWidth
+          console.log('spans width is', spanWidth)
+        })
+
+        <span ref="span">Hello world</span>
+      }
+    `} />
+
+    <Text><code>on</code> works with views, automatically unbinding it's events when the view un-mounts.</Text>
+
+    <Code source={`
+      export const Scroller = () => $(
+        on.scroll(e => {
+          // view scrolling
+        })
+      }
+    `} />
+
+    <Code source={`
+      export const WindowScroller = () => $(
+        on.scroll(window, e => {
+          // window scrolling
+          // optional first agument for scope
+        })
+      }
+    `} />
+
+    <Text>Read more about on in our <Link to="/docs/events">events docs</Link>.</Text>
+
+    <br />
+
+    <Text><b>Note!</b> The next section contains more helpers that you can use inside views.</Text>
+
+    <Next to='/docs/helpers'>Helpers</Next>
+  </doc>
+)

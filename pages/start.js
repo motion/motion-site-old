@@ -4,7 +4,7 @@ export const Start = () => $(
     subtitle="Motion brings React concepts to javascript the language. It optimizes for developer experience."
   />
   <Page>
-    <Docs.InstallContent />
+    <DocsInstallContent />
     <Banner.Transition />
   </Page>
 

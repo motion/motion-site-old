@@ -25,9 +25,9 @@ export const Community = () => $(
     </Text>
 
     <br />
-  </Page>
+  </Page>,
 
-  : {
+  {
     padding: [50, 0]
   }
 }

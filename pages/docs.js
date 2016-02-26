@@ -45,28 +45,30 @@ export const Docs = () => $(
       </section>
     </Page.Sidebar>
   }>
-    <Docs.Intro if={location.pathname == "/docs"} />
+    <DocsIntro if={location.pathname == "/docs"} />
     <RoutedContent
       parent="Docs"
       content={[].concat.apply([], docs.map(section => section.pages))}
       route="/docs/:slug" />
-  </Page>
+  </Page>,
 
-  : {
-    paddingTop: 40,
-    flexGrow: 1
-  }
+  {
+    root: {
+      paddingTop: 40,
+      flexGrow: 1,
+    },
 
-  section: {
-    marginBottom: 10,
-  }
+    section: {
+      marginBottom: 10,
+    }
 
-  title: {
-    textAlign: "right",
-    fontSize: 15,
-    padding: [2, 5, 0],
-    margin: [0, 0, -2],
-    color: '#999',
-    fontWeight: 300
+    title: {
+      textAlign: "right",
+      fontSize: 15,
+      padding: [2, 5, 0],
+      margin: [0, 0, -2],
+      color: '#999',
+      fontWeight: 300
+    }
   }
-}
+)
