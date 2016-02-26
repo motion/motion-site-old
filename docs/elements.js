@@ -1,4 +1,4 @@
-view Docs.Elements {
+export const Docs.Elements = () => $(
   <Title>Elements</Title>
   <IntroText>
     Motion uses JSX, with a couple optional helpers.
@@ -9,7 +9,7 @@ view Docs.Elements {
   </Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       <shows class={{ active: true }}>
         <show class="active">
           <name>Breaking bad</name>
@@ -25,7 +25,7 @@ view Docs.Elements {
 
   <SubTitle>{'<tag repeat={array | num} />'}</SubTitle>
   <Code source={`
-    view Main {
+    export const Main = () => $(
       let shows = [
         { name: 'motionstones' },
         { name: 'jetsons' },
@@ -50,7 +50,7 @@ view Docs.Elements {
 
   <SubTitle>{'<tag if={any} />'}</SubTitle>
   <Code source={`
-    view Main {
+    export const Main = () => $(
       let greenlight = true
 
       <light>{greenlight ? "green light" : "red light"}</light>
@@ -66,7 +66,7 @@ view Docs.Elements {
 
   <SubTitle>{'<tag sync={identifier} onEnter={function} />'}</SubTitle>
   <Code source={`
-    view Question {
+    export const Question = () => $(
       let response = ''
 
       function submit(e) {
@@ -90,10 +90,10 @@ view Docs.Elements {
   </Text>
 
   <Code source={`
-    view DecoratedButton {
+    export const DecoratedButton = () => $(
       <button yield />
 
-      $button = {
+      button: {
         fontWeight: 600
       }
     }
@@ -110,7 +110,7 @@ view Docs.Elements {
   <SubTitle>Accessing DOM nodes (refs)</SubTitle>
   <p>Sometimes you need to access nodes in the DOM.</p>
   <Code source={`
-    view Main {
+    export const Main = () => $(
       let wide
 
       on.mount(() => {
@@ -125,7 +125,7 @@ view Docs.Elements {
   <p>Clone an element with new props, like React.cloneElement:</p>
 
   <Code source={`
-    view PassThrough {
+    export const PassThrough = () => $(
       <child repeat={view.props.children}>
         {view.clone(_, { newProp: true })}
       </child>

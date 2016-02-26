@@ -1,11 +1,11 @@
 import { color } from '../constants'
 
-view DemoCounter {
+export const DemoCounter = () => $(
   <Example flip inPage
     inStyle={{ width: 0 }}
     in={
       <Editor lines={10} left light source={`
-      view Counter {
+      export const Counter = () => $(
         let count = 0
 
         const up = () => count++
@@ -20,13 +20,13 @@ view DemoCounter {
     out={<Counter />}
   />
 
-  $Example = {
+  Example: {
     width: '82%',
     margin: 'auto'
   }
 }
 
-view Counter {
+export const Counter = () => $(
   let count = 0
 
   const up = () => count++
@@ -38,19 +38,19 @@ view Counter {
     <button onClick={up}>↑</button>
   </center>
 
-  $ = {
+  : {
     margin: 'auto',
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center'
   }
 
-  $center = {
+  center: {
     flexFlow: 'row',
     margin: [0, 'auto', 10]
   }
 
-  $button = {
+  button: {
     margin: 5,
     border: '1px solid #ddd',
     background: '#fff',
@@ -69,7 +69,7 @@ view Counter {
     }
   }
 
-  $count = {
+  count: {
     fontSize: 20,
     color: '#777',
     flexFlow: 'row',

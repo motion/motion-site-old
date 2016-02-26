@@ -1,4 +1,4 @@
-view Roadmap {
+export const Roadmap = () => $(
   <Header />
   <Roadmap.Intro />
   <Roadmap.NextRelease />
@@ -8,21 +8,21 @@ view Roadmap {
   <Footer />
 }
 
-view Roadmap.Intro {
+export const Roadmap.Intro = () => $(
   <Feature odd col>
     <UI.Title>The Motion Roadmap</UI.Title>
     <Row>
       <Col>
         <IntroText>
           We're taking a stab at changing the way we do frontend development. Here's our current, evolving, high-level
-          overview or where we are and where we want to go.
+          overexport const or where we are and where we want to go.
         </IntroText>
       </Col>
     </Row>
   </Feature>
 }
 
-view Roadmap.NextRelease {
+view Roadmap.NextRelease = () => $(
   let cards = [
     { title: 'Isomorphic', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.' },
     { title: 'Isomorphic', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.' },
@@ -38,7 +38,7 @@ view Roadmap.NextRelease {
   </Feature>
 }
 
-view Roadmap.Immediate {
+export const Roadmap.Immediate = () => $(
   let cards = [
     { title: 'Isomorphic', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.' },
     { title: 'Isomorphic', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.' },
@@ -54,7 +54,7 @@ view Roadmap.Immediate {
   </Feature>
 }
 
-view Roadmap.ShortTerm {
+export const Roadmap.ShortTerm = () => $(
   let cards = [
     { title: 'Isomorphic', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.' },
     { title: 'Isomorphic', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.' },
@@ -70,7 +70,7 @@ view Roadmap.ShortTerm {
   </Feature>
 }
 
-view Roadmap.LongTerm {
+export const Roadmap.LongTerm = () => $(
   let cards = [
     { title: 'Isomorphic', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.' },
     { title: 'Isomorphic', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.' },
@@ -86,7 +86,7 @@ view Roadmap.LongTerm {
   </Feature>
 }
 
-view ReleaseCards {
+export const ReleaseCards = () => $(
   prop cards
 
   <Row>
@@ -95,7 +95,7 @@ view ReleaseCards {
     </Card>
   </Row>
 
-  $Row = {
+  Row: {
     overflowX: 'scroll'
   }
 }

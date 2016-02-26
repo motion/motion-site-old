@@ -2,7 +2,7 @@ import { style, color, routes, font, device } from '../constants'
 
 const light = '#fefefe'
 
-view Editor {
+export const Editor = () => $(
   prop sources = []
   prop source
   prop children
@@ -52,7 +52,7 @@ view Editor {
     class={{ loaded }}>
   </iframe>
 
-  $ = {
+  : {
     flexFlow: 'column',
     height: view.props.lines ? 22 + (23 * view.props.lines) : '100%',
     borderRadius: 5,
@@ -72,11 +72,11 @@ view Editor {
     }
   }
 
-  $content = {
+  content: {
     overflow: 'auto',
   }
 
-  $Code = {
+  Code: {
     margin: 0,
     padding: 13,
     border: 'none',
@@ -85,11 +85,11 @@ view Editor {
     boxShadow: 'none'
   }
 
-  $hidden = {
+  hidden: {
     display: 'none'
   }
 
-  $iframe = {
+  iframe: {
     border: 'none',
     height: '100%',
     width: '100%',
@@ -104,12 +104,12 @@ view Editor {
     }
   }
 
-  $loaded = {
+  loaded: {
     opacity: 1
   }
 }
 
-view Tabs {
+export const Tabs = () => $(
   prop tabs = []
   prop activeTab = 0
   prop changeTab = Motion.noop
@@ -124,7 +124,7 @@ view Tabs {
     </tab>
   </tabs>
 
-  $tabs = {
+  tabs: {
     flexFlow: 'row',
     fontSize: 15,
     fontFamily: font.sansSerif,
@@ -132,7 +132,7 @@ view Tabs {
     borderBottom: '1px solid #ddd',
   }
 
-  $tab = {
+  tab: {
     cursor: 'pointer',
     userSelect: 'none',
     color: '#333',
@@ -146,7 +146,7 @@ view Tabs {
     flexGrow: 1
   }
 
-  $active = {
+  active: {
     background: '#fff',
     borderLeft: `2px solid ${color.brand2}`,
     marginTop: 1,
@@ -157,7 +157,7 @@ view Tabs {
   }
 }
 
-view Toolbar {
+export const Toolbar = () => $(
   prop light = false
   prop changeTab
   prop tabs
@@ -180,11 +180,11 @@ view Toolbar {
   const borderColor = light ? '#fff' : '#222'
   const border = '1px solid ' + borderColor
 
-  $ = {
+  : {
     flexFlow: 'column'
   }
 
-  $bar = {
+  bar: {
     background: view.props.light ? light : 'rgb(29, 38, 45)',
     height: 12,
     minHeight: 12,
@@ -196,7 +196,7 @@ view Toolbar {
     alignItems: 'flex-start',
   }
 
-  $ctrl = {
+  ctrl: {
     width: 8,
     height: 8,
     background: '#EB5B54',
@@ -205,11 +205,11 @@ view Toolbar {
     opacity: 0.2
   }
 
-  $max = {
+  max: {
     background: '#F7C033'
   }
 
-  $open = {
+  open: {
     background: '#69CB43'
   }
 }

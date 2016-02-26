@@ -1,8 +1,8 @@
-view Docs.Install {
+export const Docs.Install = () => $(
   <Docs.InstallContent />
 }
 
-view Docs.InstallContent {
+export const Docs.InstallContent = () => $(
   <Title>Installing</Title>
   <IntroText>Install Motion CLI and create a new app</IntroText>
   <Text>

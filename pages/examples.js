@@ -3,9 +3,9 @@ const examples = [
   //   title: 'Intro',
   //   examples: [
   //     { title: "Begin", view: 'Intro', slug: 'intro', description: `
-  //       Use multiple view together with styles.
+  //       Use multiple export const together with styles.
   //     ` },
-  //     {
+  //     = () => $(
   //       title: "More styling", view: 'Fetch', slug: 'fetch', description: `
   //       Mix together props, style, and lifecycle events.
   //     ` },
@@ -28,7 +28,7 @@ const examples = [
 
 let active = 0
 
-view Learn {
+export const Learn = () => $(
   <Head
     title="Learn Motion"
     subtitle="Get familiar with Motion through these quick tutorials."
@@ -51,33 +51,33 @@ view Learn {
     )}
   </Page>
 
-  $ = {
+  : {
     flexGrow: 1
   }
 
-  $Row = {
+  Row: {
     flexWrap: 'wrap'
   }
 
-  $Card = {
+  Card: {
     width: '46%'
   }
 
-  $section = {
+  section: {
     marginBottom: 30
   }
 }
 
 const capitalize = str => str[0].toUpperCase() + str.slice(1)
 
-view Examples {
+export const Examples = () => $(
   prop params
 
   <Page list={examples[active].examples} base="/examples">
     {view.el(`Examples.${capitalize(params.slug)}`)}
   </Page>
 
-  $ = {
+  : {
     width: '100%',
     padding: [40, 0]
   }

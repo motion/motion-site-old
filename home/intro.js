@@ -1,6 +1,6 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Home.Intro {
+export const Home.Intro = () => $(
   <Feature col>
     <Row centered>
       <Col class="content">
@@ -28,14 +28,14 @@ view Home.Intro {
     </Row>
   </Feature>
 
-  $Feature = {
+  Feature: {
     maxWidth: 800,
     width: '100%',
     margin: [0, 'auto', -40],
     border: 'none'
   }
 
-  $Editor = {
+  Editor: {
     minWidth: 320,
     width: '60%',
 
@@ -44,7 +44,7 @@ view Home.Intro {
     }
   }
 
-  $content = {
+  content: {
     paddingRight: 40,
     justifyContent: 'center',
 
@@ -57,17 +57,17 @@ view Home.Intro {
     }
   }
 
-  $Col = {
+  Col: {
     width: '50%'
   }
 
-  $pre = {
+  pre: {
     color: '#fff',
     padding: [3, 10],
     lineHeight: 1.5
   }
 
-  $img = {
+  img: {
     width: 425,
     margin: [0, -300, 0, 0]
   }

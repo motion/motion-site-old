@@ -1,4 +1,4 @@
-view Docs.Routes {
+export const Docs.Routes = () => $(
   <Title>Routes</Title>
   <IntroText>Motion comes with a lightweight routing system, but lets you plug in any you'd like.</IntroText>
 
@@ -49,7 +49,7 @@ view Docs.Routes {
 
   <SubTitle>Example</SubTitle>
   <Code source={`
-    view Main {
+    export const Main = () => $(
       <h1>Welcome to our store</h1>
       <Home route="/" />
       <About route="/about" />
@@ -57,7 +57,7 @@ view Docs.Routes {
       <NotFound route={404} />
     }
 
-    view Home {
+    export const Home = () => $(
       let toProduct = id => Motion.router.go('/products/' + id)
 
       <h2>Come on by</h2>
@@ -71,16 +71,16 @@ view Docs.Routes {
       </links>
     }
 
-    view About {
+    export const About = () => $(
       <h2>About our company</h2>
     }
 
-    view Product {
+    export const Product = () => $(
       <h2>Product {view.props.params.id}</h2>
       <a onClick={() => Motion.router.go('/')}>home</a>
     }
 
-    view NotFound {
+    export const NotFound = () => $(
       <h2>404!</h2>
     }
   `} />

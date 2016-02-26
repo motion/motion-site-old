@@ -1,9 +1,9 @@
 import { style, color, routes, font, device } from '../constants'
 
-view DemoVideo {
+export const DemoVideo = () => $(
   <YouTube />
 
-  $ = {
+  : {
     textAlign: 'center',
     alignItems: 'center',
     margin: [0, 'auto'],
@@ -16,7 +16,7 @@ view DemoVideo {
   }
 }
 
-view YouTube {
+export const YouTube = () => $(
   let started = false
 
   const base = 'https://www.youtube.com/embed/VNfkk6lH0gg'
@@ -48,7 +48,7 @@ view YouTube {
   const height = Math.round(originalHeight * scale)
   const width = Math.round(originalWidth * scale)
 
-  $ = {
+  : {
     width,
     maxHeight: '100%',
     maxWidth: '100%',
@@ -61,7 +61,7 @@ view YouTube {
     }
   }
 
-  $iframe = {
+  iframe: {
     width: '100%',
     height: '100%',
     minHeight: height,
@@ -71,7 +71,7 @@ view YouTube {
     borderRadius: 6
   }
 
-  $cover = {
+  cover: {
     position: 'absolute',
     top: 0,
     left: 0,
@@ -87,7 +87,7 @@ view YouTube {
     }
   }
 
-  $bot = {
+  bot: {
     top: 'auto',
     bottom: 0,
     height: 8

@@ -1,10 +1,10 @@
-view Docs.Views {
+export const Docs.Views = () => $(
   <Title>Views</Title>
 
   <Text>Here is a view:</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       <h1>Hello world</h1>
     }
   `} />
@@ -12,7 +12,7 @@ view Docs.Views {
   <Text>A view can contain variables and constants:</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       let name = 'World'
 
       <h1>Hello {name}</h1>
@@ -22,7 +22,7 @@ view Docs.Views {
   <Text>When you change a variable, your view will update:</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       let name = 'World'
 
       <h1>Hello {name}</h1>
@@ -35,7 +35,7 @@ view Docs.Views {
   <Text>Since it's just ES6, we can use a named function and call it.</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       let name = 'World'
 
       function change() {
@@ -50,7 +50,7 @@ view Docs.Views {
   <Text>We can even use regular javascript functions like Array.push</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       let animals = []
 
       <h1>My animals are {animals.join(', ')}</h1>
@@ -63,11 +63,11 @@ view Docs.Views {
   <Text>You'll want to keep your views small and composable. You can use them together like so:</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       <Hello to="World" size={18} />
     }
 
-    view Hello {
+    export const Hello = () => $(
       <h1>Hello {view.props.to}</h1>
 
       $h1 = {
@@ -87,11 +87,11 @@ view Docs.Views {
   </Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       <Child.Button />
     }
 
-    view Child.Button {
+    export const Child.Button = () => $(
       <button />
     }
   `} />
@@ -101,11 +101,11 @@ view Docs.Views {
   <Text>Some final niceties of Motion. You can name your tags whatever you like:</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       <greet>Hello World</greet>
       <sub>Show as h2, named greet</sub>
 
-      $greet = {
+      greet: {
         fontWeight: 'bold'
       }
     }
@@ -138,7 +138,7 @@ view Docs.Views {
   </Text>
 
   <Code source={`
-    view Tagline {
+    export const Tagline = () => $(
       let how = 'with ease'
       let started = false
 
@@ -158,7 +158,7 @@ view Docs.Views {
   <Text>Motion provides a smart event listener. It shims addEventListener much like jQuery <code>$().on()</code>, but works with views. It's optional, and very lightweight, but it avoid large amounts of hassle.</Text>
 
   <Code source={`
-    view Hello {
+    export const Hello = () => $(
       on.mount(() => {
         let spanWidth = view.refs.span.innerWidth
         console.log('spans width is', spanWidth)
@@ -171,7 +171,7 @@ view Docs.Views {
   <Text><code>on</code> works with views, automatically unbinding it's events when the view un-mounts.</Text>
 
   <Code source={`
-    view Scroller {
+    export const Scroller = () => $(
       on.scroll(e => {
         // view scrolling
       })
@@ -179,7 +179,7 @@ view Docs.Views {
   `} />
 
   <Code source={`
-    view WindowScroller {
+    export const WindowScroller = () => $(
       on.scroll(window, e => {
         // window scrolling
         // optional first agument for scope

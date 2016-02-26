@@ -1,6 +1,6 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Home.Community {
+export const Home.Community = () => $(
   <Feature narrow>
     <inner>
       <Col pad>
@@ -30,11 +30,11 @@ view Home.Community {
     </inner>
   </Feature>
 
-  $Feature = {
+  Feature: {
     overflow: 'hidden'
   }
 
-  $inner = {
+  inner: {
     flexFlow: 'row',
 
     [device.small]: {
@@ -42,7 +42,7 @@ view Home.Community {
     }
   }
 
-  $content = {
+  content: {
     justifyContent: 'center',
 
     [device.small]: {
@@ -51,7 +51,7 @@ view Home.Community {
     }
   }
 
-  $cloud = {
+  cloud: {
     flexFlow: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
@@ -60,7 +60,7 @@ view Home.Community {
 
   const size  = 50
 
-  $img = {
+  img: {
     width: size,
     maxHeight: size,
     margin: [0, 5, 20],
@@ -70,7 +70,7 @@ view Home.Community {
     alignSelf: 'center'
   }
 
-  $a = {
+  a: {
     alignSelf: 'center'
   }
 }

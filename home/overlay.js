@@ -1,4 +1,4 @@
-view Overlay {
+export const Overlay = () => $(
   let active
 
   on.props(() => {
@@ -9,7 +9,7 @@ view Overlay {
     {view.props.children}
   </overlay>
 
-  $ = {
+  : {
     display: 'block',
     opacity: active ? 1 : 0,
     transition: 'all ease-in 300ms',

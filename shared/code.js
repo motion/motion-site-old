@@ -1,6 +1,6 @@
 import { font, device } from '../constants'
 
-view Code {
+export const Code = () => $(
   prop lang = 'javascript'
   prop large, source, children
 
@@ -12,7 +12,7 @@ view Code {
     {clean(source) || children}
   </code>
 
-  $ = {
+  : {
     background: '#fff',
     border: '1px solid #eee',
     color: 'rgba(0,0,0,0.75)',
@@ -26,7 +26,7 @@ view Code {
     overflow: 'hidden'
   }
 
-  $large = {
+  large: {
     fontSize: 16,
     lineHeight: 1.5,
     minWidth: '100%'

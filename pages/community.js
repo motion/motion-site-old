@@ -1,4 +1,4 @@
-view Community {
+export const Community = () => $(
   <Page>
     <Title>Community</Title>
 
@@ -27,7 +27,7 @@ view Community {
     <br />
   </Page>
 
-  $ = {
+  : {
     padding: [50, 0]
   }
 }

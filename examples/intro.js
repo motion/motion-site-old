@@ -1,4 +1,4 @@
-view Examples.Intro {
+export const Examples.Intro = () => $(
   <top>
     <Title>
       Examples
@@ -32,7 +32,7 @@ view Examples.Intro {
   <Code source={`
       let randTo = x => Math.floor(Math.random() * x)
 
-      view Main {
+      export const Main = () => $(
         let first, second, answer
         let streak = 0
         let guess = ''
@@ -66,7 +66,7 @@ view Examples.Intro {
           onEnter={check}
         />
 
-        $ = {
+        : {
           margin: [20, 0],
           padding: [20, 0],
           border: '1px solid #ddd',
@@ -76,19 +76,19 @@ view Examples.Intro {
           fontSize: 34
         }
 
-        $question = {
+        question: {
           flexFlow: 'row',
           margin: [15, 0]
         }
 
-        $streak = {
+        streak: {
           flexFlow: 'row',
           margin: [10, 'auto'],
           fontSize: 24,
           color: 'green'
         }
 
-        $input = {
+        input: {
           background: '#eee',
           textAlign: 'center',
           color: '#000',
@@ -102,12 +102,12 @@ view Examples.Intro {
       }
   `} />
 
-  $top = {
+  top: {
     flexFlow: 'row',
     justifyContent: 'space-between',
   }
 
-  $code = {
+  code: {
     marginRight: 15,
     marginTop: 10,
     textDecoration: 'none',

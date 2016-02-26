@@ -1,4 +1,4 @@
-view Use {
+export const Use = () => $(
   let isReact = true
   let small = true
   let wait = true
@@ -47,40 +47,40 @@ view Use {
     </size>
   </Page>
 
-  $buttons = {
+  buttons: {
     flexFlow: 'row',
     marginTop: 30,
     justifyContent: 'space-around',
   }
 
-  $Button = {
+  Button: {
     lineHeight: 1.3,
     width: 400,
     transition: 'all 300ms ease-in',
     hover: { opacity: 1 },
   }
 
-  $selected = {
+  selected: {
     opacity: 1,
     transform: { scale: 1.1 },
   }
 
-  $check = {
+  check: {
     flexFlow: 'row'
   }
 
-  $button = {
+  button: {
 
   }
 
-  $p = { marginLeft: 10 }
+  p: { marginLeft: 10 }
 
-  $isReact = {
+  isReact: {
     marginTop: 17,
     marginLeft: 20,
   }
 
-  $contain = {
+  contain: {
     padding: [50, 100],
     fontSize: 20,
     lineHeight: '2.2rem',

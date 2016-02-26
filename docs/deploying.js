@@ -1,4 +1,4 @@
-view Docs.Deploying {
+export const Docs.Deploying = () => $(
   <Title>Deploying</Title>
   <IntroText>
     Motion lets you build your app with all your assets, code, and template ready for production
@@ -27,7 +27,7 @@ view Docs.Deploying {
   </Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       <img src="/assets/logo.png" />
     }
   `} />

@@ -1,6 +1,6 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Home {
+export const Home = () => $(
   <Home.Head />
   <Home.Install />
   <Home.Intro />

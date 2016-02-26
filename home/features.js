@@ -1,19 +1,19 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Home.Features {
+export const Home.Features = () => $(
   <Feature col>
     <Title center>Everything you need to be productive today</Title>
     <IntroText center>Start in seconds, be more creative & deploy today</IntroText>
     <Features />
   </Feature>
 
-  $Feature = {
+  Feature: {
     border: 'none',
     paddingBottom: 0
   }
 }
 
-view Features {
+export const Features = () => $(
   <Contain>
     <section>
       <text>
@@ -107,22 +107,22 @@ view Features {
     </section>
   </Contain>
 
-  $ = {
+  : {
     padding: [30, 0],
     margin: [30, 0]
   }
 
-  $Next = {
+  Next: {
     margin: [25, 'auto', 20]
   }
 
-  $section = {
+  section: {
     margin: [30, 'auto'],
     flexWrap: 'wrap',
     maxWidth: '100%',
   }
 
-  $text = {
+  text: {
     flexFlow: 'row',
     textAlign: 'left',
     margin: [-15, 0],
@@ -136,7 +136,7 @@ view Features {
     }
   }
 
-  $img = {
+  img: {
     width: 250,
     height: 100,
     margin: ['auto', 0],
@@ -146,17 +146,17 @@ view Features {
     }
   }
 
-  $right = {
+  right: {
     alignSelf: 'flex-end',
     flexDirection: 'row-reverse !important'
   }
 
-  $small = {
+  small: {
     width: '40%',
     margin: [0, '10%']
   }
 
-  $third = {
+  third: {
     width: '33%',
     margin: [0],
 
@@ -165,7 +165,7 @@ view Features {
     }
   }
 
-  $thirdwrap = {
+  thirdwrap: {
     flexFlow: 'row',
     margin: [50, 0, 0],
     padding: [50, 0, 0],
@@ -176,7 +176,7 @@ view Features {
     }
   }
 
-  $title = {
+  title: {
     fontSize: 18,
     margin: [-40, 0, 0],
 
@@ -185,7 +185,7 @@ view Features {
     }
   }
 
-  $col = {
+  col: {
     flexFlow: 'column',
     margin: [20]
   }

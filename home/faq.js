@@ -1,6 +1,6 @@
 import { style, font } from '../constants'
 
-view FAQ {
+export const FAQ = () => $(
   <Contain pad>
     <question>
       What can I build with it?
@@ -68,7 +68,7 @@ view FAQ {
     </answer>
   </Contain>
 
-  $ = {
+  : {
     margin: [20, 'auto'], //offset for p space
     padding: [50, 40],
     maxWidth: 1000,
@@ -79,25 +79,25 @@ view FAQ {
     }
   }
 
-  $a = style.link
+  a: style.link
 
-  $p = {
+  p: {
     margin: [10, 0]
   }
 
-  $intro = {
+  intro: {
     fontSize: 16,
     padding: 20,
     border: '1px solid #ddd'
   }
 
-  $question = {
+  question: {
     fontSize: 20,
     fontFamily: font.title,
     display: 'block'
   }
 
-  $answer = {
+  answer: {
     margin: [0, 0, 30],
     color: '#666',
   }

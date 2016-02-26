@@ -1,6 +1,6 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Demo {
+export const Demo = () => $(
   prop onStart = Motion.noop
 
   let isPlaying = false
@@ -35,7 +35,7 @@ view Demo {
     </video>
   </mask>
 
-  $ = {
+  : {
     width: dim.width,
     height: dim.height,
     marginBottom: -30,
@@ -53,14 +53,14 @@ view Demo {
     }
   }
 
-  $close = {
+  close: {
     color: '#fff',
     position: 'absolute',
     top: -20,
     right: -20,
   }
 
-  $video = {
+  video: {
     position: 'absolute',
     bottom: 0,
     right: 0,
@@ -73,7 +73,7 @@ view Demo {
   }
 }
 
-view Home.Head {
+export const Home.Head = () => $(
   let play = false
 
   on.mount(() => {
@@ -104,7 +104,7 @@ view Home.Head {
   </Contain>
   <selfShadow />
 
-  $ = {
+  : {
     background: style.gradient,
     color: '#fff',
     flexFlow: 'column',
@@ -120,17 +120,17 @@ view Home.Head {
     }
   }
 
-  $Demo = {
+  Demo: {
     width: '100%'
   }
 
-    $Contain = {
+    Contain: {
       [device.small]: {
         maxWidth: '80%'
       }
     }
 
-    $selfShadow = {
+    selfShadow: {
       position: 'absolute',
       bottom: -1,
       left: 0,
@@ -141,18 +141,18 @@ view Home.Head {
       background: '#fff'
     }
 
-    $Button = {
+    Button: {
       margin: [25, 0, 0],
       transition: 'all linear 200ms',
       hover: { transform: { scale: 1.1 } }
     }
 
-    $lt = {
+    lt: {
       textDecoration: 'line-through',
       opacity: 0.5,
     }
 
-    $banner = {
+    banner: {
       margin: 'auto',
       textAlign: 'center',
       padding: [0, '10%'],
@@ -163,7 +163,7 @@ view Home.Head {
       transition: 'all ease-in 300ms'
     }
 
-      $hide = {
+      hide: {
         opacity: 0
       }
 
@@ -180,7 +180,7 @@ view Home.Head {
       }
     }
 
-    $IntroText = {
+    IntroText: {
       color: 'rgba(255,255,255,0.9)',
       margin: 'auto',
       padding: [0, 110],
@@ -190,28 +190,28 @@ view Home.Head {
       }
     }
 
-    $lead = {
+    lead: {
       fontSize: 38,
       lineHeight: '3.0rem',
       fontWeight: 700
     }
 
-    $mid = {
+    mid: {
       padding: [20, 0],
       position: 'relative',
       zIndex: 10
     }
 
-    $text = {
+    text: {
       marginRight: 40
     }
 }
 
 
-view Watch {
+export const Watch = () => $(
   <button yield />
 
-  $button = {
+  button: {
     margin: [18, 'auto', -10],
     padding: [3, 12],
     lineHeight: '1.5em',

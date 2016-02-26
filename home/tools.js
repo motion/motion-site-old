@@ -1,4 +1,4 @@
-view Home.Tools {
+export const Home.Tools = () => $(
   <Feature dark stars col>
     <Title light center>
       Seamless development with powerful tools
@@ -7,7 +7,7 @@ view Home.Tools {
     <img src="/assets/images/tools.png" />
   </Feature>
 
-  $img = {
+  img: {
     display: 'block',
     height: 500,
     margin: [40, 'auto', 0]

@@ -1,7 +1,7 @@
 import { Motion, spring } from 'react-motion'
 import offset from 'mouse-event-offset'
 
-view DemoCircles {
+export const DemoCircles = () => $(
   <Example flip inPage
     inStyle={{ width: 290 }}
     in={
@@ -13,7 +13,7 @@ view DemoCircles {
             source: `
       import offset from 'mouse-event-offset'
 
-      view Circles {
+      export const Circles = () => $(
         let coords = [[200, 200]]
 
         function addCircle(click) {
@@ -27,7 +27,7 @@ view DemoCircles {
           />
         </circles>
 
-        $circles = { height: 400 }
+        circles: { height: 400 }
       }`
           },
           {
@@ -39,7 +39,7 @@ view DemoCircles {
       let x = spring(1, [300, 10])
       let size = scale => ({ transform: { scale } })
 
-      view Circle {
+      export const Circle = () => $(
         let background = [c(), c(), c()]
         let { top, left } = view.props
 
@@ -49,7 +49,7 @@ view DemoCircles {
           {i => <circle style={size(i.x)} /> }
         </Motion>
 
-        $circle = {
+        circle: {
           background, top, left,
           position: 'absolute',
           width: 80, height: 80,
@@ -64,7 +64,7 @@ view DemoCircles {
     } />
 }
 
-view Circles {
+export const Circles = () => $(
   let coords = []
 
   on.mount(() => {
@@ -86,13 +86,13 @@ view Circles {
     </desc>
   </circles>
 
-  $circles = {
+  circles: {
     height: 430,
     padding: [0, 40],
     cursor: 'pointer'
   }
 
-  $desc = {
+  desc: {
     textAlign: 'center',
     fontSize: 15,
     opacity: 0.8,
@@ -101,7 +101,7 @@ view Circles {
   }
 }
 
-view Circle {
+export const Circle = () => $(
   const c = () => Math.round(Math.random()*255)
   const background = [c(), c(), c()]
   const scale = spring(1, { stiffness: 300, damping: 10 })
@@ -112,7 +112,7 @@ view Circle {
       {x => <circle style={{ transform: { scale: x.scale } }} /> }
   </Motion>
 
-  $circle = {
+  circle: {
     background,
     top: view.props.top,
     left: view.props.left,

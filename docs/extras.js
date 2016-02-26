@@ -1,4 +1,4 @@
-view Docs.Extras {
+export const Docs.Extras = () => $(
   <Title>Extras</Title>
   <Text>Beyond the view macro and it's corresponding syntax, it is very much just ES6 JavaScript. We've made some small changes though to optimize for common use cases and have shimmed a few helpful modules.</Text>
 
@@ -30,7 +30,7 @@ view Docs.Extras {
       })
     })
 
-    view Main {
+    export const Main = () => $(
       <h1>Hello</h1>
     }
   `} />

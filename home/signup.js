@@ -1,6 +1,6 @@
 import { color } from '../constants'
 
-view Home.Signup {
+export const Home.Signup = () => $(
   <Feature odd narrow>
     <Row center>
       <Col pad>
@@ -19,12 +19,12 @@ view Home.Signup {
     </Row>
   </Feature>
 
-  $Col = {
+  Col: {
     width: '50%'
   }
 }
 
-view SignupForm {
+export const SignupForm = () => $(
   <form action="//motionlang.us11.list-manage.com/subscribe/post?u=d6ee317984756a7f0f5e9378b&amp;id=dcc2cefed5" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
       <div class="mc-field-group">
@@ -60,16 +60,16 @@ view SignupForm {
     </div>
   </form>
 
-  $hide = {
+  hide: {
     display: 'none'
   }
 
-  $form = {
+  form: {
     width: 300,
     margin: 'auto',
   }
 
-  $input = {
+  input: {
     width: '100%',
     marginBottom: 10,
     borderRadius: 5,
@@ -80,7 +80,7 @@ view SignupForm {
     border: '1px solid #ccc'
   }
 
-  $thing = {
+  thing: {
     margin: 'auto',
     color: '#fff',
     border: 'none',

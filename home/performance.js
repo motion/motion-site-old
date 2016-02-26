@@ -1,6 +1,6 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Performance {
+export const Performance = () => $(
   <Contain>
     <feature class="first">
       <section class="small">
@@ -76,17 +76,17 @@ view Performance {
     </feature>
   </Contain>
 
-  $ = {
+  : {
     color: '#333',
     padding: [45, 0]
   }
 
-  $Interlude = {
+  Interlude: {
     margin: [0, 0, 40],
     padding: 0
   }
 
-  $feature = {
+  feature: {
     flexFlow: 'row',
     margin: [0],
     borderTop: '1px solid rgba(255,255,255,0.05)',
@@ -97,15 +97,15 @@ view Performance {
     }
   }
 
-  $odd = {
+  odd: {
     background: [0,0,0,0.02]
   }
 
-  $first = {
+  first: {
     border: 'none'
   }
 
-  $featureTitle = {
+  featureTitle: {
     margin: ['auto', 0, 'auto', 20],
     textAlign: 'right',
     fontFamily: font.title,
@@ -113,7 +113,7 @@ view Performance {
     color: '#333'
   }
 
-  $section = {
+  section: {
     padding: 25,
     fontSize: 15,
     width: '33%',
@@ -123,7 +123,7 @@ view Performance {
     }
   }
 
-  $small = {
+  small: {
     width: '20%',
 
     [device.small]: {
@@ -132,7 +132,7 @@ view Performance {
     }
   }
 
-  $p = {
+  p: {
     fontWeight: 100,
     fontSize: 18,
     color: [0,0,0,0.55],

@@ -1,4 +1,4 @@
-view Examples.FromReactIntro {
+export const Examples.FromReactIntro = () => $(
   <top>
     <Title>
       Coming from React

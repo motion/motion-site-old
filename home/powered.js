@@ -1,6 +1,6 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Powered {
+export const Powered = () => $(
   <Interlude>Powered by the node community</Interlude>
 
   <Contain>
@@ -15,7 +15,7 @@ view Powered {
     </cloud>
   </Contain>
 
-  $cloud = {
+  cloud: {
     flexFlow: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
@@ -25,14 +25,14 @@ view Powered {
 
   const size  = 100
 
-  $img = {
+  img: {
     width: size,
     maxHeight: size,
     margin: [0, 20, 20],
     alignSelf: 'center'
   }
 
-  $a = {
+  a: {
     alignSelf: 'center'
   }
 }

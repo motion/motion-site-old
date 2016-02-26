@@ -1,4 +1,4 @@
-view Docs.Configuration {
+export const Docs.Configuration = () => $(
   <Title>Configuration</Title>
   <IntroText>
     Configuration is located in <code>.motion/config.js</code>

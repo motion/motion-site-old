@@ -5,7 +5,7 @@ let go = to => {
   setTimeout(() => window.scrollTo(0, 0))
 }
 
-view Next {
+export const Next = () => $(
   let over = true
 
   <next onClick={go.bind(null, view.props.to)}
@@ -16,7 +16,7 @@ view Next {
     <arrow>❯</arrow>
   </next>
 
-  $next = {
+  next: {
     fontSize: 20,
     flexFlow: 'row',
     padding: [10, 0],
@@ -28,11 +28,11 @@ view Next {
     justifyContent: 'flex-end'
   }
 
-  $span = {
+  span: {
     borderBottom: over ? `1px solid rgba(${color.brand}, 0.2)` : 'none'
   }
 
-  $arrow = {
+  arrow: {
     transition: '300ms all ease-in',
     margin: [12, 0, 10, 12]
   }

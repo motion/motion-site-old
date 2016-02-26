@@ -1,43 +1,55 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Example {
-  <Contain maxWidth={view.props.maxWidth || 1000}>
-    <in>{view.props.in}</in>
-    <out>{view.props.out}</out>
-  </Contain>
+export const Example = ({
+    maxWidth,
+    in: inn,
+    out,
+    flip,
+    flipVertical,
+    inPage,
+    inStyle,
+    outStyle
+  }) => $(
 
-  $ = {
-    flexFlow: 'row',
+  <Contain maxWidth={maxWidth || 1000}>
+    <in>{inn}</in>
+    <out>{out}</out>
+  </Contain>,
 
-    [device.small]: {
-      flexFlow: 'column',
-      width: '100%'
-    }
+  {
+    root: {
+      flexFlow: 'row',
+
+      [device.small]: {
+        flexFlow: 'column',
+        width: '100%'
+      }
+    },
+
+    out: [{
+      flexGrow: 1,
+      justifyContent: 'center',
+      position: 'relative',
+      order: flip ? 2 : 1,
+
+      [device.small]: {
+        width: '100%',
+        order: flipVertical ? 1 : 2,
+        padding: inPage ? [50, 0] : 0
+      }
+    }, outStyle],
+
+    in: [{
+      flexGrow: 1,
+      order: flip ? 1 : 2,
+      zIndex: 10,
+      margin: 0,
+
+      [device.small]: {
+        width: '100%',
+        margin: 'auto',
+        order: flipVertical ? 2 : 1
+      }
+    }, inStyle]
   }
-
-  $out = [{
-    flexGrow: 1,
-    justifyContent: 'center',
-    position: 'relative',
-    order: view.props.flip ? 2 : 1,
-
-    [device.small]: {
-      width: '100%',
-      order: view.props.flipVertical ? 1 : 2,
-      padding: view.props.inPage ? [50, 0] : 0
-    }
-  }, view.props.outStyle]
-
-  $in = [{
-    flexGrow: 1,
-    order: view.props.flip ? 1 : 2,
-    zIndex: 10,
-    margin: 0,
-
-    [device.small]: {
-      width: '100%',
-      margin: 'auto',
-      order: view.props.flipVertical ? 2 : 1
-    }
-  }, view.props.inStyle]
-}
+)

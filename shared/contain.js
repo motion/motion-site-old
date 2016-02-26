@@ -1,6 +1,6 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Contain {
+export const Contain = () => $(
   <contain id={view.props.id}>
     <content class={{ straight: view.props.straight }}>
       <Title if={view.props.title}>{view.props.title}</Title>
@@ -11,7 +11,7 @@ view Contain {
   const topPad = view.props.padTop ? 60 : (view.props.strip ? 40 : 0)
   const padding = view.props.pad ? [topPad, '15%'] : [topPad, 0]
 
-  $ = {
+  : {
     background: view.props.bg || (view.props.strip ? color.strip : 'transparent'),
     maxWidth: view.props.maxWidth || 920,
     minWidth: view.props.minWidth || 0,
@@ -31,7 +31,7 @@ view Contain {
     }
   }
 
-  $content = [{
+  content: [{
     flexFlow: 'inherit',
     alignItems: 'inherit',
     justifyContent: 'inherit',
@@ -39,7 +39,7 @@ view Contain {
     width: '100%'
   }, view.props.contentStyle]
 
-  $end = {
+  end: {
     top: 'auto',
     bottom: -20,
     left: -100,

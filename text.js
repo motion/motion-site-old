@@ -2,7 +2,7 @@ import { style, color } from './constants'
 
 const sanitize = str => str ? str.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s/g, '-') : ''
 
-view Title {
+export const Title = () => $(
   prop center
   prop light
   prop big
@@ -16,7 +16,7 @@ view Title {
     tagName="h2"
   />
 
-  $ = {
+  : {
     fontWeight: 400,
     fontSize: 25,
     margin: [18, 0, 8],
@@ -24,29 +24,29 @@ view Title {
     color: 'rgba(0,0,0,0.8)'
   }
 
-  $light = {
+  light: {
     color: '#fff'
   }
 
-  $big = {
+  big: {
     fontSize: 30,
     color: color.brand1
   }
 }
 
-view Title2 {
+export const Title2 = () => $(
   <Title root yield />
 
-  $Title = {
+  Title: {
     fontSize: 20,
     color: color.brand1,
   }
 }
 
-view SubTitle {
+export const SubTitle = () => $(
   <Title tagName="h3" root yield />
 
-  $ = {
+  : {
     color: color(color.brand).darken(1).rgba(),
     marginTop: 15,
     fontSize: 18,
@@ -54,7 +54,7 @@ view SubTitle {
   }
 }
 
-view IntroText {
+export const IntroText = () => $(
   prop center
   prop small
   prop light
@@ -64,7 +64,7 @@ view IntroText {
     {children}
   </Text>
 
-  $ = {
+  : {
     fontSize: 22,
     lineHeight: '1.95rem',
     textAlign: center ? `center` : `auto`,
@@ -74,14 +74,42 @@ view IntroText {
     fontWeight: 300
   }
 
-  $small = {
+  small: {
     color: '#333',
     fontWeight: 400,
     fontSize: 16
   }
 }
 
-view Text {
+class IntroText extends Component {
+  render() {
+    let { small } = this.props
+
+    return [
+      <Text class={{ small }} {...this.props} tagName="h2" />,
+
+      {
+        root: {
+          fontSize: 22,
+          lineHeight: '1.95rem',
+          textAlign: center ? `center` : `auto`,
+          color: light ? 'auto' : 'rgba(0,0,0,0.65)',
+          marginBottom: 15,
+          marginTop: 0,
+          fontWeight: 300
+        },
+
+        small: {
+          color: '#333',
+          fontWeight: 400,
+          fontSize: 16
+        }
+      }
+    ]
+  }
+}
+
+export const Text = () => $(
   prop light, dim, small, children
   prop tagName = 'p'
   prop center
@@ -90,27 +118,27 @@ view Text {
     {children}
   </text>
 
-  $ = {
+  : {
     fontWeight: 400,
     fontSize: 16,
     lineHeight: '1.6rem'
   }
 
-  $light = {
+  light: {
     color: `rgba(255,255,255,0.9)`
   }
 
-  $small = {
+  small: {
     fontSize: 14,
     lineHeight: '1.55rem',
     color: `rgba(0,0,0,0.45)`,
   }
 
-  $dim = {
+  dim: {
     color: `rgba(0,0,0,0.45)`,
   }
 
-  $center = {
+  center: {
     textAlign: 'center'
   }
 }

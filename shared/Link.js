@@ -1,12 +1,16 @@
 import { style } from '../constants'
 
-view Link {
-  let to = view.props.to
+export const Link = ({ to, color, noborder }) => $(
+  <a root onClick={to && Motion.router.link(to)} yield />,
 
-  <a root onClick={to && Motion.router.link(to)} {...view.props} />
+  {
+    root: [
+      style.link,
 
-  $ = [style.link, {
-    color: view.props.color || 'auto',
-    border: view.props.noborder ? 'none' : 'auto'
-  }]
-}
+      {
+        color: color || 'auto',
+        border: noborder ? 'none' : 'auto'
+      }
+    ]
+  }
+)

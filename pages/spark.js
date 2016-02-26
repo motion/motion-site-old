@@ -1,4 +1,4 @@
-view Spark {
+export const Spark = () => $(
   <Page>
     <content>
       <img src="/assets/images/o.jpg" />
@@ -13,17 +13,17 @@ view Spark {
     </content>
   </Page>
 
-  $content = {
+  content: {
     margin: [100, 'auto'],
     maxWidth: 450
   }
 
-  $spark = {
+  spark: {
     maxWidth: '100%',
     margin: [0, 'auto']
   }
 
-  $text = {
+  text: {
     maxWidth: 450,
     textAlign: 'left',
     margin: [15, 'auto']

@@ -1,4 +1,4 @@
-view Examples.Fetch {
+export const Examples.Fetch = () => $(
   <Title>Advanced Fetching</Title>
 
   <IntroText>
@@ -52,15 +52,15 @@ view Examples.Fetch {
   </Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       <Home route={route.home} />
       <Project route={route.project(':id')} />
     }
 
-    view Link {
+    export const Link = () => $(
       <link-a onClick={link(view.props.to)} yield />
 
-      $ = {
+      : {
         textDecoration: view.props.plain ? 'none' : 'underline',
         cursor: 'pointer'
       }
@@ -88,7 +88,7 @@ view Examples.Fetch {
   </Text>
 
   <Code source={`
-      view Home {
+      export const Home = () => $(
         let index, projects
         let fetched = false
 
@@ -105,7 +105,7 @@ view Examples.Fetch {
           </Link>
         </h4>
 
-        $ = {
+        : {
           width: 960,
           margin: [0, 'auto'],
           padding: 80
@@ -122,7 +122,7 @@ view Examples.Fetch {
   </Text>
 
   <Code source={`
-      view Project {
+      export const Project = () => $(
         let id, project, index
         let fetched = false
         let contents = []
@@ -150,10 +150,10 @@ view Examples.Fetch {
           <img if={_.image} src={_.image.display.url} />
         </contents>
 
-        $img = { margin: [0, 'auto', 20] }
+        img: { margin: [0, 'auto', 20] }
       }
 
-      view Project.Title {
+      export const Project.Title = () => $(
         <main>
           <Arrow left onClick={view.props.left} />
           <h1>{view.props.children}</h1>
@@ -163,7 +163,7 @@ view Examples.Fetch {
           <Link to="/" plain>X</Link>
         </close>
 
-        $ = {
+        : {
           padding: [0, '7%'],
           flexFlow: 'row',
           alignItems: 'center',
@@ -179,11 +179,11 @@ view Examples.Fetch {
         }
       }
 
-      view Arrow {
+      export const Arrow = () => $(
         <arrow-a if={view.props.right} yield>&gt;</arrow>
         <arrow-a if={view.props.left} yield>&lt;</arrow>
 
-        $ = { padding: 10 }
+        : { padding: 10 }
       }
   `} />
 }

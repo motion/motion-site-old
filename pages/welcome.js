@@ -1,12 +1,12 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Welcome {
+export const Welcome = () => $(
   <welcome>
     <span class="wow">Frontend, without the framework</span>
     <span>An easy, smart way to build apps</span>
   </welcome>
 
-  $welcome = {
+  welcome: {
     fontSize: 28,
     color: 'rgba(0,0,0,0.7)',
     lineHeight: 1.75,
@@ -23,9 +23,9 @@ view Welcome {
     }
   }
 
-  $gradient = style.textGradient
+  gradient: style.textGradient
 
-  $wow = {
+  wow: {
     fontSize: 34,
     color: color.brand2,
     lineHeight: 1.4,

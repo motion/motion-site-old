@@ -1,4 +1,4 @@
-view Docs.Editor {
+export const Docs.Editor = () => $(
   <Title>Editor Integration</Title>
   <IntroText>
     Motion is an environment that aims to seamlessly integrate the browser and editor to give you a live, smart environment.

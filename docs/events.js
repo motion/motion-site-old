@@ -1,4 +1,4 @@
-view Docs.Events {
+export const Docs.Events = () => $(
   <Title>Events</Title>
   <IntroText>
     Motion includes a simple helper to ease attaching and detaching events.
@@ -7,7 +7,7 @@ view Docs.Events {
   <Text><strong>Without</strong> <code>on</code>, you'd need to write this:</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       let scrollListener
 
       on.mount(() => {
@@ -29,7 +29,7 @@ view Docs.Events {
   </Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       on.scroll(() => {
         // thats it!
       })
@@ -45,7 +45,7 @@ view Docs.Events {
   </Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       on.scroll(window, (e) => {
         console.log(e.pageX)
       })
@@ -77,7 +77,7 @@ view Docs.Events {
   </SubTitle>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       on.delay(1000, run) // after a second
     }
   `} />
@@ -87,7 +87,7 @@ view Docs.Events {
   </SubTitle>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       on.every(1000, run) // every second
     }
   `} />
@@ -97,7 +97,7 @@ view Docs.Events {
   </SubTitle>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       on.frame(run) // every frame
     }
   `} />
@@ -111,7 +111,7 @@ view Docs.Events {
   </Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       on.mount(run)
       on.click(run)
       on.delay(500, run)
@@ -136,7 +136,7 @@ view Docs.Events {
   </Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       // listen for 'child:ran'
       on.event('child:ran', (data) => {
         console.log('received event from child, with data', data.local)
@@ -145,7 +145,7 @@ view Docs.Events {
       <Child />
     }
 
-    view Child {
+    export const Child = () => $(
       let local = 'hello'
 
       // delay 1 second, then send event

@@ -1,4 +1,4 @@
-view Card {
+export const Card = () => $(
   prop title
   prop children
   prop onClick = Motion.noop
@@ -10,7 +10,7 @@ view Card {
     </body>
   </card>
 
-  $ = {
+  : {
     boxShadow: `1px 1px 2px rgba(0,0,0,0.1)`,
     padding: 0,
     margin: 10,
@@ -20,17 +20,17 @@ view Card {
     transition: 'all ease-in 300ms'
   }
 
-  $body = {
+  body: {
     padding: 10
   }
 
-  $SubTitle = {
+  SubTitle: {
     marginTop: 0,
     marginBottom: 0,
     fontSize: 16
   }
 
-  $hover = {
+  hover: {
     cursor: 'pointer',
 
     hover: {
@@ -39,10 +39,10 @@ view Card {
   }
 }
 
-view Card.List {
+export const Card.List = () => $(
   <Row root spread tagName="ul" yield />
 
-  $ = {
+  : {
     padding: 0,
     margin: -10,
     marginTop: 0,

@@ -1,6 +1,6 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Diagram {
+export const Diagram = () => $(
   prop hoverIndex
 
   let hover = false
@@ -27,7 +27,7 @@ view Diagram {
     <Icon.Editor class="icon" highlight={hover == 3} />
   </section>
 
-  $ = {
+  : {
     flexFlow: 'row',
     alignItems: 'space-around',
     justifyContent: 'center',
@@ -38,7 +38,7 @@ view Diagram {
 
   const roundSize = 200
 
-  $round = {
+  round: {
     position: 'absolute',
     top: '45%',
     left: '50%',
@@ -54,7 +54,7 @@ view Diagram {
     }
   }
 
-  $section = {
+  section: {
     alignItems: 'center',
     padding: [0, 22],
     maxWidth: 400,
@@ -70,7 +70,7 @@ view Diagram {
     }
   }
 
-  $icon = {
+  icon: {
     transition: 'all ease-in 200ms',
     transform: { scale: 0.95 },
 
@@ -81,14 +81,14 @@ view Diagram {
 
   let sidePull = -20
 
-  $side = {
+  side: {
     flexFlow: 'row-reverse',
     padding: [0],
     margin: [15, sidePull, 0, 0],
     textAlign: 'right'
   }
 
-  $right = {
+  right: {
     flexFlow: 'row',
     margin: [15, 0, 0, sidePull],
     textAlign: 'left',
@@ -97,7 +97,7 @@ view Diagram {
   const lineSize = 200
   const iconSize = 100
 
-  $point = {
+  point: {
     margin: [iconSize + 40, -30, 0]
   }
 }

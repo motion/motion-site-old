@@ -1,6 +1,6 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Home.Platform {
+export const Home.Platform = () => $(
   let hoverIndex = false
 
   <Feature odd col dark stars pad>
@@ -28,12 +28,12 @@ view Home.Platform {
     </Watch>
   </Feature>
 
-  $wrap = {
+  wrap: {
     position: 'relative',
     margin: 'auto',
   }
 
-  $Attr = {
+  Attr: {
     position: 'absolute',
 
     [device.small]: {
@@ -45,7 +45,7 @@ view Home.Platform {
     }
   }
 
-  $content = {
+  content: {
     margin: [60, 0],
     padding: [0, 80],
 
@@ -55,11 +55,11 @@ view Home.Platform {
     }
   }
 
-  $subtitle = {
+  subtitle: {
     fontSize: 16
   }
 
-  $sections = {
+  sections: {
     margin: [0, 0, 0, 0],
     width: '30%',
 
@@ -69,18 +69,18 @@ view Home.Platform {
     }
   }
 
-  $diagram = {
+  diagram: {
     margin: 'auto',
     // padding: [0, 200]
   }
 
-  $Text = {
+  Text: {
     fontSize: 15,
     lineHeight: 1.5,
     fontWeight: 300
   }
 
-  $section = {
+  section: {
     padding: [5, 15],
     cursor: 'pointer',
     borderRadius: 3,
@@ -95,15 +95,15 @@ view Home.Platform {
     }
   }
 
-  $IntroText = {
+  IntroText: {
     margin: [0, 0, 0],
   }
 
-  $Diagram = {
+  Diagram: {
     margin: [20, 'auto', 20],
   }
 
-  $Title = {
+  Title: {
     [device.small]: {
       textAlign: 'center'
     }

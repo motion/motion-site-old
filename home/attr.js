@@ -1,6 +1,6 @@
 import { color } from '../constants'
 
-view Attr {
+export const Attr = () => $(
   let hovered = false
 
   <attr onMouseEnter={() => hovered = true} onMouseLeave={() => hovered = false}>
@@ -10,14 +10,14 @@ view Attr {
     </Overlay>
   </attr>
 
-  $ = {
+  : {
     display: 'inline',
     position: 'relative',
     fontSize: 18,
     zIndex: 10000
   }
 
-  $text = {
+  text: {
     display: 'inline',
     color: 'rgba(255,255,255,0.8)',
     fontWeight: 300,

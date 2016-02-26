@@ -1,6 +1,6 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Home.Syntax {
+export const Home.Syntax = () => $(
   let demo = 'DemoVenn'
 
   <Feature col>
@@ -22,15 +22,15 @@ view Home.Syntax {
     </Row>
   </Feature>
 
-  $IntroText = {
+  IntroText: {
     margin: [0, 0, 15]
   }
 
-  $Col = {
+  Col: {
     padding: [30, 0]
   }
 
-  $nav = {
+  nav: {
     margin: [0, 'auto', 10],
     padding: [3, 0],
 
@@ -39,15 +39,15 @@ view Home.Syntax {
     }
   }
 
-  $side = {
+  side: {
     maxWidth: 200
   }
 
-  $demos = {
+  demos: {
     maxWidth: 900
   }
 
-  $example = {
+  example: {
     width: '100%'
   }
 }

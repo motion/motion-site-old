@@ -36,7 +36,7 @@ const docs = [
   }
 ]
 
-view Docs {
+export const Docs = () => $(
   <Page sidebar={
     <Page.Sidebar>
       <section repeat={docs}>
@@ -52,16 +52,16 @@ view Docs {
       route="/docs/:slug" />
   </Page>
 
-  $ = {
+  : {
     paddingTop: 40,
     flexGrow: 1
   }
 
-  $section = {
+  section: {
     marginBottom: 10,
   }
 
-  $title = {
+  title: {
     textAlign: "right",
     fontSize: 15,
     padding: [2, 5, 0],

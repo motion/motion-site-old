@@ -1,6 +1,6 @@
 let randTo = x => Math.floor(Math.random() * x)
 
-view MultDemo {
+export const MultDemo = () => $(
   let first, second, answer
   let streak = 0
   let guess = ''
@@ -30,7 +30,7 @@ view MultDemo {
     onEnter={check}
   />
 
-  $ = {
+  : {
     margin: [20, 0],
     padding: [20, 0],
     border: '1px solid #ddd',
@@ -40,19 +40,19 @@ view MultDemo {
     fontSize: 34
   }
 
-  $question = {
+  question: {
     flexFlow: 'row',
     margin: [15, 0]
   }
 
-  $streak = {
+  streak: {
     flexFlow: 'row',
     margin: [10, 'auto'],
     fontSize: 24,
     color: 'green'
   }
 
-  $input = {
+  input: {
     background: '#eee',
     textAlign: 'center',
     color: '#000',

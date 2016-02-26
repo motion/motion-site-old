@@ -1,4 +1,4 @@
-view Start {
+export const Start = () => $(
   <Head
     title="Getting Started"
     subtitle="Motion brings React concepts to javascript the language. It optimizes for developer experience."
@@ -8,7 +8,7 @@ view Start {
     <Banner.Transition />
   </Page>
 
-  $contain = {
+  contain: {
     padding: [50, 100],
     fontSize: 20,
     lineHeight: '2.2rem',
@@ -16,7 +16,7 @@ view Start {
   }
 }
 
-view Start.Getting {
+export const Start.Getting = () => $(
   let node = true
 
   <SubTitle>
@@ -32,21 +32,21 @@ view Start.Getting {
   <Start.Node if={node} />
   <Start.Scratch if={!node} />
 
-  $space = {
+  space: {
     justifyContent: 'space-around',
     margin: [20, 0]
   }
 
-  $choice = {
+  choice: {
     border: '3px solid #eee',
     cursor: 'pointer',
     padding: 10,
   }
 
-  $bold = { fontWeight: 'bold' }
+  bold: { fontWeight: 'bold' }
 }
 
-view Start.Scratch {
+export const Start.Scratch = () => $(
   <ol>
     <li>
       Install atom from <Link href="http://atom.io/">atom.io</Link>
@@ -89,7 +89,7 @@ view Start.Scratch {
   </ol>
 }
 
-view Start.Node {
+export const Start.Node = () => $(
   <ol>
     <li>
       Install atom from <Link href="http://atom.io/">atom.io</Link>
@@ -113,12 +113,12 @@ view Start.Node {
   </ol>
 }
 
-view Start.Slack {
+export const Start.Slack = () => $(
   <Title big>Join our Slack</Title>
   <Text>Direct message Nick Cammarata to get access to the Private Beta channel.</Text>
   <iframe seamless="seamless" src="https://motion-slack.herokuapp.com/"></iframe>
 
-  $iframe = {
+  iframe: {
     border: 'none',
     width: '100%',
     height: 240,
@@ -126,12 +126,12 @@ view Start.Slack {
     marginTop: 20,
   }
 
-  $ = {
+  : {
     margin: [-20, 0, 20]
   }
 }
 
-view Start.Intro {
+export const Start.Intro = () => $(
   <spark-img src="/assets/images/spark.jpg" />
   <Text>We're excited to have you. As part of Spark, you will have access to our newest tools that will be released after launch.</Text>
 
@@ -143,13 +143,13 @@ view Start.Intro {
     Here's some help getting started with Motion. We'll assume you're really starting from scratch on a new machine.
   </Text>
 
-  $spark = {
+  spark: {
     maxWidth: '30%',
     margin: [20, 'auto']
   }
 }
 
-view Start.Joining {
+export const Start.Joining = () => $(
   <Title big>We're Joining You</Title>
   <Text>Motion's founders (Nick and Nate) will be joining you in Spark by building Groop, a fun group chat app where votes can decide any action, small spontaneous games can take place, and generaly tomfoolery can be had.</Text>
 
@@ -157,7 +157,7 @@ view Start.Joining {
 
   <Text>We'll be open sourcing Groop and using it as a way to teach Motion. We'll try to provide weekly updates in the Slack channel</Text>
 
-  $groop = {
+  groop: {
     maxWidth: '30%',
     margin: ['auto']
   }

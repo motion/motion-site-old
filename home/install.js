@@ -1,6 +1,6 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Install.Input {
+export const Install.Input = () => $(
   const install = 'curl <(https://motion.run) '
   const select = () => {
     view.element('input').select()
@@ -10,18 +10,18 @@ view Install.Input {
     <input value={install} readOnly size={install.length - 1} />
   </code>
 
-  $code = {
+  code: {
     background: 'none',
     border: 'none'
   }
 
-  $install = {
+  install: {
     flexFlow: 'row',
     color: '#555',
     margin: [10, 0, 7],
   }
 
-  $input = {
+  input: {
     border: 'none',
     color: 'rgb(13, 149, 217)',
     background: 'none',
@@ -33,7 +33,7 @@ view Install.Input {
   }
 }
 
-view Install.Shields {
+export const Install.Shields = () => $(
   <afterward if={false}>
     <shields>
       <a href="https://www.npmjs.com/package/motion" target="_blank">
@@ -43,17 +43,17 @@ view Install.Shields {
     </shields>
   </afterward>
 
-  $shields = {
+  shields: {
     flexFlow: 'row',
     margin: [20, 'auto', 0],
     height: 40
   }
 
-  $a = {
+  a: {
     margin: 'auto'
   }
 
-  $shield = {
+  shield: {
     opacity: 0.7,
     hover: {
       opacity: 1
@@ -62,7 +62,7 @@ view Install.Shields {
 }
 
 
-view Home.Install {
+export const Home.Install = () => $(
   <Feature row>
     <title>
       <dark>Install:</dark>
@@ -73,13 +73,13 @@ view Home.Install {
     <Help />
   </Feature>
 
-  $ = {
+  : {
     background: 'linear-gradient(#f2f2f2, #fff)',
     color: 'rgba(0,0,0,0.3)',
     // boxShadow: '0 2px 2px rgba(0,0,0,0.045)'
   }
 
-  $title = {
+  title: {
     fontSize: 18,
     marginRight: 0,
     flexFlow: 'row',
@@ -89,21 +89,21 @@ view Home.Install {
     }
   }
 
-  $dark = {
+  dark: {
     color: 'rgba(0,0,0,0.5)',
     fontSize: 20,
     marginRight: 10,
     fontWeight: 300,
   }
 
-  $Feature = {
+  Feature: {
     margin: 'auto',
     padding: [10, 5],
     border: 'none',
     flexWrap: 'wrap',
   }
 
-  $Help = {
+  Help: {
     marginRight: -80,
 
     [device.small]: {
@@ -111,14 +111,14 @@ view Home.Install {
     }
   }
 
-  $mainCode = {
+  mainCode: {
     flexFlow: 'row',
     margin: 'auto',
     [device.small]: { fontSize: 20, marginTop: 5 },
   }
 }
 
-view Help {
+export const Help = () => $(
   let hovered = false
 
   <help onMouseEnter={() => hovered = true} onMouseLeave={() => hovered = false}>
@@ -131,11 +131,11 @@ view Help {
 
   const size = 32
 
-  $ = {
+  : {
     position: 'relative'
   }
 
-  $question = {
+  question: {
     margin: ['auto', 0, 'auto', 3],
     width: size,
     height: size,
@@ -149,7 +149,7 @@ view Help {
     cursor: 'pointer'
   }
 
-  $modal = {
+  modal: {
     color: '#555',
     display: 'block',
     opacity: hovered ? 1 : 0,
@@ -167,7 +167,7 @@ view Help {
     background: '#fff',
   }
 
-  $code = {
+  code: {
     border: 'none',
     color: color.brand1,
     lineHeight: 1.2,

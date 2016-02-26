@@ -1,4 +1,4 @@
-view Transition {
+export const Transition = () => $(
   <Head
     title="Using Motion with your existing React app"
   />
@@ -32,7 +32,7 @@ view Transition {
     }
   }
 
-  $iframe = {
+  iframe: {
     width: dim().width,
     height: dim().height
   }

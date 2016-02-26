@@ -1,4 +1,4 @@
-view Docs.Intro {
+export const Docs.Intro = () => $(
   <Title>What is Motion?</Title>
 
   <IntroText>

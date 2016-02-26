@@ -1,6 +1,6 @@
 import { style, color, routes, font, device } from '../constants'
 
-view Home.Production {
+export const Home.Production = () => $(
   <Feature>
     <Row reverse>
       <Col class="example">
@@ -21,11 +21,11 @@ view Home.Production {
     </Row>
   </Feature>
 
-  $Feature = {
+  Feature: {
     overflow: 'hidden'
   }
 
-  $Row = {
+  Row: {
     flexFlow: 'row',
     margin: [0, 0, -28],
 
@@ -34,7 +34,7 @@ view Home.Production {
     }
   }
 
-  $example = {
+  example: {
     margin: [0, 0, -130],
 
     [device.small]: {
@@ -42,7 +42,7 @@ view Home.Production {
     }
   }
 
-  $content = {
+  content: {
     padding: [30, 50, 30, 20],
     width: '20%',
     justifyContent: 'center',
@@ -52,13 +52,13 @@ view Home.Production {
     }
   }
 
-  $p = {
+  p: {
     fontSize: 18,
     color: '#999',
     width: 500
   }
 
-  $img = {
+  img: {
     width: 425,
     margin: [0, -300, 0, 0],
 

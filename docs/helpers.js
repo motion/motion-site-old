@@ -1,4 +1,4 @@
-view Docs.Helpers {
+export const Docs.Helpers = () => $(
   <Title>View Helpers</Title>
 
   <IntroText>Motion provides helpers for common actions needed in views, many of which map directly to React.</IntroText>
@@ -10,7 +10,7 @@ view Docs.Helpers {
   <Text>Access a DOM node in your view.</Text>
 
   <Code source={`
-    view Button {
+    export const Button = () => $(
       on.mount(() => {
         view.refs.button.focus()
       })
@@ -24,7 +24,7 @@ view Docs.Helpers {
   <Text>Find DOM nodes in your view, uses querySelectorAll scoped to current view.</Text>
 
   <Code source={`
-    view Button {
+    export const Button = () => $(
       on.mount(() => {
         let button = view.element('button')[0]
       })
@@ -66,7 +66,7 @@ view Docs.Helpers {
   <Text>Programatically render a view. Pass in a view name to <code>view.el()</code> and it will render.</Text>
 
   <Code source={`
-    view Modal {
+    export const Modal = () => $(
       <modal>
         {view.el(view.props.subViewName || 'ModalContent')}
       </modal>
@@ -78,7 +78,7 @@ view Docs.Helpers {
   <Text>Lets you loop over children to inspect them, clone them, etc.</Text>
 
   <Code source={`
-    view Items {
+    export const Items = () => $(
       view.render(() =>
         view.clone(view.props.children, { extraProp: true })
       )
@@ -96,7 +96,7 @@ view Docs.Helpers {
   <SubTitle>view.mapElements(children : elements, callback : function)</SubTitle>
 
   <Code source={`
-    view Items {
+    export const Items = () => $(
       <items>
         {view.mapElements(view.props.children, child => {
           if (view.getName(child) == 'Button')
@@ -118,7 +118,7 @@ view Docs.Helpers {
   </Text>
 
   <Code source={`
-    view Child {
+    export const Child = () => $(
       view.shouldUpdate((props, nextProps) => {
         return props.active != nextProps.active
       })
@@ -130,7 +130,7 @@ view Docs.Helpers {
   </Text>
 
   <Code source={`
-    view ComplexComponent {
+    export const ComplexComponent = () => $(
       view.pause()
 
       let title, date, body, name
@@ -158,7 +158,7 @@ view Docs.Helpers {
   <Text><em>Alpha</em> This should work, but it's very much for testing at the moment. You can provide context to children like so:</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       view.childContext({
         componentStyle: {
           primaryColor: '#FFC107'

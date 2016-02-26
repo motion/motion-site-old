@@ -1,4 +1,4 @@
-view Docs.Styles {
+export const Docs.Styles = () => $(
   <Title>Styles</Title>
   <IntroText>The final thing to understand about views are styles. Styles are written in JavaScript, which makes creating dynamic styles easy. We designate a style with $.</IntroText>
 
@@ -7,7 +7,7 @@ view Docs.Styles {
   </Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       <h1>Hello World</h1>
 
       $h1 = {
@@ -31,12 +31,12 @@ view Docs.Styles {
   <Text>When your view changes, your styles recalculate as needed. You may be wondering, what if I want to style two of the same tag differently?</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       <h1>Hello World</h1>
       <h1 class="ask">How are you?</h1>
 
       $h1 = { color: 'green' }
-      $ask = { color: 'blue' }
+      ask: { color: 'blue' }
     }
   `} />
 
@@ -47,7 +47,7 @@ view Docs.Styles {
   <Text>Styles are also dynamic, and can access variables in the view just like you'd expect:</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       let color = 'red'
 
       <h1>Hello World</h1>
@@ -64,7 +64,7 @@ view Docs.Styles {
   <Text>Motion keeps things simple and light. Use any of <code>active</code>, <code>hover</code>, <code>focus</code>, <code>visited</code> and more to add CSS psuedo state styles.</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       <h1>Hello World</h1>
 
       $h1 = {
@@ -84,7 +84,7 @@ view Docs.Styles {
   <Text><b>Share styles</b> between tags with ease using arrays:</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       <greet>Hello World</greet>
       <sub>Show as h2, named greet</sub>
 
@@ -92,20 +92,20 @@ view Docs.Styles {
         background: 'red'
       }
 
-      $greet = [shared, { fontWeight: 'bold' }]
-      $sub = shared
+      greet: [shared, { fontWeight: 'bold' }]
+      sub: shared
     }
   `} />
 
   <Text>Access the repeat loop with <code>_</code> and <code>_index</code>:</Text>
 
   <Code source={`
-    view Main {
+    export const Main = () => $(
       <greet repeat={['hi', 'hello']}>
         {_index}: {_}
       </greet>
 
-      $greet = {
+      greet: {
         fontWeight: _index % 2 ? 'bold' : 'normal',
         color: _ == 'hi' ? 'red' : 'blue'
       }
@@ -117,19 +117,19 @@ view Docs.Styles {
   <Text>You can also style the Child view wrapper:</Text>
 
   <Code source={`
-    view Parent {
+    export const Parent = () => $(
       // child will back a red background
       <Child />
 
-      $Child = {
+      Child: {
         background: 'red'
       }
     }
 
-    view Child {
+    export const Child = () => $(
       <h1>Hello</h1>
 
-      $ = {
+      : {
         background: 'yellow'
       }
     }
